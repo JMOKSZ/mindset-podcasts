@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>改变思维的 6 个英文播客 · Roland.W 推荐</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #fdfaf6;
+    color: #1a1a1a;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 960px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header {
+    margin-bottom: 3rem;
+    text-align: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e8e2d8;
+  }
+  header h1 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.8rem;
+    color: #1a1a1a;
+  }
+  header .subtitle { font-size: 1rem; color: #666; line-height: 1.6; }
+  header .meta {
+    margin-top: 1.2rem;
+    font-size: 0.85rem;
+    color: #999;
+    font-style: italic;
+  }
+  .intro-block {
+    background: #fffcf7;
+    border: 1px solid #e8dfd3;
+    padding: 2rem 2.5rem;
+    margin-bottom: 2.5rem;
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.7;
+  }
+  .intro-block blockquote {
+    font-style: italic;
+    color: #5a4a3a;
+    border-left: 3px solid #d4c5b0;
+    padding: 0.8rem 1.2rem;
+    margin: 1rem 0;
+    background: #f8f4ee;
+  }
+  .section-title {
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin: 2.5rem 0 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e0dbd4;
+    color: #2a2a2a;
+  }
+  .podcast-card {
+    background: #fff;
+    border: 1px solid #eae8e3;
+    padding: 2rem 2.5rem;
+    margin-bottom: 2rem;
+    transition: border-color 0.2s;
+  }
+  .podcast-card:hover { border-color: #d0cbc3; }
+  .podcast-number {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background: #2a2a2a;
+    color: #fff;
+    padding: 0.15rem 0.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+  .podcast-name {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+    color: #1a1a1a;
+  }
+  .podcast-host {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 0.8rem;
+    font-style: italic;
+  }
+  .podcast-desc {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+  }
+  .rss-link {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 1.2rem;
+  }
+  .rss-link a { color: #8a7a6a; text-decoration: none; }
+  .rss-link a:hover { text-decoration: underline; }
+  .episode-title {
+    font-size: 1.0rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    color: #1a1a1a;
+  }
+  .episode-meta {
+    font-size: 0.8rem;
+    color: #999;
+    margin-bottom: 0.6rem;
+  }
+  .detail-text {
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.65;
+    margin-bottom: 0.3rem;
+  }
+  .detail-text ul {
+    padding-left: 1.2rem;
+    margin: 0.3rem 0;
+  }
+  .detail-text li { margin-bottom: 0.25rem; }
+  blockquote.quote {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #5a4a3a;
+    background: #f8f4ee;
+    border-left: 3px solid #d4c5b0;
+    padding: 0.8rem 1.2rem;
+    margin: 0.5rem 0;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 0.1rem 0.4rem;
+    margin-right: 0.3rem;
+    background: #f0ece6;
+    color: #666;
+    border-radius: 2px;
+  }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+  .commentary {
+    background: #fffcf6;
+    border: 1px solid #e8dfd3;
+    padding: 2rem;
+    margin: 2.5rem 0;
+  }
+  .commentary h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+    color: #2a2a2a;
+  }
+  .commentary p {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e0dbd4;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #aaa;
+  }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1rem; }
+    .podcast-card { padding: 1.5rem; }
+    .intro-block { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>改变思维的 6 个英文播客</h1>
+  <div class="subtitle">來源：@rwayne (Roland.W) · 英文播客聽兩年，能改思維的就這 6 個</div>
+  <div class="meta">生成時間：2026-06-01 23:18 UTC · 數據來源：Apple Podcasts · 各播客官方網站</div>
+</header>
+
+<div class="intro-block">
+  <p>Roland.W (@rwayne) 在 X 上分享了這條貼文，獲得廣泛共鳴：</p>
+  <blockquote>
+    「英文播客听了两年，能改思维的就 6 个。<br><br>
+    1、Founders（David Senra）每期 3 小时，啃企业家传记，把一个人怎么做决策讲透<br>
+    2、Acquired（Ben Gilbert/David Rosenthal）讲公司完整商业史，Nike 讲了 4 小时，Nvidia 讲了 5 小时，听一集比读 3 本书快<br>
+    3、All-In，4 个 VC 每周开喷科技和宏观，干货最多，没有第二家<br>
+    4、My First Million，Sam 和 Shaan 每集脑暴百万美元生意 idea，听几期你自己也开始这样想<br>
+    5、Knowledge Project（Shane Parrish），专采访会做复杂决策的人，每集多几个想事情的方法<br>
+    6、Diary of a CEO（Steven Bartlett），专挖创始人的心理和失败，不回避脆弱」
+  </blockquote>
+  <p>以下是對每個播客的詳細整理，包括最新集數的深度摘要與分析。</p>
+</div>
+
+<!-- ════════════════════ 1. Founders ════════════════════ -->
+<h2 class="section-title">1. Founders</h2>
+
+<div class="podcast-card">
+  <div class="podcast-name">Founders</div>
+  <div class="podcast-host">David Senra · 每週 · 每期 ~3 小時</div>
+  <div class="podcast-desc">
+    每週讀一本企業家傳記，提煉出可以在工作中運用的 idea。至今 444+ 集，從古代到現代的創業者都有。
+    正如 Marc Andreessen 所說：「幾千年歷史中，非常聰明的人用一生做實驗去創造新商業、新技術。有人把這些教訓寫進書裡。你只需要花幾美元和幾小時，就能學到別人一生的經驗。」
+  </div>
+  <div class="rss-link">📡 RSS: <a href="https://founderspodcast.com/feed/podcast" target="_blank">founderspodcast.com (via Apple Podcasts)</a></div>
+
+  <div class="episode-title">🎙 Ep 419: Kelly Johnson — Skunk Works</div>
+  <div class="episode-meta">📅 2026 年近期 · ⏱ ~3 小時</div>
+  <div class="detail-text">
+    Kelly Johnson 是傳奇航空工程師，領導 Lockheed 的 Skunk Works 部門，創造了 U-2、SR-71 黑鳥等劃時代飛機。
+    他制定了著名的 "Kelly's 14 Rules"（Skunk Works 管理原則），其中核心是：給最少的團隊、最大的自主權、最短的溝通鏈。
+    這是創業者學習如何在極端限制下創新的終極案例。
+  </div>
+
+  <div class="episode-title">🎙 Ep 418: Phil Knight — Founder of Nike</div>
+  <div class="episode-meta">📅 2026 年近期 · ⏱ ~3 小時</div>
+  <div class="detail-text">
+    Phil Knight 的傳記《Shoe Dog》是創業聖經。他從賣日本跑鞋起家，64 歲時公司年收 10 億美元。
+    Senra 重點剖析 Knight 的韌性、他如何招募志同道合的人、以及「Just Do It」背後的行動哲學。
+  </div>
+
+  <div class="episode-title">🎙 Ep 417: Arnold Schwarzenegger</div>
+  <div class="episode-meta">📅 2026 年近期 · ⏱ ~3 小時</div>
+  <div class="detail-text">
+    從奧地利鄉村男孩→健美冠軍→好萊塢巨星→加州州長。Senra 拆解 Arnold 的多維度成功：
+    他的「可視化」策略、對學習新技能的飢渴、以及把每一個領域都當成創業來做的思維。
+  </div>
+
+  <div class="episode-title">🎙 Ep 416: The Relentless Missionary Creating AGI — Demis Hassabis</div>
+  <div class="episode-meta">📅 2026 年近期 · ⏱ ~3 小時</div>
+  <div class="detail-text">
+    DeepMind 創辦人 Demis Hassabis — 國際象棋神童、遊戲設計師、神經科學家、AGI 傳教士。
+    Senra 從 Demis 的傳記中提取：他的長期主義思維（10 年計劃做 AGI）、跨領域學習策略（棋類+編程+神經科學）、
+    以及如何在 DeepMind 被 Google 收購後仍然保持使命驅動的文化。
+  </div>
+</div>
+
+<!-- ════════════════════ 2. Acquired ════════════════════ -->
+<h2 class="section-title">2. Acquired</h2>
+
+<div class="podcast-card">
+  <div class="podcast-name">Acquired</div>
+  <div class="podcast-host">Ben Gilbert & David Rosenthal · 不定期 · 每期 3–5 小時</div>
+  <div class="podcast-desc">
+    每期深度講述一家公司的完整商業史。Nike 講了 4 小時、Nvidia 講了 5 小時、LVMH 講了 6 小時。
+    主持人花了幾個月研究素材，把一家公司從創立到今日的每個關鍵決策還原出來。
+    「聽一集比讀 3 本書快」是粉絲的真實評價。
+  </div>
+  <div class="rss-link">📡 RSS: <a href="https://feeds.simplecast.com/IG2Xit8Q" target="_blank">acquired.fm</a> · 官網: <a href="https://www.acquired.fm/episodes" target="_blank">acquired.fm/episodes</a></div>
+
+  <div class="episode-title">🎙 Sp26 E3: Vanguard（先鋒集團）</div>
+  <div class="episode-meta">📅 2026-05-18 · ⏱ 3h 48m</div>
+  <div class="detail-text">
+    <strong>主題</strong>：Vanguard 是參與美國資本主義最有效的工具——它本身卻是一個「共產主義組織」。沒有股東、不獲利、
+    像 REI 合作社一樣運作。多餘的利潤全部返還客戶，自 1975 年以來總共從華爾街管理人口袋裡轉移了約五千億美元到散戶儲蓄帳戶。
+    更猛的是：這一切始於一個被合夥人解僱的人的復仇計劃——Jack Bogle。
+  </div>
+  <div class="detail-text">
+    <strong>關鍵片段</strong>：
+    <ul>
+      <li>Jack Bogle 的普林斯頓論文（1949-1951）就已經預言了指數基金</li>
+      <li>被 Wellington 解僱後創立 Vanguard 的復仇故事（1974）</li>
+      <li>ETF 大辯論：Jack Bogle 本人反對 ETF——他認為 ETF 鼓勵交易而非持有</li>
+      <li>Warren Buffett 的世紀賭局（2008-2019）：Vanguard 指數基金打贏對沖基金組合</li>
+      <li>Vanguard 的共業制（Mutual Ownership）結構分析</li>
+    </ul>
+  </div>
+  <blockquote class="quote">「Vanguard is communist capitalism at its finest。」</blockquote>
+
+  <div class="episode-title">🎙 Sp26 E2: Ferrari（法拉利）</div>
+  <div class="episode-meta">📅 2026-04-12 · ⏱ 3h 59m</div>
+  <div class="detail-text">
+    <strong>主題</strong>：法拉利 79 年歷史中只賣了 33 萬輛車（均價 $50 萬），卻同時擁有一個 F1 車隊和 4 億狂熱粉絲。
+    矛盾的奢侈品+運動品牌如何共存並互相強化？答案是一部橫跨兩個家族、三代人的美麗、血腥、悲劇與浪漫歌劇。
+  </div>
+  <div class="detail-text">
+    <strong>亮點</strong>：Enzo Ferrari 的早年悲劇、Ford vs Ferrari 的 Le Mans 傳奇、Luca di Montezemolo 如何拯救公司、
+    IPO 後的增長策略、FUV Purosangue 和 Ferrari Luce（與 Jony Ive 合作的 EV 計劃）。
+  </div>
+
+  <div class="episode-title">🎙 Sp26 E1: Formula 1（世界一級方程式）</div>
+  <div class="episode-meta">📅 2026-03-02 · ⏱ ~4 小時</div>
+  <div class="detail-text">
+    <strong>主題</strong>：F1 是三合一比賽——200mph 車手競技、千人工程團隊的「世界盃」、以及億萬富翁的真人秀。
+    Liberty Media 買下後引入 Fox/ESPN 團隊，把虧錢的車隊變成平均估值 $36 億的生意。
+    Netflix《Drive to Survive》將 F1 從歐洲小眾運動變成全球 8.27 億粉絲的體育帝國。
+  </div>
+</div>
+
+<!-- ════════════════════ 3. All-In ════════════════════ -->
+<h2 class="section-title">3. All-In</h2>
+
+<div class="podcast-card">
+  <div class="podcast-name">All-In with Chamath, Jason, Sacks & Friedberg</div>
+  <div class="podcast-host">Chamath Palihapitiya · Jason Calacanis · David Sacks · David Friedberg · 每週 · ~1.5 小時</div>
+  <div class="podcast-desc">
+    「4 個 VC 每週開噴科技和宏觀，乾貨最多，沒有第二家。」四位業內人士+「degenerate gambler」每週討論經濟、科技、
+    政治、社會、甚至德州撲克。沒有劇本，有分歧直接懟。
+  </div>
+  <div class="rss-link">📡 RSS: <a href="https://allinpodcast.co/feed/podcast" target="_blank">allin.com</a> · Apple Podcasts: id1502871393</div>
+
+  <div class="episode-title">🎙 Ep 377: SpaceX's $2T Case, Nvidia's Shock Selloff, America Turns on AI</div>
+  <div class="episode-meta">📅 2026-05-22 · ⏱ 1h 42m</div>
+  <div class="detail-text">
+    <strong>嘉賓</strong>：Gavin Baker 加入討論。<br>
+    <strong>核心討論</strong>：
+    <ul>
+      <li>Andrej Karpathy 加入 Anthropic，超高速增長+盈利前景</li>
+      <li>美國人為何「轉向反對 AI」——反人類感知與 AI 裁員</li>
+      <li>SpaceX S-1 文件深度拆解：三大業務線 + $2T 估值論證</li>
+      <li>Nvidia 業績打破預期但股價下跌——為什麼人們在做空芯片</li>
+      <li>市場信號：紅色警報、油價、通脹、收益率上升</li>
+    </ul>
+  </div>
+  <blockquote class="quote">「If you think AI is overhyped, look at the actual deployment numbers. The gap between narrative and reality is closing fast。」——Chamath</blockquote>
+
+  <div class="episode-title">🎙 Ep 376: Trump-Xi Summit, Benioff: "Not My First SaaSpocalypse," OpenAI vs Apple</div>
+  <div class="episode-meta">📅 2026-05-15 · ⏱ 1h 17m</div>
+  <div class="detail-text">
+    <strong>嘉賓</strong>：Salesforce CEO Marc Benioff<br>
+    <strong>核心討論</strong>：
+    <ul>
+      <li>Trump-Xi 峰會：在中國做生意的美國公司</li>
+      <li>AI 對軟體的影響：哪些 SaaS 會死、哪些會活</li>
+      <li>OpenAI 考慮起訴 Apple：ChatGPT 整合失敗</li>
+      <li>Thinking Machines 發布即時模型 + 多感官 AI</li>
+      <li>氣象角：2026 歷史性強 El Niño 的影響</li>
+      <li>Anthropic 打擊「Dark SPVs」— 非法股權交易</li>
+    </ul>
+  </div>
+  <blockquote class="quote">「SaaS companies that don't reimagine their products for the AI era will face extinction. This is not my first SaaS-pocalypse。」——Marc Benioff</blockquote>
+</div>
+
+<!-- ════════════════════ 4. My First Million ════════════════════ -->
+<h2 class="section-title">4. My First Million</h2>
+
+<div class="podcast-card">
+  <div class="podcast-name">My First Million</div>
+  <div class="podcast-host">Sam Parr & Shaan Puri · 每週 2-3 期 · 每期 ~1 小時</div>
+  <div class="podcast-desc">
+    Sam 和 Shaan 每期腦暴百萬美元生意 idea。他們都賣過公司（Sam 賣了 The Hustle 給 HubSpot，Shaan 賣了 Milk Road），
+    現在每週聊商業機會、投資、創業故事。聽幾期之後你也會開始用同樣的思維方式看世界。
+  </div>
+  <div class="rss-link">📡 RSS: <a href="https://feeds.simplecast.com/2tKpdYLQ" target="_blank">mfmpod.com</a> · 官網: <a href="https://www.mfmpod.com/episodes/" target="_blank">mfmpod.com/episodes</a></div>
+
+  <div class="episode-title">🎙 Ep 829: The Insane True Story Behind MTV</div>
+  <div class="episode-meta">📅 2026-05-29 · ⏱ ~1 小時</div>
+  <div class="detail-text">
+    <strong>嘉賓</strong>：Tom Freston — MTV 創始團隊成員<br>
+    <strong>內容</strong>：MTV 如何從一個瘋狂的想法變成塑造美國流行文化的現象級媒體。
+    Tom Freston 講述早期 MTV 沒有音樂視頻、沒有廣告商、沒有人相信它能成功的「三無」狀態，
+    以及他們如何靠一個 24 小時播放音樂視頻的簡單公式改變了音樂產業。
+  </div>
+
+  <div class="episode-title">🎙 Ep 828: The 50 Richest Families in America Are Betting on This Trend</div>
+  <div class="episode-meta">📅 2026-05-27 · ⏱ ~1 小時</div>
+  <div class="detail-text">
+    <strong>嘉賓</strong>：億萬富翁 Joe Liemandt<br>
+    <strong>內容</strong>：美國最富有的 50 個家族正在把資金投向什麼趨勢？
+    Joe Liemandt 分享他管理家族辦公室的投資哲學，以及為什麼某些「被忽視」的資產類別實際上回報最高。
+  </div>
+
+  <div class="episode-title">🎙 Ep 827: Mohnish Pabrai — How to Be a Top 1% Investor</div>
+  <div class="episode-meta">📅 2026-05-22 · ⏱ ~1 小時</div>
+  <div class="detail-text">
+    <strong>內容</strong>：傳奇價值投資者 Mohnish Pabrai 拆解讓他成為頂級 1% 投資者的心智模型。
+    他是如何用巴菲特/芒格的框架在市場中找到「被低估的寶藏」、如何避免常見的行為偏誤、
+    以及他對當前市場的判斷。
+  </div>
+
+  <div class="episode-title">🎙 Ep 826: How Gary Vee Runs 7 Businesses</div>
+  <div class="episode-meta">📅 2026-05-19 · ⏱ ~1 小時</div>
+  <div class="detail-text">
+    <strong>嘉賓</strong>：Gary Vaynerchuk<br>
+    <strong>內容</strong>：GaryVee 管理 7 家公司的秘訣。時間管理、注意力分配、團隊授權——
+    Gary 分享他如何在 Wine Library 的基礎上建立了 VaynerMedia、VaynerSports、VaynerNFT 等帝國。
+  </div>
+</div>
+
+<!-- ════════════════════ 5. Knowledge Project ════════════════════ -->
+<h2 class="section-title">5. Knowledge Project</h2>
+
+<div class="podcast-card">
+  <div class="podcast-name">The Knowledge Project</div>
+  <div class="podcast-host">Shane Parrish · 每週 · 每期 ~1 小時</div>
+  <div class="podcast-desc">
+    Shane Parrish（Farnam Street 創辦人）專訪「會做複雜決策的人」——頂級 CEO、投資者、運動員、思想家。
+    核心目標：從世界最聰明的人身上提取思維框架和決策原則。每集多幾個想事情的方法。
+  </div>
+  <div class="rss-link">📡 RSS: <a href="https://feeds.megaphone.fm/KSP8502733813" target="_blank">fs.blog</a> · Apple Podcasts: id990149481</div>
+
+  <div class="episode-title">🎙 Outliers: The Hyundai Founder Who Put a Country on His Back</div>
+  <div class="episode-meta">📅 2026-05-19 · ⏱ 2h 19m</div>
+  <div class="detail-text">
+    <strong>主題</strong>：Hyundai 創始人 Chung Ju-yung 如何拒絕被阻擋。他建造高速公路、造船、造車、造產業。
+    巔峰時期 Hyundai 佔韓國經濟輸出的 16%。
+  </div>
+  <div class="detail-text">
+    <strong>關鍵片段</strong>：
+    <ul>
+      <li>離家出走、床蝨教訓、第一家汽修店（童年→創業起源）</li>
+      <li>Goryeong 大橋：信任 vs 政府關係</li>
+      <li>越戰期間的建設、Soyang 河水壩、高速公路網</li>
+      <li>開始造車…和造船——Jubail 秘密競標</li>
+      <li>1998 奧運會、Chung 家族動態、政府打壓、跨越 DMZ</li>
+    </ul>
+  </div>
+  <blockquote class="quote">「Chung Ju-yung 用飢餓、罪惡感、紀律和無情的堅持——拒絕在路消失的時候停下來。」</blockquote>
+
+  <div class="episode-title">🎙 Winston Weinberg: Speed, Stress, and Better Decisions</div>
+  <div class="episode-meta">📅 2026-05-12 · ⏱ ~1 小時</div>
+  <div class="detail-text">
+    <strong>嘉賓</strong>：Winston Weinberg — Harvey CEO & Co-founder（$11B AI 法律平台）<br>
+    <strong>內容</strong>：AI 如何重塑法律行業、為何判斷力變得比以往更重要、
+    以及如何建立優先級肌肉——更快行動、更專注、在一切變化中做更好的決定。
+  </div>
+  <div class="detail-text">
+    <strong>亮點</strong>：
+    <ul>
+      <li>把 GPT-3 放在實際法律問題上測試——86/100 題三個律師都說可直接發送</li>
+      <li>「The List」——一份 Google Doc 推動 $11B 業務</li>
+      <li>大部分選擇其實是雙向門（可逆），不要花太多時間</li>
+      <li>先發給 Sam Altman 一封冷郵件改變了一切</li>
+      <li>幾乎殺死 Harvey 的那筆交易</li>
+    </ul>
+  </div>
+
+  <div class="episode-title">🎙 Greg Brockman: AI Goes Parabolic! Here's What's Next</div>
+  <div class="episode-meta">📅 2026-04-22 · ⏱ ~1 小時</div>
+  <div class="detail-text">
+    <strong>嘉賓</strong>：Greg Brockman — OpenAI 共同創辦人<br>
+    <strong>內容</strong>：這是最詳細的第一人稱視角——Sam Altman 被解僱後的 72 小時全過程，
+    OpenAI 從 Napa 退修會開始的十年技術路線圖，以及為什麼要放棄純非營利結構。
+  </div>
+  <div class="detail-text">
+    <strong>亮點</strong>：
+    <ul>
+      <li>Napa 退修會產生了 OpenAI 至今遵循的三步技術路線圖</li>
+      <li>Sam 被解僱後 Greg 同日辭職的全過程</li>
+      <li>「Phoenix」備份公司在 Sam 家中設計完成</li>
+      <li>Ilya Sutskever 的那條 tweet 改變了所有事情</li>
+      <li>OpenAI 自己的代碼有多少是 AI 寫的？「很難說有多少不是」</li>
+      <li>為什麼停止顯示推理軌跡</li>
+      <li>算力受限的世界對 AGI 普及意味著什麼</li>
+      <li>你的工作會怎樣——Greg 的回答</li>
+    </ul>
+  </div>
+  <blockquote class="quote">「It's hard to know what percent of our code is not written by AI at this point。」——Greg Brockman</blockquote>
+</div>
+
+<!-- ════════════════════ 6. Diary of a CEO ════════════════════ -->
+<h2 class="section-title">6. Diary of a CEO</h2>
+
+<div class="podcast-card">
+  <div class="podcast-name">The Diary of a CEO with Steven Bartlett</div>
+  <div class="podcast-host">Steven Bartlett · 每週 · 每期 1–2 小時</div>
+  <div class="podcast-desc">
+    Steven Bartlett 揭開世界上最有名的 CEO、專家、治療師和領袖的個人日記。
+    不只是成功學，他特別關注創始人的心理狀態和失敗經歷——不迴避脆弱。
+    至今 845+ 集。
+  </div>
+  <div class="rss-link">📡 RSS: <a href="https://rss2.flightcast.com/xmsftuzjjykcmqwolaqn6mdn" target="_blank">via Flightcast</a></div>
+
+  <div class="episode-title">🎙 Mo Gawdat: You Only Have 3 Years Left Before This Hits!</div>
+  <div class="episode-meta">📅 2026-06-01 · ⏱ 2h 1m</div>
+  <div class="detail-text">
+    <strong>嘉賓</strong>：Mo Gawdat — Google X 前首席業務官、《Alive: A Human's Guide to Living in the World of AI》作者<br>
+    <strong>內容</strong>：
+  </div>
+  <div class="detail-text">
+    <strong>核心論點</strong>：
+    <ul>
+      <li>AGI 已經到來——Mo 認為這是事實，不是預測</li>
+      <li>30% 的工作將在 2027 年前消失——不只是白領，大量藍領也受影響</li>
+      <li>AI 能給你 400 點 IQ 提升——但大多數人正在浪費它</li>
+      <li>Mo 竟然希望一個比全人類都聰明的機器來控制世界</li>
+      <li>Sam Altman 說 AI「可能終結人類」——但他選擇做了什麼？</li>
+      <li>當 AI 取代了工人（也是消費者），資本主義會崩潰</li>
+      <li>AI 失業可能引發內亂——政府還沒有準備好</li>
+      <li>人類的 lived experience（親身經歷）仍然有獨特價值</li>
+      <li>如果美國停止 AI 競賽，會變成中國的跟班嗎？</li>
+      <li>終極 dystopia 是什麼樣子的</li>
+    </ul>
+  </div>
+  <blockquote class="quote">「The most dangerous thing about AI isn't the technology — it's the people in charge of it。」——Mo Gawdat</blockquote>
+
+  <div class="episode-title">🎙 Chris Bosh: What Professionalism Actually Looks Like</div>
+  <div class="episode-meta">📅 2026-05 月 · ⏱ ~1h 30m</div>
+  <div class="detail-text">
+    <strong>嘉賓</strong>：Chris Bosh — 11 次 NBA 全明星、兩屆 NBA 冠軍（熱火隊）<br>
+    <strong>內容</strong>：從籃球巨星到科技創業者。Bosh 談職業道德的真正含義——
+    不只是準時和努力工作，而是「在沒有人看著的時候做出的選擇」。
+    他分享與 LeBron James、Dwyane Wade 在熱火隊的冠軍心態、突然因為血凝塊被迫退役的心理衝擊、
+    以及如何將運動員的紀律帶入商業世界。
+  </div>
+
+  <div class="episode-title">🎙 Dr. David Unwin: The Truth About Sugar You've Been Lied To</div>
+  <div class="episode-meta">📅 2026-05 月 · ⏱ ~1h 30m</div>
+  <div class="detail-text">
+    <strong>嘉賓</strong>：Dr. David Unwin — 英國 GP，NHS 低碳水飲食先驅<br>
+    <strong>內容</strong>：揭露糖業如何影響公共衛生政策、為什麼「熱量平衡」模型過時了、
+    以及他用低碳水飲食逆轉了數千名患者的二型糖尿病。獨立研究報告在節目頁面公開。
+  </div>
+</div>
+
+<!-- ════════════════════ 整體分析 ════════════════════ -->
+<div class="commentary">
+  <h3>📊 整體分析：這 6 個播客的共通點</h3>
+  <p>Roland.W 推薦的這 6 個播客看似不同主題，但有一個共同 DNA：<strong>每一集都在回答「事情是怎麼運作的」</strong>。</p>
+  <p><strong>Founders</strong> — 一個人怎麼做決策（傳記）<br>
+  <strong>Acquired</strong> — 一家公司怎麼變偉大（商業史）<br>
+  <strong>All-In</strong> — 世界現在在發生什麼（即時分析）<br>
+  <strong>My First Million</strong> — 錢是怎麼賺到的（商業靈感）<br>
+  <strong>Knowledge Project</strong> — 大腦是怎麼思考的（決策框架）<br>
+  <strong>Diary of a CEO</strong> — 成功是怎麼脆弱的（創始人心理）</p>
+  <p>這正好構成了理解商業/人生的六個維度：歷史、系統、趨勢、機會、方法論、人性。</p>
+  <p>如果只能選一個開始：<strong>Acquired</strong> 是最震撼的（每一集都像聽了一部電影），其次是 <strong>Founders</strong>（直接嫁接歷史經驗）。</p>
+</div>
+
+<footer>
+  <p>來源：<a href="https://x.com/rwayne/status/2061476867308392772" target="_blank" style="color:#8a7a6a;">@rwayne 的 X 貼文</a></p>
+  <p>整理日期：2026-06-01 · 生成時間：23:18 UTC</p>
+</footer>
+
+</div>
+</body>
+</html>
