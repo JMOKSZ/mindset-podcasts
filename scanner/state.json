@@ -1,5 +1,19 @@
 {
-  "lastScan": null,
-  "scannedEpisodes": {},
-  "lastScannedEpisodeGuids": {}
+  "lastScan": "2026-06-02T09:53:00Z",
+  "scannedEpisodes": {
+    "acquired": ["465f9bb3-6d71-49ed-a233-de82bc41b034"],
+    "founders": ["apple:1000768152084", "apple:1000766662563", "apple:1000762241588"],
+    "all-in": ["6c43a3ce-5efe-45fd-81db-29504c064b52", "c3affab8-5413-46ec-8d1f-00e504c0309c"],
+    "my-first-million": ["mfm-ep829-mtv-tom-freston", "mfm-ep828-joe-liemandt", "mfm-ep827-mohnish-pabrai"],
+    "knowledge-project": ["apple:1000768541807", "apple:1000767361829", "apple:1000763023401"],
+    "diary-of-a-ceo": ["flightcast:01KSZDQ99MMZ0TDAAC0EWY7T03", "flightcast:01KQ7WVVFYR4VA949S12SVFS3X"]
+  },
+  "lastScannedEpisodeGuids": {
+    "acquired": {"guids": ["465f9bb3-6d71-49ed-a233-de82bc41b034"]},
+    "founders": {"guids": ["apple:1000768152084", "apple:1000766662563", "apple:1000762241588"]},
+    "all-in": {"guids": ["6c43a3ce-5efe-45fd-81db-29504c064b52", "c3affab8-5413-46ec-8d1f-00e504c0309c"]},
+    "my-first-million": {"guids": ["mfm-ep829-mtv-tom-freston", "mfm-ep828-joe-liemandt", "mfm-ep827-mohnish-pabrai"]},
+    "knowledge-project": {"guids": ["apple:1000768541807", "apple:1000767361829", "apple:1000763023401"]},
+    "diary-of-a-ceo": {"guids": ["flightcast:01KSZDQ99MMZ0TDAAC0EWY7T03", "flightcast:01KQ7WVVFYR4VA949S12SVFS3X"]}
+  }
 }
