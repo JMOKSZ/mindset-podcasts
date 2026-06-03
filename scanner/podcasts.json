@@ -4,7 +4,7 @@
     "name": "Acquired",
     "host": "Ben Gilbert & David Rosenthal",
     "lang": "en",
-    "rss": "https://feeds.simplecast.com/IG2Xit8Q",
+    "rss": "https://feeds.transistor.fm/acquired",
     "appleId": "1050462261",
     "website": "https://www.acquired.fm/episodes"
   },
@@ -22,7 +22,7 @@
     "name": "All-In with Chamath, Jason, Sacks & Friedberg",
     "host": "Chamath Palihapitiya · Jason Calacanis · David Sacks · David Friedberg",
     "lang": "en",
-    "rss": "https://allinpodcast.co/feed/podcast",
+    "rss": "https://rss.libsyn.com/shows/254861/destinations/1928300.xml",
     "appleId": "1502871393",
     "website": "https://allin.com/"
   },
@@ -32,6 +32,7 @@
     "host": "Sam Parr & Shaan Puri",
     "lang": "en",
     "rss": "https://feeds.simplecast.com/2tKpdYLQ",
+    "rssAlt": "https://www.mfmpod.com/episodes/",
     "appleId": "1322797897",
     "website": "https://www.mfmpod.com/episodes/"
   },
@@ -40,7 +41,7 @@
     "name": "The Knowledge Project",
     "host": "Shane Parrish",
     "lang": "en",
-    "rss": "https://feeds.megaphone.fm/KSP8502733813",
+    "rss": "https://fs.blog/knowledge-project-podcast/feed/",
     "appleId": "990149481",
     "website": "https://fs.blog/knowledge-project/"
   },
