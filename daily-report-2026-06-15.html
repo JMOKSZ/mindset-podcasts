@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🧠 思維播客每日掃描 · 2026-06-15</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #fdfaf6;
+    color: #2c2c2c;
+    font-family: Georgia, 'Noto Serif SC', 'Songti SC', serif;
+    line-height: 1.75;
+    padding: 40px 20px;
+  }
+  .container { max-width: 880px; margin: 0 auto; }
+  header {
+    text-align: center;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 2px solid #e8ddd0;
+  }
+  header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #3a2c1f;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  header .sub {
+    font-size: 15px;
+    color: #8a7a6a;
+    margin-top: 4px;
+  }
+  header .stamp {
+    font-size: 13px;
+    color: #b09a88;
+    margin-top: 6px;
+  }
+  .podcast-card {
+    background: #fffcf8;
+    border: 1px solid #e8ddd0;
+    border-radius: 12px;
+    padding: 32px;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  }
+  .podcast-card h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #4a3828;
+    margin-bottom: 4px;
+  }
+  .podcast-card .host {
+    font-size: 14px;
+    color: #9a8a7a;
+    margin-bottom: 16px;
+  }
+  .podcast-card .no-new {
+    color: #8a7a6a;
+    font-style: italic;
+    padding: 12px 0;
+    line-height: 1.6;
+  }
+  .podcast-card .no-new .last-ep {
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+    color: #b09a88;
+  }
+  .episode {
+    border-top: 1px solid #eee5d8;
+    padding-top: 20px;
+    margin-top: 16px;
+  }
+  .episode:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+  .episode .ep-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #3a2c1f;
+    margin-bottom: 4px;
+  }
+  .episode .ep-date {
+    font-size: 13px;
+    color: #b09a88;
+    margin-bottom: 14px;
+  }
+  .episode .ep-desc {
+    font-size: 15px;
+    color: #4a3a2a;
+    margin-bottom: 12px;
+    line-height: 1.7;
+  }
+  .episode .section-title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #8a7a6a;
+    margin: 16px 0 6px;
+  }
+  .episode ul.insight-list {
+    list-style: none;
+    padding: 0;
+  }
+  .episode ul.insight-list li {
+    padding: 6px 0 6px 18px;
+    position: relative;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #3a2c1f;
+  }
+  .episode ul.insight-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c4a88a;
+    font-weight: bold;
+  }
+  .episode blockquote {
+    border-left: 3px solid #d4c0a8;
+    padding: 10px 16px;
+    margin: 12px 0;
+    background: #f8f2ea;
+    border-radius: 4px;
+    font-style: italic;
+    color: #5a4a3a;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .episode blockquote .source {
+    font-style: normal;
+    font-size: 12px;
+    color: #8a7a6a;
+    display: block;
+    margin-top: 4px;
+  }
+  .episode .topic-tag {
+    display: inline-block;
+    background: #efe8de;
+    color: #6a5a4a;
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin: 2px 4px 2px 0;
+  }
+  .episode .data-point {
+    background: #f4eee6;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-size: 14px;
+    color: #4a3a2a;
+    border-left: 3px solid #c4a88a;
+  }
+  footer {
+    text-align: center;
+    font-size: 12px;
+    color: #b09a88;
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid #e8ddd0;
+  }
+  @media (max-width: 600px) {
+    body { padding: 20px 12px; }
+    .podcast-card { padding: 20px; }
+    header h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>🧠 思維播客每日掃描</h1>
+  <div class="sub">你嘅對耳仔 · James Mok</div>
+  <div class="stamp">📅 2026年6月15日（星期一）· 17:53 CST（09:53 UTC）</div>
+  <div class="stamp">🕐 上次掃描：2026年6月12日</div>
+</header>
+
+<!-- ====== All-In ====== -->
+<div class="podcast-card">
+  <h2>🎙 All-In with Chamath, Jason, Sacks &amp; Friedberg</h2>
+  <div class="host">Chamath Palihapitiya · Jason Calacanis · David Sacks · David Friedberg</div>
+
+  <div class="episode">
+    <div class="ep-title">🔴 Anthropic's Fable Backlash, Nationalizing AI, Inflation Heats Up &amp; California's Broken Elections</div>
+    <div class="ep-date">📆 2026年6月13日（星期六）· 1小時42分鐘</div>
+
+    <div class="ep-desc">
+      四人幫回歸，呢集火力全開——從Anthropic秘密削弱Fable模型引發嘅公關災難，到AI國有化嘅激進提議，再到通脹數據爆燈同加州選舉制度問題。
+    </div>
+
+    <div class="section-title">⏱ 章節速覽</div>
+    <ul class="insight-list">
+      <li><strong>(0:19)</strong> Anthropic遭強烈反彈——被發現秘密削弱Fable模型能力，引發私隱擔憂</li>
+      <li><strong>(29:16)</strong> AI監管俘獲陷阱 vs 務實安全方案</li>
+      <li><strong>(37:59)</strong> AI國有化：Trump/Sanders罕見聯手，「資本主義懦夫」論</li>
+      <li><strong>(59:22)</strong> Liquidity峰會回顧：最佳時刻同 takeaways</li>
+      <li><strong>(1:05:39)</strong> 通脹升溫：CPI和PPI創3年多新高</li>
+      <li><strong>(1:12:27)</strong> 加州寬鬆選舉法引發誠信質疑</li>
+    </ul>
+
+    <div class="section-title">🔥 主題一：Anthropic Fable 反彈</div>
+    <p style="font-size:15px;color:#4a3a2a;line-height:1.7;margin-bottom:10px;">
+      Anthropic 最近推出 Fable 5/Mythos 5 模型，但隨即被揭發公司在後台秘密「削弱」（nerfing）模型能力——即新模型喺某些基準測試上表現故意低於舊版。呢個發現引發咗巨大爭議，尤其是關於用戶私隱同透明度嘅問題。Gergely Orosz、Scobleizer 等科技KOL紛紛發聲批評。Anthropic CEO Dario Amodei 後來發表政策文章《Policy on the AI Exponential》回應事件。
+    </p>
+    <blockquote>
+      「The AI regulatory capture trap — incumbent players push for regulation that only they can afford to comply with, locking out newcomers.」
+      <span class="source">— David Sacks，討論AI監管俘獲</span>
+    </blockquote>
+
+    <div class="section-title">🏛 主題二：AI國有化爭議</div>
+    <p style="font-size:15px;color:#4a3a2a;line-height:1.7;margin-bottom:10px;">
+      一個令人驚訝嘅政治組合：Trump同Bernie Sanders罕見地喺AI國有化議題上立場一致。Sacks將支持國有化嘅人稱為「Capitalist Cucks」（資本主義懦夫）——即願意放棄市場機制嘅人。討論觸及到AI作為基礎設施是否應該由國家掌控嘅根本問題，以及呢種思路背後嘅監管邏輯鏈。
+    </p>
+    <div class="data-point">
+      📌 <strong>參考文章：</strong> Bernie Sanders喺NYT發表觀點文章《Artificial Intelligence》——主張AI應該像公共事業咁運作。
+    </div>
+
+    <div class="section-title">📊 主題三：通脹數據爆燈</div>
+    <p style="font-size:15px;color:#4a3a2a;line-height:1.7;margin-bottom:10px;">
+      CPI和PPI雙雙創下3年以上新高，市場開始討論Fed會唔會喺2026年再次加息。Polymarket上相關預測市場嘅活動顯著增加。四人幫分析咗呢輪通脹嘅結構性原因同可能走向。
+    </p>
+    <div class="data-point">
+      📌 <strong>Polymarket 參考標的：</strong> 2026年Fed加息預測 · 通脹頂點預測 · 2027年前IPO預測
+    </div>
+
+    <div class="section-title">🎟 主題四：加州選舉亂象</div>
+    <p style="font-size:15px;color:#4a3a2a;line-height:1.7;">
+      討論咗加州寬鬆嘅選舉登記法律如何引發選舉誠信問題。引用咗多宗加州政府資金詐騙案，包括2.7億美元醫療補助詐騙、EBT福利欺詐、無家可歸者基金被盜用等，作為制度鬆懈嘅佐證。
+    </p>
+
+    <div class="section-title">🔗 引用鏈接</div>
+    <ul class="insight-list" style="font-size:13px;color:#6a5a4a;">
+      <li>Anthropic Fable 5: anthropic.com/news/claude-fable-5-mythos-5</li>
+      <li>Dario Amodei AI政策文章: darioamodei.com/post/policy-on-the-ai-exponential</li>
+      <li>Ben Thompson評論（Stratechery）: stratechery.com</li>
+      <li>ScreenDNA: screendna.org</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ====== Diary of a CEO ====== -->
+<div class="podcast-card">
+  <h2>🎙 The Diary of a CEO with Steven Bartlett</h2>
+  <div class="host">Steven Bartlett</div>
+
+  <div class="episode">
+    <div class="ep-title">🧪 Creatine Expert: Creatine Is The Secret To Weight Loss</div>
+    <div class="ep-date">📆 2026年6月15日（星期一）· 75分鐘</div>
+
+    <div class="ep-desc">
+      頂級肌酸研究員 Dr Darren Candow 揭示咗關於肌酸嘅大部分真相——點解5g標準劑量到唔到大腦、肌酸如何逆轉睡眠不足嘅影響、以及5個阻礙數百萬人服用肌酸嘅迷思。
+    </div>
+
+    <div class="data-point">
+      👨‍🔬 <strong>關於嘉賓：</strong> Dr Darren Candow 係 University of Regina 教授，Ageing Muscle and Bone Health Laboratory 主任，擁有175篇學術論文。國際運動營養學會院士及候任副主席，2025年被列入Stanford University Top 2% Scientists 名單。
+    </div>
+
+    <div class="section-title">🧩 5個肌酸迷思（全部被推翻）</div>
+    <ul class="insight-list">
+      <li><strong>迷思1：</strong> 肌酸會損害腎臟 → ❌ Dr Candow 澄清對健康人士無害</li>
+      <li><strong>迷思2：</strong> 女性唔應該服用 → ❌ 女性尤其需要，特別係更年期前後</li>
+      <li><strong>迷思3：</strong> 肌酸導致脫髮 → ❌ 未有科學證據支持</li>
+      <li><strong>迷思4：</strong> 肌酸引起肌肉抽筋 → ❌ 相反有助恢復</li>
+      <li><strong>迷思5：</strong> 需要「loading phase」大量服用 → ❌ 每日維持劑量已足夠</li>
+    </ul>
+
+    <div class="section-title">🧠 大腦與認知益處</div>
+    <ul class="insight-list">
+      <li>標準5g/day劑量主要到肌肉，未必能穿透血腦屏障——大腦需要更高劑量或更長時間積累</li>
+      <li>肌酸可以<span style="background:#fef0e0;padding:1px 4px;">逆轉睡眠剝奪</span>對認知嘅負面影響（有具體研究支持）</li>
+      <li>肌酸有助於抗炎，對阿爾茨海默症有潛在治療價值</li>
+      <li><strong>關鍵發現：</strong> 將肌酸加入抗抑鬱藥療程，可以令緩解率翻倍</li>
+    </ul>
+    <blockquote>
+      「Creatine is not just for bodybuilders — it's arguably more important for your brain than for your muscles.」
+      <span class="source">— Dr Darren Candow</span>
+    </blockquote>
+
+    <div class="section-title">💪 肌肉骨骼健康</div>
+    <ul class="insight-list">
+      <li>40歲後每年流失約1%肌肉——肌酸可以顯著減緩呢個過程</li>
+      <li>肌酸對骨骼健康有正面影響，尤其對更年期女性</li>
+      <li>蛋白質+肌酸組合效果最好</li>
+    </ul>
+
+    <div class="section-title">📏 劑量指南</div>
+    <div class="data-point">
+      <strong>肌肉/體能：</strong> 3-5g/日（標準）<br>
+      <strong>骨骼健康：</strong> 可能需要更高劑量<br>
+      <strong>大腦認知：</strong> 可能需更高劑量或更長時間<br>
+      <strong>最佳服用時間：</strong> 任何時間都得，一致性最重要<br>
+      <strong>最佳形式：</strong> 一水肌酸（Creatine Monohydrate）— 研究最多、效果最好、最便宜
+    </div>
+
+    <div class="section-title">🎯 James適用建議</div>
+    <p style="font-size:15px;color:#4a3a2a;line-height:1.7;">
+      如果你平時有做運動或者年紀開始關注肌肉流失，每日3-5g creatine monohydrate 係最簡單有效嘅補充。尤其你經常飛北京/廣州，睡眠可能唔穩定——肌酸對睡眠剝奪嘅認知保護作用可能對你有用。
+    </p>
+
+    <div class="section-title">📚 章節重點時間戳</div>
+    <ul class="insight-list" style="font-size:13px;color:#6a5a4a;">
+      <li>04:14 — 點解肌酸突然爆紅？</li>
+      <li>08:14 — 對腎臟嘅影響（釐清迷思）</li>
+      <li>11:50 — 女性服用建議</li>
+      <li>16:28 — 肌肉增長效果有幾大？</li>
+      <li>21:31 — 劑量困境：每個目標需要幾多</li>
+      <li>34:20 — 大腦益處</li>
+      <li>41:28 — 阿爾茨海默症應用</li>
+      <li>42:45 — 精神健康影響（連抗抑鬱藥）</li>
+      <li>45:03 — 改善年輕運動員睡眠嘅研究</li>
+      <li>54:56 — 更年期女性嘅好處</li>
+      <li>01:02:52 — 肌酸對體重管理嘅直接好處</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ====== Acquired ====== -->
+<div class="podcast-card">
+  <h2>🎙 Acquired</h2>
+  <div class="host">Ben Gilbert &amp; David Rosenthal</div>
+  <div class="no-new">
+    📭 最近無更新（最後發表：2026年5月17日）
+    <span class="last-ep">最新已知集數：S19E03 · Vanguard（3小時24分鐘）— 已於上次掃描記錄</span>
+  </div>
+</div>
+
+<!-- ====== Founders ====== -->
+<div class="podcast-card">
+  <h2>🎙 Founders</h2>
+  <div class="host">David Senra</div>
+  <div class="no-new">
+    📭 最近無更新
+    <span class="last-ep">最新已知集數：#422 Julie Sweet (Accenture CEO) · #421 Jony Ive · #420 Steve Jobs in Exile — 已於上次掃描記錄</span>
+    <span class="last-ep" style="margin-top:3px;">⚠️ RSS feed（Megaphone）回傳404，需更新 podcasts.json 中嘅 feed URL</span>
+  </div>
+</div>
+
+<!-- ====== My First Million ====== -->
+<div class="podcast-card">
+  <h2>🎙 My First Million</h2>
+  <div class="host">Sam Parr &amp; Shaan Puri</div>
+  <div class="no-new">
+    📭 最近無更新
+    <span class="last-ep">最新已知集數：#832 與 Barry Ritholtz 討論市場投資（2026年6月10日）— 已於上次掃描記錄</span>
+    <span class="last-ep" style="margin-top:3px;">⚠️ Simplecast RSS feed 回傳404，需更新 podcasts.json 中嘅 feed URL</span>
+  </div>
+</div>
+
+<!-- ====== Knowledge Project ====== -->
+<div class="podcast-card">
+  <h2>🎙 The Knowledge Project</h2>
+  <div class="host">Shane Parrish</div>
+  <div class="no-new">
+    📭 最近無更新（最後發表：2026年6月4日）
+    <span class="last-ep">最新已知集數：Bill Gurley · Mental Models That Change How You Think（2026年6月4日）— 已於上次掃描記錄</span>
+  </div>
+</div>
+
+<!-- ====== Summary ====== -->
+<div class="podcast-card" style="background:#f8f2ea;">
+  <h2>📋 本日摘要</h2>
+  <div style="margin-top:12px;">
+    <p style="font-size:15px;margin-bottom:8px;">
+      <strong>🆕 新集數：2 集</strong>
+    </p>
+    <table style="width:100%;border-collapse:collapse;font-size:14px;">
+      <tr style="border-bottom:1px solid #e8ddd0;">
+        <th style="text-align:left;padding:8px 4px;color:#8a7a6a;font-size:13px;">播客</th>
+        <th style="text-align:left;padding:8px 4px;color:#8a7a6a;font-size:13px;">集數</th>
+        <th style="text-align:left;padding:8px 4px;color:#8a7a6a;font-size:13px;">主題</th>
+      </tr>
+      <tr style="border-bottom:1px solid #eee5d8;">
+        <td style="padding:10px 4px;">All-In</td>
+        <td style="padding:10px 4px;">E276</td>
+        <td style="padding:10px 4px;">Anthropic反彈 · AI國有化 · 通脹 · 加州選舉</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 4px;">DOAC</td>
+        <td style="padding:10px 4px;">Creatine</td>
+        <td style="padding:10px 4px;">Dr Darren Candow 全面拆解肌酸科學</td>
+      </tr>
+    </table>
+    <p style="font-size:14px;color:#8a7a6a;margin-top:14px;">
+      ⚠️ Founders 同 MFM 嘅 RSS feed 已失效（404），需要搵新feed URL。
+    </p>
+  </div>
+</div>
+
+<footer>
+  由 Vee Mok 🤖 自動生成 · 每日思維播客深度掃描 · 2026-06-15 09:53 UTC<br>
+  James 睇完就等於聽咗 🎧
+</footer>
+
+</div>
+</body>
+</html>
