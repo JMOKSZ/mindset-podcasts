@@ -1,8 +1,9 @@
 {
-  "lastScan": "2026-06-21T09:53:00Z",
+  "lastScan": "2026-06-22T09:53:00Z",
   "scannedEpisodes": {
     "acquired": [
-      "465f9bb3-6d71-49ed-a233-de82bc41b034"
+      "465f9bb3-6d71-49ed-a233-de82bc41b034",
+      "9ed84917-8571-497e-b7d0-55fe85470301"
     ],
     "founders": [
       "95f61556-64e7-11f1-9b63-f7577a86e2e9",
@@ -59,13 +60,15 @@
       "flightcast:01KSSJRTDKRPREDTYGQVJZ91AB",
       "flightcast:01KV1ANNH3B159TVXZ55C6W851",
       "flightcast:01KSSM221GVKACTQJST50C29WT",
-      "flightcast:01KVBBAP1AZYT30Q74J6N4CM84"
+      "flightcast:01KVBBAP1AZYT30Q74J6N4CM84",
+      "flightcast:01KVM73TKX1T1JQKD6K2KYYHJK"
     ]
   },
   "lastScannedEpisodeGuids": {
     "acquired": {
       "guids": [
-        "465f9bb3-6d71-49ed-a233-de82bc41b034"
+        "465f9bb3-6d71-49ed-a233-de82bc41b034",
+        "9ed84917-8571-497e-b7d0-55fe85470301"
       ]
     },
     "founders": {
@@ -132,7 +135,8 @@
         "flightcast:01KSSJRTDKRPREDTYGQVJZ91AB",
         "flightcast:01KV1ANNH3B159TVXZ55C6W851",
         "flightcast:01KSSM221GVKACTQJST50C29WT",
-        "flightcast:01KVBBAP1AZYT30Q74J6N4CM84"
+        "flightcast:01KVBBAP1AZYT30Q74J6N4CM84",
+        "flightcast:01KVM73TKX1T1JQKD6K2KYYHJK"
       ]
     }
   }
