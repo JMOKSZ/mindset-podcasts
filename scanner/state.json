@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-06-23T09:58:00Z",
+  "lastScan": "2026-06-24T09:53:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465f9bb3-6d71-49ed-a233-de82bc41b034",
@@ -28,7 +28,8 @@
       "9f0c7a53-9e71-449f-8abb-bf9d8bf1fa17",
       "b7a698b7-d215-4f2e-a61e-8c9b702c42f5",
       "aed8a034-f95c-4fd8-a457-c964d779dee6",
-      "fe009dce-e1b0-43e5-b9c3-ac8169bd39eb"
+      "fe009dce-e1b0-43e5-b9c3-ac8169bd39eb",
+      "1d6e6319-449a-458d-b740-174eb6bb17d6"
     ],
     "my-first-million": [
       "9f1a1bfa-6974-11f1-83f9-cf3323ff8a5a",
@@ -40,7 +41,8 @@
       "mfm-ep828-joe-liemandt",
       "mfm-ep827-mohnish-pabrai",
       "mfm-ep832-barry-ritholtz",
-      "b644de20-6b07-11f1-b5df-bf5984da0b60"
+      "b644de20-6b07-11f1-b5df-bf5984da0b60",
+      "c14c4c08-6f45-11f1-91a3-7bd20ad5965e"
     ],
     "knowledge-project": [
       "kp-bill-gurley-20260604",
@@ -54,7 +56,7 @@
       "flightcast:01KT7FYYCXJWMNJYVRCJ3RX9VP",
       "flightcast:01KSN05J9XGDE05H7ZHY212MJY",
       "flightcast:01KSZDQ99MMZ0TDAAC0EWY7T03",
-      "flightcast:01KQ7WVVFYR4VA949S12SVFS3X",
+      "flightcast:01KQ7WVVFYRVA4949S12SVFS3X",
       "flightcast:01KTHX7WCR8TV92TAF5Y99FM5M",
       "flightcast:01KTSQ9B3V53JFEGBR8DDYBSMM",
       "flightcast:01KSSJRTDKRPREDTYGQVJZ91AB",
@@ -97,7 +99,8 @@
         "9f0c7a53-9e71-449f-8abb-bf9d8bf1fa17",
         "b7a698b7-d215-4f2e-a61e-8c9b702c42f5",
         "aed8a034-f95c-4fd8-a457-c964d779dee6",
-        "fe009dce-e1b0-43e5-b9c3-ac8169bd39eb"
+        "fe009dce-e1b0-43e5-b9c3-ac8169bd39eb",
+        "1d6e6319-449a-458d-b740-174eb6bb17d6"
       ]
     },
     "my-first-million": {
@@ -111,7 +114,8 @@
         "mfm-ep828-joe-liemandt",
         "mfm-ep827-mohnish-pabrai",
         "mfm-ep832-barry-ritholtz",
-        "b644de20-6b07-11f1-b5df-bf5984da0b60"
+        "b644de20-6b07-11f1-b5df-bf5984da0b60",
+        "c14c4c08-6f45-11f1-91a3-7bd20ad5965e"
       ]
     },
     "knowledge-project": {
@@ -129,7 +133,7 @@
         "flightcast:01KT7FYYCXJWMNJYVRCJ3RX9VP",
         "flightcast:01KSN05J9XGDE05H7ZHY212MJY",
         "flightcast:01KSZDQ99MMZ0TDAAC0EWY7T03",
-        "flightcast:01KQ7WVVFYR4VA949S12SVFS3X",
+        "flightcast:01KQ7WVVFYRVA4949S12SVFS3X",
         "flightcast:01KTHX7WCR8TV92TAF5Y99FM5M",
         "flightcast:01KTSQ9B3V53JFEGBR8DDYBSMM",
         "flightcast:01KSSJRTDKRPREDTYGQVJZ91AB",
