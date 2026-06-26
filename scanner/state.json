@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-06-25T09:53:00Z",
+  "lastScan": "2026-06-26T09:53:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465f9bb3-6d71-49ed-a233-de82bc41b034",
@@ -64,7 +64,8 @@
       "flightcast:01KSSM221GVKACTQJST50C29WT",
       "flightcast:01KVBBAP1AZYT30Q74J6N4CM84",
       "flightcast:01KVM73TKX1T1JQKD6K2KYYHJK",
-      "flightcast:01KVXG1G7HW6ASJR6EFJ3DQYBR"
+      "flightcast:01KVXG1G7HW6ASJR6EFJ3DQYBR",
+      "flightcast:01KSSMKV070DTBQJGP6AB9ADHS"
     ]
   },
   "lastScannedEpisodeGuids": {
@@ -142,7 +143,8 @@
         "flightcast:01KSSM221GVKACTQJST50C29WT",
         "flightcast:01KVBBAP1AZYT30Q74J6N4CM84",
         "flightcast:01KVM73TKX1T1JQKD6K2KYYHJK",
-        "flightcast:01KVXG1G7HW6ASJR6EFJ3DQYBR"
+        "flightcast:01KVXG1G7HW6ASJR6EFJ3DQYBR",
+        "flightcast:01KSSMKV070DTBQJGP6AB9ADHS"
       ]
     }
   }
