@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-06-26T09:53:00Z",
+  "lastScan": "2026-06-27T10:05:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465f9bb3-6d71-49ed-a233-de82bc41b034",
@@ -29,7 +29,8 @@
       "b7a698b7-d215-4f2e-a61e-8c9b702c42f5",
       "aed8a034-f95c-4fd8-a457-c964d779dee6",
       "fe009dce-e1b0-43e5-b9c3-ac8169bd39eb",
-      "1d6e6319-449a-458d-b740-174eb6bb17d6"
+      "1d6e6319-449a-458d-b740-174eb6bb17d6",
+      "786c45b1-79c0-4c09-9b9e-923c9f056e99"
     ],
     "my-first-million": [
       "9f1a1bfa-6974-11f1-83f9-cf3323ff8a5a",
@@ -102,7 +103,8 @@
         "b7a698b7-d215-4f2e-a61e-8c9b702c42f5",
         "aed8a034-f95c-4fd8-a457-c964d779dee6",
         "fe009dce-e1b0-43e5-b9c3-ac8169bd39eb",
-        "1d6e6319-449a-458d-b740-174eb6bb17d6"
+        "1d6e6319-449a-458d-b740-174eb6bb17d6",
+        "786c45b1-79c0-4c09-9b9e-923c9f056e99"
       ]
     },
     "my-first-million": {
