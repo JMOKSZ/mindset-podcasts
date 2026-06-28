@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-06-27T10:05:00Z",
+  "lastScan": "2026-06-28T09:53:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465f9bb3-6d71-49ed-a233-de82bc41b034",
@@ -12,7 +12,8 @@
       "c84ca768-4a3e-11f1-80af-73873a70ebdd",
       "2bd6bfec-3beb-11f1-89e7-6bf9dad5b500",
       "1a5a3c58-2d6d-11f1-ba11-0ba85589b062",
-      "57891e50-6c51-11f1-8055-1f8bc58c2b02"
+      "57891e50-6c51-11f1-8055-1f8bc58c2b02",
+      "00f215c8-72ab-11f1-9452-0bfbf717cea1"
     ],
     "all-in": [
       "aed8a034-f95c-4fd8-a457-c964d779dee6",
@@ -26,8 +27,6 @@
       "2fd1390d-47ba-41af-a0a6-41edc870cd53",
       "d169abe0-504c-4732-8cea-e41747a264c9",
       "9f0c7a53-9e71-449f-8abb-bf9d8bf1fa17",
-      "b7a698b7-d215-4f2e-a61e-8c9b702c42f5",
-      "aed8a034-f95c-4fd8-a457-c964d779dee6",
       "fe009dce-e1b0-43e5-b9c3-ac8169bd39eb",
       "1d6e6319-449a-458d-b740-174eb6bb17d6",
       "786c45b1-79c0-4c09-9b9e-923c9f056e99"
@@ -84,7 +83,8 @@
         "c84ca768-4a3e-11f1-80af-73873a70ebdd",
         "2bd6bfec-3beb-11f1-89e7-6bf9dad5b500",
         "1a5a3c58-2d6d-11f1-ba11-0ba85589b062",
-        "57891e50-6c51-11f1-8055-1f8bc58c2b02"
+        "57891e50-6c51-11f1-8055-1f8bc58c2b02",
+        "00f215c8-72ab-11f1-9452-0bfbf717cea1"
       ]
     },
     "all-in": {
@@ -100,8 +100,6 @@
         "2fd1390d-47ba-41af-a0a6-41edc870cd53",
         "d169abe0-504c-4732-8cea-e41747a264c9",
         "9f0c7a53-9e71-449f-8abb-bf9d8bf1fa17",
-        "b7a698b7-d215-4f2e-a61e-8c9b702c42f5",
-        "aed8a034-f95c-4fd8-a457-c964d779dee6",
         "fe009dce-e1b0-43e5-b9c3-ac8169bd39eb",
         "1d6e6319-449a-458d-b740-174eb6bb17d6",
         "786c45b1-79c0-4c09-9b9e-923c9f056e99"
