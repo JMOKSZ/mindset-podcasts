@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-06-29T09:53:00Z",
+  "lastScan": "2026-06-30T09:53:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465f9bb3-6d71-49ed-a233-de82bc41b034",
@@ -29,7 +29,8 @@
       "9f0c7a53-9e71-449f-8abb-bf9d8bf1fa17",
       "fe009dce-e1b0-43e5-b9c3-ac8169bd39eb",
       "1d6e6319-449a-458d-b740-174eb6bb17d6",
-      "786c45b1-79c0-4c09-9b9e-923c9f056e99"
+      "786c45b1-79c0-4c09-9b9e-923c9f056e99",
+      "a76ab591-7664-4c68-9059-580b160956b0"
     ],
     "my-first-million": [
       "9f1a1bfa-6974-11f1-83f9-cf3323ff8a5a",
@@ -42,7 +43,8 @@
       "mfm-ep827-mohnish-pabrai",
       "mfm-ep832-barry-ritholtz",
       "b644de20-6b07-11f1-b5df-bf5984da0b60",
-      "c14c4c08-6f45-11f1-91a3-7bd20ad5965e"
+      "c14c4c08-6f45-11f1-91a3-7bd20ad5965e",
+      "106c7e2e-7433-11f1-ac50-1f340ebd34b2"
     ],
     "knowledge-project": [
       "kp-bill-gurley-20260604",
@@ -103,7 +105,8 @@
         "9f0c7a53-9e71-449f-8abb-bf9d8bf1fa17",
         "fe009dce-e1b0-43e5-b9c3-ac8169bd39eb",
         "1d6e6319-449a-458d-b740-174eb6bb17d6",
-        "786c45b1-79c0-4c09-9b9e-923c9f056e99"
+        "786c45b1-79c0-4c09-9b9e-923c9f056e99",
+        "a76ab591-7664-4c68-9059-580b160956b0"
       ]
     },
     "my-first-million": {
@@ -118,7 +121,8 @@
         "mfm-ep827-mohnish-pabrai",
         "mfm-ep832-barry-ritholtz",
         "b644de20-6b07-11f1-b5df-bf5984da0b60",
-        "c14c4c08-6f45-11f1-91a3-7bd20ad5965e"
+        "c14c4c08-6f45-11f1-91a3-7bd20ad5965e",
+        "106c7e2e-7433-11f1-ac50-1f340ebd34b2"
       ]
     },
     "knowledge-project": {
