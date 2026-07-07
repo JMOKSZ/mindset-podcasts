@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-07-06T09:53:00Z",
+  "lastScan": "2026-07-07T09:53:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465f9bb3-6d71-49ed-a233-de82bc41b034",
@@ -46,7 +46,8 @@
       "b644de20-6b07-11f1-b5df-bf5984da0b60",
       "c14c4c08-6f45-11f1-91a3-7bd20ad5965e",
       "106c7e2e-7433-11f1-ac50-1f340ebd34b2",
-      "b6ccae26-75a8-11f1-8ac7-ab096f1f1b31"
+      "b6ccae26-75a8-11f1-8ac7-ab096f1f1b31",
+      "d95b3a5a-79a1-11f1-8680-fb4ebe10ab6a"
     ],
     "knowledge-project": [
       "kp-bill-gurley-20260604",
@@ -113,7 +114,7 @@
         "1d6e6319-449a-458d-b740-174eb6bb17d6",
         "786c45b1-79c0-4c09-9b9e-923c9f056e99",
         "a76ab591-7664-4c68-9059-580b160956b0",
-      "afd9c6d3-2254-4a38-9847-a304981d286d"
+        "afd9c6d3-2254-4a38-9847-a304981d286d"
       ]
     },
     "my-first-million": {
@@ -130,7 +131,8 @@
         "b644de20-6b07-11f1-b5df-bf5984da0b60",
         "c14c4c08-6f45-11f1-91a3-7bd20ad5965e",
         "106c7e2e-7433-11f1-ac50-1f340ebd34b2",
-        "b6ccae26-75a8-11f1-8ac7-ab096f1f1b31"
+        "b6ccae26-75a8-11f1-8ac7-ab096f1f1b31",
+        "d95b3a5a-79a1-11f1-8680-fb4ebe10ab6a"
       ]
     },
     "knowledge-project": {
