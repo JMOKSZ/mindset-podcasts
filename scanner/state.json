@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-07-07T09:53:00Z",
+  "lastScan": "2026-07-08T09:53:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465f9bb3-6d71-49ed-a233-de82bc41b034",
@@ -26,47 +26,53 @@
       "0db36c6e-32d0-414d-aa42-61551ba5cec9",
       "2fd1390d-47ba-41af-a0a6-41edc870cd53",
       "d169abe0-504c-4732-8cea-e41747a264c9",
-      "9f0c7a53-9e71-449f-8abb-bf9d8bf1fa17",
-      "fe009dce-e1b0-43e5-b9c3-ac8169bd39eb",
-      "1d6e6319-449a-458d-b740-174eb6bb17d6",
-      "786c45b1-79c0-4c09-9b9e-923c9f056e99",
+      "c60d4604-2d70-4349-9dff-76930605e372",
+      "a95aa849-13e0-48ac-9450-10e3acf8a05a",
+      "6211e0ff-f98b-4e53-89f1-612f226341e8",
+      "28b5c369-84be-466d-bf12-ecebc8a3ea3f",
       "a76ab591-7664-4c68-9059-580b160956b0",
       "afd9c6d3-2254-4a38-9847-a304981d286d"
     ],
     "my-first-million": [
-      "9f1a1bfa-6974-11f1-83f9-cf3323ff8a5a",
-      "c68664a6-65f4-11f1-9de4-e37b68835eca",
-      "9e1c2478-64c4-11f1-84cd-772fbe16ca42",
-      "mfm-ep831-meat-purveyor",
-      "mfm-ep830-7-business-ideas-2026",
-      "mfm-ep829-mtv-tom-freston",
-      "mfm-ep828-joe-liemandt",
-      "mfm-ep827-mohnish-pabrai",
-      "mfm-ep832-barry-ritholtz",
-      "b644de20-6b07-11f1-b5df-bf5984da0b60",
-      "c14c4c08-6f45-11f1-91a3-7bd20ad5965e",
-      "106c7e2e-7433-11f1-ac50-1f340ebd34b2",
+      "8562a41f-0e99-40a4-831e-52f3fcc38ffc",
+      "598dc3e8-1a51-49c0-809a-1ec1f188e431",
+      "699a6c60-6b04-45d2-87e2-2bb41c6d42ad",
+      "0b7ab504-2ba9-4670-a7bf-ac6db3f20c0a",
+      "e4cc7110-66a7-11ef-bbf7-7b5ca4735d79",
+      "b09f0a4a-7f77-11ef-b6d4-6391f6c4b353",
+      "f6a1f3b8-907e-11ef-9d8c-b3297efe3e8d",
+      "40d35804-9313-11ef-a57a-13737c66be94",
+      "9ef600ae-9f46-11ef-af8c-e32ecaf9dab7",
+      "a5d08168-b0a1-11ef-aa83-1bb31dd10c03",
+      "1a7b33f4-ba98-11ef-b3b7-2fa1382df7be",
+      "f52f816e-db65-11ef-9b84-efe91f1b9ae7",
+      "36ad558a-e34e-11ef-89a6-877e1ef058ca",
+      "7b5ca3e0-eab6-11ef-b19d-d329b9f5cf85",
+      "d5573cd2-f23b-11ef-b4d6-1bad4b42a24a",
+      "c9b6e7a0-06a9-11f0-b42c-3b099c5fac3a",
+      "45afaa60-1877-11f0-b6ad-4328ba71851b",
+      "5413c138-2575-11f0-8433-5bd74be9163e",
+      "3f751c62-3068-11f0-8a74-f7e0a7f14ae9",
+      "3ba93da8-3bf7-11f0-ac57-53908c179daf",
+      "33089b5a-4804-11f0-b2b7-97b51a1c898f",
+      "31be2cc8-5442-11f0-8315-2be2982bc5e5",
+      "4d4cc0be-6818-11f0-b0f6-833fe404a983",
+      "eb46ba02-6892-11f0-81be-97e0b7a29e9a",
       "b6ccae26-75a8-11f1-8ac7-ab096f1f1b31",
       "d95b3a5a-79a1-11f1-8680-fb4ebe10ab6a"
     ],
     "knowledge-project": [
-      "kp-bill-gurley-20260604",
-      "kp-mark-pincus-20260528",
-      "kp-chung-ju-yung-outliers-20260514",
-      "kp-winston-weinberg-20260507",
-      "kp-greg-brockman",
-      "kp-giulia-enders-20260618",
+      "kp-jim-ohshimo-20250511",
+      "kp-steve-394-20250517",
+      "kp-randall-oreilly-20250521",
+      "kp-shane-parrish-compilation-20250524",
+      "kp-richard-nisbett-20250528",
+      "kp-julia-galef-20250603",
+      "kp-rysnk-20250610",
+      "kp-giulia-enders-20250618",
       "kp-gio-valiante-20260630"
     ],
     "diary-of-a-ceo": [
-      "flightcast:01KT7FYYCXJWMNJYVRCJ3RX9VP",
-      "flightcast:01KSN05J9XGDE05H7ZHY212MJY",
-      "flightcast:01KSZDQ99MMZ0TDAAC0EWY7T03",
-      "flightcast:01KQ7WVVFYRVA4949S12SVFS3X",
-      "flightcast:01KTHX7WCR8TV92TAF5Y99FM5M",
-      "flightcast:01KTSQ9B3V53JFEGBR8DDYBSMM",
-      "flightcast:01KSSJRTDKRPREDTYGQVJZ91AB",
-      "flightcast:01KV1ANNH3B159TVXZ55C6W851",
       "flightcast:01KSSM221GVKACTQJST50C29WT",
       "flightcast:01KVBBAP1AZYT30Q74J6N4CM84",
       "flightcast:01KVM73TKX1T1JQKD6K2KYYHJK",
@@ -77,95 +83,5 @@
       "flightcast:01KWHS6D894AAGVNHBJ4XWEQSH",
       "flightcast:01KWSAGPXWK99WCAKKXNFC5ZCG"
     ]
-  },
-  "lastScannedEpisodeGuids": {
-    "acquired": {
-      "guids": [
-        "465f9bb3-6d71-49ed-a233-de82bc41b034",
-        "9ed84917-8571-497e-b7d0-55fe85470301"
-      ]
-    },
-    "founders": {
-      "guids": [
-        "95f61556-64e7-11f1-9b63-f7577a86e2e9",
-        "5cc6a5e0-5fa9-11f1-868a-07d6ffab4ea4",
-        "331f3896-5172-11f1-8d7b-27c2ff2a25b0",
-        "c84ca768-4a3e-11f1-80af-73873a70ebdd",
-        "2bd6bfec-3beb-11f1-89e7-6bf9dad5b500",
-        "1a5a3c58-2d6d-11f1-ba11-0ba85589b062",
-        "57891e50-6c51-11f1-8055-1f8bc58c2b02",
-        "00f215c8-72ab-11f1-9452-0bfbf717cea1"
-      ]
-    },
-    "all-in": {
-      "guids": [
-        "aed8a034-f95c-4fd8-a457-c964d779dee6",
-        "b7a698b7-d215-4f2e-a61e-8c9b702c42f5",
-        "f0eded00-102b-4d07-a079-f6f4492ecbdf",
-        "8beeb75d-aed6-4b73-a3b1-f4265d97563c",
-        "6c43a3ce-5efe-45fd-81db-29504c064b52",
-        "7a6bc6b4-7c45-4aec-b098-cb829be4b1c1",
-        "131a94d3-a1bb-45ef-ab5d-471af74cdcec",
-        "0db36c6e-32d0-414d-aa42-61551ba5cec9",
-        "2fd1390d-47ba-41af-a0a6-41edc870cd53",
-        "d169abe0-504c-4732-8cea-e41747a264c9",
-        "9f0c7a53-9e71-449f-8abb-bf9d8bf1fa17",
-        "fe009dce-e1b0-43e5-b9c3-ac8169bd39eb",
-        "1d6e6319-449a-458d-b740-174eb6bb17d6",
-        "786c45b1-79c0-4c09-9b9e-923c9f056e99",
-        "a76ab591-7664-4c68-9059-580b160956b0",
-        "afd9c6d3-2254-4a38-9847-a304981d286d"
-      ]
-    },
-    "my-first-million": {
-      "guids": [
-        "9f1a1bfa-6974-11f1-83f9-cf3323ff8a5a",
-        "c68664a6-65f4-11f1-9de4-e37b68835eca",
-        "9e1c2478-64c4-11f1-84cd-772fbe16ca42",
-        "mfm-ep831-meat-purveyor",
-        "mfm-ep830-7-business-ideas-2026",
-        "mfm-ep829-mtv-tom-freston",
-        "mfm-ep828-joe-liemandt",
-        "mfm-ep827-mohnish-pabrai",
-        "mfm-ep832-barry-ritholtz",
-        "b644de20-6b07-11f1-b5df-bf5984da0b60",
-        "c14c4c08-6f45-11f1-91a3-7bd20ad5965e",
-        "106c7e2e-7433-11f1-ac50-1f340ebd34b2",
-        "b6ccae26-75a8-11f1-8ac7-ab096f1f1b31",
-        "d95b3a5a-79a1-11f1-8680-fb4ebe10ab6a"
-      ]
-    },
-    "knowledge-project": {
-      "guids": [
-        "kp-bill-gurley-20260604",
-        "kp-mark-pincus-20260528",
-        "kp-chung-ju-yung-outliers-20260514",
-        "kp-winston-weinberg-20260507",
-        "kp-greg-brockman",
-        "kp-giulia-enders-20260618",
-        "kp-gio-valiante-20260630"
-      ]
-    },
-    "diary-of-a-ceo": {
-      "guids": [
-        "flightcast:01KT7FYYCXJWMNJYVRCJ3RX9VP",
-        "flightcast:01KSN05J9XGDE05H7ZHY212MJY",
-        "flightcast:01KSZDQ99MMZ0TDAAC0EWY7T03",
-        "flightcast:01KQ7WVVFYRVA4949S12SVFS3X",
-        "flightcast:01KTHX7WCR8TV92TAF5Y99FM5M",
-        "flightcast:01KTSQ9B3V53JFEGBR8DDYBSMM",
-        "flightcast:01KSSJRTDKRPREDTYGQVJZ91AB",
-        "flightcast:01KV1ANNH3B159TVXZ55C6W851",
-        "flightcast:01KSSM221GVKACTQJST50C29WT",
-        "flightcast:01KVBBAP1AZYT30Q74J6N4CM84",
-        "flightcast:01KVM73TKX1T1JQKD6K2KYYHJK",
-        "flightcast:01KVXG1G7HW6ASJR6EFJ3DQYBR",
-        "flightcast:01KSSMKV070DTBQJGP6AB9ADHS",
-        "flightcast:01KW360AZ5EEA4D3QH5C6PC2XM",
-        "flightcast:01KWGKVP7CK70B0V0TBA66NDAA",
-        "flightcast:01KWHS6D894AAGVNHBJ4XWEQSH",
-        "flightcast:01KWSAGPXWK99WCAKKXNFC5ZCG"
-      ]
-    }
   }
 }
