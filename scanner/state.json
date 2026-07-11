@@ -1,11 +1,12 @@
 {
-  "lastScan": "2026-07-10T09:53:00Z",
+  "lastScan": "2026-07-11T09:53:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465f9bb3-6d71-49ed-a233-de82bc41b034",
       "9ed84917-8571-497e-b7d0-55fe85470301"
     ],
     "founders": [
+      "9e90f00c-7ca0-11f1-adce-8be447d2b719",
       "95f61556-64e7-11f1-9b63-f7577a86e2e9",
       "5cc6a5e0-5fa9-11f1-868a-07d6ffab4ea4",
       "331f3896-5172-11f1-8d7b-27c2ff2a25b0",
@@ -16,6 +17,7 @@
       "00f215c8-72ab-11f1-9452-0bfbf717cea1"
     ],
     "all-in": [
+      "4423c373-1b80-4d70-b500-f9823914247a",
       "aed8a034-f95c-4fd8-a457-c964d779dee6",
       "b7a698b7-d215-4f2e-a61e-8c9b702c42f5",
       "f0eded00-102b-4d07-a079-f6f4492ecbdf",
@@ -23,7 +25,7 @@
       "6c43a3ce-5efe-45fd-81db-29504c064b52",
       "7a6bc6b4-7c45-4aec-b098-cb829be4b1c1",
       "131a94d3-a1bb-45ef-ab5d-471af74cdcec",
-      "0db36c6e-32d0-414d-aa42-61551ba5cec9",
+      "0db36c6e-32d0-46ad-aa42-61551ba5cec9",
       "2fd1390d-47ba-41af-a0a6-41edc870cd53",
       "d169abe0-504c-4732-8cea-e41747a264c9",
       "c60d4604-2d70-4349-9dff-76930605e372",
@@ -35,6 +37,7 @@
       "e7e64c8a-492a-4227-a6cb-5ff7894f3f3a"
     ],
     "my-first-million": [
+      "e2a073e8-7bf7-11f1-b5ed-b3c55d6ed861",
       "8562a41f-0e99-40a4-831e-52f3fcc38ffc",
       "598dc3e8-1a51-49c0-809a-1ec1f188e431",
       "699a6c60-6b04-45d2-87e2-2bb41c6d42ad",
