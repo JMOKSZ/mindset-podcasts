@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-07-14T09:53:00Z",
+  "lastScan": "2026-07-15T09:53:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465f9bb3-6d71-49ed-a233-de82bc41b034",
@@ -65,7 +65,9 @@
       "4d4cc0be-6818-11f0-b0f6-833fe404a983",
       "eb46ba02-6892-11f0-81be-97e0b7a29e9a",
       "b6ccae26-75a8-11f1-8ac7-ab096f1f1b31",
-      "d95b3a5a-79a1-11f1-8680-fb4ebe10ab6a"
+      "d95b3a5a-79a1-11f1-8680-fb4ebe10ab6a",
+      "e2a073e8-7bf7-11f1-b5ed-b3c55d6ed861",
+      "beff1954-7ffc-11f1-b8f8-43ca77576af4"
     ],
     "knowledge-project": [
       "kp-jim-ohshimo-20250511",
