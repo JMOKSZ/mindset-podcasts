@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🧠 Mindset Podcasts — 每日深度掃描 2026-07-18</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Georgia&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #fdfaf6;
+    color: #2d2b28;
+    font-family: Georgia, 'Noto Serif SC', serif;
+    line-height: 1.7;
+    padding: 2rem;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  header {
+    text-align: center;
+    padding: 2.5rem 0 2rem;
+    border-bottom: 1px solid #e8e0d5;
+    margin-bottom: 2.5rem;
+  }
+  header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #3d3a35;
+    letter-spacing: -0.01em;
+  }
+  header .meta {
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    color: #8a7f72;
+  }
+  header .meta span { margin: 0 0.4rem; }
+  .section {
+    margin-bottom: 2.8rem;
+    background: #fffcf8;
+    border-radius: 12px;
+    padding: 2rem 2.2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+    border: 1px solid #ede6dc;
+  }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1.2rem;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .section-header h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #3d3a35;
+  }
+  .section-header .host {
+    font-size: 0.8rem;
+    color: #9e9386;
+  }
+  .episode {
+    padding: 1.2rem 0;
+    border-top: 1px solid #f0ebe4;
+  }
+  .episode:first-of-type { border-top: none; padding-top: 0; }
+  .episode .title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #2d2b28;
+    margin-bottom: 0.2rem;
+  }
+  .episode .ep-date {
+    font-size: 0.78rem;
+    color: #9e9386;
+    margin-bottom: 0.6rem;
+  }
+  .episode .meta-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.82rem;
+    color: #6b6359;
+    margin-bottom: 0.8rem;
+  }
+  .episode .meta-row strong { color: #4a443d; }
+  .episode .tag {
+    display: inline-block;
+    background: #f0ebe4;
+    color: #5e5548;
+    font-size: 0.72rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 4px;
+    margin-right: 0.3rem;
+  }
+  .ep-detail { margin-top: 0.8rem; }
+  .ep-detail h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #5e5548;
+    margin: 0.8rem 0 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .ep-detail ul {
+    list-style: none;
+    padding: 0;
+  }
+  .ep-detail ul li {
+    padding: 0.25rem 0 0.25rem 1.2rem;
+    position: relative;
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+  .ep-detail ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0.2rem;
+    color: #b8a99a;
+  }
+  .ep-detail blockquote {
+    margin: 0.6rem 0;
+    padding: 0.7rem 1rem;
+    background: #f8f3ee;
+    border-left: 3px solid #d4c7b8;
+    color: #4a443d;
+    font-size: 0.9rem;
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+  .no-update {
+    color: #9e9386;
+    font-size: 0.9rem;
+    font-style: italic;
+    padding: 0.8rem 0 0.4rem;
+  }
+  .no-update strong { color: #6b6359; font-style: normal; }
+  .topic-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.2rem 0.8rem;
+    font-size: 0.88rem;
+    margin: 0.5rem 0;
+  }
+  .topic-grid .time { color: #8a7f72; white-space: nowrap; font-family: monospace; }
+  .topic-grid .desc { color: #2d2b28; }
+  footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    color: #b8a99a;
+    font-size: 0.78rem;
+    border-top: 1px solid #ede6dc;
+    margin-top: 2rem;
+  }
+  .badge-new {
+    display: inline-block;
+    background: #e8d9c8;
+    color: #5e4f3b;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+    letter-spacing: 0.03em;
+  }
+  @media (max-width: 600px) {
+    body { padding: 1rem; }
+    .section { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🧠 思維播客每日深度掃描</h1>
+  <div class="meta">
+    📅 2026年7月18日（星期六）| 🕐 生成時間 09:54 UTC (17:54 CST)
+  </div>
+</header>
+
+<!-- ============ ALL-IN ============ -->
+<div class="section">
+  <div class="section-header">
+    <h2>🎙️ All-In with Chamath, Jason, Sacks &amp; Friedberg</h2>
+    <span class="host">Chamath · Jason · Sacks · Friedberg</span>
+  </div>
+
+  <div class="episode">
+    <div class="title">
+      Can the AI Industry Regulate Itself? Stripe Wants PayPal, China Catches Up, NY Bans Datacenters
+      <span class="badge-new">NEW</span>
+    </div>
+    <div class="ep-date">2026-07-18（Ep 281 · 1h30m）</div>
+
+    <div class="topic-grid">
+      <span class="time">00:00</span><span class="desc">Bestie intros</span>
+      <span class="time">01:32</span><span class="desc"><strong>DeepMind 的 Demis Hassabis 提議設立 FINRA 式 AI 監管機構</strong> — 能否行業自律？</span>
+      <span class="time">20:01</span><span class="desc"><strong>Stripe + Block + Advent 以 $530 億收購 PayPal</strong> — 支付巨頭大洗牌</span>
+      <span class="time">37:51</span><span class="desc"><strong>Apple 起訴 OpenAI</strong> — 指控盜取商業機密</span>
+      <span class="time">42:49</span><span class="desc"><strong>Grok Build 數據洩漏</strong> + AI 數據隱私 + Tokenmaxxing 更新 + Mira Murati 新模型</span>
+      <span class="time">59:53</span><span class="desc"><strong>NY 禁止數據中心</strong> — 全美首個州級 moratorium</span>
+      <span class="time">1:22:57</span><span class="desc"><strong>Science Corner:</strong> 逆轉衰老的新數據！</span>
+    </div>
+
+    <div class="ep-detail">
+      <h4>📌 核⼼論點</h4>
+      <ul>
+        <li><strong>AI 行業自律 vs 政府監管</strong> — Demis Hassabis 提議成立類似 FINRA（金融業監管局）的 AI 自律組織。Besties 內部分歧: Sacks 傾向輕監管, Chamath 認為行業需要可信賴的架構以避免政府接手。Friedberg 補充: AI 嘅風險無法用傳統監管方式處理，因為變化太快。</li>
+        <li><strong>Stripe 收購 PayPal</strong> — Stripe、Block（Square）和 Advent International 聯手報價 $530 億收購 PayPal。Chamath 分析: PayPal 仲有巨大用戶基礎但近年增長停滯，Stripe 嘅技術棧 + Block 嘅商家生態可能創造支付領域嘅超級平台。Jason 表示呢單 Deal 係支付行業歷史上最大嘅 consolidation 之一。</li>
+        <li><strong>Apple vs OpenAI</strong> — Apple 指控 OpenAI 通過挖角工程師竊取商業機密。法律戰聚焦於 AI 人才流動和知識產權保護。</li>
+        <li><strong>NY 數據中心禁令</strong> — 紐約州成為首個禁止新數據中心建設嘅州。Chamath 警告: 電力和水資源壓力係真實嘅，但呢種禁令可能迫使 AI 訓練流向海外。</li>
+        <li><strong>Grok Build 數據洩漏</strong> — 又一 AI 公司數據安全事件。Sacks 嘆息: 安全速度跟不上 AI 發展速度。</li>
+      </ul>
+
+      <h4>🔢 關鍵數據與引用</h4>
+      <blockquote>Stripe, Block, and Advent offer $53B to acquire PayPal — 若成事，將係支付行業史上最大併購</blockquote>
+      <blockquote>NY bans datacenters, becoming first state to enact a moratorium — 預示更多州可能跟隨</blockquote>
+      <blockquote>Science Corner: New data on reversing aging! — Nature Communications 發表嘅新研究</blockquote>
+
+      <h4>💡 Industry Insight</h4>
+      <ul>
+        <li>AI 監管正在從「要不要管」走向「點樣管」。Hassabis 嘅 FINRA 式方案係行業主動爭取話語權嘅信號。Sacks 用「FINRA itself is a disaster」反擊，認為監管只會鞏固現有巨頭地位。</li>
+        <li>支付領域下一個戰場唔係創業公司追巨頭，而係巨頭之間嘅合併。Stripe 嘅技術 + Block 嘅商家覆蓋 = 端到端支付生態。</li>
+        <li>數據中心嘅能源和水資源問題將成為 AI 行業下一個瓶頸。NY 嘅禁令可能係第一個，唔會係最後一個。</li>
+        <li>Mira Murati 離開 OpenAI 後發布新模型 — 預示 AI 人才競爭仍然白熱化。</li>
+      </ul>
+
+      <h4>🔗 引用來源</h4>
+      <ul>
+        <li>Chamath: x.com/chamath/status/2077502408528212144</li>
+        <li>Demis Hassabis: x.com/demishassabis/status/2076957440109625718</li>
+        <li>Satya Nadella: x.com/satyanadella/status/2076323181154230284</li>
+        <li>Reuters: Stripe + Advent offer $53B for PayPal</li>
+        <li>Politico: Anthropic's state-by-state AI rules plan</li>
+        <li>Nature Communications: 逆轉衰老新研究 (s41467-026-75141-2)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ACQUIRED ============ -->
+<div class="section">
+  <div class="section-header">
+    <h2>🎙️ Acquired</h2>
+    <span class="host">Ben Gilbert &amp; David Rosenthal</span>
+  </div>
+  <div class="no-update">📭 最近無更新。最後已知集數：</div>
+  <div class="episode">
+    <div class="title">The Walt Disney Company</div>
+    <div class="ep-date">2026-06-22（Season 19 Ep 4 · 4h31m）</div>
+    <div class="ep-detail">
+      <ul>
+        <li>4 小時 31 分鐘史詩級深度：從 Walt 童年到 Disney 成為全球娛樂帝國</li>
+        <li>核心論點：Disney 係「monetizing human nostalgia」最成功嘅企業</li>
+        <li>Walt 時代係「unhinged moonshot factory」—— 不斷全押賭公司</li>
+        <li>意外發明了現代「Flywheel」商業模式</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FOUNDERS ============ -->
+<div class="section">
+  <div class="section-header">
+    <h2>🎙️ Founders</h2>
+    <span class="host">David Senra</span>
+  </div>
+  <div class="no-update">📭 最近無更新。最新集數：</div>
+  <div class="episode">
+    <div class="title">#424 Peter Thiel on How to Build a Creative Monopoly</div>
+    <div class="ep-date">2026-07-10（53m42s）</div>
+    <div class="ep-detail">
+      <ul>
+        <li>David Senra 第 3-4 次重讀《Zero to One: Notes on Startups》</li>
+        <li>Thiel 嘅核心思想：競爭係俾 loser 嘅，壟斷先係創業者嘅目標</li>
+        <li>「Creative monopoly」= 創造全新範疇，唔係喺現有市場爭</li>
+        <li>垂直進步（Zero to One）vs 水平進步（1 to n）</li>
+        <li>秘密（Secrets）嘅重要性——大多數人唔相信仲有未發現嘅嘢</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MY FIRST MILLION ============ -->
+<div class="section">
+  <div class="section-header">
+    <h2>🎙️ My First Million</h2>
+    <span class="host">Sam Parr &amp; Shaan Puri</span>
+  </div>
+  <div class="no-update">📭 最近無更新。最後兩集：</div>
+
+  <div class="episode">
+    <div class="title">#842 Ray Dalio: The principles that made me a billionaire</div>
+    <div class="ep-date">2026-07-17（1h03m）</div>
+    <div class="ep-detail">
+      <ul>
+        <li>嘉賓: Ray Dalio（Bridgewater Associates 創辦人）</li>
+        <li>Holy Grail of Investing: 擁有多個獨立嘅回報流</li>
+        <li>Pain + Reflection = Progress — Dalio 嘅核心公式</li>
+        <li>頂層 1% 嘅人格特質: 獨立思考、接受現實、系統化決策</li>
+        <li>5 Big Forces: 長期債務週期、內部秩序/混亂、外部秩序/混亂、生產力、貨幣/信用</li>
+        <li>橋水成為最大對沖基金嘅秘訣: Culture of radical truth and radical transparency</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="episode">
+    <div class="title">#841 Howard Marks: how I make money while you worry about a market crash</div>
+    <div class="ep-date">2026-07-15（47m）</div>
+    <div class="ep-detail">
+      <ul>
+        <li>嘉賓: Howard Marks（Oaktree Capital 聯合創辦人）</li>
+        <li>AI Hurtles Ahead — Marks 最新投資備忘錄主題</li>
+        <li>Second Level Thinking: 唔係諗咩會發生，而係諗「市場個共識係咩，而我點樣不同？」</li>
+        <li>危機中籌集 $110 億 — 恐懼嘅時候就係最好嘅買入時機</li>
+        <li>同巴菲特午餐: 巴菲特最被低估嘅特質係 timing 嘅直覺</li>
+        <li>Cigar Butt Investing: 用低價買平庸公司嘅殘餘價值</li>
+        <li>推薦讀物: A Short History of Financial Euphoria, Fooled by Randomness</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============ KNOWLEDGE PROJECT ============ -->
+<div class="section">
+  <div class="section-header">
+    <h2>🎙️ The Knowledge Project</h2>
+    <span class="host">Shane Parrish</span>
+  </div>
+  <div class="no-update">📭 最近無更新（最新集數將於 7月21日 公開發布）。</div>
+
+  <div class="episode">
+    <div class="title">Truth Over Feelings: Inside Opendoor's Massive Turnaround — Kaz Nejatian</div>
+    <div class="ep-date">2026-07-16（會員搶先聽，7月21日公開）</div>
+    <div class="ep-detail">
+      <ul>
+        <li>Kaz Nejatian 接管 Opendoor 時公司距離破產僅幾個月</li>
+        <li>核心問題：公司點樣一步步偏離現實？「No company decides to fail. It drifts there one comfortable lie at a time.」</li>
+        <li>Truth matters more than feelings — 不惜代價嘅誠實文化</li>
+        <li>以 AI flatten management — 更扁平、更快決策</li>
+        <li>破壞公司嘅唔係壞人，而係唔相信使命嘅「competent people」</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="episode">
+    <div class="title">The Mindset That Unlocks Your Full Potential — Dr. Gio Valiante</div>
+    <div class="ep-date">2026-06-30</div>
+    <div class="ep-detail">
+      <ul>
+        <li>世界頂尖表現心理學家</li>
+        <li>Mastery motivation vs ego-driven motivation</li>
+        <li>重建自信的方法：聚焦小勝利，唔好追求大翻身</li>
+        <li>自我對話如何塑造信念、行為和長期表現</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============ DIARY OF A CEO ============ -->
+<div class="section">
+  <div class="section-header">
+    <h2>🎙️ The Diary of a CEO</h2>
+    <span class="host">Steven Bartlett</span>
+  </div>
+  <div class="no-update">📭 最近無更新。最後兩集：</div>
+
+  <div class="episode">
+    <div class="title">Leading Cancer Researcher: They're Ignoring My Research — Thomas Seyfried</div>
+    <div class="ep-date">2026-07-16（1h39m）</div>
+    <div class="ep-detail">
+      <ul>
+        <li>Thomas Seyfried, PhD — Boston College 生物學教授，癌症代謝理論權威</li>
+        <li>核心論點: 癌症係線粒體代謝疾病，唔係基因疾病（Challenge 百年主流腫瘤學）</li>
+        <li>癌細胞靠兩種燃料生存: 葡萄糖 + 穀氨酰胺（Glutamine）</li>
+        <li>Press-Pulse 治療策略: 先用飲食干預（keto）+ 再化療</li>
+        <li>Glucose Ketone Index (GKI): 降低 GKI 可增強化療和免疫療法效果</li>
+        <li>膠質母細胞瘤（Glioblastoma）患者通過代謝療法存活多年的案例</li>
+        <li>環境毒素（微塑膠、PFAS）如何損害線粒體</li>
+        <li>⚠️ 極具爭議性的觀點—主流腫瘤學界抵抗他的研究</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="episode">
+    <div class="title">Most Replayed Moment: The Framework To Instantly Become Better At Conversation! — Alison Wood Brooks</div>
+    <div class="ep-date">2026-07-17（Bonus Clip, 33m）</div>
+    <div class="ep-detail">
+      <ul>
+        <li>Harvard Business School 教授、行為科學家、暢銷書《Talk》作者</li>
+        <li>研究支持的溝通框架: 細微習慣如何影響 likability</li>
+        <li>點解人哋聽完對話後覺得冇被聽見？</li>
+        <li>小改變讓每次互動更自然、更吸引</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<footer>
+  🧠 自動生成於 2026-07-18 09:54 UTC (17:54 CST) · Vee Mok · 六艦隊思維掃描器
+</footer>
+
+</body>
+</html>
