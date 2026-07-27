@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-07-26T09:53:00Z",
+  "lastScan": "2026-07-27T09:53:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -77,7 +77,8 @@
       "beff1954-7ffc-11f1-b8f8-43ca77576af4",
       "7aafbfa4-8157-11f1-b961-47ded74887a7",
       "024a5b9a-8478-11f1-875f-6bb7491cb174",
-      "456376f8-8632-11f1-8843-13b1dbfb89c8"
+      "456376f8-8632-11f1-8843-13b1dbfb89c8",
+      "c0a2c210-8957-11f1-997e-fb62e7bcdaa2"
     ],
     "knowledge-project": [
       "kp-jim-ohshimo-20250511",
@@ -109,7 +110,8 @@
       "flightcast:01KXQH1B2ZK8FQ3Z6QTWAZDJ22",
       "flightcast:01KXQ966BYJY31CKTAV204K8EQ",
       "flightcast:01KY5REWH1TJGDP1MF1JREA3FM",
-      "flightcast:01KY8E2SXET9EXAG6HBASB5QJQ"
+      "flightcast:01KY8E2SXET9EXAG6HBASB5QJQ",
+      "flightcast:01KXY3ASSV2R56Y56QW6A4TN36"
     ]
   }
 }
