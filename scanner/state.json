@@ -1,9 +1,10 @@
 {
-  "lastScan": "2026-08-07T09:53:00Z",
+  "lastScan": "2026-08-10T09:53:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465fbb3b-6d71-49ed-a233-de82bc41b034",
-      "9ed84917-8571-497e-b7d0-55fe85470301"
+      "9ed84917-8571-497e-b7d0-55fe85470301",
+      "dc17bee9-e7e2-4c06-afdd-e80244a0e9db"
     ],
     "founders": [
       "03380540-8327-11f1-bf90-0b0b28ad566b",
@@ -17,7 +18,8 @@
       "57891e50-6c51-11f1-8055-1f8bc58c2b02",
       "00f215c8-72ab-11f1-9452-0bfbf717cea1",
       "22f31168-8886-11f1-ba79-83a58999bd7b",
-      "ee7acc94-8e04-11f1-b83f-7b056aab13eb"
+      "ee7acc94-8e04-11f1-b83f-7b056aab13eb",
+      "d7e49fb6-9415-11f1-8f44-ebce80087ca6"
     ],
     "all-in": [
       "4423c373-1b80-4d70-b500-f9823914247a",
@@ -45,7 +47,8 @@
       "d2e9f5ad-85fb-49f6-bc5c-65f32868b632",
       "a23359d3-8299-49b5-aada-ef230f27193b",
       "3202bc1f-a7db-4549-a5d1-0632d58fa81d",
-      "8bbdfcd5-e2f4-4220-b5da-a84ddd1402e6"
+      "8bbdfcd5-e2f4-4220-b5da-a84ddd1402e6",
+      "bf461c11-8e10-4124-8c40-f24dab393cf9"
     ],
     "my-first-million": [
       "e2a073e8-7bf7-11f1-b5ed-b3c55d6ed861",
@@ -124,7 +127,8 @@
       "flightcast:01KY8EX4JD9B45H9EB9MR6QGQ9",
       "flightcast:01KYMPYHGY7WKDEBPBJQ2VRQPJ",
       "flightcast:01KYMQ6P4DHXHH9EJVKVCKE4Q0",
-      "flightcast:01KZB7YVD53RPEFM4NEHJPGZG9"
+      "flightcast:01KZB7YVD53RPEFM4NEHJPGZG9",
+      "flightcast:01KZEMW7JE1GT1EJ9WC74DKA3M"
     ]
   }
 }
