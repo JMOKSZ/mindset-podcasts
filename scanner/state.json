@@ -1,10 +1,16 @@
 {
-  "lastScan": "2026-08-11T09:53:00Z",
+  "lastScan": "2026-08-12T09:53:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465fbb3b-6d71-49ed-a233-de82bc41b034",
       "9ed84917-8571-497e-b7d0-55fe85470301",
-      "dc17bee9-e7e2-4c06-afdd-e80244a0e9db"
+      "dc17bee9-e7e2-4c06-afdd-e80244a0e9db",
+      "5ad38cec-40ac-43e1-bc70-1c32617e4573",
+      "82044eb3-e350-42c5-a799-2a2afc150e99",
+      "772a1689-5d6a-4d66-8469-95b8eb41dfd3",
+      "94dbf581-80c8-4b90-aff2-fa649cd90edd",
+      "465f9bb3-6d71-49ed-a233-de82bc41b034",
+      "14ef00c6-30ba-44cc-9869-33d3d92828a3"
     ],
     "founders": [
       "03380540-8327-11f1-bf90-0b0b28ad566b",
@@ -102,7 +108,11 @@
       "https://fs.blog/?post_type=podcast&p=81391",
       "https://fs.blog/?post_type=podcast&p=81423",
       "https://fs.blog/?post_type=podcast&p=81359",
-      "https://fs.blog/?p=81337"
+      "https://fs.blog/?p=81337",
+      "https://fs.blog/?post_type=podcast&p=81293",
+      "https://fs.blog/?post_type=podcast&p=81229",
+      "https://fs.blog/?post_type=podcast&p=81166",
+      "https://fs.blog/?post_type=podcast&p=81128"
     ],
     "diary-of-a-ceo": [
       "flightcast:01KSSM221GVKACTQJST50C29WT",
