@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日思維播客深度掃描 — 2026-08-20</title>
+<style>
+  :root {
+    --bg: #fdfaf6;
+    --ink: #2d2a26;
+    --muted: #8a8178;
+    --accent: #b45309;
+    --accent-soft: #fef3e2;
+    --card-border: #eae2d4;
+    --quote-bg: #f7f1e6;
+    --quote-border: #d9c9a8;
+    --chip-bg: #f4ede1;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Georgia, "Noto Serif SC", "Songti SC", "SimSun", serif;
+    line-height: 1.75;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+  header { border-bottom: 3px double var(--card-border); padding-bottom: 22px; margin-bottom: 34px; }
+  .kicker { font-size: 13px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+  h1 { font-size: 30px; font-weight: 700; margin-bottom: 8px; }
+  .meta { font-size: 14px; color: var(--muted); }
+  .summary {
+    background: var(--accent-soft);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin: 26px 0 36px;
+    font-size: 15px;
+  }
+  .summary strong { color: var(--accent); }
+  .podcast-card {
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    background: #fffefb;
+    padding: 26px 28px;
+    margin-bottom: 30px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+  }
+  .podcast-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; border-bottom: 1px solid var(--card-border); padding-bottom: 12px; margin-bottom: 18px; }
+  .podcast-name { font-size: 20px; font-weight: 700; }
+  .podcast-host { font-size: 13px; color: var(--muted); margin-top: 2px; }
+  .new-badge {
+    background: #b45309; color: #fff; font-size: 12px; font-weight: 700;
+    padding: 3px 12px; border-radius: 999px; letter-spacing: 1px;
+  }
+  .no-update-badge {
+    background: var(--chip-bg); color: var(--muted); font-size: 12px; font-weight: 700;
+    padding: 3px 12px; border-radius: 999px; letter-spacing: 1px;
+  }
+  .ep-title { font-size: 18px; font-weight: 700; margin-bottom: 6px; line-height: 1.5; }
+  .ep-meta { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+  .section-label {
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--accent); font-weight: 700; margin: 20px 0 8px;
+  }
+  .section-label:first-of-type { margin-top: 8px; }
+  p { margin-bottom: 10px; font-size: 15px; }
+  ul { margin: 6px 0 12px 22px; }
+  li { margin-bottom: 7px; font-size: 15px; }
+  blockquote {
+    background: var(--quote-bg);
+    border-left: 4px solid var(--quote-border);
+    padding: 12px 18px;
+    margin: 12px 0 16px;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: #4a443c;
+    font-size: 15px;
+  }
+  blockquote .src { display: block; margin-top: 6px; font-size: 12px; color: var(--muted); font-style: normal; }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 4px; }
+  .chip {
+    background: var(--chip-bg); border-radius: 999px;
+    font-size: 12.5px; padding: 4px 12px; color: #5a5248;
+  }
+  .divider { border: none; border-top: 1px dashed var(--card-border); margin: 26px 0; }
+  .stale-note { font-size: 14px; color: var(--muted); }
+  .stale-note .last-ep { font-size: 14px; color: var(--ink); margin-top: 6px; }
+  .stale-note .last-ep strong { color: var(--accent); }
+  footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--card-border); font-size: 12.5px; color: var(--muted); text-align: center; }
+  .listen-link { font-size: 13.5px; }
+  .listen-link a { color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent); }
+  .listen-link a:hover { border-bottom-style: solid; }
+  table { border-collapse: collapse; width: 100%; margin: 10px 0 16px; font-size: 14px; }
+  th, td { border: 1px solid var(--card-border); padding: 8px 10px; text-align: left; }
+  th { background: var(--chip-bg); font-size: 13px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="kicker">Mindset Podcast Daily Scan</div>
+  <h1>每日思維播客深度掃描</h1>
+  <div class="meta">2026-08-20（週四）・生成時間 09:53 UTC（17:53 北京時間）・ 6 個播客</div>
+</header>
+
+<div class="summary">
+  <strong>今日摘要：</strong>6 個播客中 <strong>2 個有新集數</strong> 🎉 — <strong>My First Million</strong> 第 853 集：三位年輕藍領/實業創辦人爆真實年收入（$1.8M / $5M / $12M），發電機、垃圾壓縮、顎痛筆三個「悶但賺錢」生意；<strong>Diary of a CEO</strong>：Konstantin Kisin 大戰異端經濟學家 Steve Keen，移民、債務、氣候、AI 四大議題正面交鋒，火藥味十足。其餘 4 檔（Acquired、Founders、All-In、Knowledge Project）過去 24 小時無更新。
+</div>
+
+<!-- ================= MY FIRST MILLION ================= -->
+<div class="podcast-card">
+  <div class="podcast-head">
+    <div>
+      <div class="podcast-name">My First Million</div>
+      <div class="podcast-host">Sam Parr &amp; Shaan Puri</div>
+    </div>
+    <span class="new-badge">NEW</span>
+  </div>
+
+  <div class="ep-title">Asking 3 young millionaires how they make $1.8M, $5M, &amp; $12M/year</div>
+  <div class="ep-meta">第 853 集 ・ 發佈：2026-08-19 ・ 長度：58 分鐘 ・ 形式：招牌「Juiciest Number」live advice format</div>
+
+  <div class="chip-row">
+    <span class="chip">藍領/實業生意</span>
+    <span class="chip">B2B 服務</span>
+    <span class="chip">單人起家</span>
+    <span class="chip">利基市場</span>
+  </div>
+
+  <div class="section-label">主題</div>
+  <p>Sam 同 Shaan 請咗三位 30 歲上下嘅創辦人上台，叫佢哋講出自己生意背後「最 juicy 嘅數字」，然後即場拆解商業模式、俾 advice。三位都唔係矽谷 startup — 全部係悶到爆、但現金流極靚嘅實業生意：後備發電機經銷、移動式垃圾壓縮、顎關節疼痛（TMJ）筆形產品。呢集係佢哋「Unsexy Businesses」系列嘅自然延伸：唔使風投、唔使技術壁壘，靠執行力同利基市場都可以做到年收入百萬美元級。</p>
+
+  <div class="section-label">嘉賓一：Nick Haschka — OnPoint Generators（$1.8M/年）</div>
+  <p>北加州嘅後備發電機 turnkey 服務商：銷售、設計、安裝、保養、維修一條龍。唔係賣一部機咁簡單，而係「度身設計 → 申請許可 → 合規安裝 → 終身維護」嘅完整服務鏈。</p>
+  <ul>
+    <li><strong>生意本質：</strong>代理 Generac、Kohler、Cummins 等品牌，客戶由屋主到政府部門、大型設施管理公司都有</li>
+    <li><strong>關鍵數據：</strong>2,000+ 客戶、5 個辦公室、系統規模 10kW–3.5MW、24/7 緊急支援、NFPA 110 合規測試</li>
+    <li><strong>點解賺錢：</strong>停電係剛需（加州山火/公共安全斷電頻繁），一部機 $10K–$100K+ 不等；安裝一次之後每年保養合約就係 recurring revenue</li>
+    <li><strong>Sam/Shaan 分析角度：</strong>呢類生意嘅護城河係「服務半徑 + 技術認證」——客戶停電嗰晚要搵到人嚟整機，本地 24/7 服務團隊就係壁壘；賣機只係入場券，保養合約先係金礦</li>
+  </ul>
+
+  <div class="section-label">嘉賓二：Kevin Moyer — Smash My Trash（$5M/年）</div>
+  <p>「移動式垃圾壓縮」服務：開一架改裝嘅 Smash Truck® 去客戶現場，將商業垃圾喺大型 dumpster 入面壓實，等一個 dumpster 裝得落更多垃圾、減少清運次數。</p>
+  <ul>
+    <li><strong>生意本質：</strong>B2B 服務，按次/按合約收費，客戶係商場、建築工地、汽車維修、油氣行業等產生大量垃圾嘅場所</li>
+    <li><strong>關鍵數據：</strong>最多騰出 70% 額外空間、客戶平均慳 15–20% 總垃圾開支（扣除服務費之後）、第二日即可上門、無需客戶改動現有操作</li>
+    <li><strong>價值主張：</strong>「We Smash, You Save」——垃圾清運係按車次收費嘅，壓實之後少幾車，直接慳錢，仲順便減碳排放（ESG 加分）</li>
+    <li><strong>Sam/Shaan 分析角度：</strong>呢個係典型「隱形生意」——冇人會諗到垃圾可以壓縮嚟賺錢，但垃圾處理係萬億級市場，佢搵到一個極細嘅切入點（roll-off dumpster 壓縮）就做到 $5M/年；設備資產（卡車）本身亦係准入壁壘</li>
+  </ul>
+
+  <div class="section-label">嘉賓三：Noam Eisenberg — TMJaw（$12M/年）</div>
+  <p>針對顳下頜關節（TMJ）疼痛嘅筆形產品公司。TMJ 痛症影響大量人口（磨牙、壓力、咬合問題），但市場上傳統治療（牙套、手術）貴又痛苦，TMJaw 用一個簡單、平價嘅筆形工具切入。</p>
+  <ul>
+    <li><strong>生意本質：</strong>DTC 健康產品 + 內容行銷——網站顯示「24 小時內賣出 86 支，剩餘 758 支」嘅稀缺感策略，典型嘅信息型產品銷售漏斗</li>
+    <li><strong>關鍵數據：</strong>年收入 $12M（三位之中最高）、庫存倒數機制帶動即時轉換、明顯係高毛利消費醫療產品</li>
+    <li><strong>Sam/Shaan 分析角度：</strong>$12M 係全場最大，重點係「大眾痛點 × 簡單產品 × 強行銷」——TMJ 痛嘅人上網搵解決方法，一條 TikTok/IG 短片講「你嘅顎痛可能係因為……」，直接賣 $30–60 嘅小工具；呢個模式（niche pain point + DTC + content engine）可以複製去任何一個「冇人滿意現有治療方案」嘅小病痛市場</li>
+  </ul>
+
+  <div class="section-label">核心論點／insight</div>
+  <ul>
+    <li><strong>「悶生意」先係真金白銀：</strong>三個生意都唔 sexy，但全部正現金流、冇燒錢、創辦人揸住大部分股權。矽谷式「增長優先」唔係唯一路徑</li>
+    <li><strong>Recurring revenue 係隱藏主題：</strong>發電機保養合約、垃圾壓縮重複上門、TMJ 嘅復購（筆 + 配件 + 補充裝），三家都有「賣一次、服務一世」嘅結構</li>
+    <li><strong>利基 + 地理/認證壁壘：</strong>發電機靠服務半徑，垃圾壓縮靠設備資產，TMJ 靠內容品牌——三種唔同嘅壁壘，但共通點係「大公司睇唔上、細公司做唔到規模」嘅中間地帶</li>
+    <li><strong>Live advice 精華：</strong>Sam 一貫主張「喺細市場做老大，好過喺大市場做第尾」；Shaan 就 focus 喺「將一次過客戶變成訂閱客戶」</li>
+  </ul>
+
+  <div class="section-label">參考連結</div>
+  <p class="listen-link">
+    <a href="https://onpointgen.com/">OnPoint Generators</a> ・
+    <a href="https://howitworks.smashmytrash.com/">Smash My Trash</a> ・
+    <a href="https://yourtmj.com/">TMJaw (Your TMJ Pen)</a> ・
+    <a href="https://www.mfmpod.com/asking-3-young-millionaires-how-they-make-18m-5m-12myear/">MFM 官方頁面</a>
+  </p>
+</div>
+
+<!-- ================= DIARY OF A CEO ================= -->
+<div class="podcast-card">
+  <div class="podcast-head">
+    <div>
+      <div class="podcast-name">The Diary of a CEO with Steven Bartlett</div>
+      <div class="podcast-host">Steven Bartlett</div>
+    </div>
+    <span class="new-badge">NEW</span>
+  </div>
+
+  <div class="ep-title">Konstantin Kisin's WARNING: Our Leaders Have Lost Control, We're Headed For Conflict And Violence!</div>
+  <div class="ep-meta">發佈：2026-08-20 ・ 長度：1 小時 34 分 ・ 嘉賓：Konstantin Kisin（Triggernometry 主持、作家）vs Steve Keen（異端經濟學家、2008 金融危機預言者）</div>
+
+  <div class="chip-row">
+    <span class="chip">文明興衰</span>
+    <span class="chip">移民政策</span>
+    <span class="chip">債務/貨幣</span>
+    <span class="chip">氣候變化</span>
+    <span class="chip">AI 與自由意志</span>
+    <span class="chip">中西制度對比</span>
+  </div>
+
+  <div class="section-label">主題</div>
+  <p>Steven Bartlett 將兩位立場南轅北轍嘅思想家擺埋一齊：右翼政治評論員 Konstantin Kisin（蘇聯出世、Triggernometry 共同主持、《An Immigrant's Love Letter to the West》作者）對戰「反主流經濟學」教授 Steve Keen（《Debunking Economics》作者、少數準確預測 2008 金融海嘯嘅經濟學家）。辯論題目：西方係咪喺度崩潰？移民、債務、氣候、AI 邊個先係真正威脅？中國制度又點解「work」？</p>
+
+  <div class="section-label">兩位嘉賓定位</div>
+  <ul>
+    <li><strong>Konstantin Kisin：</strong>蘇聯長大，深明極權社會點運作。主張：西方領袖已經失控、大規模移民正將西方推向內亂、自由言論被侵蝕、AI 會靜靜噉剝奪人類自由意志</li>
+    <li><strong>Steve Keen：</strong>前經濟學教授，核心學說係「私人債務先係經濟危機根源」，主流經濟學模型（忽略債務、假設理性均衡）係錯嘅。主張：資本主義即將失敗、氣候變化先係壓倒一切嘅威脅、政府根本唔夠使錢</li>
+  </ul>
+
+  <div class="section-label">辯論重點（按時間軸）</div>
+  <table>
+    <tr><th>時間</th><th>主題</th><th>立場火花</th></tr>
+    <tr><td>02:05</td><td>Civil Unrest 之路</td><td>Kisin：西方正走向內亂同暴力，領袖已經失去控制</td></tr>
+    <tr><td>12:12</td><td>資本主義即將失敗</td><td>Keen：私人債務無上限增長，資本主義模式自身會崩潰</td></tr>
+    <tr><td>20:49</td><td>「我哋唔夠使錢」</td><td>Keen 反主流：政府對抗危機應該大膽支出（現代貨幣理論色彩），Kisin 質疑債務由誰埋單</td></tr>
+    <tr><td>28:39</td><td>「你冇得防禦呢樣嘢」</td><td>關於移民/邊境嘅激烈交鋒——Kisin 認為開放邊境令國家無法自我防衛</td></tr>
+    <tr><td>32:48</td><td>「世界政府」承認</td><td>Kisin 指控全球主義菁英嚮往世界政府；Keen 反駁權力其實分散緊</td></tr>
+    <tr><td>36:55–40:03</td><td>氣候：Brace for Impact／「太遲了」</td><td>Keen：氣候變化已經到咗無法逆轉嘅地步，崩潰嚟緊；呢個先係真正嘅威脅，政治爭論相比之下係次要</td></tr>
+    <tr><td>45:11–50:53</td><td>特朗普陷阱／饑荒預言</td><td>Keen 指特朗普墮入佢自己製造嘅政策陷阱；並預言食物體系會出現饑荒級衝擊；Kisin 反駁危言聳聽</td></tr>
+    <tr><td>53:35</td><td>美國需要社會主義總統嗎</td><td>Keen：需要；Kisin：社會主義歷史記錄災難級</td></tr>
+    <tr><td>55:37–01:01:10</td><td>點解中國得而蘇聯唔得</td><td>二人難得共鳴：中國將市場激勵同強勢國家結合，蘇聯式計劃經濟冇呢樣嘢。Kisin 被問「你會揀中國制度嗎？」——佢答「會」（以佢喺蘇聯成長嘅背景，寧願要中國式嘅秩序同發展）</td></tr>
+    <tr><td>01:11:00</td><td>Wokeism：壓迫等級</td><td>Kisin 批評身份政治嘅「壓迫等級」思維分裂社會</td></tr>
+    <tr><td>01:13:30–01:20:54</td><td>AI、大規模失業、Hunger Games／愛可以被編程嗎</td><td>AI 令大量工作消失，社會分化成「寵物 vs 牛」兩個階級；Kisin 警告 AI 會剝奪人類自由意志</td></tr>
+    <tr><td>01:26:07</td><td>冇人可以阻止，咁點生活</td><td>Steven 收尾：明知大勢如此，個人點自處？</td></tr>
+  </table>
+
+  <div class="section-label">關鍵引用</div>
+  <blockquote>
+    "Everyone who has a job in a big corporate environment now is being told by their CEO that you better learn AI or it's going to replace you. So we're living in this moment of there's like aliens coming over the horizon and we've spotted them. They're not quite here yet, but it's like saying to the general public, look, there's aliens coming and they're coming for your job and everything you value. That angst in and of itself, I think can drive people towards ideas like socialism."
+    <span class="src">— Steven Bartlett（引入 AI 焦慮與社會主義誘因嘅討論）</span>
+  </blockquote>
+  <blockquote>
+    "The end of the post-WW2 order — how Europe and Britain are committing economic, industrial and cultural suicide, and the geopolitical realignment happening today."
+    <span class="src">— Kisin 喺自己 Substack 對今集嘅總結</span>
+  </blockquote>
+
+  <div class="section-label">核心論點／insight</div>
+  <ul>
+    <li><strong>左右嘅共同焦慮：</strong>Kisin（文化右）同 Keen（經濟左）喺「現狀不可持續」上完全一致，分歧只係「邊個先爆」——Kisin 話文化/移民先爆，Keen 話債務/氣候先爆。Steven 成功製造咗一場有 substance 嘅對撞，而唔係互相 label</li>
+    <li><strong>中國嘅「異類共識」：</strong>最令人意外嘅一刻係 Kisin 承認寧願要中國制度——喺蘇聯長大嘅人眼中，中國證明咗「市場激勵 + 強勢政府」可以共存，而蘇聯式全面計劃係死路。呢個係成集最值得反思嘅位</li>
+    <li><strong>Keen 嘅核心警告（對投資者適用）：</strong>私人債務係鐘擺，主流經濟學一直低估佢；2008 佢啱咗一次，而家佢警告下一次會更大。對 James 嚟講：宏觀尾部風險永遠喺度，現金流生意（好似 MFM 嗰集嘅三家）就係最好嘅避險</li>
+    <li><strong>AI 時代嘅階級預言：</strong>「Best case a pet, worst case a cow」——AI 取代勞動力之後，多數人會變成被養起嘅寵物或者被犧牲嘅牛；呢個框架同「免費/基本收入」辯論直接掛鉤</li>
+  </ul>
+
+  <div class="section-label">參考連結</div>
+  <p class="listen-link">
+    <a href="https://www.konstantinkisin.com/p/konstantin-on-diary-of-a-ceo">Kisin 官方後記</a> ・
+    <a href="https://link.thediaryofaceo.com/7KlmjlK">Triggernometry</a> ・
+    <a href="https://link.thediaryofaceo.com/3HXCj1o">Steve Keen on X</a>
+  </p>
+</div>
+
+<!-- ================= ACQUIRED ================= -->
+<div class="podcast-card">
+  <div class="podcast-head">
+    <div>
+      <div class="podcast-name">Acquired</div>
+      <div class="podcast-host">Ben Gilbert &amp; David Rosenthal</div>
+    </div>
+    <span class="no-update-badge">NO UPDATE</span>
+  </div>
+  <div class="stale-note">
+    <div class="last-ep"><strong>最近無更新。</strong> 最後已知劇集：</div>
+    <div class="ep-title" style="margin-top:8px;">Disney: The Renaissance and the Empire</div>
+    <div class="ep-meta">發佈：2026-08-09 ・ 長度：4 小時 33 分 ・ 第 20 季首集（Disney 系列 Part II）</div>
+    <p>1984 年迪士尼「死多過活」— Eisner &amp; Wells 上演媒體史上最大 turnaround：《美女與野獸》《獅子王》、VHS/DVD 解凍片庫、史上最大媒體收購 ESPN。然後 Euro Disney 錢坑、宮廷內鬥、Comcast 敵意收購，到 Bob Iger 靠 Pixar/Marvel/Lucasfilm 再創帝國，最後撞上串流時代嘅科技公司。4 個半鐘嘅完整帝國史。</p>
+  </div>
+</div>
+
+<!-- ================= FOUNDERS ================= -->
+<div class="podcast-card">
+  <div class="podcast-head">
+    <div>
+      <div class="podcast-name">Founders</div>
+      <div class="podcast-host">David Senra</div>
+    </div>
+    <span class="no-update-badge">NO UPDATE</span>
+  </div>
+  <div class="stale-note">
+    <div class="last-ep"><strong>最近無更新。</strong> 最後已知劇集：</div>
+    <div class="ep-title" style="margin-top:8px;">#429 Bob Dylan's Autobiography</div>
+    <div class="ep-meta">發佈：2026-08-16 ・ 長度：約 60 分鐘 ・ 形式：Solo 重讀（reread）</div>
+    <p>David Senra 重讀 Bob Dylan 唯一一本自傳《Chronicles: Volume One》— 「Life is about creating yourself, not finding yourself」自我創造哲學、閱讀=創作原材料、同外界完全隔離嘅創作狀態、成名嘅代價同低谷重生嘅紀律。</p>
+  </div>
+</div>
+
+<!-- ================= ALL-IN ================= -->
+<div class="podcast-card">
+  <div class="podcast-head">
+    <div>
+      <div class="podcast-name">All-In with Chamath, Jason, Sacks &amp; Friedberg</div>
+      <div class="podcast-host">Chamath Palihapitiya ・ Jason Calacanis ・ David Sacks ・ David Friedberg</div>
+    </div>
+    <span class="no-update-badge">NO UPDATE</span>
+  </div>
+  <div class="stale-note">
+    <div class="last-ep"><strong>最近無更新。</strong> 最後已知劇集：</div>
+    <div class="ep-title" style="margin-top:8px;">Flock CEO Garrett Langley on Controversy, "Surveillance State" Claims, and Privacy vs Safety</div>
+    <div class="ep-meta">發佈：2026-08-18 ・ 長度：56 分鐘 ・ 嘉賓：Garrett Langley（Flock Safety CEO）</div>
+    <p>美國最具爭議嘅監控公司 Flock Safety CEO 上 All-In 正面迎戰：「7 日數據保留期可以解決 90% 罪案」、審計工具揭發 9 個佐治亞州警員被革職、唔做預測性警務同人臉識別自動警報、20 個城市取消合約之後又重新開返鏡頭、仲有一句全場最深刻：「安全係一種特權」。</p>
+  </div>
+</div>
+
+<!-- ================= KNOWLEDGE PROJECT ================= -->
+<div class="podcast-card">
+  <div class="podcast-head">
+    <div>
+      <div class="podcast-name">The Knowledge Project</div>
+      <div class="podcast-host">Shane Parrish</div>
+    </div>
+    <span class="no-update-badge">NO UPDATE</span>
+  </div>
+  <div class="stale-note">
+    <div class="last-ep"><strong>最近無更新。</strong> 最後已知劇集：</div>
+    <div class="ep-title" style="margin-top:8px;">Roblox CEO: How to Make Better Decisions by Fixing Yourself First</div>
+    <div class="ep-meta">發佈：2026-08-13 ・ 公開日期 8月18日（會員先行）</div>
+    <p>Roblox CEO David Baszucki 上 Shane Parrish — 一個健康決定救咗佢個仔嘅命、改變咗佢嘅飲食；點解官僚主義會自我繁殖、要主動摧毀；做決定前先監察自己嘅心智狀態；最好嘅產品往往係靠「移除複雜性」改善。</p>
+  </div>
+</div>
+
+<footer>
+  每日思維播客深度掃描 ・ 由 Vee Mok 自動生成 ・ 2026-08-20 09:53 UTC
+</footer>
+</body>
+</html>
