@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-08-23T09:53:45Z",
+  "lastScan": "2026-08-24T09:53:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -26,7 +26,8 @@
       "00f215c8-72ab-11f1-9452-0bfbf717cea1",
       "22f31168-8886-11f1-ba79-83a58999bd7b",
       "ee7acc94-8e04-11f1-b83f-7b056aab13eb",
-      "d7e49fb6-9415-11f1-8f44-ebce80087ca6"
+      "d7e49fb6-9415-11f1-8f44-ebce80087ca6",
+      "b340b68e-9efd-11f1-bfdd-d7bddd398df4"
     ],
     "all-in": [
       "688c4809-9cf4-4d77-b5d7-482ee43e7ccc",
@@ -154,7 +155,8 @@
       "flightcast:01KYMPYHGY7WKDEBPBJQ2VRQPJ",
       "flightcast:01KYMQ6P4DHXHH9EJVKVCKE4Q0",
       "flightcast:01KZB7YVD53RPEFM4NEHJPGZG9",
-      "flightcast:01KZEMW7JE1GT1EJ9WC74DKA3M"
+      "flightcast:01KZEMW7JE1GT1EJ9WC74DKA3M",
+      "flightcast:01M0ECRSS1Y4MX77YFXTYP472G"
     ]
   }
 }
