@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-08-24T09:53:00Z",
+  "lastScan": "2026-08-25T09:53:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -60,7 +60,8 @@
       "a23359d3-8299-49b5-aada-ef230f27193b",
       "3202bc1f-a7db-4549-a5d1-0632d58fa81d",
       "8bbdfcd5-e2f4-4220-b5da-a84ddd1402e6",
-      "bf461c11-8e10-4124-8c40-f24dab393cf9"
+      "bf461c11-8e10-4124-8c40-f24dab393cf9",
+      "64b534f7-b272-4bb8-9238-96055f4fa858"
     ],
     "my-first-million": [
       "a9e51792-9d4f-11f1-b79f-435a1ed9f4c8",
@@ -103,7 +104,8 @@
       "7f6cb54e-8abf-11f1-b69d-5f1a47ff5578",
       "6beddc74-8c8f-11f1-a181-6fdea417bc23",
       "85f0f3c0-8f7f-11f1-848a-2f064fc2f47c",
-      "b1085ffe-9145-11f1-bf06-778920192e45"
+      "b1085ffe-9145-11f1-bf06-778920192e45",
+      "9e94359e-9fac-11f1-b1b7-03812ae52517"
     ],
     "knowledge-project": [
       "https://fs.blog/?post_type=podcast&p=81471",
