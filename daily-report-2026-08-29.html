@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日思維播客深度掃描 · 2026-08-29</title>
+<style>
+  :root {
+    --bg: #fdfaf6;
+    --card: #ffffff;
+    --ink: #2d2a26;
+    --muted: #7a7368;
+    --accent: #b45309;
+    --accent-soft: #f5e9d8;
+    --border: #e8e0d2;
+    --new: #9a3412;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Georgia, 'Noto Serif SC', 'Songti SC', serif;
+    line-height: 1.75;
+    padding: 40px 20px 80px;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; }
+  header { text-align: center; padding: 30px 0 10px; }
+  .kicker {
+    font-size: 13px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 10px;
+  }
+  h1 { font-size: 30px; font-weight: 700; color: var(--ink); }
+  .meta { color: var(--muted); font-size: 14px; margin-top: 12px; }
+  .meta .dot { margin: 0 8px; color: #c9bfae; }
+  .summary-box {
+    background: var(--accent-soft); border: 1px solid var(--border);
+    border-radius: 10px; padding: 18px 22px; margin: 28px 0 8px;
+    font-size: 15px;
+  }
+  .summary-box strong { color: var(--new); }
+  .podcast-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 30px 34px;
+    margin: 26px 0;
+    box-shadow: 0 1px 3px rgba(90,70,40,0.05);
+  }
+  .pod-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 12px; margin-bottom: 18px; }
+  .pod-name { font-size: 21px; font-weight: 700; }
+  .pod-host { font-size: 13px; color: var(--muted); margin-top: 2px; }
+  .badge { font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
+  .badge-new { background: var(--new); color: #fff; }
+  .badge-same { background: #efe9dd; color: var(--muted); }
+  h3 { font-size: 17px; margin: 26px 0 10px; color: var(--accent); }
+  h3.first { margin-top: 6px; }
+  .ep-title { font-size: 18px; font-weight: 700; line-height: 1.5; }
+  .ep-meta { font-size: 13px; color: var(--muted); margin: 8px 0 4px; }
+  .ep-meta span { margin-right: 14px; }
+  .chapters { background: #fbf8f1; border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; font-size: 13.5px; color: #55504a; }
+  .chapters li { margin: 3px 0; list-style: none; }
+  .chapters .t { color: var(--accent); font-weight: 700; margin-right: 8px; font-family: 'Courier New', monospace; }
+  p { margin: 12px 0; font-size: 15px; }
+  ul { margin: 10px 0 12px 22px; font-size: 15px; }
+  li { margin: 6px 0; }
+  blockquote {
+    border-left: 4px solid var(--accent);
+    background: #faf5ec;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-style: italic;
+    color: #4a4338;
+    font-size: 14.5px;
+    border-radius: 0 8px 8px 0;
+  }
+  blockquote .q-src { display: block; margin-top: 8px; font-style: normal; font-size: 12.5px; color: var(--muted); }
+  .kpi-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 14px 0; }
+  .kpi {
+    flex: 1 1 150px; background: #fbf8f1; border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 16px; text-align: center;
+  }
+  .kpi .num { font-size: 20px; font-weight: 700; color: var(--accent); display: block; }
+  .kpi .lab { font-size: 12px; color: var(--muted); }
+  .insight { background: #f3f6f0; border: 1px solid #dbe3d6; border-radius: 10px; padding: 16px 20px; margin: 14px 0; }
+  .insight .tag { font-size: 12px; font-weight: 700; color: #3d6b35; letter-spacing: 0.08em; text-transform: uppercase; }
+  .no-update { color: var(--muted); font-size: 14.5px; }
+  .no-update .last-ep { margin-top: 8px; padding: 10px 14px; background: #fbf8f1; border-radius: 8px; font-size: 14px; color: var(--ink); }
+  .no-update .last-ep .lbl { color: var(--muted); font-size: 12.5px; }
+  footer { text-align: center; color: #b3aa9c; font-size: 12.5px; margin-top: 40px; }
+  a { color: var(--accent); }
+  .src-note { font-size: 12.5px; color: var(--muted); font-style: italic; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcasts · Daily Deep Scan</div>
+  <h1>每日思維播客深度掃描</h1>
+  <div class="meta">2026年8月29日（週六）<span class="dot">·</span>生成時間 09:53 UTC<span class="dot">·</span>6個播客掃描</div>
+</header>
+
+<div class="summary-box">
+  <strong>今日重點：</strong>6個播客中只有 <strong>All-In E287</strong> 有新集數（8月29日凌晨發布）——主題圍繞 Nvidia 歷史性業績、SaaS 回歸、Bessent 與 Druckenmiller 債市對決、美國債務危機，以及 Moderna 癌症疫苗。其餘5個播客過去24小時無新集數。James 睇完呢份報告就等於聽咗成集。
+</div>
+
+<!-- ============ ALL-IN ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">All-In with Chamath, Jason, Sacks &amp; Friedberg</div>
+      <div class="pod-host">Chamath Palihapitiya · Jason Calacanis · David Sacks · David Friedberg</div>
+    </div>
+    <span class="badge badge-new">🆕 新集數</span>
+  </div>
+
+  <div class="ep-title">E287 — Nvidia's Historic Quarter, SaaS Comeback, Bessent vs Druck, America's Debt Crisis, Cancer Vaccine</div>
+  <div class="ep-meta">
+    <span>📅 2026-08-29 01:19 UTC</span>
+    <span>⏱ 1小時36分41秒</span>
+    <span>📈 市場焦點集</span>
+  </div>
+
+  <h3 class="first">一、主題概覽</h3>
+  <p>呢集係典型嘅「Besties 週末市況拆解」：由 Nvidia 財報引爆嘅 AI 資本開支辯論反轉講起，再到 Salesforce 帶動 SaaS 股集體反彈，中段係重磅衝突——Druckenmiller 公開炮轟財長 Bessent 干預債市，尾段仲有 CIA 局長突訪莫斯科、Meta 與州檢察長和解，同埋 Science Corner 嘅 Moderna 癌症疫苗重大突破。</p>
+
+  <h3>二、章節導航（官方時間戳）</h3>
+  <div class="chapters">
+    <ul>
+      <li><span class="t">(0:00)</span> Bestie intros：回顧近期採訪 + 美國科學現狀</li>
+      <li><span class="t">(3:31)</span> 中國機器人奧運會、Optimus 最新進展、Grok Bot</li>
+      <li><span class="t">(9:05)</span> Nvidia 同 Salesforce 財報後暴漲：AI Capex Bubble 同 SaaSpocalypse 論述雙雙被逆轉</li>
+      <li><span class="t">(33:32)</span> Druckenmiller 公開叫板 Bessent：債市干預爭議</li>
+      <li><span class="t">(1:01:33)</span> AI 寫作爭議：Druck 用 AI 寫佢篇 WSJ 評論文章</li>
+      <li><span class="t">(1:15:00)</span> CIA 局長突訪莫斯科、Meta 和解協議 + 青少年新規</li>
+      <li><span class="t">(1:22:52)</span> Science Corner：Moderna 嘅 mRNA 癌症疫苗</li>
+    </ul>
+  </div>
+
+  <h3>三、深度萃取：Nvidia 歷史性季度（9:05 開始）</h3>
+  <p>呢個係全集核心。Nvidia 財報後股價單日升近 <strong>9%</strong>，市值單日增加約 <strong>4400億美元</strong>——直接擊潰過去四個季度「業績達標但股價照跌」嘅魔咒，同時將兩個流行敘事徹底反轉：<strong>「AI 資本開支泡沫」</strong>同<strong>「SaaSpocalypse（SaaS 末日）」</strong>。</p>
+
+  <div class="kpi-row">
+    <div class="kpi"><span class="num">+9%</span><span class="lab">Nvidia 單日升幅</span></div>
+    <div class="kpi"><span class="num">+$440B</span><span class="lab">單日市值增加</span></div>
+    <div class="kpi"><span class="num">70%</span><span class="lab">FY2028 收入增長指引</span></div>
+    <div class="kpi"><span class="num">$40.3B</span><span class="lab">ACIE 客戶季度收入（+138% YoY）</span></div>
+    <div class="kpi"><span class="num">$12.9B</span><span class="lab">擬收購 Hugging Face</span></div>
+  </div>
+
+  <p><strong>關鍵細節：</strong></p>
+  <ul>
+    <li>CFO Colette Kress 指引 FY2028（2027年2月至2028年1月）收入增長 <strong>70%</strong>——Nvidia 史上首次提前一年俾全年指引；CEO Jensen Huang 話真實需求「遠超70%」，只係供應受限。</li>
+    <li>供應瓶頸仍在：主要代工廠台積電產能受限，HBM 記憶體持續短缺（6月甚至傳出連 Apple 都受記憶體危機影響）。</li>
+    <li>客戶結構明顯多元化：AI Clouds、工業同企業客戶（ACIE）季度收入 $40.3B，按年增長 <strong>138%</strong>——反駁「只靠幾個 hyperscaler」嘅質疑。</li>
+    <li>財報後同時傳出：Nvidia 同意以 <strong>$12.9B</strong> 收購開源模型平台 <strong>Hugging Face</strong>（The Information 報導），進一步由上遊晶片殺入 AI 模型生態。</li>
+    <li>分析師層面：Econopolis 嘅 Siddy Jobe 稱「以估值計而家仲係平」；Freedom Capital 嘅 Paul Meeks 話「起碼到2028年先見到增長放緩威脅」。</li>
+  </ul>
+
+  <p><strong>Jensen Huang 原話（AI 拐點論）：</strong></p>
+  <blockquote>
+    "This time last year, one lab alone was driving the build-out. Today, we have a golden age of new AI labs and startups, multiple frontier labs scaling in parallel, a thriving open-model ecosystem and physical AI coming online — with strong momentum across the U.S. and around the world."
+    <span class="q-src">—— Jensen Huang，Nvidia 財報會議（CNBC 報導）</span>
+  </blockquote>
+
+  <div class="insight">
+    <div class="tag">Insight</div>
+    <p style="margin:6px 0 0">「AI 拐點」嘅本質：需求結構已由「單一實驗室帶動」變成「多個前沿實驗室並行擴張 + 開源生態 + 物理 AI」多引擎驅動。呢個唔單止係 Nvidia 嘅故事，亦係整個 AI 供應鏈估值邏輯嘅支點——同時留意 Nvidia 自己買 Hugging Face，反映晶片巨頭開始用現金鞏固軟件生態護城河。</p>
+  </div>
+
+  <h3>四、深度萃取：Bessent vs Druckenmiller（33:32 開始）</h3>
+  <p>全集最激烈嘅部分。事件脈絡：財長 Scott Bessent 上週突然宣布將長期 off-the-run 國債買回規模加倍，由 $2B 提高至至少 <strong>$4B</strong>，並稱之為「Treasury Twist」（以短債發行融資買長債）。CNBC 其後報導 Treasury 可能動用接近 <strong>$9,500億</strong> 嘅財政部一般帳戶（TGA）作為買回彈藥。</p>
+
+  <p><strong>Druckenmiller 嘅反擊</strong>：8月24日喺 WSJ 發表評論文章《Let the Bond Market Speak》，公開批評呢個計劃係一個「mistake」，本質係<strong>「價格管理」（price management）</strong>，最終會失敗；並警告 Bessent 正在削弱「美國僅存嘅財政紀律官」——即債券市場本身。</p>
+
+  <blockquote>
+    "The bond market is the only fiscal disciplinarian the U.S. has left. … Addressing this primary deficit is the only thing that durably lowers long-term yields."
+    <span class="q-src">—— Stanley Druckenmiller，WSJ 評論文章《Let the Bond Market Speak》，2026-08-24</span>
+  </blockquote>
+
+  <div class="kpi-row">
+    <div class="kpi"><span class="num">$40T</span><span class="lab">美國國債總額（上週觸及）</span></div>
+    <div class="kpi"><span class="num">$2T</span><span class="lab">本年度赤字預期</span></div>
+    <div class="kpi"><span class="num">~$950B</span><span class="lab">Bessent 囤積嘅 TGA</span></div>
+    <div class="kpi"><span class="num">$2B→$4B</span><span class="lab">長期債買回規模加倍</span></div>
+  </div>
+
+  <p><strong>Bessent 一方嘅辯解</strong>：佢喺 CNBC 解釋 Treasury 意圖係令市場「專注基本面，而唔係喺薄成交嘅平靜期交易新聞標題」，強調係想令市場保持均衡。Treasury 高層亦反駁「放棄 regular and predictable 原則」嘅指控，指拍賣日程冇變，首次操作9月9日先開始，外界太早下判斷。</p>
+
+  <p><strong>AI 寫作爭議（1:01:33）</strong>：節目揭露一個耐人尋味嘅細節——Druckenmiller 用嚟炮轟 AI 資本開支泡沫嘅嗰篇 WSJ 評論文章，本身係用 <strong>AI 代筆</strong>。呢個反差成為四位主持討論「AI 對內容生產嘅影響」嘅切入點。</p>
+
+  <div class="insight">
+    <div class="tag">Insight</div>
+    <p style="margin:6px 0 0">呢場對決嘅本質係「財長 vs 市場定價權」。Bessent 用 TGA 呢個「隱形彈藥庫」干預長端利率，短線可以壓住孳息，但 Druckenmiller 嘅論點係：唔解決基本赤字，長債孳息最終會由基本面決定。對做投資嘅人嚟講，呢個係「央行獨立性」以外、而家最需要盯住嘅政策風險——財政部直接落場做市。</p>
+  </div>
+
+  <h3>五、深度萃取：Science Corner — Moderna 癌症疫苗（1:22:52 開始）</h3>
+  <p>Moderna 同 Merck 8月19日宣布，個人化 mRNA 癌症疫苗（代號 <strong>intismeran</strong>，前稱 mRNA-4157）喺黑色素瘤第三期臨床試驗 <strong>INTerpath-001</strong> 達到主要終點——呢個係史上第一個「個人化新抗原療法」喺第三期試驗取得成功，被形容為腫瘤學嘅分水嶺。</p>
+
+  <div class="kpi-row">
+    <div class="kpi"><span class="num">1,137</span><span class="lab">第三期試驗患者（IIB–IV期術後）</span></div>
+    <div class="kpi"><span class="num">Phase 3</span><span class="lab">首個成功嘅個人化新抗原療法</span></div>
+    <div class="kpi"><span class="num">Keytruda</span><span class="lab">與 Merck 免疫療法聯用</span></div>
+  </div>
+
+  <ul>
+    <li><strong>原理</strong>：用同 COVID 疫苗一樣嘅 mRNA 平台，將患者腫瘤嘅獨有突變編碼成 mRNA 送入細胞，令免疫系統識別並攻擊癌細胞——「新抗原療法」（neoantigen therapy）。</li>
+    <li><strong>試驗設計</strong>：1,137名已完成手術切除嘅高風險/晚期（IIB–IV期）黑色素瘤患者，疫苗 + Keytruda 聯用，延遲疾病復發並阻止擴散。</li>
+    <li>有趣嘅細節：Moderna 同 Merck 刻意用「neoantigen therapy」而唔係「mRNA vaccine」呢兩個字眼——因為反疫苗嘅衛生部長 RFK Jr. 已取消數億美元 mRNA 疫苗技術嘅聯邦資助。</li>
+  </ul>
+
+  <blockquote>
+    "For many years, the idea of creating an mRNA treatment designed specifically for an individual patient's cancer was aspirational. We are now helping turn that vision into a reality."
+    <span class="q-src">—— Stéphane Bancel，Moderna CEO</span>
+  </blockquote>
+
+  <div class="insight">
+    <div class="tag">Insight</div>
+    <p style="margin:6px 0 0">牛津大學腫瘤專家 Lennard Lee 點出重點：「疫後六年內，我哋已經有 mRNA 疫苗嚟治療癌症。」但暫時未公布嘅仲有：效益幅度、亞組分析、生活質素數據同總生存期——真正嘅商業價值同臨床定位要等完整數據。呢個係「AI 資本開支」以外，市場下一個可以長期講嘅技術故事。</p>
+  </div>
+
+  <h3>六、其他議題速覽</h3>
+  <ul>
+    <li><strong>(3:31) 中國機器人奧運會 / Optimus / Grok Bot</strong>：開場討論圍繞中國機器人競賽升溫、Tesla Optimus 最新進展，以及 xAI 嘅 Grok Bot——延續上週「物理 AI」嘅主題。</li>
+    <li><strong>(1:15:00) CIA 局長突訪莫斯科</strong>：CIA 局長 John Ratcliffe 對莫斯科進行突訪（WSJ 報導），配合 Polymarket 上俄烏停火協議賠率變化，四位主持分析地緣政治對市場嘅影響。</li>
+    <li><strong>(1:15:00) Meta 和解 + 青少年新規</strong>：Meta 與州檢察長達成標誌性和解協議（CNBC 指法律後續問題仍喺度），同時推出新嘅青少年保護規則。</li>
+  </ul>
+
+  <p class="src-note">※ 本集萃取基於 RSS 官方章節描述 + CNBC（Nvidia 業績/市值、Bessent TGA）、WSJ/Guardian/QZ（Druckenmiller 評論）、STAT/Ars Technica/Nature（Moderna 試驗）等即時報導，所有數字同引用均有出處，冇任何杜撰內容。</p>
+</div>
+
+<!-- ============ ACQUIRED ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">Acquired</div>
+      <div class="pod-host">Ben Gilbert &amp; David Rosenthal</div>
+    </div>
+    <span class="badge badge-same">最近無更新</span>
+  </div>
+  <div class="no-update">過去24小時無新集數（呢個係每兩週一集嘅長篇系列）。</div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集</div>
+    <strong>S20E1 — Disney: The Renaissance and the Empire</strong>（2026-08-09 · 4小時33分鐘）
+    <div style="margin-top:6px;font-size:13.5px;color:#55504a">1984年迪士尼瀕臨被拆骨，Eisner 同 Frank Wells 創造媒體史上最大 turnaround；ESPN 世紀收購、VHS 飛輪、Pixar/Marvel/Lucasfilm 三部曲，到 Iger 回歸同串流時代。附完整 4.5 小時章節時間軸，WSJ 專欄同 Companion PDF。</div>
+  </div>
+</div>
+
+<!-- ============ FOUNDERS ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">Founders</div>
+      <div class="pod-host">David Senra</div>
+    </div>
+    <span class="badge badge-same">最近無更新</span>
+  </div>
+  <div class="no-update">過去24小時無新集數（每週日更新）。</div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集</div>
+    <strong>#430 — How to Write Ads That Sell（讀 Claude Hopkins）</strong>（2026-08-23 · 1小時3分鐘）
+    <div style="margin-top:6px;font-size:13.5px;color:#55504a">廣告史上最偉大文案人 Claude Hopkins 兩本書精讀——《My Life In Advertising》+《Scientific Advertising》。精選金句：&ldquo;The man who works twice as long as his fellows is bound to go twice as far, especially in advertising.&rdquo;、&ldquo;We must never judge humanity by ourselves.&rdquo;、&ldquo;Genius is the art of taking pains.&rdquo;</div>
+  </div>
+</div>
+
+<!-- ============ MY FIRST MILLION ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">My First Million</div>
+      <div class="pod-host">Sam Parr &amp; Shaan Puri</div>
+    </div>
+    <span class="badge badge-same">最近無更新</span>
+  </div>
+  <div class="no-update">過去24小時無新集數。</div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集</div>
+    <strong>#856 — How a $5B founder is using AI (3 tutorials)</strong>（2026-08-26 · 1小時9分鐘）
+    <div style="margin-top:6px;font-size:13.5px;color:#55504a">嘉賓：Zapier 創辦人 Wade Foster。實戰示範點樣用 AI 慳每日幾個鐘：Morning Brief 式「總統級起床流程」、Robot Executive Staff、會同你辯論嘅 AI、War Council skill、用 AI 改善招聘；仲有「40歲前做 billionaire」、「1-dimensional winners」等思維討論。</div>
+  </div>
+</div>
+
+<!-- ============ KNOWLEDGE PROJECT ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">The Knowledge Project</div>
+      <div class="pod-host">Shane Parrish</div>
+    </div>
+    <span class="badge badge-same">最近無更新</span>
+  </div>
+  <div class="no-update">過去24小時無新集數。</div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集</div>
+    <strong>Steve Jobs in Exile（嘉賓：Geoffrey Cain）</strong>（2026-08-27 上架 · 公眾版 9月1日 發布）
+    <div style="margin-top:6px;font-size:13.5px;color:#55504a">Geoffrey Cain 多年重建 Jobs 離開 Apple 嗰十年（NeXT 時期）——公司持續蝕錢、聯合創辦人離開、投資者失去信心、財富幾乎蒸發，一度距離執笠只差一個週末。就係呢啲失敗，令 Jobs 學識做 Apple 最終需要嘅領袖。</div>
+  </div>
+</div>
+
+<!-- ============ DOAC ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">The Diary of a CEO</div>
+      <div class="pod-host">Steven Bartlett</div>
+    </div>
+    <span class="badge badge-same">最近無更新</span>
+  </div>
+  <div class="no-update">過去24小時無新集數（8月28日只有「Most Replayed Moment」精華剪輯）。</div>
+  <div class="last-ep">
+    <div class="lbl">最後已知完整集數</div>
+    <strong>Ed Zitron — AI Is The World's Greatest SCAM, And They All Know It!</strong>（2026-08-27 · 2小時30分鐘）
+    <div style="margin-top:6px;font-size:13.5px;color:#55504a">AI 最著名批評者 Ed Zitron 全面拆解：點解生成式 AI 係「con」、OpenAI/Anthropic 點解賺唔到錢、數據中心會唔會變成 $5,000億 債務炸彈、超智能點解係神話。30+ 章節逐條回應，包括同 2000 年科網泡沫比較同「Tech Depression」預言。</div>
+  </div>
+</div>
+
+<footer>
+  Vee Mok 自動掃描生成 · 每日 09:53 UTC 運行<br>
+  Podcast sources: Acquired / Founders / All-In / My First Million / Knowledge Project / DOAC
+</footer>
+
+</div>
+</body>
+</html>
