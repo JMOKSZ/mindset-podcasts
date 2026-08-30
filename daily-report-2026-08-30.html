@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日思維播客深度掃描 · 2026-08-30</title>
+<style>
+  :root {
+    --bg: #fdfaf6;
+    --card: #ffffff;
+    --ink: #2d2a26;
+    --muted: #7a7368;
+    --accent: #b45309;
+    --accent-soft: #f5e9d8;
+    --border: #e8e0d2;
+    --new: #9a3412;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Georgia, 'Noto Serif SC', 'Songti SC', serif;
+    line-height: 1.75;
+    padding: 40px 20px 80px;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; }
+  header { text-align: center; padding: 30px 0 10px; }
+  .kicker {
+    font-size: 13px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 10px;
+  }
+  h1 { font-size: 30px; font-weight: 700; color: var(--ink); }
+  .meta { color: var(--muted); font-size: 14px; margin-top: 12px; }
+  .meta .dot { margin: 0 8px; color: #c9bfae; }
+  .summary-box {
+    background: var(--accent-soft); border: 1px solid var(--border);
+    border-radius: 10px; padding: 18px 22px; margin: 28px 0 8px;
+    font-size: 15px;
+  }
+  .summary-box strong { color: var(--new); }
+  .podcast-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 30px 34px;
+    margin: 26px 0;
+    box-shadow: 0 1px 3px rgba(90,70,40,0.05);
+  }
+  .pod-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 12px; margin-bottom: 18px; }
+  .pod-name { font-size: 21px; font-weight: 700; }
+  .pod-host { font-size: 13px; color: var(--muted); margin-top: 2px; }
+  .badge { font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
+  .badge-new { background: var(--new); color: #fff; }
+  .badge-same { background: #efe9dd; color: var(--muted); }
+  h3 { font-size: 17px; margin: 26px 0 10px; color: var(--accent); }
+  h3.first { margin-top: 6px; }
+  .ep-title { font-size: 18px; font-weight: 700; line-height: 1.5; }
+  .ep-meta { font-size: 13px; color: var(--muted); margin: 8px 0 4px; }
+  .ep-meta span { margin-right: 14px; }
+  .chapters { background: #fbf8f1; border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; font-size: 13.5px; color: #55504a; }
+  .chapters li { margin: 3px 0; list-style: none; }
+  .chapters .t { color: var(--accent); font-weight: 700; margin-right: 8px; font-family: 'Courier New', monospace; }
+  p { margin: 12px 0; font-size: 15px; }
+  ul { margin: 10px 0 12px 22px; font-size: 15px; }
+  li { margin: 6px 0; }
+  blockquote {
+    border-left: 4px solid var(--accent);
+    background: #faf5ec;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-style: italic;
+    color: #4a4338;
+    font-size: 14.5px;
+    border-radius: 0 8px 8px 0;
+  }
+  blockquote .q-src { display: block; margin-top: 8px; font-style: normal; font-size: 12.5px; color: var(--muted); }
+  .kpi-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 14px 0; }
+  .kpi {
+    flex: 1 1 150px; background: #fbf8f1; border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 16px; text-align: center;
+  }
+  .kpi .num { font-size: 20px; font-weight: 700; color: var(--accent); display: block; }
+  .kpi .lab { font-size: 12px; color: var(--muted); }
+  .insight { background: #f3f6f0; border: 1px solid #dbe3d6; border-radius: 10px; padding: 16px 20px; margin: 14px 0; }
+  .insight .tag { font-size: 12px; font-weight: 700; color: #3d6b35; letter-spacing: 0.08em; text-transform: uppercase; }
+  .no-update { color: var(--muted); font-size: 14.5px; }
+  .no-update .last-ep { margin-top: 10px; padding: 14px 16px; background: #fbf8f1; border: 1px solid var(--border); border-radius: 10px; font-size: 14px; color: var(--ink); }
+  .no-update .last-ep .lbl { color: var(--muted); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .no-update .last-ep .le-title { font-size: 15.5px; font-weight: 700; color: var(--accent); margin: 4px 0 2px; }
+  .no-update .last-ep .le-summary { font-size: 13.8px; color: #55504a; margin-top: 6px; }
+  .no-update .last-ep .le-link { font-size: 12.8px; margin-top: 6px; }
+  .no-update .last-ep a { color: var(--accent); }
+  footer { text-align: center; color: #b3aa9c; font-size: 12.5px; margin-top: 40px; }
+  a { color: var(--accent); }
+  .src-note { font-size: 12.5px; color: var(--muted); font-style: italic; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcasts · Daily Deep Scan</div>
+  <h1>每日思維播客深度掃描</h1>
+  <div class="meta">2026年8月30日（週日）<span class="dot">·</span>生成時間 09:53 UTC<span class="dot">·</span>6個播客掃描</div>
+</header>
+
+<div class="summary-box">
+  <strong>今日重點：</strong>6個播客全部「無新集」— 週六日係播客發佈淡季，最新一輪內容（All-In E287、Founders #430、MFM Ep856、DOAC Ed Zitron、KP Steve Jobs in Exile）已喺過去幾日報告完整深度覆蓋。以下列出每個播客最後已知劇集 + 精華摘要，方便快速回顧。
+</div>
+
+<!-- ============ ACQUIRED ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">Acquired</div>
+      <div class="pod-host">Ben Gilbert &amp; David Rosenthal</div>
+    </div>
+    <span class="badge badge-same">最近無更新</span>
+  </div>
+
+  <div class="no-update">過去24小時無新集數（Acquired 為雙週更新，上集8月9日發布）。</div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集</div>
+    <div class="le-title">S20E1 — Disney: The Renaissance and the Empire（迪士尼：文藝復興與帝國）</div>
+    <div style="font-size:12.8px;color:var(--muted)">2026-08-09 · 4小時33分 · Part II</div>
+    <div class="le-summary">
+      1984年嘅迪士尼「死嘅價值比活嘅更高」——動畫部門積弱多年、人才流失、企業狙擊手虎視眈眈諗住拆骨賣盤。結果卻係媒體史上最偉大嘅翻身仗：Michael Eisner + Frank Wells 接手，<strong>美女與野獸、獅子王、百老匯、迪士尼Vault影碟戰略、仲有史上最大媒體收購——ESPN</strong>。然後差啲再次崩潰：歐洲迪士尼變錢坑、管理層內鬥、動畫陷入災難（仲記唔記得《雞仔總動員》？）、Comcast 敵意收購。最後 Bob Iger 時代以 <strong>Pixar、Marvel、Lucasfilm</strong> 三次史詩級收購，建立21世紀媒體帝國——直到科技巨頭出現。
+    </div>
+    <div class="le-link"><a href="https://www.acquired.fm/episodes/disney-the-renaissance-and-the-empire">官方頁面</a> · <a href="https://www.acquired.fm/artifacts/disney-the-renaissance-and-the-empire">Artifacts視覺資料庫</a> · <a href="https://www.wsj.com/business/media/disney-espn-acquired-podcast-flywheel-222b2b50">WSJ專欄</a>（完整萃取見8月10日報告）</div>
+  </div>
+</div>
+
+<!-- ============ FOUNDERS ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">Founders</div>
+      <div class="pod-host">David Senra</div>
+    </div>
+    <span class="badge badge-same">最近無更新</span>
+  </div>
+
+  <div class="no-update">過去24小時無新集數（每週日發布，上集8月23日）。</div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集</div>
+    <div class="le-title">#430 — How to Write Ads That Sell（Claude Hopkins）</div>
+    <div style="font-size:12.8px;color:var(--muted)">2026-08-23 · 1小時3分30秒</div>
+    <div class="le-summary">
+      史上最偉大廣告文案人 Claude Hopkins：佢嘅手稿被廣告公司老闆鎖喺保險箱20年先肯出版，出版後賣咗 <strong>800萬本</strong>；David Ogilvy 話「任何人做廣告之前要讀七次」。David Senra 讀完《My Life In Advertising》+《Scientific Advertising》後嘅萃取：
+    </div>
+    <blockquote style="margin:10px 0">
+      "The man who works twice as long as his fellows is bound to go twice as far, especially in advertising."
+      <span class="q-src">—— Claude Hopkins（ep 5:12）</span>
+    </blockquote>
+    <blockquote style="margin:10px 0">
+      "We must never judge humanity by ourselves. The things we want, the things we like may appeal to a small minority."
+      <span class="q-src">—— Claude Hopkins（ep 15:00）</span>
+    </blockquote>
+    <div class="le-summary">
+      核心論點：<strong>「廣告要提交俾公眾輿論法庭」</strong>（15:23）、<strong>「好產品就係自己最好嘅推銷員」</strong>（13:05）、<strong>「講服務人哋會聽，講自己威水人哋會擰頭走」</strong>（34:08）——廣告兩大原罪係吹噓同自私。仲有 Schlitz Beer 由第5升到第1嘅經典案例：Hopkins 為啤酒「賦予純度意義」，走訪釀酒廠記錄每個工序，然後用「純度」打動市場。
+    </div>
+    <div class="le-link"><a href="https://www.founderspodcast.com/">Founders官網</a>（完整17段引用見8月23日報告）</div>
+  </div>
+</div>
+
+<!-- ============ ALL-IN ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">All-In with Chamath, Jason, Sacks &amp; Friedberg</div>
+      <div class="pod-host">Chamath Palihapitiya · Jason Calacanis · David Sacks · David Friedberg</div>
+    </div>
+    <span class="badge badge-same">最近無更新</span>
+  </div>
+
+  <div class="no-update">過去24小時無新集數（E287 8月29日凌晨發布，昨日報告已完整深度萃取）。</div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集</div>
+    <div class="le-title">E287 — Nvidia's Historic Quarter, SaaS Comeback, Bessent vs Druck, America's Debt Crisis, Cancer Vaccine</div>
+    <div style="font-size:12.8px;color:var(--muted)">2026-08-29 · 1小時36分41秒</div>
+    <div class="le-summary">
+      四大主題精華：
+      <ul style="margin:6px 0 4px 20px">
+        <li><strong>Nvidia 歷史性季度</strong>：財報後單日 +9%、市值單日增 $4,400億，擊潰「AI資本開支泡沫」同「SaaSpocalypse」兩大敘事；FY2028 指引 +70% 增長，ACIE 客戶收入 $40.3B（+138% YoY），仲傳出 $12.9B 收購 Hugging Face。</li>
+        <li><strong>Bessent vs Druckenmiller</strong>：Druck 公開炮轟財長用 TGA 買回長債係「價格管理」，WSJ 撰文《Let the Bond Market Speak》；而嗰篇文本身竟然係用 AI 寫嘅——反差拉滿。</li>
+        <li><strong>債市/美國債務</strong>：國債總額觸及 $40T、本年赤字預期 $2T、Bessent 囤積近 $9,500億 TGA 彈藥。</li>
+        <li><strong>Science Corner</strong>：Moderna + Merck 嘅個人化 mRNA 癌症疫苗 intismeran 喺黑色素瘤三期試驗 INTerpath-001 達標——史上首個個人化新抗原療法三期成功。</li>
+      </ul>
+    </div>
+    <div class="le-link"><a href="https://allinchamathjason.libsyn.com/nvidias-historic-quarter-saas-comeback-bessent-vs-druck-americas-debt-crisis-cancer-vaccine">收聽頁面</a>（完整深度萃取見8月29日報告）</div>
+  </div>
+</div>
+
+<!-- ============ MY FIRST MILLION ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">My First Million</div>
+      <div class="pod-host">Sam Parr &amp; Shaan Puri</div>
+    </div>
+    <span class="badge badge-same">最近無更新</span>
+  </div>
+
+  <div class="no-update">過去24小時無新集數（上集8月26日）。</div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集</div>
+    <div class="le-title">Ep 856 — How a $5B founder is using AI (3 tutorials)｜嘉賓：Wade Foster（Zapier CEO）</div>
+    <div style="font-size:12.8px;color:var(--muted)">2026-08-26 · 1小時9分</div>
+    <div class="le-summary">
+      身家估值 $50億 嘅 Zapier 創辦人 Wade Foster 公開佢每日用 AI 慳幾個鐘嘅實戰系統：
+      <ul style="margin:6px 0 4px 20px">
+        <li><strong>「機械人高管團隊」</strong>（7:04）——起身似總統咁：晨間簡報由AI代理整理。</li>
+        <li><strong>晚間簡報</strong>（14:13）——收工前自動彙報當日關鍵事項。</li>
+        <li><strong>會同你拗嘅AI</strong>（17:39）+ <strong>「War Council」技能</strong>（19:32）——用多個AI角色互相辯論再綜合，模擬「戰爭委員會」式決策。</li>
+        <li><strong>用AI招聘</strong>（31:53）——具體prompt流程。</li>
+        <li>後段仲有「40歲前做唔做到billionaire」、「唔好帶住chip on your shoulder嘅理由」、「1-dimensional winners」同推薦書單。</li>
+      </ul>
+      Prompts 免費攞：<a href="https://clickhubspot.com/efcd">clickhubspot.com/efcd</a>
+    </div>
+    <div class="le-link"><a href="https://www.mfmpod.com/">MFM官網</a>（完整萃取見8月26日報告）</div>
+  </div>
+</div>
+
+<!-- ============ KNOWLEDGE PROJECT ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">The Knowledge Project</div>
+      <div class="pod-host">Shane Parrish · Farnam Street</div>
+    </div>
+    <span class="badge badge-same">最近無更新</span>
+  </div>
+
+  <div class="no-update">過去24小時無新集數（上集8月27日，公眾版9月1日正式開放）。</div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集</div>
+    <div class="le-title">Steve Jobs in Exile｜嘉賓：Geoffrey Cain</div>
+    <div style="font-size:12.8px;color:var(--muted)">2026-08-27（會員先行；公眾版9月1日）</div>
+    <div class="le-summary">
+      我哋都識1990年代末回歸拯救Apple嘅Steve Jobs，亦聽過1985年佢被自己創辦嘅公司趕走——但中間嗰十年發生咗咩事，好少人知道。Geoffrey Cain 花咗多年重構 Jobs 離開 Apple 嘅十年：<strong>NeXT 年年蝕錢、合夥人相繼離開、投資者失去信心、身家幾乎清零，有一段時間佢距離執笠只差一個週末</strong>。就喺呢啲失敗之中，Jobs 學識咗點樣成為 Apple 後來需要嘅領袖——「呢個係 Steve Jobs 成為 Steve Jobs 之前嘅 Steve Jobs」。
+    </div>
+    <div class="le-link"><a href="https://fs.blog/knowledge-project-podcast/geoffrey-cain/">官方頁面</a>（完整萃取見8月28日報告）</div>
+  </div>
+</div>
+
+<!-- ============ DIARY OF A CEO ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">The Diary of a CEO with Steven Bartlett</div>
+      <div class="pod-host">Steven Bartlett</div>
+    </div>
+    <span class="badge badge-same">最近無更新</span>
+  </div>
+
+  <div class="no-update">過去24小時無新集數（8月28日係「Most Replayed Moment」精華剪輯；最近完整集係 Ed Zitron）。</div>
+  <div class="last-ep">
+    <div class="lbl">最近兩集</div>
+    <div class="le-title">① Most Replayed Moment: Tony Robbins Reveals The Key To A Meaningful Life</div>
+    <div style="font-size:12.8px;color:var(--muted)">2026-08-28 · 30分33秒 · 精華剪輯</div>
+    <div class="le-summary">
+      Tony Robbins 拆解影響幾乎每個決定嘅隱藏需求（6大人類需求框架），解釋點解金錢、地位、自由仍然會令人覺得空虛；社交媒體放大咗我哋邊啲衝動；點解部分最強嘅驅動力會靜靜同你想要嘅人生對著幹——以及點樣建立一個「唔止成功、仲好有意義」嘅人生。
+    </div>
+    <div style="height:14px"></div>
+    <div class="le-title">② The Man Who Calls BS On AI: AI Is The World's Greatest SCAM, And They All Know It! | Ed Zitron</div>
+    <div style="font-size:12.8px;color:var(--muted)">2026-08-27 · 2小時30分鐘 · 完整集</div>
+    <div class="le-summary">
+      英國科技評論家 Ed Zitron（《Better Offline》主持，月下載量過百萬）全面拆解AI泡沫：點解佢認為生成式AI係「呃人嘅嘢」、OpenAI/Anthropic 真正蝕錢嘅原因、數據中心可能留下 <strong>$5,000億 債務炸彈</strong>、超智能係科技富豪賣嘅神話、AI唔會搶你份工——30+章節逐條回應，包括同科網泡沫比較、AI令Google變差、以及「Tech Depression」預言。
+    </div>
+    <div class="le-link"><a href="https://thediaryofaceo.com/">DOAC官網</a>（完整萃取見8月27日報告）</div>
+  </div>
+</div>
+
+<footer>
+  Vee Mok 自動掃描生成 · 每日 09:53 UTC 運行<br>
+  Podcast sources: Acquired / Founders / All-In / My First Million / Knowledge Project / DOAC
+</footer>
+
+</div>
+</body>
+</html>
