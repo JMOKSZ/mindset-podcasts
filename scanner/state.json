@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-08-30T09:53:00Z",
+  "lastScan": "2026-08-31T09:53:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -13,6 +13,7 @@
       "14ef00c6-30ba-44cc-9869-33d3d92828a3"
     ],
     "founders": [
+      "66440888-a4dc-11f1-9ad2-4b47c594a56f",
       "2e69043e-9908-11f1-83e6-235fd09fe45b",
       "03380540-8327-11f1-bf90-0b0b28ad566b",
       "9e90f00c-7ca0-11f1-adce-8be447d2b719",
@@ -133,6 +134,7 @@
       "https://fs.blog/?post_type=podcast&p=81128"
     ],
     "diary-of-a-ceo": [
+      "flightcast:01M0ECWWKZKQ93WCFTA6JV03WZ",
       "flightcast:01M0AAXF9NSPF8RYH06SNNV2JZ",
       "flightcast:01M08555EDJDXY5E3VGD5B9BPA",
       "flightcast:01M011YXPMA7EXR82JB7CMWHJN",

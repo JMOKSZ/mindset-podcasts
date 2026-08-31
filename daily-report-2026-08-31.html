@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日思維播客深度掃描 · 2026-08-31</title>
+<style>
+  :root {
+    --bg: #fdfaf6;
+    --card: #ffffff;
+    --ink: #2d2a26;
+    --muted: #7a7368;
+    --accent: #b45309;
+    --accent-soft: #f5e9d8;
+    --border: #e8e0d2;
+    --new: #9a3412;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Georgia, 'Noto Serif SC', 'Songti SC', serif;
+    line-height: 1.75;
+    padding: 40px 20px 80px;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; }
+  header { text-align: center; padding: 30px 0 10px; }
+  .kicker {
+    font-size: 13px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 10px;
+  }
+  h1 { font-size: 30px; font-weight: 700; color: var(--ink); }
+  .meta { color: var(--muted); font-size: 14px; margin-top: 12px; }
+  .meta .dot { margin: 0 8px; color: #c9bfae; }
+  .summary-box {
+    background: var(--accent-soft); border: 1px solid var(--border);
+    border-radius: 10px; padding: 18px 22px; margin: 28px 0 8px;
+    font-size: 15px;
+  }
+  .summary-box strong { color: var(--new); }
+  .podcast-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 30px 34px;
+    margin: 26px 0;
+    box-shadow: 0 1px 3px rgba(90,70,40,0.05);
+  }
+  .pod-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 12px; margin-bottom: 18px; }
+  .pod-name { font-size: 21px; font-weight: 700; }
+  .pod-host { font-size: 13px; color: var(--muted); margin-top: 2px; }
+  .badge { font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
+  .badge-new { background: var(--new); color: #fff; }
+  .badge-same { background: #efe9dd; color: var(--muted); }
+  h3 { font-size: 17px; margin: 26px 0 10px; color: var(--accent); }
+  h3.first { margin-top: 6px; }
+  .ep-title { font-size: 18px; font-weight: 700; line-height: 1.5; }
+  .ep-meta { font-size: 13px; color: var(--muted); margin: 8px 0 4px; }
+  .ep-meta span { margin-right: 14px; }
+  .chapters { background: #fbf8f1; border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; font-size: 13.5px; color: #55504a; }
+  .chapters li { margin: 3px 0; list-style: none; }
+  .chapters .t { color: var(--accent); font-weight: 700; margin-right: 8px; font-family: 'Courier New', monospace; }
+  p { margin: 12px 0; font-size: 15px; }
+  ul { margin: 10px 0 12px 22px; font-size: 15px; }
+  li { margin: 6px 0; }
+  blockquote {
+    border-left: 4px solid var(--accent);
+    background: #faf5ec;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-style: italic;
+    color: #4a4338;
+    font-size: 14.5px;
+    border-radius: 0 8px 8px 0;
+  }
+  blockquote .q-src { display: block; margin-top: 8px; font-style: normal; font-size: 12.5px; color: var(--muted); }
+  .kpi-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 14px 0; }
+  .kpi {
+    flex: 1 1 150px; background: #fbf8f1; border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 16px; text-align: center;
+  }
+  .kpi .num { font-size: 20px; font-weight: 700; color: var(--accent); display: block; }
+  .kpi .lab { font-size: 12px; color: var(--muted); }
+  .insight { background: #f3f6f0; border: 1px solid #dbe3d6; border-radius: 10px; padding: 16px 20px; margin: 14px 0; }
+  .insight .tag { font-size: 12px; font-weight: 700; color: #3d6b35; letter-spacing: 0.08em; text-transform: uppercase; }
+  .no-update { color: var(--muted); font-size: 14.5px; }
+  .no-update .last-ep { margin-top: 10px; padding: 14px 16px; background: #fbf8f1; border: 1px solid var(--border); border-radius: 10px; font-size: 14px; color: var(--ink); }
+  .no-update .last-ep .lbl { color: var(--muted); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .no-update .last-ep .le-title { font-size: 15.5px; font-weight: 700; color: var(--accent); margin: 4px 0 2px; }
+  .no-update .last-ep .le-summary { font-size: 13.8px; color: #55504a; margin-top: 6px; }
+  .no-update .last-ep .le-link { font-size: 12.8px; margin-top: 6px; }
+  .no-update .last-ep a { color: var(--accent); }
+  footer { text-align: center; color: #b3aa9c; font-size: 12.5px; margin-top: 40px; }
+  a { color: var(--accent); }
+  .src-note { font-size: 12.5px; color: var(--muted); font-style: italic; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcasts · Daily Deep Scan</div>
+  <h1>每日思維播客深度掃描</h1>
+  <div class="meta">2026年8月31日（週一）<span class="dot">·</span>生成時間 09:53 UTC<span class="dot">·</span>6個播客掃描</div>
+</header>
+
+<div class="summary-box">
+  <strong>今日重點：2集新集數！</strong>週一有料到——<strong>Founders #431 講 Teledyne 嘅 Henry Singleton</strong>（巴菲特同芒格口中「史上最強資本配置者」），同埋<strong>DOAC 請嚟 David Friedberg</strong>（All-In 主持之一、現任白宮科技顧問）大談「美國帝國衰落 + 社會主義即將降臨 + AI 點樣救你份工」。其餘4個播客無更新，最後已知劇集列喺下面。
+</div>
+
+<!-- ============ FOUNDERS ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">Founders</div>
+      <div class="pod-host">David Senra</div>
+    </div>
+    <span class="badge badge-new">🆕 新集數</span>
+  </div>
+
+  <div class="ep-title">#431 — How Henry Singleton Worked（Henry Singleton 點樣運作）</div>
+  <div class="ep-meta">
+    <span>📅 2026-08-31（今日發布）</span>
+    <span>⏱ 48分49秒</span>
+    <span>📚 讀咗兩本書：<em>Distant Force: A Memoir of the Teledyne Corporation and The Man Who Created It</em>（George Roberts）+ <em>The Outsiders</em>（William Thorndike）</span>
+  </div>
+
+  <h3 class="first">主題</h3>
+  <p>David Senra 今集拆解美國企業史上最神秘、最被低估嘅 CEO——<strong>Henry Singleton（1916-1999）</strong>，Teledyne 嘅創辦人。佢係 MIT 電機工程博士、Chess Master 級棋手，用 40 年時間將 Teledyne 由一間細公司打造成大型綜合企業集團，同時因為極度低調而同拒絕同分析師講嘢，被稱為 <strong>「The Sphinx（獅身人面像）」</strong>。</p>
+
+  <h3>核心論點（為何佢係「Outsiders」之首）</h3>
+  <ul>
+    <li><strong>資本配置先係 CEO 最重要嘅工作</strong>：Singleton 唔係靠營運天才，而係靠「買股票、買公司、回購」呢啲資本動作創造財富。佢喺1980年代用公司現金<strong>回購咗 Teledyne 超過九成嘅股份</strong>——史上最大規模嘅單一公司回購之一。</li>
+    <li><strong>現金流凌駕於會計利潤</strong>：佢嘅會計政策係為咗「最大化現金流」而設，唔係為咗「靚嘅季度盈利數字」——所以 Teledyne 嘅季度盈利會「jiggle（跳動）」，佢完全唔介意。</li>
+    <li><strong>去中心化嘅「活植物」結構</strong>：Teledyne 由過百間子公司組成，每一間獨立運作，冇任何一間大到足以影響整體——「好似一棵活植物，每間公司係一條樹枝」。</li>
+    <li><strong>極少干預日常營運</strong>：佢話「我唔為自己保留任何日常職責」，所以唔會陷入任何慣性思維，保持自由去喺任何時刻做對公司最有利嘅事。</li>
+    <li><strong>逆向思維</strong>：當 Fortune 500 公司一窩蜂做某件事（例如回購），佢反而話<strong>「如果人人都做緊，嗰件事一定有問題」</strong>。</li>
+  </ul>
+
+  <h3>重點引用（原文）</h3>
+  <blockquote>
+    "Henry Singleton has the best operating and capital deployment record in American business. If one took the hundred top business school graduates and made a composite of their triumphs, their record would not be as good as Singleton's."
+    <span class="q-src">—— Warren Buffett（ep 4:30）</span>
+  </blockquote>
+  <blockquote>
+    "Henry Singleton was the smartest single human being I've ever known in my entire life."
+    <span class="q-src">—— Charlie Munger（ep 44:40）</span>
+  </blockquote>
+  <blockquote>
+    "Our conclusion was that the key was cash flow. Our attitude towards cash generation and asset management came out of our own thinking. It is not copied."
+    <span class="q-src">—— Henry Singleton（ep 4:10）</span>
+  </blockquote>
+  <blockquote>
+    "If anyone wants to follow Teledyne, they should get used to the fact that our quarterly earnings will jiggle. Our accounting is set to maximize cash flow, not reported earnings."
+    <span class="q-src">—— Henry Singleton（ep 9:40）</span>
+  </blockquote>
+  <blockquote>
+    "If everyone's doing them, there must be something wrong with them."
+    <span class="q-src">—— Henry Singleton，論 Fortune 500 一窩蜂回購（ep 14:35）</span>
+  </blockquote>
+  <blockquote>
+    "There are tremendous values in the stock market, but in buying stocks, not entire companies. Buying companies tends to raise the purchase price too high."
+    <span class="q-src">—— Henry Singleton（ep 35:00）</span>
+  </blockquote>
+  <blockquote>
+    "We are not particularly persuaded by quick, temporary gains. We'd rather get something permanent, and that takes time."
+    <span class="q-src">—— Henry Singleton（ep 42:00）</span>
+  </blockquote>
+  <blockquote>
+    "Henry was a lot smarter, but Warren had thought about investments a lot longer."
+    <span class="q-src">—— Charlie Munger，區分「天生聰明」同「累積經驗」（ep 45:00）</span>
+  </blockquote>
+
+  <h3>技術細節 / 人物脈絡</h3>
+  <ul>
+    <li>芒格補充：Singleton 嘅財務回報「比其他所有人高一英里，荒謬地高」（ep 1:25）。</li>
+    <li>巴菲特解釋點解多數 CEO 唔擅長資本配置：<blockquote style="margin:8px 0">"The heads of many companies are not skilled in capital allocation. Their inadequacy is not surprising. Most bosses rise to the top because they've excelled in an area such as marketing, production, engineering, administration, or sometimes institutional politics."<span class="q-src">—— Buffett（ep 2:00）</span></blockquote></li>
+    <li>「買股票定買公司」嘅取捨：佢發現股票市場有大量價值，但收購整間公司會推高收購價（ep 35:00）——所以 Teledyne 大量用公開市場回購而非併購。</li>
+    <li>「彈簧理論」（ep 10:50）：喺低價回購係自我催化——好似將彈簧壓縮，未來某個時刻會彈返上去實現全部價值。</li>
+    <li>佢揀子公司經理嘅標準（ep 32:30）：問任何一個關於佢哋公司嘅問題，經理一定答得出精確數字——「呢種人就係你應該揀嚟管公司嘅人」。</li>
+    <li>Claude Shannon（資訊理論之父、Teledyne 董事）對佢嘅觀察（ep 41:35）：<blockquote style="margin:8px 0">"He always tries to work out the best moves, and maybe he doesn't like to talk too much because when you're playing a game, you don't tell anyone else what your strategy is."<span class="q-src">—— Claude Shannon（ep 41:35）</span></blockquote></li>
+  </ul>
+
+  <div class="insight">
+    <div class="tag">💡 James 嘅 Takeaway</div>
+    <p style="margin:8px 0 0">Singleton 係「資本配置者型 CEO」嘅終極教材——對應《The Outsiders》一書嘅核心論點：<strong>真正偉大嘅 CEO 唔一定係最好嘅營運者，而係最好嘅資本分配者</strong>。對 James 嚟講，呢集嘅實戰啟示：① 公司決策要跟「現金流」而唔係「報表利潤」；② 當全行業一窩蜂做同一件事，反而要諗下有咩問題；③ 管理嘅本質係「揀啱人、然後唔好阻住佢哋」——去中心化 + 精確問責。另外芒格結尾嗰句「Henry 聰明啲，但 Warren 諗投資諗得耐啲」係一個重要提醒：<strong>天才唔夠，累積經驗先係護城河</strong>。</p>
+  </div>
+  <div class="src-note">資料來源：Founders RSS 官方 show notes（David Senra 親撰引用列表）。</div>
+</div>
+
+<!-- ============ DIARY OF A CEO ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">The Diary of a CEO with Steven Bartlett</div>
+      <div class="pod-host">Steven Bartlett</div>
+    </div>
+    <span class="badge badge-new">🆕 新集數</span>
+  </div>
+
+  <div class="ep-title">Top White House Advisor: The US Empire Is DYING And Socialism Is Coming Next! | David Friedberg</div>
+  <div class="ep-meta">
+    <span>📅 2026-08-31（今日發布）</span>
+    <span>⏱ 2小時04分20秒</span>
+    <span>👤 嘉賓：David Friedberg（科學家企業家、All-In 聯合主持、The Production Board 創辦人兼 CEO、特朗普總統科技顧問委員會 PCAST 成員）</span>
+  </div>
+
+  <h3 class="first">主題</h3>
+  <p>「美國夢係咪靜靜雞死緊？」科學家出身嘅企業家 David Friedberg 接受 Steven Bartlett 長達兩小時嘅深度訪問，拋出一個震撼論點：<strong>美國正處於帝國衰落週期，而 2028 年前後可能出現一波「社會主義浪潮」</strong>。佢同時解釋點解 AI 會令你更富有（而唔係失業）、點解 Tesla 會贏出「萬億美元機械人競賽」，以及佢對衰老、長生不死嘅最新科學見解。</p>
+
+  <h3>核心論點（佢解釋咗乜）</h3>
+  <ul>
+    <li><strong>「政府會救你」係美國人被告知嘅最大謊言之一</strong>——社會保障制度可能令美國人損失咗 <strong>超過 $37 萬億 嘅退休財富</strong>（機會成本）。</li>
+    <li><strong>美國唔係「衰落」咁簡單，而係進入帝國週期尾聲</strong>——經濟結構性問題（樓價、不平等、制度失靈）令佢預測<strong>2028年前後會出現社會主義性質嘅政策浪潮</strong>。</li>
+    <li><strong>「擁有自住物業」係一個大謊言</strong>（The Great Lie About Home Ownership，26:43）——佢認為普通人投資房地產嘅回報被神化，真正應該投資嘅嘢係……（章節 29:35 討論「唔買樓應該投資咩」）。</li>
+    <li><strong>不平等可能係無可避免嘅</strong>（37:11 / 37:33）——但「系統感覺壞咗」嘅真正原因值得拆解（39:48）。</li>
+    <li><strong>AI 唔會搶你份工，反而會令你更富有</strong>——但真正爆發性增長可能喺「線下/實體工種」：當 AI 做晒知識型工作，人與人之間嘅實體服務需求會爆炸（58:25 "Why In-Person Jobs Could Explode in the AI Era"）。</li>
+    <li><strong>開放源碼 AI 有隱藏風險</strong>（1:20:48）——Friedberg 對 open source 嘅雙面性有保留。</li>
+    <li><strong>Tesla 會贏出萬億美元機械人競賽</strong>——呢個係佢喺「後 AI 時代」最大嘅投資判斷之一。</li>
+    <li><strong>衰老同長生</strong>：2006 年一個改變衰老研究嘅發現（1:39:43）、點解成個身體好似同步衰老（1:39:16）、AI 點樣改變表觀遺傳學（epigenetics）同長壽研究（1:42:39）。</li>
+    <li><strong>「AI 革命」其實仲未開始</strong>（1:17:19）——當 AI 真正進入招聘流程同生產系統，先係革命真正開波。</li>
+  </ul>
+
+  <h3>章節地圖（完整 2 小時結構）</h3>
+  <div class="chapters">
+    <ul>
+      <li><span class="t">00:02:04</span>David Friedberg 係邊個、點解佢重要</li>
+      <li><span class="t">00:05:01</span>總統顧問實際做啲咩</li>
+      <li><span class="t">00:06:06</span>點解 AI 可能係我哋時代最重要嘅議題</li>
+      <li><span class="t">00:08:28</span>美國經濟真實情況</li>
+      <li><span class="t">00:14:56</span>美國係咪真係喺衰落？</li>
+      <li><span class="t">00:18:43</span>有錢人係咪應該交多啲稅？</li>
+      <li><span class="t">00:24:09</span>如果現行制度繼續落去會點？</li>
+      <li><span class="t">00:26:43</span>自住物業嘅大謊言</li>
+      <li><span class="t">00:29:35</span>唔買樓應該投資咩？</li>
+      <li><span class="t">00:33:35</span>成功有幾多係你自己控制？</li>
+      <li><span class="t">00:37:11</span>點解不平等可能無可避免</li>
+      <li><span class="t">00:39:48</span>系統「壞咗」嘅真正原因</li>
+      <li><span class="t">00:43:03</span>美國可以喺邊啲國家度學習？</li>
+      <li><span class="t">00:44:47</span>點解「進步」比想像中重要</li>
+      <li><span class="t">00:51:02</span>AI 會唔會真係搶我哋份工？</li>
+      <li><span class="t">00:56:24</span>AI 做晒啲工之後人類做咩？</li>
+      <li><span class="t">00:58:25</span>點解 AI 時代「實體工種」會爆炸</li>
+      <li><span class="t">01:01:17</span>AI 點樣顛覆招聘流程</li>
+      <li><span class="t">01:05:20</span>AI 創辦人嘅預測信得過嗎？</li>
+      <li><span class="t">01:10:06</span>Klarna CEO 揭示 AI 同就業嘅真相</li>
+      <li><span class="t">01:15:24</span>咩情況會逼政府介入 AI？</li>
+      <li><span class="t">01:17:19</span>AI 革命幾時真正開始？</li>
+      <li><span class="t">01:18:57</span>Open Source 對 AI 真正意義</li>
+      <li><span class="t">01:20:48</span>開放源碼 AI 嘅隱藏風險</li>
+      <li><span class="t">01:24:17</span>Elon Musk 話「工作會變成可選」啱唔啱？</li>
+      <li><span class="t">01:28:02</span>人類下一階段會係點？</li>
+      <li><span class="t">01:29:44</span>社會主義能唔能夠解決 AI 導致嘅失業？</li>
+      <li><span class="t">01:34:58</span>人類會唔會永遠生存？</li>
+      <li><span class="t">01:39:16</span>點解成個身體好似同步衰老</li>
+      <li><span class="t">01:39:43</span>2006 年改變衰老研究嘅發現</li>
+      <li><span class="t">01:42:39</span>AI 點樣改變表觀遺傳學同長壽</li>
+      <li><span class="t">01:45:54</span>美國對自己講嘅大謊言</li>
+      <li><span class="t">01:48:27</span>Friedberg 點睇伊朗戰爭</li>
+      <li><span class="t">01:54:22</span>下屆選舉邊個會贏？</li>
+      <li><span class="t">01:57:57</span>AI 對普通人真正嘅意義</li>
+    </ul>
+  </div>
+
+  <div class="insight">
+    <div class="tag">💡 James 嘅 Takeaway</div>
+    <p style="margin:8px 0 0">呢集係「All-In 宇宙」嘅延伸——Friedberg 同時係 All-In 主持，佢喺 E287 度講嘅債市、AI、科學議題，今次喺 DOAC 用更長篇幅講深一層。三個值得記住嘅判斷：<strong>① 「政府會救你」係謊言，退休保障要自己諗（$37萬億機會成本）</strong>；② AI 時代真正爆發嘅可能係「實體/面對面工種」——知識工作被 AI 取代後，人際服務反而升值；③ 佢將衰老/表觀遺傳學同 AI 連埋一齊——呢個係佢作為「科學家投資者」最與別不同嘅視角。留意：佢啲預測（2028 社會主義浪潮）係極具爭議嘅觀點，當參考判斷而唔係事實。</p>
+  </div>
+  <div class="src-note">資料來源：DOAC 官方 RSS 描述 + 章節列表（今日 05:00 UTC 發布）。</div>
+</div>
+
+<!-- ============ ACQUIRED ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">Acquired</div>
+      <div class="pod-host">Ben Gilbert &amp; David Rosenthal</div>
+    </div>
+    <span class="badge badge-same">最近無更新</span>
+  </div>
+
+  <div class="no-update">過去24小時無新集數（Acquired 為雙週更新，上集8月9日發布）。</div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集</div>
+    <div class="le-title">S20E1 — Disney: The Renaissance and the Empire（迪士尼：文藝復興與帝國）</div>
+    <div style="font-size:12.8px;color:var(--muted)">2026-08-09 · 4小時33分 · Part II</div>
+    <div class="le-summary">
+      1984年嘅迪士尼「死嘅價值比活嘅更高」，結果卻係媒體史上最偉大嘅翻身仗：Eisner + Wells 以 <strong>美女與野獸、獅子王、百老匯、VHS/DVD 戰略、同史上最大媒體收購 ESPN</strong> 重建帝國；之後差啲再崩潰（歐洲迪士尼錢坑、Comcast 敵意收購），Bob Iger 用 <strong>Pixar、Marvel、Lucasfilm</strong> 三次史詩級收購奠定21世紀媒體帝國——直到科技巨頭出現。
+    </div>
+    <div class="le-link"><a href="https://www.acquired.fm/episodes/disney-the-renaissance-and-the-empire">官方頁面</a> · <a href="https://www.wsj.com/business/media/disney-espn-acquired-podcast-flywheel-222b2b50">WSJ專欄</a>（完整萃取見8月10日報告）</div>
+  </div>
+</div>
+
+<!-- ============ ALL-IN ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">All-In with Chamath, Jason, Sacks &amp; Friedberg</div>
+      <div class="pod-host">Chamath Palihapitiya · Jason Calacanis · David Sacks · David Friedberg</div>
+    </div>
+    <span class="badge badge-same">最近無更新</span>
+  </div>
+
+  <div class="no-update">過去24小時無新集數（E287 8月29日發布，昨日報告已完整深度萃取）。</div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集</div>
+    <div class="le-title">E287 — Nvidia's Historic Quarter, SaaS Comeback, Bessent vs Druck, America's Debt Crisis, Cancer Vaccine</div>
+    <div style="font-size:12.8px;color:var(--muted)">2026-08-29 · 1小時36分41秒</div>
+    <div class="le-summary">
+      <ul style="margin:6px 0 4px 20px">
+        <li><strong>Nvidia 歷史性季度</strong>：財報後單日 +9%、市值單日增 $4,400億；FY2028 指引 +70% 增長，ACIE 客戶收入 $40.3B（+138% YoY），傳聞 $12.9B 收購 Hugging Face。</li>
+        <li><strong>Bessent vs Druckenmiller</strong>：Druck 炮轟財長用 TGA 買長債係「價格管理」——而佢嗰篇 WSJ 文章竟然係用 AI 寫嘅。</li>
+        <li><strong>美國債務</strong>：國債觸及 $40T、本年赤字預期 $2T。</li>
+        <li><strong>Science Corner</strong>：Moderna + Merck 個人化 mRNA 癌症疫苗 intismeran 三期試驗達標——史上首個個人化新抗原療法三期成功。</li>
+      </ul>
+    </div>
+    <div class="le-link"><a href="https://allinchamathjason.libsyn.com/nvidias-historic-quarter-saas-comeback-bessent-vs-druck-americas-debt-crisis-cancer-vaccine">收聽頁面</a>（完整深度萃取見8月29日報告）</div>
+  </div>
+</div>
+
+<!-- ============ MY FIRST MILLION ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">My First Million</div>
+      <div class="pod-host">Sam Parr &amp; Shaan Puri</div>
+    </div>
+    <span class="badge badge-same">最近無更新</span>
+  </div>
+
+  <div class="no-update">過去24小時無新集數（上集8月26日，週三/週五節奏）。</div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集</div>
+    <div class="le-title">Ep 856 — How a $5B founder is using AI (3 tutorials)｜嘉賓：Wade Foster（Zapier CEO）</div>
+    <div style="font-size:12.8px;color:var(--muted)">2026-08-26 · 1小時9分</div>
+    <div class="le-summary">
+      身家估值 $50億 嘅 Zapier 創辦人 Wade Foster 公開每日用 AI 慳幾個鐘嘅實戰系統：<strong>「機械人高管團隊」</strong>晨間簡報、<strong>晚間簡報</strong>、<strong>會同你拗嘅 AI + War Council 技能</strong>（多個 AI 角色互相辯論再綜合）、<strong>用 AI 招聘</strong>（31:53 有具體 prompt 流程），仲有「40歲前做到 billionaire」、「1-dimensional winners」同推薦書單。Prompts 免費攞：<a href="https://clickhubspot.com/efcd">clickhubspot.com/efcd</a>
+    </div>
+    <div class="le-link"><a href="https://www.mfmpod.com/">MFM官網</a>（完整萃取見8月26日報告）</div>
+  </div>
+</div>
+
+<!-- ============ KNOWLEDGE PROJECT ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">The Knowledge Project</div>
+      <div class="pod-host">Shane Parrish · Farnam Street</div>
+    </div>
+    <span class="badge badge-same">最近無更新</span>
+  </div>
+
+  <div class="no-update">過去24小時無新集數（上集8月27日，公眾版9月1日——即明日正式開放）。</div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集</div>
+    <div class="le-title">Steve Jobs in Exile｜嘉賓：Geoffrey Cain</div>
+    <div style="font-size:12.8px;color:var(--muted)">2026-08-27（會員先行；公眾版 9月1日）</div>
+    <div class="le-summary">
+      1985年 Jobs 被自己創辦嘅公司趕走，到1990年代末回歸拯救 Apple 之間嗰十年，好少人知。Geoffrey Cain 重構呢段歲月：<strong>NeXT 年年蝕錢、合夥人離開、投資者失去信心、身家幾乎清零，距離執笠只差一個週末</strong>——就喺呢啲失敗之中，Jobs 學識點樣成為 Apple 後來需要嘅領袖。「呢個係 Steve Jobs 成為 Steve Jobs 之前嘅 Steve Jobs」。
+    </div>
+    <div class="le-link"><a href="https://fs.blog/knowledge-project-podcast/geoffrey-cain/">官方頁面</a>（完整萃取見8月28日報告）</div>
+  </div>
+</div>
+
+<footer>
+  Vee Mok 自動掃描生成 · 每日 09:53 UTC 運行<br>
+  Podcast sources: Acquired / Founders / All-In / My First Million / Knowledge Project / DOAC
+</footer>
+
+</div>
+</body>
+</html>
