@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-08-31T09:53:00Z",
+  "lastScan": "2026-09-06T09:56:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -28,7 +28,8 @@
       "22f31168-8886-11f1-ba79-83a58999bd7b",
       "ee7acc94-8e04-11f1-b83f-7b056aab13eb",
       "d7e49fb6-9415-11f1-8f44-ebce80087ca6",
-      "b340b68e-9efd-11f1-bfdd-d7bddd398df4"
+      "b340b68e-9efd-11f1-bfdd-d7bddd398df4",
+      "6da070c2-a945-11f1-9294-0b8c75e1a778"
     ],
     "all-in": [
       "688c4809-9cf4-4d77-b5d7-482ee43e7ccc",
@@ -64,7 +65,8 @@
       "bf461c11-8e10-4124-8c40-f24dab393cf9",
       "64b534f7-b272-4bb8-9238-96055f4fa858",
       "83789c12-210d-431c-9b7e-8796293414a7",
-      "6d431e83-eb88-4082-9b0c-aec16b34ea7b"
+      "6d431e83-eb88-4082-9b0c-aec16b34ea7b",
+      "a3cf57b6-0471-4554-a7e1-a41345c06d96"
     ],
     "my-first-million": [
       "a9e51792-9d4f-11f1-b79f-435a1ed9f4c8",
@@ -109,7 +111,9 @@
       "85f0f3c0-8f7f-11f1-848a-2f064fc2f47c",
       "b1085ffe-9145-11f1-bf06-778920192e45",
       "9e94359e-9fac-11f1-b1b7-03812ae52517",
-      "a176bd92-a13f-11f1-875a-97865eec8c7b"
+      "a176bd92-a13f-11f1-875a-97865eec8c7b",
+      "6a82687e-a7dc-11f1-b272-2b9c0995234a",
+      "1e8b0ff6-a2e7-11f1-8aef-ef369179c143"
     ],
     "knowledge-project": [
       "https://fs.blog/?post_type=podcast&p=81515",
@@ -166,7 +170,9 @@
       "flightcast:01KZB7YVD53RPEFM4NEHJPGZG9",
       "flightcast:01KZEMW7JE1GT1EJ9WC74DKA3M",
       "flightcast:01M0ECRSS1Y4MX77YFXTYP472G",
-      "flightcast:01M0ZJXTQSPBEVY6X1T0EZ7M9C"
+      "flightcast:01M0ZJXTQSPBEVY6X1T0EZ7M9C",
+      "flightcast:01M0AC7XP90RTAAXP6R693D8DR",
+      "flightcast:01M0ZPY4TQPFTDMTWWP68V36C9"
     ]
   }
 }
