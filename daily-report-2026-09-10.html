@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日思維播客深度掃描 · 2026-09-10</title>
+<style>
+  :root {
+    --bg: #fdfaf6;
+    --card: #ffffff;
+    --ink: #2d2a26;
+    --muted: #7a7368;
+    --accent: #b45309;
+    --accent-soft: #f5e9d8;
+    --border: #e8e0d2;
+    --new: #9a3412;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Georgia, 'Noto Serif SC', 'Songti SC', serif;
+    line-height: 1.75;
+    padding: 40px 20px 80px;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; }
+  header { text-align: center; padding: 30px 0 10px; }
+  .kicker {
+    font-size: 13px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 10px;
+  }
+  h1 { font-size: 30px; font-weight: 700; color: var(--ink); }
+  .meta { color: var(--muted); font-size: 14px; margin-top: 12px; }
+  .meta .dot { margin: 0 8px; color: #c9bfae; }
+  .summary-box {
+    background: var(--accent-soft); border: 1px solid var(--border);
+    border-radius: 10px; padding: 18px 22px; margin: 28px 0 8px;
+    font-size: 15px;
+  }
+  .summary-box strong { color: var(--new); }
+  .podcast-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 30px 34px;
+    margin: 26px 0;
+    box-shadow: 0 1px 3px rgba(90,70,40,0.05);
+  }
+  .pod-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 12px; margin-bottom: 18px; }
+  .pod-name { font-size: 21px; font-weight: 700; }
+  .pod-host { font-size: 13px; color: var(--muted); margin-top: 2px; }
+  .badge { font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
+  .badge-new { background: var(--new); color: #fff; }
+  .badge-same { background: #efe9dd; color: var(--muted); }
+  h3 { font-size: 17px; margin: 26px 0 10px; color: var(--accent); }
+  h3.first { margin-top: 6px; }
+  .ep-title { font-size: 18px; font-weight: 700; line-height: 1.5; }
+  .ep-meta { font-size: 13px; color: var(--muted); margin: 8px 0 4px; }
+  .ep-meta span { margin-right: 14px; }
+  .chapters { background: #fbf8f1; border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; font-size: 13.5px; color: #55504a; }
+  .chapters li { margin: 3px 0; list-style: none; }
+  .chapters .t { color: var(--accent); font-weight: 700; margin-right: 8px; font-family: 'Courier New', monospace; }
+  p { margin: 12px 0; font-size: 15px; }
+  ul { margin: 10px 0 12px 22px; font-size: 15px; }
+  li { margin: 6px 0; }
+  blockquote {
+    border-left: 4px solid var(--accent);
+    background: #faf5ec;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-style: italic;
+    color: #4a4338;
+    font-size: 14.5px;
+    border-radius: 0 8px 8px 0;
+  }
+  blockquote .q-src { display: block; margin-top: 8px; font-style: normal; font-size: 12.5px; color: var(--muted); }
+  .kpi-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 14px 0; }
+  .kpi {
+    flex: 1 1 150px; background: #fbf8f1; border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 16px; text-align: center;
+  }
+  .kpi .num { font-size: 20px; font-weight: 700; color: var(--accent); display: block; }
+  .kpi .lab { font-size: 12px; color: var(--muted); }
+  .insight { background: #f3f6f0; border: 1px solid #dbe3d6; border-radius: 10px; padding: 16px 20px; margin: 14px 0; }
+  .insight .tag { font-size: 12px; font-weight: 700; color: #3d6b35; letter-spacing: 0.08em; text-transform: uppercase; }
+  .no-update { color: var(--muted); font-size: 14.5px; }
+  .no-update .last-ep { margin-top: 10px; padding: 14px 16px; background: #fbf8f1; border: 1px solid var(--border); border-radius: 10px; font-size: 14px; color: var(--ink); }
+  .no-update .last-ep .lbl { color: var(--muted); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .no-update .last-ep .le-title { font-size: 15.5px; font-weight: 700; color: var(--accent); margin: 4px 0 2px; }
+  .no-update .last-ep .le-summary { font-size: 13.8px; color: #55504a; margin-top: 6px; }
+  .no-update .last-ep .le-link { font-size: 12.8px; margin-top: 6px; }
+  .no-update .last-ep a { color: var(--accent); }
+  footer { text-align: center; color: #b3aa9c; font-size: 12.5px; margin-top: 40px; }
+  a { color: var(--accent); }
+  .src-note { font-size: 12.5px; color: var(--muted); font-style: italic; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcasts · Daily Deep Scan</div>
+  <h1>每日思維播客深度掃描</h1>
+  <div class="meta">2026年9月10日（週四）<span class="dot">·</span>生成時間 09:55 UTC<span class="dot">·</span>6個播客掃描</div>
+</header>
+
+<div class="summary-box">
+  <strong>今日重點：5集新內容，橫跨3個播客——三大主題全部同「人」有關。</strong>
+  ① <strong>Knowledge Project x Tobi Lütke（Shopify CEO）</strong>：佢點樣用「AI 議會」助手幫自己諗最難嘅決定，Shopify 內部 AI 同事「River」有記憶、有個性、仲有權 challenge CEO——AI 越強，judgment 同責任感越值錢。
+  ② <strong>DOAC 兩集心理實戰</strong>：Vanessa Van Edwards 講「對話 blueprint」——講超過 45 秒就開始產生摩擦、點解「How are you?」呢類自動駕駛問題會摧毀連結；Dr Leanne ten Brinke 拆解「黑暗四人格」(Dark Tetrad)、點解靠眼神判斷講大話係完全錯，同埋對付有毒人格嘅 7 條規則。
+  ③ <strong>MFM 兩集生意課</strong>：Tony Hawk 親身講「成名的代價」同 Pro Skater 遊戲版稅點養起佢；IM8 創辦人 Danny Yeung 講點樣 11 個月做到 $100M ARR、18 個月 $200M。
+  Acquired、Founders、All-In 無更新。
+</div>
+
+<!-- ============ KNOWLEDGE PROJECT ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">The Knowledge Project</div>
+      <div class="pod-host">Shane Parrish</div>
+    </div>
+    <span class="badge badge-new">🆕 新集數</span>
+  </div>
+
+  <div class="ep-title">Tobi Lütke: AI Agents, Better Decisions, and the Future of Work</div>
+  <div class="ep-meta"><span>📅 2026-09-10</span><span>👤 嘉賓：Tobi Lütke（Shopify 創辦人兼 CEO）</span></div>
+
+  <blockquote>
+    唔係問 AI「幫我寫段 code」，而係將 AI 當成一個會同你吵架、有記憶、可以質疑你嘅同事。Tobi 用「AI council」檢視自己最難嘅決定——因為 taste、judgment、責任，先係 AI 越強就越值錢嘅嘢。
+    <span class="q-src">— 本集主題（Farnam Street 官方描述意譯）</span>
+  </blockquote>
+
+  <h3 class="first">主題與背景</h3>
+  <p>Shopify 創辦人兼 CEO Tobi Lütke 返嚟 Knowledge Project，同 Shane Parrish 傾三個大題：<strong>AI agents、更好嘅決策、未來工作</strong>。呢集嘅核心唔係「AI 有幾勁」，而係「人響 AI 時代應該點樣諗嘢」。Tobi 係少數會公開自己決策流程（甚至公開佢點「養」AI 助手）嘅 CEO，所以呢集乾貨極多。</p>
+
+  <h3>核心論點</h3>
+  <ul>
+    <li><strong>用「AI 議會」檢視最難嘅決定</strong>：Tobi 唔係單獨問一個 AI，而係用一組 AI（council）去反覆審視佢最棘手嘅決策——等於請咗一堆顧問幫你搵盲點。呢個係「決策前先開庭」嘅做法。</li>
+    <li><strong>AI 越有力，「品味 + 判斷 + 責任」越值錢</strong>：當執行（寫 code、出稿、做分析）被 AI 商品化，稀缺嘅就係 <em>taste</em>（品味）、<em>judgment</em>（判斷）同 <em>accountability</em>（責任）。呢三樣嘢，就係未來 CEO 同 senior 嘅核心價值。</li>
+    <li><strong>「River」——一個有記憶、有個性、被允許質疑老闆嘅 AI 同事</strong>：Shopify 內部用嘅 AI 同事 River，設有 memory、personality，仲有「permission to challenge the CEO」。呢個設計好關鍵：多數公司嘅 AI 助手係「聽話嘅工具」，River 係「敢頂嘴嘅隊友」。</li>
+    <li><strong>幾個「好 option」之間點揀</strong>：好決策好少會有即時反饋（immediate feedback）。愈係長期、愈係重要嘅決定，愈要靠框架同經驗，而唔係靠短期數據。</li>
+    <li><strong>要「搭得長久」，就要肯修剪同重建</strong>：building something that lasts requires pruning and rebuilding——同園藝一樣，唔係淨係加嘢，而係要剪枝。</li>
+  </ul>
+
+  <h3>深入睇：Shopify 嘅 River 究竟係咩</h3>
+  <p>Tobi 之前響 X 寫過一篇「Learning on the Shop floor」介紹 River。綜合公開資料，River 係一個<strong>住在公司 Slack 裡面嘅 AI coding agent</strong>：</p>
+  <ul>
+    <li>可以讀 code、跑測試、寫 code、開 pull request、查 data warehouse、睇 production traces，並使用團隊專屬嘅 zones / skills / instructions / memory。</li>
+    <li>「佢處理咗 Shopify 工程入面一個荒謬地大嘅比例（a ludicrous amount）。」</li>
+    <li><strong>刻意只喺公開 Slack channel 運作，唔接受 DM</strong>——目的係創造一個所有人都睇到、學到嘅「教學工坊」（Lehrwerkstatt）環境，將一個人嘅發現變成<strong>組織記憶</strong>。</li>
+  </ul>
+  <blockquote>
+    「唔係一個私密、個人有用嘅 copilot。當有人用 River 解決咗一個問題，佢會留低一個記憶：一粒 pebble、一個 skill 更新、一個 AGENTS.md diff，有時甚至係一個全新嘅共享 skill。」
+    <span class="q-src">— Shopify Engineering, "Under the River" (2026-05-28)</span>
+  </blockquote>
+
+  <h3>重點引用與心法</h3>
+  <ul>
+    <li><strong>直覺都要「養」</strong>：Tobi 分享佢點樣刻意培養 intuition（直覺）。直覺唔係天生，而係大量輸入 + 覆盤嘅副產品。</li>
+    <li><strong>用 affirmations 改自己行為</strong>：佢有自己一套自我對話（affirmations）去修正行為——唔係心靈雞湯，而係刻意的行為設計。</li>
+    <li><strong>小朋友要講「yet」</strong>：當仔女講「我唔識做 / 做唔到」，必須加個「yet」（「我仲未有做到」）。呢個係 growth mindset 嘅一句口頭禪，直接植入家庭語言。</li>
+  </ul>
+
+  <div class="insight">
+    <span class="tag">對 James 嘅 Industry Insight</span>
+    <p>呢集直情係 Trinity / 錦鲲 AI 平台嘅參考答案。Tobi 示範嘅唔係「用 AI 做嘢快啲」，而係<strong>用 AI 改寫決策制度</strong>：① 用 AI council 幫最高層諗難題；② 用「公開 + 記憶」嘅 agent 將個人經驗沉澱成組織資產；③ 刻意設計 AI「有權 challenge」。呢三招可以直接搬去酒店集團嘅 AI 治理框架——尤其係「公開場合運作」呢一點，正好解決 AI 輸出冇人審、經驗無法沉澱嘅痛點。</p>
+  </div>
+
+  <p class="src-note">來源：Farnam Street RSS + Shopify Engineering「Under the River」+ 公開報導。</p>
+</div>
+
+<!-- ============ DIARY OF A CEO (1) ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">The Diary of a CEO</div>
+      <div class="pod-host">Steven Bartlett</div>
+    </div>
+    <span class="badge badge-new">🆕 2集新內容</span>
+  </div>
+
+  <h3 class="first">① Likeability Expert: Stop Doing This, It's Why People Quietly Avoid You! | Vanessa Van Edwards</h3>
+  <div class="ep-meta"><span>📅 2026-09-10</span><span>⏱️ 約 146 分鐘</span><span>👤 嘉賓：Vanessa Van Edwards（行為研究者）</span></div>
+
+  <p><strong>嘉賓背景</strong>：Vanessa Van Edwards 係行為研究者，著有《Cues》《Captivate》，新書《Conversation》。佢專門用科學方法拆解人際互動，幫人由「社交自動駕駛」跳去「有意識咁連繫人」。</p>
+
+  <blockquote>
+    你係咪一直用緊差劣嘅溝通習慣同無意識嘅身體語言，自己破壞自己？呢集解鎖人際連結嘅秘密，教你培養 charisma、建立更深嘅連結，永遠擺脫尷尬嘅 small talk。
+    <span class="q-src">— DOAC 官方本集簡介（意譯）</span>
+  </blockquote>
+
+  <h3>核心論點（五大重點）</h3>
+  <ul>
+    <li><strong>對話 Blueprint：三個心理層次</strong>——唔同層次嘅互動要用唔同方式，唔可以一開始就跳到最深層。</li>
+    <li><strong>自動駕駛陷阱（Autopilot Trap）</strong>：「How are you?」「What do you do?」呢類社交劇本問題，其實會<strong>摧毀</strong>連結，因為佢哋冇任何好奇心。</li>
+    <li><strong>Rizz 嘅機械原理</strong>：對話「你一言我一語」係有科學嘅——<strong>一個人連續講超過 45 秒就會開始產生摩擦（friction）</strong>。想有「rizz / aura」，先要識節奏。</li>
+    <li><strong>用身體語言建立權威</strong>：搵到自己嘅「maximum resonance point（最大共鳴點）」，可以即刻傳達 warmth（暖）同 competence（能幹）——呢兩樣唔係二選一。</li>
+    <li><strong>五種故事原型</strong>：用佢嘅框架去解讀身邊人嘅心理敘事（narrative）。</li>
+  </ul>
+
+  <h3>節目脈絡（節錄官方章節）</h3>
+  <div class="chapters">
+    <ul>
+      <li><span class="t">00:02:16</span>How to Connect With Anyone</li>
+      <li><span class="t">00:06:46</span>The 3 Questions That Build Instant Connection</li>
+      <li><span class="t">00:35:37</span>The Questions That Secretly Kill Conversations</li>
+      <li><span class="t">00:40:45</span>What's Worse: Talking Too Much or Too Little?</li>
+      <li><span class="t">00:45:27</span>How to Spot a Conversational Narcissist</li>
+      <li><span class="t">01:08:55</span>The Real Reason First Dates Go Wrong</li>
+      <li><span class="t">01:18:08</span>How to Rewrite the Story You Tell Yourself</li>
+      <li><span class="t">01:30:07</span>What Science Reveals About Luck and Success</li>
+      <li><span class="t">01:36:09</span>The 5 Personality Archetypes Explained</li>
+      <li><span class="t">01:51:50</span>The Psychology of the "Unlucky Struggler"</li>
+      <li><span class="t">02:09:04</span>What "Aura" Actually Means</li>
+      <li><span class="t">02:13:26</span>The Eye Contact Trick That Builds Connection</li>
+      <li><span class="t">02:16:16</span>How to Become an Exceptional Listener</li>
+    </ul>
+  </div>
+
+  <div class="insight">
+    <span class="tag">對 James 嘅 Insight</span>
+    <p>呢集係「商業社交 + 談判」嘅實戰課。「45 秒摩擦」同「3 條即時連結問題」可以直接用喺：① 同投資人/政府/大客戶開會時嘅 turn-taking；② 談判時避免講太長；③ 團隊一對一。Vanessa 嘅框架本質係「用好奇心換連結」，對 James 呢類要密集見人、傾 deal 嘅角色，係低成本高回報嘅微調。</p>
+  </div>
+</div>
+
+<!-- ============ DIARY OF A CEO (2) ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">The Diary of a CEO</div>
+      <div class="pod-host">Steven Bartlett</div>
+    </div>
+    <span class="badge badge-new">🆕（同卡第2集）</span>
+  </div>
+
+  <h3 class="first">② Human Lie Detector: The #1 Sign They're Lying To You, Catch Liars Instantly! | Dr Leanne ten Brinke</h3>
+  <div class="ep-meta"><span>📅 2026-09-07</span><span>👤 嘉賓：Dr. Leanne ten Brinke（UBC 心理學家）</span></div>
+
+  <p><strong>嘉賓背景</strong>：Dr. Leanne ten Brinke 係不列顛哥倫比亞大學（UBC）心理學家、Truth and Trust Lab 總監，多年研究「欺騙」同「有毒行為」，新書《Poisonous People》（毒人：精神變態、自戀、操縱、虐待狂——如何抵抗並改善你嘅人生）。研究經同行評審，並附獨立事實核查文件。</p>
+
+  <blockquote>
+    你係咪正對付緊一個操縱高手？學識喺受損害之前，辨認講大話者、精神變態者同自戀者嘅隱藏紅旗。
+    <span class="q-src">— DOAC 官方本集簡介（意譯）</span>
+  </blockquote>
+
+  <h3>核心論點（五大重點）</h3>
+  <ul>
+    <li><strong>警號：及早辨認「黑暗四人格」(Dark Tetrad)</strong>——精神變態（psychopathy）、自戀（narcissism）、馬基雅維利主義（Machiavellianism）、虐待狂（sadism）。要喺受傷之前睇到早期行為紅旗。</li>
+    <li><strong>操縱劇本</strong>：有毒人格用嚟控制同欺騙人嘅具體心理戰術，包括<strong>gaslighting（煤氣燈）真正係咩意思</strong>。</li>
+    <li><strong>測謊謬誤</strong>：靠眼神接觸、坐唔定（fidgeting）、身體語言去捉人講大話，係<strong>極差</strong>嘅方法——同大眾直覺完全相反。</li>
+    <li><strong>自戀嘅兩副面孔</strong>：唔同類型嘅自戀者（其中一種被批評少少就即刻崩潰）；同埋為一個精神變態老細打工，代價有幾毀滅性。</li>
+    <li><strong>防禦策略</strong>：具體技術去智取危險人格、設下「鐵一般」嘅界線，大幅改善人生。</li>
+  </ul>
+
+  <h3>節目脈絡（節錄官方章節）</h3>
+  <div class="chapters">
+    <ul>
+      <li><span class="t">00:05:30</span>How Facial Expressions Reveal What People Really Feel</li>
+      <li><span class="t">00:09:59</span>Three Signs Someone Might Be Lying</li>
+      <li><span class="t">00:20:29</span>Why the Eye Contact Myth Gets Body Language Wrong</li>
+      <li><span class="t">00:21:53</span>Psychopathy, Narcissism, Machiavellianism and Sadism Explained</li>
+      <li><span class="t">00:36:28</span>How Common Are Dark Personality Traits?</li>
+      <li><span class="t">00:38:05</span>Are Dark Traits Caused by Genetics or Childhood?</li>
+      <li><span class="t">00:44:23</span>What Happens Inside a Psychopath's Brain?</li>
+      <li><span class="t">00:59:57</span>Why Dark Personality Traits Don't Get You Ahead</li>
+      <li><span class="t">01:09:06</span>How to Spot Red Flags in Dating Profiles and Relationships</li>
+      <li><span class="t">01:19:36</span>7 Rules for Dealing With Dark Personalities</li>
+      <li><span class="t">01:23:32</span>How to Spot Gaslighting and Coercive Control</li>
+      <li><span class="t">01:38:25</span>Why You Should Avoid Face to Face Negotiations</li>
+      <li><span class="t">01:44:02</span>How the 10% Do the Damage and the Biggest Lie About Success</li>
+      <li><span class="t">01:45:35</span>What Is the Greatest Lie We've All Been Told?</li>
+    </ul>
+  </div>
+
+  <div class="insight">
+    <span class="tag">對 James 嘅 Insight</span>
+    <p>呢集係「識人 + 談判防守」嘅工具。三個位最實用：① <strong>測謊唔靠眼神</strong>——直接推翻大部分人嘅直覺，提醒唔好用「佢眼神閃縮」嚟判斷；② <strong>避開面對面談判</strong>（01:38:25）——呢個對 deal-making 係反直覺但可能好關鍵嘅建議；③ <strong>「10% 嘅人造成大部分傷害」同 「7 條規則對付黑暗人格」</strong>——對管理 13000+ 酒店、要同大量合作方打交道嘅 James，係現成嘅 background-check / 合作夥伴風控框架。</p>
+  </div>
+
+  <p class="src-note">來源：DOAC Flightcast RSS（完整 show notes + 章節）。本集另有獨立事實核查文件。</p>
+</div>
+
+<!-- ============ MY FIRST MILLION (1) ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">My First Million</div>
+      <div class="pod-host">Sam Parr &amp; Shaan Puri</div>
+    </div>
+    <span class="badge badge-new">🆕 2集新內容</span>
+  </div>
+
+  <h3 class="first">① Episode 860: Decoding Tony Hawk's mindset in 72 minutes</h3>
+  <div class="ep-meta"><span>📅 2026-09-09</span><span>⏱️ 約 73 分鐘</span><span>👤 嘉賓：Tony Hawk（滑板傳奇）</span></div>
+
+  <p>Sam Parr 同 Shaan Puri 同滑板界傳奇 Tony Hawk 傾，題材橫跨「點樣成名」到「點樣將名氣變生意」。呢集唔係普通名人訪談——而係拆解一個「極限運動員變身億萬品牌」嘅完整商業邏輯。</p>
+
+  <h3>節目脈絡（官方 Show Notes）</h3>
+  <div class="chapters">
+    <ul>
+      <li><span class="t">0:00</span>Intro</li>
+      <li><span class="t">1:20</span>Meeting Tony in Ethiopia</li>
+      <li><span class="t">3:42</span>Economics of skate parks（滑板場嘅生意模型）</li>
+      <li><span class="t">12:38</span>The price of greatness（成名的代價）</li>
+      <li><span class="t">17:54</span>Scraping by（捱窮嘅日子）</li>
+      <li><span class="t">26:33</span>The 900（史上第一個 900 度轉體）</li>
+      <li><span class="t">35:16</span>Tony Hawk's Pro Skater（遊戲系列）</li>
+      <li><span class="t">52:20</span>Investing</li>
+      <li><span class="t">58:53</span>Influencing on internet culture</li>
+      <li><span class="t">1:03:47</span>Aging skaters</li>
+      <li><span class="t">1:08:07</span>Tickets</li>
+    </ul>
+  </div>
+
+  <h3>核心論點同關鍵數據</h3>
+  <ul>
+    <li><strong>「成名的代價」</strong>：Tony 响一個被視為「次文化死路」嘅運動捱出頭，經歷高低起跌——「mastery、failure、同一個改變咗滑板運動嘅花式」係佢故事嘅主軸。</li>
+    <li><strong>The 900</strong>：1999 年 X Games，Tony Hawk 成為史上第一個成功做出 900（兩圈半空中轉體）嘅滑板手——呢一刻將佢由「好叻嘅滑板手」變成「家喻戶曉嘅文化符號」。</li>
+    <li><strong>Tony Hawk's Pro Skater（1999）</strong>：遊戲系列累計創造數十億美元收入。Tony 自己透露，單係頭三集遊戲嘅年度版稅（annual royalties）就曾經有<strong>約 $400 萬／年</strong>嘅級數——呢個係佢財富嘅真正引擎，遠超比賽獎金。</li>
+    <li><strong>Birdhouse Skateboards</strong>：佢自己嘅滑板品牌，係佢由「運動員」轉為「品牌持有人」嘅關鍵一步。</li>
+    <li><strong>滑板場經濟學</strong>：節目用咗 9 分鐘講 skate park 嘅生意模型——呢個係一個好「MFM」嘅角度：將興趣變成有現金流嘅資產。</li>
+    <li><strong>老去嘅滑板手 / 影響力變現</strong>：Tony 講點樣喺身體退化後，靠網絡文化、內容、門票（tickets）延續事業。</li>
+  </ul>
+
+  <div class="kpi-row">
+    <div class="kpi"><span class="num">~$140M</span><span class="lab">Tony Hawk 2026 估算淨資產</span></div>
+    <div class="kpi"><span class="num">~$4M/年</span><span class="lab">頭三集遊戲年度版稅（本人透露）</span></div>
+    <div class="kpi"><span class="num">1999</span><span class="lab">首個 900 + Pro Skater 遊戲同年</span></div>
+  </div>
+
+  <div class="insight">
+    <span class="tag">對 James 嘅 Insight</span>
+    <p>Tony Hawk 嘅財富結構好有啟發：<strong>比賽獎金從來唔係重點，IP 授權（遊戲版稅）同品牌（Birdhouse）先係</strong>。呢個同酒店業嘅邏輯相通——真正值錢嘅唔係「做幾多單生意」，而係「擁有一個可以重複收租嘅品牌/授權/平台」。MFM 用 9 分鐘講 skate park 經濟學，亦係提醒：任何「興趣」都可以被設計成有現金流嘅資產。</p>
+  </div>
+  <p class="src-note">來源：MFM RSS show notes（官方章節）+ 公開報導（CNBC、企業財報等）。MFM 唔提供詳細 show notes，部分背景以公開資料補足。</p>
+</div>
+
+<!-- ============ MY FIRST MILLION (2) ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">My First Million</div>
+      <div class="pod-host">Sam Parr &amp; Shaan Puri</div>
+    </div>
+    <span class="badge badge-new">🆕（同卡第2集）</span>
+  </div>
+
+  <h3 class="first">② Episode 859: How we scaled to $100M in under a year (ft. IM8 co-founder Danny Yeung)</h3>
+  <div class="ep-meta"><span>📅 2026-09-07</span><span>⏱️ 約 54 分鐘</span><span>👤 嘉賓：Danny Yeung（IM8 / Prenetics 創辦人兼 CEO）</span></div>
+
+  <blockquote>
+    Shaan Puri 同 Danny Yeung 傾——佢點樣喺 18 個月內建立起一盤 $200M 嘅生意。
+    <span class="q-src">— MFM Episode 859 官方簡介</span>
+  </blockquote>
+
+  <h3>嘉賓背景</h3>
+  <p>Danny Yeung 係 <strong>Prenetics（NASDAQ: PRE）</strong>聯合創辦人兼 CEO——一間做基因檢測／健康科技嘅上市公司。佢用做 Prenetics 十年嘅洞察，孵化咗保健品直銷（DTC）品牌 <strong>IM8</strong>，請埋 David Beckham 做代言／合作夥伴，短時間內爆到成為行業史上增長最快嘅保健品品牌。</p>
+
+  <h3>核心論點同關鍵數據</h3>
+  <ul>
+    <li><strong>11 個月做到 $100M ARR</strong>：IM8 係<strong>行業史上第一個</strong>喺推出 11 個月內達到 $1 億年度經常性收入（ARR）嘅保健品品牌。</li>
+    <li><strong>18–19 個月做到約 $200M run-rate</strong>：靠<strong>兩個 hero products（明星產品）</strong>撐起整個 $200M run-rate——唔係靠一大堆 SKU 鋪貨。</li>
+    <li><strong>$1B 非稀釋性資金（non-dilutive commitment）</strong>：獲 General Catalyst 提供高達 $10 億嘅非稀釋性資金承諾，去撐 IM8 擴張（呢個係好罕見嘅融資結構，唔會攤薄股權）。</li>
+    <li><strong>「拒絕照行業慣例去 scale」</strong>：Danny 嘅增長關鍵，係唔跟同行做法——先搵到真正嘅問題，再俾出最乾淨嘅解決方案。</li>
+    <li><strong>產品線擴張</strong>：計劃 2027 Q1 進軍 gummy（軟糖）市場，由兩個 hero products 擴去更多 format 同 need states。</li>
+    <li><strong>額外背景</strong>：Prenetics 同時行「Health + Wealth」雙引擎策略，包括 Bitcoin 財庫（treasury）策略。</li>
+  </ul>
+
+  <div class="kpi-row">
+    <div class="kpi"><span class="num">11個月</span><span class="lab">IM8 達到 $100M ARR</span></div>
+    <div class="kpi"><span class="num">~$200M</span><span class="lab">18–19個月 run-rate</span></div>
+    <div class="kpi"><span class="num">$1B</span><span class="lab">General Catalyst 非稀釋性資金</span></div>
+    <div class="kpi"><span class="num">2個</span><span class="lab">撐起 $200M 嘅 hero products</span></div>
+  </div>
+
+  <blockquote>
+    我哋基本上係靠兩個明星產品達到 $2 億 run-rate——藍圖會加入新 format 同新 need states，由軟糖開始。
+    <span class="q-src">— Danny Yeung, 引述自 NutraIngredients (2026-07-28)</span>
+  </blockquote>
+
+  <div class="insight">
+    <span class="tag">對 James 嘅 Insight</span>
+    <p>IM8 個案嘅核心唔係「保健品好賺」，而係<strong>三招打法</strong>：① <strong>先搵真問題，再俾最乾淨嘅解</strong>（唔係先諗產品）；② <strong>靠極少數 hero product 集中火力</strong>，唔好一開始就鋪 SKU；③ <strong>用非稀釋性資金</strong>去擴張，保住股權。呢三招對 Tevo / Trinity 嘅產品策略同融資結構都有直接參考價值——尤其係「非稀釋性資金」呢個概念。</p>
+  </div>
+  <p class="src-note">來源：MFM RSS + Prenetics 官方新聞稿 + CNBC / NutraIngredients / SCMP 報導。MFM 唔提供詳細 show notes，背景以公開資料補足。</p>
+</div>
+
+<!-- ============ ACQUIRED (NO UPDATE) ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">Acquired</div>
+      <div class="pod-host">Ben Gilbert &amp; David Rosenthal</div>
+    </div>
+    <span class="badge badge-same">無新集數</span>
+  </div>
+  <div class="no-update">
+    最近無更新。對上一次掃描（2026-09-06）至今未見新集。
+    <div class="last-ep">
+      <div class="lbl">最後已知劇集</div>
+      <div class="le-title">Disney: The Renaissance and the Empire（Season 20 Ep.1）</div>
+      <div class="le-summary">迪士尼 Part II：由 1984 年「死咗仲值錢」嘅困境講起，Eisner + Wells 嘅世紀翻身、ESPN 收購、Comcast 惡意收購、Iger 回歸，再到 Pixar / Marvel / Lucasfilm 收購同 Disney+ 豪賭。全長約 4 小時 33 分。</div>
+      <div class="le-link">🔗 <a href="https://www.acquired.fm/episodes/disney-the-renaissance-and-the-empire">acquired.fm/episodes/disney-the-renaissance-and-the-empire</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FOUNDERS (NO UPDATE) ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">Founders</div>
+      <div class="pod-host">David Senra</div>
+    </div>
+    <span class="badge badge-same">無新集數</span>
+  </div>
+  <div class="no-update">
+    最近無更新。對上一次掃描（2026-09-06）至今未見新集（#432 已於上次掃描收錄）。
+    <div class="last-ep">
+      <div class="lbl">最後已知劇集</div>
+      <div class="le-title">#432 The Mind of Napoleon</div>
+      <div class="le-summary">David Senra 讀拿破崙自己寫嘅《The Mind of Napoleon》。全集精華係一堆第一身金句：「Work is my element. I am born and built for work.」「Hesitation is fatal…」「Imagination rules the world.」「Power is my mistress.」——史上最強工作狂 + 野心家嘅自白。</div>
+      <div class="le-link">🔗 <a href="https://www.founderspodcast.com/">founderspodcast.com</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ALL-IN (NO UPDATE) ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">All-In with Chamath, Jason, Sacks &amp; Friedberg</div>
+      <div class="pod-host">Chamath · Jason · Sacks · Friedberg</div>
+    </div>
+    <span class="badge badge-same">無新集數</span>
+  </div>
+  <div class="no-update">
+    最近無更新。對上一次掃描（2026-09-06）至今未見新集（E288 已於上次掃描收錄）。
+    <div class="last-ep">
+      <div class="lbl">最後已知劇集</div>
+      <div class="le-title">GPT-6 Hits AGI? Tech Euphoria 2.0, SF Mansion Shortage, NYC Bans AI in Schools &amp; Venezuela Oil Deal (E288)</div>
+      <div class="le-summary">主要話題：OpenAI 發佈 GPT-6 Astra（「係咪已達 AGI？」）、Dwarkesh 嘅 Hugging Face「黑客」文章引爆 Bernie Sanders AI 禁令討論、Mamdani 禁紐約 K-8 用 AI、美國-委內瑞拉石油協議。全長約 1 小時 32 分。</div>
+      <div class="le-link">🔗 <a href="https://allin.com/">allin.com</a></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Mindset Podcasts Daily Deep Scan · 生成於 2026-09-10 09:55 UTC<br>
+  6 個播客 · 5 集新內容 · 3 個播客有更新<br>
+  所有內容基於 RSS 官方描述及公開報導整理，非投資建議。
+</footer>
+
+</div>
+</body>
+</html>
