@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-09-10T09:55:00Z",
+  "lastScan": "2026-09-11T09:55:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -177,7 +177,8 @@
       "flightcast:01M0AC7XP90RTAAXP6R693D8DR",
       "flightcast:01M0ZPY4TQPFTDMTWWP68V36C9",
       "flightcast:01M23VE3XS205C0HMNRE4ENR58",
-      "flightcast:01M1M9A59AFBGJG3WGBMW30A0F"
+      "flightcast:01M1M9A59AFBGJG3WGBMW30A0F",
+      "flightcast:01M0BDP5KGRFPV398M820XBKQF"
     ]
   }
 }

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日思維播客深度掃描 · 2026-09-11</title>
+<style>
+  :root {
+    --bg: #fdfaf6;
+    --card: #ffffff;
+    --ink: #2d2a26;
+    --muted: #7a7368;
+    --accent: #b45309;
+    --accent-soft: #f5e9d8;
+    --border: #e8e0d2;
+    --new: #9a3412;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Georgia, 'Noto Serif SC', 'Songti SC', serif;
+    line-height: 1.75;
+    padding: 40px 20px 80px;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; }
+  header { text-align: center; padding: 30px 0 10px; }
+  .kicker {
+    font-size: 13px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 10px;
+  }
+  h1 { font-size: 30px; font-weight: 700; color: var(--ink); }
+  .meta { color: var(--muted); font-size: 14px; margin-top: 12px; }
+  .meta .dot { margin: 0 8px; color: #c9bfae; }
+  .summary-box {
+    background: var(--accent-soft); border: 1px solid var(--border);
+    border-radius: 10px; padding: 18px 22px; margin: 28px 0 8px;
+    font-size: 15px;
+  }
+  .summary-box strong { color: var(--new); }
+  .podcast-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 30px 34px;
+    margin: 26px 0;
+    box-shadow: 0 1px 3px rgba(90,70,40,0.05);
+  }
+  .pod-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 12px; margin-bottom: 18px; }
+  .pod-name { font-size: 21px; font-weight: 700; }
+  .pod-host { font-size: 13px; color: var(--muted); margin-top: 2px; }
+  .badge { font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
+  .badge-new { background: var(--new); color: #fff; }
+  .badge-same { background: #efe9dd; color: var(--muted); }
+  h3 { font-size: 17px; margin: 26px 0 10px; color: var(--accent); }
+  h3.first { margin-top: 6px; }
+  h4 { font-size: 15px; margin: 18px 0 6px; color: #5a4a33; }
+  .ep-title { font-size: 18px; font-weight: 700; line-height: 1.5; }
+  .ep-meta { font-size: 13px; color: var(--muted); margin: 8px 0 4px; }
+  .ep-meta span { margin-right: 14px; }
+  .chapters { background: #fbf8f1; border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; font-size: 13.5px; color: #55504a; }
+  .chapters li { margin: 3px 0; list-style: none; }
+  .chapters .t { color: var(--accent); font-weight: 700; margin-right: 8px; font-family: 'Courier New', monospace; }
+  p { margin: 12px 0; font-size: 15px; }
+  ul { margin: 10px 0 12px 22px; font-size: 15px; }
+  li { margin: 6px 0; }
+  blockquote {
+    border-left: 4px solid var(--accent);
+    background: #faf5ec;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-style: italic;
+    color: #4a4338;
+    font-size: 14.5px;
+    border-radius: 0 8px 8px 0;
+  }
+  blockquote .q-src { display: block; margin-top: 8px; font-style: normal; font-size: 12.5px; color: var(--muted); }
+  .kpi-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 14px 0; }
+  .kpi {
+    flex: 1 1 150px; background: #fbf8f1; border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 16px; text-align: center;
+  }
+  .kpi .num { font-size: 20px; font-weight: 700; color: var(--accent); display: block; }
+  .kpi .lab { font-size: 12px; color: var(--muted); }
+  .insight { background: #f3f6f0; border: 1px solid #dbe3d6; border-radius: 10px; padding: 16px 20px; margin: 14px 0; }
+  .insight .tag { font-size: 12px; font-weight: 700; color: #3d6b35; letter-spacing: 0.08em; text-transform: uppercase; }
+  .no-update { color: var(--muted); font-size: 14.5px; }
+  .no-update .last-ep { margin-top: 10px; padding: 14px 16px; background: #fbf8f1; border: 1px solid var(--border); border-radius: 10px; font-size: 14px; color: var(--ink); }
+  .no-update .last-ep .lbl { color: var(--muted); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .no-update .last-ep .le-title { font-size: 15.5px; font-weight: 700; color: var(--accent); margin: 4px 0 2px; }
+  .no-update .last-ep .le-summary { font-size: 13.8px; color: #55504a; margin-top: 6px; }
+  .no-update .last-ep .le-link { font-size: 12.8px; margin-top: 6px; }
+  .no-update .last-ep a { color: var(--accent); }
+  footer { text-align: center; color: #b3aa9c; font-size: 12.5px; margin-top: 40px; }
+  a { color: var(--accent); }
+  .src-note { font-size: 12.5px; color: var(--muted); font-style: italic; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcasts · Daily Deep Scan</div>
+  <h1>每日思維播客深度掃描</h1>
+  <div class="meta">2026年9月11日（週五）<span class="dot">·</span>生成時間 09:55 UTC（北京 17:55）<span class="dot">·</span>6個播客掃描</div>
+</header>
+
+<div class="summary-box">
+  <strong>今日重點：只 1 集新內容 —— DOAC 一集「AI 同大腦」精華重播，但內容極重。</strong>
+  Diary of a CEO 出咗一集 <em>Most Replayed Moment: Brain Rot Experts — How To Use AI In A Healthy Way!</em>（34分鐘精華剪輯），由腦健康專家 <strong>Dr Daniel Amen</strong>（27萬+腦掃描）同深度學習之父 <strong>Dr Terry Sejnowski</strong> 同台，拆解 MIT 研究：用 ChatGPT 寫作嘅人，記憶相關腦區活躍度少近一半、83% 講唔出自己啱啱寫咗乜。
+  核心訊息一句講晒：<strong>「唔好用 AI 代替你嘅思考，要用 AI 放大你嘅思考。」</strong>
+  其餘 5 個播客（Acquired、Founders、All-In、My First Million、Knowledge Project）今日無更新——下面列出各自最後一集。
+</div>
+
+<!-- ============ DIARY OF A CEO ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">The Diary of a CEO</div>
+      <div class="pod-host">Steven Bartlett</div>
+    </div>
+    <span class="badge badge-new">NEW · 1 集</span>
+  </div>
+
+  <div class="ep-title">Most Replayed Moment: Brain Rot Experts — How To Use AI In A Healthy Way!</div>
+  <div class="ep-meta">
+    <span>📅 2026-09-11 05:00 UTC</span>
+    <span>⏱ 34:22（精華剪輯）</span>
+    <span>🎙 嘉賓：Dr Daniel Amen × Dr Terry Sejnowski</span>
+    <span>🏷 bonus / Most Replayed Moment</span>
+  </div>
+  <p class="src-note">本集係「最常重播片段」精華，剪自完整一集《ChatGPT Brain Rot Debate: The Fastest Way to Get…》。完整版全長約 1 小時 27 分（章節見文末）。</p>
+
+  <h3 class="first">主題</h3>
+  <p>AI／ChatGPT 正喺度點樣改變（甚至削弱）人類大腦——記憶、學習、批判思考——以及「點用先叫健康」。兩位處於光譜兩端嘅專家對談：一位窮一生保護大腦，一位用幾十年打造咗今日塑造大腦嘅技術。</p>
+
+  <h3>嘉賓</h3>
+  <ul>
+    <li><strong>Dr Daniel Amen</strong> — 精神病學家、腦健康權威、Amen Clinics 創辦人，累積超過 <strong>270,000 份腦掃描</strong>（曾掃描 Justin Bieber、Miley Cyrus、Kendall Jenner 等名人）。著《Raising Mentally Strong Kids》，非首次上 DOAC。</li>
+    <li><strong>Dr Terry Sejnowski</strong> — 計算神經科學先驅，同 Geoffrey Hinton 共同發明 <strong>Boltzmann machine</strong>（現代 AI 嘅奠基石之一），被視為深度學習之父之一。著《ChatGPT and the Future of AI: The Deep Language Revolution》。</li>
+  </ul>
+
+  <h3>核心論點</h3>
+  <ol>
+    <li><strong>問題唔係 AI，係「點用」。 </strong>AI 就好似超市走道、社交媒體：環境中有樣嘢提供短期獎勵、但帶長期代價，人類大規模上會揀嗰個最快 dopamine 嘅選項。AI 一樣——坐低批判思考又慢又痛，交俾 AI 快又爽。</li>
+    <li><strong>關鍵詞係「thinking」——人們已經把思考外判（deferred their thinking）。 </strong>LinkedIn 上忽然個個文都有 em dash、文章唔似本人寫，但 reach 反而更高，所以「點解要返去難嗰條路？」</li>
+    <li><strong>「Use it or lose it」——唔用腦，腦就變弱；弱腦更傾向揀「一粒棉花糖」（延遲滿足失敗）。</strong>呢個直接連到腦退化症風險：認知卸載 → 認知負荷下降 → 長遠增加失智風險。</li>
+    <li><strong>大腦靠 struggle（掙扎）成熟。 </strong>Grit 係掙扎練出嚟；學習本身（long-term potentiation）之所以痛，因為係新嘅。相反，一個「永遠唔會對你發脾氣」嘅完美伴侶／AI 女友會移除 struggle，反而唔利大腦發展。</li>
+    <li><strong>健康關係嘅定義：唔係用佢代替你嘅工作，而係同佢互動、去做出更好嘅工作。</strong>（Use it to amplify, not replace thinking.）</li>
+    <li><strong>AI 早期教育：</strong>一對一真人教學最好但昂貴；AI 老師可規模化、可改善大腦，但「邊個注入道德價值？」——目前 LLM 冇 basal ganglia、唔用 reinforcement learning，文化價值要人為輸入，否則只會係偏差嘅平均值。</li>
+  </ol>
+
+  <h3>關鍵數據</h3>
+  <div class="kpi-row">
+    <div class="kpi"><span class="num">~2×</span><span class="lab">MIT研究：用ChatGPT組別<br>記憶腦區活躍度少近一半</span></div>
+    <div class="kpi"><span class="num">83%</span><span class="lab">ChatGPT用戶<br>記唔起自己啱啱寫咗乜</span></div>
+    <div class="kpi"><span class="num">75%</span><span class="lab">美國成年人<br>肥胖（短線獎勵行為）</span></div>
+  </div>
+  <div class="kpi-row">
+    <div class="kpi"><span class="num">~30%</span><span class="lab">美國 0–8 歲家長<br>話子女有用AI學習(2025.3)</span></div>
+    <div class="kpi"><span class="num">54%</span><span class="lab">英國家長<br>擔心子女過度依賴AI</span></div>
+    <div class="kpi"><span class="num">58%</span><span class="lab">美國少女<br>持續感到悲傷(CDC)</span></div>
+  </div>
+  <ul>
+    <li><strong>最病嘅一代（CDC）：</strong>58% 少女持續悲傷；32% 曾想過自殺；24% 計劃過；13% 嘗試過。</li>
+    <li><strong>Politeness tax：</strong>Sam Altman 確認用戶講 please / thank you 每年令 OpenAI 花掉<strong>數千萬美元</strong>。</li>
+    <li><strong>Elon Musk 的 $20,000 Optimus robot</strong>——Amen 半開玩笑：如果真係出，我就「可以觸摸到我嘅 AI」。</li>
+  </ul>
+
+  <h3>重點引用</h3>
+  <blockquote>
+    Use it or lose it. So if they're not engaging their brains, their brains are going to be weaker. And weaker brains are much more likely to pick the one marshmallow.
+    <span class="q-src">— Dr Daniel Amen（論 AI 與早期腦發育）</span>
+  </blockquote>
+  <blockquote>
+    That you don't use it to do your work, you interact with it to get better work. … That you have to have a relationship with it or it's going to turn toxic. It's going to hurt you. But if you have a good relationship with it, it can make your life better.
+    <span class="q-src">— Dr Daniel Amen（「咩叫同 AI 嘅健康關係」）</span>
+  </blockquote>
+  <blockquote>
+    That's what I think the word <em>thinking</em> is the key thing, because what's happening now is people have deferred their thinking to it. That is already what's happening.
+    <span class="q-src">— Dr Daniel Amen（論「思考外判」）</span>
+  </blockquote>
+  <blockquote>
+    The way that the brain matures is through struggling, number one. You have to learn from your mistakes. The brain was designed for that.
+    <span class="q-src">— Dr Daniel Amen（論 struggle 對大腦嘅必要）</span>
+  </blockquote>
+  <blockquote>
+    It is possible to be able to use it in a cognitively positive way because you can dig deeper … you might actually improve your cognitive representations. … you have to learn how to question what you're getting.
+    <span class="q-src">— Dr Terry Sejnowski（AI 亦可以係認知正面嘅工具）</span>
+  </blockquote>
+  <blockquote>
+    We have the sickest generation in history because we've unleashed cell phones, social media, phones without any neuroscience study. … I think AI is much more dangerous, has the potential to be much more dangerous because it's way sexier.
+    <span class="q-src">— Dr Daniel Amen（論監管與研究）</span>
+  </blockquote>
+  <blockquote>
+    I wouldn't trust him with anything in terms of anything he says. … They're trying to optimize their profits, not your use of it.
+    <span class="q-src">— Dr Terry Sejnowski（論 Sam Altman 叫人「唔好講 thank you」）</span>
+  </blockquote>
+
+  <h3>技術細節</h3>
+  <ul>
+    <li><strong>MIT 研究設計：</strong>受試者分三組——完全唔用 AI、只用搜尋、用 AI 寫作。用 AI 嗰組「同記憶相關腦區活躍度少近一半」，83% 事後無法記得自己寫咗乜、甚至無法正確引用自己篇文。</li>
+    <li><strong>點解記唔住？</strong>因為你唔係「經歷」寫作過程，資訊無法經海馬體（hippocampus）編碼入記憶。反過來，同 AI 互動、追問、質疑，就大幅增加記住嘅機會。</li>
+    <li><strong>兩個學習系統：</strong>認知系統 + <strong>basal ganglia</strong>（重複、practice、practice、practice 嘅基礎）。兩者必須一齊運作，先至之後變得更強 cognitively。</li>
+    <li><strong>文化／道德學習靠 basal ganglia，</strong>而目前大型語言模型冇 basal ganglia、亦唔用 reinforcement learning——所以價值觀要「輸入」先有。</li>
+    <li><strong>社交腦：</strong>大腦有極大部分係「同人互動嘅社會系統」，係自動導航。對 ChatGPT 保持禮貌／當佢係人，會同時喚醒你嘅社交腦同勾起 ChatGPT 被訓練出嘅社交部分。</li>
+  </ul>
+
+  <h3>行業 Insight</h3>
+  <div class="insight">
+    <span class="tag">對 James 嘅啟示</span>
+    <p><strong>1）稀缺資產正在轉移。</strong>當個個都用 AI 代勞，「批判思考 + 原創嘅 first-principles 解難」反而成為最稀缺、最值錢嘅能力。Steven 自白：「我而家學多咗資訊，但可能正喪失批判思考能力——兩件事好唔同。」佢自己都要立規則自我監管。</p>
+    <p><strong>2）管理層用法示範。</strong>Steven 親自示範「正確用法」：寫咗兩頁 memo（背景、成功指標、組織架構、匯報關係），然後掉俾 ChatGPT / Gemini / Grok 三個模型，扮 BCG 頂級顧問去 critique，再加返財務預測、匯報線等。佢寧願花 4 個鐘自己寫都唔 30 秒叫 AI 代筆——因為「23 歲起每日寫作、簡化」嘅習慣，就係佢一切事業嘅根基。</p>
+    <p><strong>3）行動清單（專家版）：</strong>① 用 AI <em>放大</em>而唔係取代思考；② AI 輔助任務同「純人腦任務」交替；③ 刻意做 deep learning / 記憶，令你可以叫 AI 出題考你；④ 主動叫 AI 俾 negative feedback；⑤ 同仔女溝通——「你願唔願意將部分 mind share 送俾啲靠你賺錢嘅公司？」</p>
+    <p><strong>4）消費/AI 陪伴賽道：</strong>孤獨流行病 + AI 女友（節目中即場 demo 咗 xAI 新出嘅 AI 角色「Annie」）+ 機械人（Optimus）+ Neuralink/AR/VR，Amen 預言會出現「史上最少性行为嘅一代」。呢個係一個巨大但高風險嘅市場。</p>
+  </div>
+
+  <h3>完整版章節（供參考）</h3>
+  <ul class="chapters">
+    <li><span class="t">00:00</span>Intro</li>
+    <li><span class="t">02:53</span>Terry's Background</li>
+    <li><span class="t">04:35</span>MIT Study: ChatGPT and Reduced Brain Function</li>
+    <li><span class="t">07:42</span>The Link Between ChatGPT and Dementia</li>
+    <li><span class="t">19:49</span>What Does a Healthy Relationship with AI Look Like?</li>
+    <li><span class="t">23:09</span>AI and Early Brain Development</li>
+    <li><span class="t">25:43</span>AI Girlfriends</li>
+    <li><span class="t">35:38</span>Why Struggle Is Good for Your Brain</li>
+    <li><span class="t">40:26</span>ChatGPT Best Practices</li>
+    <li><span class="t">54:15</span>Boosting Brain Health Without AI</li>
+    <li><span class="t">57:57</span>Are We Raising Mentally Weak Kids?</li>
+    <li><span class="t">1:03:55</span>Things That Are Bad for Your Brain</li>
+    <li><span class="t">1:11:11</span>Multitasking / ADHD / Negativity</li>
+    <li><span class="t">1:18:30</span>The Top Tip for a Healthier Brain</li>
+  </ul>
+</div>
+
+<!-- ============ KNOWLEDGE PROJECT ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">The Knowledge Project</div>
+      <div class="pod-host">Shane Parrish</div>
+    </div>
+    <span class="badge badge-same">最近無更新</span>
+  </div>
+  <p class="no-update">今日無新集。以下係最後已知劇集（2026-09-10 已掃描）：</p>
+  <div class="last-ep">
+    <div class="lbl">最後一集</div>
+    <div class="le-title">Tobi Lütke: AI Agents, Better Decisions, and the Future of Work</div>
+    <div class="le-summary">Shopify 創辦人兼 CEO Tobi Lütke 同 Shane 講 AI agents、更好嘅決策同未來工作。佢點樣用「AI 議會」審視最難嘅決定、點解 AI 越強、taste／judgment／責任感越值錢；深入 Shopify 內部 AI 同事「River」（有記憶、有個性、有權 challenge CEO）；點樣喺幾個都好嘅選項之間揀、點解最好嘅長線決策往往冇即時反饋、點解長青嘅東西要不斷修剪同重建。</div>
+    <div class="le-link">🔗 <a href="https://fs.blog/knowledge-project-podcast/tobi-lutke-3/">fs.blog — Tobi Lütke</a></div>
+  </div>
+</div>
+
+<!-- ============ MY FIRST MILLION ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">My First Million</div>
+      <div class="pod-host">Sam Parr &amp; Shaan Puri</div>
+    </div>
+    <span class="badge badge-same">最近無更新</span>
+  </div>
+  <p class="no-update">今日無新集。以下係最後已知劇集（2026-09-09 已掃描）：</p>
+  <div class="last-ep">
+    <div class="lbl">最後一集 · Episode 860</div>
+    <div class="le-title">Decoding Tony Hawk's mindset in 72 minutes</div>
+    <div class="le-summary">Sam 同 Shaan 同滑板傳奇 Tony Hawk 對談：喺埃塞俄比亞相識、滑板公園嘅經濟學、成名的代價、早年如何「掹掹緊」捱過、經典動作 The 900、Tony Hawk's Pro Skater 遊戲點改變佢一生、投資心得、互聯網文化影響力、以及「老去嘅滑板手」與門票生意。</div>
+    <div class="le-link">🔗 <a href="https://www.mfmpod.com/">mfmpod.com</a></div>
+  </div>
+</div>
+
+<!-- ============ FOUNDERS ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">Founders</div>
+      <div class="pod-host">David Senra</div>
+    </div>
+    <span class="badge badge-same">最近無更新</span>
+  </div>
+  <p class="no-update">今日無新集。以下係最後已知劇集（2026-09-05 已掃描）：</p>
+  <div class="last-ep">
+    <div class="lbl">最後一集 · #432</div>
+    <div class="le-title">The Mind of Napoleon</div>
+    <div class="le-summary">David Senra 讀《The Mind of Napoleon》嘅心得。名言包括：「A consecutive series of great actions never is the result of chance and luck; it always is a product of planning and genius.」「Hesitation is fatal.」「Power is my mistress.」「Imagination rules the world.」——集中講意志、行動力同命運。</div>
+    <div class="le-link">🔗 <a href="https://www.founderspodcast.com/">founderspodcast.com</a></div>
+  </div>
+</div>
+
+<!-- ============ ALL-IN ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">All-In with Chamath, Jason, Sacks &amp; Friedberg</div>
+      <div class="pod-host">Chamath · Jason · Sacks · Friedberg</div>
+    </div>
+    <span class="badge badge-same">最近無更新</span>
+  </div>
+  <p class="no-update">今日無新集。以下係最後已知劇集（2026-09-04 已掃描）：</p>
+  <div class="last-ep">
+    <div class="lbl">最後一集 · E288</div>
+    <div class="le-title">GPT-6 Hits AGI? Tech Euphoria 2.0, SF Mansion Shortage, NYC Bans AI in Schools &amp; Venezuela Oil Deal</div>
+    <div class="le-summary">OpenAI 發佈 GPT-6「Astra」，係咪已達 AGI？Dwarkesh 嘅 Hugging Face 文章引發 Bernie Sanders 式 AI 禁令討論、EA 同 AI influencer 嘅利益衝突、Mamdani 禁 NYC K-8 校內用 AI、美委石油協議。（All-In Summit 9/13–15 舉行。）</div>
+    <div class="le-link">🔗 <a href="https://allin.com/">allin.com</a></div>
+  </div>
+</div>
+
+<!-- ============ ACQUIRED ============ -->
+<div class="podcast-card">
+  <div class="pod-head">
+    <div>
+      <div class="pod-name">Acquired</div>
+      <div class="pod-host">Ben Gilbert &amp; David Rosenthal</div>
+    </div>
+    <span class="badge badge-same">最近無更新</span>
+  </div>
+  <p class="no-update">今日無新集。以下係最後已知劇集（2026-08-09 已掃描）：</p>
+  <div class="last-ep">
+    <div class="lbl">最後一集 · Season 20, Ep 1</div>
+    <div class="le-title">Disney: The Renaissance and the Empire（Disney Part II）</div>
+    <div class="le-summary">1984 年迪士尼「死咗仲值錢過活住」，Eisner + Wells 帶領史上最偉大翻身：《美女與野獸》《獅子王》、百老匯、Disney Vault 家用影帶，以及史上最偉大收購——ESPN。之後 Euro Disney 變錢坑、內部權鬥、動畫淪陷、Comcast 敵意收購；再由 Bob Iger 靠 Pixar、Marvel、Lucasfilm 打造 21 世紀媒體帝國，直到科技巨頭來臨。約 4 小時 33 分。</div>
+    <div class="le-link">🔗 <a href="https://www.acquired.fm/episodes/disney-the-renaissance-and-the-empire">acquired.fm</a></div>
+  </div>
+</div>
+
+<footer>
+  每日思維播客深度掃描 · 2026-09-11 · 由 Vee Mok 自動生成<br>
+  6 個播客 RSS 掃描 · 1 集新內容 · 所有引用均基於原文（RSS / Apple Podcasts / 官方 transcript）
+</footer>
+
+</div>
+</body>
+</html>
