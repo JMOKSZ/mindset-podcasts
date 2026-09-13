@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-09-12T09:53:00Z",
+  "lastScan": "2026-09-13T09:56:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -66,7 +66,8 @@
       "64b534f7-b272-4bb8-9238-96055f4fa858",
       "83789c12-210d-431c-9b7e-8796293414a7",
       "6d431e83-eb88-4082-9b0c-aec16b34ea7b",
-      "a3cf57b6-0471-4554-a7e1-a41345c06d96"
+      "a3cf57b6-0471-4554-a7e1-a41345c06d96",
+      "a089255b-32f1-4957-af7d-4c5b3ab018f4"
     ],
     "my-first-million": [
       "a9e51792-9d4f-11f1-b79f-435a1ed9f4c8",
@@ -182,7 +183,7 @@
     ]
   },
   "lastScanResult": {
-    "newEpisodes": 0,
-    "note": "無新集數；六個播客均無更新。報告以最新已知劇集生成。"
+    "newEpisodes": 1,
+    "note": "新集數：All-In E289（AI Kills Everybody or Doomer Psyop? OpenAI Math Breakthrough, Nike $200B Collapse）2026-09-11。其餘五個播客無更新。"
   }
 }
