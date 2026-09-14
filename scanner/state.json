@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-09-13T09:56:00Z",
+  "lastScan": "2026-09-14T09:53:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -10,7 +10,8 @@
       "772a1689-5d6a-4d66-8469-95b8eb41dfd3",
       "94dbf581-80c8-4b90-aff2-fa649cd90edd",
       "465f9bb3-6d71-49ed-a233-de82bc41b034",
-      "14ef00c6-30ba-44cc-9869-33d3d92828a3"
+      "14ef00c6-30ba-44cc-9869-33d3d92828a3",
+      "68b66323-6e74-4c90-8157-ef3f1ed0d042"
     ],
     "founders": [
       "66440888-a4dc-11f1-9ad2-4b47c594a56f",
@@ -179,11 +180,12 @@
       "flightcast:01M0ZPY4TQPFTDMTWWP68V36C9",
       "flightcast:01M23VE3XS205C0HMNRE4ENR58",
       "flightcast:01M1M9A59AFBGJG3WGBMW30A0F",
-      "flightcast:01M0BDP5KGRFPV398M820XBKQF"
+      "flightcast:01M0BDP5KGRFPV398M820XBKQF",
+      "flightcast:01M243XAN33DBKT1N5844WSMAV"
     ]
   },
   "lastScanResult": {
-    "newEpisodes": 1,
-    "note": "新集數：All-In E289（AI Kills Everybody or Doomer Psyop? OpenAI Math Breakthrough, Nike $200B Collapse）2026-09-11。其餘五個播客無更新。"
+    "newEpisodes": 2,
+    "note": "新集數：Acquired《Home Depot》(2026-09-13，3h35m) 及 Diary of a CEO 蔣學勤教授《The Man Who Predicted The Iran War》(2026-09-14)。其餘四個播客（Founders / All-In / My First Million / Knowledge Project）無更新。"
   }
 }
