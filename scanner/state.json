@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-09-14T09:53:00Z",
+  "lastScan": "2026-09-15T09:56:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -30,7 +30,8 @@
       "ee7acc94-8e04-11f1-b83f-7b056aab13eb",
       "d7e49fb6-9415-11f1-8f44-ebce80087ca6",
       "b340b68e-9efd-11f1-bfdd-d7bddd398df4",
-      "6da070c2-a945-11f1-9294-0b8c75e1a778"
+      "6da070c2-a945-11f1-9294-0b8c75e1a778",
+      "d0c3c534-b069-11f1-bc61-4345073b86a6"
     ],
     "all-in": [
       "688c4809-9cf4-4d77-b5d7-482ee43e7ccc",
@@ -68,7 +69,9 @@
       "83789c12-210d-431c-9b7e-8796293414a7",
       "6d431e83-eb88-4082-9b0c-aec16b34ea7b",
       "a3cf57b6-0471-4554-a7e1-a41345c06d96",
-      "a089255b-32f1-4957-af7d-4c5b3ab018f4"
+      "a089255b-32f1-4957-af7d-4c5b3ab018f4",
+      "7bdf1a10-126c-402c-9320-6678149a2aff",
+      "e23cdf18-6528-458c-adff-dea4d619dcb3"
     ],
     "my-first-million": [
       "a9e51792-9d4f-11f1-b79f-435a1ed9f4c8",
@@ -117,7 +120,8 @@
       "6a82687e-a7dc-11f1-b272-2b9c0995234a",
       "1e8b0ff6-a2e7-11f1-8aef-ef369179c143",
       "89a285ea-abab-11f1-86c7-5f39f30f083b",
-      "edbdc48c-aaa6-11f1-a8a1-ff719a17ec4e"
+      "edbdc48c-aaa6-11f1-a8a1-ff719a17ec4e",
+      "74f58fec-b02a-11f1-b703-1f555d6de825"
     ],
     "knowledge-project": [
       "https://fs.blog/?post_type=podcast&p=81515",
@@ -185,7 +189,7 @@
     ]
   },
   "lastScanResult": {
-    "newEpisodes": 2,
-    "note": "新集數：Acquired《Home Depot》(2026-09-13，3h35m) 及 Diary of a CEO 蔣學勤教授《The Man Who Predicted The Iran War》(2026-09-14)。其餘四個播客（Founders / All-In / My First Million / Knowledge Project）無更新。"
+    "newEpisodes": 4,
+    "note": "新集數：Founders《How Michael Bloomberg Works》(2026-09-14, 48m)；All-In《Jensen Huang: The Doomer Hoax...》(2026-09-14)；All-In《Elon Musk & Gwynne Shotwell...》(2026-09-15)；My First Million《David Rubenstein: We took $5M and turned it into $500B》(Ep.861, 2026-09-14)。無更新：Acquired / Knowledge Project / Diary of a CEO。"
   }
 }
