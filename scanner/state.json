@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-09-15T09:56:00Z",
+  "lastScan": "2026-09-16T09:53:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -71,7 +71,9 @@
       "a3cf57b6-0471-4554-a7e1-a41345c06d96",
       "a089255b-32f1-4957-af7d-4c5b3ab018f4",
       "7bdf1a10-126c-402c-9320-6678149a2aff",
-      "e23cdf18-6528-458c-adff-dea4d619dcb3"
+      "e23cdf18-6528-458c-adff-dea4d619dcb3",
+      "b72632fc-68fc-41b3-a88c-fdca9e1cf2db",
+      "cea835d1-fb37-4f07-a91e-356e7e5c8fca"
     ],
     "my-first-million": [
       "a9e51792-9d4f-11f1-b79f-435a1ed9f4c8",
@@ -121,7 +123,8 @@
       "1e8b0ff6-a2e7-11f1-8aef-ef369179c143",
       "89a285ea-abab-11f1-86c7-5f39f30f083b",
       "edbdc48c-aaa6-11f1-a8a1-ff719a17ec4e",
-      "74f58fec-b02a-11f1-b703-1f555d6de825"
+      "74f58fec-b02a-11f1-b703-1f555d6de825",
+      "c99494dc-b1b3-11f1-8592-9f835067055a"
     ],
     "knowledge-project": [
       "https://fs.blog/?post_type=podcast&p=81515",
@@ -189,7 +192,7 @@
     ]
   },
   "lastScanResult": {
-    "newEpisodes": 4,
-    "note": "新集數：Founders《How Michael Bloomberg Works》(2026-09-14, 48m)；All-In《Jensen Huang: The Doomer Hoax...》(2026-09-14)；All-In《Elon Musk & Gwynne Shotwell...》(2026-09-15)；My First Million《David Rubenstein: We took $5M and turned it into $500B》(Ep.861, 2026-09-14)。無更新：Acquired / Knowledge Project / Diary of a CEO。"
+    "newEpisodes": 3,
+    "note": "新集數：All-In《Satya Nadella on the AI Doomer Slowdown, Microsoft's Master Plan & Who Wins AI》(2026-09-15)；All-In《JD Vance on AI, Entitlement Fraud, Iran War, Israel, H-1B Abuse & the Midterms》(2026-09-15)；My First Million《i got internet famous... if i started again from scratch》(Ep.862, 2026-09-16)。無更新：Acquired / Founders / Knowledge Project / Diary of a CEO。"
   }
 }
