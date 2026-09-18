@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-09-17T09:54:28Z",
+  "lastScan": "2026-09-18T09:53:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -74,7 +74,9 @@
       "e23cdf18-6528-458c-adff-dea4d619dcb3",
       "b72632fc-68fc-41b3-a88c-fdca9e1cf2db",
       "cea835d1-fb37-4f07-a91e-356e7e5c8fca",
-      "f225e979-78f3-4508-95fe-79293b3ff678"
+      "f225e979-78f3-4508-95fe-79293b3ff678",
+      "5014b8b5-272a-4169-83d3-5b0ebf8c30c0",
+      "3ee9866a-23a5-447b-a584-b1c167a23b58"
     ],
     "my-first-million": [
       "a9e51792-9d4f-11f1-b79f-435a1ed9f4c8",
@@ -190,11 +192,12 @@
       "flightcast:01M1M9A59AFBGJG3WGBMW30A0F",
       "flightcast:01M0BDP5KGRFPV398M820XBKQF",
       "flightcast:01M243XAN33DBKT1N5844WSMAV",
-      "flightcast:01M2GNJS32R11MFGEF3FZ4MFGV"
+      "flightcast:01M2GNJS32R11MFGEF3FZ4MFGV",
+      "flightcast:01M1KRZJXFDY091DTC2XYYRW7A"
     ]
   },
   "lastScanResult": {
-    "newEpisodes": 2,
-    "note": "新集數：All-In《Brad Gerstner: No AI Bubble, Semis Eat the Nasdaq & AI's Take Off Problem》(2026-09-17)；Diary of a CEO《AI Debate Ed Zitron, Andrew McAfee, Nate Soares, Roman Yampolskiy》(2026-09-17)。無更新：Acquired / Founders / My First Million / Knowledge Project。"
+    "newEpisodes": 3,
+    "note": "新集數：All-In《Nick Shirley: Exposing Government Fraud, Suing California & Taking on the Media》(2026-09-18)、《Meta's Dina Powell McCormick: The Case for Data Centers, Backlash, AI Job Boom & Meta's Future》(2026-09-17)；Diary of a CEO《Most Replayed Moment: Is Renting Keeping You Poor? ... David Bach》(2026-09-18)。無更新：Acquired / Founders / My First Million / Knowledge Project。"
   }
 }
