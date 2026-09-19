@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-09-18T09:53:00Z",
+  "lastScan": "2026-09-19T09:53:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -76,7 +76,9 @@
       "cea835d1-fb37-4f07-a91e-356e7e5c8fca",
       "f225e979-78f3-4508-95fe-79293b3ff678",
       "5014b8b5-272a-4169-83d3-5b0ebf8c30c0",
-      "3ee9866a-23a5-447b-a584-b1c167a23b58"
+      "3ee9866a-23a5-447b-a584-b1c167a23b58",
+      "703e0913-cd78-4eb9-96d1-546c89a6aa07",
+      "665f827a-937f-42e3-a4a5-6f2d6c7e50fd"
     ],
     "my-first-million": [
       "a9e51792-9d4f-11f1-b79f-435a1ed9f4c8",
@@ -127,7 +129,8 @@
       "89a285ea-abab-11f1-86c7-5f39f30f083b",
       "edbdc48c-aaa6-11f1-a8a1-ff719a17ec4e",
       "74f58fec-b02a-11f1-b703-1f555d6de825",
-      "c99494dc-b1b3-11f1-8592-9f835067055a"
+      "c99494dc-b1b3-11f1-8592-9f835067055a",
+      "f2e0c3bc-b355-11f1-a53c-9be1fe16839d"
     ],
     "knowledge-project": [
       "https://fs.blog/?post_type=podcast&p=81515",
@@ -198,6 +201,6 @@
   },
   "lastScanResult": {
     "newEpisodes": 3,
-    "note": "新集數：All-In《Nick Shirley: Exposing Government Fraud, Suing California & Taking on the Media》(2026-09-18)、《Meta's Dina Powell McCormick: The Case for Data Centers, Backlash, AI Job Boom & Meta's Future》(2026-09-17)；Diary of a CEO《Most Replayed Moment: Is Renting Keeping You Poor? ... David Bach》(2026-09-18)。無更新：Acquired / Founders / My First Million / Knowledge Project。"
+    "note": "新集數：All-In《Bill Gurley: Searching for Feynman》(2026-09-19，Summit keynote)、《Jared Isaacman: A New Era for NASA and American Space Exploration》(2026-09-18)；My First Million《Coach for SpaceX & OpenAI destroys your limiting beliefs for 88 minutes straight》(Ep.863, 2026-09-18)。無更新：Acquired / Founders / Knowledge Project / Diary of a CEO。註：fs.blog feed 被 Cloudflare 403，KP 改以 iTunes API 核對。"
   }
 }
