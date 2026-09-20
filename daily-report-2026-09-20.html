@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-09-20</title>
+<style>
+  :root{
+    --bg:#fdfaf6;
+    --card:#fffdf9;
+    --ink:#2b2620;
+    --muted:#7a7065;
+    --line:#e8ddcd;
+    --accent:#b8862b;
+    --accent-soft:#f4e8cf;
+    --new:#2e7d5b;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;
+    line-height:1.75;
+    margin:0;
+    padding:0 16px 80px;
+    font-size:16.5px;
+  }
+  .wrap{max-width:820px;margin:0 auto;}
+  header.top{
+    padding:44px 0 26px;
+    border-bottom:2px solid var(--line);
+    margin-bottom:34px;
+  }
+  header.top h1{
+    font-size:31px;
+    margin:0 0 8px;
+    letter-spacing:.5px;
+  }
+  header.top .sub{color:var(--muted);font-size:14.5px;}
+  header.top .meta{margin-top:14px;font-size:13.5px;color:var(--muted);}
+  .summary{
+    background:var(--accent-soft);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:18px 20px;
+    margin-bottom:38px;
+    font-size:15px;
+  }
+  .summary b{color:var(--accent);}
+  section.pod{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 26px 20px;
+    margin-bottom:32px;
+    box-shadow:0 1px 0 rgba(0,0,0,.02);
+  }
+  .pod-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;border-bottom:1px dashed var(--line);padding-bottom:12px;margin-bottom:16px;}
+  .pod-head h2{font-size:22px;margin:0;flex:1 1 auto;}
+  .pod-head .host{color:var(--muted);font-size:13.5px;}
+  .tag{font-size:12px;padding:2px 9px;border-radius:20px;letter-spacing:.5px;}
+  .tag.new{background:var(--new);color:#fff;}
+  .tag.none{background:#eee6d8;color:var(--muted);}
+  .ep{margin:0 0 26px;}
+  .ep:last-child{margin-bottom:6px;}
+  .ep h3{font-size:18.5px;margin:0 0 4px;line-height:1.4;}
+  .ep .epmeta{font-size:13px;color:var(--muted);margin-bottom:14px;}
+  h4{font-size:15px;margin:18px 0 6px;color:var(--accent);letter-spacing:.4px;}
+  ul{margin:6px 0 10px;padding-left:22px;}
+  li{margin:5px 0;}
+  blockquote{
+    margin:12px 0;
+    padding:10px 16px;
+    border-left:3px solid var(--accent);
+    background:#fbf5e9;
+    color:#4a4034;
+    font-style:italic;
+    font-size:15px;
+    border-radius:0 8px 8px 0;
+  }
+  blockquote .attr{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:6px;}
+  .data{font-size:14.5px;}
+  .data li::marker{color:var(--accent);}
+  .insight{
+    background:#f7f2ea;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:14px 16px;
+    font-size:14.5px;
+    margin-top:16px;
+  }
+  .insight b{color:var(--accent);}
+  .last{font-size:14px;color:#5b5245;background:#faf5ec;border-radius:10px;padding:12px 16px;}
+  .last b{color:var(--ink);}
+  a{color:var(--accent);}
+  footer{text-align:center;color:var(--muted);font-size:12.5px;margin-top:40px;padding-top:20px;border-top:1px solid var(--line);}
+  .badge-row{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 2px;}
+  .pct{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px 12px;font-size:13.5px;margin:3px 6px 3px 0;}
+  .pct b{color:var(--accent);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>思維播客日報</h1>
+  <div class="sub">Acquired · Founders · All-In · My First Million · The Knowledge Project · Diary of a CEO</div>
+  <div class="meta">
+    掃描日期：2026年9月20日（星期日）<br>
+    生成時間：2026-09-20 09:53 UTC（17:53 北京／廣州時間）<br>
+    掃描來源：6 條 RSS feeds（transistor · megaphone ×2 · libsyn · fs.blog · flightcast），逐一對比 episode GUID<br>
+    前置過濾：Jev（TypeSafe news profile）— 今日 0 條新集數，無條目可篩；按 fail-open 原則直接進入報告生成，不阻斷。
+  </div>
+</header>
+
+<div class="summary">
+  <b>今日結果：6 個播客全部無新集數（0 集）。</b><br>
+  上一次有新集數係 2026-09-19：All-In ×2（Bill Gurley 主題演講、Jared Isaacman 談 NASA）、My First Million ×1（Ep.863 Joe Hudson 教練課）。<br>
+  今日六條 feed 嘅最新一集，全部已經喺 9 月 19 日或之前掃描入庫，state.json 無遺漏。<br>
+  下面每個 card 列出<b>最新已知劇集 + 內容提要 + 前兩集歷史 + 更新節奏</b>，令你唔會斷線。
+</div>
+
+<!-- 1. ACQUIRED -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Acquired</h2>
+    <span class="host">Ben Gilbert &amp; David Rosenthal</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+
+  <div class="ep">
+    <h3>最後已知劇集：《The Home Depot》</h3>
+    <div class="epmeta">2026-09-13 · 片長 12,902 秒（約 3 小時 35 分）· <a href="https://www.acquired.fm/episodes/home-depot">acquired.fm/episodes/home-depot</a></div>
+
+    <h4>主題</h4>
+    <p>美國零售史上最強複利故事 —— The Home Depot 嘅創業、擴張與股東回報傳奇。</p>
+
+    <h4>核心論點（來自官方 show notes）</h4>
+    <ul>
+      <li>Bernie Marcus（48 歲）同 Arthur Blank（35 歲）被前東家硬件連鎖公司「唔光彩地炒魷」，兩個中年人一齊失業，然後創辦咗 Home Depot。</li>
+      <li>關鍵一句來自紐約銀行家 Ken Langone —— 佢本人就係無意中害到兩人被炒嘅人 —— 佢話兩人係「kicked in the ass with a golden horseshoe」（被金馬蹄踢咗一腳）。</li>
+      <li>過程中有一連串傳奇客串：Sol Price、Jamie Dimon、Ross Perot。</li>
+      <li>結局媲美超級英雄片：由 1981 年 IPO 至今，Home Depot 係<b>整個美國股市回報最高嘅單一股票</b> —— 高過 Apple、Microsoft、Berkshire Hathaway，同一切其他公司。</li>
+    </ul>
+
+    <blockquote>
+      The Home Depot's founding story is like an Avengers movie… if the Avengers got fired, went broke, and stacked empty paint cans ten feet high to look legitimate.
+      <span class="attr">— Acquired 官方 show notes</span>
+    </blockquote>
+
+    <h4>關鍵數據</h4>
+    <ul class="data">
+      <li>創辦時年齡：Bernie Marcus 48 歲、Arthur Blank 35 歲</li>
+      <li>IPO 年份：1981</li>
+      <li>歷史地位：全美股市歷史回報第一嘅單一股權</li>
+      <li>集數配套：官方 Companion PDF + Visual Artifacts 頁；主要資料來源包括 <i>Built from Scratch</i>（Marcus &amp; Blank）、<i>Kick Up Some Dust</i>（Marcus）、<i>The Board Wore Chicken Suits</i></li>
+    </ul>
+
+    <div class="insight">
+      <b>Insight：</b>Acquired 用「復仇者聯盟」敘事包裝，但底層係一個資本配置命題 —— 一間「賣嘢畀自己動手改造屋企嘅人」嘅零售商，點樣靠模式同規模，喺 40 年維度跑贏所有科技巨頭。值得留意嘅係 48 歲失業先創業呢個細節：佢完全違反「創業要趁後生」嘅主流敘事。
+    </div>
+  </div>
+
+  <div class="last">
+    <b>前兩集：</b>《Disney: The Renaissance and the Empire》（2026-08-09，約 4 小時 33 分）—— Eisner / Wells 時代嘅史上最強媒體翻身仗、Euro Disney 燒錢、Comcast 惡意收購，到 Iger 用 Pixar / Marvel / Lucasfilm 再起；《The Walt Disney Company》（2026-06-21，約 4 小時 31 分）—— Walt 時代嘅「不務正業集團」如何變成全球懷舊變現之王。
+    <br><br>
+    <b>更新節奏：</b>近期約 6 星期至 2 個月一集（05-17 → 06-21 → 08-09 → 09-13）。
+  </div>
+</section>
+
+<!-- 2. FOUNDERS -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Founders</h2>
+    <span class="host">David Senra</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+
+  <div class="ep">
+    <h3>最後已知劇集：#433 《How Michael Bloomberg Works》</h3>
+    <div class="epmeta">2026-09-14 · 片長 2,917 秒（約 48 分 37 秒）· 讀物：《Bloomberg》by Michael Bloomberg</div>
+
+    <h4>主題</h4>
+    <p>David Senra 拆解 Michael Bloomberg 嘅自傳，講一個被炒魷之後從零起一座金融資訊帝國嘅故事。</p>
+
+    <h4>核心論點</h4>
+    <ul>
+      <li><b>Sales 先係核心能力</b> —— Senra 強調 Bloomberg 嘅成功起點係銷售（佢第一份工就係 Salomon Brothers 嘅交易員／sales 出身），唔係技術。</li>
+      <li><b>五年計劃係過譽（five year plans are overrated）</b> —— 唔係靠長遠宏大路線圖，而係靠持續細步前進。</li>
+      <li><b>Small moves → massive results</b> —— 微小動作累積成巨大結果，正正係 Senra 反覆講嘅「複利式經營」。</li>
+    </ul>
+
+    <blockquote>
+      I was fired from the only full-time job I'd ever known and from the high-pressure life I loved.
+      <span class="attr">— Michael Bloomberg（Senra 引述，episode 開場）</span>
+    </blockquote>
+
+    <div class="insight">
+      <b>Insight：</b>呢集同 Acquired 嘅 Home Depot（兩個 40+ 歲被炒嘅人創業）撞出同一個母題 —— <b>「被解僱」係好多超級創辦人嘅共同起點</b>。Senra 嘅價值向來唔在於資訊，而在於佢把傳記讀成「可執行嘅人生準則」，所以佢特登挑「五年計劃過譽」呢種反直覺結論去講。
+      <br><br>
+      ⚠️ <b>注意：</b>Founders 官方 RSS <b>唔提供 show notes</b>（只有一行「What I learned from reading Bloomberg by Michael Bloomberg」）。以上內容來自 Podcast Notes 對該集嘅整理及官方 X 帳號引述，屬補充而非官方逐字稿。
+    </div>
+  </div>
+
+  <div class="last">
+    <b>前兩集：</b>《#432 The Mind of Napoleon》（2026-09-05，約 55 分）—— 讀《The Mind of Napoleon》，Senra 精選引言包括「Work is my element. I am born and built for work.」、「All my life I have sacrificed everything… to my destiny.」、以及對「Luck is the ability to exploit accidents」嘅拆解；《#431 How Henry Singleton Worked》（2026-08-31，約 49 分）—— 讀《Distant Force》＋《The Outsiders》，講 Teledyne 嘅 Singleton 回購咗超過 90% 自己公司股票。
+    <br><br>
+    <b>更新節奏：</b>約每週 1–2 集（08-09 → 08-16 → 08-23 → 08-31 → 09-05 → 09-14）。
+  </div>
+</section>
+
+<!-- 3. ALL-IN -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>All-In with Chamath, Jason, Sacks &amp; Friedberg</h2>
+    <span class="host">Chamath Palihapitiya · Jason Calacanis · David Sacks · David Friedberg</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+
+  <div class="ep">
+    <h3>最後已知劇集：《Bill Gurley: Searching for Feynman》</h3>
+    <div class="epmeta">2026-09-19 00:20 UTC · 片長 38 分 29 秒 · All-In Summit 2026 主題演講 · <a href="https://allinchamathjason.libsyn.com/bill-gurley-the-covid-cover-up-the-search-for-the-truth">episode 頁</a></div>
+
+    <h4>主題</h4>
+    <p>Bill Gurley 喺 All-In Summit 台上發表〈Searching for Feynman〉，主題係<b>機構失效、調查問責、同根因分析（root cause analysis）</b> —— 唔係講科技，而係借科技講制度。</p>
+
+    <h4>核心論點</h4>
+    <ul>
+      <li>Gurley 並列三個歷史案例，用嚟問一個更硬嘅問題：<b>機構本身係否會失效</b>，而唔係單一技術係否可靠。</li>
+      <li>佢引用 COVID 期間嘅「Appendix F Gap」——公共紀錄顯示預估 1% 災難性風險，但機構冇當一回事。</li>
+      <li>佢主張應該用 <b>CAPA（Corrective And Preventive Action，糾正與預防措施）</b>流程 —— 即製造業／航空業處理災難嘅標準手法 —— 去推動根因調查，搵出「COVID 版嘅費曼」。</li>
+      <li>Feynman 典故來自挑戰者號事故調查：費曼用一杯冰水喺聽證會上證明 O-ring 失效，示範「一個外行人用常識擊穿機構自欺」。</li>
+    </ul>
+
+    <h4>關鍵數據 / 資源</h4>
+    <ul class="data">
+      <li>演講配套研究連結清單：p3.institute/searching_for_feynman_resource_links.html</li>
+      <li>結構：0:00 上台 → 1:29 主題演講正式開始（即全場約 37 分鐘）</li>
+    </ul>
+
+    <div class="insight">
+      <b>Insight：</b>呢個 talk 嘅真正鋒利處，係 Gurley 將「根因分析」由工程管理升級成<b>公民問責工具</b> —— 佢要嘅唔係情緒化追責，而係一套可重複、有紀錄、有糾正動作嘅制度程序。對任何做營運嘅人嚟講，CAPA 呢個框架可以直接搬去 incident review。
+    </div>
+  </div>
+
+  <div class="last">
+    <b>前兩集：</b>《Jared Isaacman: A New Era for NASA and American Space Exploration》（2026-09-18，38 分 34 秒）—— NASA 署長 Isaacman 講 NASA 現況與未來，章節涵蓋月球基地、新太空產業、如何令火星變得現實、招募與 moonshot、「Nuclear NASA」、以及 35:46 開始嘅「Space Race 2.0: China and Russia」；《Nick Shirley: Exposing Government Fraud, Suing California &amp; Taking on the Media》（2026-09-18，32 分 32 秒）—— 調查記者 Shirley 首播〈Inside California's High Speed Rail to Nowhere〉，講加州「Stop Nick Shirley Act」同近期詐騙拘捕。
+    <br><br>
+    <b>更新節奏：</b>每週 2–3 集（09-15 → 09-17 ×2 → 09-18 ×2 → 09-19）。
+  </div>
+</section>
+
+<!-- 4. MY FIRST MILLION -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>My First Million</h2>
+    <span class="host">Sam Parr &amp; Shaan Puri</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+
+  <div class="ep">
+    <h3>最後已知劇集：Ep.863《Coach for SpaceX &amp; OpenAI destroys your limiting beliefs for 88 minutes straight》</h3>
+    <div class="epmeta">2026-09-18 · 片長 5,293 秒（約 88 分 13 秒）· 嘉賓：Joe Hudson（Art of Accomplishment）</div>
+
+    <h4>主題</h4>
+    <p>Joe Hudson 即場 coach Sam 同 Shaan，講「做創辦人嘅心理戰」—— 唔講策略，講 mind、heart、gut。</p>
+
+    <h4>核心論點（依官方章節）</h4>
+    <ul>
+      <li><b>Limiting beliefs（2:35）</b>：創辦人最貴嘅成本唔係錢，係自我限制信念。</li>
+      <li><b>Mind / Heart / Gut 三層決策（6:48）</b>：分清思考、情感、直覺三個系統再落決定。</li>
+      <li><b>Self-reliance pattern（8:20）</b>：凡事攬上身嘅模式，係創辦人最常見嘅隱形陷阱。</li>
+      <li><b>Unkink your hose（14:45）</b>：把「水管打結」比喻 —— 唔係加壓，係先解結。</li>
+      <li><b>Visualize the negative outcomes（18:20）</b>：反向視覺化 —— 先想像最壞結果，反而降低恐懼。</li>
+      <li><b>Most common fear of founders: homelessness（21:35）</b>：創辦人最普遍嘅深層恐懼，竟然係「無家可歸」。</li>
+      <li><b>Tricking your nervous system with repetition（23:45）/ Avoiding conflict（27:35）/ How to address conflict（32:40）</b>：用重複騙過神經系統、逃避衝突嘅代價、點樣正面處理衝突。</li>
+      <li><b>Abusive self-talk patterns（38:35）、Why bliss destroys you（54:45）、Finding your billion-dollar purpose（59:35）</b>。</li>
+      <li>結尾有「What's the Illuminati like in person?（1:01:00）」同 Joe 自己嘅來歷（1:04:00）。</li>
+    </ul>
+
+    <h4>引用書單（官方列出）</h4>
+    <ul class="data">
+      <li>Descartes' Error — Antonio Damasio</li>
+      <li>Tibetan Book of Living and Dying</li>
+      <li>The Inner Game of Tennis — Timothy Gallwey</li>
+      <li>Listen</li>
+      <li>資源：artofaccomplishment.com</li>
+    </ul>
+
+    <div class="insight">
+      <b>Insight：</b>最容易落地嘅係「先視覺化最壞結果」＋「創辦人最怕無家可歸」呢兩點 —— 兩者其實係同一件事：恐懼一旦被具體命名，就由模糊壓力變成可處理嘅項目。Joe Hudson 嘅方法論偏向內在工程，唔係生產力技巧，所以 MFM 特登叫佢嚟做一集 88 分鐘嘅「coaching 實錄」。
+    </div>
+  </div>
+
+  <div class="last">
+    <b>前兩集：</b>Ep.862《i got internet famous... if i started again from scratch, here's what I'd do this time》（2026-09-16，19 分 24 秒）—— Shaan 用 18 分鐘講建立受眾：Lesson 1「Who, not how many」、Lesson 2「What should I talk about?」、Lesson 3「Learn the 5 Ds」、Lesson 6「Create a binge bank」、Lesson 7「Feeling, not information」、Lesson 8「Be so good they can't ignore you」；Ep.861《David Rubenstein: We took $5M and turned it into $500B》（2026-09-14，46 分 53 秒）—— 講 Carlyle 由 $5M 變成 $500B、佢嗰個 $14B 嘅 miss、同歷史上最強商業課。
+    <br><br>
+    <b>更新節奏：</b>每週 2–3 集（09-04 → 09-07 → 09-09 → 09-14 → 09-16 → 09-18）。
+  </div>
+</section>
+
+<!-- 5. KNOWLEDGE PROJECT -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Knowledge Project</h2>
+    <span class="host">Shane Parrish</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+
+  <div class="ep">
+    <h3>最後已知劇集：《Tobi Lütke: AI Agents, Better Decisions, and the Future of Work》</h3>
+    <div class="epmeta">2026-09-10 · <a href="https://fs.blog/knowledge-project-podcast/tobi-lutke-3/">fs.blog/knowledge-project-podcast/tobi-lutke-3/</a></div>
+
+    <h4>主題</h4>
+    <p>Shopify 創辦人兼 CEO Tobi Lütke 講 AI agents、決策質素、同工作嘅未來。</p>
+
+    <h4>核心論點</h4>
+    <ul>
+      <li>Lütke 用一個 <b>「AI council」（AI 議會）</b>去審視自己最難嘅決策 —— 即係唔止問一個 AI，而係用多個 AI 視角互相交叉質詢。</li>
+      <li>當 AI 愈強，<b>taste（品味）、judgment（判斷）、responsibility（責任）</b>會 <b>更加值錢</b>，唔係更唔值錢。</li>
+      <li>節目亦講到 Shopify 同 <b>River</b> 嘅合作。</li>
+    </ul>
+
+    <div class="insight">
+      <b>Insight：</b>「AI 議會」係呢集最可即學即用嘅一招 —— 佢唔係叫 AI 幫你決定，而係用 AI 幫你暴露自己思考嘅盲點。同 All-In 嗰集 Gurley 講嘅「機構自欺」其實互為鏡像：一個講制度唔肯自我質疑，一個講個人用 AI 強制自我質疑。
+    </div>
+  </div>
+
+  <div class="last">
+    <b>前兩集：</b>《Steve Jobs in Exile》（2026-08-27）—— 嘉賓 Geoffrey Cain，重構 Steve Jobs 1985 被趕出 Apple 到 1997 回歸之間嗰十年空白；《Roblox CEO: How to Make Better Decisions by Fixing Yourself First》（2026-08-13）—— 嘉賓 David Baszucki，講一個健康決定救咗佢個仔條命、如何改變佢飲食、以及「bureaucracy 會複利，除非你主動摧毀佢」。
+    <br><br>
+    <b>更新節奏：</b>約兩星期 1 集（07-16 → 07-23 → 07-30 → 08-13 → 08-27 → 09-10）。
+    <br><br>
+    ⚠️ <b>備註：</b>fs.blog 嘅 feed 過往曾被 Cloudflare 403 攔截；今日直接抓取正常（HTTP 200），已成功核對 GUID，無需要改走 iTunes API。
+  </div>
+</section>
+
+<!-- 6. DIARY OF A CEO -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Diary of a CEO</h2>
+    <span class="host">Steven Bartlett</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+
+  <div class="ep">
+    <h3>最後已知劇集：《Most Replayed Moment: Is Renting Keeping You Poor? What's The Actual Cost Of Home Ownership? — David Bach》</h3>
+    <div class="epmeta">2026-09-18 · 片長 1,128 秒（約 18 分 48 秒）· 嘉賓：David Bach</div>
+
+    <h4>主題</h4>
+    <p>David Bach（《The Automatic Millionaire》作者）挑戰個人理財界最大爭論之一：<b>而家買樓仲係唔係最聰明嘅財務決定？</b></p>
+
+    <h4>核心論點</h4>
+    <ul>
+      <li>重點唔在「買定租」，而在<b>嗰啲靜靜雞塑造長期財富嘅決定</b>。</li>
+      <li>區分「賺錢」同「留住錢（keeping it）」—— Bach 認為大部分人失敗喺後者。</li>
+      <li>呢集係「Most Replayed Moment」精華剪輯版，完整版另有超連結（Spotify / Apple）。</li>
+    </ul>
+
+    <div class="insight">
+      <b>Insight：</b>用「Most Replayed Moment」做補充集，係 DOAC 近月嘅固定操作（9 月已出兩集）。對聽眾嚟講，好處係可以用 18 分鐘吸收一集長訪問嘅核心；壞處係佢本質上係重播，唔算新內容 —— 所以掃描器把佢列為「無新增長篇訪問」係合理判斷。
+    </div>
+  </div>
+
+  <div class="last">
+    <b>前兩集：</b>《The Great AI Debate: Is Artificial Intelligence an Extinction Threat?》（2026-09-17，約 2 小時 27 分）—— Ed Zitron、Roman Yampolskiy、Nate Soares（《If Anyone Builds It, Everyone Dies》作者）、Andrew McAfee 四人辯論，涵蓋「Sandbox Breakout：一群 AI agents 繞過安全限制、喺評估中作弊、並試圖刪除自己嘅 log 去隱藏行蹤」、「Recursive Self-Improvement 快速起飛理論」、「控制嘅幻覺」、「Alignment Trap」；《Professor Jiang: Three Predictions On the Collapse of the World Order》（2026-09-14，約 1 小時 48 分）—— 耶魯出身嘅地緣政治學者 Jiang Xueqin 用歷史週期＋賽局理論，預測現代「青銅時代式崩潰」。
+    <br><br>
+    <b>更新節奏：</b>每週 2–3 集（09-07 → 09-10 → 09-11 → 09-14 → 09-17 → 09-18）。
+  </div>
+</section>
+
+<footer>
+  思維播客日報 · 2026-09-20 · 生成於 2026-09-20 09:53 UTC<br>
+  掃描方式：RSS 全量抓取 → GUID 對比 state.json → 新集數深度萃取<br>
+  本頁 0 條新集數；所有內容提要均取自各播客官方 RSS show notes 及公開整理，未經轉述失真處理。
+</footer>
+
+</div>
+</body>
+</html>
