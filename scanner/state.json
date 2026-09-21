@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-09-20T09:53:00Z",
+  "lastScan": "2026-09-21T09:53:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -31,7 +31,8 @@
       "d7e49fb6-9415-11f1-8f44-ebce80087ca6",
       "b340b68e-9efd-11f1-bfdd-d7bddd398df4",
       "6da070c2-a945-11f1-9294-0b8c75e1a778",
-      "d0c3c534-b069-11f1-bc61-4345073b86a6"
+      "d0c3c534-b069-11f1-bc61-4345073b86a6",
+      "a9a4ff62-b556-11f1-b65b-9b42dbe957f1"
     ],
     "all-in": [
       "688c4809-9cf4-4d77-b5d7-482ee43e7ccc",
@@ -78,7 +79,8 @@
       "5014b8b5-272a-4169-83d3-5b0ebf8c30c0",
       "3ee9866a-23a5-447b-a584-b1c167a23b58",
       "703e0913-cd78-4eb9-96d1-546c89a6aa07",
-      "665f827a-937f-42e3-a4a5-6f2d6c7e50fd"
+      "665f827a-937f-42e3-a4a5-6f2d6c7e50fd",
+      "a2a542d5-2feb-441a-a523-910e16c2d193"
     ],
     "my-first-million": [
       "a9e51792-9d4f-11f1-b79f-435a1ed9f4c8",
@@ -196,11 +198,12 @@
       "flightcast:01M0BDP5KGRFPV398M820XBKQF",
       "flightcast:01M243XAN33DBKT1N5844WSMAV",
       "flightcast:01M2GNJS32R11MFGEF3FZ4MFGV",
-      "flightcast:01M1KRZJXFDY091DTC2XYYRW7A"
+      "flightcast:01M1KRZJXFDY091DTC2XYYRW7A",
+      "flightcast:01M2RHNG0S1MZ1VD7AG18AGCZ7"
     ]
   },
   "lastScanResult": {
-    "newEpisodes": 0,
-    "note": "今日 0 條新集數。6 條 feed 全部抓取成功（HTTP 200）：Acquired 最新《The Home Depot》(09-13)、Founders #433 (09-14)、All-In《Bill Gurley: Searching for Feynman》(09-19)、My First Million Ep.863 (09-18)、Knowledge Project Tobi Lütke (09-10)、Diary of a CEO David Bach 精華 (09-18) — 全部 GUID 已於 09-19 或之前入庫。state.json 無遺漏。fs.blog feed 今日正常（HTTP 200），無需 iTunes API fallback。Jev 前置過濾：0 條目可篩，fail-open 直接生成報告。"
+    "newEpisodes": 3,
+    "note": "今日 3 條新集數。6 條 feed 全部抓取成功（HTTP 200）：Founders #434《Sam Walton》(09-21, guid a9a4ff62-b556-11f1-b65b-9b42dbe957f1)、All-In《Adam Foroughi, AppLovin CEO》(09-20, guid a2a542d5-2feb-441a-a523-910e16c2d193)、Diary of a CEO《Rick Rubin》(09-21, guid flightcast:01M2RHNG0S1MZ1VD7AG18AGCZ7)。無新集：Acquired《The Home Depot》(09-13)、My First Million Ep.863 (09-18)、Knowledge Project Tobi Lütke (09-10) — GUID 已於 09-20 或之前入庫。Jev 前置過濾（news profile）：AppLovin 0.93、Sam Walton 0.32、Rick Rubin 0.28 — 後兩者因屬一手 RSS 內容且無數字特徵，按 fail-open 原則保留；AppLovin 細節多為第三方轉述（primary_source 0.41），報告中已標來源警示。"
   }
 }
