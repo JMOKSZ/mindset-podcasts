@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-09-21T09:53:00Z",
+  "lastScan": "2026-09-22T09:53:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -80,7 +80,9 @@
       "3ee9866a-23a5-447b-a584-b1c167a23b58",
       "703e0913-cd78-4eb9-96d1-546c89a6aa07",
       "665f827a-937f-42e3-a4a5-6f2d6c7e50fd",
-      "a2a542d5-2feb-441a-a523-910e16c2d193"
+      "a2a542d5-2feb-441a-a523-910e16c2d193",
+      "053073fc-e856-48e9-9312-74082d4761ee",
+      "ebe0e737-5995-476f-8d20-673400e3ec13"
     ],
     "my-first-million": [
       "a9e51792-9d4f-11f1-b79f-435a1ed9f4c8",
@@ -132,7 +134,8 @@
       "edbdc48c-aaa6-11f1-a8a1-ff719a17ec4e",
       "74f58fec-b02a-11f1-b703-1f555d6de825",
       "c99494dc-b1b3-11f1-8592-9f835067055a",
-      "f2e0c3bc-b355-11f1-a53c-9be1fe16839d"
+      "f2e0c3bc-b355-11f1-a53c-9be1fe16839d",
+      "42535506-b5b1-11f1-909d-f75037fc309d"
     ],
     "knowledge-project": [
       "https://fs.blog/?post_type=podcast&p=81515",
@@ -204,6 +207,6 @@
   },
   "lastScanResult": {
     "newEpisodes": 3,
-    "note": "今日 3 條新集數。6 條 feed 全部抓取成功（HTTP 200）：Founders #434《Sam Walton》(09-21, guid a9a4ff62-b556-11f1-b65b-9b42dbe957f1)、All-In《Adam Foroughi, AppLovin CEO》(09-20, guid a2a542d5-2feb-441a-a523-910e16c2d193)、Diary of a CEO《Rick Rubin》(09-21, guid flightcast:01M2RHNG0S1MZ1VD7AG18AGCZ7)。無新集：Acquired《The Home Depot》(09-13)、My First Million Ep.863 (09-18)、Knowledge Project Tobi Lütke (09-10) — GUID 已於 09-20 或之前入庫。Jev 前置過濾（news profile）：AppLovin 0.93、Sam Walton 0.32、Rick Rubin 0.28 — 後兩者因屬一手 RSS 內容且無數字特徵，按 fail-open 原則保留；AppLovin 細節多為第三方轉述（primary_source 0.41），報告中已標來源警示。"
+    "note": "今日 3 條新集數，全部屬 'energy is the bottleneck' 主線。All-In 兩條 AIS26 現場場次：Blake Scholl《Why Plane Speed Stalled...》（09-22 09:00 UTC，guid ebe0e737-5995-476f-8d20-673400e3ec13，17:40）、Naveen Rao《4D Computing, AI's Energy Wall & Beating Biology》（09-21 21:03 UTC，guid 053073fc-e856-48e9-9312-74082d4761ee，22:35）；My First Million《Whatnot founder: This is the future of e-commerce》（09-21 11:40 UTC，guid 42535506-b5b1-11f1-909d-f75037fc309d，62:25，嘉賓 Grant Lafontaine）。6 條 feed 全部 HTTP 200 抓取成功。無新集：Acquired《The Home Depot》(09-13)、Founders #434《Sam Walton》(09-21)、Knowledge Project《Tobi Lütke》(09-10)、Diary of a CEO《Rick Rubin》(09-21) — GUID 已於昨日或更早入庫；DOAC feed lastBuildDate 09-22 05:20 屬技術性更新，首條 item 仍為 Rick Rubin。Jev 前置過濾（news profile）：Blake Scholl worth 0.97 / primary_source 0.36；Naveen Rao worth 1.02 / primary_source 0.50；Whatnot worth 0.86 / primary_source 0.31 — 全部 3 條過 0.6 門檻、全部保留（0 丟棄）。因 #1、#3 一手概率 <0.4，報告中已對第三方數字（Boom 訂單/融資、Whatnot 估值/GMV）加註來源警示；章節與主題則為播客官方 show notes 一手內容。web_search 期間曾遇到 Brave 429 rate limit，改以 web_fetch 直接抓取官方新聞稿與 Wikipedia 補齊背景。"
   }
 }
