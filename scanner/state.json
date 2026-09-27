@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-09-23T09:53:00Z",
+  "lastScan": "2026-09-27T09:55:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -11,7 +11,10 @@
       "94dbf581-80c8-4b90-aff2-fa649cd90edd",
       "465f9bb3-6d71-49ed-a233-de82bc41b034",
       "14ef00c6-30ba-44cc-9869-33d3d92828a3",
-      "68b66323-6e74-4c90-8157-ef3f1ed0d042"
+      "68b66323-6e74-4c90-8157-ef3f1ed0d042",
+      "c9b69067-78a8-43f4-9a12-b4522af47d1b",
+      "4537f61d-0ec1-4837-92e0-9270d140e6d2",
+      "9602cea2-2491-4587-90f6-7bf7f7988dd7"
     ],
     "founders": [
       "66440888-a4dc-11f1-9ad2-4b47c594a56f",
@@ -83,7 +86,9 @@
       "a2a542d5-2feb-441a-a523-910e16c2d193",
       "053073fc-e856-48e9-9312-74082d4761ee",
       "ebe0e737-5995-476f-8d20-673400e3ec13",
-      "5f8aeed3-a44e-46ce-8d55-244a1c95e602"
+      "5f8aeed3-a44e-46ce-8d55-244a1c95e602",
+      "39dac85d-ab62-45b0-a587-67797ed8f0ee",
+      "cbcb6353-9937-4c25-9f83-93e1f096d3e6"
     ],
     "my-first-million": [
       "a9e51792-9d4f-11f1-b79f-435a1ed9f4c8",
@@ -136,7 +141,8 @@
       "74f58fec-b02a-11f1-b703-1f555d6de825",
       "c99494dc-b1b3-11f1-8592-9f835067055a",
       "f2e0c3bc-b355-11f1-a53c-9be1fe16839d",
-      "42535506-b5b1-11f1-909d-f75037fc309d"
+      "42535506-b5b1-11f1-909d-f75037fc309d",
+      "fe829dc6-b8cd-11f1-a2f8-b7b94f238b54"
     ],
     "knowledge-project": [
       "https://fs.blog/?post_type=podcast&p=81515",
@@ -159,7 +165,8 @@
       "https://fs.blog/?post_type=podcast&p=81229",
       "https://fs.blog/?post_type=podcast&p=81166",
       "https://fs.blog/?post_type=podcast&p=81128",
-      "https://fs.blog/?post_type=podcast&p=81564"
+      "https://fs.blog/?post_type=podcast&p=81564",
+      "https://fs.blog/?post_type=podcast&p=81683"
     ],
     "diary-of-a-ceo": [
       "flightcast:01M0ECWWKZKQ93WCFTA6JV03WZ",
@@ -203,11 +210,13 @@
       "flightcast:01M243XAN33DBKT1N5844WSMAV",
       "flightcast:01M2GNJS32R11MFGEF3FZ4MFGV",
       "flightcast:01M1KRZJXFDY091DTC2XYYRW7A",
-      "flightcast:01M2RHNG0S1MZ1VD7AG18AGCZ7"
+      "flightcast:01M2RHNG0S1MZ1VD7AG18AGCZ7",
+      "flightcast:01M379SMDZT80QS0EF25QEDAHM",
+      "flightcast:01M26CBRW55X2EMED8438W3PW7"
     ]
   },
   "lastScanResult": {
-    "newEpisodes": 1,
-    "note": "今日 1 條新集數：All-In《Steve Hilton & Spencer Pratt: Fixing California, Cheaper Gas, Ballot Fraud & CA Republicans》（2026-09-23 01:44 UTC，guid 5f8aeed3-a44e-46ce-8d55-244a1c95e602）。6 條 feed 全部 HTTP 200 抓取成功（改用 urllib+ElementTree 直接解析 XML，避免 web_fetch 截斷）。無新集：Acquired《The Home Depot》(09-13，guid 68b66323)、Founders #434《Sam Walton》(09-21，guid a9a4ff62)、My First Million《Whatnot founder》(09-21，guid 42535506)、Knowledge Project《Tobi Lütke》(09-10，p=81564)、Diary of a CEO《Rick Rubin》(09-21，guid flightcast:01M2RHNG0S1MZ1VD7AG18AGCZ7) — 全部 GUID 已於昨日或更早入庫。Knowledge Project 與 DOAC 嘅 lastBuildDate（09-21 / 09-23 05:01）屬技術性更新，首條 item 不變。Jev 前置過濾（news profile）：該條 worth 0.14（低於 0.6 門檻，category macro 0.86，primary_source 0.62）—— 判為政治評論、非商業硬情報；因係當日唯一新集數，按「完整覆蓋」原則仍寫入報告，並在報告內明確披露 Jev 評分與理由。本集 show notes 只有章節標題、無數字、無逐字稿，故數字全部以公開報導補齊（CalMatters 選民指南、LA Times、ABC7、NBC LA、Politico、Democracy Docket）並逐項標明非節目內容；因無逐字稿，報告未加入任何 blockquote 引言。Brave 一次 429 rate limit，其後改以 web_fetch 直接抓取來源頁面補齊。"
+    "newEpisodes": 6,
+    "note": "2026-09-27 掃描：6 條新集數 — All-In ×2（09-26『Anthropic IPO at Risk, Meta's Muse Pop, Token Prices Fall, Open Source Gains Share, Alignment Fails』guid 39dac85d；09-23『Luca Ferrari, Bending Spoons CEO』guid cbcb6353）、My First Million #865（09-25『There's 98 days until 2027』guid fe829dc6）、Knowledge Project（09-24『Bill Ackman: The Biggest Fight of His Life』guid fs.blog?p=81683，會員搶先版、公開版 09-29）、Diary of a CEO ×2（09-25 Nicola Kilner 精華 guid flightcast:01M379SMDZT80QS0EF25QEDAHM；09-24 Druski guid flightcast:01M26CBRW55X2EMED8438W3PW7）。Founders 無新集（最新仍為 #434 Sam Walton 09-21）。Acquired 無新集（最新 The Home Depot 09-13）；但其 feed 已由 Simplecast 遷至 Transistor，3 條 2025 舊集（10 Years of Acquired / Coca-Cola / Trader Joe's）以新 GUID 重現，經核實非新集，已一併寫入 state 以免重複干擾。6 條 feed 全部以 urllib+ElementTree 直接解析 XML，HTTP 200。Jev 前置過濾（news profile）：Bending Spoons 1.02 最高、MFM 0.62；All-In 09-26 0.43、KP Ackman 0.09、DOAC Kilner 0.21、DOAC Druski 0.03 —— 4 條低於 0.6 但全屬當日新集，按完整覆蓋原則保留，並在報告中逐條披露評分與 primary_source 偏低的警示。數字全部以公開來源核實（Fortune OpenAI/Anthropic、Anthropic 官方 ART 部落格、TechCrunch/Meta Muse、F-1 招股書數據、BigGo/Sourcery 的 Ferrari 逐字、TheStreet Netflix 部位）；無逐字稿的段落未生成任何 blockquote。Brave Search 今日 3 次 429，改用 web_fetch 直接抓取來源頁。"
   }
 }
