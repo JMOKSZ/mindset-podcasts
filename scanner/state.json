@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-09-27T09:55:00Z",
+  "lastScan": "2026-09-28T09:53:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -35,7 +35,8 @@
       "b340b68e-9efd-11f1-bfdd-d7bddd398df4",
       "6da070c2-a945-11f1-9294-0b8c75e1a778",
       "d0c3c534-b069-11f1-bc61-4345073b86a6",
-      "a9a4ff62-b556-11f1-b65b-9b42dbe957f1"
+      "a9a4ff62-b556-11f1-b65b-9b42dbe957f1",
+      "6db0368a-baeb-11f1-ab5d-0fa3b3dd96cd"
     ],
     "all-in": [
       "688c4809-9cf4-4d77-b5d7-482ee43e7ccc",
@@ -212,11 +213,12 @@
       "flightcast:01M1KRZJXFDY091DTC2XYYRW7A",
       "flightcast:01M2RHNG0S1MZ1VD7AG18AGCZ7",
       "flightcast:01M379SMDZT80QS0EF25QEDAHM",
-      "flightcast:01M26CBRW55X2EMED8438W3PW7"
+      "flightcast:01M26CBRW55X2EMED8438W3PW7",
+      "flightcast:01M32K500669XNSP3RQZSWNC4M"
     ]
   },
   "lastScanResult": {
-    "newEpisodes": 6,
-    "note": "2026-09-27 掃描：6 條新集數 — All-In ×2（09-26『Anthropic IPO at Risk, Meta's Muse Pop, Token Prices Fall, Open Source Gains Share, Alignment Fails』guid 39dac85d；09-23『Luca Ferrari, Bending Spoons CEO』guid cbcb6353）、My First Million #865（09-25『There's 98 days until 2027』guid fe829dc6）、Knowledge Project（09-24『Bill Ackman: The Biggest Fight of His Life』guid fs.blog?p=81683，會員搶先版、公開版 09-29）、Diary of a CEO ×2（09-25 Nicola Kilner 精華 guid flightcast:01M379SMDZT80QS0EF25QEDAHM；09-24 Druski guid flightcast:01M26CBRW55X2EMED8438W3PW7）。Founders 無新集（最新仍為 #434 Sam Walton 09-21）。Acquired 無新集（最新 The Home Depot 09-13）；但其 feed 已由 Simplecast 遷至 Transistor，3 條 2025 舊集（10 Years of Acquired / Coca-Cola / Trader Joe's）以新 GUID 重現，經核實非新集，已一併寫入 state 以免重複干擾。6 條 feed 全部以 urllib+ElementTree 直接解析 XML，HTTP 200。Jev 前置過濾（news profile）：Bending Spoons 1.02 最高、MFM 0.62；All-In 09-26 0.43、KP Ackman 0.09、DOAC Kilner 0.21、DOAC Druski 0.03 —— 4 條低於 0.6 但全屬當日新集，按完整覆蓋原則保留，並在報告中逐條披露評分與 primary_source 偏低的警示。數字全部以公開來源核實（Fortune OpenAI/Anthropic、Anthropic 官方 ART 部落格、TechCrunch/Meta Muse、F-1 招股書數據、BigGo/Sourcery 的 Ferrari 逐字、TheStreet Netflix 部位）；無逐字稿的段落未生成任何 blockquote。Brave Search 今日 3 次 429，改用 web_fetch 直接抓取來源頁。"
+    "newEpisodes": 2,
+    "note": "2026-09-28 掃描：2 條新集 — Founders #435『Mark Zuckerberg's Empire』(guid 6db0368a-baeb-11f1，09-28 08:00 UTC，Senra 讀 Jeremy Stern 在 Colossus 的 Zuckerberg 側寫)、Diary of a CEO『Adam Neumann: The Real Story Behind WeWork...』(guid flightcast:01M32K500669XNSP3RQZSWNC4M，09-28 05:00 UTC)。其餘 4 個播客無新集：Acquired 最新仍為 09-13 The Home Depot；All-In 最新 09-26（已掃）；My First Million 最新 09-25（已掃）；Knowledge Project 最新 09-24 Bill Ackman（已掃）。6 條 feed 全部以 urllib+ElementTree 直接解析 XML，HTTP 200。Jev 前置過濾（news profile）：Founders #435 worth 0.82、DOAC Neumann 0.81，兩者 primary_source 分別 0.07 / 0.56，已在報告中標明二手轉述警示。Founders 集數素材為 Colossus 原文（Jeremy Stern, 2026-09）＋ The Free Press 導讀；DOAC 官方 show notes 無數字逐字稿，故只保留一條可溯源 blockquote，其餘為章節與論點整理。Brave Search 首查一次 429，其後正常。"
   }
 }

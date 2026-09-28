@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-09-28</title>
+<style>
+  :root{
+    --bg:#fdfaf6;
+    --card:#fffdf9;
+    --ink:#2b2620;
+    --muted:#7a7065;
+    --line:#e8ddcd;
+    --accent:#b8862b;
+    --accent-soft:#f4e8cf;
+    --new:#2e7d5b;
+    --warn:#a8571f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;
+    line-height:1.78;
+    margin:0;
+    padding:0 16px 90px;
+    font-size:16.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;}
+  header.top{
+    padding:46px 0 26px;
+    border-bottom:2px solid var(--line);
+    margin-bottom:32px;
+  }
+  header.top h1{font-size:31px;margin:0 0 8px;letter-spacing:.5px;}
+  header.top .sub{color:var(--muted);font-size:14.5px;}
+  header.top .meta{margin-top:14px;font-size:13.5px;color:var(--muted);}
+  .summary{
+    background:var(--accent-soft);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:18px 22px;
+    margin-bottom:38px;
+    font-size:15px;
+  }
+  .summary b{color:var(--accent);}
+  .summary ul{margin:8px 0 0;padding-left:20px;}
+  section.pod{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 26px 22px;
+    margin-bottom:32px;
+    box-shadow:0 1px 0 rgba(0,0,0,.02);
+  }
+  .pod-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;border-bottom:1px dashed var(--line);padding-bottom:12px;margin-bottom:18px;}
+  .pod-head h2{font-size:22px;margin:0;flex:1 1 auto;}
+  .pod-head .host{color:var(--muted);font-size:13.5px;}
+  .tag{font-size:12px;padding:2px 10px;border-radius:20px;letter-spacing:.5px;white-space:nowrap;}
+  .tag.new{background:var(--new);color:#fff;}
+  .tag.none{background:#eee6d8;color:var(--muted);}
+  .tag.warn{background:var(--warn);color:#fff;}
+  .ep{margin:0 0 30px;padding-bottom:22px;border-bottom:1px dotted var(--line);}
+  .ep:last-child{margin-bottom:4px;padding-bottom:0;border-bottom:none;}
+  .ep h3{font-size:19px;margin:0 0 5px;line-height:1.45;}
+  .ep .epmeta{font-size:13px;color:var(--muted);margin-bottom:16px;}
+  .ep .epmeta a{color:var(--accent);text-decoration:none;}
+  h4{font-size:15px;margin:20px 0 6px;color:var(--accent);letter-spacing:.4px;}
+  ul{margin:6px 0 12px;padding-left:22px;}
+  li{margin:6px 0;}
+  blockquote{
+    margin:14px 0;
+    padding:11px 18px;
+    border-left:3px solid var(--accent);
+    background:#fbf5e9;
+    color:#4a4034;
+    font-style:italic;
+    font-size:15px;
+    border-radius:0 8px 8px 0;
+  }
+  blockquote cite{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:6px;}
+  .kv{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:14.5px;}
+  .kv th,.kv td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+  .kv th{background:#f7efe0;font-weight:normal;color:#6a5f52;width:38%;}
+  .callout{
+    border:1px dashed var(--line);
+    background:#fcf8f1;
+    border-radius:10px;
+    padding:12px 16px;
+    font-size:14px;
+    color:#5d5347;
+    margin:14px 0;
+  }
+  .src{font-size:12.5px;color:var(--muted);margin-top:10px;}
+  .src a{color:var(--muted);}
+  .label{font-size:11.5px;letter-spacing:.6px;padding:1px 7px;border-radius:4px;background:#f0e8d8;color:#7a6a52;margin-right:6px;white-space:nowrap;}
+  .label.ext{background:#e9f0ea;color:#3f6b52;}
+  .label.jev{background:#f3e6e0;color:#8a4a2c;}
+  .label.ts{background:#e8ecf4;color:#3f5070;}
+  footer.bot{border-top:1px solid var(--line);margin-top:44px;padding-top:18px;color:var(--muted);font-size:13px;}
+  a{color:var(--accent);}
+  code{background:#f3ecdd;padding:1px 5px;border-radius:4px;font-size:13.5px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>思維播客日報 · 2026-09-28</h1>
+  <div class="sub">6 個英文商業／思維播客 · 每日深度掃描 · 為 James 而設的「第二對耳仔」</div>
+  <div class="meta">
+    🕘 報告生成時間：<b>2026-09-28 09:53 UTC</b>（= 香港時間 2026-09-28 17:53）<br>
+    📡 掃描方式：6 條 RSS feed 直接以 urllib + ElementTree 解析 XML（全部 HTTP 200），逐集比對 GUID 去重<br>
+    🧮 Jev 前置過濾（TypeSafe System One, <code>news</code> profile）：2 條候選全數 <code>keep</code>，寫入報告前先過一輪噪音篩<br>
+    🧑💻 Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">JMOKSZ/mindset-podcasts</a>
+  </div>
+</header>
+
+<div class="summary">
+  <b>今日重點：2 條新集數。</b>其餘 4 個播客最近無更新。
+  <ul>
+    <li>🆕 <b>Founders #435《Mark Zuckerberg's Empire》</b>（09-28）——David Senra 讀 Jeremy Stern 在 Colossus 的萬字側寫，把 Zuckerberg 當成「史上最大非領土帝國」的君主來解剖：獨裁者困境、羅馬情結、Meta 資本開支、親手重組 AI 帝國。</li>
+    <li>🆕 <b>The Diary of a CEO ─ Adam Neumann</b>（09-28）——WeWork 崩盤後最完整的一次心理回顧：那程的士上的 42 億美元如何令使命走樣、24 小時「科技安息日」、如何用「最差的一天」去篩選拍檔、影響力 vs 控制權。</li>
+    <li>🕳️ 本日其餘播客無新集：Acquired（最新仍為 09-13 The Home Depot）、All-In（09-26）、My First Million（09-25 #865）、The Knowledge Project（09-24 Bill Ackman）。</li>
+  </ul>
+</div>
+
+<!-- ==================== FOUNDERS ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Founders</h2>
+    <span class="host">David Senra · 每週一集，讀一本企業家傳記</span>
+    <span class="tag new">1 條新集</span>
+  </div>
+
+  <div class="ep">
+    <h3>#435 Mark Zuckerberg's Empire</h3>
+    <div class="epmeta">
+      📅 發佈：2026-09-28 08:00 UTC · ⏱ 41 分 11 秒 · 📄 素材：Jeremy Stern《Mark: A journey to the heart of history's largest nonterritorial empire》（Colossus Magazine, 2026-09）<br>
+      <span class="label jev">Jev worth 0.82</span><span class="label">category: business</span><span class="label warn">primary_source 0.07 → 標明為二手轉述</span>
+    </div>
+
+    <h4>一句話</h4>
+    <p>David Senra 今集「讀」的不是傳統傳記，而是《Colossus》雜誌九月號一篇採訪了 36 人的 Zuckerberg 側寫。它的核心命題很硬：<b>Mark Zuckerberg 是人類史上最大「非領土帝國」的統治者——他的權力不靠疆界，而靠 36 億人的注意力、$1.6 兆市值，以及一個令他被免職「實際上不可能」的股權結構。</b>Senra 由此抽出可用的創業／領袖教訓。</p>
+
+    <h4>主題與素材</h4>
+    <ul>
+      <li><b>主角：</b>Mark Zuckerberg（42 歲），掌控 Meta Platforms。</li>
+      <li><b>作者：</b>Jeremy Stern（Colossus 總編輯），走訪 Zuckerberg 的父母 Ed 與 Karen、妻子 Priscilla Chan、本人，以及另外三十餘人。</li>
+      <li><b>主軸隱喻：</b>羅馬帝國。童年那套《Risk》式羅馬帝國征服遊戲、高中鑽研拉丁文維吉爾《埃涅阿斯紀》、哈佛第一個網站是「Rome of Augustus」藝術史筆記、早年危機會議以「<em>Carthago delenda est</em>（迦太基必須被毀滅）」收尾、週五全員大會喊「Domination!」、2024 年穿印有「AUT ZUCK AUT NIHIL（要麼做凱撒，要麼什麼都不是）」的 T 恤、三個孩子名為 Maxima、August、Aurelia。</li>
+    </ul>
+
+    <h4>核心論點（Senra 抽出的可操作教訓）</h4>
+    <ul>
+      <li><b>1. 獨裁者困境（The Dictator's Dilemma）是權力的內建 bug。</b>權力愈大、帝國愈大，他愈要靠別人提供資訊；但出於恐懼、敬畏或自保，身邊人會愈來愈不敢講他不中聽的話——於是他與現實愈隔愈遠，同時決策後果愈來愈大。Zuckerberg 對此「極度自覺，幾乎可說偏執」：他是微觀管理者兼數據狂，會刻意找直接下屬的下屬對話（skip-level）、請外部專家來駁他。</li>
+      <li><b>2. 制度的護城河不是產品，是股權結構。</b>Zuckerberg 對 Meta 投票權的多數控制，令「換掉他」在機制上近乎不可能——歷任美國總統會下台、會死，而他理論上再統治 50 年仍在。</li>
+      <li><b>3. 「從不滿足」才是他真正的競爭優勢。</b>一位競對 AI 實驗室、前 Meta 研究員的原話（見下）點出：他不是壞人、不是苦大仇深，他的優勢是「他從不快樂，他只是不停」。同代創業者多數在某刻退場（賣盤、被推翻、找攝政王），他不一樣。</li>
+      <li><b>4. 用「填補空洞」去理解創辦人的內在驅動。</b>他的 MMA 教練 Dave Camarillo：「我們每個人生命裡都有一個空洞，幸運的人找到東西把它填滿……Mark 用打架填那個洞。」每週三朝早、放棄睡懶覺去捱打——Zuckerberg 自己說那是對「被閹割／去雄性化」的企業世界的平衡。</li>
+      <li><b>5. 平台依賴的屈辱記憶，驅動他這次押注硬件。</b>他一直記得當年手機崛起時差點錯過、2012 年 IPO 期間被迫重建整個 Facebook 與廣告業務的創傷。App Store 成就了 Facebook，而「Zuckerberg 不喜歡被成就」——於是眼鏡、VR/AR、自研模型，本質都是要奪回「領土」。</li>
+    </ul>
+
+    <h4>關鍵數據（全部出自 Colossus 原文）</h4>
+    <table class="kv">
+      <tr><th>用戶規模</th><td>3.6 億…更正：<b>36 億用戶</b>，即每 2.3 個活著的人就有 1 個在用；Facebook、Instagram、WhatsApp 各自的月活用戶數都比全球基督徒總數多</td></tr>
+      <tr><th>市值</th><td><b>$1.6 兆美元</b>；近四分之一世紀，估值大約每屆美國總統任期就「加一個零」</td></tr>
+      <tr><th>年收入</th><td>遠超 <b>$200 億美元</b>（well above $200 billion）</td></tr>
+      <tr><th>資本開支</th><td>Meta 本年度 capex 將<b>超過地球上除美國、中國、俄羅斯以外所有國家的軍費</b>（節目中 Senra 引用為「今年 capex 會超越除中美俄外每一國的軍事預算」）</td></tr>
+      <tr><th>AI 重組</th><td>以 <b>$14.3 億…更正：$143 億美元</b>（$14.3 billion）入股 Scale AI，並讓創辦人 Alexandr Wang 出任 Meta AI 主管；成立 Meta Superintelligence Labs（MSL），吸走 OpenAI／Anthropic／Google DeepMind 數十人；2026 年 4 月推出首個閉源模型 <b>Muse Spark</b></td></tr>
+      <tr><th>收購起點</th><td>2014 年以 <b>$20 億美元</b>收購 Oculus，展開 VR/AR 十年賭注</td></tr>
+      <tr><th>產品滲透</th><td>42 歲時，產品覆蓋全球每 2.3 人之一，多於 1965 年全球總人口</td></tr>
+    </table>
+    <div class="callout">⚠️ <b>數字校對備註：</b>$14.3 billion 是 <b>143 億美元</b>；3.6 billion 是 <b>36 億</b>；$1.6 trillion 是 <b>1.6 兆</b>；「每年加一個零」是原文關於估值的比喻性說法（非字面），本報告照原文標示。所有數字均為 Colossus 原文轉述，非審計數字。</div>
+
+    <h4>重點引用（原文 verbatim）</h4>
+    <blockquote>「For these, I set no bounds in space or time. I have given empire without end.」<cite>— 維吉爾《埃涅阿斯紀》中朱庇特的敕令，Zuckerberg 高中時記下，近十年後仍能背出</cite></blockquote>
+    <blockquote>「What is it like to be one of the most powerful men in human history, who, by age 42 has secured a place in the books that'll be written about his era for centuries after his death?」<cite>— 作者 Jeremy Stern 問 Zuckerberg 父母的問題</cite></blockquote>
+    <blockquote>「People call him arrogant. He's not. But time after time, his arrogance just turns into truth.」<cite>— 父親 Ed Zuckerberg（Karen 在旁糾正：「他不是」）</cite></blockquote>
+    <blockquote>「I think we all have a void in our lives, and the lucky ones find something that fills that space to make us more optimal, to make us a better human being. Mark filled the void with fighting.」<cite>— MMA 教練 Dave Camarillo</cite></blockquote>
+    <blockquote>「I'm never going to stop. I can get obsessive.」<cite>— Mark Zuckerberg 本人</cite></blockquote>
+    <blockquote>「Mark is the fucking Terminator. He's actually not an asshole, which is interesting. He's not a miserable fuck. But his source of advantage is he's never happy. He just doesn't fucking stop.」<cite>— 某競對 AI 實驗室研究員（曾在 Meta 任職）</cite></blockquote>
+    <blockquote>「The world thinks that people out here [in tech and AI] are pretty soy or whatever. But you actually have to be pretty fucking tough and aggressive, just in a classic masculine sort of way. And Mark's still the alpha of that. I am not hoping they get to a place where we compete with him.」<cite>— 同一位競對研究員</cite></blockquote>
+    <blockquote>「The more power a man acquires, the more his empire expands, the more he depends on other people for information about everything from his own court to the furthest reaches of the empire.」<cite>— Colossus 原文對「獨裁者困境」的定義，Senra 在 8:05 標為全篇骨幹</cite></blockquote>
+
+    <h4>技術與行業 insight</h4>
+    <ul>
+      <li><b>Meta 的 AI 大換血是一次「政權更替」：</b>Llama 4 發佈後不到三個月，他把 FAIR 併入新的 MSL，清掉十多年的舊班底（LeCun 其後離任），把頂尖 AI 人才的薪酬市場重設到「每人數億至數十億美元」，收編 ChatGPT 共同創造者 Shengjia Zhao、前 GitHub 主管 Nat Friedman、SSI 共同創辦人 Daniel Gross 等。一個季度內 MSL 已能運作，並宣佈數千億美元級新 capex。</li>
+      <li><b>硬件即領土：</b>眼鏡（Meta AI glasses）、VR/AR、店舖體驗，被解讀為他對「失去了手機時代地盤」的補償性奪回；Senra 提醒創業者：<em>平台依賴是慢性創傷</em>，最強的創辦人會把它轉化成硬件／自研的執念。</li>
+      <li><b>對「一人公司」的治理警示：</b>「He is the company, and the company is him.」員工內部曾把一個明知要爆的項目戲稱為「M.M.H.（Make Mark Happy）」，並互相鼓勵「愛上它」——這是超級創辦人治理的結構性成本。</li>
+      <li><b>值得抄的一招：</b>Zuckerberg 會公開為下屬的錯攬責；同時繞過過濾層直接接觸原始資訊（skip-level、請外部專家來吵架）。歷史對照：林肯坐進電報室讀第一手電文；邱吉爾設私人統計局交叉核對各部報告；巴菲特稱 Munger 是他的「可憎的 no-man」。</li>
+    </ul>
+
+    <div class="src">
+      <span class="label ext">一手素材</span> Colossus 原文（Jeremy Stern, 2026-09）：<a href="https://colossus.com/article/mark-zuckerberg-profile/">colossus.com/article/mark-zuckerberg-profile</a> ·
+      轉載／導讀：<a href="https://www.thefp.com/p/what-mark-zuckerberg-wants">The Free Press《What Mark Zuckerberg Wants》</a> ·
+      節目頁：<a href="https://www.founderspodcast.com/">founderspodcast.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DIARY OF A CEO ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Diary of a CEO with Steven Bartlett</h2>
+    <span class="host">Steven Bartlett · 長訪談／心理與商業</span>
+    <span class="tag new">1 條新集</span>
+  </div>
+
+  <div class="ep">
+    <h3>Adam Neumann: The Real Story Behind WeWork, A $4 Billion Cab Ride, And Surviving A $460 Million Debt</h3>
+    <div class="epmeta">
+      📅 發佈：2026-09-28 05:00 UTC · ⏱ 2 小時 15 分 13 秒（8,113 秒）· 🎙 嘉賓：Adam Neumann（WeWork 共同創辦人、Flow 創辦人、a16z 合作夥伴）<br>
+      <span class="label jev">Jev worth 0.81</span><span class="label">category: business</span><span class="label">primary_source 0.56</span>
+    </div>
+
+    <h4>一句話</h4>
+    <p>WeWork 由 $470 億估值神話走到公開崩盤後，Neumann 今次不談戰術，談<b>心理與靈性框架</b>：童年創傷與公開失敗不是詛咒，而是「建立堅不可摧心理韌性」的必經機制；而真正摧毀 WeWork 使命的，是那程的士上的一個數字。</p>
+
+    <h4>主題與核心論點（按節目官方 show notes）</h4>
+    <ul>
+      <li><b>① 自我陷阱（The Ego Trap）：</b>在的士後座收到一筆 <b>$42 億美元的投資要約</b>，瞬間令 WeWork 的使命走樣——節目論點是「快速的財務成功會令創辦人盲了眼，看不見自己的核心價值」。</li>
+      <li><b>② 失敗的地基（The Foundation of Failure）：</b>童年創傷或公開的商業崩塌並非詛咒，而恰恰是建立堅不可摧心理韌性所需的機制。</li>
+      <li><b>③ 科技安息日（The Technology Shabbat）：</b>每週 24 小時斷開所有電子裝置，是打破成癮、關掉噪音、重新發現自己的必要練習。</li>
+      <li><b>④ 拍檔的真正量尺（The True Measurement of Partners）：</b>只用一個標準去評價你的投資者、朋友與人生伴侶——<b>他們在你最糟糕的那一天如何對待你</b>。</li>
+      <li><b>⑤ 影響力 vs 控制權（Influence vs. Control）：</b>反直覺的領導原則——真正的權力要求「由下而上」地領導。</li>
+    </ul>
+
+    <h4>節目時間軸（官方章節）</h4>
+    <table class="kv">
+      <tr><th>00:00–13:46</th><td>Intro · 在集體農場（Kibbutz）長大 · 母親的行為如何塑造他 · 童年讀書的掙扎 · 留下終身影響的童年經歷</td></tr>
+      <tr><th>13:46–21:48</th><td>為何他不再用同一種眼光看「創傷」 · 為何金錢不是他的成功定義 · 失敗如何改寫他的成功定義</td></tr>
+      <tr><th>21:48–34:35</th><td>「我們（We）」這個念頭為何如此有力 · 為何要夢得比「感覺可能」更大 · 最低潮時是甚麼撐住他 · 如何克服自我懷疑（含 WeWork 背後的自我懷疑）</td></tr>
+      <tr><th>34:35–52:37</th><td>為何努力仍然重要 · 甚麼組成一個好團隊成員</td></tr>
+      <tr><th>54:55–1:15:01</th><td>第一次見孫正義（Masayoshi Son）時發生了甚麼 · 如何「先建好地基再擴張」</td></tr>
+      <tr><th>1:15:01–1:35:09</th><td>如何在噪音中找訊號 · 當人人都有意見時，你該聽誰 · 為何專注是成功的必要條件</td></tr>
+      <tr><th>1:51:06–2:12:29</th><td>WeWork 究竟出了甚麼事 · 妻子一句話改變了他的視角 · 他學到的 5 大教訓 · 一切崩塌時 Ben Horowitz 寄來的信 · 他給創業者的最後寄語</td></tr>
+    </table>
+
+    <h4>關鍵數據／事實</h4>
+    <table class="kv">
+      <tr><th>WeWork 峰值</th><td>被推上 <b>$470 億美元</b>估值的全球帝國，其後在空前公眾審視下退任 CEO</td></tr>
+      <tr><th>的士上的要約</th><td><b>$42 億美元</b>投資要約（標題寫「A $4 Billion Cab Ride」，官方 show notes 寫 $4.2B）</td></tr>
+      <tr><th>個人債務</th><td>標題所述「surviving a <b>$460 million debt</b>」</td></tr>
+      <tr><th>現況</th><td>與頂級風投 <b>a16z</b> 合作；創辦住宅地產公司 <b>Flow</b>，主打解決現代孤獨流行病、建立真實社群</td></tr>
+    </table>
+    <div class="callout">📌 <b>Flow 的商業說法（二手，供背景）：</b>有學術論文（Cambridge《Finance and Society》）引述 Neumann 在 a16z 訪談中的說法：把「our furniture… our tech… our team… our uniforms, our smell, our music, our art, everything that we do…」注入物業，聲稱可為租金收入帶來 <b>約 30% 提升</b>。此為轉述而非本集內容，僅作背景。</div>
+
+    <h4>重點引用</h4>
+    <blockquote>「…our furniture… our tech… our team… our uniforms, our smell, our music, our art, everything that we do…」<cite>— Adam Neumann 談 Flow 如何為住宅物業帶來約 30% 租金提升（出自 a16z 訪談，非本集逐字；本集無公開逐字稿）</cite></blockquote>
+    <div class="callout">✍️ <b>引用誠信聲明：</b>本集（DOAC）官方 show notes 只提供章節與論點，<b>並無逐字稿</b>，因此本卡除上述一條可溯源的 Neumann 原話外，不作任何偽造 blockquote；其餘一律以官方 show notes 的論點與章節時間標示呈現。</div>
+
+    <h4>Insight：為何呢集值得（就算你唔鍾意 Neumann）</h4>
+    <ul>
+      <li><b>「最差的一天」是一條殘酷但好用的篩選器。</b>把投資者、朋友、伴侶都用同一條標準去量——這個框架可直接搬去審視你生命中的關鍵關係與合作方。</li>
+      <li><b>「先地基、後規模」是對 WeWork 的直接反省。</b>節目把「如何先建好地基再擴張」放在 54:55，緊接「見孫正義」之後——暗示軟銀式高壓增長正是地基未穩就擴張的代表。</li>
+      <li><b>孫正義那一程的結構意義：</b>一章節講「見孫正義」，另一章節講「那程的士的 $42 億」——把融資談判的即時快感，與「使命走樣」的長期代價，刻意並置。</li>
+      <li><b>Narrative 的管理：</b>一個定義了「創辦人過度膨脹」時代的人，在崩塌七年後用「創傷—韌性—去成癮」的語言重講自己的故事。無論你是否接受，這是一次教科書級的公眾形象重建。</li>
+    </ul>
+
+    <div class="src">
+      <span class="label ext">一手</span> 節目 RSS／show notes（Flightcast, 2026-09-28）: <a href="https://rss2.flightcast.com/xmsftuzjjykcmqwolaqn6mdn">rss2.flightcast.com/xmsftuzjjykcmqwolaqn6mdn</a> ·
+      官方頁：<a href="https://thediaryofaceo.com/">thediaryofaceo.com</a> ·
+      背景：<a href="https://a16z.com/podcast/adam-neumann-this-is-how-you-build-iconic-companies-2/">a16z: Adam Neumann</a> ·
+      <a href="https://www.cambridge.org/core/journals/finance-and-society/article/nondeath-of-adam-neumann-altexiting-serialfounding-and-failing-up-in-silicon-valley-venture-capital/E91028E0341174D7268DF48470F27736">Cambridge, Finance and Society</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ACQUIRED ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Acquired</h2>
+    <span class="host">Ben Gilbert &amp; David Rosenthal</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="ep">
+    <p>最新一集仍為 <b>《The Home Depot》</b>（2026-09-13，約 3 小時 35 分）。今次掃描 feed 共 217 集，最新集 GUID 已在 state 之中，無新集。</p>
+    <table class="kv">
+      <tr><th>最後已知劇集</th><td>The Home Depot（2026-09-13）</td></tr>
+      <tr><th>上一集</th><td>Disney: The Renaissance and the Empire（2026-08-09）</td></tr>
+      <tr><th>備註</th><td>Feed 已由 Simplecast 遷至 Transistor；2025 年三條舊集曾以新 GUID 重現，經核實非新集，已記入 state 避免重複干擾。</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ==================== ALL-IN ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>All-In with Chamath, Jason, Sacks &amp; Friedberg</h2>
+    <span class="host">Chamath Palihapitiya · Jason Calacanis · David Sacks · David Friedberg</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="ep">
+    <p>最新為 <b>2026-09-26《Anthropic IPO at Risk, Meta's Muse Pop, Token Prices Fall, Open Source Gains Share, Alignment Fails》</b>，該集已於昨日（09-27）報告深度掃描，今次無新集。</p>
+    <table class="kv">
+      <tr><th>最後已知劇集</th><td>Anthropic IPO at Risk, Meta's Muse Pop, Token Prices Fall, Open Source Gains Share, Alignment Fails（2026-09-26，1 小時 34 分）</td></tr>
+      <tr><th>前一條專訪</th><td>Luca Ferrari, Bending Spoons CEO（2026-09-23，25 分 30 秒）</td></tr>
+      <tr><th>備註</th><td>本 feed 共 430 集，全部 GUID 已比對，最新數條均在 state 內。</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ==================== MY FIRST MILLION ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>My First Million</h2>
+    <span class="host">Sam Parr &amp; Shaan Puri</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="ep">
+    <p>最新為 <b>2026-09-25《There's 98 days until 2027...Do this and you'll thank yourself on Jan 1st》</b>（55 分 53 秒），已於昨日報告掃描，今次無新集。</p>
+    <table class="kv">
+      <tr><th>最後已知劇集</th><td>There's 98 days until 2027…（2026-09-25）</td></tr>
+      <tr><th>上一集</th><td>Whatnot founder: This is the future of e-commerce（2026-09-21，1 小時 2 分）</td></tr>
+      <tr><th>備註</th><td>Feed 共 905 集，最新數條 GUID 全在 state 內。</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ==================== KNOWLEDGE PROJECT ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Knowledge Project</h2>
+    <span class="host">Shane Parrish</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="ep">
+    <p>最新為 <b>2026-09-24《Bill Ackman: The Biggest Fight of His Life》</b>（會員搶先版；公開版 09-29），已於昨日報告掃描。今次無新集。</p>
+    <table class="kv">
+      <tr><th>最後已知劇集</th><td>Bill Ackman: The Biggest Fight of His Life（2026-09-24）</td></tr>
+      <tr><th>上一集</th><td>Tobi Lütke: AI Agents, Better Decisions, and the Future of Work（2026-09-10）</td></tr>
+      <tr><th>備註</th><td>Feed 共 20 集，最新 GUID <code>?p=81683</code> 已在 state 內。</td></tr>
+    </table>
+  </div>
+</section>
+
+<footer class="bot">
+  <p>報告由自動掃描器生成 · 生成時間 <b>2026-09-28 09:53 UTC</b> · 6／6 RSS feed HTTP 200 · 2 條新集全部通過 Jev <code>news</code> 前置過濾（0.82 / 0.81）。</p>
+  <p>所有引用均標明出處並與原文核對；<b>無逐字稿的集數不會生成任何 blockquote</b>。數字如有「更正」標註，代表中文計量單位換算備註，原文數字不變。</p>
+  <p>Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">github.com/JMOKSZ/mindset-podcasts</a> · Pages：<a href="https://jmoksz.github.io/mindset-podcasts/">jmoksz.github.io/mindset-podcasts</a></p>
+</footer>
+
+</div>
+</body>
+</html>
