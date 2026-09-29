@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-09-28T09:53:00Z",
+  "lastScan": "2026-09-29T09:54:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -89,7 +89,8 @@
       "ebe0e737-5995-476f-8d20-673400e3ec13",
       "5f8aeed3-a44e-46ce-8d55-244a1c95e602",
       "39dac85d-ab62-45b0-a587-67797ed8f0ee",
-      "cbcb6353-9937-4c25-9f83-93e1f096d3e6"
+      "cbcb6353-9937-4c25-9f83-93e1f096d3e6",
+      "7b660c9d-26d0-4ff4-9205-6808ee6898d5"
     ],
     "my-first-million": [
       "a9e51792-9d4f-11f1-b79f-435a1ed9f4c8",
@@ -143,7 +144,8 @@
       "c99494dc-b1b3-11f1-8592-9f835067055a",
       "f2e0c3bc-b355-11f1-a53c-9be1fe16839d",
       "42535506-b5b1-11f1-909d-f75037fc309d",
-      "fe829dc6-b8cd-11f1-a2f8-b7b94f238b54"
+      "fe829dc6-b8cd-11f1-a2f8-b7b94f238b54",
+      "9b3f54d6-baba-11f1-8d50-aba717db2a09"
     ],
     "knowledge-project": [
       "https://fs.blog/?post_type=podcast&p=81515",
@@ -219,6 +221,6 @@
   },
   "lastScanResult": {
     "newEpisodes": 2,
-    "note": "2026-09-28 掃描：2 條新集 — Founders #435『Mark Zuckerberg's Empire』(guid 6db0368a-baeb-11f1，09-28 08:00 UTC，Senra 讀 Jeremy Stern 在 Colossus 的 Zuckerberg 側寫)、Diary of a CEO『Adam Neumann: The Real Story Behind WeWork...』(guid flightcast:01M32K500669XNSP3RQZSWNC4M，09-28 05:00 UTC)。其餘 4 個播客無新集：Acquired 最新仍為 09-13 The Home Depot；All-In 最新 09-26（已掃）；My First Million 最新 09-25（已掃）；Knowledge Project 最新 09-24 Bill Ackman（已掃）。6 條 feed 全部以 urllib+ElementTree 直接解析 XML，HTTP 200。Jev 前置過濾（news profile）：Founders #435 worth 0.82、DOAC Neumann 0.81，兩者 primary_source 分別 0.07 / 0.56，已在報告中標明二手轉述警示。Founders 集數素材為 Colossus 原文（Jeremy Stern, 2026-09）＋ The Free Press 導讀；DOAC 官方 show notes 無數字逐字稿，故只保留一條可溯源 blockquote，其餘為章節與論點整理。Brave Search 首查一次 429，其後正常。"
+    "note": "2026-09-29 掃描：2 條新集 — All-In『Daniel Ek: Life After Spotify, Broken Healthcare Incentives, Catching Disease Early & AI's Potential』(guid 7b660c9d-26d0-4ff4-9205-6808ee6898d5，09-28 22:16 UTC，51:16)、My First Million #866『MIT scientist: Elon Musk was right, we are almost certainly in a simulation』(guid 9b3f54d6-baba-11f1-8d50-aba717db2a09, Shaan Puri x Rizwan Virk，09-28 10:00 UTC，61:47)。其餘 4 個播客無新集：Acquired 最新仍為 09-13 The Home Depot；Founders 最新 09-28 #435 Zuckerberg（昨日已掃）；Knowledge Project 最新 09-24 Bill Ackman（已掃）；Diary of a CEO 最新 09-28 Adam Neumann（昨日已掃）。6 條 feed 全部以 urllib+ElementTree 直接解析 XML，HTTP 200。Jev 前置過濾（news profile）：All-In Ek worth 0.88 / primary_source 0.65；MFM Virk worth 0.44 / primary_source 0.37（低於 0.6 但含具體數字與一手書面素材，按 hint 不作硬砍、保留並標⚠️）。兩集均無官方逐字稿：All-In 僅章節，引用改用可溯源公開資料（Neko 官方 About / Guardian / The Verge）；MFM 轉引第三方逐字整理（thefabulous.co、BigGo Finance）並保留分鐘標示。背景數字取自 TechCrunch（Neko 紐約首店 2026-09-24、25,000 waitlist、100,000+ 歐洲掃描、$700M Series C）、Business Insider（$499 實測）、Forbes（$7B 估值）。"
   }
 }
