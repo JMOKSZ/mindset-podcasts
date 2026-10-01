@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-09-30T09:54:00Z",
+  "lastScan": "2026-10-01T09:54:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -1119,7 +1119,8 @@
       "c6dbf0c6-e45b-4b48-97bd-9b29401c9322",
       "3cd7f334-73e2-4b3d-9188-767d8845a52e",
       "70a308eb-7290-4f51-8318-79ee0037f8a1",
-      "b3274b9a-8137-47d4-9634-52f6783ca776"
+      "b3274b9a-8137-47d4-9634-52f6783ca776",
+      "1c456716-c38b-472a-9dd0-9d8800f22dd8"
     ],
     "my-first-million": [
       "a9e51792-9d4f-11f1-b79f-435a1ed9f4c8",
@@ -2051,7 +2052,8 @@
       "bdd5a8eb-eb3a-45aa-aa5d-efcb534d284e",
       "42f2557b-beac-4255-b154-9280ecb4fc7a",
       "f97f8c88-a9c6-11eb-b497-cb6023958e90",
-      "36260fe1-a82a-4ba0-b843-a67fd582be6d"
+      "36260fe1-a82a-4ba0-b843-a67fd582be6d",
+      "da03e5b8-bcbf-11f1-b04e-974a137a8a44"
     ],
     "knowledge-project": [
       "https://fs.blog/?post_type=podcast&p=81515",
@@ -2083,7 +2085,8 @@
       "https://fs.blog/?post_type=podcast&p=80096",
       "https://fs.blog/?post_type=podcast&p=80074",
       "https://fs.blog/?post_type=podcast&p=80049",
-      "https://fs.blog/?post_type=podcast&p=80015"
+      "https://fs.blog/?post_type=podcast&p=80015",
+      "https://fs.blog/?post_type=podcast&p=81763"
     ],
     "diary-of-a-ceo": [
       "flightcast:01M0ECWWKZKQ93WCFTA6JV03WZ",
@@ -2975,7 +2978,8 @@
       "tag:soundcloud,2010:tracks/349450809",
       "tag:soundcloud,2010:tracks/348208291",
       "tag:soundcloud,2010:tracks/346994455",
-      "tag:soundcloud,2010:tracks/344576632"
+      "tag:soundcloud,2010:tracks/344576632",
+      "flightcast:01M32KE23H52RT1RTNT9EKC4JA"
     ]
   },
   "lastScanResult": {

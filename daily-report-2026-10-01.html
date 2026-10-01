@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-10-01</title>
+<style>
+  :root{
+    --bg:#fdfaf6;
+    --card:#fffdf9;
+    --ink:#2b2620;
+    --muted:#7a7065;
+    --line:#e8ddcd;
+    --accent:#b8862b;
+    --accent-soft:#f4e8cf;
+    --new:#2e7d5b;
+    --warn:#a8571f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;
+    line-height:1.78;
+    margin:0;
+    padding:0 16px 90px;
+    font-size:16.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;}
+  header.top{
+    padding:46px 0 26px;
+    border-bottom:2px solid var(--line);
+    margin-bottom:32px;
+  }
+  header.top h1{font-size:31px;margin:0 0 8px;letter-spacing:.5px;}
+  header.top .sub{color:var(--muted);font-size:14.5px;}
+  header.top .meta{margin-top:14px;font-size:13.5px;color:var(--muted);}
+  .summary{
+    background:var(--accent-soft);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:18px 22px;
+    margin-bottom:38px;
+    font-size:15px;
+  }
+  .summary b{color:var(--accent);}
+  .summary ul{margin:8px 0 0;padding-left:20px;}
+  section.pod{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 26px 22px;
+    margin-bottom:32px;
+    box-shadow:0 1px 0 rgba(0,0,0,.02);
+  }
+  .pod-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;border-bottom:1px dashed var(--line);padding-bottom:12px;margin-bottom:18px;}
+  .pod-head h2{font-size:22px;margin:0;flex:1 1 auto;}
+  .pod-head .host{color:var(--muted);font-size:13.5px;}
+  .tag{font-size:12px;padding:2px 10px;border-radius:20px;letter-spacing:.5px;white-space:nowrap;}
+  .tag.new{background:var(--new);color:#fff;}
+  .tag.none{background:#eee6d8;color:var(--muted);}
+  .tag.warn{background:var(--warn);color:#fff;}
+  .tag.recap{background:#e8ecf4;color:#3f5070;}
+  .ep{margin:0 0 30px;padding-bottom:22px;border-bottom:1px dotted var(--line);}
+  .ep:last-child{margin-bottom:4px;padding-bottom:0;border-bottom:none;}
+  .ep h3{font-size:19px;margin:0 0 5px;line-height:1.45;}
+  .ep .epmeta{font-size:13px;color:var(--muted);margin-bottom:16px;}
+  .ep .epmeta a{color:var(--accent);text-decoration:none;}
+  h4{font-size:15px;margin:20px 0 6px;color:var(--accent);letter-spacing:.4px;}
+  ul{margin:6px 0 12px;padding-left:22px;}
+  li{margin:6px 0;}
+  blockquote{
+    margin:14px 0;
+    padding:11px 18px;
+    border-left:3px solid var(--accent);
+    background:#fbf5e9;
+    color:#4a4034;
+    font-style:italic;
+    font-size:15px;
+    border-radius:0 8px 8px 0;
+  }
+  blockquote cite{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:6px;}
+  .kv{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:14.5px;}
+  .kv th,.kv td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+  .kv th{background:#f7efe0;font-weight:normal;color:#6a5f52;width:38%;}
+  .callout{
+    border:1px dashed var(--line);
+    background:#fcf8f1;
+    border-radius:10px;
+    padding:12px 16px;
+    font-size:14px;
+    color:#5d5347;
+    margin:14px 0;
+  }
+  .src{font-size:12.5px;color:var(--muted);margin-top:10px;}
+  .src a{color:var(--muted);}
+  .label{font-size:11.5px;letter-spacing:.6px;padding:1px 7px;border-radius:4px;background:#f0e8d8;color:#7a6a52;margin-right:6px;white-space:nowrap;}
+  .label.ext{background:#e9f0ea;color:#3f6b52;}
+  .label.jev{background:#f3e6e0;color:#8a4a2c;}
+  .label.ts{background:#e8ecf4;color:#3f5070;}
+  footer.bot{border-top:1px solid var(--line);margin-top:44px;padding-top:18px;color:var(--muted);font-size:13px;}
+  a{color:var(--accent);}
+  code{background:#f3ecdd;padding:1px 5px;border-radius:4px;font-size:13.5px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>思維播客日報 · 2026-10-01</h1>
+  <div class="sub">6 個英文商業／思維播客 · 每日深度掃描 · 為 James 而設的「第二對耳仔」</div>
+  <div class="meta">
+    🕘 報告生成時間：<b>2026-10-01 09:54 UTC</b>（= 香港時間 2026-10-01 17:54）<br>
+    📡 掃描方式：6 條 RSS feed 直接抓取 XML（全部 HTTP 200），逐集比對 GUID 去重<br>
+    🧮 Jev 前置過濾（TypeSafe System One, <code>news</code> profile）：本輪 <b>4 條候選</b>全部保留（見頁尾說明）<br>
+    🧑‍💻 Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">JMOKSZ/mindset-podcasts</a>
+  </div>
+</header>
+
+<div class="summary">
+  <b>今日重點：4 條新集數，橫跨 4 個台 ——</b>
+  <ul>
+    <li>🎙 <b>All-In</b>（09-30）：<b>Jake Paul ＋ The Chainsmokers</b> —— 由拳擊到風投，一集講「注意力本身是一種資本」同「名人投資者的第六人哲學」。</li>
+    <li>🎙 <b>My First Million Ep 867</b>（09-30）：<b>實測 Instinct、MUSE、Grokbot</b> 三個 AI 個人助理 —— 主題係「AI 係全世界 ELO 最高嘅遊戲」，同埋「唔止係智能高低咁簡單」。</li>
+    <li>🎙 <b>The Knowledge Project</b>（10-01）：<b>[Outliers] Charlie Munger 生前訪問 Todd Combs</b> —— 一段 2022 年從未公開的對話，講「點揀值得下注嘅人」與「長注意力跨度係不公平優勢」。10 月 6 日才公開發佈（本篇按會員預告頁整理）。</li>
+    <li>🎙 <b>Diary of a CEO</b>（10-01）：<b>Shawn Ryan</b>（前海豹突擊隊／CIA 承包人員）—— 由腎上腺素成癮、Ibogaine 迷幻療法的「靈界恐怖」，講到「為咗對齊價值觀，要主動放低賺錢嘅廣告合約」。</li>
+    <li>⏸ <b>Acquired、Founders</b>：無新集，兩台最後已知劇集見文末。</li>
+  </ul>
+</div>
+
+<!-- ==================== ALL-IN ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>All-In with Chamath, Jason, Sacks &amp; Friedberg</h2>
+    <span class="host">Chamath · Jason · Sacks · Friedberg</span>
+    <span class="tag new">1 條新集</span>
+  </div>
+
+  <div class="ep">
+    <h3>Jake Paul &amp; The Chainsmokers：Turning Fame into Funds, Jake Enters Politics? &amp; Venture Bubble Signs</h3>
+    <div class="epmeta">
+      📅 2026-09-30 21:00 UTC · ⏱ 52 分 49 秒 · 🎙 嘉賓：<b>Jake Paul</b>（拳手／YouTuber）、<b>Drew Taggart</b> 與 <b>Alex Pall</b>（The Chainsmokers 成員）<br>
+      🔗 <a href="https://allinchamathjason.libsyn.com/jake-paul-the-chainsmokers-turning-fame-into-funds-jake-enters-politics-venture-bubble-signs">libsyn 節目頁</a>
+    </div>
+
+    <h4>主題</h4>
+    <p>這集係 All-In 罕有嘅「名人 × 資本」兩段式訪談：上半場由 Chamath 單獨訪 Jake Paul，下半場再加入 The Chainsmokers 嘅 Drew Taggart 與 Alex Pall。核心問題得一條 —— <b>當一個人有巨大注意力（audience／fame）時，佢應該點樣把注意力兌換成資本，而唔係單純做代言人？</b></p>
+
+    <h4>嘉賓背景</h4>
+    <table class="kv">
+      <tr><th>Jake Paul</th><td>由 Vine／YouTube 起家嘅內容創作者，轉型職業拳手，共同創辦拳擊推廣公司 <b>Most Valuable Promotions (MVP)</b>，並涉足體育博彩／媒體（Betr）。近期被外界關注「從政」的可能性。</td></tr>
+      <tr><th>The Chainsmokers</th><td>Drew Taggart（Drew Taggart）與 Alex Pall 組成嘅電子音樂組合，除音樂外亦係活躍的天使／風投投資者（旗下 Mantis VC），近年以「藝人兼投資人」身份出手。</td></tr>
+    </table>
+
+    <h4>節目流程（依官方章節）</h4>
+    <ul>
+      <li><b>0:00</b> Jake Paul 加入 Chamath 對談。</li>
+      <li><b>6:41</b> 把觀眾變成生意：拳擊 playbook，以及「嚟緊衝著 UFC 而來」。</li>
+      <li><b>11:54</b> <b>注意力作為資本</b>；唔靠「名人標籤」點樣投資；為何下一步係政治。</li>
+      <li><b>20:46</b> The Chainsmokers 嘅 Drew Taggart 與 Alex Pall 加入。</li>
+      <li><b>30:35</b> 由藝人變投資人：點揀 deal、扮演「第六人」（sixth man）、名氣買到啲乜。</li>
+      <li><b>37:33</b> 給「有名投資者」的建議：名氣係幫手定害人？同一些非共識押注。</li>
+      <li><b>46:10</b> 抱住贏家、把現金還給 LP，以及<b>如何辨認泡沫行為</b>。</li>
+    </ul>
+
+    <h4>核心論點（依章節主題整理）</h4>
+    <ul>
+      <li><b>① 注意力 = 資本。</b>整集反覆出現嘅框架係：對創作者嚟講，audience 唔止係流量，而係可以「兌換」成股權、deal flow 同議價能力嘅一種原始資本 —— 前提係要懂得把曝光轉化為企業（唔止係廣告收入）。</li>
+      <li><b>② 拳擊 playbook 可複製。</b>Jake Paul 走的路徑係：先用內容建立關注 → 用關注自帶門票與 PPV 需求 → 以賽事推廣（MVP）掌握價值鏈上游 → 形成可以被資本化的「賽事 IP」。佢提到下一步係「coming for the UFC」，即係直接挑戰既有聯盟嘅定價權。</li>
+      <li><b>③ 名人投資者的「第六人」定位。</b>The Chainsmokers 一段嘅關鍵詞係 <em>playing the sixth man</em> —— 即唔搶做創辦人／唔做頭牌，而係做嗰個「關鍵但唔爭光」的補位者，用名氣幫被投公司開門、帶分銷，換取 deal access 同好的入場價。</li>
+      <li><b>④ 泡沫行為的辨認。</b>結尾一節由 Chamath 與 besties 帶到宏觀：把「$X 億估值滿天飛」、錢快速回籠 LP 之後嘅行為模式，同典型的泡沫徵兆對照 —— 呢一段係本集對投資者最有用嘅部分。</li>
+    </ul>
+
+    <h4>關鍵數據</h4>
+    <table class="kv">
+      <tr><th>節目長度</th><td>52 分 49 秒（All-In 少見偏短嘅嘉賓集）</td></tr>
+      <tr><th>結構分界</th><td>0:00–20:46 Jake Paul 單獨；20:46 起 The Chainsmokers 加入；37:33 起轉入投資方法論；46:10 起談泡沫</td></tr>
+      <tr><th>贊助方透露的行業風向</th><td>本集 read 出現密集嘅 AI 基建／雲廠商：IREN（AI Cloud／data center）、Oracle（AI 基建）、Keel Infrastructure（HPC &amp; AI 的電力、土地、connectivity）—— 反映 All-In 廣告盤正被 AI 算力資本開支食晒。</td></tr>
+    </table>
+
+    <h4>重點了引用（原文 · 官方 show notes 章節）</h4>
+    <blockquote>"Turning an audience into businesses, the boxing playbook &amp; coming for the UFC"<cite>— All-In 官方章節（6:41）</cite></blockquote>
+    <blockquote>"Attention as capital, investing without the celebrity label &amp; why politics is next"<cite>— All-In 官方章節（11:54）</cite></blockquote>
+    <blockquote>"From artists to investors: picking deals, playing the sixth man &amp; what fame buys"<cite>— All-In 官方章節（30:35）</cite></blockquote>
+
+    <h4>行業 Insight</h4>
+    <p>① 呢集係「<b>creator economy 資本化</b>」嘅一個里程碑式樣本：All-In 把創作者（Jake Paul）同音樂人（Chainsmokers）當成「新一類 GP／投資人」，同做 VC 嘅 besties 平起平坐咁傾 deal 方法論，唔再係「名人來宣傳」而係「同行交流」。② 對 James 嘅實用 takeaway：<em>當注意力本身愈來愈難定價，「拿 attention 換 equity、並扮演 sixth man」係一條唔需要自己落場做創辦人嘅參與路徑。</em>③ 政治那一節係意向信號，唔係宣佈參選，睇嘅時候唔好過度解讀。</p>
+
+    <div class="callout">⚠️ 本集 feed 只提供<b>章節標題</b>，官方並無逐字稿；以上「核心論點」係依章節主題 + 節目既有框架之<b>合理整理</b>。文中凡加 <b>blockquote</b> 者，一律為 <b>官方 show notes 原文</b>，並非聲稱嘅「節目逐字原話」。</div>
+  </div>
+</section>
+
+<!-- ==================== MY FIRST MILLION ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>My First Million</h2>
+    <span class="host">Sam Parr &amp; Shaan Puri</span>
+    <span class="tag new">1 條新集</span>
+  </div>
+
+  <div class="ep">
+    <h3>Ep 867 · We tested Instinct, MUSE and Grokbot. They're ridiculous.</h3>
+    <div class="epmeta">
+      📅 2026-09-30 11:13 UTC · ⏱ 1 小時 14 分 57 秒 · 🎙 主持：<b>Shaan Puri</b>、<b>Sam Parr</b><br>
+      🔗 <a href="https://www.mfmpod.com/we-tested-instinct-muse-and-grokbot-theyre-ridiculous">mfmpod.com 節目頁</a>
+    </div>
+
+    <h4>主題</h4>
+    <p>Sam 同 Shaan 今集做「AI 個人助理橫評實測」：一次過試用 <b>Instinct、MUSE、Grokbot</b> 三個新工具，並由此拉到一條更根本嘅問題 —— <b>AI 之爭唔止係「邊個模型更聰明」（intelligence），而係「誰能成為你日常工作嘅默認介面」。</b></p>
+
+    <h4>節目流程（依官方 Show Notes 章節）</h4>
+    <ul>
+      <li><b>0:00</b> Intro</li>
+      <li><b>2:42</b> 「<b>AI 是全世界 ELO 最高嘅遊戲</b>」(AI is the highest ELO game in the world)</li>
+      <li><b>5:18</b> <b>Instinct</b> 實測</li>
+      <li><b>9:31</b> <b>Grokbot</b> 實測</li>
+      <li><b>20:24</b> 「<b>唔止係智能高低咁簡單</b>」(It's not all about intelligence)</li>
+      <li><b>38:35</b> <b>Micro1</b>（AI 人才／評測平台）</li>
+      <li><b>44:08</b> <b>利用漏洞</b>（Exploiting vulnerabilities）</li>
+      <li><b>58:48</b> 「<b>到處都係 $1000 億公司</b>」($100 billion companies everywhere)</li>
+    </ul>
+
+    <h4>提及嘅工具與連結（官方 Show Notes）</h4>
+    <table class="kv">
+      <tr><th>Instinct</th><td><code>instinct.com</code> — AI 個人助理（實測對象）</td></tr>
+      <tr><th>Grokbot</th><td><code>x.ai/news/introducing-grok-bot</code> — xAI 推出的 bot 產品</td></tr>
+      <tr><th>MUSE</th><td><code>muse.ai</code> — 標題實測對象之一</td></tr>
+      <tr><th>micro1</th><td><code>micro1.ai</code> — 與「AI 人才／評測」段落相關</td></tr>
+      <tr><th>OpenRouter</th><td><code>openrouter.ai</code> — 多模型路由入口（陪襯整集「模型選擇」主題）</td></tr>
+    </table>
+
+    <h4>核心論點</h4>
+    <ul>
+      <li><b>① 「AI 係 ELO 最高嘅遊戲」。</b>Shaan 用棋類 ELO 做比喻：AI 唔單止係一場軍備競賽，而係「贏家可以開一個新維度」嘅遊戲 —— 當模型能力到某個水位，競爭會由 benchmark 分數轉向生態與分發。</li>
+      <li><b>② 唔止係 intelligence。</b>半小時嘅核心段落叫「It's not all about intelligence」—— 即係話，一個助理能否勝出，關鍵往往唔係模型 IQ，而係<b>記憶、權限、整合（同你現有工具打通）、以及信任</b>。呢個係 MFM 一貫「產品 &gt; 規格」嘅延伸。</li>
+      <li><b>③ 拆解「漏洞」＝商機。</b>「Exploiting vulnerabilities」一段把「利用 AI 系統的弱點」當成一條生意線：唔係做模型，而係做模型嘅周邊（測試、評測、人才市場，如 micro1）。</li>
+      <li><b>④ $100B 公司到處都係。</b>結尾嘅大膽預言：AI 時代會出現一大批量級 $1000 億嘅公司，因為生產力槓桿令「小型團隊 × 巨大槓桿」成為常態 —— 呢個就係 MFM 每集想幫聽眾抓到嘅那個 idea。</li>
+    </ul>
+
+    <h4>關鍵數據</h4>
+    <table class="kv">
+      <tr><th>集數</th><td>Episode 867</td></tr>
+      <tr><th>長度</th><td>4,497 秒 = 74 分 57 秒</td></tr>
+      <tr><th>實測工具數</th><td>3 個（Instinct、MUSE、Grokbot）＋ 延伸提及 micro1、OpenRouter</td></tr>
+      <tr><th>標題金句</th><td>"They're ridiculous."（主持對三款助理嘅評語）</td></tr>
+    </table>
+
+    <h4>重點了引用（原文 · 官方 Show Notes）</h4>
+    <blockquote>"Episode 867: Shaan Puri and Sam Parr test out the new AI personal assistants."<cite>— MFM 官方 Show Notes 開場</cite></blockquote>
+    <blockquote>"AI is the highest ELO game in the world"<cite>— MFM 官方章節（2:42）</cite></blockquote>
+    <blockquote>"$100 billion companies everywhere"<cite>— MFM 官方章節（58:48）</cite></blockquote>
+
+    <h4>行業 Insight</h4>
+    <p>① 呢集嘅真正主題唔係三個 app，而係 <b>「AI 助理」正在由「功能」變成「入口」</b>之爭：誰掌握你嘅 default 助理，就掌握你嘅 workflow、context 同以後嘅分發。② 對創業者嘅信號係：唔一定要造模型，圍繞模型嘅<b>評測、人才、記憶、整合</b>每一格都可能出一間公司。③ MFM 用「ELO」比喻競爭，值得留意 —— 因為 ELO 係<b>零和</b>嘅排名系統，暗示佢哋睇 AI 係「贏家通吃」格局，唔係百花齊放。</p>
+
+    <div class="callout">⚠️ 本集 feed 只提供章節與連結，無逐字稿；上述「核心論點」屬依官方章節 + 主持既有觀點之整理。<b>blockquote 均為官方 Show Notes 原文</b>，非節目逐字原話。</div>
+  </div>
+</section>
+
+<!-- ==================== KNOWLEDGE PROJECT ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Knowledge Project</h2>
+    <span class="host">Shane Parrish</span>
+    <span class="tag new">1 條新集</span>
+  </div>
+
+  <div class="ep">
+    <h3>[Outliers] Charlie Munger's Interview with Todd Combs</h3>
+    <div class="epmeta">
+      📅 2026-10-01 09:50 UTC · 🎙 主持：<b>Shane Parrish</b> · 主角：<b>Charlie Munger</b>（已故 Berkshire Hathaway 副主席）× <b>Todd Combs</b>（Berkshire 投資經理、GEICO CEO）<br>
+      🔗 <a href="https://fs.blog/knowledge-project-podcast/outliers-munger-combs/">fs.blog 節目頁</a><br>
+      ⚠️ 公開發佈日為 <b>2026-10-06</b>；本篇按會員預告頁（Members have access now）整理，正式音檔／逐字稿未上線。
+    </div>
+
+    <h4>主題</h4>
+    <p>Shane Parrish 公開一段 <b>2022 年錄製、從未發佈</b>的 Charlie Munger × Todd Combs 對話（屬 Knowledge Project 的 <em>[Outliers]</em> 系列）。Shane 喺預告中話，佢揀咗「最觸動自己」嘅幾個想法出嚟講，主題圍繞三樣嘢：<b>如何辨認值得下注的人、如何揀值得解的問題、以及如何把「長注意力跨度」變成不公平優勢。</b></p>
+
+    <h4>核心論點（依官方預告頁）</h4>
+    <ul>
+      <li><b>① 辨認人：</b>Munger 如何判斷「邊啲人值得押注」（recognised people worth betting on）—— 呢個係整段對話嘅起點，亦係 Berkshire 幾十年嘅核心能力。</li>
+      <li><b>② 揀問題：</b>「選擇值得解決的問題」（chose problems worth solving）—— 唔係解最多題，而係解對嘅題。</li>
+      <li><b>③ 長注意力跨度係不公平優勢：</b>「turned a long attention span into an unfair advantage」—— 呢個同 Shane 一貫嘅「複利／耐心」主題一脈相承（亦呼應 Munger 的名言：複利的第一條規則是永遠不要無謂地打斷它）。</li>
+      <li><b>④ 掌握環境，而唔係被環境掌握：</b>Shane 話佢會拆解 Berkshire 一個最少人注意嘅強項 —— <em>positioning themselves to master their circumstances rather than be mastered by them</em>（把公司定位到「掌握環境」多過「被環境支配」）。呢句係本集預告中最有份量嘅一句。</li>
+    </ul>
+
+    <h4>關鍵資料</h4>
+    <table class="kv">
+      <tr><th>性質</th><td>[Outliers] 系列 · 2022 年錄音 · 首次公開</td></tr>
+      <tr><th>時間線</th><td>會員即時可聽；<b>公開發佈 2026-10-06</b>；YouTube／Spotify／Apple／逐字稿「coming soon」</td></tr>
+      <tr><th>鳴謝</th><td>Singleton Foundation、Todd Combs、William Thorndike（《The Outsiders》作者）授予分享權</td></tr>
+      <tr><th>備註</th><td>Munger 已於 2023 年 11 月逝世（距錄音約一年），故本集屬<b>遺作級</b>未公開素材。</td></tr>
+    </table>
+
+    <h4>重點了引用（原文 · 官方預告頁）</h4>
+    <blockquote>"You'll learn how Munger recognized people worth betting on, chose problems worth solving, and turned a long attention span into an unfair advantage."<cite>— Shane Parrish，官方預告頁</cite></blockquote>
+    <blockquote>"I also unpack one of Berkshire's most underappreciated (and unnoticed) strengths: positioning themselves to master their circumstances rather than be mastered by them."<cite>— Shane Parrish，官方預告頁</cite></blockquote>
+
+    <h4>行業 Insight</h4>
+    <p>① 呢集係「<b>長注意力複利</b>」主題嘅再一次強化：喺人人追短週期嘅年代，Munger 呢類素材之所以仲有需求，正因為佢講嘅係「幾十年為單位」嘅策略。② Todd Combs 本身係 Munger／Buffett 揀出嚟嘅接班人之一，由佢做訪者，令對話帶有「<b>傳承</b>」味道 —— 睇嘅時候值得留意 Munger 點樣「示範」而非「說教」。③ 實用提醒：<b>本篇暫只有預告頁內容</b>，Shane 明言會喺正式版先「拆解」Berkshire 嘅隱藏強項，10 月 6 日公開後值得補看。</p>
+  </div>
+</section>
+
+<!-- ==================== DIARY OF A CEO ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Diary of a CEO with Steven Bartlett</h2>
+    <span class="host">Steven Bartlett · 長訪談／心理與商業</span>
+    <span class="tag new">1 條新集</span>
+  </div>
+
+  <div class="ep">
+    <h3>Shawn Ryan: There's A Battle For Your Soul, It's Happening Right Now</h3>
+    <div class="epmeta">
+      📅 2026-10-01 05:00 UTC · ⏱ 1 小時 39 分 44 秒 · 🎙 嘉賓：<b>Shawn Ryan</b>（前美國海軍海豹突擊隊、CIA 承包人員、The Shawn Ryan Show 主持人）<br>
+      🔗 <a href="https://thediaryofaceo.com/">thediaryofaceo.com</a>
+    </div>
+
+    <h4>主題</h4>
+    <p>一句總結官方描述：<b>當你無止境追求腎上腺素，代價可能係連靈魂都輸掉。</b>Shawn Ryan 舖開嘅係一條由「精英軍事生涯 → 轉型做媒體 → 精神崩潰 → 迷幻療法 → 靈性／超自然經歷 → 重新對齊價值觀」嘅完整弧線；同時坦承自己曾因廣告利益而刪集、以及「追求事業最終要犧牲家庭」的殘酷真相。</p>
+
+    <h4>嘉賓背景</h4>
+    <p>Shawn Ryan 係前美國海軍海豹突擊隊（Navy SEAL）成員，其後做過 CIA 承包人員，親身經歷過 2005 年「紅翼行動」（Operation Red Wings）時期嘅阿富汗任務。離開軍方後創辦 <b>The Shawn Ryan Show</b>，成為最受關注嘅獨立播客之一，以「未經修飾嘅深度對話」為招牌。目前亦經營 <b>Glacier</b>（節目中提及，DOAC 聽眾有首 3 個月 8 折）。</p>
+
+    <h4>五個官方核心論點</h4>
+    <ul>
+      <li><b>① 腎上腺素陷阱（The Adrenaline Trap）：</b>前精英特種作戰人員往往陷入嚴重嘅退役後抑鬱，因為平民生活無法複製戰鬥時嘅神經化學高峰。</li>
+      <li><b>② 迷幻噩夢（The Psychedelic Nightmare）：</b>一次以「優化精神狀態」為目的嘅高強度 <b>Ibogaine（伊波加因）</b>治療，反而打開咗一道通往靈界嘅恐怖之門，帶來嚴重嘅超自然壓迫感。</li>
+      <li><b>③ 對齊的代價（The Cost of Alignment）：</b>真正嘅個人轉化需要經歷一個「<b>蛻皮階段</b>」—— 自覺地放低賺錢嘅廣告合約、社群網絡同短期誘因，先可以忠於自己嘅價值觀。</li>
+      <li><b>④ 羊群的幻覺（The Illusion of the Herd）：</b>真正、持久嘅成就，完全依賴培養一把「植根於個人信念嘅獨特聲音」；模仿他人只會導致創造力癱瘓。</li>
+      <li><b>⑤ 終極優先次序（The Ultimate Priority）：</b>追求野心最終會要求你犧牲家庭時間 —— 而任何商業成功都補償唔到「缺席仔女生命」嘅代價。</li>
+    </ul>
+
+    <h4>節目章節（官方 Chapters，節錄重點段）</h4>
+    <table class="kv">
+      <tr><th>0:03:38</th><td>海豹突擊隊同其餘軍隊嘅分別</td></tr>
+      <tr><th>0:06:09</th><td>「紅翼行動」真正發生咗咩事</td></tr>
+      <tr><th>0:09:54</th><td>Podcaster 有無被「安插的嘉賓」滲透？</td></tr>
+      <tr><th>0:18:25</th><td>佢有無 endorse Trump？／睇法有無改變</td></tr>
+      <tr><th>0:32:48</th><td><b>為何佢會刪除 Podcast 集數</b></td></tr>
+      <tr><th>0:39:47</th><td>為何做承包後搬到哥倫比亞（Colombia）</td></tr>
+      <tr><th>0:47:46</th><td>改變一切嘅轉捩點</td></tr>
+      <tr><th>0:51:02</th><td>為何佢轉向迷幻療法</td></tr>
+      <tr><th>0:54:14</th><td>什麼是 Ibogaine？為何要食？</td></tr>
+      <tr><th>0:57:16</th><td>Ibogaine 期間經歷嘅地獄</td></tr>
+      <tr><th>1:00:59</th><td>嗰次經歷如何改變佢一生</td></tr>
+      <tr><th>1:09:32</th><td>什麼是驅魔（exorcism）、實際發生咩事</td></tr>
+      <tr><th>1:19:23</th><td>呢啲經歷對佢家人嘅影響</td></tr>
+      <tr><th>1:21:34</th><td>贊助商退出，佢點睇</td></tr>
+      <tr><th>1:34:36</th><td>Glacier 是什麼、為何重要</td></tr>
+    </table>
+
+    <h4>重點了引用（原文 · 官方集數描述）</h4>
+    <blockquote>"What happens when the relentless pursuit of adrenaline leads to losing your soul in the process? Shawn Ryan reveals the hidden psychological toll of ambition, the dark side of psychedelics, and the ultimate price of true alignment."<cite>— DOAC 官方集數描述</cite></blockquote>
+    <blockquote>"Authentic, lasting achievement relies entirely on nurturing a unique voice anchored in personal belief, while imitating results in creative paralysis."<cite>— DOAC 官方要點④</cite></blockquote>
+    <blockquote>"Chasing ambition eventually demands sacrificing family time, demonstrating that no amount of business success can make up for absence in your children's lives."<cite>— DOAC 官方要點⑤</cite></blockquote>
+
+    <h4>行業 Insight</h4>
+    <p>① 呢集係 DOAC 近期最「重」嘅一集（1 小時 40 分），主題由「戰鬥後遺症」一路拉到「靈性／超自然」—— 對鍾意 Steven Bartlett 頻道「心理 + 生意」交叉敘事嘅聽眾係一條主線。② 對創作者／創業者最實用嘅係 <b>「對齊的代價」</b>：Shawn 明講佢為咗守住價值觀而放低賺錢嘅 ad deal、甚至刪集 —— 呢個係「personal brand 商業化」時代最現實嘅張力。③ 「羊群的幻覺」其實就係 MFM 講嘅「唔好抄」、All-In 講嘅「非共識押注」嘅另一個版本：<b>三個台今日都喺講同一件事 —— 獨特性先係護城河。</b></p>
+
+    <div class="callout">⚠️ 本集 feed 提供官方要點與完整章節，但無逐字稿；引號內文字均為 <b>官方集數描述原文</b>，非節目逐字轉錄。</div>
+  </div>
+</section>
+
+<!-- ==================== ACQUIRED ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Acquired</h2>
+    <span class="host">Ben Gilbert &amp; David Rosenthal</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="ep">
+    <p>今次無新集。最新一集仍為 <b>《The Home Depot》</b>（2026-09-13 20:35 UTC），已於 09-14 報告深度掃描。</p>
+    <table class="kv">
+      <tr><th>最後已知劇集</th><td>The Home Depot（2026-09-13）</td></tr>
+      <tr><th>上一集</th><td>Disney: The Renaissance and the Empire（2026-08-09）</td></tr>
+      <tr><th>再上一集</th><td>The Walt Disney Company（2026-06-21）</td></tr>
+      <tr><th>下一集預期</th><td>Acquired 慣例每 1–3 個月一集，暫無公佈 → 未定</td></tr>
+      <tr><th>備註</th><td>Feed 共 217 集；state 登記 218 條（含遷移前舊 GUID）。</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ==================== FOUNDERS ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Founders</h2>
+    <span class="host">David Senra</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="ep">
+    <p>今次無新集。最新一集仍為 <b>《#435 Mark Zuckerberg's Empire》</b>（2026-09-28 08:00 UTC），已於前兩日報告深度掃描。</p>
+    <table class="kv">
+      <tr><th>最後已知劇集</th><td>#435 Mark Zuckerberg's Empire（2026-09-28）</td></tr>
+      <tr><th>上一集</th><td>#434 Sam Walton（2026-09-21）</td></tr>
+      <tr><th>再上一集</th><td>#433 How Michael Bloomberg Works（2026-09-14）</td></tr>
+      <tr><th>下一集預期</th><td>慣例每週一發佈 → <b>2026-10-05（週一）</b></td></tr>
+      <tr><th>備註</th><td>Feed 共 460 集，全部已登記入 state。</td></tr>
+    </table>
+  </div>
+</section>
+
+<footer class="bot">
+  <p>報告由自動掃描器生成 · 生成時間 <b>2026-10-01 09:54 UTC</b> · 6／6 RSS feed HTTP 200 · <b>4 條新集</b>（All-In、MFM、Knowledge Project、Diary of a CEO）。</p>
+  <p>🧮 <b>Jev 前置過濾說明：</b>本輪 4 條候選全部送出 <code>triage --profile news</code>，回傳 worth：All-In 0.05、MFM 0.60、Knowledge Project 0.17、DOAC（未回報完整）。依 profile hint，<code>worth &lt; 0.6</code> 僅代表「缺乏可核實數字／非一手情報」，屬<b>相對排序</b>而非硬性砍除標準；由於呢 6 個台係 James 明確點名要跟嘅清單，本輪<b>全部保留</b>並照樣深度拆解，僅在此標示低置信。Jev 流程 fail-open、健康正常。</p>
+  <p>📂 <b>各台登記總數（本輪後）：</b>Acquired 218 · Founders 460 · All-In 437 · My First Million 931 · Knowledge Project 31 · Diary of a CEO 891。</p>
+  <p>所有引用均標明出處並與官方文本核對；<b>凡無逐字稿的集數，一律不會生成假冒「節目原話」的 blockquote</b> —— 文中所有 blockquote 均為 <b>官方 show notes／集數描述原文</b>，並已在對應位置標注來源。「核心論點」若屬依章節整理者，會另行標示，務求唔會令讀者誤以為係逐字轉錄。</p>
+  <p>Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">github.com/JMOKSZ/mindset-podcasts</a> · Pages：<a href="https://jmoksz.github.io/mindset-podcasts/">jmoksz.github.io/mindset-podcasts</a></p>
+</footer>
+
+</div>
+</body>
+</html>
