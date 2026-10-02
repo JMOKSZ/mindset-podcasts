@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-10-02</title>
+<style>
+  :root{
+    --bg:#fdfaf6;
+    --card:#fffdf9;
+    --ink:#2b2620;
+    --muted:#7a7065;
+    --line:#e8ddcd;
+    --accent:#b8862b;
+    --accent-soft:#f4e8cf;
+    --new:#2e7d5b;
+    --warn:#a8571f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;
+    line-height:1.78;
+    margin:0;
+    padding:0 16px 90px;
+    font-size:16.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;}
+  header.top{
+    padding:46px 0 26px;
+    border-bottom:2px solid var(--line);
+    margin-bottom:32px;
+  }
+  header.top h1{font-size:31px;margin:0 0 8px;letter-spacing:.5px;}
+  header.top .sub{color:var(--muted);font-size:14.5px;}
+  header.top .meta{margin-top:14px;font-size:13.5px;color:var(--muted);}
+  .summary{
+    background:var(--accent-soft);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:18px 22px;
+    margin-bottom:38px;
+    font-size:15px;
+  }
+  .summary b{color:var(--accent);}
+  .summary ul{margin:8px 0 0;padding-left:20px;}
+  section.pod{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 26px 22px;
+    margin-bottom:32px;
+    box-shadow:0 1px 0 rgba(0,0,0,.02);
+  }
+  .pod-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;border-bottom:1px dashed var(--line);padding-bottom:12px;margin-bottom:18px;}
+  .pod-head h2{font-size:22px;margin:0;flex:1 1 auto;}
+  .pod-head .host{color:var(--muted);font-size:13.5px;}
+  .tag{font-size:12px;padding:2px 10px;border-radius:20px;letter-spacing:.5px;white-space:nowrap;}
+  .tag.new{background:var(--new);color:#fff;}
+  .tag.none{background:#eee6d8;color:var(--muted);}
+  .tag.warn{background:var(--warn);color:#fff;}
+  .tag.recap{background:#e8ecf4;color:#3f5070;}
+  .ep{margin:0 0 30px;padding-bottom:22px;border-bottom:1px dotted var(--line);}
+  .ep:last-child{margin-bottom:4px;padding-bottom:0;border-bottom:none;}
+  .ep h3{font-size:19px;margin:0 0 5px;line-height:1.45;}
+  .ep .epmeta{font-size:13px;color:var(--muted);margin-bottom:16px;}
+  .ep .epmeta a{color:var(--accent);text-decoration:none;}
+  h4{font-size:15px;margin:20px 0 6px;color:var(--accent);letter-spacing:.4px;}
+  ul{margin:6px 0 12px;padding-left:22px;}
+  li{margin:6px 0;}
+  blockquote{
+    margin:14px 0;
+    padding:11px 18px;
+    border-left:3px solid var(--accent);
+    background:#fbf5e9;
+    color:#4a4034;
+    font-style:italic;
+    font-size:15px;
+    border-radius:0 8px 8px 0;
+  }
+  blockquote cite{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:6px;}
+  .kv{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:14.5px;}
+  .kv th,.kv td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+  .kv th{background:#f7efe0;font-weight:normal;color:#6a5f52;width:38%;}
+  .callout{
+    border:1px dashed var(--line);
+    background:#fcf8f1;
+    border-radius:10px;
+    padding:12px 16px;
+    font-size:14px;
+    color:#5d5347;
+    margin:14px 0;
+  }
+  .src{font-size:12.5px;color:var(--muted);margin-top:10px;}
+  .src a{color:var(--muted);}
+  .label{font-size:11.5px;letter-spacing:.6px;padding:1px 7px;border-radius:4px;background:#f0e8d8;color:#7a6a52;margin-right:6px;white-space:nowrap;}
+  .label.ext{background:#e9f0ea;color:#3f6b52;}
+  .label.jev{background:#f3e6e0;color:#8a4a2c;}
+  .label.ts{background:#e8ecf4;color:#3f5070;}
+  footer.bot{border-top:1px solid var(--line);margin-top:44px;padding-top:18px;color:var(--muted);font-size:13px;}
+  a{color:var(--accent);}
+  code{background:#f3ecdd;padding:1px 5px;border-radius:4px;font-size:13.5px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>思維播客日報 · 2026-10-02</h1>
+  <div class="sub">6 個英文商業／思維播客 · 每日深度掃描 · 為 James 而設的「第二對耳仔」</div>
+  <div class="meta">
+    🕘 報告生成時間：<b>2026-10-02 09:54 UTC</b>（= 香港時間 2026-10-02 17:54）<br>
+    📡 掃描方式：6 條 RSS feed 直接抓取 XML，逐集比對 GUID 去重<br>
+    🧮 Jev 前置過濾（TypeSafe System One, <code>news</code> profile）：本輪 <b>1 條候選</b>，worth＝0.31（低於 0.6 噪音線），惟因屬 James 點名清單且為真實新 feed 條目，予以保留並標示 ⚠️ 低置信<br>
+    🧑‍💻 Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">JMOKSZ/mindset-podcasts</a>
+  </div>
+</header>
+
+<div class="summary">
+  <b>今日重點：全日掃描只有 1 條新 feed 條目 ——</b>
+  <ul>
+    <li>🎙 <b>Diary of a CEO</b>（10-02）：<b>Paul Rosolie</b>「Most Replayed Moment：我遇見未接觸部落」—— 40 分鐘重剪高光，講河岸對峙、200 人包圍船隻、一枝 7 呎長箭貫穿船伕，以及部落問嘅一句：「點樣分好人同壞人？」</li>
+    <li>📭 <b>Acquired、Founders、All-In、My First Million、Knowledge Project</b>：5 台今日均無新集；各台最後已知劇集見下方卡片。</li>
+    <li>ℹ️ 說明：本輪 6 條 feed 全部成功抓取，唯一新條目係 DOAC 嘅「重播高光」重剪，並非全新訪談。</li>
+  </ul>
+</div>
+
+
+<!-- ==================== DIARY OF A CEO ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Diary of a CEO with Steven Bartlett</h2>
+    <span class="host">Steven Bartlett</span>
+    <span class="tag new">1 條新集</span>
+  </div>
+
+  <div class="ep">
+    <h3>Most Replayed Moment: I Met An Uncontacted Tribe! The Secret World Hidden In The Amazon Rainforest — Paul Rosolie</h3>
+    <div class="epmeta">
+      📅 2026-10-02 05:00 UTC · ⏱ 40 分 09 秒（2,409 秒）· 🎙 嘉賓：<b>Paul Rosolie</b>（保育學家、Junglekeepers 創辦人、《Junglekeeper》作者）<br>
+      🔗 來源：<a href="https://thediaryofaceo.com/">thediaryofaceo.com</a> · 母集為 2026-02-02 完整版〈I Met An Uncontacted Tribe: They Killed My Friend!〉（2 小時 46 分）
+    </div>
+
+    <h4>主題</h4>
+    <p>呢集係 DOAC 官方「Most Replayed Moment」重剪系列 —— 把 2026 年 2 月 2 日完整版訪談中最多人重播嘅一段（Paul Rosolie 親述喺亞馬遜<b>首次近距離遇上未接觸部落</b>）獨立抽出，重新配上一段 40 分鐘 intro／導讀。核心命題得一條：<b>當一個「與世隔絕」嘅部落第一次同外部世界面對面，雙方如何喺幾分鐘之內由「隨時開戰」變成「互相理解」——而呢種距離，正因為伐木、採礦、毒梟而急速消失。</b></p>
+    <p>RSS 描述原文：</p>
+    <blockquote>"Paul Rosolie is a conservationist, author and founder of Jungle Keepers, who has spent years exploring and protecting some of the most remote areas of the Amazon rainforest. In this moment, Paul shares the unbelievable journey that led him deep into the Amazon, where rumours of an uncontacted tribe became something far more real. He shares the emotions when coming face to face with those living separate from the modern world… and what this encounter taught him."<cite>— Diary of a CEO 官方集數描述</cite></blockquote>
+
+    <h4>嘉賓背景</h4>
+    <table class="kv">
+      <tr><th>Paul Rosolie</th><td>美國保育學家、作家，喺亞馬遜雨林工作超過 <b>20 年</b>。非牟利組織 <b>Junglekeepers</b> 聯合創辦人兼總監，保護雨林免受伐木、採礦同毒梟侵害。暢銷書《Junglekeeper: What It Takes to Change the World》作者。早年因為「自願被森蚺吞噬」嘅紀錄片《Eaten Alive》而廣為人知。</td></tr>
+      <tr><th>Junglekeepers</th><td>喺秘魯／巴西亞馬遜流域運作嘅保育組織，核心工作係買地／守地、設巡邏隊（rangers），阻止非法伐木、採礦同毒品運輸通道侵入原住民領地。</td></tr>
+    </table>
+
+    <h4>節目內容深度拆解（依母集官方章節＋2026 年 1–2 月新聞報導）</h4>
+    <ul>
+      <li><b>① 緣起（母集 11:25「How a Wild Adventure in Peru Changed Everything」／28:56「How We Discovered the Uncontacted Tribes」）：</b>Rosolie 喺亞馬遜叢林生活／工作逾十年，一直只係「聽說」附近有未接觸部落。團隊透過足跡、被棄置嘅工具、村落遺址等線索，逐步確認河岸一帶有長期迴避外界嘅原住民群體。</li>
+      <li><b>② 第一日 · 河岸對峙（15:34「What It's Like Meeting Uncontacted Tribes for the First Time」）：</b>部落成員由密林走出，出現喺沙質河岸，蝴蝶喺空中飛舞遮蔽視線。佢哋動作緩慢而有組織，隔遠打量船同陌生人，<b>部分人舉起弓箭</b>。Rosolie 逐格睇佢哋嘅身體語言（點移動、點指、點持弓），一度判斷「開戰」機會好大。</li>
+      <li><b>③ 氣氛軟化：</b>隨住距離拉近，<b>幾個人放低武器</b>，緊張緩和，有人更好奇、甚至似在微笑。呢個係整段片最震撼嘅位 —— 冇語言、冇翻譯，全靠身體語言完成一次「非暴力降級」。</li>
+      <li><b>④ 第二日 · 反轉（母集 42:04「Unseen Footage the World Wasn't Supposed to Watch」）：</b>翌日團隊再入同一水域，情況急轉直下。估計約 <b>200 人</b>嘅部落群眾突然從河岸湧出，包圍船隻並發射弓箭。船上人員全部伏低、躲喺長椅下同米袋後面。</li>
+      <li><b>⑤ 「George 中箭」：</b>負責駕船嘅 George 一邊全速開船一邊後仰，一枝<b>7 呎長箭</b>由肩胛上方射入、喺肚臍旁穿出。團隊把人拉出，事後見到船上有大量血跡。<i>（此段以 Rosolie 2026 年 1 月 Lex Fridman 訪談所述為主，DOAC 母集亦有「They Killed My Friend!」標題對應。）</i></li>
+      <li><b>⑥ 部落嘅問題（46:01「When Tribe Women Took Our Food」／47:06「Do Uncontacted Tribes Really Eat Humans?」）：</b>部落走出樹林，唔係為攻擊，而係「疲倦於唔知邊個係敵人」。佢哋向 Junglekeepers 提出嘅請求，成為全段最有重量嘅一句。</li>
+      <li><b>⑦ 為何呢啲影像重要：</b>過往關於該部落嘅影像，多數係「100 米外、模糊、舊器材」；今次係首次有相對清晰嘅近距離紀錄。Rosolie 稱之為「world first」。</li>
+    </ul>
+
+    <h4>核心論點</h4>
+    <ul>
+      <li><b>① 未接觸部落只要求「被留下」。</b>Rosolie 反覆強調：幾百年嚟，呢啲人只要求一件事 —— <b>被放過</b>。佢哋用弓箭，係為保護自己嘅和平，唔係獵奇式嘅「野蠻」。</li>
+      <li><b>② 真正嘅入侵者係工業與犯罪經濟。</b>把部落逼到現身嘅，唔係保育隊，而係伐木者、礦工同毒梟 —— 佢哋嘅活動令原本嘅「緩衝地帶」縮細，令接觸變得無法避免。</li>
+      <li><b>③ 「壞人好難分」係文明嘅失敗。</b>部落問「點樣分好人同壞人？」—— 因為外面嚟嘅人有啲係嚟幫、有啲係開槍（「火棒」，即槍）。對部落而言，所有外人都係潛在威脅，呢個誤解本身就係最大危險。</li>
+      <li><b>④ 接觸本身可以致命。</b>人類學界一致警告：即使善意接觸，普通感冒、麻疹、流感等病毒都可以令冇免疫力嘅社群整條村滅頂 —— 所以多數保育組織<b>反對任何直接接觸</b>。</li>
+      <li><b>⑤ 影像嘅位置：介乎「紀錄」與「警告」之間。</b>呢段片展示咗克制、恐懼同誤解，同時亦展示「距離」已經有幾脆弱。</li>
+    </ul>
+
+    <h4>關鍵數據</h4>
+    <table class="kv">
+      <tr><th>本片長度</th><td>2,409 秒 = <b>40 分 09 秒</b>（母集 9,964 秒 ＝ 2 小時 46 分）</td></tr>
+      <tr><th>母集發佈</th><td>2026-02-02；本重剪發佈 2026-10-02 05:00 UTC</td></tr>
+      <tr><th>部落規模（第二日）</th><td>估計約 <b>200 人</b>包圍船隻</td></tr>
+      <tr><th>中箭細節</th><td><b>7 呎長箭</b>，由肩胛上方射入、肚臍旁穿出（傷者為船伕 George）</td></tr>
+      <tr><th>全球未接觸部落</th><td>約 <b>200 個</b>群體，大部分喺亞馬遜（巴西、秘魯）— Men's Journal／Yahoo 報導</td></tr>
+      <tr><th>亞馬遜部落總數</th><td>估計約 <b>400 個</b>部落、分佈 9 個國家 — Unilad 報導</td></tr>
+      <tr><th>1 個對照案例</th><td>秘魯 Manú 國家公園嘅 <b>Mashco Piro</b> 族：2024 年 7 月以弓箭攻擊伐木者，1 人重傷；2022 年 2 名伐木者中箭，1 人傷重不治（CBS／Survival International）</td></tr>
+    </table>
+
+    <h4>重點引用（原文）</h4>
+    <p><span class="label ext">官方 show notes</span>以下兩句為 DOAC 官方母集描述原文：</p>
+    <blockquote>"After 20 years surviving jaguars, anacondas, cartels, and uncontacted tribes, he warns of a collapse that could end life on Earth!"<cite>— Diary of a CEO 母集官方描述</cite></blockquote>
+    <blockquote>"Being surrounded by warriors with 7-foot bows and arrows."<cite>— Diary of a CEO 母集官方章節描述（15:34 段）</cite></blockquote>
+    <p><span class="label ext">2026-02 新聞報導引述</span>以下為 Unilad（2026-02-05）引述 Rosolie 喺節目中所講：</p>
+    <blockquote>"And on this day, they said, 'Please give us food. Please give us rope.' And they had one other question. They said, 'How do we tell the bad guys from the good guys?'"<cite>— Paul Rosolie，經 Unilad 引述</cite></blockquote>
+    <blockquote>"They said, 'Stop cutting down our trees. Our trees are our gods.' It was sort of like, 'You don't do that.'"<cite>— Paul Rosolie，經 Unilad 引述</cite></blockquote>
+    <p><span class="label ext">2026-01 報導引述</span>以下為 Times of India／Yahoo（2026-01）轉述 Rosolie 喺 Lex Fridman 訪談中對「中箭」一幕嘅原話：</p>
+    <blockquote>"George was driving the boat, leaning back; he is driving as fast as he can and one arrow came in just above his scapula and came out by his belly button, and so he had that 7-foot arrow through him, then we pulled him out, and I saw the boat later and there was horrific amount of blood in the boat."<cite>— Paul Rosolie，經 Times of India／Yahoo 引述</cite></blockquote>
+    <blockquote>"In order for any of this to make sense, I had to show you this footage. This has not been shown ever before. This is a world first."<cite>— Paul Rosolie 談該段影像（Yahoo／Men's Journal）</cite></blockquote>
+
+    <h4>行業 Insight</h4>
+    <p>① 呢集表面上係「探險奇觀」，實際上係一條<b>保育經濟學</b>命題：當伐木、採礦、毒梟把緩衝區蠶食到零，未接觸部落與外界嘅「偶遇」只會愈來愈頻密、愈來愈暴力 —— 影像係警告，唔係獵奇。② Rosolie 嘅角色值得留意：佢唔係人類學家，而係「守地者（land defender）＋傳播者」，用 Podcast／YouTube 把保育議題推入主流注意力市場；DOAC 用「Most Replayed Moment」重推，反映呢類內容喺平台上嘅黏性極高。③ 對內容創作者嘅 takeaway：<b>一段 40 分鐘嘅舊素材，只要係「最多人重播」嘅高光段落，就可以重新包裝成獨立一集</b> —— 呢個係 podcast 資產再利用（repurposing）嘅標準示範。④ 對 James 嘅實用提醒：呢條係「重剪高光」，並非全新訪談；如要完整脈絡，應聽 2026-02-02 母集（2 小時 46 分）。</p>
+
+    <div class="callout">⚠️ <b>來源說明：</b>本集 feed（DOAC RSS）只提供約 40 分鐘重剪嘅官方描述，完整版母集描述則列出 30 條章節。上述「節目內容深度拆解」綜合咗 (a) 母集官方章節、(b) DOAC 官方描述，以及 (c) 2026 年 1–2 月 Yahoo／Men's Journal／Times of India／Unilad 對相關訪談嘅報導。<b>所有 blockquote 均標明為「官方 show notes 原文」或「新聞報導引述」，並非本文聲稱嘅逐字轉錄。</b></div>
+  </div>
+</section>
+
+
+<!-- ==================== Acquired ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Acquired</h2>
+    <span class="host">Ben Gilbert &amp; David Rosenthal</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-02）RSS 對比 <code>state.json</code> 後<b>無新集數</b>。<br>
+    <b>最後已知劇集：</b>The Home Depot（2026-09-13） · 節目頁：<a href="https://www.acquired.fm/episodes">https://www.acquired.fm/episodes</a>
+  </div>
+</section>
+
+<!-- ==================== Founders ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Founders</h2>
+    <span class="host">David Senra</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-02）RSS 對比 <code>state.json</code> 後<b>無新集數</b>。<br>
+    <b>最後已知劇集：</b>#435 Mark Zuckerberg's Empire（2026-09-28） · 節目頁：<a href="https://www.founderspodcast.com/">https://www.founderspodcast.com/</a>
+  </div>
+</section>
+
+<!-- ==================== All-In with Chamath, Jason, Sacks &amp; Friedberg ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>All-In with Chamath, Jason, Sacks &amp; Friedberg</h2>
+    <span class="host">Chamath · Jason · Sacks · Friedberg</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-02）RSS 對比 <code>state.json</code> 後<b>無新集數</b>。<br>
+    <b>最後已知劇集：</b>Jake Paul &amp; The Chainsmokers: Turning Fame into Funds, Jake Enters Politics? &amp; Venture Bubble Signs（2026-09-30） · 節目頁：<a href="https://allin.com/">https://allin.com/</a>
+  </div>
+</section>
+
+<!-- ==================== My First Million ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>My First Million</h2>
+    <span class="host">Sam Parr &amp; Shaan Puri</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-02）RSS 對比 <code>state.json</code> 後<b>無新集數</b>。<br>
+    <b>最後已知劇集：</b>We tested Instinct, MUSE and Grokbot. They're ridiculous.（2026-09-30） · 節目頁：<a href="https://www.mfmpod.com/episodes/">https://www.mfmpod.com/episodes/</a>
+  </div>
+</section>
+
+<!-- ==================== The Knowledge Project ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Knowledge Project</h2>
+    <span class="host">Shane Parrish</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-02）RSS 對比 <code>state.json</code> 後<b>無新集數</b>。<br>
+    <b>最後已知劇集：</b>[Outliers] Charlie Munger's Interview with Todd Combs（2026-10-01） · 節目頁：<a href="https://fs.blog/knowledge-project/">https://fs.blog/knowledge-project/</a>
+  </div>
+</section>
+
+
+<footer class="bot">
+  <p>思維播客日報 · 2026-10-02 生成 · 生成時間 <b>2026-10-02 09:54 UTC</b> · 6／6 RSS feed 成功 · <b>1 條新 feed 條目</b>（Diary of a CEO 重播高光）。</p>
+  <p>🧮 <b>Jev 前置過濾說明：</b>本輪唯一候選送出 <code>triage --profile news</code>，回傳 worth＝0.31、category＝other、primary_source＝0.34（偏二手）。依 profile hint，<code>worth&lt;0.6</code> 屬「真噪音」級別，惟 hint 同時強調分數只宜作<b>相對排序</b>、不宜硬砍（會誤傷無數字嘅硬情報）；且此條目屬 James 明確點名要跟嘅 6 個台之一、並為真實 feed 新條目，故本輪<b>保留並照樣拆解</b>，於此標示低置信。Jev 流程 fail-open、健康正常。</p>
+  <p>所有引用均標明出處；<b>凡無逐字稿的內容，一律不會生成假冒「節目原話」的 blockquote</b> —— 文中所有 blockquote 均為 <b>官方 show notes／集數描述原文</b> 或 <b>新聞報導引述</b>，並已在對應位置標注來源。「核心論點」屬依章節／報導整理者，已另行標示。</p>
+  <p>Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">github.com/JMOKSZ/mindset-podcasts</a> · Pages：<a href="https://jmoksz.github.io/mindset-podcasts/">jmoksz.github.io/mindset-podcasts</a></p>
+</footer>
+
+</div>
+</body>
+</html>

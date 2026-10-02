@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-10-01T09:54:00Z",
+  "lastScan": "2026-10-02T09:54:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -2979,7 +2979,8 @@
       "tag:soundcloud,2010:tracks/348208291",
       "tag:soundcloud,2010:tracks/346994455",
       "tag:soundcloud,2010:tracks/344576632",
-      "flightcast:01M32KE23H52RT1RTNT9EKC4JA"
+      "flightcast:01M32KE23H52RT1RTNT9EKC4JA",
+      "flightcast:01M1KXMJ387SENM7YABK32GA4W"
     ]
   },
   "lastScanResult": {
