@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-10-02T09:54:00Z",
+  "lastScan": "2026-10-03T09:54:00Z",
   "scannedEpisodes": {
     "acquired": [
       "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -1120,7 +1120,8 @@
       "3cd7f334-73e2-4b3d-9188-767d8845a52e",
       "70a308eb-7290-4f51-8318-79ee0037f8a1",
       "b3274b9a-8137-47d4-9634-52f6783ca776",
-      "1c456716-c38b-472a-9dd0-9d8800f22dd8"
+      "1c456716-c38b-472a-9dd0-9d8800f22dd8",
+      "16094471-70e5-4698-9bac-3958d237b7b7"
     ],
     "my-first-million": [
       "a9e51792-9d4f-11f1-b79f-435a1ed9f4c8",
@@ -2984,15 +2985,7 @@
     ]
   },
   "lastScanResult": {
-    "newEpisodes": 0,
-    "note": "2026-09-30 掃描：0 條新集（全網靜默日）。6 條 feed HTTP 200；最新一集分別為 Acquired《The Home Depot》09-13、Founders #435 Zuckerberg 09-28、All-In Daniel Ek 09-28、MFM Ep866 Rizwan Virk 09-28、KP Bill Ackman 09-24、DOAC Adam Neumann 09-28 —— 全部 GUID 已在 state，無新內容。報告改以「近三日五集精華回顧 + 六台最後已知劇集狀態表」形式發出。時序提示：MFM 慣例週一/三/五 10:00 UTC 發佈，本次截稿 09:54 UTC（週三），今日那集差 6 分鐘未上線，留待 10-01 掃描補上。另本輪為求徹底，掃描各 feed top 30，發現 Acquired/Founders/KP/MFM 共 35 條未在 state 的 GUID，經日期核實全屬 2024-2026 歷史集數（feed 遷移/重編所致），非新集，已一併寫入 state 以免日後重複警示（本輪新增 {'acquired': 205, 'founders': 440, 'all-in': 384, 'my-first-million': 877, 'knowledge-project': 8, 'diary-of-a-ceo': 845}）。Jev 前置過濾：無候選可送，self-test 健康（fail-open 正常）。",
-    "addedHistoricalGuids": {
-      "acquired": 205,
-      "founders": 440,
-      "all-in": 384,
-      "my-first-million": 877,
-      "knowledge-project": 8,
-      "diary-of-a-ceo": 845
-    }
+    "newEpisodes": 1,
+    "note": "2026-10-03 掃描：1 條新集 — All-In《Trump's Super Intelligence Summit, AI Safety Accord, GDP Beats, Midterm Predictions》(10-02 22:30 UTC, guid 16094471-70e5-4698-9bac-3958d237b7b7, 1h22m29s)。其餘 5 台無新集：Acquired《The Home Depot》09-13、Founders #435 Zuckerberg 09-28、MFM Instinct/MUSE/Grokbot 09-30、KP [Outliers] Munger 10-01、DOAC Uncontacted Tribe 10-02。6/6 feed HTTP 200。Jev news profile: worth=0.85, category=macro, primary_source=0.16 -> keep。"
   }
 }
