@@ -1,0 +1,98 @@
+{
+ "acquired": {
+  "id": "acquired",
+  "name": "Acquired",
+  "host": "Ben Gilbert & David Rosenthal",
+  "rss": "https://feeds.transistor.fm/acquired",
+  "status": "ok",
+  "new": [],
+  "last_known": {
+   "title": "The Home Depot",
+   "pubDate": "Sun, 13 Sep 2026 20:35:03 -0700",
+   "link": "https://www.acquired.fm/episodes/home-depot",
+   "guid": "68b66323-6e74-4c90-8157-ef3f1ed0d042"
+  },
+  "count": 217,
+  "http": 200
+ },
+ "founders": {
+  "id": "founders",
+  "name": "Founders",
+  "host": "David Senra",
+  "rss": "https://feeds.megaphone.fm/DSLLC6297708582",
+  "status": "ok",
+  "new": [],
+  "last_known": {
+   "title": "#435 Mark Zuckerberg's Empire",
+   "pubDate": "Mon, 28 Sep 2026 08:00:00 -0000",
+   "link": "",
+   "guid": "6db0368a-baeb-11f1-ab5d-0fa3b3dd96cd"
+  },
+  "count": 460,
+  "http": 200
+ },
+ "all-in": {
+  "id": "all-in",
+  "name": "All-In with Chamath, Jason, Sacks & Friedberg",
+  "host": "Chamath Palihapitiya · Jason Calacanis · David Sacks · David Friedberg",
+  "rss": "https://rss.libsyn.com/shows/254861/destinations/1928300.xml",
+  "status": "ok",
+  "new": [],
+  "last_known": {
+   "title": "Trump's Super Intelligence Summit, AI Safety Accord, GDP Beats, Midterm Predictions",
+   "pubDate": "Fri, 02 Oct 2026 22:30:00 +0000",
+   "link": "https://allinchamathjason.libsyn.com/trumps-super-intelligence-summit-ai-safety-accord-gdp-beats-midterm-predictions",
+   "guid": "16094471-70e5-4698-9bac-3958d237b7b7"
+  },
+  "count": 433,
+  "http": 200
+ },
+ "my-first-million": {
+  "id": "my-first-million",
+  "name": "My First Million",
+  "host": "Sam Parr & Shaan Puri",
+  "rss": "https://feeds.megaphone.fm/HS2300184645",
+  "status": "ok",
+  "new": [],
+  "last_known": {
+   "title": "We tested Instinct, MUSE and Grokbot. They’re ridiculous.",
+   "pubDate": "Wed, 30 Sep 2026 11:13:00 -0000",
+   "link": "",
+   "guid": "da03e5b8-bcbf-11f1-b04e-974a137a8a44"
+  },
+  "count": 907,
+  "http": 200
+ },
+ "knowledge-project": {
+  "id": "knowledge-project",
+  "name": "The Knowledge Project",
+  "host": "Shane Parrish",
+  "rss": "https://fs.blog/knowledge-project-podcast/feed/",
+  "status": "ok",
+  "new": [],
+  "last_known": {
+   "title": "[Outliers] Charlie Munger’s Interview with Todd Combs",
+   "pubDate": "Thu, 01 Oct 2026 09:50:00 +0000",
+   "link": "https://fs.blog/knowledge-project-podcast/outliers-munger-combs/",
+   "guid": "https://fs.blog/?post_type=podcast&p=81763"
+  },
+  "count": 20,
+  "http": 200
+ },
+ "diary-of-a-ceo": {
+  "id": "diary-of-a-ceo",
+  "name": "The Diary of a CEO with Steven Bartlett",
+  "host": "Steven Bartlett",
+  "rss": "https://rss2.flightcast.com/xmsftuzjjykcmqwolaqn6mdn",
+  "status": "ok",
+  "new": [],
+  "last_known": {
+   "title": "Most Replayed Moment: I Met An Uncontacted Tribe! The Secret World Hidden In The Amazon Rainforest - Paul Rosolie",
+   "pubDate": "Fri, 02 Oct 2026 05:00:00 -0000",
+   "link": "",
+   "guid": "flightcast:01M1KXMJ387SENM7YABK32GA4W"
+  },
+  "count": 892,
+  "http": 200
+ }
+}

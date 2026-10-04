@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-10-04</title>
+<style>
+  :root{
+    --bg:#fdfaf6;
+    --card:#fffdf9;
+    --ink:#2b2620;
+    --muted:#7a7065;
+    --line:#e8ddcd;
+    --accent:#b8862b;
+    --accent-soft:#f4e8cf;
+    --new:#2e7d5b;
+    --warn:#a8571f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;
+    line-height:1.78;
+    margin:0;
+    padding:0 16px 90px;
+    font-size:16.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;}
+  header.top{
+    padding:46px 0 26px;
+    border-bottom:2px solid var(--line);
+    margin-bottom:32px;
+  }
+  header.top h1{font-size:31px;margin:0 0 8px;letter-spacing:.5px;}
+  header.top .sub{color:var(--muted);font-size:14.5px;}
+  header.top .meta{margin-top:14px;font-size:13.5px;color:var(--muted);}
+  .summary{
+    background:var(--accent-soft);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:18px 22px;
+    margin-bottom:38px;
+    font-size:15px;
+  }
+  .summary b{color:var(--accent);}
+  .summary ul{margin:8px 0 0;padding-left:20px;}
+  section.pod{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 26px 22px;
+    margin-bottom:32px;
+    box-shadow:0 1px 0 rgba(0,0,0,.02);
+  }
+  .pod-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;border-bottom:1px dashed var(--line);padding-bottom:12px;margin-bottom:18px;}
+  .pod-head h2{font-size:22px;margin:0;flex:1 1 auto;}
+  .pod-head .host{color:var(--muted);font-size:13.5px;}
+  .tag{font-size:12px;padding:2px 10px;border-radius:20px;letter-spacing:.5px;white-space:nowrap;}
+  .tag.new{background:var(--new);color:#fff;}
+  .tag.none{background:#eee6d8;color:var(--muted);}
+  .tag.warn{background:var(--warn);color:#fff;}
+  .tag.recap{background:#e8ecf4;color:#3f5070;}
+  .ep{margin:0 0 30px;padding-bottom:22px;border-bottom:1px dotted var(--line);}
+  .ep:last-child{margin-bottom:4px;padding-bottom:0;border-bottom:none;}
+  .ep h3{font-size:19px;margin:0 0 5px;line-height:1.45;}
+  .ep .epmeta{font-size:13px;color:var(--muted);margin-bottom:16px;}
+  .ep .epmeta a{color:var(--accent);text-decoration:none;}
+  h4{font-size:15px;margin:20px 0 6px;color:var(--accent);letter-spacing:.4px;}
+  ul{margin:6px 0 12px;padding-left:22px;}
+  li{margin:6px 0;}
+  blockquote{
+    margin:14px 0;
+    padding:11px 18px;
+    border-left:3px solid var(--accent);
+    background:#fbf5e9;
+    color:#4a4034;
+    font-style:italic;
+    font-size:15px;
+    border-radius:0 8px 8px 0;
+  }
+  blockquote cite{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:6px;}
+  .kv{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:14.5px;}
+  .kv th,.kv td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+  .kv th{background:#f7efe0;font-weight:normal;color:#6a5f52;width:38%;}
+  .callout{
+    border:1px dashed var(--line);
+    background:#fcf8f1;
+    border-radius:10px;
+    padding:12px 16px;
+    font-size:14px;
+    color:#5d5347;
+    margin:14px 0;
+  }
+  .src{font-size:12.5px;color:var(--muted);margin-top:10px;}
+  .src a{color:var(--muted);}
+  .label{font-size:11.5px;letter-spacing:.6px;padding:1px 7px;border-radius:4px;background:#f0e8d8;color:#7a6a52;margin-right:6px;white-space:nowrap;}
+  .label.ext{background:#e9f0ea;color:#3f6b52;}
+  .label.jev{background:#f3e6e0;color:#8a4a2c;}
+  .label.ts{background:#e8ecf4;color:#3f5070;}
+  .last-ep{
+    margin-top:6px;
+    padding:16px 18px;
+    background:#fbf8f1;
+    border:1px solid var(--line);
+    border-radius:10px;
+  }
+  .last-ep .lbl{color:var(--muted);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;}
+  .last-ep .le-title{font-size:16.5px;font-weight:bold;color:var(--accent);margin:5px 0 3px;line-height:1.45;}
+  .last-ep .le-meta{font-size:13px;color:var(--muted);margin-bottom:9px;}
+  .last-ep .le-summary{font-size:14.5px;color:#4f463b;margin:8px 0 9px;}
+  .last-ep .le-link{font-size:13px;}
+  footer.bot{border-top:1px solid var(--line);margin-top:44px;padding-top:18px;color:var(--muted);font-size:13px;}
+  a{color:var(--accent);}
+  code{background:#f3ecdd;padding:1px 5px;border-radius:4px;font-size:13.5px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>思維播客日報 · 2026-10-04</h1>
+  <div class="sub">6 個英文商業／思維播客 · 每日深度掃描 · 為 James 而設的「第二對耳仔」</div>
+  <div class="meta">
+    🕘 報告生成時間：<b>2026-10-04 09:56 UTC</b>（= 香港時間 2026-10-04 17:56）<br>
+    📡 掃描方式：6 條 RSS feed 直接抓取 XML（全部 HTTP 200），逐集比對 GUID 去重<br>
+    🧮 Jev 前置過濾（TypeSafe System One, <code>news</code> profile）：本輪 <b>0 條候選</b> —— 6 台均無新條目，無需過濾（fail-open 不觸發）<br>
+    🧑‍💻 Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">JMOKSZ/mindset-podcasts</a>
+  </div>
+</header>
+
+<div class="summary">
+  <b>今日重點：全 6 台零新集（0 條新內容）。</b>
+  <ul>
+    <li>📭 掃描窗口為 <b>2026-10-03 09:54 UTC → 2026-10-04 09:56 UTC</b>（約 24 小時）。六條 feed 全部成功抓取（HTTP 200），逐集 GUID 比對後<b>無任何未掃過的新集數</b>。</li>
+    <li>🗓 合理背景：<b>10-03（週六）／10-04（週日）為週末</b>，六台最新一集分別落喺 9-13 至 10-02 之間，週末本來就極少更新；All-In（10-02）、MFM（9-30）、Knowledge Project（10-01）、Diary of a CEO（10-02）四台最近一集已於前幾日報告中深度拆解。</li>
+    <li>📌 各台最後已知劇集如下方卡片（附真實 show notes 摘要與連結），James 可快速回顧最近一集講咩。</li>
+    <li>ℹ️ 已交叉核對任務單所列的舊 RSS 連結：<code>simplecast/megaphone/allinpodcast.co</code> 等 5 條替代源全部回 <b>404</b>，確認 <code>podcasts.json</code> 內嘅 feed 才係現行有效源。</li>
+  </ul>
+</div>
+
+
+<!-- ==================== ACQUIRED ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Acquired</h2>
+    <span class="host">Ben Gilbert &amp; David Rosenthal</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">📌 最後已知劇集</div>
+    <div class="le-title">The Home Depot（家得寶）</div>
+    <div class="le-meta">📅 2026-09-13（美西 20:35 · = 2026-09-14 03:35 UTC）· ⏱ 3 小時 35 分 02 秒（12,902 秒）· 🔗 <a href="https://www.acquired.fm/episodes/home-depot">acquired.fm/eпisodes/home-depot</a></div>
+    <div class="le-summary">
+      家得寶嘅創業故事「好似一部復仇者聯盟電影 —— 如果復仇者係俾人炒魷、破產、靠疊起十呎高嘅空油漆罐裝門面」。Bernie Marcus（48 歲）同 Arthur Blank（35 歲）俾前東家炒咗之後，聽咗紐約銀行家 Ken Langone（佢「意外」促成兩人被炒）嘅一句話：「你哋俾人用金馬蹄鐵踢咗一腳。」之後寫低咗<b>美國零售史上最強複利故事</b>，途中仲有 Sol Price、Jamie Dimon、Ross Perot 等傳奇客串。由 1981 年 IPO 至今，家得寶係<b>整個美國股市回報最高嘅單一股票</b>——跑贏 Apple、Microsoft、Berkshire Hathaway 同所有其他公司。
+    </div>
+    <div class="le-link">🔗 <a href="https://www.acquired.fm/episodes/home-depot">官方集數頁</a> · 本集相關閱讀：《Built from Scratch》《Kick Up Some Dust》（Bernie Marcus）</div>
+  </div>
+</section>
+
+
+<!-- ==================== FOUNDERS ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Founders</h2>
+    <span class="host">David Senra</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">📌 最後已知劇集</div>
+    <div class="le-title">#435 Mark Zuckerberg's Empire（朱克伯格嘅帝國）</div>
+    <div class="le-meta">📅 2026-09-28 08:00 UTC · ⏱ 41 分 11 秒（2,471 秒）· 📖 讀物：Jeremy Stern《Mark: A journey to the heart of history's largest nonterritorial empire》</div>
+    <div class="le-summary">
+      Senra 今次讀嘅係一本關於「史上最大非領土帝國」統治者嘅書。全集以逐句引文形式，將朱克伯格類比為羅馬式統治者：由《埃涅阿斯紀》嘅「我為此不設時空界限，我賜予無盡帝國」（朱克伯格本人引用過），到以「迦太基必須被毀滅」形容佢對 Google 嘅態度；Sean Parker 早年已觀察到佢身上「呢種帝國傾向」；節目亦引用「獨裁者困境」——權力越大，越依賴他人提供資訊。核心追問：「成為人類史上最有權力嘅人之一、42 歲已確保自己會喺幾百年後嘅史書出現，係咩感覺？」
+    </div>
+    <div class="le-link">🔗 <a href="https://www.founderspodcast.com/episodes/435-mark-zuckerbergs-empire">官方集數頁</a></div>
+  </div>
+</section>
+
+
+<!-- ==================== ALL-IN ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>All-In with Chamath, Jason, Sacks &amp; Friedberg</h2>
+    <span class="host">Chamath Palihapitiya · Jason Calacanis · David Sacks · David Friedberg</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">📌 最後已知劇集</div>
+    <div class="le-title">Trump's Super Intelligence Summit, AI Safety Accord, GDP Beats, Midterm Predictions</div>
+    <div class="le-meta">📅 2026-10-02 22:30 UTC · ⏱ 1 小時 22 分 29 秒 · 🔗 <a href="https://allinchamathjason.libsyn.com/trumps-super-intelligence-summit-ai-safety-accord-gdp-beats-midterm-predictions">libsyn 集數頁</a></div>
+    <div class="le-summary">
+      Sacks 以親歷者身份還原 9 月 29 日特朗普白宮「Super Intelligence Summit」內幕：六間前沿模型公司簽署自願性《White House Accord on Super Intelligence》，被稱為「超級智能嘅 Bretton Woods 會議」；治理靠五層執行鏈（內部控制 → 外部審計 → 董事會 D&amp;O → FTC／SEC），「自願但 de facto 有牙」。中段宏觀數據攻防（Q2 GDP 上修至 2.2%、8 月非農 +162,000），尾段中期選舉預測與劫機案媒體用詞爭議。<b>完整深度拆解見 10-03 報告。</b>
+      <br>官方章節：<code>(2:01) Summit 內幕 · (17:57) 網安軍備競賽／數據中心國安 · (45:22) 經濟數據 · (1:00:24) 中期選舉預測 · (1:09:28) 劫機案媒體報導</code>
+    </div>
+    <div class="le-link">🔗 <a href="https://allinchamathjason.libsyn.com/trumps-super-intelligence-summit-ai-safety-accord-gdp-beats-midterm-predictions">官方集數頁</a> · 節目主頁 <a href="https://allin.com/">allin.com</a></div>
+  </div>
+</section>
+
+
+<!-- ==================== MY FIRST MILLION ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>My First Million</h2>
+    <span class="host">Sam Parr &amp; Shaan Puri</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">📌 最後已知劇集</div>
+    <div class="le-title">Ep867 — We tested Instinct, MUSE and Grokbot. They're ridiculous.</div>
+    <div class="le-meta">📅 2026-09-30 11:13 UTC · ⏱ 1 小時 14 分 57 秒（4,497 秒）· 🎙 Shaan Puri &amp; Sam Parr</div>
+    <div class="le-summary">
+      兩人實測新一代 AI 個人助理（Instinct、xAI 嘅 Grokbot、MUSE），得出「勁到荒謬」嘅評價。節目主線：「<b>AI 係世界上 ELO 最高嘅遊戲</b>」——唔止比智能，仲比整合、agentic 體驗同產品設計。章節涵蓋：Instinct 試用（5:18）、Grokbot（9:31）、「唔止係智能嘅問題」（20:24）、micro1（38:35）、漏洞利用（44:08）、「周圍都係千億公司」（58:48）。
+    </div>
+    <div class="le-link">🔗 <a href="https://www.mfmpod.com/episodes/">mfmpod.com/episodes</a> · 試用連結：Instinct（instinct.com）· Grokbot（x.ai/news/introducing-grok-bot）· micro1（micro1.ai）· MUSE（muse.ai）</div>
+  </div>
+</section>
+
+
+<!-- ==================== KNOWLEDGE PROJECT ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Knowledge Project</h2>
+    <span class="host">Shane Parrish</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">📌 最後已知劇集</div>
+    <div class="le-title">[Outliers] Charlie Munger's Interview with Todd Combs（芒格 × Todd Combs 未公開訪談）</div>
+    <div class="le-meta">📅 會員先行 2026-10-01 09:50 UTC · 公眾版 2026-10-06 · 🔗 <a href="https://fs.blog/knowledge-project-podcast/outliers-munger-combs/">fs.blog 集數頁</a></div>
+    <div class="le-summary">
+      一段 <b>2022 年從未公開</b>嘅芒格（Charlie Munger）與 Todd Combs 對話，Shane Parrish 親自抽出最觸動佢嘅觀點。主題深且廣：芒格點樣辨認「值得押注嘅人」、點樣揀「值得解決嘅問題」、以及點樣將「長專注力」變成不公平優勢。Parrish 亦拆解 Berkshire 一個最被低估（又最少人注意）嘅強項——<b>「令自己處於掌控環境嘅位置，而唔係被環境掌控」</b>。特別鳴謝 Singleton Foundation、Todd Combs、William Thorndike 授權分享。
+    </div>
+    <div class="le-link">🔗 <a href="https://fs.blog/knowledge-project-podcast/outliers-munger-combs/">官方集數頁</a> · 公眾版 10 月 6 日上線（YouTube／Spotify／Apple＋逐字稿）</div>
+  </div>
+</section>
+
+
+<!-- ==================== DIARY OF A CEO ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Diary of a CEO with Steven Bartlett</h2>
+    <span class="host">Steven Bartlett</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">📌 最後已知劇集</div>
+    <div class="le-title">Most Replayed Moment: I Met An Uncontacted Tribe! The Secret World Hidden In The Amazon Rainforest — Paul Rosolie</div>
+    <div class="le-meta">📅 2026-10-02 05:00 UTC · ⏱ 40 分 09 秒（2,409 秒）· 👤 Paul Rosolie（保育者／作家／Jungle Keepers 創辦人）· 🎬 重溫精選片段</div>
+    <div class="le-summary">
+      精選重溫片段：Paul Rosolie 多年嚟探索同保護亞馬遜雨林最偏遠嘅地帶。今次佢講述一段難以置信嘅旅程——深入亞馬遜腹地，原本只係「未接觸部落」嘅傳聞，最後變成真實嘅面對面相遇。佢分享親眼見到一個同現代世界完全隔絕嘅社群時嘅情緒，以及呢次相遇教識佢嘅事。全新完整集見 Spotify／Apple／YouTube。
+    </div>
+    <div class="le-link">🔗 <a href="https://www.paulrosolie.com/">paulrosolie.com</a> · 完整集：<a href="https://www.youtube.com/c/TheDiaryOfACEO/videos">YouTube</a> · 節目主頁 <a href="https://thediaryofaceo.com/">thediaryofaceo.com</a></div>
+  </div>
+</section>
+
+
+<footer class="bot">
+  Mindset Podcasts Daily Scan · 生成於 2026-10-04 09:56 UTC（HKT 17:56）<br>
+  掃描結果：6 條 feed 全部 HTTP 200、共 2,929 條劇目索引；本輪新增 <b>0</b> 條。<br>
+  所有內容萃取自各台官方 RSS／Apple Podcasts 描述，引用保留原文；無新集日子不作任何推測性生成。
+</footer>
+
+</div>
+</body>
+</html>
