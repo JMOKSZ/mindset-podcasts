@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-10-05</title>
+<style>
+  :root{
+    --bg:#fdfaf6;
+    --card:#fffdf9;
+    --ink:#2b2620;
+    --muted:#7a7065;
+    --line:#e8ddcd;
+    --accent:#b8862b;
+    --accent-soft:#f4e8cf;
+    --new:#2e7d5b;
+    --warn:#a8571f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;
+    line-height:1.78;
+    margin:0;
+    padding:0 16px 90px;
+    font-size:16.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;}
+  header.top{
+    padding:46px 0 26px;
+    border-bottom:2px solid var(--line);
+    margin-bottom:32px;
+  }
+  header.top h1{font-size:31px;margin:0 0 8px;letter-spacing:.5px;}
+  header.top .sub{color:var(--muted);font-size:14.5px;}
+  header.top .meta{margin-top:14px;font-size:13.5px;color:var(--muted);}
+  .summary{
+    background:var(--accent-soft);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:18px 22px;
+    margin-bottom:38px;
+    font-size:15px;
+  }
+  .summary b{color:var(--accent);}
+  .summary ul{margin:8px 0 0;padding-left:20px;}
+  section.pod{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 26px 22px;
+    margin-bottom:32px;
+    box-shadow:0 1px 0 rgba(0,0,0,.02);
+  }
+  .pod-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;border-bottom:1px dashed var(--line);padding-bottom:12px;margin-bottom:18px;}
+  .pod-head h2{font-size:22px;margin:0;flex:1 1 auto;}
+  .pod-head .host{color:var(--muted);font-size:13.5px;}
+  .tag{font-size:12px;padding:2px 10px;border-radius:20px;letter-spacing:.5px;white-space:nowrap;}
+  .tag.new{background:var(--new);color:#fff;}
+  .tag.none{background:#eee6d8;color:var(--muted);}
+  .tag.warn{background:var(--warn);color:#fff;}
+  .tag.recap{background:#e8ecf4;color:#3f5070;}
+  .ep{margin:0 0 30px;padding-bottom:22px;border-bottom:1px dotted var(--line);}
+  .ep:last-child{margin-bottom:4px;padding-bottom:0;border-bottom:none;}
+  .ep h3{font-size:19px;margin:0 0 5px;line-height:1.45;}
+  .ep .epmeta{font-size:13px;color:var(--muted);margin-bottom:16px;}
+  .ep .epmeta a{color:var(--accent);text-decoration:none;}
+  h4{font-size:15px;margin:20px 0 6px;color:var(--accent);letter-spacing:.4px;}
+  ul{margin:6px 0 12px;padding-left:22px;}
+  li{margin:6px 0;}
+  blockquote{
+    margin:14px 0;
+    padding:11px 18px;
+    border-left:3px solid var(--accent);
+    background:#fbf5e9;
+    color:#4a4034;
+    font-style:italic;
+    font-size:15px;
+    border-radius:0 8px 8px 0;
+  }
+  blockquote cite{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:6px;}
+  .kv{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:14.5px;}
+  .kv th,.kv td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+  .kv th{background:#f7efe0;font-weight:normal;color:#6a5f52;width:38%;}
+  .callout{
+    border:1px dashed var(--line);
+    background:#fcf8f1;
+    border-radius:10px;
+    padding:12px 16px;
+    font-size:14px;
+    color:#5d5347;
+    margin:14px 0;
+  }
+  .src{font-size:12.5px;color:var(--muted);margin-top:10px;}
+  .src a{color:var(--muted);}
+  .label{font-size:11.5px;letter-spacing:.6px;padding:1px 7px;border-radius:4px;background:#f0e8d8;color:#7a6a52;margin-right:6px;white-space:nowrap;}
+  .label.ext{background:#e9f0ea;color:#3f6b52;}
+  .label.jev{background:#f3e6e0;color:#8a4a2c;}
+  .label.ts{background:#e8ecf4;color:#3f5070;}
+  .last-ep{
+    margin-top:6px;
+    padding:16px 18px;
+    background:#fbf8f1;
+    border:1px solid var(--line);
+    border-radius:10px;
+  }
+  .last-ep .lbl{color:var(--muted);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;}
+  .last-ep .le-title{font-size:16.5px;font-weight:bold;color:var(--accent);margin:5px 0 3px;line-height:1.45;}
+  .last-ep .le-meta{font-size:13px;color:var(--muted);margin-bottom:9px;}
+  .last-ep .le-summary{font-size:14.5px;color:#4f463b;margin:8px 0 9px;}
+  .last-ep .le-link{font-size:13px;}
+  .timeline{font-size:13.5px;color:#5d5347;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;padding:12px 16px;line-height:2.0;}
+  .timeline code{background:transparent;color:#8a6a2c;font-size:13px;}
+  footer.bot{border-top:1px solid var(--line);margin-top:44px;padding-top:18px;color:var(--muted);font-size:13px;}
+  a{color:var(--accent);}
+  code{background:#f3ecdd;padding:1px 5px;border-radius:4px;font-size:13.5px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>思維播客日報 · 2026-10-05</h1>
+  <div class="sub">6 個英文商業／思維播客 · 每日深度掃描 · 為 James 而設的「第二對耳仔」</div>
+  <div class="meta">
+    🕘 報告生成時間：<b>2026-10-05 09:56 UTC</b>（= 香港時間 2026-10-05 17:56）<br>
+    📡 掃描方式：6 條 RSS feed 直接抓取 XML（全部 HTTP 200），逐集比對 GUID 去重<br>
+    🧮 Jev 前置過濾（TypeSafe System One, <code>news</code> profile）：本輪 <b>1 條候選 → 1 條 keep</b>（Dana White 集，worth <b>0.82</b>、category <b>business</b> conf 0.95；primary_source 0.49 → 標為一手訪談轉述／節目官方口徑）<br>
+    🧑‍💻 Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">JMOKSZ/mindset-podcasts</a>
+  </div>
+</header>
+
+<div class="summary">
+  <b>今日重點：1 條新集 —— The Diary of a CEO 請到 UFC 總裁 Dana White。</b>
+  <ul>
+    <li>🆕 <b>Diary of a CEO</b>｜《Dana White: This Generation Thinks You Can Build A Business From Home, It's Impossible!》——1 小時 28 分 24 秒，Dana White 親述由童年創傷、被逐出家門，到將一間 200 萬美元、瀕臨倒閉嘅格鬥推廣公司，打造成同全球頂級體育聯盟同級的帝國。核心係「受害者心態陷阱」「忠誠＝戰爭」「生物黑客 12 週逆轉睡眠窒息」「唔怕日日解 chaos」同「信自己個 gut 多過 focus group」。</li>
+    <li>📭 其餘 <b>5 台零新集</b>：Acquired（9-13 Home Depot）、Founders（9-28 #435 Zuckerberg）、All-In（10-02 超級智能峰會）、My First Million（9-30 AI 助理實測）、Knowledge Project（10-01 芒格 × Combs）——最近一集均已於前幾日報告深度拆解，今日以「最近無更新」卡片列出最新已知劇集。</li>
+    <li>🗓 背景：10-04（週日）六台全靜，10-05（週一）清晨 DOAC 05:00 UTC 率先出集，符合「週日晚／週一清晨出重磅嘉賓」嘅固定節奏。</li>
+    <li>📊 本輪掃描共索引 <b>2,930</b> 條劇目（6 條 feed 全部 HTTP 200），新增 <b>1</b> 條。</li>
+  </ul>
+</div>
+
+
+<!-- ==================== DIARY OF A CEO (NEW) ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Diary of a CEO with Steven Bartlett</h2>
+    <span class="host">Steven Bartlett</span>
+    <span class="tag new">🆕 新集</span>
+  </div>
+
+  <div class="ep">
+    <h3>Dana White: This Generation Thinks You Can Build A Business From Home, It's Impossible!</h3>
+    <div class="epmeta">
+      📅 2026-10-05 05:00 UTC（= HKT 13:00）· ⏱ 1 小時 28 分 24 秒（5,304 秒）<br>
+      👤 嘉賓：<b>Dana White</b>（UFC 總裁／CEO；Power Slap、Zuffa Boxing 創辦人）· 🎙 主持：Steven Bartlett<br>
+      🔗 影片版：<a href="https://www.youtube.com/watch?v=Q-DFC0AnbY4">YouTube（DOAC 頻道）</a> · 節目主頁 <a href="https://thediaryofaceo.com/">thediaryofaceo.com</a>
+    </div>
+
+    <h4>🎯 一集講咩（主題）</h4>
+    <p>官方文案一句定調：<b>「你係咪俾過去、或者對失敗嘅恐懼，拖住你唔畀你去到商業上嘅終極成功？」</b>本集唔係一般「勵志訪談」，而係 Dana White 把佢由底層打上嚟嘅一套「心理框架＋狠辣商業戰術」整套攤開——包括點樣把創傷由藉口變成燃料、點樣用「打仗」嘅心態組隊、點樣用極端健康 protocol 撐住高強度輸出、以及點樣喺全世界都話你癲嘅時候照樣 all-in。</p>
+
+    <h4>🧑 嘉賓背景（真實數據）</h4>
+    <ul>
+      <li>Dana White 係 <b>UFC（Ultimate Fighting Championship）總裁兼 CEO</b>，被形容為「將一間只值 200 萬美元、苦苦掙扎嘅格鬥推廣公司，變成估值同全球最頂尖體育聯盟並列嘅全球體育巨獸」嘅推手。</li>
+      <li>目前正把版圖擴張至 <b>Power Slap</b>（掌摑格鬥聯盟）同 <b>Zuffa Boxing</b>，被形容為「喺高度競爭、極度混亂嘅環境中，精通規模化嘅殘酷力學」。</li>
+      <li>本集係佢罕有咁深入交代個人成長：童年、同父親關係、被權威打壓、以及佢點樣教自己個仔。</li>
+    </ul>
+
+    <h4>🧠 五大核心論點</h4>
+    <ul>
+      <li><b>① The Victimhood Trap（受害者陷阱）</b>——用童年創傷做藉口＝保證失敗；關鍵唔係「發生咗咩事」，而係將創傷<b>心理重構（reframe）成韌性燃料</b>。節目其中一段直接問「Dana White 原諒咗佢阿媽未？」（58:56），可見佢講嘅係親身實證。</li>
+      <li><b>② The Loyalty Mandate（忠誠令）</b>——把生意當成<b>真正嘅戰爭</b>，必須建立一班絕對忠誠、絕對夠狠嘅「killers」團隊。佢明言：「冇嘢係理所當然」（14:46「Why Nobody Owes You Anything」），並反覆強調「請咩人」足以令公司生或死（19:55）。</li>
+      <li><b>③ Biohacking as an Asset（生物黑客係資產）</b>——佢用一套<b>12 週極端 protocol（冷水浴 cold plunge、斷食 fasting、針對性補充劑 supplementation）</b>，逆轉咗困擾佢嘅<b>睡眠窒息症（sleep apnea）</b>，並「由根本重新改寫咗佢嘅基礎能量水平」以維持巔峰表現（37:29）。</li>
+      <li><b>④ The Myth of "Making It"（「做到」係迷思）</b>——真正嘅創業者必須<b>對「每日解 chaos」上癮</b>，唔係追一個終點；佢話「冇所謂嘅休息日」（11:11「Why There's No Such Thing as a Day Off」），因為一停就俾對手追過。</li>
+      <li><b>⑤ Weaponizing Your Gut（把直覺武器化）</b>——當全世界都話你個願景完全冇可能，你需要嘅係一個 mindset shift：<b>信自己個 gut，多過信 focus group</b>（1:04:34），先夠膽落巨大賭注（1:11:14「Why You Can't Be Afraid to Take Risks」）。</li>
+    </ul>
+
+    <h4>📌 重點引用（原文 blockquote）</h4>
+    <blockquote>
+      "This Generation Thinks You Can Build A Business From Home, It's Impossible!"
+      <cite>—— 本集標題，Dana White 對「遙距／躺平式創業」嘅正面否定</cite>
+    </blockquote>
+    <blockquote>
+      The Victimhood Trap: Why using your childhood trauma as an excuse guarantees failure, and how to psychologically reframe it into fuel for resilience instead.
+      <cite>—— 官方 show notes（原文）</cite>
+    </blockquote>
+    <blockquote>
+      The Myth of "Making It": Why true entrepreneurs must become addicted to solving daily chaos to stay ahead of competitors and to reach the top of your industry.
+      <cite>—— 官方 show notes（原文）</cite>
+    </blockquote>
+    <blockquote>
+      Weaponizing Your Gut: The exact mindset shift required to take massive risks when everyone else claims your vision is entirely impossible.
+      <cite>—— 官方 show notes（原文）</cite>
+    </blockquote>
+
+    <h4>⏱ 完整章節時間軸（36 段，官方）</h4>
+    <div class="timeline">
+      <code>00:00:00</code> Intro ｜ <code>00:02:17</code> 咩令 Dana White 變成 fighter ｜ <code>00:04:37</code> 佢童年實際係點 ｜ <code>00:06:07</code> 同阿爸關係點變 ｜ <code>00:08:05</code> 點解佢一直挑戰權威 ｜ <code>00:10:18</code> 佢想教個仔咩 ｜ <code>00:11:11</code> 冇「休息日」呢回事 ｜ <code>00:13:25</code> 俾生意「一腳踢落面」點改變佢 ｜ <code>00:14:46</code> 冇人欠你任何嘢 ｜ <code>00:16:06</code> 點解大部分人唔適合做創業者 ｜ <code>00:17:45</code> 令 UFC 成功嘅原則 ｜ <code>00:19:55</code> 請錯人可令生意生或死 ｜ <code>00:21:51</code> Dana White 成功背後嘅罕有技能 ｜ <code>00:27:41</code> 點解佢透過生意建立咗個「家」 ｜ <code>00:32:09</code> 好領袖要落手落腳 ｜ <code>00:33:22</code> 我鍾意 haters ｜ <code>00:35:17</code> 極端專注點推動佢 ｜ <code>00:37:29</code> 咩改變咗佢嘅能量同健康 ｜ <code>00:39:55</code> killer instinct 有就有、冇就冇 ｜ <code>00:42:01</code> 點解喺生意上要做 savage ｜ <code>00:44:43</code> killer instinct 學唔學到？ ｜ <code>00:45:21</code> 膊頭上有根刺都可以推動成功 ｜ <code>00:46:27</code> 佢最唔想同邊個競爭 ｜ <code>00:48:55</code> 佢信唔信 manifestation ｜ <code>00:53:03</code> 佢點學識放低過去 ｜ <code>00:58:56</code> 佢原諒咗阿媽未？ ｜ <code>01:04:34</code> 點解要信自己個 gut 多過 focus group ｜ <code>01:06:58</code> 追人工＝你已經輸咗 ｜ <code>01:07:54</code> 佢嘅成功有幾多係運氣 ｜ <code>01:11:14</code> 唔可以怕冒險 ｜ <code>01:18:11</code> 佢仲追緊咩 ｜ <code>01:22:13</code> 佢最後要達成嘅一個目標 ｜ <code>01:24:40</code> 點解佢相信佢會喺拳擊贏
+    </div>
+
+    <h4>💡 行業 Insight / 對 James 嘅 takeaway</h4>
+    <ul>
+      <li><b>「遙距創業」係迷思，親身落場先係壁壘</b>——標題已經係立場。Dana White 把「唔喺現場」等同「冇護城河」；對照佢「好領袖要 stay in the weeds」（32:09）同「請錯人＝生或死」，佢嘅管理哲學係<b>高頻、近身、高信任</b>，唔係完全授權躺平。</li>
+      <li><b>創傷可以係資產，但要主動重構</b>——由「阿媽／童年」講到「原諒」，佢示範咗一條路徑：唔否認過去，但唔畀過去定義將來。呢個對創辦人心理健康同復原力係可直接借用嘅框架。</li>
+      <li><b>健康係創辦人嘅「生產力基建」</b>——sleep apnea 呢類「慢性扣分項」一旦逆轉，等於免費攞返每日嘅決策能量。對比 Knowledge Project 常講嘅「長專注力＝不公平優勢」，Dana White 係用身體去買同一樣嘢。</li>
+      <li><b>gut vs focus group</b>——Meta 教訓：真正非共識嘅賭注，市場調查一定反對。佢呢集係畀「信直覺」一個 operator 級背書。</li>
+    </ul>
+
+    <div class="callout">
+      📎 <b>資料來源與限制</b>：本集所有主題、論點、章節時間軸，均萃取自 <b>The Diary of a CEO 官方 RSS／Apple Podcasts 節目描述與官方章節</b>（原文引用已標明）。此集 Apple Podcasts 描述資訊充足，故未作額外猜測生成；YouTube 影片頁為 JS 渲染，web_fetch 未能取得逐字稿，因此<b>除標題及官方 show notes 原文外，不引用其他「逐字金句」以避免杜撰</b>。完整逐字內容請以影片／音頻為準。
+    </div>
+
+    <div class="src">
+      <span class="label j1 jev">Jev</span> worth 0.82 · category business（conf 0.95）· primary_source 0.49（一手訪談轉述）<br>
+      <span class="label ext">來源</span> RSS feed <code>rss2.flightcast.com/xmsftuzjjykcmqwolaqn6mdn</code> · GUID <code>flightcast:01M26N4N40D24TJPZ6V4N7JMTY</code>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== ACQUIRED ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Acquired</h2>
+    <span class="host">Ben Gilbert &amp; David Rosenthal</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">📌 最後已知劇集</div>
+    <div class="le-title">The Home Depot（家得寶）</div>
+    <div class="le-meta">📅 2026-09-13（美西 20:35 · = 2026-09-14 03:35 UTC）· ⏱ 3 小時 35 分 02 秒（12,902 秒）· 🔗 <a href="https://www.acquired.fm/episodes/home-depot">acquired.fm/episodes/home-depot</a></div>
+    <div class="le-summary">
+      家得寶嘅創業故事「好似一部復仇者聯盟電影 —— 如果復仇者係俾人炒魷、破產、靠疊起十呎高嘅空油漆罐裝門面」。Bernie Marcus（48 歲）同 Arthur Blank（35 歲）俾前東家炒咗之後，聽咗紐約銀行家 Ken Langone（佢「意外」促成兩人被炒）嘅一句話：「你哋俾人用金馬蹄鐵踢咗一腳。」之後寫低咗<b>美國零售史上最強複利故事</b>，途中仲有 Sol Price、Jamie Dimon、Ross Perot 等傳奇客串。由 1981 年 IPO 至今，家得寶係<b>整個美國股市回報最高嘅單一股票</b>——跑贏 Apple、Microsoft、Berkshire Hathaway 同所有其他公司。
+    </div>
+    <div class="le-link">🔗 <a href="https://www.acquired.fm/episodes/home-depot">官方集數頁</a> · 本集相關閱讀：《Built from Scratch》《Kick Up Some Dust》（Bernie Marcus）</div>
+  </div>
+</section>
+
+
+<!-- ==================== FOUNDERS ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Founders</h2>
+    <span class="host">David Senra</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">📌 最後已知劇集</div>
+    <div class="le-title">#435 Mark Zuckerberg's Empire（朱克伯格嘅帝國）</div>
+    <div class="le-meta">📅 2026-09-28 08:00 UTC · ⏱ 41 分 11 秒（2,471 秒）· 📖 讀物：Jeremy Stern《Mark: A journey to the heart of history's largest nonterritorial empire》</div>
+    <div class="le-summary">
+      Senra 今次讀嘅係一本關於「史上最大非領土帝國」統治者嘅書。全集以逐句引文形式，將朱克伯格類比為羅馬式統治者：由《埃涅阿斯紀》嘅「我為此不設時空界限，我賜予無盡帝國」（朱克伯格本人引用過），到以「迦太基必須被毀滅」形容佢對 Google 嘅態度；Sean Parker 早年已觀察到佢身上「呢種帝國傾向」；節目亦引用「獨裁者困境」——權力越大，越依賴他人提供資訊。核心追問：「成為人類史上最有權力嘅人之一、42 歲已確保自己會喺幾百年後嘅史書出現，係咩感覺？」
+    </div>
+    <div class="le-link">🔗 <a href="https://www.founderspodcast.com/episodes/435-mark-zuckerbergs-empire">官方集數頁</a></div>
+  </div>
+</section>
+
+
+<!-- ==================== ALL-IN ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>All-In with Chamath, Jason, Sacks &amp; Friedberg</h2>
+    <span class="host">Chamath Palihapitiya · Jason Calacanis · David Sacks · David Friedberg</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">📌 最後已知劇集</div>
+    <div class="le-title">Trump's Super Intelligence Summit, AI Safety Accord, GDP Beats, Midterm Predictions</div>
+    <div class="le-meta">📅 2026-10-02 22:30 UTC · ⏱ 1 小時 22 分 29 秒 · 🔗 <a href="https://allinchamathjason.libsyn.com/trumps-super-intelligence-summit-ai-safety-accord-gdp-beats-midterm-predictions">libsyn 集數頁</a></div>
+    <div class="le-summary">
+      Sacks 以親歷者身份還原 9 月 29 日特朗普白宮「Super Intelligence Summit」內幕：六間前沿模型公司簽署自願性《White House Accord on Super Intelligence》，被稱為「超級智能嘅 Bretton Woods 會議」；治理靠五層執行鏈（內部控制 → 外部審計 → 董事會 D&amp;O → FTC／SEC），「自願但 de facto 有牙」。中段宏觀數據攻防（Q2 GDP 上修至 2.2%、8 月非農 +162,000），尾段中期選舉預測與劫機案媒體用詞爭議。<b>完整深度拆解見 10-03 報告。</b>
+      <br>官方章節：<code>(2:01) Summit 內幕 · (17:57) 網安軍備競賽／數據中心國安 · (45:22) 經濟數據 · (1:00:24) 中期選舉預測 · (1:09:28) 劫機案媒體報導</code>
+    </div>
+    <div class="le-link">🔗 <a href="https://allinchamathjason.libsyn.com/trumps-super-intelligence-summit-ai-safety-accord-gdp-beats-midterm-predictions">官方集數頁</a> · 節目主頁 <a href="https://allin.com/">allin.com</a></div>
+  </div>
+</section>
+
+
+<!-- ==================== MY FIRST MILLION ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>My First Million</h2>
+    <span class="host">Sam Parr &amp; Shaan Puri</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">📌 最後已知劇集</div>
+    <div class="le-title">Ep867 — We tested Instinct, MUSE and Grokbot. They're ridiculous.</div>
+    <div class="le-meta">📅 2026-09-30 11:13 UTC · ⏱ 1 小時 14 分 57 秒（4,497 秒）· 🎙 Shaan Puri &amp; Sam Parr</div>
+    <div class="le-summary">
+      兩人實測新一代 AI 個人助理（Instinct、xAI 嘅 Grokbot、MUSE），得出「勁到荒謬」嘅評價。節目主線：「<b>AI 係世界上 ELO 最高嘅遊戲</b>」——唔止比智能，仲比整合、agentic 體驗同產品設計。章節涵蓋：Instinct 試用（5:18）、Grokbot（9:31）、「唔止係智能嘅問題」（20:24）、micro1（38:35）、漏洞利用（44:08）、「周圍都係千億公司」（58:48）。
+    </div>
+    <div class="le-link">🔗 <a href="https://www.mfmpod.com/episodes/">mfmpod.com/episodes</a> · 試用連結：Instinct（instinct.com）· Grokbot（x.ai/news/introducing-grok-bot）· micro1（micro1.ai）· MUSE（muse.ai）</div>
+  </div>
+</section>
+
+
+<!-- ==================== KNOWLEDGE PROJECT ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Knowledge Project</h2>
+    <span class="host">Shane Parrish</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">📌 最後已知劇集</div>
+    <div class="le-title">[Outliers] Charlie Munger's Interview with Todd Combs（芒格 × Todd Combs 未公開訪談）</div>
+    <div class="le-meta">📅 會員先行 2026-10-01 09:50 UTC · 公眾版 2026-10-06 · 🔗 <a href="https://fs.blog/knowledge-project-podcast/outliers-munger-combs/">fs.blog 集數頁</a></div>
+    <div class="le-summary">
+      一段 <b>2022 年從未公開</b>嘅芒格（Charlie Munger）與 Todd Combs 對話，Shane Parrish 親自抽出最觸動佢嘅觀點。主題深且廣：芒格點樣辨認「值得押注嘅人」、點樣揀「值得解決嘅問題」、以及點樣將「長專注力」變成不公平優勢。Parrish 亦拆解 Berkshire 一個最被低估（又最少人注意）嘅強項——<b>「令自己處於掌控環境嘅位置，而唔係被環境掌控」</b>。特別鳴謝 Singleton Foundation、Todd Combs、William Thorndike 授權分享。
+    </div>
+    <div class="le-link">🔗 <a href="https://fs.blog/knowledge-project-podcast/outliers-munger-combs/">官方集數頁</a> · 公眾版 10 月 6 日上線（YouTube／Spotify／Apple＋逐字稿）</div>
+  </div>
+</section>
+
+
+<footer class="bot">
+  Mindset Podcasts Daily Scan · 生成於 2026-10-05 09:56 UTC（HKT 17:56）<br>
+  掃描結果：6 條 feed 全部 HTTP 200、共 2,930 條劇目索引；本輪新增 <b>1</b> 條（Diary of a CEO · Dana White）。<br>
+  所有內容萃取自各台官方 RSS／Apple Podcasts 描述與官方章節，原文引用已標明；無新集日子不作任何推測性生成，亦不杜撰逐字金句。
+</footer>
+
+</div>
+</body>
+</html>
