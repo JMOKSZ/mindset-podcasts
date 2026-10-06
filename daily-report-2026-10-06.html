@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-10-06</title>
+<style>
+  :root{
+    --bg:#fdfaf6;
+    --card:#fffdf9;
+    --ink:#2b2620;
+    --muted:#7a7065;
+    --line:#e8ddcd;
+    --accent:#b8862b;
+    --accent-soft:#f4e8cf;
+    --new:#2e7d5b;
+    --warn:#a8571f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;
+    line-height:1.78;
+    margin:0;
+    padding:0 16px 90px;
+    font-size:16.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;}
+  header.top{
+    padding:46px 0 26px;
+    border-bottom:2px solid var(--line);
+    margin-bottom:32px;
+  }
+  header.top h1{font-size:31px;margin:0 0 8px;letter-spacing:.5px;}
+  header.top .sub{color:var(--muted);font-size:14.5px;}
+  header.top .meta{margin-top:14px;font-size:13.5px;color:var(--muted);}
+  .summary{
+    background:var(--accent-soft);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:18px 22px;
+    margin-bottom:38px;
+    font-size:15px;
+  }
+  .summary b{color:var(--accent);}
+  .summary ul{margin:8px 0 0;padding-left:20px;}
+  section.pod{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 26px 22px;
+    margin-bottom:32px;
+    box-shadow:0 1px 0 rgba(0,0,0,.02);
+  }
+  .pod-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;border-bottom:1px dashed var(--line);padding-bottom:12px;margin-bottom:18px;}
+  .pod-head h2{font-size:22px;margin:0;flex:1 1 auto;}
+  .pod-head .host{color:var(--muted);font-size:13.5px;}
+  .tag{font-size:12px;padding:2px 10px;border-radius:20px;letter-spacing:.5px;white-space:nowrap;}
+  .tag.new{background:var(--new);color:#fff;}
+  .tag.none{background:#eee6d8;color:var(--muted);}
+  .tag.warn{background:var(--warn);color:#fff;}
+  .tag.recap{background:#e8ecf4;color:#3f5070;}
+  .ep{margin:0 0 30px;padding-bottom:22px;border-bottom:1px dotted var(--line);}
+  .ep:last-child{margin-bottom:4px;padding-bottom:0;border-bottom:none;}
+  .ep h3{font-size:19px;margin:0 0 5px;line-height:1.45;}
+  .ep .epmeta{font-size:13px;color:var(--muted);margin-bottom:16px;}
+  .ep .epmeta a{color:var(--accent);text-decoration:none;}
+  h4{font-size:15px;margin:20px 0 6px;color:var(--accent);letter-spacing:.4px;}
+  ul{margin:6px 0 12px;padding-left:22px;}
+  li{margin:6px 0;}
+  blockquote{
+    margin:14px 0;
+    padding:11px 18px;
+    border-left:3px solid var(--accent);
+    background:#fbf5e9;
+    color:#4a4034;
+    font-style:italic;
+    font-size:15px;
+    border-radius:0 8px 8px 0;
+  }
+  blockquote cite{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:6px;}
+  .kv{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:14.5px;}
+  .kv th,.kv td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+  .kv th{background:#f7efe0;font-weight:normal;color:#6a5f52;width:38%;}
+  .callout{
+    border:1px dashed var(--line);
+    background:#fcf8f1;
+    border-radius:10px;
+    padding:12px 16px;
+    font-size:14px;
+    color:#5d5347;
+    margin:14px 0;
+  }
+  .src{font-size:12.5px;color:var(--muted);margin-top:10px;}
+  .src a{color:var(--muted);}
+  .label{font-size:11.5px;letter-spacing:.6px;padding:1px 7px;border-radius:4px;background:#f0e8d8;color:#7a6a52;margin-right:6px;white-space:nowrap;}
+  .label.ext{background:#e9f0ea;color:#3f6b52;}
+  .label.jev{background:#f3e6e0;color:#8a4a2c;}
+  .label.ts{background:#e8ecf4;color:#3f5070;}
+  .last-ep{
+    margin-top:6px;
+    padding:16px 18px;
+    background:#fbf8f1;
+    border:1px solid var(--line);
+    border-radius:10px;
+  }
+  .last-ep .lbl{color:var(--muted);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;}
+  .last-ep .le-title{font-size:16.5px;font-weight:bold;color:var(--accent);margin:5px 0 3px;line-height:1.45;}
+  .last-ep .le-meta{font-size:13px;color:var(--muted);margin-bottom:9px;}
+  .last-ep .le-summary{font-size:14.5px;color:#4f463b;margin:8px 0 9px;}
+  .last-ep .le-link{font-size:13px;}
+  .timeline{font-size:13.5px;color:#5d5347;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;padding:12px 16px;line-height:2.0;}
+  .timeline code{background:transparent;color:#8a6a2c;font-size:13px;}
+  footer.bot{border-top:1px solid var(--line);margin-top:44px;padding-top:18px;color:var(--muted);font-size:13px;}
+  a{color:var(--accent);}
+  code{background:#f3ecdd;padding:1px 5px;border-radius:4px;font-size:13.5px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>思維播客日報 · 2026-10-06</h1>
+  <div class="sub">6 個英文商業／思維播客 · 每日深度掃描 · 為 James 而設的「第二對耳仔」</div>
+  <div class="meta">
+    🕘 報告生成時間：<b>2026-10-06 09:55 UTC</b>（= 香港時間 2026-10-06 17:55）<br>
+    📡 掃描方式：6 條 RSS feed 直接抓取 XML（全部 HTTP 200），逐集比對 GUID 去重<br>
+    🧮 Jev 前置過濾（TypeSafe System One, <code>news</code> profile）：本輪 <b>2 條候選 → 2 條保留入報告</b>（Founders worth <b>0.90</b> / MFM worth <b>0.19</b> ⚠️）。兩條都係追蹤清單內嘅真·新集，故一律收錄；MFM 分低係因為節目描述無硬數字、一手度 0.33，屬「點子類」內容，已在報告內標註。<br>
+    🧑‍💻 Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">JMOKSZ/mindset-podcasts</a>
+  </div>
+</header>
+
+<div class="summary">
+  <b>今日重點：2 條新集 —— 一條係 Founders 講 Ari Emanuel 自傳，一條係 My First Million 講三個即將爆發嘅生意。</b>
+  <ul>
+    <li>🆕 <b>Founders #436</b>｜《Ari Emanuel's Autobiography》——1 小時 9 分 45 秒。David Senra 讀荷里活最狠嘅經紀之王 Ari Emanuel 自傳《Roll The Calls》。核心係「憤怒係燃料，但燃料有保質期」：300 個電話／日嘅銷售閃電戰、「冇併購，只有收購」、$44M 買斷 William Morris、先簽 Vince McMahon 再吞 WWE、先簽 Dana White 再買 UFC——贏完又贏，卻永遠唔夠。</li>
+    <li>🆕 <b>My First Million Ep 868</b>｜《3 businesses we think are about to blow up》——49 分 13 秒。Shaan &amp; Sam 講三個點子：①催產素（oxytocin）給婚姻輔導「用藥」②用「共同身份社群＋金融產品」收割孤獨經濟（Knights of Columbus 模式）③信仰系內容生意（Angel Studios：3M 會員、年收 4 億美元以上嘅「價值觀版 A24」）。</li>
+    <li>⚪ <b>Acquired / All-In / Knowledge Project / Diary of a CEO</b>：本輪無新集，已列出各自最後一集內容。</li>
+  </ul>
+</div>
+
+<!-- ================= FOUNDERS ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Founders</h2>
+    <div class="host">David Senra</div>
+    <span class="tag new">🆕 1 條新集</span>
+  </div>
+
+  <div class="ep">
+    <h3>#436 Ari Emanuel's Autobiography</h3>
+    <div class="epmeta">
+      發佈：2026-10-05 · 長度 1:09:45（4185 秒）· 無嘉賓（David Senra 單人讀後拆解）<br>
+      原著：Ari Emanuel《Roll The Calls》（自傳）<br>
+      <a href="https://www.founderspodcast.com/episodes/436-ari-emanuels-autobiography">founderspodcast.com 官方頁</a>
+    </div>
+
+    <h4>📌 一句總結</h4>
+    <p>呢集係一條「反面教材式成功學」：一個閱讀障礙（dyslexia）童年被羞辱嘅細路，把自我厭惡同憤怒變成一部永不熄火嘅收購機器；佢贏盡一切——CAA 出局、William Morris 被吞、WWE 同 UFC 都入袋——但佢自傳裏面反覆問同一條問題：<b>「點解我每次都以為得到我最想要嘅嘢，就會解決我所有問題？」</b></p>
+
+    <h4>🧑‍💼 人物背景（嘉賓／原型）</h4>
+    <ul>
+      <li><b>Ari Emanuel</b>：荷里活最有權勢嘅經紀之一，Endeavor（前身 Endeavor Talent Agency）創辦人，後來成為 WWE 同 UFC（經 TKO）嘅操盤者；電影《Entourage》入面 Ari Gold 嘅原型。</li>
+      <li><b>書名《Roll The Calls》</b>：直譯係「繼續打電話」。呢個就係佢成個作業系統嘅核心——唔係開會、唔係策略、係一日 200–300 通電話。</li>
+      <li>作者 David Senra 一句戳穿行規：荷里活被包裝成「夢想工廠」，Emanuel 自己嘅講法係——佢只係一場<b>「non-stop sales convention（永不落幕嘅銷售大會）」</b>。</li>
+    </ul>
+
+    <h4>🎯 核心論點（5 條主軸）</h4>
+
+    <p><b>1) 憤怒唔係缺點，係工具——但有保質期。</b>Emanuel 因為閱讀障礙細個被當成「蠢」，確診前後嘅自述係全書最狠一段：</p>
+    <blockquote>Before the diagnosis, I was a bundle of self-loathing, anxiety and rage. After the diagnosis, same, but at least I now knew why. I had a reason for all of my darkness.
+      <cite>— Ari Emanuel, 《Roll The Calls》</cite></blockquote>
+    <blockquote>Rage might not solve every problem, but it sure as hell clarifies the problem. Rage brings things to a head.
+      <cite>— Ari Emanuel</cite></blockquote>
+    <p>但佢自己都收唔到尾：佢無法答「你開心嗎？」係 yes，對第一任太太 Sarah 發脾氣「a lot」，最後婚姻結束。佢去印度冥想營，老師直接講：憤怒已經帶你走到盡頭，你要放手。</p>
+
+    <p><b>2) 「Roll the calls」＝用數量壓死失敗率。</b>佢請助手嘅唯一工作，就係佢一收線即刻遞上下一個人，消滅所有空檔。呢個係佢口中嘅「私人研究院」：</p>
+    <blockquote>My workday has no official start time because there's no official end time. Weekdays, weekends, late nights, I'm here.
+      <cite>— Ari Emanuel（David Senra X 帖引用）</cite></blockquote>
+    <blockquote>My private grad school... my MBA. No books, no tests, just voice-to-voice encounters.
+      <cite>— Ari Emanuel</cite></blockquote>
+
+    <p><b>3) 「入門」係一個堅持度問題，唔係資歷問題。</b>26 歲被 CAA 收發室嫌老，佢做法係一日打 4–5 次、深夜留言：</p>
+    <blockquote>If you arrive at your desk every morning and find 11 messages from somebody... you've got two options: call the person back or call the police.
+      <cite>— Ari Emanuel（結果約 10 日後獲聘）</cite></blockquote>
+    <p>副作用：佢<b>永遠唔講 goodbye</b>。起源係 1995 年創業時窮，為慳手機分鐘——「Goodbyes take time and time is money.」Senra 將之比喻為海明威式極簡：限制逼出效率。</p>
+
+    <p><b>4) 「冇併購，只有收購。」</b>呢句係佢問完哈佛商學院教授之後學到、跟足一世嘅市場觀：</p>
+    <blockquote>There's no such thing as a merger. Every merger is a purchase... with every merger there's a dominant and a submissive, an alpha and a beta, a winner and a loser. Every merger is really just one company swallowing the other. The rest is spin.
+      <cite>— Ari Emanuel</cite></blockquote>
+    <p>2003 年佢想吞 William Morris，對方嘲笑：「Ari，你？買我哋？」佢嘅打法係不對稱作戰：每朝第一個電話打俾荷里活八卦網站編輯，主動放風、動搖對方軍心；枱面上讓晒啲職銜，枱底攞票；最後用 <b>$44M 買斷</b>兩個反對派高管。佢嘅結論：用 4,400 萬買到全城最老牌、最有聲望嘅經理人公司，係「a bargain」。</p>
+
+    <p><b>5) 先簽人，再買公司。</b>佢兩單最大交易係同一套路：先簽 Vince McMahon（多年後才收購 WWE）、先簽 Dana White（之後才買 UFC）。買 UFC 時佢直接打俾共同持有人 Lorenzo Fertitta：「唔好賣俾任何人，至少俾我一個機會。」對方開價一句：「It starts with a fucking four」——即 40 億美元。</p>
+
+    <h4>📊 關鍵數據（Key Numbers）</h4>
+    <table class="kv">
+      <tr><th>每日電話量</th><td>200–300 通／日；助手負責喺上一通結束前安排好下一通（前輩 Michael Ovitz 同樣做 200–300 通）</td></tr>
+      <tr><th>求職堅持度</th><td>一日打 4–5 次俾 CAA 收發室守門人、深夜留言；約 10 日獲聘</td></tr>
+      <tr><th>創業起點</th><td>用 <b>$100,000 貸款</b>創辦 Endeavor；曾拒絕 ICM 年薪 100 萬美元嘅保證合約</td></tr>
+      <tr><th>William Morris 收購</th><td>買斷反對高管成本 <b>$44M</b></td></tr>
+      <tr><th>UFC 收購</th><td>開價「一個 4 字頭」＝約 <b>$40 億</b>；與 Silver Lake 嘅 Egon Durban 組財團，進行「10 days of hell」競標</td></tr>
+      <tr><th>IMG 收購</th><td><b>$24 億</b>（2014）</td></tr>
+      <tr><th>身心代價</th><td>1995 年（創業後）臥床一週、暴瘦 <b>20 磅</b>；2014 年 IMG 交易＋婚變後，躺平 <b>3 日</b>無法動彈（「我被車撞之後都冇咁慘」）</td></tr>
+      <tr><th>車禍轉捩點</th><td>1994 年被黑色農夫車撞倒，躺在街上悟出：<i>Life is not a dress rehearsal.</i> 5 日後就返工第一個到辦公室</td></tr>
+    </table>
+
+    <h4>🔑 重點引用（原文 blockquote）</h4>
+    <blockquote>Why do I keep assuming that getting what I desperately want will solve my problems?
+      <cite>— Ari Emanuel，完成 William Morris 收購後寫下</cite></blockquote>
+    <blockquote>I feel good, sure, but not the peak feeling I expected. Maybe because I know that the good feeling will be fleeting.
+      <cite>— Ari Emanuel，Endeavor 上市之後</cite></blockquote>
+    <blockquote>I don't want to be God. I want to be safe. Endeavor isn't safe. And if Endeavor isn't safe, then I'm not safe.
+      <cite>— Ari Emanuel（回應心理治療師話佢「想做神」）</cite></blockquote>
+    <blockquote>Fame brings new clout. New clout brings new business. New business brings more clout.
+      <cite>— Ari Emanuel，講《Entourage》飾演 Ari Gold 之後飛輪效應</cite></blockquote>
+    <blockquote>People might not want to talk to Ari Emanuel, but they sure as shit want to talk to Ari Gold.
+      <cite>— Ari Emanuel</cite></blockquote>
+    <blockquote>Our superpower as a species is dissatisfaction.
+      <cite>— Ari Emanuel</cite></blockquote>
+    <blockquote>When you're on the field, be on the field. But remember, you can't always be on the field. There has to be a timeout, halftime.
+      <cite>— 一位朋友給 Emanuel 嘅建議（Senra 譽為全書最佳一句）</cite></blockquote>
+    <p>David Geffen 俾佢嘅一句亦被反覆引用：</p>
+    <blockquote>It's like when you're in traffic. The one thing you can't do is stand still. Even if you don't know which way to go, you just have to go.
+      <cite>— David Geffen</cite></blockquote>
+
+    <h4>🏭 行業 Insight（Hollywood + 收購遊戲）</h4>
+    <ul>
+      <li><b>經理人生意嘅經濟學 = Packaging（打包）。</b>唔收一次性 10% 佣金，而係將演員＋編劇＋導演包成一個 package 賣俾電視網，換取每次播出嘅細百分比。Emanuel 原話：如果套劇播幾年，就係「steady drip of dollars」；如果變成經典播幾代，就係「a river of cash that will flow for the rest of our natural lives」。呢個 recurring revenue 模型由 Ovitz 喺 CAA 發揚光大，成為現代荷里活嘅財務引擎。</li>
+      <li><b>CAA 靠「冇人尊重嘅領域」起家。</b>佢哋被嘲係「the TV boys」，結果因為垄断電視而稱王——尊重最少嘅地方，回報最大。</li>
+      <li><b>規模＝生存。</b>Emanuel 判斷全城 200 間經理人公司，最終只會剩一兩間巨頭——所以佢唔係為咗貪，而係為咗唔死。</li>
+      <li><b>流行文化反噬／反哺生意。</b>Jeremy Piven 飾演 Ari Gold 之後，真人嘅生意十倍加速；Emanuel 甚至承認自己開始模仿嗰個「模仿緊佢」嘅角色。</li>
+    </ul>
+
+    <h4>💡 Senra 嘅提煉（給創業者）</h4>
+    <ul>
+      <li>「唔同／唔合群」嘅感覺，係佢研究過嘅創辦人身上反覆出現嘅燃料。</li>
+      <li>收購唔係野心，而係<b>威脅反應</b>——佢買嘅係安全感，唔係成就。</li>
+      <li>全書最後一幕嘅反差：Emanuel 離開 Durham 喺 Augusta National 睇 Masters，趕返洛杉磯見一個追咗幾年嘅編劇導演。佢嘅立場係——「我未必做一世經紀，但我而家做緊，就要用盡全力去做。」Rage 熄唔得燈，係一個 open question。</li>
+    </ul>
+
+    <div class="callout">
+      <span class="label jev">Jev</span><b>取證註記：</b>本集官方 show notes 極簡（只有書名＋贊助商），以上論點／數據／引用主要來自兩個二手來源：① <a href="https://finance.biggo.com/news/1841e3808d6800a0">BigGo Finance 嘅深度書評摘要</a>（AI 編輯、二手轉述書本，引用原文可信度中等）；② David Senra @FoundersPodcast 嘅 X 帖（一手節目預告，含開場引用）。<b>書中數字如 $44M / $4B / $100k 貸款等屬書本陳述，未經第三方核實。</b>
+    </div>
+    <div class="src">來源：<a href="https://feeds.megaphone.fm/DSLLC6297708582">Founders RSS</a> · <a href="https://www.founderspodcast.com/episodes/436-ari-emanuels-autobiography">官方頁</a> · <a href="https://finance.biggo.com/news/1841e3808d6800a0">BigGo Finance</a> · <a href="https://x.com/FoundersPodcast">@FoundersPodcast</a></div>
+  </div>
+</section>
+
+<!-- ================= MY FIRST MILLION ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>My First Million</h2>
+    <div class="host">Sam Parr &amp; Shaan Puri</div>
+    <span class="tag new">🆕 1 條新集</span>
+    <span class="tag warn">Jev 0.19 ⚠️</span>
+  </div>
+
+  <div class="ep">
+    <h3>Ep 868 · 3 businesses we think are about to blow up</h3>
+    <div class="epmeta">
+      發佈：2026-10-05 · 長度 49:13（2953 秒）· 主持對談（無嘉賓）<br>
+      YouTube：<a href="https://www.youtube.com/watch?v=4zvicsf1bJQ">4zvicsf1bJQ</a> · 官方：<a href="https://www.mfmpod.com/3-businesses-we-think-are-about-to-blow-up/">mfmpod.com</a><br>
+      <span class="label ts">轉錄</span>本篇內容基於官方 YouTube 自動字幕（ASR）逐字稿整理；數字以 ⚠️ 標示自動轉錄可能誤差。
+    </div>
+
+    <h4>📌 一句總結</h4>
+    <p>回歸 MFM「純點子」本色：兩條線索——<b>孤獨</b>同<b>化學（oxytocin）</b>——各自連去一個「即將爆發」嘅生意。呢集唔係新聞，係三張投注單。</p>
+
+    <h4>💡 點子一：Oxytocin Dosing（催產素「用藥」）</h4>
+    <p>起點係 Shaan 喺 Instagram 見到 Anduril 創辦人／Oculus 之父 <b>Palmer Luckey</b> 嘅一段回答。有人問佢「如果今日由零開始、冇人脈冇錢，你會做咩？」——呢條問題一般會得出廢話，但 Luckey 嘅答案被 Shaan 譽為「見過最好嘅一次」：</p>
+    <blockquote>I would try to end the tragedy of divorce with oxytocin doping for marriage counseling.
+      <cite>— Palmer Luckey（Shaan 引述）</cite></blockquote>
+    <ul>
+      <li><b>Oxytocin 係咩：</b>人體自然分泌嘅荷爾蒙，同「配對／連結（pair bonding）」高度相關。產婦分娩時大量釋放、建立母嬰連結；男士喺親密行為／擁抱後都會有。</li>
+      <li><b>動物證據：</b>草原田鼠（prairie voles，節目口誤講成 praire dogs）有大量 oxytocin，一生一夫一妻，甚至會攻擊其他雄性。</li>
+      <li><b>人體研究（Shaan 強調「小樣本、非 robust」⚠️）：</b>有實驗讓受試者吸／服 oxytocin 後，面對有吸引力異性會多保持約 <b>15cm</b> 距離、望對方時間更少——即「強化對現有伴侶嘅忠誠」。</li>
+      <li><b>核心哲學（值得畫重點）：</b>「感覺」唔係玄學，係一個化學腦狀態＋一個意識讀數。</li>
+    </ul>
+    <blockquote>A feeling is a chemical brain state that you're in and then you have a conscious readout of it.
+      <cite>— Shaan Puri</cite></blockquote>
+    <ul>
+      <li><b>需求側：</b>PTSD 患者已自行用 oxytocin 幾年（因為監管鬆），有人每日寫日記記錄感受。</li>
+      <li><b>社會接受度會漂移：</b>Sam 自認保守、怕新事物，但佢承認曾經覺得荒謬嘅嘢——BPC-157 修復跟腱（「Wolverine stack」）、肽類療法——而家已經「shockingly common」。Shaan 補充：一間 psychedelics 公司近期被一間大藥廠以約 <b>$28 億</b>收購（⚠️ ASR：公司名疑似 "Atea/Beckley"，收購方疑似 Eli Lilly，待核實）。</li>
+      <li><b>Shaan 嘅預言：</b></li>
+    </ul>
+    <blockquote>I would not be surprised if in 12 months you and me and our listener are going to get a lot of Meta ads saying this will cure divorce.
+      <cite>— Shaan Puri</cite></blockquote>
+
+    <h4>💡 點子二：用「共同身份社群＋金融產品」收割孤獨經濟</h4>
+    <p>Sam 嘅點子：唔係開個交友 app，而係複製 <b>Knights of Columbus（哥倫布騎士會）</b>模式——「共同興趣社群」做前端，金融／保險產品做後端變現。</p>
+    <ul>
+      <li><b>Knights of Columbus 係咩：</b>1882 年由神父 Father McGivney 喺康涅狄格州 New Haven 創立嘅天主教男性互助組織。起源係教區一個養家男人過身，神父召集約 <b>200 名男性</b>夾錢組成互助會（本質就係人壽保險嘅雛形）。</li>
+      <li><b>規模（⚠️ 口語數字）：</b>2–3 百萬會員、約 <b>$300 億資產</b>、年收入數十億美元；年費約 $300；全美約 <b>14,000 個分會</b>。</li>
+      <li><b>變現：</b>向會員賣人壽保險，賺到笑；同時係一股巨大遊說力量。</li>
+      <li><b>點解而家有機會：</b>呢個組織幾十年靠老人家勉強撐住，但近年 <b>30–40 歲年輕男性</b>成為增長最快嘅族群——即「孤獨＋想有歸屬」嘅一代正主動入會。</li>
+      <li><b>同類樣板：</b>
+        <table class="kv">
+          <tr><th>USCCA</th><td>槍械自衛會員組織；約 $300 入會，包月度訓練＋「若因開槍被起訴」嘅法律保險；年收約 <b>$4 億</b>（⚠️ ASR）</td></tr>
+          <tr><th>GoodSam</th><td>RV（露營車）車主會員；年費幾百美元，換 RV 專屬保險＋營地折扣</td></tr>
+          <tr><th>AARP</th><td>50/60 歲以上自動收到邀約；唔自己做保險，只「授權品牌」俾 UnitedHealthcare 做，收品牌＋渠道費，年收數十億</td></tr>
+        </table>
+      </li>
+      <li><b>商業邏輯：</b>社群提供歸屬感；折扣／保險即時合理化會費；而「真正嘅香蕉」係將一件 commodity（金融／保險）加上「你係我哋社群」嘅偏好黏性。</li>
+      <li><b>Sam 嘅提醒：</b>唔好自己做保險（太messy）；大部分呢類組織係同保險公司合作、攞更貼身嘅 plan。部分互助組織有稅務優惠（mutual benefit 結構下，保費嘅投資收益可免稅）。</li>
+    </ul>
+
+    <h4>💡 點子三：Faith-based Businesses（信仰系內容）＝Angel Studios</h4>
+    <p>Sam 啱啱訪問完 Angel Studios 話事人，佢形容 Angel「可能係全球第十大電影公司，而你完全冇聽過」。</p>
+    <ul>
+      <li><b>定位：</b>「values-based content」——每 10 部作品得 1 部係宗教題材，其餘都要「好人做好事、冇粗口、冇飲酒、冇毒品、英雄正面」；Sam 形容係「價值觀版 A24」。</li>
+      <li><b>殺手級作品：</b>《The Chosen》（耶穌題材劇集，被形容為「耶穌版《權力遊戲》」）：已播到第 <b>7 季</b>，Angel 有份製作頭 3 季；據講全球 <b>2 億人</b>睇過，係史上最多人睇嘅劇集之一（現於 Amazon Prime）。</li>
+      <li><b>規模（⚠️）：</b>社群約 <b>300 萬會員</b>；年收入 <b>$4 億以上</b>（另一處講「接近 half a billion」）。</li>
+      <li><b>內容取向例子：</b>新片《The Runner》由 Owen Wilson 主演，講運送器官嘅貨車被搶——Sam 吐槽劇情「為咗一百萬美金搞咁多嘢」唔合理，但照樣係一套可賣嘅「價值觀動作片」。</li>
+    </ul>
+
+    <h4>🏭 Insight：電影業嘅真實經濟學（「What's the reaction to the action?」）</h4>
+    <ul>
+      <li><b>「反應對行動（reaction to the action）」框架：</b>Facebook 令所有相片公開而永久 → 就有了 Snapchat 十秒自動銷毁。<b>一樣嘢越普及，就創造咗對相反嘢嘅需求。</b>（如 GLP-1 令熱量過剩 → 就有新需求。）Shaan 用呢個框架解釋 A24 同 Angel 呢類「價值觀對沖」點解會冒起。</li>
+      <li><b>點樣由零起一間 studio？</b>A24 早期作品「artsy、非主流」，但而家幾乎套套想睇；關鍵係佢哋識玩傳統大廠冇嘅 DNA——<b>游擊式市場營銷</b>。例：Kevin James 新片，佢開個 IG 假裝自己係一個「畫畫嘅老師」，從不提及電影；然後著 tuxedo、捧花、坐喺 Super Bowl 中段一排 12 個位中間（兩邊全空），再付錢俾同區 influencer 去現場「發現」佢——製造懸念，戲上畫就爆。</li>
+      <li><b>殘酷嘅數字：</b>一套戲製作 <b>$1,400 萬</b>，市場推廣 <b>$4,000 萬</b>——即 all-in 約 <b>$5,400 萬</b>。呢個係常態：marketing 通常係製作費嘅 2–3 倍。</li>
+      <li><b>出版社／電影都係「一兩套撐起全公司」：</b>Sam 訪問過一個出版人，佢嗰年靠一本書（銷量贏咗 Hillary Clinton 嘅書）令全公司轉虧為盈。大部分書／戲都失敗，得極少數中；但同 startup 唔同——<b>命中嘅回報可能只有 2.5 倍，唔係 50x／100x／1000x</b>。Sam 對此覺得意外。</li>
+      <li><b>為什麼套套戲都要拍：</b>「Have you ever met a billionaire who doesn't want to make a movie?」——Sam 話佢未遇過；每年有約一千套戲拍，但真正發行嘅遠少於此。稅務上，投資電影可以 write off，但前提係真係要進入製作、真金白銀洗落去。</li>
+    </ul>
+
+    <div class="callout">
+      <span class="label jev">Jev</span><b>取證註記：</b>本集 Jev worth 僅 0.19、primary_source 0.33，屬「點子類、無 hard number」內容；但因為係追蹤名單內嘅真·新集，照樣完整萃取。所有對話引用來自 YouTube 自動字幕，屬機器轉錄，<b>數字（會員數、營收、收購價）皆有 ASR 誤差風險，已逐一標 ⚠️</b>，請當「聽完集數嘅理解」而非審計數據。
+    </div>
+    <div class="src">來源：<a href="https://feeds.megaphone.fm/HS2300184645">MFM RSS</a> · <a href="https://www.mfmpod.com/3-businesses-we-think-are-about-to-blow-up/">官方頁</a> · <a href="https://www.youtube.com/watch?v=4zvicsf1bJQ">YouTube 字幕</a></div>
+  </div>
+</section>
+
+<!-- ================= ACQUIRED ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Acquired</h2>
+    <div class="host">Ben Gilbert &amp; David Rosenthal</div>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集 · Last Known Episode</div>
+    <div class="le-title">The Home Depot</div>
+    <div class="le-meta">發佈：2026-09-13 · RSS 最新一集；本輪 217 集 feed 中無新 GUID</div>
+    <div class="le-summary">Acquired 式「公司傳記」：由亞特蘭大兩間五金店創辦人 Bernie Marcus 同 Arthur Blank（因被解僱而創業）講起，到如何用「倉儲式 DIY 賣場」重寫美國家品零售格局、員工持股文化、以及同 Lowe's 嘅長期對決。長度同密度都係 Acquired 招牌級數。</div>
+    <div class="le-link">🔗 <a href="https://www.acquired.fm/episodes/the-home-depot">acquired.fm/episodes/the-home-depot</a></div>
+  </div>
+</section>
+
+<!-- ================= ALL-IN ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>All-In with Chamath, Jason, Sacks &amp; Friedberg</h2>
+    <div class="host">Chamath Palihapitiya · Jason Calacanis · David Sacks · David Friedberg</div>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集 · Last Known Episode</div>
+    <div class="le-title">Trump's Super Intelligence Summit, AI Safety Accord, GDP Beats, Midterm Predictions</div>
+    <div class="le-meta">發佈：2026-10-02 22:30 UTC · 本輪 433 集 feed 中無新 GUID（週更節目，預料下集 10-09 前後）</div>
+    <div class="le-summary">四位主持嘅一週政治＋科技＋市場 digest：白宮「超級智能峰會」、AI 安全協議、超預期 GDP 數據，以及中期選舉預測。史詩級話題密度但屬快評，唔係單一主題深潛。</div>
+    <div class="le-link">🔗 <a href="https://allin.com/">allin.com</a></div>
+  </div>
+</section>
+
+<!-- ================= KNOWLEDGE PROJECT ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Knowledge Project</h2>
+    <div class="host">Shane Parrish</div>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集 · Last Known Episode</div>
+    <div class="le-title">[Outliers] Charlie Munger's Interview with Todd Combs</div>
+    <div class="le-meta">發佈：2026-10-01 · 本輪 20 集 feed 中無新 GUID</div>
+    <div class="le-summary">Outliers 系列：Charlie Munger（2023 年逝世前）同 Todd Combs（Berkshire 投資經理、GEICO CEO）嘅對談存檔。難得嘅一手芒格式思維素材——論投資紀律、能力圈、心理模型同閱讀習慣。屬於 archived interview，唔係新錄音。</div>
+    <div class="le-link">🔗 <a href="https://fs.blog/knowledge-project/">fs.blog/knowledge-project</a></div>
+  </div>
+</section>
+
+<!-- ================= DIARY OF A CEO ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Diary of a CEO with Steven Bartlett</h2>
+    <div class="host">Steven Bartlett</div>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集 · Last Known Episode</div>
+    <div class="le-title">Dana White: This Generation Thinks You Can Build A Business From Home, It's Impossible!</div>
+    <div class="le-meta">發佈：2026-10-05 · 昨日已掃描並深度report過（見 <a href="daily-report-2026-10-05.html">10-05 日報</a>）；本輪 893 集 feed 中無新 GUID</div>
+    <div class="le-summary">UFC 總裁 Dana White 親述：童年創傷、被逐出家門、由一間瀕臨倒閉嘅格鬥推廣公司做到全球頂級體育帝國；核心係「受害者心態陷阱」「忠誠＝戰爭」同生物黑客式身體管理。昨日已完整萃取，今日不重複。</div>
+    <div class="le-link">🔗 <a href="https://thediaryofaceo.com/">thediaryofaceo.com</a></div>
+  </div>
+</section>
+
+<footer class="bot">
+  <div class="timeline">
+    ⏱ <b>本輪掃描時序</b><br>
+    <code>09:53Z</code> 讀 podcasts.json / state.json<br>
+    <code>09:53Z</code> 6 條 RSS 全部 HTTP 200 → 命中 2 條新集<br>
+    <code>09:54Z</code> Jev triage（2 條候選）<br>
+    <code>09:54Z</code> Founders：官方頁＋BigGo 書評＋X 帖萃取<br>
+    <code>09:54Z</code> MFM：官方頁＋YouTube 4zvicsf1bJQ 自動字幕逐字稿（51,667 字元）<br>
+    <code>09:55Z</code> 生成本報告
+  </div>
+  <p>📬 本報告由 Vee Mok 為 James 自動生成 · 每日深度掃描 6 個英文商業／思維播客 · 所有萃取基於真實內容（RSS / 官方頁 / 一手字幕 / 標註來源嘅二手整理），未經核實之數字已標 ⚠️。</p>
+  <p>🔗 <a href="https://jmoksz.github.io/mindset-podcasts/">jmoksz.github.io/mindset-podcasts</a> · <a href="https://github.com/JMOKSZ/mindset-podcasts">GitHub Repo</a></p>
+</footer>
+
+</div>
+</body>
+</html>
