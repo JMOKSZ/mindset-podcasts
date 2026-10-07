@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-10-07</title>
+<style>
+  :root{
+    --bg:#fdfaf6;
+    --card:#fffdf9;
+    --ink:#2b2620;
+    --muted:#7a7065;
+    --line:#e8ddcd;
+    --accent:#b8862b;
+    --accent-soft:#f4e8cf;
+    --new:#2e7d5b;
+    --warn:#a8571f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;
+    line-height:1.78;
+    margin:0;
+    padding:0 16px 90px;
+    font-size:16.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;}
+  header.top{
+    padding:46px 0 26px;
+    border-bottom:2px solid var(--line);
+    margin-bottom:32px;
+  }
+  header.top h1{font-size:31px;margin:0 0 8px;letter-spacing:.5px;}
+  header.top .sub{color:var(--muted);font-size:14.5px;}
+  header.top .meta{margin-top:14px;font-size:13.5px;color:var(--muted);}
+  .summary{
+    background:var(--accent-soft);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:18px 22px;
+    margin-bottom:38px;
+    font-size:15px;
+  }
+  .summary b{color:var(--accent);}
+  .summary ul{margin:8px 0 0;padding-left:20px;}
+  .stats{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0 4px;}
+  .stat{flex:1 1 120px;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;padding:10px 14px;text-align:center;}
+  .stat .n{font-size:24px;color:var(--accent);display:block;line-height:1.3;}
+  .stat .l{font-size:12px;color:var(--muted);}
+  section.pod{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 26px 22px;
+    margin-bottom:32px;
+    box-shadow:0 1px 0 rgba(0,0,0,.02);
+  }
+  .pod-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;border-bottom:1px dashed var(--line);padding-bottom:12px;margin-bottom:18px;}
+  .pod-head h2{font-size:22px;margin:0;flex:1 1 auto;}
+  .pod-head .host{color:var(--muted);font-size:13.5px;}
+  .tag{font-size:12px;padding:2px 10px;border-radius:20px;letter-spacing:.5px;white-space:nowrap;}
+  .tag.new{background:var(--new);color:#fff;}
+  .tag.none{background:#eee6d8;color:var(--muted);}
+  .tag.warn{background:var(--warn);color:#fff;}
+  .tag.recap{background:#e8ecf4;color:#3f5070;}
+  h4{font-size:15px;margin:20px 0 6px;color:var(--accent);letter-spacing:.4px;}
+  ul{margin:6px 0 12px;padding-left:22px;}
+  li{margin:6px 0;}
+  blockquote{
+    margin:14px 0;
+    padding:11px 18px;
+    border-left:3px solid var(--accent);
+    background:#fbf5e9;
+    color:#4a4034;
+    font-style:italic;
+    font-size:15px;
+    border-radius:0 8px 8px 0;
+  }
+  blockquote cite{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:6px;}
+  .kv{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:14.5px;}
+  .kv th,.kv td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+  .kv th{background:#f7efe0;font-weight:normal;color:#6a5f52;width:38%;}
+  .callout{
+    border:1px dashed var(--line);
+    background:#fcf8f1;
+    border-radius:10px;
+    padding:12px 16px;
+    font-size:14px;
+    color:#5d5347;
+    margin:14px 0;
+  }
+  .src{font-size:12.5px;color:var(--muted);margin-top:10px;}
+  .src a{color:var(--muted);}
+  .label{font-size:11.5px;letter-spacing:.6px;padding:1px 7px;border-radius:4px;background:#f0e8d8;color:#7a6a52;margin-right:6px;white-space:nowrap;}
+  .label.ext{background:#e9f0ea;color:#3f6b52;}
+  .label.jev{background:#f3e6e0;color:#8a4a2c;}
+  .label.ts{background:#e8ecf4;color:#3f5070;}
+  .last-ep{
+    margin-top:6px;
+    padding:16px 18px;
+    background:#fbf8f1;
+    border:1px solid var(--line);
+    border-radius:10px;
+  }
+  .last-ep .lbl{color:var(--muted);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;}
+  .last-ep .le-title{font-size:16.5px;font-weight:bold;color:var(--accent);margin:5px 0 3px;line-height:1.45;}
+  .last-ep .le-meta{font-size:13px;color:var(--muted);margin-bottom:9px;}
+  .last-ep .le-summary{font-size:14.5px;color:#4f463b;margin:8px 0 9px;}
+  .last-ep .le-link{font-size:13px;}
+  .timeline{font-size:13.5px;color:#5d5347;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;padding:12px 16px;line-height:2.0;}
+  .timeline code{background:transparent;color:#8a6a2c;font-size:13px;}
+  footer.bot{border-top:1px solid var(--line);margin-top:44px;padding-top:18px;color:var(--muted);font-size:13px;}
+  a{color:var(--accent);}
+  code{background:#f3ecdd;padding:1px 5px;border-radius:4px;font-size:13.5px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>思維播客日報 · 2026-10-07</h1>
+  <div class="sub">6 個英文商業／思維播客 · 每日深度掃描 · 為 James 而設的「第二對耳仔」</div>
+  <div class="meta">
+    🕘 報告生成時間：<b>2026-10-07 09:55 UTC</b>（= 香港時間 2026-10-07 17:55）<br>
+    📡 掃描方式：6 條 RSS feed 直接抓取 XML（全部 HTTP 200），逐集比對 GUID 去重（基準 = 上次掃描 2026-10-06 09:55 UTC）<br>
+    🧮 Jev 前置過濾（TypeSafe System One, <code>news</code> profile）：本輪 <b>0 條候選 → 無需 triage</b>（6 台皆無新 GUID，Jev 流程待命中，未觸發）。<br>
+    🧑💻 Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">JMOKSZ/mindset-podcasts</a>
+  </div>
+</header>
+
+<div class="summary">
+  <b>今日重點：無新集 —— 6 條 feed 全部成功抓取，GUID 逐條比對後 0 條新集。</b>
+  <div class="stats">
+    <div class="stat"><span class="n">6</span><span class="l">追蹤播客</span></div>
+    <div class="stat"><span class="n">0</span><span class="l">今日新集</span></div>
+    <div class="stat"><span class="n">6</span><span class="l">HTTP 200</span></div>
+    <div class="stat"><span class="n">2,932</span><span class="l">累計已掃 GUIDs</span></div>
+  </div>
+  <ul>
+    <li>⚪ <b>全部 6 台（Acquired / Founders / All-In / My First Million / Knowledge Project / Diary of a CEO）本輪均無新集。</b>今天係一個「空窗日」——上一個發布高峰係 10-05（Founders #436、MFM Ep 868、DOAC Dana White），週更節目嘅下一輪集中在 10-08 至 10-09。</li>
+    <li>📌 由於今日無新內容，本報告將重心放在「<b>補課價值</b>」：為每台列出最後一集嘅濃縮 recaps，方便你隨時補聽或重溫——特別係 <b>Founders #436 Ari Emanuel</b> 同 <b>DOAC Dana White</b> 呢兩條今日最應該補嘅重磅。</li>
+    <li>🆕 值得留意嘅下一次：MFM（逢一、四）→ 預料 10-08 有新集；DOAC（逢一、四）→ 10-08；Founders（逢一、四）→ 10-08；All-In（逢五）→ 10-09。</li>
+  </ul>
+</div>
+
+<!-- ================= ACQUIRED ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Acquired</h2>
+    <div class="host">Ben Gilbert &amp; David Rosenthal</div>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集 · Last Known Episode</div>
+    <div class="le-title">The Home Depot（S20 E2）</div>
+    <div class="le-meta">發佈：2026-09-13 20:35 UTC · 長度 3 小時 35 分 2 秒（12,902 秒）· 本輪 217 集 feed 中無新 GUID（月更節目，預料 10 月內下一集）</div>
+    <div class="le-summary">
+      一間 1979 年由兩個被炒中年男人創辦嘅五金店，如何成為<b>美國股市有史以來回報最高嘅單一隻股票</b>——回報跑贏 Apple、Microsoft、Berkshire Hathaway 及所有其他公司。<br><br>
+      <b>創辦故事（復仇者聯盟式）：</b>Bernie Marcus（48 歲）同 Arthur Blank（35 歲）被自己效力嘅五金連鎖 Handy Dan 無情炒魷，而間接「害死」佢哋嘅紐約銀行家 Ken Langone 反過來講：你哋唔係被炒，係「patted on the ass with a golden horseshoe（被金馬蹄踢中）」。兩人於是創辦一間全新形態嘅五金店——倉儲式大賣場、天天低價、DIY 自助文化。<br><br>
+      <b>內容重心：</b>由 1981 年 IPO 講到今日；Ross Perot 早期注資、Sol Price（FedMart / Price Club 創辦人）嘅定價哲學、Jamie Dimon 客串；後段有 7 Powers 競爭優勢分析，以及一個「特殊性悖論（the paradox of exceptionalism）」嘅總結。
+      <div class="callout">💡 呢集直接命中 James 嘅酒店／零售／文旅賽道——「品類殺手（category killer）+ 規模複利 + 自助文化」係一套可以搬去評估酒店零售業態嘅思維模板。</div>
+    </div>
+    <div class="le-link">🔗 <a href="https://www.acquired.fm/episodes/home-depot">acquired.fm/episodes/home-depot</a></div>
+  </div>
+</section>
+
+<!-- ================= FOUNDERS ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Founders</h2>
+    <div class="host">David Senra</div>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集 · Last Known Episode（推薦補課 ⭐）</div>
+    <div class="le-title">#436 Ari Emanuel's Autobiography</div>
+    <div class="le-meta">發佈：2026-10-05 10:00 UTC · 長度 1 小時 9 分 45 秒（4,185 秒）· 無嘉賓（David Senra 單人讀後拆解）· 本輪 461 集 feed 中無新 GUID</div>
+    <div class="le-summary">
+      原著：Ari Emanuel《Roll The Calls》（自傳）。一條「反面教材式成功學」：一個閱讀障礙（dyslexia）童年被羞辱嘅細路，把自我厭惡同憤怒變成一部永不熄火嘅收購機器；佢贏盡一切——CAA 出局、William Morris 被吞、WWE 同 UFC 都入袋——但佢自傳反覆問同一條問題：<b>「點解我每次都以為得到我最想要嘅嘢，就會解決我所有問題？」</b>
+      <h4>🎯 五條主軸</h4>
+      <ul>
+        <li><b>① 憤怒係工具，但有保質期。</b>佢自述「確診前後都係一團自我厭惡、焦慮同怒火」，分別只係「至少我知點解」。佢第一任太太 Sarah 講佢發脾氣「a lot」，最後婚姻結束；印度冥想營老師直接叫佢放手。</li>
+        <li><b>② 「Roll the calls」＝用數量壓死失敗率。</b>助手唯一工作：一收線即刻遞上下一個人，消滅所有空檔。</li>
+        <li><b>③ 「入門」係堅持度問題。</b>26 歲被 CAA 收發室嫌老，佢一日打 4–5 次、深夜留言，約 10 日獲聘。副作用：佢<b>永遠唔講 goodbye</b>（源自 1995 年創業時慳手機分鐘：「Goodbyes take time and time is money.」）。</li>
+        <li><b>④ 「冇併購，只有收購。」</b>所有 merger 都有 dominant／submissive、alpha／beta、winner／loser，「其餘都係 spin」。2003 年吞 William Morris，用 <b>$44M</b> 買斷反對高管，形容係「a bargain」。</li>
+        <li><b>⑤ 先簽人，再買公司。</b>先簽 Vince McMahon（多年後才收購 WWE）、先簽 Dana White（之後才買 UFC）。買 UFC 時對方開價一句：「It starts with a fucking four」＝約 <b>$40 億</b>。</li>
+      </ul>
+      <blockquote>Before the diagnosis, I was a bundle of self-loathing, anxiety and rage. After the diagnosis, same, but at least I now knew why.
+        <cite>— Ari Emanuel，《Roll The Calls》</cite></blockquote>
+      <blockquote>There's no such thing as a merger. Every merger is a purchase... with every merger there's a dominant and a submissive, an alpha and a beta, a winner and a loser.
+        <cite>— Ari Emanuel</cite></blockquote>
+      <h4>📊 關鍵數據</h4>
+      <table class="kv">
+        <tr><th>每日電話量</th><td>200–300 通／日（前輩 Michael Ovitz 同樣係 200–300 通）</td></tr>
+        <tr><th>創業起點</th><td>$100,000 貸款創辦 Endeavor；曾拒絕 ICM 年薪 100 萬美元保證合約</td></tr>
+        <tr><th>收購金額</th><td>William Morris 買斷反對派 $44M · UFC 約 $40 億 · IMG $24 億（2014）</td></tr>
+        <tr><th>身心代價</th><td>1995 年創業後臥床一週、暴瘦 20 磅；2014 年 IMG 交易＋婚變後躺平 3 日無法動彈</td></tr>
+        <tr><th>轉捩點</th><td>1994 年被農夫車撞倒，躺街悟出 <i>Life is not a dress rehearsal.</i> 5 日後返工做第一個到辦公室嘅人</td></tr>
+      </table>
+      <blockquote>Our superpower as a species is dissatisfaction.
+        <cite>— Ari Emanuel</cite></blockquote>
+      <div class="callout">⚠️ 內容準則：以上 blockquote 均取自 David Senra 於官方集頁／X 帖公開引用之原著原文，非臆造節目原話。</div>
+    </div>
+    <div class="le-link">🔗 <a href="https://www.founderspodcast.com/episodes/436-ari-emanuels-autobiography">founderspodcast.com/episodes/436-ari-emanuels-autobiography</a> · 已於 <a href="daily-report-2026-10-06.html">10-06 日報</a>完整拆解</div>
+  </div>
+</section>
+
+<!-- ================= ALL-IN ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>All-In with Chamath, Jason, Sacks &amp; Friedberg</h2>
+    <div class="host">Chamath Palihapitiya · Jason Calacanis · David Sacks · David Friedberg</div>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集 · Last Known Episode</div>
+    <div class="le-title">Trump's Super Intelligence Summit, AI Safety Accord, GDP Beats, Midterm Predictions</div>
+    <div class="le-meta">發佈：2026-10-02 22:30 UTC · 長度 1 小時 22 分 29 秒（4,949 秒）· 四位主持全員 · 本輪 433 集 feed 中無新 GUID（逢五更新，預料 10-09）</div>
+    <div class="le-summary">
+      一條「<b>政策 × 宏觀 × 選舉</b>」三合一大集。上半場（約頭 45 分鐘）由 Sacks 以親歷者身份還原 9 月 29 日特朗普白宮「Super Intelligence Summit」內幕：<b>六間前沿模型公司簽咗一份自願性《White House Accord on Super Intelligence》</b>，附五層執行鏈（內部控制 → 外部審計 → 董事會 → FTC／SEC），Sacks 形容係「自願但 de facto 有牙（voluntary but with teeth）」。
+      <h4>🎯 核心論點</h4>
+      <ul>
+        <li><b>Sacks</b>（自稱 accord 草擬者之一）：親述峰會流程同簽署方名單。</li>
+        <li><b>Chamath</b>（出席午宴）：把 accord 連上 EY 審計基建，講「自願標準如何變成可審計事實」。</li>
+        <li><b>Friedberg</b>：主張開源權重令集中管控不可行，<b>預言 12–18 個月內政府將配給算力（compute rationing）</b>。</li>
+        <li><b>Jason</b>：主攻政治觀感同媒體敘事。</li>
+      </ul>
+      <h4>📊 宏觀數據攻防</h4>
+      <table class="kv">
+        <tr><th>Q2 GDP</th><td>上修至 <b>2.2%</b></td></tr>
+        <tr><th>8 月非農</th><td>新增 <b>+16.2 萬</b>職位</td></tr>
+        <tr><th>其他</th><td>中期選舉預測 + 劫機案媒體用詞爭議</td></tr>
+      </table>
+      <div class="callout">💡 行業 insight：AI 監管由「法案」轉向「<b>自願 accord + 審計鏈</b>」，對做合規／數據基建嘅生意係機會窗口——因為「自願」標準要落地，就要有人做驗證。</div>
+    </div>
+    <div class="le-link">🔗 <a href="https://allin.com/">allin.com</a> · 已於 <a href="daily-report-2026-10-03.html">10-03 日報</a>完整拆解</div>
+  </div>
+</section>
+
+<!-- ================= MY FIRST MILLION ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>My First Million</h2>
+    <div class="host">Sam Parr &amp; Shaan Puri</div>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集 · Last Known Episode</div>
+    <div class="le-title">Ep 868 · 3 businesses we think are about to blow up</div>
+    <div class="le-meta">發佈：2026-10-05 10:47 UTC · 長度 49 分 13 秒（2,953 秒）· 主持：Shaan Puri &amp; Sam Parr · 本輪 908 集 feed 中無新 GUID（逢一、四更新，預料 10-08）</div>
+    <div class="le-summary">
+      Shaan 同 Sam 各出「三個即將爆發嘅生意點子」，節目 show notes 有完整章節時間碼：
+      <ul>
+        <li><b>(3:08) 點子一：催產素（Oxytocin）劑量</b>——把神經化學引入關係／婚姻輔導市場，用「生理層面」補足傳統心理諮詢。</li>
+        <li><b>(20:17) 點子二：孤獨經濟（Loneliness solutions）</b>——用「共同身份社群 + 金融產品」收割孤獨需求，原型係 Knights of Columbus 式互助會模式。</li>
+        <li><b>(27:30) 點子三：信仰系內容生意（Faith-based businesses）</b>——以 Angel Studios 為標杆（約 3M 會員、年收 4 億美元以上），即「價值觀版 A24」。</li>
+        <li><b>(34:36)</b>「What's the reaction to the action?」——一個評估生意點子是否真需求嘅自問框架。</li>
+      </ul>
+      ⚠️ 備註：本集描述屬「點子類」內容，節目官方描述無硬數字，一手度偏低（Jev worth 0.19）；已於 <a href="daily-report-2026-10-06.html">10-06 日報</a>完整拆解，並加入官方 Show Notes 章節作為核實來源。
+      <div class="callout">💡 行業 insight：三個點子共享同一條底層邏輯——<b>「人唔係買產品，係買身份同歸屬感」</b>。呢條喺酒店／文旅／零售嘅會員體系設計上直接可用。</div>
+    </div>
+    <div class="le-link">🔗 <a href="https://www.mfmpod.com/episodes/">mfmpod.com/episodes</a></div>
+  </div>
+</section>
+
+<!-- ================= KNOWLEDGE PROJECT ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Knowledge Project</h2>
+    <div class="host">Shane Parrish</div>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集 · Last Known Episode</div>
+    <div class="le-title">[Outliers] Charlie Munger's Interview with Todd Combs</div>
+    <div class="le-meta">發佈：2026-10-01 09:50 UTC · 本輪 20 集 feed 中無新 GUID（雙週更，預料 10-中旬）</div>
+    <div class="le-summary">
+      Outliers 系列存檔：Charlie Munger（2023 年逝世前）同 Todd Combs（Berkshire 投資經理、GEICO CEO）嘅對談。難得嘅一手芒格式思維素材——論投資紀律、能力圈、心理模型同閱讀習慣。屬 archived interview（非新錄音），但係 KP feed 內最新一條內容。
+      <div class="callout">💡 補課價值：如果你只聽一條芒格素材，呢條嘅「能力圈 + 反過來想（invert, always invert）」密度最高。</div>
+    </div>
+    <div class="le-link">🔗 <a href="https://fs.blog/knowledge-project/">fs.blog/knowledge-project</a></div>
+  </div>
+</section>
+
+<!-- ================= DIARY OF A CEO ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Diary of a CEO with Steven Bartlett</h2>
+    <div class="host">Steven Bartlett</div>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集 · Last Known Episode（推薦補課 ⭐）</div>
+    <div class="le-title">Dana White: This Generation Thinks You Can Build A Business From Home, It's Impossible!</div>
+    <div class="le-meta">發佈：2026-10-05 05:00 UTC · 長度 1 小時 28 分 24 秒 · 嘉賓：Dana White（UFC 總裁／CEO；Power Slap、Zuffa Boxing 創辦人）· 本輪 893 集 feed 中無新 GUID（逢一、四更新，預料 10-08）</div>
+    <div class="le-summary">
+      Dana White 親述由童年創傷、被逐出家門，到將一間 200 萬美元、瀕臨倒閉嘅格鬥推廣公司，打造成估值同全球最頂尖體育聯盟並列嘅帝國。
+      <h4>🎯 核心論點</h4>
+      <ul>
+        <li><b>① The Victimhood Trap（受害者陷阱）</b>——用童年創傷做藉口＝保證失敗；關鍵唔係「發生咗咩事」，而係將創傷<b>心理重構（reframe）成韌性燃料</b>。（節目 58:56 直接問佢「原諒咗阿媽未？」）</li>
+        <li><b>② 忠誠＝戰爭（Loyalty is war）</b>——佢用打仗嘅心態組隊，「請錯人可令生意生或死」。</li>
+        <li><b>③ 生物黑客式身體管理</b>——12 週逆轉睡眠窒息；「冇『休息日』呢回事」。</li>
+        <li><b>④ 信自己個 gut 多過 focus group</b>；「追人工＝你已經輸咗」。</li>
+        <li><b>⑤ killer instinct 有就有、冇就冇</b>，但「膊頭上有根刺」都可以推動成功。</li>
+      </ul>
+      <blockquote>This generation thinks you can build a business from home. It's impossible.
+        <cite>—— 本集標題，Dana White 對「遙距／躺平式創業」嘅正面否定</cite></blockquote>
+      <blockquote>Nobody owes you anything.
+        <cite>—— Dana White（節目 14:46 章節）</cite></blockquote>
+      <div class="callout">💡 行業 insight：UFC 係「<b>內容 + 現場體驗 + 賽事 IP</b>」三層複合體——同酒店／文旅做「體驗型 IP」嘅路徑高度相似。Dana 講嘅「唔怕日日解 chaos」係服務業管理層最實用嘅一條。</div>
+    </div>
+    <div class="le-link">🔗 <a href="https://thediaryofaceo.com/">thediaryofaceo.com</a> · 已於 <a href="daily-report-2026-10-05.html">10-05 日報</a>完整拆解</div>
+  </div>
+</section>
+
+<footer class="bot">
+  <div class="timeline">
+    ⏱ <b>本輪掃描時序</b><br>
+    <code>09:53Z</code> 讀 podcasts.json（6 台）/ state.json（2,932 個已掃 GUID）<br>
+    <code>09:53Z</code> Fetch 6 條 RSS feed → 全部 HTTP 200（217 / 461 / 433 / 908 / 20 / 893 集）<br>
+    <code>09:54Z</code> GUID 逐條比對 → <b>0 條新集</b>；Jev triage 無候選、未觸發<br>
+    <code>09:54Z</code> 由歷史日報回溯各台最後一集完整摘要（補課 recaps）<br>
+    <code>09:55Z</code> 生成本報告 → 更新 state.json → git push
+  </div>
+  <p>📬 本報告由 Vee Mok 為 James 自動生成 · 每日深度掃描 6 個英文商業／思維播客 · 所有萃取基於真實內容（RSS / 官方集頁 / 一手字幕 / 標註來源嘅二手整理），未經核實之數字已標 ⚠️。</p>
+  <p>🔗 <a href="https://jmoksz.github.io/mindset-podcasts/">jmoksz.github.io/mindset-podcasts</a> · <a href="https://github.com/JMOKSZ/mindset-podcasts">GitHub Repo</a></p>
+</footer>
+
+</div>
+</body>
+</html>
