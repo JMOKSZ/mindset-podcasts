@@ -1,5 +1,5 @@
 {
- "lastScan": "2026-10-07T09:55:00Z",
+ "lastScan": "2026-10-08T09:56:00Z",
  "scannedEpisodes": {
   "acquired": [
    "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -2056,7 +2056,8 @@
    "fe9900cb-0473-4e8d-b7c3-7ad1c33b74db",
    "feb1a872-ee33-11ed-a7f1-6f3ba395d374",
    "fee87042-80b2-11ef-8a1a-575b1df2fcd7",
-   "ff485d19-0ccf-4508-a656-b46f71715c67"
+   "ff485d19-0ccf-4508-a656-b46f71715c67",
+   "2dc11bae-c1ec-11f1-a2e6-c7b6aef46cad"
   ],
   "knowledge-project": [
    "https://fs.blog/?post_type=podcast&p=81515",
@@ -2984,11 +2985,40 @@
    "tag:soundcloud,2010:tracks/344576632",
    "flightcast:01M32KE23H52RT1RTNT9EKC4JA",
    "flightcast:01M1KXMJ387SENM7YABK32GA4W",
-   "flightcast:01M26N4N40D24TJPZ6V4N7JMTY"
+   "flightcast:01M26N4N40D24TJPZ6V4N7JMTY",
+   "flightcast:01M46YN191EJ0V3NPANXPEM9WA"
   ]
  },
  "lastScanResult": {
-  "newEpisodes": 0,
-  "note": "2026-10-07 掃描：0 條新集。6 條 feed 全部 HTTP 200（Acquired 217 / Founders 461 / All-In 433 / MFM 908 / KP 20 / DOAC 893 集），逐條 GUID 比對 state 內 2,932 個已掃 GUID 後無任何新條目。各台最後已知劇集：Acquired《The Home Depot》09-13、Founders #436 Ari Emanuel 10-05、All-In Super Intelligence Summit 10-02、MFM Ep868 三個生意點子 10-05、KP [Outliers] Munger/Combs 10-01、DOAC Dana White 10-05。Jev news profile：0 候選，未觸發（fail-open，流程正常）。預料下一輪發布高峰：10-08（Founders/MFM/DOAC 逢一四）、10-09（All-In 逢五）。"
+  "acquired": {
+   "status": "ok",
+   "count": 217,
+   "new": 0
+  },
+  "founders": {
+   "status": "ok",
+   "count": 461,
+   "new": 0
+  },
+  "all-in": {
+   "status": "ok",
+   "count": 433,
+   "new": 0
+  },
+  "my-first-million": {
+   "status": "ok",
+   "count": 909,
+   "new": 1
+  },
+  "knowledge-project": {
+   "status": "ok",
+   "count": 20,
+   "new": 0
+  },
+  "diary-of-a-ceo": {
+   "status": "ok",
+   "count": 894,
+   "new": 1
+  }
  }
 }
