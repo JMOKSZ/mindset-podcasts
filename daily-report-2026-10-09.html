@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-10-09</title>
+<style>
+  :root{
+    --bg:#fdfaf6;
+    --card:#fffdf9;
+    --ink:#2b2620;
+    --muted:#7a7065;
+    --line:#e8ddcd;
+    --accent:#b8862b;
+    --accent-soft:#f4e8cf;
+    --new:#2e7d5b;
+    --warn:#a8571f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;
+    line-height:1.78;
+    margin:0;
+    padding:0 16px 90px;
+    font-size:16.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;}
+  header.top{
+    padding:46px 0 26px;
+    border-bottom:2px solid var(--line);
+    margin-bottom:32px;
+  }
+  header.top h1{font-size:31px;margin:0 0 8px;letter-spacing:.5px;}
+  header.top .sub{color:var(--muted);font-size:14.5px;}
+  header.top .meta{margin-top:14px;font-size:13.5px;color:var(--muted);}
+  .summary{
+    background:var(--accent-soft);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:18px 22px;
+    margin-bottom:38px;
+    font-size:15px;
+  }
+  .summary b{color:var(--accent);}
+  .summary ul{margin:8px 0 0;padding-left:20px;}
+  .stats{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0 4px;}
+  .stat{flex:1 1 120px;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;padding:10px 14px;text-align:center;}
+  .stat .n{font-size:24px;color:var(--accent);display:block;line-height:1.3;}
+  .stat .l{font-size:12px;color:var(--muted);}
+  section.pod{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 26px 22px;
+    margin-bottom:32px;
+    box-shadow:0 1px 0 rgba(0,0,0,.02);
+  }
+  .pod-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;border-bottom:1px dashed var(--line);padding-bottom:12px;margin-bottom:18px;}
+  .pod-head h2{font-size:22px;margin:0;flex:1 1 auto;}
+  .pod-head .host{color:var(--muted);font-size:13.5px;}
+  .tag{font-size:12px;padding:2px 10px;border-radius:20px;letter-spacing:.5px;white-space:nowrap;}
+  .tag.new{background:var(--new);color:#fff;}
+  .tag.none{background:#eee6d8;color:var(--muted);}
+  .tag.warn{background:var(--warn);color:#fff;}
+  .tag.recap{background:#e8ecf4;color:#3f5070;}
+  .ep-title{font-size:19px;font-weight:bold;color:var(--accent);line-height:1.45;margin:2px 0 6px;}
+  .ep-meta{font-size:13px;color:var(--muted);margin-bottom:14px;}
+  h3{font-size:17px;margin:26px 0 8px;color:#423a2e;border-left:3px solid var(--accent);padding-left:10px;}
+  h4{font-size:15px;margin:20px 0 6px;color:var(--accent);letter-spacing:.4px;}
+  ul{margin:6px 0 12px;padding-left:22px;}
+  li{margin:6px 0;}
+  ol{margin:6px 0 12px;padding-left:22px;}
+  blockquote{
+    margin:14px 0;
+    padding:11px 18px;
+    border-left:3px solid var(--accent);
+    background:#fbf5e9;
+    color:#4a4034;
+    font-style:italic;
+    font-size:15px;
+    border-radius:0 8px 8px 0;
+  }
+  blockquote cite{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:6px;}
+  .kv{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:14.5px;}
+  .kv th,.kv td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+  .kv th{background:#f7efe0;font-weight:normal;color:#6a5f52;width:38%;}
+  .callout{
+    border:1px dashed var(--line);
+    background:#fcf8f1;
+    border-radius:10px;
+    padding:12px 16px;
+    font-size:14px;
+    color:#5d5347;
+    margin:14px 0;
+  }
+  .label{font-size:11.5px;letter-spacing:.6px;padding:1px 7px;border-radius:4px;background:#f0e8d8;color:#7a6a52;margin-right:6px;white-space:nowrap;}
+  .label.ext{background:#e9f0ea;color:#3f6b52;}
+  .label.jev{background:#f3e6e0;color:#8a4a2c;}
+  .label.ts{background:#e8ecf4;color:#3f5070;}
+  .chapters{font-size:13.8px;color:#5d5347;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;padding:14px 18px;line-height:1.9;columns:2;column-gap:26px;}
+  @media(max-width:560px){.chapters{columns:1;}}
+  .chapters .tc{color:#8a6a2c;font-family:Georgia,serif;}
+  .last-ep{
+    margin-top:6px;
+    padding:16px 18px;
+    background:#fbf8f1;
+    border:1px solid var(--line);
+    border-radius:10px;
+  }
+  .last-ep .lbl{color:var(--muted);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;}
+  .last-ep .le-title{font-size:16.5px;font-weight:bold;color:var(--accent);margin:5px 0 3px;line-height:1.45;}
+  .last-ep .le-meta{font-size:13px;color:var(--muted);margin-bottom:9px;}
+  .last-ep .le-summary{font-size:14.5px;color:#4f463b;margin:8px 0 9px;}
+  .last-ep .le-link{font-size:13px;}
+  .timeline{font-size:13.5px;color:#5d5347;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;padding:12px 16px;line-height:2.0;}
+  .timeline code{background:transparent;color:#8a6a2c;font-size:13px;}
+  footer.bot{border-top:1px solid var(--line);margin-top:44px;padding-top:18px;color:var(--muted);font-size:13px;}
+  a{color:var(--accent);}
+  code{background:#f3ecdd;padding:1px 5px;border-radius:4px;font-size:13.5px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>思維播客日報 · 2026-10-09</h1>
+  <div class="sub">6 個英文商業／思維播客 · 每日深度掃描 · 為 James 而設的「第二對耳仔」</div>
+  <div class="meta">
+    🕘 報告生成時間：<b>2026-10-09 09:55 UTC</b>（= 香港時間 2026-10-09 17:55）<br>
+    📡 掃描方式：6 條 RSS feed 直接抓取 XML（全部 HTTP 200），逐集比對 GUID 去重（基準 = 上次掃描 2026-10-08 09:56 UTC）<br>
+    🧮 Jev 前置過濾（TypeSafe System One, <code>news</code> profile）：2 條候選全數送入 triage → Knowledge Project <b>worth 0.71</b>（category=business, primary_source 0.25 → ⚠️ 二手／營銷口徑）／Diary of a CEO <b>worth 0.47</b>（低於 0.6 噪音線，但屬真實新上架集，保留並標 ⚠️ 低訊號）。Jev 僅作相對排序，不作硬砍。<br>
+    🧑‍💻 Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">JMOKSZ/mindset-podcasts</a>
+  </div>
+</header>
+
+<div class="summary">
+  <b>今日重點：2 條新上架內容 —— Knowledge Project 迎來地產銷售天王 Ryan Serhant（完整新集）；Diary of a CEO 上架一條「最常重播片段」重剪（AI 與未來工作）。</b>
+  <div class="stats">
+    <div class="stat"><span class="n">6</span><span class="l">追蹤播客</span></div>
+    <div class="stat"><span class="n">2</span><span class="l">今日新內容</span></div>
+    <div class="stat"><span class="n">6</span><span class="l">HTTP 200</span></div>
+    <div class="stat"><span class="n">2,977</span><span class="l">累計已掃 GUIDs</span></div>
+  </div>
+  <ul>
+    <li>🆕 <b>The Knowledge Project</b>（10-08）—— Shane Parrish 專訪 <b>Ryan Serhant</b>（SERHANT. 創辦人兼 CEO、Bravo《Million Dollar Listing New York》與 Netflix《Owning Manhattan》主角）。主題：<b>如何令人說「Yes」而唔覺得被推銷</b>——先建立連結、先幫人、賺取可以開口嘅權利；外加「每日 1,000 分鐘」時間框架同「ego 會阻礙成交」。</li>
+    <li>🆕 <b>Diary of a CEO</b>（10-09）—— 「<b>Most Replayed Moment: AI Is Changing How Teams Work Forever</b>」（約 20 分 41 秒重剪片段）。內容取自 2026-06-08 全集《Death of the Middle Class: Billionaire vs Entrepreneur DEBATE》，嘉賓 <b>Nick Hanauer</b>（Amazon 首位非家族投資人）vs <b>Daniel Priestley</b>（企業家／作家），聚焦「AI 會唔會消滅中產、工作同工資」。屬重播精華，非新錄音。</li>
+    <li>⚪ <b>Acquired / Founders / All-In / My First Million</b> 本輪無新集（All-In 逢五更新、預料 10-09；MFM 隔日更）。下方附各台最後一集濃縮 recap 供補課。</li>
+  </ul>
+</div>
+
+<!-- ================= KNOWLEDGE PROJECT (NEW) ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Knowledge Project</h2>
+    <div class="host">Shane Parrish</div>
+    <span class="tag new">新集 ×1</span>
+  </div>
+
+  <div class="ep-title">Ryan Serhant: How to Get People to Say Yes</div>
+  <div class="ep-meta">發佈：2026-10-08 09:55 UTC · 主持：Shane Parrish · 嘉賓：<b>Ryan Serhant</b>（SERHANT. 創辦人兼 CEO；16 年地產銷售額累計約 $100 億；Bravo《Million Dollar Listing New York》、Netflix《Owning Manhattan》主角）· 標籤 <span class="label ext">官方集頁</span><span class="label jev">Jev 0.71 ⚠️ 二手／營銷口徑</span><span class="label ts">Members 有加長版</span></div>
+
+  <h3>一句話總結</h3>
+  <p>Serhant 賣嘅唔係「話術」，而係一套<b>「先給予、後開口」嘅注意力經濟學</b>：真正嘅銷售係<b>令人唔覺得被銷售</b>。他一開始就講清界線——<b>建立連結 → 先幫對方 → 賺取咗開口嘅權利，先至去 ask</b>。整集的骨架圍繞三件事：<b>注意力（點拎到、點揸住、點變生意）</b>、<b>自我認知（唔靠 fake it till you make it）</b>、以及<b>時間（把一日當 1,000 分鐘嘅銀行）</b>。</p>
+
+  <h3>🎤 嘉賓背景（為何值得聽）</h3>
+  <ul>
+    <li>2008 年入行做紐約地產經紀，<b>16 年間累計銷售約 $100 億美元</b>、開設自己同名嘅經紀行 SERHANT.、掛牌過紐約最貴嘅公寓。</li>
+    <li>除地產外，佢係媒體／教育創業者：Sell It Like Serhant 教學平台、SERHANT. Studios、並投資咗 Blank Street Coffee、RLTY Co. 等。</li>
+    <li>TV 明星身份（Bravo、Netflix）令佢成為「<b>personal brand = 現金流</b>」嘅活教材——本集亦係佢「注意力就係產品」主張嘅延伸。</li>
+  </ul>
+
+  <h3>🎯 核心論點（拆解）</h3>
+  <ol>
+    <li><b>① 賣嘢而唔令人覺得被賣。</b>官方集介用詞：<i>「build a connection, help first, and earn the right to ask」</i>——即係唔好一開口就 pitch，要先建立連結、先幫到對方，令「開口要求」變成對方願意授權嘅事，而唔係你硬搶嘅事。</li>
+    <li><b>② 注意力係可運作嘅資產。</b>他拆解「注意力與說服嘅心理學」：<b>點樣拎到注意力 → 點樣揸住佢 → 點樣把佢轉化成生意</b>。呢三步係一條 pipeline，唔係三件獨立事。</li>
+    <li><b>③ 拒絕「fake it till you make it」。</b>他唔靠假裝。反而係用「<b>成為你想成為嘅人</b>」嘅方式去準備——集介特別提到他<b>用「未來嘅自己」身份去面對《Million Dollar Listing》嘅試鏡</b>，即係先決定要成為邊個，再以嗰個人嘅標準行事。</li>
+    <li><b>④ Ego 係成交嘅敵人。</b>集介明言「explore why ego gets in the way of closing deals」——當你把「贏／證明自己」放喺「幫對方解決問題」前面，交易反而走遠。</li>
+    <li><b>⑤ 一日 = 1,000 分鐘嘅銀行。</b>佢嘅時間管理框架（見下）。</li>
+    <li><b>⑥ 達成所有夢想，成功仍可能覺得不足。</b>集介結尾嗰句「success can still feel insufficient after you achieve all of your dreams」——呢個係本集最唔「雞湯」嘅一段，也是 Shane Parrish 一貫追問嘅「然後呢？」。</li>
+  </ol>
+
+  <h3>⏳ 核心框架：「1,000 分鐘定律」</h3>
+  <p>呢個框架 Serhant 多年來反覆講述（Business Insider／Entrepreneur 均有紀錄），本集再次親述：</p>
+  <table class="kv">
+    <tr><th>基本算式</th><td>一日 24 小時 = <b>1,440 分鐘</b>；扣除食、睡、家庭約 <b>440 分鐘（7.5 小時）</b>，剩低 <b>1,000 分鐘</b> 係可以用嚟推進事業／目標嘅清醒時間。</td></tr>
+    <tr><th>心智模型</th><td>把每日當成一個「時間銀行」，每日早上重新存入 <b>$1,000</b>；以 <b>15 分鐘為一個單位</b>去堆疊，對應短期任務同長期目標。</td></tr>
+    <tr><th>抗挫原則</th><td>把分鐘當美元：一件事搞砸，唔好賠上全日。<i>「If someone ruins $15, you're not throwing out $985, that's stupid.」</i></td></tr>
+    <tr><th>定價思維</th><td>有人要佢一小時，佢會想成「60 Ryan dollars」——即係今日 1,000 分鐘入面嘅 60 分鐘機會成本。</td></tr>
+    <tr><th>已知代價</th><td>Serhant 自己都承認最大缺點係「<b>唔夠彈性</b>」——有時想同人傾足一個鐘而唔受日曆綁死，佢話「Maybe one day I'll get there」。</td></tr>
+  </table>
+  <blockquote>If someone ruins $15, you're not throwing out $985, that's stupid.
+    <cite>— Ryan Serhant（談「唔好因一件事搞砸而放棄整日」）</cite></blockquote>
+  <blockquote>There's no boss, there's no mentor. You eat what you kill.
+    <cite>— Ryan Serhant（2008 年入行時意識到：地產經紀完全靠自己）</cite></blockquote>
+
+  <h3>🧠 注意力 × 說服：三步行動鏈</h3>
+  <div class="callout">集介把 Serhant 嘅方法濃縮為：<b>拎到注意力（get attention）→ 揸住佢（hold it）→ 轉化成生意（turn it into business）</b>。呢條鏈嘅前提係「先幫人」，因為在注意力稀缺嘅年代，<b>肯先付出嘅人先爭取到對方嘅注意力額度</b>。</div>
+
+  <h3>🌱 補充背景：佢一路以嚟嘅「attention is the product」主張</h3>
+  <p>Serhant 喺其他場合（例：SXSW London 對談）亦講過「<b>attention is the product</b>」，同本集主軸一脈相承：先成為媒體、先累積注意力，再把它導向業務。對做生意／做個人品牌嘅人嚟講，本集係一套「<b>唔硬銷嘅注意力營運手冊</b>」。</p>
+
+  <h3>💬 值得記住嘅一句</h3>
+  <blockquote>He explains how to sell without making people feel sold to: build a connection, help first, and earn the right to ask.
+    <cite>— 官方集介（The Knowledge Project）</cite></blockquote>
+  <div class="callout">⚠️ 備註：本集公開發佈版為精簡版，<b>Members 另有加長版</b>（額外內容）。以上萃取基於官方集頁＋RSS 描述＋可公開查到嘅一手轉述；本報告未有逐字稿全文，故未杜撰任何逐字引言。</div>
+
+  <div class="chapters">
+    <b>可留意嘅延伸素材：</b>
+    <span class="tc">·</span> 官方集頁（含 transcript 會員入口）：fs.blog/knowledge-project-podcast/ryan-serhant/<br>
+    <span class="tc">·</span> 1,000 分鐘定律原始拆解：Business Insider / Entrepreneur「Ryan Serhant's 1,000-Minute Rule」
+  </div>
+</section>
+
+<!-- ================= DIARY OF A CEO (NEW · CLIP) ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Diary of a CEO</h2>
+    <div class="host">Steven Bartlett</div>
+    <span class="tag warn">新上架 ×1 · 重播片段</span>
+  </div>
+
+  <div class="ep-title">Most Replayed Moment: AI Is Changing How Teams Work Forever</div>
+  <div class="ep-meta">發佈：2026-10-09 05:00 UTC · 長度 <b>20 分 41 秒（1,241 秒）</b> · 主持：Steven Bartlett · 出場：<b>Nick Hanauer</b>（Amazon 首位非家族投資人、Pitchfork Economics 主持）與 <b>Daniel Priestley</b>（得獎企業家、商業教練、7 本暢銷書作者，《Lifestyle Business Playbook》）· 標籤 <span class="label jev">Jev 0.47 ⚠️ 低訊號（重剪）</span></div>
+
+  <h3>一句話總結</h3>
+  <p>呢條係 DOAC 嘅「<b>Most Replayed Moment</b>」重播精華（每週五固定出嘅回放欄目），把 2026-06-08 全集《<b>Death of the Middle Class: Billionaire vs Entrepreneur DEBATE</b>》入面<b>「AI 同未來工作」</b>嗰段（全集約 00:58–01:23）剪成獨立 20 分鐘。核心張力：<b>當 AI 同時打中所有工種，係大規模失業，定係人類潛能嘅新紀元？</b> 兩個立場相反嘅嘉賓喺同一條問題上正面對撞。</p>
+
+  <h3>🗣 兩位嘉賓，兩種世界觀</h3>
+  <table class="kv">
+    <tr><th>Nick Hanauer</th><td>億萬企業家、風險投資人；<b>Amazon 第一位非家族投資人</b>；Pitchfork Economics 主持；立場傾向「<b>制度／政策要修正</b>」——主張工資被長期壓低、需要以政策重建中產。</td></tr>
+    <tr><th>Daniel Priestley</th><td>連環創業者、商業教練、7 本書作者；立場傾向「<b>唔好等政策，自己適應新規則</b>」——主張減少對小企業嘅稅負同壓力，人人要「擁有東西」（房子、生意、股票）。</td></tr>
+  </table>
+
+  <h3>🔥 辯論現場第一手引言（節錄自逐字稿）</h3>
+  <blockquote>There is literally no example on planet earth of a high functioning society without big government.
+    <cite>— Nick Hanauer</cite></blockquote>
+  <blockquote>Big government is sucking the life out of small businesses… As soon as you earn anything, they'll just tax it off you.
+    <cite>— Daniel Priestley</cite></blockquote>
+  <blockquote>Everybody needs to own stuff. We need to own a house, own a business and own shares.
+    <cite>— Daniel Priestley（他嘅「所有權」論）</cite></blockquote>
+  <blockquote>It would be wonderful if everybody owned something. But ownership starts with earning enough money so that you can save money so that you can begin to own something. So the problem is wages.
+    <cite>— Nick Hanauer（反駁：問題核心係工資）</cite></blockquote>
+  <blockquote>I want to earn enough money so that I can feel secure. I just want to be married… have kids, own a house.
+    <cite>— Nick Hanauer（描述大多數人真正想要嘅生活）</cite></blockquote>
+  <blockquote>Houses are unaffordable. Local jobs don't exist. Technology has cut out all the middlemen. No one's paying healthy wages. We have the most unhappy population.
+    <cite>— Daniel Priestley（描繪當下困境，與 Hanauer 罕見同調）</cite></blockquote>
+  <blockquote>But we need people to know that the rules that we grew up with have changed. And people have to learn the rules of this new economy.
+    <cite>— Daniel Priestley</cite></blockquote>
+  <blockquote>I've seen Nick's policies implemented and I don't feel it's enough. / You haven't seen all the policies.
+    <cite>— Priestley 與 Hanauer 互相打斷（各自堅持自己嘅處方）</cite></blockquote>
+
+  <h3>🤖 AI 部分：辯論嘅核心戰場</h3>
+  <p>片段聚焦嘅「AI 同工作」段落（對應全集章節 <code>00:58:22 How Many Jobs Will AI Replace?</code> 至 <code>01:23:30 Does Government Improve Lives?</code>）主要交鋒：</p>
+  <ul>
+    <li><b>裁員速度：</b>其中一方主張 AI 對勞動價值造成<b>通縮式衝擊</b>——模型開始寫得 code、管得到任務，令傳統<b>入門級職位快速消失</b>，企業可以「唔補空缺、靠自然流失（natural attrition）」慢慢換走人手。</li>
+    <li><b>誰受益：</b>辯論伸延到「<b>AI 帶來嘅生產力增益歸誰</b>」——係股東／資本，定係工人／社會？呢個直接連結到兩人關於稅制、工資同所有權嘅分歧。</li>
+    <li><b>出路之爭：</b>全集章節涵蓋 <code>Is Universal Basic Income The Answer?</code>、<code>Are We Heading Towards An AI Utopia?</code>、<code>Would Higher AI Taxes Drive Companies Away?</code>——即係「UBI vs 減稅 vs 所有權普及」三條路線嘅拉扯。</li>
+    <li><b>樂觀面：</b>Priestley 一貫立場係「<b>未來屬於細而敏捷、被 AI 加持嘅團隊</b>，而唔係臃腫大企業」（呼應佢反覆引用嘅 Jevons Paradox：YouTube 消滅部分電視職位，卻創造 50–60 萬個新崗位；做一個頻道由 150 人變成 5–10 人小隊）。</li>
+  </ul>
+  <blockquote>He believes the future belongs to small, agile teams of people augmented by AI, rather than massive, bloated corporations.
+    <cite>— 對 Daniel Priestley 立場嘅整理（PodPulse 集評）</cite></blockquote>
+
+  <h3>📋 全集章節（AI 相關段落已標示，可對時間碼跳聽）</h3>
+  <div class="chapters">
+    <span class="tc">00:00:00</span> Intro<br>
+    <span class="tc">00:02:07</span> Why Nick Hanauer's Economic Views Matter<br>
+    <span class="tc">00:06:07</span> Daniel Priestley's Different Take On Wealth<br>
+    <span class="tc">00:08:12</span> Is Taxing The Rich The Answer?<br>
+    <span class="tc">00:11:24</span> Do The Wealthy Already Pay Enough Tax?<br>
+    <span class="tc">00:26:46</span> Do Higher Wages Hurt Small Business?<br>
+    <span class="tc">00:35:39</span> Ownership Models That Build Wealth<br>
+    <span class="tc">00:44:23</span> The Hidden Lessons Of K-Shaped Economies<br>
+    <span class="tc">00:53:22</span> How MegaCorps Block Entire Markets<br>
+    <span class="tc">00:58:22</span> ⭐ How Many Jobs Will AI Replace?<br>
+    <span class="tc">01:01:00</span> ⭐ AI Agents Are Replacing Entry-Level Work<br>
+    <span class="tc">01:04:47</span> ⭐ Will AI Reduce Hiring?<br>
+    <span class="tc">01:08:01</span> ⭐ Is Universal Basic Income The Answer?<br>
+    <span class="tc">01:17:12</span> ⭐ Are We Heading Towards An AI Utopia?<br>
+    <span class="tc">01:21:27</span> ⭐ Would Higher AI Taxes Drive Companies Away?<br>
+    <span class="tc">01:29:54</span> Where They Fundamentally Disagree<br>
+    <span class="tc">01:36:50</span> How Policy Builds A Strong Middle Class<br>
+    <span class="tc">01:48:00</span> What If You're Not Entrepreneurial?<br>
+    <span class="tc">02:01:02</span> The Global Economy's Biggest Problem<br>
+    <span class="tc">02:14:53</span> How Do We Restore Hope?
+  </div>
+
+  <div class="callout">💡 為何值得留意（給 James）：呢條係「<b>AI × 就業 × 中產</b>」嘅最主流對撞版本——一邊係資本／政策派（Hanauer：問題係工資同分配），一邊係創業／適應派（Priestley：規則已變，去擁有資產、用細團隊）。如果你關心嘅係「AI 會點影響團隊編制、招聘同中層職位」，<b>直接跳 00:58–01:23 嗰段</b>（即今日片段覆蓋範圍）最省時。</div>
+  <div class="callout">⚠️ 標籤提醒：本條為<b>重播片段（Most Replayed Moment）</b>，非新錄音；完整辯論首播於 2026-06-08。內容屬觀點辯論（二手轉述風險），數字／預測未經獨立核實。</div>
+</section>
+
+<!-- ================= ACQUIRED ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Acquired</h2>
+    <div class="host">Ben Gilbert &amp; David Rosenthal</div>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集 · Last Known Episode</div>
+    <div class="le-title">The Home Depot</div>
+    <div class="le-meta">發佈：2026-09-13 20:35 PDT · 本輪 217 集 feed 中無新 GUID（月更，預料 10-中／下旬）</div>
+    <div class="le-summary">
+      典型 Acquired 式「公司史」長篇：由 1978 年 Bernie Marcus 同 Arthur Blank 被 Handy Dan 解僱、翌年創立 Home Depot 講起，到「<b>倉儲式 DIY 零售</b>」如何重構美國家居裝修市場、供應鏈同自有品牌策略。適合補課企業史／零售經濟學主線。
+    </div>
+    <div class="le-link">🔗 <a href="https://www.acquired.fm/episodes/home-depot">acquired.fm/episodes/home-depot</a></div>
+  </div>
+</section>
+
+<!-- ================= FOUNDERS ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Founders</h2>
+    <div class="host">David Senra</div>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集 · Last Known Episode</div>
+    <div class="le-title">#436 Ari Emanuel's Autobiography</div>
+    <div class="le-meta">發佈：2026-10-05 10:00 UTC · 本輪 461 集 feed 中無新 GUID（每週一更，預料 10-12）</div>
+    <div class="le-summary">
+      David Senra 拆解 Ari Emanuel（Endeavor／WME 掌門人）自傳《Roll The Calls》。主軸：由童年閱讀障礙與過動、被診斷為「bundle of self-loathing, anxiety and rage」，到把「<b>不滿（dissatisfaction）</b>」當成物種超能力去談判、收購、擴張娛樂帝國。
+      <div class="callout">💡 補課價值：一條關於「<b>把缺陷轉成驅動力</b>」嘅高密度創業心理素材。</div>
+    </div>
+    <div class="le-link">🔗 <a href="https://www.founderspodcast.com/">founderspodcast.com</a> · 已於 <a href="daily-report-2026-10-06.html">10-06 日報</a>完整拆解</div>
+  </div>
+</section>
+
+<!-- ================= ALL-IN ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>All-In with Chamath, Jason, Sacks &amp; Friedberg</h2>
+    <div class="host">Chamath Palihapitiya · Jason Calacanis · David Sacks · David Friedberg</div>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集 · Last Known Episode</div>
+    <div class="le-title">Trump's Super Intelligence Summit, AI Safety Accord, GDP Beats, Midterm Predictions</div>
+    <div class="le-meta">發佈：2026-10-02 22:30 UTC · 四位主持全員 · 本輪 433 集 feed 中無新 GUID（逢五更新，預料 10-09 稍後）</div>
+    <div class="le-summary">
+      「政策 × 宏觀 × 選舉」三合一大集：Sacks 以親歷者身份還原 9 月 29 日白宮「Super Intelligence Summit」內幕——<b>六間前沿模型公司簽咗一份自願性《White House Accord on Super Intelligence》</b>，附多層執行鏈（內部控制 → 外部審計 → 董事會 → 監管），Sacks 形容為「自願但 de facto 有牙」。宏觀面：Q2 GDP 上修至 <b>2.2%</b>、8 月非農 <b>+16.2 萬</b>。Friedberg 主張開源權重令集中管控不可行，<b>預言政府將配給算力</b>。
+      <div class="callout">💡 AI 監管由「法案」轉向「自願 accord + 審計鏈」——合規／數據驗證基建係受惠方向。</div>
+    </div>
+    <div class="le-link">🔗 <a href="https://allin.com/">allin.com</a> · 已於 <a href="daily-report-2026-10-03.html">10-03 日報</a>完整拆解</div>
+  </div>
+</section>
+
+<!-- ================= MY FIRST MILLION ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>My First Million</h2>
+    <div class="host">Sam Parr &amp; Shaan Puri</div>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集 · Last Known Episode</div>
+    <div class="le-title">Ep 869 · The creative genius behind Squatty Potty &amp; Poo-Pourri reveals his marketing playbook</div>
+    <div class="le-meta">發佈：2026-10-07 10:00 UTC · 長度 1 小時 5 分 38 秒（3,938 秒）· 主持：Shaan Puri（本集 Sam Parr 未出場）· 嘉賓：<b>Jeff Harmon</b>（Angel Studios／Harmon Brothers 共同創辦人）· 本輪 909 集 feed 中無新 GUID（預料 10-09／10-10）</div>
+    <div class="le-summary">
+      一套「<b>搵 glitch（定價錯位嘅注意力渠道）→ 榨乾注意力 → 變成自己嘅受眾 → 用受眾嚟融資</b>」嘅作業系統：由 YouTube 剛開廣告平台時「每個 view 唔夠一美分」，講到用一條 19 分鐘可跳過廣告籌到 <b>$1,100 萬</b>（The Chosen）；以及把喜劇人訓練成行銷人嘅爆款方法論（Poo-Pourri／Squatty Potty）。
+      <blockquote>It's way easier to train a comedian to be a marketer than it is to train a marketer to be funny.
+        <cite>— Jeff Harmon</cite></blockquote>
+    </div>
+    <div class="le-link">🔗 <a href="https://www.mfmpod.com/episodes/">mfmpod.com/episodes</a> · 已於 <a href="daily-report-2026-10-08.html">10-08 日報</a>完整拆解</div>
+  </div>
+</section>
+
+<footer class="bot">
+  <div class="timeline">
+    ⏱ <b>本輪掃描時序</b><br>
+    <code>09:53Z</code> 讀 podcasts.json（6 台）/ state.json（2,975 個已掃 GUID）<br>
+    <code>09:53Z</code> Fetch 6 條 RSS feed → 全部 HTTP 200（217 / 461 / 433 / 909 / 20 / 895 集）<br>
+    <code>09:54Z</code> GUID 逐條比對 → <b>2 條新內容</b>（KP Ryan Serhant；DOAC Most Replayed Moment 片段）<br>
+    <code>09:54Z</code> Jev triage 2 條（KP 0.71 ／ DOAC 0.47，低於噪音線但屬真實新集，保留並標 ⚠️）<br>
+    <code>09:54Z</code> 深度萃取：fs.blog 官方集頁＋RSS ＋Entrepreneur／Business Insider（1,000 分鐘定律）＋ spok&#101;n.md／getpodcast 逐字稿與章節 ＋ PodPulse 集評<br>
+    <code>09:55Z</code> 生成本報告 → 更新 state.json → git push
+  </div>
+  <p>📬 本報告由 Vee Mok 為 James 自動生成 · 每日深度掃描 6 個英文商業／思維播客 · 所有萃取基於真實內容（RSS / 官方集頁 / 逐字稿 / 標註來源嘅二手整理），未經核實之數字與預測已標 ⚠️。</p>
+  <p>🔗 <a href="https://jmoksz.github.io/mindset-podcasts/">jmoksz.github.io/mindset-podcasts</a> · <a href="https://github.com/JMOKSZ/mindset-podcasts">GitHub Repo</a></p>
+</footer>
+
+</div>
+</body>
+</html>
