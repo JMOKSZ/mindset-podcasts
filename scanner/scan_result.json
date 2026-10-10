@@ -37,14 +37,24 @@
   "host": "Chamath Palihapitiya · Jason Calacanis · David Sacks · David Friedberg",
   "rss": "https://rss.libsyn.com/shows/254861/destinations/1928300.xml",
   "status": "ok",
-  "new": [],
+  "new": [
+   {
+    "guid": "995e85a6-c5d7-46cc-a282-54d6a5eb8d9b",
+    "title": "Is Claude Conscious? Pope Rejects, Model Welfare Movement, OpenAI's Math Backlash, France Riots",
+    "pubDate": "Sat, 10 Oct 2026 02:06:00 +0000",
+    "link": "https://allinchamathjason.libsyn.com/is-claude-conscious-pope-rejects-model-welfare-movement-openais-math-backlash-france-riots",
+    "duration": "01:33:15",
+    "summary": "(0:00) Bestie intros!   (2:53) Anthropic believes Claude might be conscious: a new religion? Lobbying the Pope, alignment risks, model welfare   (38:28) OpenAI's math breakthroughs and community backlash   (1:02:03) Riots in France, Friedberg's socialism metric, bond market   (1:21:41) Grok Bot goes headless, OpenAI launches Dots, is IP worthless?   Follow the besties:    https://x.com/chamath     https://x.com/Jason     https://x.com/DavidSacks     https://x.com/friedberg    Follow on X:    https://x.com/theallinpod    Follow on Instagram:    https://www.instagram.com/theallinpod    Follow on TikTok:    https://www.tiktok.com/@allin    Follow on LinkedIn:    https://www.linkedin.com/company/allinpod    Intro Music Credit:    https://rb.gy/tppkzl     https://x.com/yung_spielburg    Intro Video Credit:    https://x.com/TheZachEffect    Referenced in the show:     https://www.nytimes.com/2026/09/29/us/anthropic-claude-morals-ai.html     https://www.anthropic.com/constitution     https://x.com/andrewcurran_/status/2108244808494154089      https://www.economist.com/the-world-in-brief/2026/10/03/388af69b-8327-40a3-af5a-13c0ede56800     https://www.lesswrong.com/users/eliezer_yudkowsky      https://www.amazon.com/Anyone-Builds-Everyone-Dies-Superhuman/dp/0316595640     https://en.wikipedia.org/wiki/Roko%27s_basilisk      https://www.nytimes.com/2026/10/06/science/openai-math-problems.html      https://www.scientificamerican.com/article/openai-unleashes-hundreds-more-math-results-upon-a-field-already-in-shock/      https://terrytao.wordpress.com/2026/10/07/ahm-statement-on-openais-october-6-release-of-mathematical-documents     https://scottaaronson.blog/?p=10169     https://x.com/imjustnewatai/status/2107601711032373333     https://x.com/skdh/status/2107848423726555204     https://x.com/friedberg/status/2107856770609844491      https://www.dw.com/en/france-trade-unions-join-students-in-major-demonstration/a-79560273      https://www.nytimes.com/2026/10/02/world/europe/france-schools-protests-unrest.html      https://www.nytimes.com/2026/10/08/business/france-bond-yields.html     https://x.com/LucAuffret/status/2108217923101683737     https://polymarket.com/event/next-french-presidential-election     https://polymarket.com/event/another-fed-rate-hike-in-2026     https://x.com/nikitabier/status/2108262529571144176",
+    "content": "(0:00) Bestie intros!   (2:53) Anthropic believes Claude might be conscious: a new religion? Lobbying the Pope, alignment risks, model welfare   (38:28) OpenAI's math breakthroughs and community backlash   (1:02:03) Riots in France, Friedberg's socialism metric, bond market   (1:21:41) Grok Bot goes headless, OpenAI launches Dots, is IP worthless?   Follow the besties:    https://x.com/chamath     https://x.com/Jason     https://x.com/DavidSacks     https://x.com/friedberg    Follow on X:    https://x.com/theallinpod    Follow on Instagram:    https://www.instagram.com/theallinpod    Follow on TikTok:    https://www.tiktok.com/@allin    Follow on LinkedIn:    https://www.linkedin.com/company/allinpod    Intro Music Credit:    https://rb.gy/tppkzl     https://x.com/yung_spielburg    Intro Video Credit:    https://x.com/TheZachEffect    Referenced in the show:     https://www.nytimes.com/2026/09/29/us/anthropic-claude-morals-ai.html     https://www.anthropic.com/constitution     https://x.com/andrewcurran_/status/2108244808494154089      https://www.economist.com/the-world-in-brief/2026/10/03/388af69b-8327-40a3-af5a-13c0ede56800     https://www.lesswrong.com/users/eliezer_yudkowsky      https://www.amazon.com/Anyone-Builds-Everyone-Dies-Superhuman/dp/0316595640     https://en.wikipedia.org/wiki/Roko%27s_basilisk      https://www.nytimes.com/2026/10/06/science/openai-math-problems.html      https://www.scientificamerican.com/article/openai-unleashes-hundreds-more-math-results-upon-a-field-already-in-shock/      https://terrytao.wordpress.com/2026/10/07/ahm-statement-on-openais-october-6-release-of-mathematical-documents     https://scottaaronson.blog/?p=10169     https://x.com/imjustnewatai/status/2107601711032373333     https://x.com/skdh/status/2107848423726555204     https://x.com/friedberg/status/2107856770609844491      https://www.dw.com/en/france-trade-unions-join-students-in-major-demonstration/a-79560273      https://www.nytimes.com/2026/10/02/world/europe/france-schools-protests-unrest.html      https://www.nytimes.com/2026/10/08/business/france-bond-yields.html     https://x.com/LucAuffret/status/2108217923101683737     https://polymarket.com/event/next-french-presidential-election     https://polymarket.com/event/another-fed-rate-hike-in-2026     https://x.com/nikitabier/status/2108262529571144176"
+   }
+  ],
   "last_known": {
-   "title": "Trump's Super Intelligence Summit, AI Safety Accord, GDP Beats, Midterm Predictions",
-   "pubDate": "Fri, 02 Oct 2026 22:30:00 +0000",
-   "link": "https://allinchamathjason.libsyn.com/trumps-super-intelligence-summit-ai-safety-accord-gdp-beats-midterm-predictions",
-   "guid": "16094471-70e5-4698-9bac-3958d237b7b7"
+   "title": "Is Claude Conscious? Pope Rejects, Model Welfare Movement, OpenAI's Math Backlash, France Riots",
+   "pubDate": "Sat, 10 Oct 2026 02:06:00 +0000",
+   "link": "https://allinchamathjason.libsyn.com/is-claude-conscious-pope-rejects-model-welfare-movement-openais-math-backlash-france-riots",
+   "guid": "995e85a6-c5d7-46cc-a282-54d6a5eb8d9b"
   },
-  "count": 433,
+  "count": 434,
   "http": 200
  },
  "my-first-million": {
@@ -69,17 +79,7 @@
   "host": "Shane Parrish",
   "rss": "https://fs.blog/knowledge-project-podcast/feed/",
   "status": "ok",
-  "new": [
-   {
-    "guid": "https://fs.blog/?post_type=podcast&p=81853",
-    "title": "Ryan Serhant: How to Get People to Say Yes",
-    "pubDate": "Thu, 08 Oct 2026 09:55:00 +0000",
-    "link": "https://fs.blog/knowledge-project-podcast/ryan-serhant/",
-    "duration": "",
-    "summary": "Ryan Serhant is a real estate broker, founder of SERHANT., and star of Bravo’s Million Dollar Listing New York and Netflix’s Owning Manhattan. Public Release: October 8. Members have access now.Join us. He explains how to sell without making people feel sold to: build a connection, help first, and earn the right to ask. He … \n The post  Ryan Serhant: How to Get People to Say Yes  appeared first on  Farnam Street .",
-    "content": "Ryan Serhant is a real estate broker, founder of SERHANT., and star of Bravo’s  Million Dollar Listing New York  and Netflix’s  Owning Manhattan . \n\n\n\n Public Release: October 8.  Members have  access now .   Join us  . \n\n\n\n He explains how to sell without making people feel sold to: build a connection, help first, and earn the right to ask. He also breaks down the psychology of attention and persuasion, showing how to get people’s attention, hold it, and turn it into business. \n\n\n\n We explore why he rejects “fake it till you make it,” how he approached his Million Dollar Listing audition as the person he wanted to become, and why ego gets in the way of closing deals. \n\n\n\n Ryan explains his time management framework of treating each day as a bank of 1,000 minutes changed the way he works, and why success can still feel insufficient after you achieve all of your dreams.  \n\n\n\n  Coming Soon: YouTube |  Spotify   |  Apple Podcasts |  Transcript   \n\n\n\n  + Members get the longer, extended version of this conversation, with additional content not included in the public release.   \n The post  Ryan Serhant: How to Get People to Say Yes  appeared first on  Farnam Street ."
-   }
-  ],
+  "new": [],
   "last_known": {
    "title": "Ryan Serhant: How to Get People to Say Yes",
    "pubDate": "Thu, 08 Oct 2026 09:55:00 +0000",
@@ -95,17 +95,7 @@
   "host": "Steven Bartlett",
   "rss": "https://rss2.flightcast.com/xmsftuzjjykcmqwolaqn6mdn",
   "status": "ok",
-  "new": [
-   {
-    "guid": "flightcast:01M1KG7RQ525JTCTET05G29VH6",
-    "title": "Most Replayed Moment: AI Is Changing How Teams Work Forever",
-    "pubDate": "Fri, 09 Oct 2026 05:00:00 -0000",
-    "link": "",
-    "duration": "1241",
-    "summary": "AI At Work: Mass Unemployment Or A New Era Of Human Potential?\n\n\n\n\n\nNick Hanauer is a billionaire entrepreneur, venture capitalist and outspoken advocate for a more inclusive economy. Daniel Priestley is a bestselling author, entrepreneur and co-founder of multiple businesses helping people build and scale companies.\n\n\n\n\n\nIn this moment, Nick Hanauer and Daniel Priestley debate one of the biggest questions facing the future of work: what happens when AI can do more of the tasks we once thought only humans could perform? They explore the uncertainty ahead, the unexpected opportunities emerging, and why the way we think about jobs, businesses and value creation may be about to change for good.\n\n\n\n\n\nListen to the full episode here!\n\n\n\nSpotify: https://g2ul0.app.link/J19xuXhj85b\n\n\n\nApple: https://g2ul0.app.link/CZYh3Skj85b\n\n\n\nWatch the Episodes On YouTube: ⁠⁠https://www.youtube.com/c/TheDiaryOfACEO/videos\n\n\n\nSponsor: Asana - try it at https://asana.com",
-    "content": "AI At Work: Mass Unemployment Or A New Era Of Human Potential?      Nick Hanauer is a billionaire entrepreneur, venture capitalist and outspoken advocate for a more inclusive economy. Daniel Priestley is a bestselling author, entrepreneur and co-founder of multiple businesses helping people build and scale companies.      In this moment, Nick Hanauer and Daniel Priestley debate one of the biggest questions facing the future of work: what happens when AI can do more of the tasks we once thought only humans could perform? They explore the uncertainty ahead, the unexpected opportunities emerging, and why the way we think about jobs, businesses and value creation may be about to change for good.      Listen to the full episode here!    Spotify:  https://g2ul0.app.link/J19xuXhj85b     Apple:  https://g2ul0.app.link/CZYh3Skj85b     Watch the Episodes On YouTube: ⁠⁠ https://www.youtube.com/c/TheDiaryOfACEO/videos     Sponsor: Asana - try it at  https://asana.com"
-   }
-  ],
+  "new": [],
   "last_known": {
    "title": "Most Replayed Moment: AI Is Changing How Teams Work Forever",
    "pubDate": "Fri, 09 Oct 2026 05:00:00 -0000",

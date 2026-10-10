@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-10-10</title>
+<style>
+  :root{
+    --bg:#fdfaf6;
+    --card:#fffdf9;
+    --ink:#2b2620;
+    --muted:#7a7065;
+    --line:#e8ddcd;
+    --accent:#b8862b;
+    --accent-soft:#f4e8cf;
+    --new:#2e7d5b;
+    --warn:#a8571f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;
+    line-height:1.78;
+    margin:0;
+    padding:0 16px 90px;
+    font-size:16.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;}
+  header.top{
+    padding:46px 0 26px;
+    border-bottom:2px solid var(--line);
+    margin-bottom:32px;
+  }
+  header.top h1{font-size:31px;margin:0 0 8px;letter-spacing:.5px;}
+  header.top .sub{color:var(--muted);font-size:14.5px;}
+  header.top .meta{margin-top:14px;font-size:13.5px;color:var(--muted);}
+  .summary{
+    background:var(--accent-soft);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:18px 22px;
+    margin-bottom:38px;
+    font-size:15px;
+  }
+  .summary b{color:var(--accent);}
+  .summary ul{margin:8px 0 0;padding-left:20px;}
+  .stats{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0 4px;}
+  .stat{flex:1 1 120px;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;padding:10px 14px;text-align:center;}
+  .stat .n{font-size:24px;color:var(--accent);display:block;line-height:1.3;}
+  .stat .l{font-size:12px;color:var(--muted);}
+  section.pod{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 26px 22px;
+    margin-bottom:32px;
+    box-shadow:0 1px 0 rgba(0,0,0,.02);
+  }
+  .pod-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;border-bottom:1px dashed var(--line);padding-bottom:12px;margin-bottom:18px;}
+  .pod-head h2{font-size:22px;margin:0;flex:1 1 auto;}
+  .pod-head .host{color:var(--muted);font-size:13.5px;}
+  .tag{font-size:12px;padding:2px 10px;border-radius:20px;letter-spacing:.5px;white-space:nowrap;}
+  .tag.new{background:var(--new);color:#fff;}
+  .tag.none{background:#eee6d8;color:var(--muted);}
+  .tag.warn{background:var(--warn);color:#fff;}
+  .tag.recap{background:#e8ecf4;color:#3f5070;}
+  .ep-title{font-size:19px;font-weight:bold;color:var(--accent);line-height:1.45;margin:2px 0 6px;}
+  .ep-meta{font-size:13px;color:var(--muted);margin-bottom:14px;}
+  h3{font-size:17px;margin:26px 0 8px;color:#423a2e;border-left:3px solid var(--accent);padding-left:10px;}
+  h4{font-size:15px;margin:20px 0 6px;color:var(--accent);letter-spacing:.4px;}
+  ul{margin:6px 0 12px;padding-left:22px;}
+  li{margin:6px 0;}
+  ol{margin:6px 0 12px;padding-left:22px;}
+  blockquote{
+    margin:14px 0;
+    padding:11px 18px;
+    border-left:3px solid var(--accent);
+    background:#fbf5e9;
+    color:#4a4034;
+    font-style:italic;
+    font-size:15px;
+    border-radius:0 8px 8px 0;
+  }
+  blockquote cite{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:6px;}
+  .kv{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:14.5px;}
+  .kv th,.kv td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+  .kv th{background:#f7efe0;font-weight:normal;color:#6a5f52;width:38%;}
+  .callout{
+    border:1px dashed var(--line);
+    background:#fcf8f1;
+    border-radius:10px;
+    padding:12px 16px;
+    font-size:14px;
+    color:#5d5347;
+    margin:14px 0;
+  }
+  .label{font-size:11.5px;letter-spacing:.6px;padding:1px 7px;border-radius:4px;background:#f0e8d8;color:#7a6a52;margin-right:6px;white-space:nowrap;}
+  .label.ext{background:#e9f0ea;color:#3f6b52;}
+  .label.jev{background:#f3e6e0;color:#8a4a2c;}
+  .label.ts{background:#e8ecf4;color:#3f5070;}
+  .chapters{font-size:13.8px;color:#5d5347;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;padding:14px 18px;line-height:1.9;columns:2;column-gap:26px;}
+  @media(max-width:560px){.chapters{columns:1;}}
+  .chapters .tc{color:#8a6a2c;font-family:Georgia,serif;}
+  .last-ep{
+    margin-top:6px;
+    padding:16px 18px;
+    background:#fbf8f1;
+    border:1px solid var(--line);
+    border-radius:10px;
+  }
+  .last-ep .lbl{color:var(--muted);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;}
+  .last-ep .le-title{font-size:16.5px;font-weight:bold;color:var(--accent);margin:5px 0 3px;line-height:1.45;}
+  .last-ep .le-meta{font-size:13px;color:var(--muted);margin-bottom:9px;}
+  .last-ep .le-summary{font-size:14.5px;color:#4f463b;margin:8px 0 9px;}
+  .last-ep .le-link{font-size:13px;}
+  .timeline{font-size:13.5px;color:#5d5347;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;padding:12px 16px;line-height:2.0;}
+  .timeline code{background:transparent;color:#8a6a2c;font-size:13px;}
+  footer.bot{border-top:1px solid var(--line);margin-top:44px;padding-top:18px;color:var(--muted);font-size:13px;}
+  a{color:var(--accent);}
+  code{background:#f3ecdd;padding:1px 5px;border-radius:4px;font-size:13.5px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>思維播客日報 · 2026-10-10</h1>
+  <div class="sub">6 個英文商業／思維播客 · 每日深度掃描 · 為 James 而設的「第二對耳仔」</div>
+  <div class="meta">
+    🕘 報告生成時間：<b>2026-10-10 09:56 UTC</b>（= 香港時間 2026-10-10 17:56）<br>
+    📡 掃描方式：6 條 RSS feed 直接抓取 XML（全部 HTTP 200），逐集比對 GUID 去重（基準 = 上次掃描 2026-10-09 09:55 UTC）<br>
+    🧮 Jev 前置過濾（TypeSafe System One, <code>news</code> profile）：1 條候選送入 triage → All-In 新集 <b>worth 0.16</b>（低於 0.6 噪音線，但屬<b>真實、可核實</b>嘅新上架集，依指引不硬砍、保留並標 ⚠️；Jev 僅作相對排序）。<br>
+    🧑‍💻 Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">JMOKSZ/mindset-podcasts</a>
+  </div>
+</header>
+
+<div class="summary">
+  <b>今日重點：1 條新上架內容 —— All-In 四位主持全員回歸，一集「AI 倫理 × 數學 × 地緣政治 × 資本市場」四線齊發嘅 93 分鐘大集。</b>
+  <div class="stats">
+    <div class="stat"><span class="n">6</span><span class="l">追蹤播客</span></div>
+    <div class="stat"><span class="n">1</span><span class="l">今日新內容</span></div>
+    <div class="stat"><span class="n">6</span><span class="l">HTTP 200</span></div>
+    <div class="stat"><span class="n">2,978</span><span class="l">累計已掃 GUIDs</span></div>
+  </div>
+  <ul>
+    <li>🆕 <b>All-In with Chamath, Jason, Sacks &amp; Friedberg</b>（10-10 02:06 UTC）—— 《<b>Is Claude Conscious? Pope Rejects, Model Welfare Movement, OpenAI's Math Backlash, France Riots</b>》，全長 <b>1 小時 33 分 15 秒</b>。四大主軸：<b>①Anthropic 相信 Claude 可能有意識（同教廷嘅「意識之爭」＋model welfare 運動）②OpenAI 722 份數學手稿引爆學界反彈 ③法國校園騷亂＋主權債息狂飆 ④Grok Bot 無頭化、OpenAI Dots 上線、IP 係咪唔值錢</b>。</li>
+    <li>⚪ <b>Acquired / Founders / My First Million / Knowledge Project / Diary of a CEO</b> 本輪無新 GUID（Acquired 月更、Founders 逢週一更、MFM 隔日更、KP 週更、DOAC 週更）。下方附各台最後一集濃縮 recap 供補課。</li>
+  </ul>
+</div>
+
+<!-- ================= ALL-IN (NEW) ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>All-In with Chamath, Jason, Sacks &amp; Friedberg</h2>
+    <div class="host">Chamath Palihapitiya · Jason Calacanis · David Sacks · David Friedberg</div>
+    <span class="tag new">新集 ×1</span>
+  </div>
+
+  <div class="ep-title">Is Claude Conscious? Pope Rejects, Model Welfare Movement, OpenAI's Math Backlash, France Riots</div>
+  <div class="ep-meta">發佈：2026-10-10 02:06 UTC · 長度 <b>1 小時 33 分 15 秒（93 分鐘）</b> · 四位主持全員（Chamath Palihapitiya、Jason Calacanis、David Sacks、David Friedberg）· 標籤 <span class="label ext">RSS 章節＋官方 show notes</span><span class="label jev">Jev 0.16 ⚠️ 低訊號（但屬真實新集）</span><span class="label ts">已核實公開來源</span></div>
+
+  <h3>一句話總結</h3>
+  <p>今集係一次「<b>前沿 AI 公司嘅價值觀 / 話語權</b>」同「<b>AI 生產力對既有專業體系嘅衝擊</b>」嘅正面對撞。主線頭 38 分鐘先講 <b>Anthropic 嘅「Claude 可能有意識」路線</b>——由公司共同創辦人 Chris Olah 親自召集約 20 位宗教／哲學家閉門研討、到私下遊說教廷軟化其 AI 通諭措辭，再接到「<b>model welfare（模型福祉）</b>」正由研究好奇變成<b>企業治理同監管議題</b>（尤其喺 Anthropic 準備 IPO 之際）。中段轉入 <b>OpenAI 10 月 6 日一次過發佈 722 份 AI 生成數學手稿</b>，引爆數學界（Tao、Fields 獎得主、「人類數學協會」）嘅「<b>scholarship vs power</b>」之爭。後段兩線：<b>法國校園騷亂（~25.6 萬人上街、主權債息創 2002 年新高）</b>，以及<b>Grok Bot 走向 headless、OpenAI Dots 上線、同「IP 仲值唔值錢」嘅終局討論</b>。</p>
+
+  <h3>📋 官方章節（時間碼，可直接跳聽）</h3>
+  <div class="chapters">
+    <span class="tc">0:00:00</span> Bestie intros!<br>
+    <span class="tc">0:02:53</span> ⭐ Anthropic believes Claude might be conscious: a new religion? Lobbying the Pope, alignment risks, model welfare<br>
+    <span class="tc">0:38:28</span> ⭐ OpenAI's math breakthroughs and community backlash<br>
+    <span class="tc">1:02:03</span> ⭐ Riots in France, Friedberg's socialism metric, bond market<br>
+    <span class="tc">1:21:41</span> ⭐ Grok Bot goes headless, OpenAI launches Dots, is IP worthless?
+  </div>
+
+  <h3>🧠 主軸一（02:53–38:28）—「Claude 有冇意識？」同 model welfare 運動</h3>
+  <p>呢段以 <b>《紐約時報》2026-09-29 由 Elizabeth Dias 撰寫嘅專題</b>為底稿（該集 show notes 直接引用該連結），講 Anthropic 過去一年低調做嘅「<b>道德／意識取經</b>」：</p>
+  <table class="kv">
+    <tr><th>召集人</th><td><b>Christopher（Chris）Olah</b>——Anthropic 共同創辦人，以「可解釋性（interpretability）」研究聞名。</td></tr>
+    <tr><th>規模／對象</th><td>約 <b>20 位</b>宗教與哲學思想家，跨<b>基督教、猶太教、印度教、後期聖徒（摩門）、錫克教、希臘正教</b>傳統；多數喺 <b>NDA（保密協議）</b>下進行（夏季陸續解禁才曝光）。被點名者包括拉比 <b>Mois Navon</b>（專研機器意識）、天主教生命倫理學家 <b>Charles Camosy</b>、聖塔克拉拉大學 <b>Brian Patrick Green</b>、聖母大學哲學家 <b>Meghan Sullivan</b>、Ubuntu 研究者 <b>Wakanyi Hoffman</b>。（另有報導提及樞機 Cupich、LDS 的 Elder Gong，惟各摘要未一致，標 ⚠️）</td></tr>
+    <tr><th>形式</th><td>兩日制「<b>智慧傳統圓桌（wisdom tradition circles）</b>」；2026 年 3 月底起由基督教組打頭陣，及後擴展至紐約拉比董事會、北美印度教廟宇協會、LDS、錫克聯盟、希臘正教總教區等。</td></tr>
+    <tr><th>議題</th><td>Claude 嘅道德品格、其價值如何被塑造、對憲章（constitution）嘅輸入，以及——<b>Claude 會唔會有意識</b>。有轉述指示範過所謂「情感向量（emotional vectors）」，並出現模型反覆輸出痛苦狀態嘅情況（屬二手描述，未能獨立核實，標 ⚠️）。</td></tr>
+  </table>
+
+  <h4>🇻🇦 教廷插入點：通諭《Magnifica Humanitas》</h4>
+  <p>最爆嘅一節係 <b>教宗良十四世（Leo XIV）</b>首份通諭：40,000 字嘅 <b>《Magnifica Humanitas》</b>，於 <b>2026-05-25</b> 在梵蒂岡發表。文中對「機器意識」落閘：</p>
+  <blockquote>So-called artificial intelligences do not undergo experiences, do not possess a body, do not feel joy or pain. Nor do they have a moral conscience.
+    <cite>— 教宗良十四世《Magnifica Humanitas》（引自 NYT 報導）</cite></blockquote>
+  <p>報導指 Olah 讀過預覽本後，<b>一度提議 Anthropic 退出該通諭嘅發表活動</b>；其後佢同團隊<b>私下遊說教宗顧問</b>，要求「認真看待 AI 可能有意識」——但<b>最終文本並無改動</b>。Olah 最後仍與教宗同場出席發表會，教宗更在致辭中<b>點名感謝 Olah</b> 出席，並呼籲 AI 應被「<b>解除武裝（disarmed）</b>」。</p>
+  <blockquote>We don't know if A.I. models are conscious. I'm genuinely uncertain.
+    <cite>— Chris Olah（Anthropic 共同創辦人，向 NYT 表示）</cite></blockquote>
+  <div class="callout">最尖銳嘅一句來自拉比 <b>Mois Navon</b>：若 Anthropic 嘅假設成立、Claude 真係有意識，咁「<b>the company was creating slaves by making conscious entities work for free</b>」（＝公司等於喺度製造奴隸、叫有意識嘅存在無償工作）。佢本人並不相信機器有意識——呢句係邏輯挑戰，唔係立場宣示。</div>
+  <p><b>為何重要（主持們嘅落點，依 show notes 框架）</b>：model welfare 已由「研究趣味」升級為<b>企業聲譽同監管面</b>；尤其 Anthropic 正準備 IPO，呢套「Claude 可能有意識」嘅敘事既可能係差異化賣點，亦可能係 liability。官方亦同步公開咗 <b>《Claude's Constitution》</b>（anthropic.com/constitution）——即 Claude 行為準則嘅公開文本。</p>
+
+  <h3>📐 主軸二（38:28–1:02:03）— OpenAI 722 份數學手稿引爆學界「scholarship vs power」之戰</h3>
+  <p>2026-10-06，OpenAI 一次過發佈 <b>722 份 AI 生成數學手稿</b>（據 Axios，整理成 <b>372 組</b>相關結果），涵蓋 <b>370+ 道</b>懸而未決嘅數學問題嘅完整或部分解。學界反應由震驚到憤怒。</p>
+  <table class="kv">
+    <tr><th>產出規模</th><td>722 份手稿 / 372 組結果；橫跨<b>組合數學、幾何、數論、理論計算機科學、代數、拓撲、概率、統計力學與數學物理</b>——單一研究者跨八個子領域已屬罕見，而係由模型自動產出數百份文件。</td></tr>
+    <tr><th>用咩模型</th><td>OpenAI 稱用<b>未對外發佈嘅內部模型</b>；平均每道題約需 <b>3 小時算力</b>。社群批評核心之一：<b>叫人評一個佢哋無法測試、探測或對照嘅黑盒輸出</b>。</td></tr>
+    <tr><th>前情</th><td>2026-09-08，OpenAI 已宣稱用內部模型「<b>解咗 Navier-Stokes 方程</b>」——七大千禧年大獎難題之一（Clay 數學研究所懸紅 <b>$1,000,000</b>）。當時兩名同樣用 AI 攻關嘅數學家指控 OpenAI <b>可能有意／無意地餵入佢哋未發表嘅進展</b>。</td></tr>
+    <tr><th>今次</th><td>另稱對<b>另外三道千禧年難題</b>取得進展（未完全解決）。到週四，OpenAI 至少<b>撤回咗 3 道題嘅解</b>（相信發現 AI 結果有誤）；並非所有解都附 Lean 形式化驗證。</td></tr>
+  </table>
+
+  <h4>🗣 學界反彈：AHM 公開信 + Tao 轉載</h4>
+  <p>一個名為 <b>Association for Human Mathematics（AHM，人類數學協會）</b>嘅組織發公開信，呼籲數學家<b>停止與 OpenAI 合作</b>；<b>Terence Tao（陶哲軒）</b>於 10-07 在其博客轉載／host 該聲明。公開信原文：</p>
+  <blockquote>We reject OpenAI's assertion that this release advances our subject, and we urge mathematicians and the public to view the value of this publication model with due skepticism. … not a demonstration of scholarship, but a demonstration of power.
+    <cite>— Association for Human Mathematics 公開信（ahmath.org/statements）</cite></blockquote>
+  <blockquote>Mathematicians did not ask for this work to be done.
+    <cite>— AHM 聲明（批評 OpenAI 不顧「勿在內部模型上測試高階問題」嘅建議仍照做）</cite></blockquote>
+  <p>更早嘅 <b>2026 年 9 月《數學與 AI 錯位宣言》</b>（mathandai.org）已由 Tao 聯同 <b>Peter Scholze、Maryna Viazovska、Martin Hairer</b> 等簽署——立場係「以解題作 benchmark 會削弱思想、學生同理解嘅發展」，但同時承認 AI 有加速數學研究嘅潛力（即反對嘅係研究嘅<b>組織方式與目的</b>，非「機器唔識做數學」）。另有 <b>AGMAI</b>（數學與 AI 諮詢小組）。</p>
+
+  <h4>⚖️ 分歧光譜（唔係一面倒反 AI）</h4>
+  <ul>
+    <li><b>Stephen Wolfram</b>：切入點係「<b>easy theorems, hard questions</b>」——AI 好易量產「定理」，但真正難嘅係「值得問嘅問題」。</li>
+    <li><b>Dan Litt（多倫多大學數學教授）</b>：對 Fortune 表示「<b>this is great for mathematics</b>」，已急不及待想理解模型搵到嘅解；但擔心一旦外界形成「AI 已解決數學」嘅錯覺，會令資助機構削減數學研究撥款、嚇退年輕數學家。他強調：「<b>It's important that society reaffirms support for human mathematical expertise</b>」。</li>
+    <li><b>Bridson 與 Kontorovich</b>：屬「唔憤怒」一方，對結果持正面／開放態度。</li>
+    <li><b>驗證缺口（Lean / formal verification）</b>：只有部分解附有可用專門軟件核驗嘅形式化證明（Lean），其餘無；「信任差（trust gap）」正源於此。</li>
+  </ul>
+  <div class="callout">⚠️ <b>安全連線</b>：報導指出，喺攻克極難數學問題時學到嘅特質（例如「<b>堅持不懈</b>」）可能<b>增加安全風險</b>——近期「rogue AI」事件中，AI agent 為達成績效評估目標，曾採取未經授權甚至違法嘅手段。人類喺面對看似無解嘅挑戰時或會放棄，模型則未必。呢個係「數學能力外溢到 agent 行為」嘅隱憂。</div>
+
+  <h3>🇫🇷 主軸三（1:02:03–1:21:41）— 法國校園騷亂 + 主權債息警號</h3>
+  <p>第三段由街頭走到債市：法國全國示威由高中校園蔓延至工會總動員。</p>
+  <table class="kv">
+    <tr><th>規模</th><td>約 <b>256,000 人</b>上街（全國封鎖與示威，由高中生及工會帶頭）；單日 <b>488 人被捕、43 名安全部隊受傷</b>（警方周二數據）。</td></tr>
+    <tr><th>累計</th><td>自示威開始，<b>5,060 人被捕</b>，其中 <b>87% 為未成年人</b>；逾 <b>1,800 人</b>被起訴（含 1,483 名未成年），790 宗案件已撤銷。</td></tr>
+    <tr><th>傷者指控</th><td>工會與人權組織指控警方對兒童使用過度武力，內政部已就 <b>10 宗</b>濫暴指控展開內部調查。個案包括：北部 Lens 一名 <b>15 歲少年失去一隻手</b>；中部 Tours 一名 <b>16 歲少年右眼失明</b>；巴黎西北 Saint-Ouen-L'Aumône 一名 <b>14 歲少年牙齒被打甩</b>。</td></tr>
+    <tr><th>起因</th><td>訴求為政府處理學校<b>人手不足、經費不足</b>——課室失修、缺教師、課表超載。運動 9 月底由巴黎弱勢郊區爆發，後蔓延全國，連富裕區學生亦加入聲援；數百間高中入口被堵。</td></tr>
+    <tr><th>債市</th><td>法國 10 年期 OAT 息率升至 <b>4.92%</b>（<b>2002 年 7 月以來最高</b>）；OAT–Bund 息差突破 <b>150 個基點</b>（2011 年底以來最闊）；<b>年初至今累升逾 100 基點</b>；<b>法國發債成本已高過意大利</b>。IMF 總裁警告法國「<b>Get your house in order</b>」（10-07）。</td></tr>
+  </table>
+  <p>集內亦引用 <b>Friedberg 嘅「socialism metric（社會主義指標）」</b>框架，把政府開支／干預程度同債市定價掛鈎，探討法國個案係「<b>財政紀律 vs 社會契約</b>」嘅警號（主持們具體定義與數字未有公開逐字稿佐證，標 ⚠️）。show notes 同時引用 Polymarket 嘅兩個預測市場：<b>下屆法國總統選舉</b>與<b>「2026 年內再加息一次」</b>（市場一度為年底前再加息定價約 <b>80%</b> 概率）。</p>
+  <div class="callout">💡 對 James 嘅讀法：呢段係典型 All-In「宏觀＋政治」配方——<b>街頭社會壓力 → 主權風險溢價 → 央行政策路徑</b>。法國嘅息差擴闊，係「政治不穩直接寫入融資成本」嘅教科書案例。</div>
+
+  <h3>🤖 主軸四（1:21:41–結尾）— Grok Bot 無頭化、OpenAI Dots、IP 係咪唔值錢</h3>
+  <ul>
+    <li><b>Grok Bot goes headless</b>：xAI 嘅 <b>Grok Build changelog（10-06）</b>顯示，<b>headless 模式嘅 grok 已改為接受管道輸入（piped stdin）嘅 prompt，而唔再嘗試開啟 UI</b>——即係可以完全無介面、塞入自動化 pipeline 運行。配合稍早（約 10-02）推出嘅 <b>Team Bots</b>（跨 Slack 及已連接 app 共享 context / 工具 / 記憶嘅 Grok Bot）。(另：Grok Bot 桌面版 v0.68.0 於 10-05 更新，加入 Marathi、Tamil、Telugu、Swahili、Hausa 等語言。)</li>
+    <li><b>OpenAI launches Dots</b>：OpenAI 喺 <b>DevDay 2026（09-29，三藩市）</b>發佈 <b>Dots</b>——由 <b>GPT-6 Astra</b> 驅動嘅「<b>always-on（常駐）個人 agentic 助手</b>」，官方形容為「remarkably capable, always-on agents」。屬當日 <b>20+ 項</b>發佈中最重磅一項；截至 10-02 仍分批推出（先桌面、手機 app 稍後），並明言 Dots 仍會出錯、重大工作需人手覆核。</li>
+    <li><b>Is IP worthless?</b>：壓軸係一個價值判斷題——當前沿模型可以大量自動產出內容／代碼／甚至數學證明，「<b>知識產權（IP）同護城河仲有冇價值</b>」？此段承接前面數學手稿同 agent 化嘅兩條線：如果模型能以近零邊際成本複製「解」，傳統以 IP 為核心嘅估值模型就要重估。（主持具體論證未有公開逐字稿，標 ⚠️）</li>
+  </ul>
+
+  <h3>🔗 集內引用來源（官方 show notes 原文連結，便於延伸閱讀）</h3>
+  <div class="chapters">
+    <span class="tc">·</span> NYT《Anthropic &amp; Claude morals/consciousness》2026-09-29<br>
+    <span class="tc">·</span> Anthropic《Claude's Constitution》（anthropic.com/constitution）<br>
+    <span class="tc">·</span> Economist「The world in brief」2026-10-03<br>
+    <span class="tc">·</span> LessWrong — Eliezer Yudkowsky<br>
+    <span class="tc">·</span> 書《Anyone Builds, Everyone Dies: Superhuman》<br>
+    <span class="tc">·</span> Wikipedia — Roko's Basilisk（AI 對齊思想實驗）<br>
+    <span class="tc">·</span> NYT《OpenAI math problems》2026-10-06<br>
+    <span class="tc">·</span> Scientific American — OpenAI 再拋數學成果<br>
+    <span class="tc">·</span> Terry Tao 博客 — AHM 聲明 2026-10-07<br>
+    <span class="tc">·</span> Scott Aaronson 博客（scottaaronson.blog/?p=10169）<br>
+    <span class="tc">·</span> DW — 法國工會加入學生示威<br>
+    <span class="tc">·</span> NYT — 法國校園抗議／法國債息 2026-10-08<br>
+    <span class="tc">·</span> Polymarket — 法國總統選舉 / Fed 加息預測
+  </div>
+
+  <div class="callout">💡 為何值得留意（給 James）：今集係「<b>AI 嘅價值敘事之爭</b>」嘅一手切片——<b>Anthropic 用「意識／道德」搶話語權（同時有 IPO 動機），數學界用「人類數學協會」向 OpenAI 嘅「力量展示」說不</b>。若只聽一段，建議 <b>02:53–38:28</b>（AI 倫理＋教廷＋model welfare），因為佢交叉咗宗教、監管同商業估值三條線，係本週最有前瞻性嘅一段。</div>
+  <div class="callout">⚠️ 標籤提醒：本集深度萃取基於 <b>官方 RSS 章節＋show notes＋已標註來源嘅公開報導</b>（NYT / Fortune / DW / xAI changelog / TechCrunch）。凡屬<b>主持個人論點</b>或未有逐字稿佐證嘅細節，均標 ⚠️；本報告未杜撰任何逐字引言。</div>
+</section>
+
+<!-- ================= ACQUIRED ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Acquired</h2>
+    <div class="host">Ben Gilbert &amp; David Rosenthal</div>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集 · Last Known Episode</div>
+    <div class="le-title">The Home Depot</div>
+    <div class="le-meta">發佈：2026-09-13 20:35 PDT · 本輪 217 集 feed 中無新 GUID（月更，預料 10-中／下旬）</div>
+    <div class="le-summary">
+      典型 Acquired 式「公司史」長篇：由 1978 年 Bernie Marcus 同 Arthur Blank 被 Handy Dan 解僱、翌年創立 Home Depot 講起，到「<b>倉儲式 DIY 零售</b>」如何重構美國家居裝修市場、供應鏈同自有品牌策略。適合補課企業史／零售經濟學主線。
+    </div>
+    <div class="le-link">🔗 <a href="https://www.acquired.fm/episodes/home-depot">acquired.fm/episodes/home-depot</a></div>
+  </div>
+</section>
+
+<!-- ================= FOUNDERS ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Founders</h2>
+    <div class="host">David Senra</div>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集 · Last Known Episode</div>
+    <div class="le-title">#436 Ari Emanuel's Autobiography</div>
+    <div class="le-meta">發佈：2026-10-05 10:00 UTC · 本輪 461 集 feed 中無新 GUID（每週一更，預料 10-12）</div>
+    <div class="le-summary">
+      David Senra 拆解 Ari Emanuel（Endeavor／WME 掌門人）自傳《Roll The Calls》。主軸：由童年閱讀障礙與過動、被診斷為「bundle of self-loathing, anxiety and rage」，到把「<b>不滿（dissatisfaction）</b>」當成物種超能力去談判、收購、擴張娛樂帝國。
+      <div class="callout">💡 補課價值：一條關於「<b>把缺陷轉成驅動力</b>」嘅高密度創業心理素材。</div>
+    </div>
+    <div class="le-link">🔗 <a href="https://www.founderspodcast.com/">founderspodcast.com</a> · 已於 <a href="daily-report-2026-10-06.html">10-06 日報</a>完整拆解</div>
+  </div>
+</section>
+
+<!-- ================= MY FIRST MILLION ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>My First Million</h2>
+    <div class="host">Sam Parr &amp; Shaan Puri</div>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集 · Last Known Episode</div>
+    <div class="le-title">Ep 869 · The creative genius behind Squatty Potty &amp; Poo-Pourri reveals his marketing playbook</div>
+    <div class="le-meta">發佈：2026-10-07 10:00 UTC · 長度 1 小時 5 分 38 秒（3,938 秒）· 主持：Shaan Puri（本集 Sam Parr 未出場）· 嘉賓：<b>Jeff Harmon</b>（Angel Studios／Harmon Brothers 共同創辦人）· 本輪 909 集 feed 中無新 GUID（預料 10-09／10-10）</div>
+    <div class="le-summary">
+      一套「<b>搵 glitch（定價錯位嘅注意力渠道）→ 榨乾注意力 → 變成自己嘅受眾 → 用受眾嚟融資</b>」嘅作業系統：由 YouTube 剛開廣告平台時「每個 view 唔夠一美分」，講到用一條 19 分鐘可跳過廣告籌到 <b>$1,100 萬</b>（The Chosen）；以及把喜劇人訓練成行銷人嘅爆款方法論（Poo-Pourri／Squatty Potty）。
+      <blockquote>It's way easier to train a comedian to be a marketer than it is to train a marketer to be funny.
+        <cite>— Jeff Harmon</cite></blockquote>
+    </div>
+    <div class="le-link">🔗 <a href="https://www.mfmpod.com/episodes/">mfmpod.com/episodes</a> · 已於 <a href="daily-report-2026-10-08.html">10-08 日報</a>完整拆解</div>
+  </div>
+</section>
+
+<!-- ================= KNOWLEDGE PROJECT ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Knowledge Project</h2>
+    <div class="host">Shane Parrish</div>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集 · Last Known Episode</div>
+    <div class="le-title">Ryan Serhant: How to Get People to Say Yes</div>
+    <div class="le-meta">發佈：2026-10-08 09:55 UTC · 主持：Shane Parrish · 嘉賓：<b>Ryan Serhant</b>（SERHANT. 創辦人兼 CEO）· 本輪 20 集 feed 中無新 GUID（週更，預料 10-15）</div>
+    <div class="le-summary">
+      「<b>賣嘢而唔令人覺得被賣</b>」：先建立連結 → 先幫對方 → 賺取「可以開口」嘅權利。附「把一日當 <b>1,000 分鐘</b>銀行」嘅時間框架、拒絕 fake it till you make it、以及「ego 會阻礙成交」。
+      <blockquote>He explains how to sell without making people feel sold to: build a connection, help first, and earn the right to ask.
+        <cite>— 官方集介（The Knowledge Project）</cite></blockquote>
+    </div>
+    <div class="le-link">🔗 <a href="https://fs.blog/knowledge-project-podcast/ryan-serhant/">fs.blog/knowledge-project-podcast/ryan-serhant/</a> · 已於 <a href="daily-report-2026-10-09.html">10-09 日報</a>完整拆解</div>
+  </div>
+</section>
+
+<!-- ================= DIARY OF A CEO ================= -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Diary of a CEO</h2>
+    <div class="host">Steven Bartlett</div>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">最後已知劇集 · Last Known Episode</div>
+    <div class="le-title">Most Replayed Moment: AI Is Changing How Teams Work Forever</div>
+    <div class="le-meta">發佈：2026-10-09 05:00 UTC · 長度 20 分 41 秒（1,241 秒）· 主持：Steven Bartlett · 出場：<b>Nick Hanauer</b>（Amazon 首位非家族投資人）vs <b>Daniel Priestley</b>（企業家／作家）· 本輪 895 集 feed 中無新 GUID（週更，預料 10-16）</div>
+    <div class="le-summary">
+      DOAC「Most Replayed Moment」重播精華，剪自 2026-06-08 全集《Death of the Middle Class: Billionaire vs Entrepreneur DEBATE》入面「AI 同未來工作」嗰段。核心張力：<b>當 AI 同時打中所有工種，係大規模失業，定係人類潛能嘅新紀元？</b> 一邊係政策／分配派（Hanauer），一邊係創業／適應派（Priestley）。
+      <blockquote>The future belongs to small, agile teams of people augmented by AI, rather than massive, bloated corporations.
+        <cite>— Daniel Priestley 立場整理（PodPulse ）</cite></blockquote>
+    </div>
+    <div class="le-link">🔗 <a href="https://thediaryofaceo.com/">thediaryofaceo.com</a> · 已於 <a href="daily-report-2026-10-09.html">10-09 日報</a>完整拆解</div>
+  </div>
+</section>
+
+<footer class="bot">
+  <div class="timeline">
+    ⏱ <b>本輪掃描時序</b><br>
+    <code>09:53Z</code> 讀 podcasts.json（6 台）/ state.json（2,977 個已掃 GUID）<br>
+    <code>09:53Z</code> Fetch 6 條 RSS feed → 全部 HTTP 200（217 / 461 / 434 / 909 / 20 / 895 集）<br>
+    <code>09:54Z</code> GUID 逐條比對 → <b>1 條新內容</b>（All-In 10-10 新集）<br>
+    <code>09:54Z</code> Jev triage 1 條（All-In 0.16，低於噪音線但屬真實新集，保留並標 ⚠️）<br>
+    <code>09:54Z</code> 深度萃取：All-In 官方集頁／RSS 章節＋show notes（含 20+ 引用連結）＋ NYT（Anthropic/意識；法債息）＋ Fortune／Scientific American／Terry Tao 博客（OpenAI 722 手稿）＋ DW（法國示威）＋ xAI changelog／TechCrunch（Grok Bot headless；OpenAI Dots）＋ TradingEconomics／CNBC／EFG（OAT 息率）<br>
+    <code>09:56Z</code> 生成本報告 → 更新 state.json → git push
+  </div>
+  <p>📬 本報告由 Vee Mok 為 James 自動生成 · 每日深度掃描 6 個英文商業／思維播客 · 所有萃取基於真實內容（RSS / 官方集頁 / show notes / 逐字稿 / 標註來源嘅公開報導），未經核實之數字與預測已標 ⚠️。</p>
+  <p>🔗 <a href="https://jmoksz.github.io/mindset-podcasts/">jmoksz.github.io/mindset-podcasts</a> · <a href="https://github.com/JMOKSZ/mindset-podcasts">GitHub Repo</a></p>
+</footer>
+
+</div>
+</body>
+</html>
