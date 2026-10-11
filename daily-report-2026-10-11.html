@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-10-11</title>
+<style>
+  :root{
+    --bg:#fdfaf6;
+    --card:#fffdf9;
+    --ink:#2b2620;
+    --muted:#7a7065;
+    --line:#e8ddcd;
+    --accent:#b8862b;
+    --accent-soft:#f4e8cf;
+    --new:#2e7d5b;
+    --warn:#a8571f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;
+    line-height:1.78;
+    margin:0;
+    padding:0 16px 90px;
+    font-size:16.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;}
+  header.top{
+    padding:46px 0 26px;
+    border-bottom:2px solid var(--line);
+    margin-bottom:32px;
+  }
+  header.top h1{font-size:31px;margin:0 0 8px;letter-spacing:.5px;}
+  header.top .sub{color:var(--muted);font-size:14.5px;}
+  header.top .meta{margin-top:14px;font-size:13.5px;color:var(--muted);}
+  .summary{
+    background:var(--accent-soft);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:18px 22px;
+    margin-bottom:38px;
+    font-size:15px;
+  }
+  .summary b{color:var(--accent);}
+  .summary ul{margin:8px 0 0;padding-left:20px;}
+  .stats{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0 4px;}
+  .stat{flex:1 1 120px;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;padding:10px 14px;text-align:center;}
+  .stat .n{font-size:24px;color:var(--accent);display:block;line-height:1.3;}
+  .stat .l{font-size:12px;color:var(--muted);}
+  section.pod{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 26px 22px;
+    margin-bottom:32px;
+    box-shadow:0 1px 0 rgba(0,0,0,.02);
+  }
+  .pod-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;border-bottom:1px dashed var(--line);padding-bottom:12px;margin-bottom:18px;}
+  .pod-head h2{font-size:22px;margin:0;flex:1 1 auto;}
+  .pod-head .host{color:var(--muted);font-size:13.5px;}
+  .tag{font-size:12px;padding:2px 10px;border-radius:20px;letter-spacing:.5px;white-space:nowrap;}
+  .tag.new{background:var(--new);color:#fff;}
+  .tag.none{background:#eee6d8;color:var(--muted);}
+  .tag.warn{background:var(--warn);color:#fff;}
+  .tag.recap{background:#e8ecf4;color:#3f5070;}
+  .ep-title{font-size:19px;font-weight:bold;color:var(--accent);line-height:1.45;margin:2px 0 6px;}
+  .ep-meta{font-size:13px;color:var(--muted);margin-bottom:14px;}
+  h3{font-size:17px;margin:26px 0 8px;color:#423a2e;border-left:3px solid var(--accent);padding-left:10px;}
+  h4{font-size:15px;margin:20px 0 6px;color:var(--accent);letter-spacing:.4px;}
+  ul{margin:6px 0 12px;padding-left:22px;}
+  li{margin:6px 0;}
+  ol{margin:6px 0 12px;padding-left:22px;}
+  blockquote{
+    margin:14px 0;
+    padding:11px 18px;
+    border-left:3px solid var(--accent);
+    background:#fbf5e9;
+    color:#4a4034;
+    font-style:italic;
+    font-size:15px;
+    border-radius:0 8px 8px 0;
+  }
+  blockquote cite{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:6px;}
+  .kv{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:14.5px;}
+  .kv th,.kv td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+  .kv th{background:#f7efe0;font-weight:normal;color:#6a5f52;width:38%;}
+  .callout{
+    border:1px dashed var(--line);
+    background:#fcf8f1;
+    border-radius:10px;
+    padding:12px 16px;
+    font-size:14px;
+    color:#5d5347;
+    margin:14px 0;
+  }
+  .label{font-size:11.5px;letter-spacing:.6px;padding:1px 7px;border-radius:4px;background:#f0e8d8;color:#7a6a52;margin-right:6px;white-space:nowrap;}
+  .label.ext{background:#e9f0ea;color:#3f6b52;}
+  .label.jev{background:#f3e6e0;color:#8a4a2c;}
+  .label.ts{background:#e8ecf4;color:#3f5070;}
+  .chapters{font-size:13.8px;color:#5d5347;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;padding:14px 18px;line-height:1.9;columns:2;column-gap:26px;}
+  @media(max-width:560px){.chapters{columns:1;}}
+  .chapters .tc{color:#8a6a2c;font-family:Georgia,serif;}
+  .last-ep{
+    margin-top:6px;
+    padding:16px 18px;
+    background:#fbf8f1;
+    border:1px solid var(--line);
+    border-radius:10px;
+  }
+  .last-ep .lbl{color:var(--muted);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;}
+  .last-ep .le-title{font-size:16.5px;font-weight:bold;color:var(--accent);margin:5px 0 3px;line-height:1.45;}
+  .last-ep .le-meta{font-size:13px;color:var(--muted);margin-bottom:9px;}
+  .last-ep .le-summary{font-size:14.5px;color:#4f463b;margin:8px 0 9px;}
+  .last-ep .le-link{font-size:13px;}
+  .timeline{font-size:13.5px;color:#5d5347;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;padding:12px 16px;line-height:2.0;}
+  .timeline code{background:transparent;color:#8a6a2c;font-size:13px;}
+  footer.bot{border-top:1px solid var(--line);margin-top:44px;padding-top:18px;color:var(--muted);font-size:13px;}
+  a{color:var(--accent);}
+  code{background:#f3ecdd;padding:1px 5px;border-radius:4px;font-size:13.5px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>思維播客日報 · 2026-10-11</h1>
+  <div class="sub">6 個英文商業／思維播客 · 每日深度掃描 · 為 James 而設的「第二對耳仔」</div>
+  <div class="meta">
+    🕘 報告生成時間：<b>2026-10-11 09:53 UTC</b>（= 香港時間 2026-10-11 17:53）<br>
+    📡 掃描方式：6 條 RSS feed 直接抓取 XML，逐集比對 GUID 去重<br>
+    🧮 Jev 前置過濾（TypeSafe System One, <code>news</code> profile）：本輪 <b>0 條候選</b> → 無需過濾（fail-open 正常）<br>
+    🧑‍💻 Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">JMOKSZ/mindset-podcasts</a>
+  </div>
+</header>
+
+<div class="summary">
+  <b>今日重點：6 台全部無新集。</b>
+  <ul>
+    <li>📭 <b>Acquired、Founders、All-In、My First Million、Knowledge Project、Diary of a CEO</b>：本輪逐條比對後<b>均無未掃過嘅新 GUID</b>。</li>
+    <li>📅 最近一次有更新：<b>All-In</b> 10-10（Claude 意識／OpenAI 數學／法國騷亂）、<b>DOAC</b> 10-09（AI 團隊重播高光）、<b>KP</b> 10-08（Ryan Serhant 銷售）、<b>MFM</b> 10-07（Squatty Potty 營銷）。三個台（Acquired／Founders）本身節奏較疏。</li>
+    <li>ℹ️ 說明：6 條 feed 全部 HTTP 200 成功抓取；今日屬「無更新」日，各台最後已知劇集連內容概要列於下方卡片。</li>
+  </ul>
+</div>
+
+<div class="stats">
+  <div class="stat"><span class="n">6/6</span><span class="l">RSS 抓取成功</span></div>
+  <div class="stat"><span class="n">0</span><span class="l">今日新集數</span></div>
+  <div class="stat"><span class="n">2,978</span><span class="l">累計追蹤集數</span></div>
+  <div class="stat"><span class="n">6</span><span class="l">播客台數</span></div>
+</div>
+
+
+<!-- ==================== Acquired ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Acquired</h2>
+    <span class="host">Ben Gilbert &amp; David Rosenthal</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-11）比對 <code>state.json</code> 後<b>無新集數</b>。所有已發佈集數 GUID 均已掃過。<br>
+    <b>最後已知劇集：</b>The Home Depot（2026-09-13，3 小時 35 分（12,902 秒））
+  </div>
+  <div class="le-summary" style="margin-top:14px">
+    <b>內容概要：</b>Home Depot 創辦故事：Bernie Marcus 同 Arthur Blank 喺 48 歲同 35 歲畀人炒魷之後，聽咗紐約銀行家 Ken Langone（就係令佢哋被炒嗰個人）嘅一句話——「你哋係畀金馬蹄鐵踢中咗屁股」——然後寫下美國零售史上最強複利故事之一。官方描述形容成一個「Avengers 電影」：只要 Avengers 被炒、破產、再疊起十呎高嘅空油漆罐扮有貨。Sol Price 等傳奇人物陸續客串出場。
+  </div>
+  <div class="le-link" style="margin-top:10px">🔗 <a href="https://www.acquired.fm/episodes">https://www.acquired.fm/episodes</a> · 集數頁：<a href="https://www.acquired.fm/episodes/home-depot">連結</a> · 首次完整拆解見 <a href="daily-report-2026-09-14.html">2026-09-14 日報</a></div>
+  <div class="callout" style="margin-top:12px">⚠️ Acquired 自 09-13 後未再有新集；本台更新節奏約每月 1–2 集（長篇研究型），下一集通常緊接大主題。</div>
+</section>
+
+<!-- ==================== Founders ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Founders</h2>
+    <span class="host">David Senra</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-11）比對 <code>state.json</code> 後<b>無新集數</b>。所有已發佈集數 GUID 均已掃過。<br>
+    <b>最後已知劇集：</b>#436 Ari Emanuel's Autobiography（2026-10-05，1 小時 9 分（4,185 秒））
+  </div>
+  <div class="le-summary" style="margin-top:14px">
+    <b>內容概要：</b>David Senra 讀 Ari Emanuel（Endeavor／WME 掌門人）自傳《Roll The Calls》（題目源自 Emanuel 家族格言「唔好等，主動打過去」）嘅讀書筆記。Senra 一貫做法：抽書中行動者嘅決策、野心同偏執，講一個經紀人點樣由收發室做到建立橫跨演藝、體育、時尚嘅娛樂帝國。本集由 Ramp、Applovin、Vanta 贊助。
+  </div>
+  <div class="le-link" style="margin-top:10px">🔗 <a href="https://www.founderspodcast.com/">https://www.founderspodcast.com/</a> · 首次完整拆解見 <a href="daily-report-2026-10-06.html">2026-10-06 日報</a></div>
+  <div class="callout" style="margin-top:12px">ℹ️ Founders 為週更（多數星期一），#436 對應 10-05；下一集預料 10-12 左右。</div>
+</section>
+
+<!-- ==================== All-In ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>All-In</h2>
+    <span class="host">Chamath · Jason · Sacks · Friedberg</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-11）比對 <code>state.json</code> 後<b>無新集數</b>。所有已發佈集數 GUID 均已掃過。<br>
+    <b>最後已知劇集：</b>Is Claude Conscious? Pope Rejects, Model Welfare Movement, OpenAI's Math Backlash, France Riots（2026-10-10，1 小時 33 分（01:33:15））
+  </div>
+  <div class="le-summary" style="margin-top:14px">
+    <b>內容概要：</b>四大主題：（1）Anthropic 認為 Claude 可能具意識——新宗教？游說教廷、對齊風險、model welfare 運動；（2）OpenAI 數學突破引發社群反彈（Terry Tao、Scott Aaronson 等發聲）；（3）法國騷亂、Friedberg 嘅「社會主義指數」與債市；（4）Grok Bot 轉 headless、OpenAI 推 Dots、IP 是否一文不值。
+  </div>
+  <div class="le-link" style="margin-top:10px">🔗 <a href="https://allin.com/">https://allin.com/</a> · 集數頁：<a href="https://allinchamathjason.libsyn.com/is-claude-conscious-pope-rejects-model-welfare-movement-openais-math-backlash-france-riots">連結</a> · 首次完整拆解見 <a href="daily-report-2026-10-10.html">2026-10-10 日報</a></div>
+  <div class="callout" style="margin-top:12px">ℹ️ 此集已於 10-10 日報完整拆解；All-In 一般週五／週六更新（美西時間），下一集預料 10-16 前後。</div>
+</section>
+
+<!-- ==================== My First Million ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>My First Million</h2>
+    <span class="host">Sam Parr &amp; Shaan Puri</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-11）比對 <code>state.json</code> 後<b>無新集數</b>。所有已發佈集數 GUID 均已掃過。<br>
+    <b>最後已知劇集：</b>The creative genius behind Squatty Potty &amp; Poo-Pourri reveals his marketing playbook（2026-10-07，1 小時 5 分（3,938 秒））
+  </div>
+  <div class="le-summary" style="margin-top:14px">
+    <b>內容概要：</b>Episode 869：Shaan Puri 同 Angel Studios 創辦人 Jeff Harmon 對談，講「揾系統漏洞（glitches）」——由幫牙醫做嘅神級營銷案例（Squatty Potty、Poo-Pourri）講起，示範點樣捕捉注意力、19 分鐘廣告實驗、以及點解要揀自己真正頭痛嘅問題去創業。內含 HubSpot「$1M Attention Guide」推廣。
+  </div>
+  <div class="le-link" style="margin-top:10px">🔗 <a href="https://www.mfmpod.com/episodes/">https://www.mfmpod.com/episodes/</a> · 首次完整拆解見 <a href="daily-report-2026-10-08.html">2026-10-08 日報</a></div>
+  <div class="callout" style="margin-top:12px">ℹ️ MFM 每週約 2–3 集（週一／週三／週五）；Shaan vs Sam 輪更主持。下一集預料 10-12 前後。</div>
+</section>
+
+<!-- ==================== The Knowledge Project ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Knowledge Project</h2>
+    <span class="host">Shane Parrish</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-11）比對 <code>state.json</code> 後<b>無新集數</b>。所有已發佈集數 GUID 均已掃過。<br>
+    <b>最後已知劇集：</b>Ryan Serhant: How to Get People to Say Yes（2026-10-08，—（Members 先行；公開 10-08））
+  </div>
+  <div class="le-summary" style="margin-top:14px">
+    <b>內容概要：</b>Ryan Serhant（SERHANT. 創辦人、《Million Dollar Listing New York》／Netflix《Owning Manhattan》主角）講「唔令人覺得被推銷」嘅銷售法：先建立連結、先幫人、賺到開口請求嘅資格。核心係信任與關係資本，而非話術。
+  </div>
+  <div class="le-link" style="margin-top:10px">🔗 <a href="https://fs.blog/knowledge-project/">https://fs.blog/knowledge-project/</a> · 集數頁：<a href="https://fs.blog/knowledge-project-podcast/ryan-serhant/">連結</a> · 首次完整拆解見 <a href="daily-report-2026-10-09.html">2026-10-09 日報</a></div>
+  <div class="callout" style="margin-top:12px">ℹ️ KP 目前 RSS 只有 20 集（滾動 feed），週四更新；下一集預料 10-15 前後。</div>
+</section>
+
+<!-- ==================== The Diary of a CEO ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Diary of a CEO</h2>
+    <span class="host">Steven Bartlett</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-11）比對 <code>state.json</code> 後<b>無新集數</b>。所有已發佈集數 GUID 均已掃過。<br>
+    <b>最後已知劇集：</b>Most Replayed Moment: AI Is Changing How Teams Work Forever（2026-10-09，20 分 41 秒（1,241 秒））
+  </div>
+  <div class="le-summary" style="margin-top:14px">
+    <b>內容概要：</b>DOAC「Most Replayed Moment」重播精華，剪自 2026-06-08 全集《Death of the Middle Class: Billionaire vs Entrepreneur DEBATE》嘅「AI 同未來工作」段落。對陣：Nick Hanauer（Amazon 首位非家族投資人，政策／分配派）vs Daniel Priestley（作家／創業者，適應派）。核心問題：當 AI 做得到原本只有人做得到嘅任務，係大規模失業，定係人類潛能新紀元？
+  </div>
+  <div class="le-link" style="margin-top:10px">🔗 <a href="https://thediaryofaceo.com/">https://thediaryofaceo.com/</a> · 首次完整拆解見 <a href="daily-report-2026-10-09.html">2026-10-09 日報</a></div>
+  <div class="callout" style="margin-top:12px">ℹ️ DOAC 平日近乎每日更新（週一至週五 05:00 UTC 左右）；下一集預料 10-12。</div>
+</section>
+
+
+<footer class="bot">
+  <div class="timeline">
+    ⏱ <b>本輪掃描時序</b><br>
+    <code>09:53Z</code> 讀 podcasts.json（6 台）/ state.json（2,978 個已掃 GUID）<br>
+    <code>09:53Z</code> Fetch 6 條 RSS feed → 全部 HTTP 200（217 / 461 / 434 / 909 / 20 / 895 集）<br>
+    <code>09:53Z</code> GUID 逐條比對 → <b>0 條新內容</b>（6 台最新集均已掃過）<br>
+    <code>09:53Z</code> Jev triage 0 條（無候選；fail-open 健康）<br>
+    <code>09:53Z</code> 生成「無更新」報告 → 更新 state.json lastScan → git push
+  </div>
+  <p>📬 本報告由 Vee Mok 為 James 自動生成 · 每日深度掃描 6 個英文商業／思維播客 · 所有內容基於真實 RSS／官方集頁，未經核實之數字與預測已標 ⚠️。</p>
+  <p>🔗 <a href="https://jmoksz.github.io/mindset-podcasts/">jmoksz.github.io/mindset-podcasts</a> · <a href="https://github.com/JMOKSZ/mindset-podcasts">GitHub Repo</a></p>
+</footer>
+
+</div>
+</body>
+</html>
