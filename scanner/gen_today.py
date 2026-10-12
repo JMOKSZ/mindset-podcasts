@@ -1,24 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import datetime
+import json, os
 BASE = '/root/.openclaw/workspace/mindset-podcasts'
 style = open('/tmp/style.html', encoding='utf-8').read()
 
-now_utc = '2026-10-11 09:53 UTC'
-now_hkt = '2026-10-11 17:53'
+now_utc = '2026-10-12 09:53 UTC'
+now_hkt = '2026-10-12 17:53'
 
-def card(name, host, tag, last_title, last_date, dur, link, site, first_report, synopsis, note=''):
-    tagcls = 'none'
+# ---- aggregate scanned GUID count ----
+state = json.load(open(os.path.join(BASE, 'scanner', 'state.json')))
+scanned_total = sum(len(v) for v in state.get('scannedEpisodes', {}).values())
+scan = json.load(open(os.path.join(BASE, 'scanner', 'scan_result.json')))
+feed_counts = ' / '.join(str(scan[k]['count']) for k in
+                         ['acquired', 'founders', 'all-in', 'my-first-million', 'knowledge-project', 'diary-of-a-ceo'])
+
+def card_none(name, host, tag, last_title, last_date, dur, link, site, first_report, synopsis, note=''):
     return f'''
 <!-- ==================== {name} ==================== -->
 <section class="pod">
   <div class="pod-head">
     <h2>{name}</h2>
     <span class="host">{host}</span>
-    <span class="tag {tagcls}">{tag}</span>
+    <span class="tag none">{tag}</span>
   </div>
   <div class="callout">
-    📭 本台今日（2026-10-11）比對 <code>state.json</code> 後<b>無新集數</b>。所有已發佈集數 GUID 均已掃過。<br>
+    📭 本台今日（2026-10-12）比對 <code>state.json</code> 後<b>無新集數</b>。所有已發佈集數 GUID 均已掃過。<br>
     <b>最後已知劇集：</b>{last_title}（{last_date}{('，' + dur) if dur else ''}）
   </div>
   <div class="le-summary" style="margin-top:14px">
@@ -31,7 +37,8 @@ def card(name, host, tag, last_title, last_date, dur, link, site, first_report, 
 
 cards = ''
 
-cards += card(
+# ---------- Acquired ----------
+cards += card_none(
     "Acquired", "Ben Gilbert &amp; David Rosenthal", "最近無更新",
     "The Home Depot", "2026-09-13", "3 小時 35 分（12,902 秒）",
     "https://www.acquired.fm/episodes/home-depot", "https://www.acquired.fm/episodes",
@@ -39,15 +46,17 @@ cards += card(
     "Home Depot 創辦故事：Bernie Marcus 同 Arthur Blank 喺 48 歲同 35 歲畀人炒魷之後，聽咗紐約銀行家 Ken Langone（就係令佢哋被炒嗰個人）嘅一句話——「你哋係畀金馬蹄鐵踢中咗屁股」——然後寫下美國零售史上最強複利故事之一。官方描述形容成一個「Avengers 電影」：只要 Avengers 被炒、破產、再疊起十呎高嘅空油漆罐扮有貨。Sol Price 等傳奇人物陸續客串出場。",
     note="⚠️ Acquired 自 09-13 後未再有新集；本台更新節奏約每月 1–2 集（長篇研究型），下一集通常緊接大主題。")
 
-cards += card(
+# ---------- Founders ----------
+cards += card_none(
     "Founders", "David Senra", "最近無更新",
     "#436 Ari Emanuel's Autobiography", "2026-10-05", "1 小時 9 分（4,185 秒）",
     "", "https://www.founderspodcast.com/",
     "daily-report-2026-10-06.html",
     "David Senra 讀 Ari Emanuel（Endeavor／WME 掌門人）自傳《Roll The Calls》（題目源自 Emanuel 家族格言「唔好等，主動打過去」）嘅讀書筆記。Senra 一貫做法：抽書中行動者嘅決策、野心同偏執，講一個經紀人點樣由收發室做到建立橫跨演藝、體育、時尚嘅娛樂帝國。本集由 Ramp、Applovin、Vanta 贊助。",
-    note="ℹ️ Founders 為週更（多數星期一），#436 對應 10-05；下一集預料 10-12 左右。")
+    note="ℹ️ Founders 為週更（多數星期一），#436 對應 10-05；至 10-12 仍未見 #437，或延至下週。")
 
-cards += card(
+# ---------- All-In ----------
+cards += card_none(
     "All-In", "Chamath · Jason · Sacks · Friedberg", "最近無更新",
     "Is Claude Conscious? Pope Rejects, Model Welfare Movement, OpenAI's Math Backlash, France Riots", "2026-10-10", "1 小時 33 分（01:33:15）",
     "https://allinchamathjason.libsyn.com/is-claude-conscious-pope-rejects-model-welfare-movement-openais-math-backlash-france-riots",
@@ -55,15 +64,17 @@ cards += card(
     "四大主題：（1）Anthropic 認為 Claude 可能具意識——新宗教？游說教廷、對齊風險、model welfare 運動；（2）OpenAI 數學突破引發社群反彈（Terry Tao、Scott Aaronson 等發聲）；（3）法國騷亂、Friedberg 嘅「社會主義指數」與債市；（4）Grok Bot 轉 headless、OpenAI 推 Dots、IP 是否一文不值。",
     note="ℹ️ 此集已於 10-10 日報完整拆解；All-In 一般週五／週六更新（美西時間），下一集預料 10-16 前後。")
 
-cards += card(
+# ---------- My First Million ----------
+cards += card_none(
     "My First Million", "Sam Parr &amp; Shaan Puri", "最近無更新",
     "The creative genius behind Squatty Potty &amp; Poo-Pourri reveals his marketing playbook", "2026-10-07", "1 小時 5 分（3,938 秒）",
     "", "https://www.mfmpod.com/episodes/",
     "daily-report-2026-10-08.html",
     "Episode 869：Shaan Puri 同 Angel Studios 創辦人 Jeff Harmon 對談，講「揾系統漏洞（glitches）」——由幫牙醫做嘅神級營銷案例（Squatty Potty、Poo-Pourri）講起，示範點樣捕捉注意力、19 分鐘廣告實驗、以及點解要揀自己真正頭痛嘅問題去創業。內含 HubSpot「$1M Attention Guide」推廣。",
-    note="ℹ️ MFM 每週約 2–3 集（週一／週三／週五）；Shaan vs Sam 輪更主持。下一集預料 10-12 前後。")
+    note="ℹ️ MFM 每週約 2–3 集（週一／週三／週五）；Shaan vs Sam 輪更主持。至 10-12 未見新集。")
 
-cards += card(
+# ---------- Knowledge Project ----------
+cards += card_none(
     "The Knowledge Project", "Shane Parrish", "最近無更新",
     "Ryan Serhant: How to Get People to Say Yes", "2026-10-08", "—（Members 先行；公開 10-08）",
     "https://fs.blog/knowledge-project-podcast/ryan-serhant/", "https://fs.blog/knowledge-project/",
@@ -71,49 +82,134 @@ cards += card(
     "Ryan Serhant（SERHANT. 創辦人、《Million Dollar Listing New York》／Netflix《Owning Manhattan》主角）講「唔令人覺得被推銷」嘅銷售法：先建立連結、先幫人、賺到開口請求嘅資格。核心係信任與關係資本，而非話術。",
     note="ℹ️ KP 目前 RSS 只有 20 集（滾動 feed），週四更新；下一集預料 10-15 前後。")
 
-cards += card(
-    "The Diary of a CEO", "Steven Bartlett", "最近無更新",
-    "Most Replayed Moment: AI Is Changing How Teams Work Forever", "2026-10-09", "20 分 41 秒（1,241 秒）",
-    "", "https://thediaryofaceo.com/",
-    "daily-report-2026-10-09.html",
-    "DOAC「Most Replayed Moment」重播精華，剪自 2026-06-08 全集《Death of the Middle Class: Billionaire vs Entrepreneur DEBATE》嘅「AI 同未來工作」段落。對陣：Nick Hanauer（Amazon 首位非家族投資人，政策／分配派）vs Daniel Priestley（作家／創業者，適應派）。核心問題：當 AI 做得到原本只有人做得到嘅任務，係大規模失業，定係人類潛能新紀元？",
-    note="ℹ️ DOAC 平日近乎每日更新（週一至週五 05:00 UTC 左右）；下一集預料 10-12。")
+# ==================== DOAC — NEW EPISODE DEEP DIVE ====================
+doac = f'''
+<!-- ==================== The Diary of a CEO ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Diary of a CEO</h2>
+    <span class="host">Steven Bartlett</span>
+    <span class="tag new">🆕 新集數</span>
+  </div>
+
+  <div class="ep">
+    <div class="ep-title">Eric Weinstein: The Secret Alien Programs Nobody Is Talking About</div>
+    <div class="ep-meta">
+      🗓 2026-10-12（05:00 UTC 發佈）· ⏱ 1 小時 52 分 48 秒（6,768 秒）<br>
+      🎙 嘉賓：<b>Eric Weinstein</b> — 數學／物理學家、經濟學家；哈佛數學物理博士；曾任 Thiel Capital 董事總經理；Podcast《The Portal》主持；「intellectual dark web」一詞創始人。<br>
+      🎧 Apple Podcasts 集頁：<a href="https://podcasts.apple.com/us/podcast/eric-weinstein-the-secret-alien-programs-nobody-is/id1291423644?i=1000795890178">連結</a>
+      （本集為 Weinstein <b>第二次</b>上 DOAC —— 首次係 2025-07-14《The Collapse Has Already Started!》）
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:16px">
+    <b>一句話總結：</b>呢集係一場「文明風險總體檢」。官方文案問：<i>「當領導人將你蒙在鼓裡，我哋係咪正衝向一場全球危機？」</i>Weinstein 主張真正嘅威脅唔係 AI 本身，而係一種會<b>自我複製、利用人性弱點去抽取資源</b>嘅「人工生命（Artificial Life）」；而人類唯一嘅生存策略唔係控制超級智能，而係<code>建立在互相依賴之上（線粒體模型）</code>。
+  </div>
+
+  <h3 style="margin-top:26px">🎯 主題（五條主軸，取自官方 show notes）</h3>
+  <div class="le-summary">
+    <ol>
+      <li><b>The Great Sleep（大睡眠）</b> — 現代社會活在一個長達 <b>80 年</b>嘅相對和平泡沫中，呢個泡沫扭曲咗我哋對歷史風險同波動性嘅判斷。</li>
+      <li><b>Artificial Life（人工生命）</b> — 首要技術威脅唔係 AI，而係<b>自我複製嘅人工生命</b>：佢利用人類嘅脆弱去抽取資源。</li>
+      <li><b>Academic Gatekeeping（學術守門）</b> — 理論物理同數學嘅領導層實際上點樣<b>壓制進展、保住既有遺產／正統</b>。</li>
+      <li><b>Managed Reality（被管理嘅現實）</b> — 全球機構透過「策展式敘事」強制共識，向公眾隱藏真正嘅系統性威脅。</li>
+      <li><b>The Mitochondria Model（線粒體模型）</b> — 面對超級智能，人類最佳生存策略係<b>互相依賴（mutual dependence）</b>，而唔係控制。</li>
+    </ol>
+  </div>
+
+  <h3 style="margin-top:26px">🧠 嘉賓背景（真實公開資料）</h3>
+  <div class="le-summary">
+    Eric Weinstein 係美國數學家、物理學家、投資人、Podcast 主持。哈佛大學數學物理博士，曾任 Peter Thiel 旗下 Thiel Capital 董事總經理，主持播客《The Portal》。以提出未完成嘅「萬有理論 Geometric Unity」、批判學術界（尤其弦論主導嘅理論物理）而聞名，亦係「intellectual dark web」一詞嘅發明者。長年關注制度失效、技術風險、與「異端者被邊緣化」嘅機制。官方簡介形容佢「用非主流宏觀框架，數十年來拆解制度失效同技術風險嘅機械結構」。
+  </div>
+
+  <h3 style="margin-top:26px">🕒 全集章節地圖（官方時間戳，1h52m）</h3>
+  <div class="le-summary">
+    <b>0:00 開場</b> · <b>2:20</b> Weinstein 點預測未來 · <b>2:35</b> AI 真係會消滅人類？ · <b>4:39</b> 無人準備好嘅「海嘯」 · <b>7:52</b> AI／俄羅斯／中國／伊朗：最大全球威脅係邊個 · <b>16:18</b> AI 嘅地緣政治危險 · <b>17:59</b> AI 時代嘅世界長咩樣 · <b>21:40</b> 產權點樣塑造 AI 未來 · <b>27:14</b> AI 點改變外勞 · <b>35:26</b> Weinstein 信唔信外星人存在 · <b>41:44</b> 非人類智能係咪已經在我們之中 · <b>43:16</b> 人類為何必須離開地球 · <b>44:42</b> 人類趕得切逃出太陽系嗎 · <b>50:53</b> AI 冇安全護欄會點 · <b>57:30</b> AI 嘅科研潛力值唔值得冒險 · <b>1:04:26</b> 為何 Sam Altman 同 Dario Amodei 競逐超智能 · <b>1:04:45</b> Altman 真係明白 AI 危險嗎 · <b>1:08:16</b> Altman 對人類最大嘅擔憂 · <b>1:10:00</b> 為何 Weinstein 冇加入 OpenAI · <b>1:15:28</b> 如果可以，佢會唔會剎停 AI · <b>1:16:11</b> 應該幾依賴 AI · <b>1:22:42</b> 人類應否同 AI 融合 · <b>1:25:01</b> 十年後我哋會後悔今日嘅 AI 辯論咩事 · <b>1:31:11</b> AI 可以治好癌症而唔變自主嗎 · <b>1:32:11</b> 現代物理出咗咩事 · <b>1:33:21</b> AI 會唔會比人類更勝任世界領袖 · <b>1:41:43</b> 伊朗衝突會點收場 · <b>1:48:50</b> 佢見過最美嘅地方。
+  </div>
+
+  <h3 style="margin-top:26px">🔑 核心論點（深度拆解）</h3>
+
+  <div class="le-summary">
+    <p><b>① 「大睡眠」＝風險感知被和平紅利麻醉。</b>Weinstein 嘅宏觀框架：人類文明自 1945 年以嚟享受咗約 80 年冇大國全面戰爭嘅「和平泡沫」。長期低波動令人（尤其係政策制定者同市場）<b>系統性低估尾部風險</b>——即係當「海嘯」真係嚟，制度同心理都毫無準備。呢個係佢解釋「為何精英會集體失明」嘅底層機制。</p>
+
+    <p><b>② 真正嘅怪物叫「人工生命」，唔係「人工智能」。</b>呢個係全集最反直覺嘅一句。Weinstein 唔係講《Terminator》式 AGI，而係指一類<b>自我複製、會利用人性弱點（貪婪、注意力、信任）去抽取資源</b>嘅系統——可以係生物性、資訊性、或混合體。佢把「目標錯位＋自我複製＋掠奪性」三者疊加，視為比「更聰明嘅聊天機械人」更貼身嘅威脅。</p>
+
+    <p><b>③ 「被管理嘅現實」＝共識係被製造出嚟嘅。</b>佢主張全球機構以「策展式敘事」維持共識，將真正嘅系統性風險（金融、地緣、科技）擋在公眾視野之外。呢點同佢長期批判「制度守門人」立場一致。</p>
+
+    <p><b>④ 學術守門：物理／數學正統如何拖慢突破。</b>由弦論主導嘅理論物理到數學界嘅門檻政治，Weinstein 認為既得利益者會主動壓制異端路線（佢自己嘅 Geometric Unity 就係被邊緣化嘅例子）——代價係人類少咗應對真危機所需嘅新工具。</p>
+
+    <p><b>⑤ 線粒體模型：生存靠共生，唔係靠控制。</b>面對超智能，主流安全思路係「對齊／控制／關進籠」。Weinstein 反其道：提出以<b>線粒體</b>（真核細胞內嘅共生細菌後代）為比喻——人類要做嘅係令自己對超級智能<b>不可或缺</b>，透過互相依賴形成「你唔想我死」嘅結構。呢個係佢對 AI 安全最原創嘅主張。</p>
+  </div>
+
+  <h3 style="margin-top:26px">💡 行業 Insight（點解呢集對做生意／投資有意義）</h3>
+  <div class="le-summary">
+    <ul>
+      <li><b>風險定價可以錯足 80 年。</b>「大睡眠」提醒投資者：長期低波動唔等於低風險，可能只係尾部風險未現形。呢個係對「買保險／留現金／分散」最硬嘅行為金融註腳。</li>
+      <li><b>「人工生命 vs 人工智能」嘅分類法，可當盡職調查清單。</b>評估一間 AI 公司時，問嘅唔止「幾聰明」，而係「佢會唔會自我複製、會唔會掠奪用戶注意力／信任、出事邊個埋單」。</li>
+      <li><b>產權（property rights）決定 AI 命運。</b>章節明确觸及「產權點樣塑造 AI 未來」——即係話技術走向唔係由模型能力決定，而係由法律／所有權制度決定。對創業者：監管與產權設計往往係護城河。</li>
+      <li><b>Altman／Amodei 為何停唔到。</b>Weinstein 直指兩間龍頭創辦人「競逐超智能」，並質疑佢哋是否真係理解風險——帶出一個尖銳問題：當賽局獎勵唔停步，安全承諾仲剩幾多？</li>
+      <li><b>AI 治癌 × 自主性。</b>佢劃咗一條線：AI 可以係超強科研工具，前提係唔變成「自主行動者」。呢個係「能力」與「代理權（agency）」要分開嘅實務判斷。</li>
+    </ul>
+  </div>
+
+  <h3 style="margin-top:26px">💬 原文摘錄（官方 show notes，逐字引用）</h3>
+  <blockquote>
+    「In this episode, he explains: <b>The Great Sleep</b>: How modern society has lived in an 80-year bubble of relative peace that distorts our view of historical risk and volatility.」
+  </blockquote>
+  <blockquote>
+    「<b>Artificial Life</b>: Why the primary technological threat is not AI, but self-replicating artificial life using human vulnerabilities to extract resources.」
+  </blockquote>
+  <blockquote>
+    「<b>The Mitochondria Model</b>: Why humanity's best survival strategy for superintelligence is mutual dependence rather than control.」
+  </blockquote>
+  <blockquote>
+    「Are we racing towards a global crisis while leaders keep us in the dark? Eric Weinstein exposes the forces driving artificial intelligence, geopolitical collapse, and the illusion of modern reality.」
+  </blockquote>
+
+  <div class="callout" style="margin-top:18px">
+    ⚠️ <b>標註</b>：以上五條主軸、章節、嘉賓履歷，全部取自官方 show notes 與 Apple Podcasts 集頁（一手 source）。本集為<b>觀點／框架型訪談</b>，並非數據研究——Weinstein 嘅預測與主張係其個人立場，未經第三方核實；Jev 前置過濾（<code>news</code> profile）給此條 <code>worth 0.3</code>（低分主因：無可核實數字、屬意見型內容），但因其為本輪<b>唯一新集</b>且直擊 AI／地緣風險主題，按 profile 指引「只作相對排序、不作硬砍」予以保留並完整拆解。聽之前請自行判斷邊啲係框架、邊啲係主張。
+  </div>
+
+  <div class="le-link" style="margin-top:14px">🔗 <a href="https://thediaryofaceo.com/">thediaryofaceo.com</a> · 集頁：<a href="https://podcasts.apple.com/us/podcast/eric-weinstein-the-secret-alien-programs-nobody-is/id1291423644?i=1000795890178">Apple Podcasts</a></div>
+</section>
+'''
+cards += doac
 
 html = f'''<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>思維播客日報 · 2026-10-11</title>
+<title>思維播客日報 · 2026-10-12</title>
 {style}
 </head>
 <body>
 <div class="wrap">
 
 <header class="top">
-  <h1>思維播客日報 · 2026-10-11</h1>
+  <h1>思維播客日報 · 2026-10-12</h1>
   <div class="sub">6 個英文商業／思維播客 · 每日深度掃描 · 為 James 而設的「第二對耳仔」</div>
   <div class="meta">
     🕘 報告生成時間：<b>{now_utc}</b>（= 香港時間 {now_hkt}）<br>
     📡 掃描方式：6 條 RSS feed 直接抓取 XML，逐集比對 GUID 去重<br>
-    🧮 Jev 前置過濾（TypeSafe System One, <code>news</code> profile）：本輪 <b>0 條候選</b> → 無需過濾（fail-open 正常）<br>
+    🧮 Jev 前置過濾（TypeSafe System One, <code>news</code> profile）：本輪 1 條候選 → worth 0.3（意見型、無硬數字），按「只作相對排序」指引保留<br>
     🧑‍💻 Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">JMOKSZ/mindset-podcasts</a>
   </div>
 </header>
 
 <div class="summary">
-  <b>今日重點：6 台全部無新集。</b>
+  <b>今日重點：6 台之中 1 台有新集 —— DOAC 專訪 Eric Weinstein。</b>
   <ul>
-    <li>📭 <b>Acquired、Founders、All-In、My First Million、Knowledge Project、Diary of a CEO</b>：本輪逐條比對後<b>均無未掃過嘅新 GUID</b>。</li>
-    <li>📅 最近一次有更新：<b>All-In</b> 10-10（Claude 意識／OpenAI 數學／法國騷亂）、<b>DOAC</b> 10-09（AI 團隊重播高光）、<b>KP</b> 10-08（Ryan Serhant 銷售）、<b>MFM</b> 10-07（Squatty Potty 營銷）。三個台（Acquired／Founders）本身節奏較疏。</li>
-    <li>ℹ️ 說明：6 條 feed 全部 HTTP 200 成功抓取；今日屬「無更新」日，各台最後已知劇集連內容概要列於下方卡片。</li>
+    <li>🆕 <b>The Diary of a CEO</b>：10-12 新集《Eric Weinstein: The Secret Alien Programs Nobody Is Talking About》（1h52m）——文明風險總體檢，五大框架：大睡眠／人工生命／學術守門／被管理嘅現實／線粒體模型。<b>本日報下方完整拆解。</b></li>
+    <li>📭 <b>Acquired、Founders、All-In、My First Million、Knowledge Project</b>：本輪逐條比對後<b>均無未掃過嘅新 GUID</b>。</li>
+    <li>📅 最近一次有更新（其他台）：<b>All-In</b> 10-10（Claude 意識／OpenAI 數學／法國騷亂）、<b>KP</b> 10-08（Ryan Serhant 銷售）、<b>MFM</b> 10-07（Squatty Potty 營銷）。Acquired／Founders 節奏較疏。</li>
   </ul>
 </div>
 
 <div class="stats">
   <div class="stat"><span class="n">6/6</span><span class="l">RSS 抓取成功</span></div>
-  <div class="stat"><span class="n">0</span><span class="l">今日新集數</span></div>
-  <div class="stat"><span class="n">2,978</span><span class="l">累計追蹤集數</span></div>
+  <div class="stat"><span class="n">1</span><span class="l">今日新集數</span></div>
+  <div class="stat"><span class="n">{scanned_total:,}</span><span class="l">累計追蹤集數</span></div>
   <div class="stat"><span class="n">6</span><span class="l">播客台數</span></div>
 </div>
 
@@ -122,11 +218,12 @@ html = f'''<!DOCTYPE html>
 <footer class="bot">
   <div class="timeline">
     ⏱ <b>本輪掃描時序</b><br>
-    <code>09:53Z</code> 讀 podcasts.json（6 台）/ state.json（2,978 個已掃 GUID）<br>
-    <code>09:53Z</code> Fetch 6 條 RSS feed → 全部 HTTP 200（217 / 461 / 434 / 909 / 20 / 895 集）<br>
-    <code>09:53Z</code> GUID 逐條比對 → <b>0 條新內容</b>（6 台最新集均已掃過）<br>
-    <code>09:53Z</code> Jev triage 0 條（無候選；fail-open 健康）<br>
-    <code>09:53Z</code> 生成「無更新」報告 → 更新 state.json lastScan → git push
+    <code>09:53Z</code> 讀 podcasts.json（6 台）/ state.json（{scanned_total:,} 個已掃 GUID）<br>
+    <code>09:53Z</code> Fetch 6 條 RSS feed → 全部 HTTP 200（{feed_counts} 集）<br>
+    <code>09:53Z</code> GUID 逐條比對 → <b>1 條新內容</b>（DOAC · Eric Weinstein）<br>
+    <code>09:53Z</code> Jev triage 1 條 → worth 0.3（保留，作完整拆解）<br>
+    <code>09:53Z</code> 抓 Apple Podcasts 集頁補完 show notes／章節<br>
+    <code>09:53Z</code> 生成日報 → 更新 state.json lastScan → git push
   </div>
   <p>📬 本報告由 Vee Mok 為 James 自動生成 · 每日深度掃描 6 個英文商業／思維播客 · 所有內容基於真實 RSS／官方集頁，未經核實之數字與預測已標 ⚠️。</p>
   <p>🔗 <a href="https://jmoksz.github.io/mindset-podcasts/">jmoksz.github.io/mindset-podcasts</a> · <a href="https://github.com/JMOKSZ/mindset-podcasts">GitHub Repo</a></p>
@@ -137,5 +234,5 @@ html = f'''<!DOCTYPE html>
 </html>
 '''
 
-open(BASE + '/daily-report-2026-10-11.html', 'w', encoding='utf-8').write(html)
-print("written", len(html), "bytes")
+open(BASE + '/daily-report-2026-10-12.html', 'w', encoding='utf-8').write(html)
+print("written", len(html), "bytes; scanned_total =", scanned_total)
