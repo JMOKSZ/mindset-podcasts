@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-10-14</title>
+<style>
+
+  :root{
+    --bg:#fdfaf6;
+    --card:#fffdf9;
+    --ink:#2b2620;
+    --muted:#7a7065;
+    --line:#e8ddcd;
+    --accent:#b8862b;
+    --accent-soft:#f4e8cf;
+    --new:#2e7d5b;
+    --warn:#a8571f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;
+    line-height:1.78;
+    margin:0;
+    padding:0 16px 90px;
+    font-size:16.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;}
+  header.top{
+    padding:46px 0 26px;
+    border-bottom:2px solid var(--line);
+    margin-bottom:32px;
+  }
+  header.top h1{font-size:31px;margin:0 0 8px;letter-spacing:.5px;}
+  header.top .sub{color:var(--muted);font-size:14.5px;}
+  header.top .meta{margin-top:14px;font-size:13.5px;color:var(--muted);}
+  .summary{
+    background:var(--accent-soft);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:18px 22px;
+    margin-bottom:38px;
+    font-size:15px;
+  }
+  .summary b{color:var(--accent);}
+  .summary ul{margin:8px 0 0;padding-left:20px;}
+  .stats{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0 4px;}
+  .stat{flex:1 1 120px;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;padding:10px 14px;text-align:center;}
+  .stat .n{font-size:24px;color:var(--accent);display:block;line-height:1.3;}
+  .stat .l{font-size:12px;color:var(--muted);}
+  section.pod{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 26px 22px;
+    margin-bottom:32px;
+    box-shadow:0 1px 0 rgba(0,0,0,.02);
+  }
+  .pod-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;border-bottom:1px dashed var(--line);padding-bottom:12px;margin-bottom:18px;}
+  .pod-head h2{font-size:22px;margin:0;flex:1 1 auto;}
+  .pod-head .host{color:var(--muted);font-size:13.5px;}
+  .tag{font-size:12px;padding:2px 10px;border-radius:20px;letter-spacing:.5px;white-space:nowrap;}
+  .tag.new{background:var(--new);color:#fff;}
+  .tag.none{background:#eee6d8;color:var(--muted);}
+  .tag.warn{background:var(--warn);color:#fff;}
+  .tag.recap{background:#e8ecf4;color:#3f5070;}
+  .ep-title{font-size:19px;font-weight:bold;color:var(--accent);line-height:1.45;margin:2px 0 6px;}
+  .ep-meta{font-size:13px;color:var(--muted);margin-bottom:14px;}
+  h3{font-size:17px;margin:26px 0 8px;color:#423a2e;border-left:3px solid var(--accent);padding-left:10px;}
+  h4{font-size:15px;margin:20px 0 6px;color:var(--accent);letter-spacing:.4px;}
+  ul{margin:6px 0 12px;padding-left:22px;}
+  li{margin:6px 0;}
+  ol{margin:6px 0 12px;padding-left:22px;}
+  blockquote{
+    margin:14px 0;
+    padding:11px 18px;
+    border-left:3px solid var(--accent);
+    background:#fbf5e9;
+    color:#4a4034;
+    font-style:italic;
+    font-size:15px;
+    border-radius:0 8px 8px 0;
+  }
+  blockquote cite{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:6px;}
+  .kv{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:14.5px;}
+  .kv th,.kv td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+  .kv th{background:#f7efe0;font-weight:normal;color:#6a5f52;width:38%;}
+  .callout{
+    border:1px dashed var(--line);
+    background:#fcf8f1;
+    border-radius:10px;
+    padding:12px 16px;
+    font-size:14px;
+    color:#5d5347;
+    margin:14px 0;
+  }
+  .label{font-size:11.5px;letter-spacing:.6px;padding:1px 7px;border-radius:4px;background:#f0e8d8;color:#7a6a52;margin-right:6px;white-space:nowrap;}
+  .label.ext{background:#e9f0ea;color:#3f6b52;}
+  .label.jev{background:#f3e6e0;color:#8a4a2c;}
+  .label.ts{background:#e8ecf4;color:#3f5070;}
+  .chapters{font-size:13.8px;color:#5d5347;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;padding:14px 18px;line-height:1.9;columns:2;column-gap:26px;}
+  @media(max-width:560px){.chapters{columns:1;}}
+  .chapters .tc{color:#8a6a2c;font-family:Georgia,serif;}
+  .last-ep{
+    margin-top:6px;
+    padding:16px 18px;
+    background:#fbf8f1;
+    border:1px solid var(--line);
+    border-radius:10px;
+  }
+  .last-ep .lbl{color:var(--muted);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;}
+  .last-ep .le-title{font-size:16.5px;font-weight:bold;color:var(--accent);margin:5px 0 3px;line-height:1.45;}
+  .last-ep .le-meta{font-size:13px;color:var(--muted);margin-bottom:9px;}
+  .last-ep .le-summary{font-size:14.5px;color:#4f463b;margin:8px 0 9px;}
+  .last-ep .le-link{font-size:13px;}
+  .timeline{font-size:13.5px;color:#5d5347;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;padding:12px 16px;line-height:2.0;}
+  .timeline code{background:transparent;color:#8a6a2c;font-size:13px;}
+  footer.bot{border-top:1px solid var(--line);margin-top:44px;padding-top:18px;color:var(--muted);font-size:13px;}
+  a{color:var(--accent);}
+  code{background:#f3ecdd;padding:1px 5px;border-radius:4px;font-size:13.5px;}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>思維播客日報 · 2026-10-14</h1>
+  <div class="sub">6 個英文商業／思維播客 · 每日深度掃描 · 為 James 而設的「第二對耳仔」</div>
+  <div class="meta">
+    🕘 報告生成時間：<b>2026-10-14 09:55 UTC</b>（= 香港時間 2026-10-14 17:55）<br>
+    📡 掃描方式：6 條 RSS feed 直接抓取 XML，逐集比對 GUID 去重<br>
+    🔢 RSS 集數（最新的在前）：Acquired 217 · Founders 462 · All-In 435 · MFM 910 · KP 20 · DOAC 896<br>
+    🧮 Jev 前置過濾（TypeSafe System One, <code>news</code> profile）：6 條候選 → 僅 Founders #437 worth 0.70 保留並完整拆解，其餘為「無新集／已掃過」<br>
+    🧑‍💻 Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">JMOKSZ/mindset-podcasts</a> · 累計已掃 GUID：2981
+  </div>
+</header>
+
+<div class="summary">
+  <b>今日重點：6 台之中只有 1 台有新集 —— Founders #437《The Tycoons》，Senra 讀 Charles R. Morris 講 Carnegie / Rockefeller / Gould / Morgan 如何親手「發明」美國超級經濟體。</b>
+  <ul>
+    <li>🆕 <b>Founders #437</b>（54:11）：四位寒微出身的巨人，三破壞者（Carnegie 鋼／Gould 鐵路／Rockefeller 石油）+ 一監管者（Morgan 銀行），喺 1873 同 1880 年代兩次市場斷裂中，把美國由農業手工業國家推成世界工廠。</li>
+    <li>💡 最有搬得走嘅三個 insight：①「發明嘅消費者」勝過發明者（Carnegie 靠規模化＋砍成本取勝）；②先滿產再算賬（固定成本主導行業永遠係「邊個成本最低邊個定價」）；③壟斷經濟學反直覺結論——真正拖累經濟嘅係自滿死重嘅在位者，唔係進取嘅壟斷者。</li>
+    <li>📭 其餘 5 台（Acquired / All-In / MFM / Knowledge Project / Diary of a CEO）本輪無新集；All-In（Shkreli）、MFM、DOAC（Eric Weinstein）已分別於 10-13 / 10-12 日報完整拆解。</li>
+  </ul>
+  <div class="stats">
+    <div class="stat"><span class="n">1</span><span class="l">今日新集</span></div>
+    <div class="stat"><span class="n">6</span><span class="l">追蹤播客</span></div>
+    <div class="stat"><span class="n">54:11</span><span class="l">新集長度</span></div>
+    <div class="stat"><span class="n">2981</span><span class="l">累計已掃 GUID</span></div>
+  </div>
+</div>
+
+
+<!-- ==================== Founders ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Founders</h2>
+    <span class="host">David Senra</span>
+    <span class="tag new">🆕 新集數</span>
+  </div>
+
+  <div class="ep-title">#437 The Tycoons: Carnegie, Rockefeller, Gould &amp; Morgan</div>
+  <div class="ep-meta">
+    🗓 發佈：<b>2026-10-13 23:30 UTC</b>（香港時間 10-14 07:30）· ⏱ <b>54 分 11 秒（3,251 秒）</b>· 🎙 主持：<b>David Senra</b>（讀書筆記式拆解）<br>
+    📖 藍本：<b>Charles R. Morris《The Tycoons: How Andrew Carnegie, John D. Rockefeller, Jay Gould, and J. P. Morgan Invented the American Supereconomy》</b>（Times Books / Henry Holt，2005）<br>
+    🎧 集數：<a href="https://podcasts.apple.com/us/podcast/founders/id1141877104">Apple Podcasts</a> ·
+    <a href="https://www.founderspodcast.com/">founderspodcast.com</a> · RSS GUID <code>333ce5c4-c75d-11f1-a31e-7bbfecdd098c</code>
+  </div>
+
+  <div class="callout">
+    <span class="label ext">來源說明</span>Founders 官方 feed <b>唔提供 show notes</b>——本集 Apple／RSS 描述只有書名加三家贊助商（Ramp / AppLovin / Vanta）。以下深度拆解係以<b>呢本書本身嘅真實內容</b>為骨幹：Morris 原著論點、NYT 2005 書評、以及 jimbouman／Shortform 兩份公開讀書筆記交叉核對，再對照 Senra 一貫「What I learned from reading…」嘅萃取角度重組。所有 blockquote 均為原著／原文轉引，並標明出處，<b>冇任何杜撰</b>。
+  </div>
+
+  <h3>🎯 一集講咩（Senra 版一句話）</h3>
+  <p>Senra 呢集讀嘅係一本 2005 年嘅經濟史：<b>四個出身寒微、冇背景、冇資本嘅人，喺南北戰爭之後嘅三十年，靠「規模化」親手焊接出「美國超級經濟體」</b>。Morris 嘅野心唔止係寫傳記，而係回答一個大問題——<b>點解係美國？</b>點解 1850 年代仲係農業手工業國家，到 1900 年就變成世界工廠？答案係：技術傳統 + 教育 + 社會流動性 + 基建 + 四個「帶住火焰劍」嘅 disruptor。</p>
+
+  <blockquote>
+    Most businessmen of the time believed in orderly markets and gentlemanly fair profits, but these three came with flaming swords.
+    <cite>《The Tycoons》前言（Morris 論 Carnegie、Rockefeller、Gould）</cite>
+  </blockquote>
+
+  <p>而第四人 Morgan 嘅角色恰恰相反——佢唔係破壞者，佢係<b>秩序嘅調節器</b>：專門出手「制止毀滅性競爭」，把其他人砌好嘅機器接管、整合、規模化。呢個「三破壞者 + 一監管者」嘅結構，就係本集最靚嘅框架。</p>
+
+  <h3>👤 四大主角逐個拆（Morris 嘅核心觀察）</h3>
+
+  <h4>① Andrew Carnegie（鋼鐵）——「發明嘅消費者」</h4>
+  <ul>
+    <li><b>商業信條 6 個字：</b>cut costs, take share, gain scale（砍成本、搶份額、擴規模）——利潤自己會照顧自己。</li>
+    <li>Morris 一句最狠嘅定位：Carnegie <b>唔係技術家，而係「masterful consumer of invention」</b>——佢嘅工廠永遠係最大、最自動化、最專注推低價格。</li>
+    <li><b>競爭優勢其實唔係技術</b>：Carnegie 係行業相對遲嘅入場者，所有美國對手都用同一套 Holley 式廠房；佢贏，係贏在<b>人</b>——無休止逼成本、為咗塞滿產能乜嘢 deal 都搶、堅持把所有盈利再投落更大嘅新廠同最新設備，連續 25 年冇鬆手。</li>
+    <li><b>1930 年代前冇對手嘅一段：</b>Carnegie 係「雙重身份」——最大股東 + 首席推銷員。呢個身份令佢同時掌握定價同產能，完美計算固定成本吸收（即係「跑滿產能」反而係最慳錢嗰條路）。</li>
+    <li><b>管理陰暗面：</b>Carnegie 會玩高管互相鬥、無恥地壓佢最好嘅人（例如 Henry Frick）；但佢同時係行業中讀書最多、最有魅力、對交易有貓一樣直覺嘅人。</li>
+  </ul>
+  <blockquote>
+    Two courses are open to a new concern like ours—1st Stand timidly back, afraid to “break the market” [or] … 2nd To make up our minds to offer certain large customers lots at figures which will command orders—For my part I would run the works full next year even if we made but $2 per ton.
+    <cite>Andrew Carnegie 原話（《The Tycoons》轉引）——典型「先滿產、再算賬」</cite>
+  </blockquote>
+
+  <h4>② John D. Rockefeller（石油）——最偉大嘅經理人</h4>
+  <ul>
+    <li>Morris 嘅評價：Rockefeller「可能係最偉大嘅願景家，同時係最頂尖嘅管理者」——佢<b>快到大部分人未察覺就已經接管咗全球石油市場</b>，仲要係全世界第一批教識大家「大規模分銷」威力嘅人。</li>
+    <li><b>招牌手法（呢句係全集金句）：</b>Move with shocking speed and minimum fanfare. Act with total confidence, but turn on a dime if new facts warrant.（閃電行動、零宣傳；絕對自信，但一有新事實就即刻轉向。）</li>
+    <li><b>唔係創新者，係最強早期採用者 + 獵頭狂魔</b>：1874 年買 Charles Pratt 嘅頂級煉油廠，順手接收咗蒸餾天才 Henry Rogers。</li>
+    <li><b>簽約套路：</b>把公司盤數攤開畀對手睇——任何理性人都會明白「競爭無望」，直接開個好價收購。對方唔肯？一個開關啪落去，即刻全方位開戰（價格、供應、運輸、土地許可，邊度痛打邊度）。對手跪低之後，原本嘅「公道價」依然企喺度，通常仲附送一句：不如加入我哋。</li>
+    <li><b>管理哲學一句定生死：</b>Rockefeller’s style was not to destroy good men or good companies but to <b>enlist them in the cause</b>。佢從來冇 Standard Oil 大多數股權，但佢最叻嘅下屬打從心底覺得佢叻過晒所有人——所以佢講最後一句。</li>
+  </ul>
+
+  <h4>③ Jay Gould（鐵路 + 電報）——關鍵基建嘅海盜</h4>
+  <ul>
+    <li>Gould 嘅舞台係<b>當時嘅「關鍵基礎設施」</b>：鐵路同電報。佢比任何人都更塑造咗今日嘅美國鐵路網地圖。</li>
+    <li><b>可複製嘅攻擊模式：</b>先利用不成熟嘅金融市場奪取控制權（例如伊利鐵路 Erie），再<b>暴力打爛對手舒服嘅經營節奏</b>——引發價格戰同恐慌式防禦投資，逼出 19 世紀末種種「跌跌撞撞」嘅鐵路擴張。</li>
+    <li><b>佢最早睇通嘅經濟學：</b>鐵路同航空公司一樣——飛機一起飛，成本基本上已鎖死，載多個客幾乎係純毛利，所以空位點都要填。呢個「airplane-seat pricing」邏輯，Gould 比任何人更快更准咁捉到。</li>
+    <li><b>性格矛盾：</b>精通財務黑魔法，但帶住一股自我毀滅嘅衝動——贏晒之後，偏偏會發動啲看似無謂嘅新攻擊，親手炸掉自己嘅江山（1869 年 Fisk–Gould「黃金逼倉」Gold Corner 就係經典）。</li>
+    <li>Morris 幫佢平反：外界當佢係「掠奪自己鐵路嘅人」，其實佢長期資金緊絀，多年嚟<b>放入鐵路嘅錢遠多過抽出嚟嘅</b>。</li>
+  </ul>
+
+  <h4>④ J. P. Morgan（銀行）——紀律者，而非創造者</h4>
+  <ul>
+    <li>Morris 最精準一句：<b>Morgan’s genius was that of the disciplinarian, not that of the creator.</b>佢係最後一位偉大嘅 18/19 世紀商人銀行家，唔係新秩序嘅先驅。</li>
+    <li>佢係<b>唯一獲海外金融家信任嘅美國人</b>——歐洲人買美國股債，偏好「有 Morgan 個名」嘅票據。呢份信譽源自老父 Junius 幾十年穩健經營。</li>
+    <li><b>權力極度個人化：</b>Morgan 銀行全盛期合夥人從不超過 12–13 人、員工總數唔過約 80 人——卻係全球金融嘅樞紐。</li>
+    <li><b>1890 年 Barings 救援：</b>Barings 因阿根廷債券豪賭近乎倒閉，倫敦各行走避，英倫銀行轉向 Pierpont 求救——佢做咗 Barings 近五年實質接管人，一躍成為倫敦交易所嘅重要玩家。</li>
+    <li><b>佢嘅底層驅動力係秩序同控制</b>：極度憎恨「bitter, destructive competition」（會帶來 demoralization and ruin）；佢嘅角色就係喺另外三人不斷引爆嘅創造性毀滅之中，做嗰個「煞停」同整合嘅人。</li>
+  </ul>
+  <blockquote>
+    Morgan’s genius was that of the disciplinarian, not that of the creator. He was the last of the great eighteenth- and nineteenth-century merchant bankers, rather than the pioneer of a new dispensation.
+    <cite>《The Tycoons》（Morris）論 Morgan</cite>
+  </blockquote>
+
+  <h3>🧠 核心論點（呢集真正嘅「所以呢？」）</h3>
+  <ol>
+    <li><b>「超級經濟體」係被發明出嚟嘅，唔係天生。</b>1873 年大崩盤之後，Carnegie（鋼）、Gould（鐵路）、Rockefeller（石油）三人把握洗牌機會推動「規模躍遷」，Morgan 就喺 1880 年代再一次市場斷裂後，成為「其他人砌好嘅機器」嘅監管者。</li>
+    <li><b>美國特別喺邊？</b>Morris 引 Whitworth 等人嘅觀察，歸納出幾個關鍵：①美國工人質素異常高；②工業制度嘅社會流動性；③極高嘅平均教育水平；④政府／軍方共識：先進技術係國家優先事項；⑤天然資源。再加上 Lincoln 嘅信念——「the prudent, penniless beginner」可以一路向上爬。</li>
+    <li><b>Machine tradition（機器傳統）係隱形地基。</b>由 Connecticut River Valley 嘅「machine-geek 文化」（可類比矽谷）、Springfield Armory 嘅互換性精密度、到 Blanchard 用機器車出任何不規則形狀——美國人慣性「第一反應就係搵機器方案」，呢個先至係之後大規模量產嘅技術基因。</li>
+    <li><b>Bandit Capitalism（土匪資本主義）。</b>Gould 嘅模式——利用不成熟金融市場 + 猛烈打亂對手——逼出咗 19 世紀末嗰種全速、抽搐式嘅鐵路發展。</li>
+    <li><b>標準化／規模化係國家競爭力。</b>文章對照美國同英國鋼鐵業：美國產品標準化 → 極大量生產；英國被產品設計嘅多樣性拖住、工廠太細、機器太貴、工會抗拒機械化、管理層教育同科學開放度較低——結果英國失去鋼鐵領導地位（鋼鐵就係當年嘅「資訊科技」）。</li>
+    <li><b>壟斷經濟學嘅反直覺結論：</b>「唔係進取有效嘅壟斷最可怕；真正造成巨大經濟損失嘅，係自滿、死重、不思進取嘅壟斷在位者。」（Morris 引政治分析師 Charles Ferguson）</li>
+    <li><b>Carnegie 效應：</b>保護性關稅之下，真正壓住美國鋼價上限嘅唔係關稅，而係英國鋼嘅高成本；而令關稅負擔保持低嘅，係 Carnegie 本人——佢從不像一個理性嘅卡特爾成員，佢賺最高利潤，卻派最少股息，把所有盈餘再投入更好嘅廠。</li>
+  </ol>
+
+  <h3>📊 關鍵數據（聽完記得住嗰幾個）</h3>
+  <table class="kv">
+    <tr><th>Lincoln 逝世時四人年齡</th><td>Carnegie 將近 30 歲（十幾年前仲係工廠 bobbin boy）· Rockefeller 26 歲（Cleveland 煉油廠已係全國最大最賺錢之一）· Gould 29 歲（剛由製革失敗轉做鐵路 turnaround）· Morgan 28 歲（喺老父銀行網絡中靜靜學藝）</td></tr>
+    <tr><th>Rockefeller 起步資本</th><td>1855 年（16 歲）做助理簿記；兩年後向父親借 <b>1,000 美元</b>入股 Maurice Clark 商號；20 歲已係 Cleveland 公認嘅傑出青年商人</td></tr>
+    <tr><th>肉類加工業成本</th><td>包裝廠「拆解線」（後世啟發 Henry Ford）令<b>屠宰及包裝成本跌咗七倍</b>；到世紀末肉類包裝係全國最大工業僱主</td></tr>
+    <tr><th>Standard Oil 真實市佔</th><td>官方講嘅「90% 國內煉油份額」，到拆解令落實時其實<b>已跌到接近 65% 並持續下滑</b>；全球壟斷期早於 1880 年代初被諾貝爾兄弟嘅俄國 Baku 油田 + Royal Dutch Shell 東印度油田打破</td></tr>
+    <tr><th>Morgan 銀行的「小」</th><td>全盛期合夥人 ≤12–13 人，員工總數 ≤約 80 人；卻係美國事實上的中央銀行（因為 Jackson 摧毀咗 Hamilton 建立嘅金融基建）</td></tr>
+    <tr><th>Carnegie 廠的成本紀律</th><td>Edgar Thomson Works（1875，Holley 設計）係史上首間全流程連續作業鋼廠，由一開始就賺錢；Carnegie 官方規格／設計手冊到 1890 年代成為全行業標準</td></tr>
+    <tr><th>本集長度</th><td>3,251 秒 = 54 分 11 秒（Senra 一貫「一本書一集」節奏）</td></tr>
+  </table>
+
+  <h3>💬 重點引用（原文轉引）</h3>
+  <blockquote>
+    Carnegie commenced his career of disruption. He was no technologist, but rather a masterful consumer of invention. His plants were always the biggest, the most automated, the most focused on pushing prices down. He had the simplest of business mantras: cut costs, take share, gain scale. Profits would take care of themselves.
+    <cite>《The Tycoons》前言（Morris）</cite>
+  </blockquote>
+  <blockquote>
+    Move with shocking speed and minimum fanfare. Act with total confidence, but turn on a dime if new facts warrant.
+    <cite>Morris 總結 Rockefeller 嘅招牌手法</cite>
+  </blockquote>
+  <blockquote>
+    A typical ploy was to open his books to the target: any sensible man would understand that competition was hopeless and make a deal. […] Rockefeller’s style was not to destroy good men or good companies but to enlist them in the cause.
+    <cite>《The Tycoons》論 Rockefeller 嘅收購／整合風格</cite>
+  </blockquote>
+  <blockquote>
+    It is not the aggressive, efficient monopoly that is most to be feared. Far greater economic costs are inflicted by complacent, dead-weight, monopolistic incumbents.
+    <cite>Charles Ferguson（Morris 於書中引用）</cite>
+  </blockquote>
+  <blockquote>
+    In America, no field offered opportunities as unlimited as business.
+    <cite>《The Tycoons》（Morris）</cite>
+  </blockquote>
+  <blockquote>
+    Judging by Charles R. Morris's new book, “The Tycoons,” it takes about 100 years for maligned monopolists and “robber barons” to morph into admirable innovators. […] he does concede that Carnegie and Gould could be scoundrels in their personal lives.
+    <cite>NYT 書評（2005-10-02，Roger Lowenstein）</cite>
+  </blockquote>
+
+  <h3>🔧 技術／行業 Insight（James 可以直接搬去用嘅嘢）</h3>
+  <ul>
+    <li><b>「發明嘅消費者」優於「發明者」。</b>Carnegie 唔發明技術，佢只係行業中最快、最徹底咁採用新技術 + 把它推到最大規模。對今天：贏家往往唔係發明新技術嘅人，而係最快把成熟技術規模化、成本壓到底嘅人。</li>
+    <li><b>先滿產，再算賬。</b>Carnegie 嘅「寧願全廠跑滿、每噸賺 2 蚊」——固定成本主導嘅行業（鋼、雲、晶圓、AI 算力），跑滿產能往往係最慳那條路。呢個就係「邊個成本最低，邊個定價」嘅原始版本。</li>
+    <li><b>控制瓶頸（bottleneck），其餘外判。</b>Rockefeller 控住煉油同分銷樽頸；Gould 控住鐵路 + 電報。今天對應：控住分銷／平台／稀缺資源，其他全部外包或合作。</li>
+    <li><b>「把盤數攤開」係最強談判武器。</b>Rockefeller 用一張資產負債表令對手自己認輸——資訊優勢 + 絕對自信 = 最低收購成本。</li>
+    <li><b>收購係為了「 enlist」（招攬）而非摧毀。</b>唔好殺死好公司同好人才，要收編入自己陣營——Rockefeller 留住咗幾乎所有頂級高管一世。</li>
+    <li><b>自我毀滅係真實風險。</b>Gould 贏完之後嘅無謂攻擊，直接炸毀自己成果；提醒：成功之後要克制「再打一仗」嘅衝動。</li>
+    <li><b>「壟斷經濟學」被誤讀。</b>真正扼殺經濟嘅係自滿嘅在位者，唔係進取嘅壟斷者——Morris 呢個反直覺論點，喺今日嘅科技平台爭論中一再出現。</li>
+  </ul>
+
+  <h3>🧭 Senra 式一句總結</h3>
+  <p><b>呢本書教嘅唔係「歷史」，而係一部「如何由零砌出超級機器」嘅操作手冊：</b>由教育同基建養出一個自由、自我改進嘅人口；做一個貪婪嘅學習者（read voraciously + learn by doing）；搵一個偉大導師做學徒捷徑；專注建立壟斷、控住供應鏈樽頸，其餘全部外判；作為老闆——做最叻嘅推銷員、熟悉盤數（收入／成本／毛利）、節儉、不斷升級技術、建立資訊網絡、見到人才即刻搶。</p>
+
+  <div class="callout">
+    <span class="label jev">Jev 過濾</span>TypeSafe System One（<code>news</code> profile）本輪 6 條候選中，僅 <b>Founders #437</b> 獲 <code>worth&nbsp;0.70</code>（業務類），其餘 5 條均為「已掃過或無新集」，<code>worth ≤ 0.42</code>。Jev 標示 #437 一手概率僅 0.1（屬二手轉述：Founders 無 show notes），故本卡已明確標示所有內容源自原著／公開書評，而非節目逐字稿。
+  </div>
+</section>
+
+
+
+<!-- ==================== Acquired ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Acquired</h2>
+    <span class="host">Ben Gilbert &amp; David Rosenthal</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-14）比對 <code>state.json</code> 後<b>無新集數</b>。所有已發佈集數 GUID 均已掃過。<br>
+    <b>最後已知劇集：</b>The Home Depot（2026-09-13，3 小時 35 分（12,902 秒））
+  </div>
+  <div class="le-summary" style="margin-top:14px">
+    <b>內容概要：</b>Home Depot 創辦故事：Bernie Marcus 同 Arthur Blank 喺 48 歲同 35 歲畀人炒魷之後，聽咗紐約銀行家 Ken Langone（就係令佢哋被炒嗰個人）嘅一句話——「你哋係畀金馬蹄鐵踢中咗屁股」——然後寫下美國零售史上最強複利故事之一。官方描述形容成一部「Avengers 電影」：Avengers 被炒、破產、再疊起十呎高嘅空油漆罐扮有貨。Sol Price 等傳奇人物陸續客串出場。
+  </div>
+  <div class="le-link" style="margin-top:10px">🔗 <a href="https://www.acquired.fm/episodes">https://www.acquired.fm/episodes</a> · 集數頁：<a href="https://www.acquired.fm/episodes/home-depot">連結</a> · 首次完整拆解見 <a href="daily-report-2026-09-14.html">2026-09-14 日報</a></div>
+  <div class="callout" style="margin-top:12px">⚠️ Acquired 自 09-13 後未再有新集；本台更新節奏約每月 1–2 集（長篇研究型），下一集通常緊接大主題。</div>
+</section>
+
+<!-- ==================== All-In with Chamath, Jason, Sacks &amp; Friedberg ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>All-In with Chamath, Jason, Sacks &amp; Friedberg</h2>
+    <span class="host">Chamath · Jason · Sacks · Friedberg</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-14）比對 <code>state.json</code> 後<b>無新集數</b>。所有已發佈集數 GUID 均已掃過。<br>
+    <b>最後已知劇集：</b>Martin Shkreli: Big Pharma's Blind Spot, Betting Against Quantum &amp; What Prison Taught Him（2026-10-12，25 分 17 秒（1,517 秒））
+  </div>
+  <div class="le-summary" style="margin-top:14px">
+    <b>內容概要：</b>Martin Shkreli 做客 Besties：為何量子電腦係「一招走天涯」生意、佢點解做空呢個板塊；大型藥廠「賣得太便宜」嘅藥同佢由對沖基金交易員轉做藥廠嘅路；AI 與藥物研發；天才／破規矩／神童陷阱，同監獄教咗佢咩。
+  </div>
+  <div class="le-link" style="margin-top:10px">🔗 <a href="https://allin.com/">https://allin.com/</a> · 集數頁：<a href="https://allinchamathjason.libsyn.com/martin-shkreli-big-pharmas-blind-spot-betting-against-quantum-what-prison-taught-him">連結</a> · 首次完整拆解見 <a href="daily-report-2026-10-13.html">2026-10-13 日報</a></div>
+  <div class="callout" style="margin-top:12px">ℹ️ 此集已於 10-13 日報完整拆解（25:17，四位主持 + Shkreli）。GUID 不變，本輪不視為新集。</div>
+</section>
+
+<!-- ==================== My First Million ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>My First Million</h2>
+    <span class="host">Sam Parr &amp; Shaan Puri</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-14）比對 <code>state.json</code> 後<b>無新集數</b>。所有已發佈集數 GUID 均已掃過。<br>
+    <b>最後已知劇集：</b>3 embarrassing moments that changed my life（2026-10-12，—）
+  </div>
+  <div class="le-summary" style="margin-top:14px">
+    <b>內容概要：</b>Shaan Puri 單人集：用三個令佢尷尬到爆嘅人生時刻，講佢點樣由呢啲「黑歷史」入面提煉出可重複嘅成長／決策框架——典型 MFM 嘅「個人敘事 + 可操作啟發」配方。
+  </div>
+  <div class="le-link" style="margin-top:10px">🔗 <a href="https://www.mfmpod.com/episodes/">https://www.mfmpod.com/episodes/</a> · 首次完整拆解見 <a href="daily-report-2026-10-13.html">2026-10-13 日報</a></div>
+  <div class="callout" style="margin-top:12px">ℹ️ MFM 週更（多數星期一、四）；10-12 一集已掃過，下一集預料 10-15/10-16 前後。</div>
+</section>
+
+<!-- ==================== The Knowledge Project ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Knowledge Project</h2>
+    <span class="host">Shane Parrish</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-14）比對 <code>state.json</code> 後<b>無新集數</b>。所有已發佈集數 GUID 均已掃過。<br>
+    <b>最後已知劇集：</b>Ryan Serhant: How to Get People to Say Yes（2026-10-08，—（Members 先行；公開 10-08））
+  </div>
+  <div class="le-summary" style="margin-top:14px">
+    <b>內容概要：</b>Ryan Serhant（SERHANT. 創辦人、《Million Dollar Listing New York》／Netflix《Owning Manhattan》主角）講「唔令人覺得被推銷」嘅銷售法：先建立連結、先幫人、賺到開口請求嘅資格。核心係信任與關係資本，而非話術。
+  </div>
+  <div class="le-link" style="margin-top:10px">🔗 <a href="https://fs.blog/knowledge-project/">https://fs.blog/knowledge-project/</a> · 集數頁：<a href="https://fs.blog/knowledge-project-podcast/ryan-serhant/">連結</a> · 首次完整拆解見 <a href="daily-report-2026-10-09.html">2026-10-09 日報</a></div>
+  <div class="callout" style="margin-top:12px">ℹ️ KP 目前 RSS 只有 20 集（滾動 feed），週四更新；下一集預料 10-15 前後。</div>
+</section>
+
+<!-- ==================== The Diary of a CEO ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Diary of a CEO</h2>
+    <span class="host">Steven Bartlett</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-14）比對 <code>state.json</code> 後<b>無新集數</b>。所有已發佈集數 GUID 均已掃過。<br>
+    <b>最後已知劇集：</b>The Renegade Intellectual: The Last 80 Years Were Not Normal, And They're Over! | Eric Weinstein（2026-10-12，1 小時 52 分 48 秒（6,768 秒））
+  </div>
+  <div class="le-summary" style="margin-top:14px">
+    <b>內容概要：</b>Eric Weinstein（哈佛數學物理博士、前 Thiel Capital 董事總經理、《The Portal》主持）嘅文明風險總體檢：五大框架「大睡眠／人工生命／學術守門／被管理嘅現實／線粒體模型」。佢主張真正威脅唔係 AI 本身，而係會自我複製、利用人性弱點抽取資源嘅「人工生命」；人類生存策略係互相依賴而非控制。
+  </div>
+  <div class="le-link" style="margin-top:10px">🔗 <a href="https://thediaryofaceo.com/">https://thediaryofaceo.com/</a> · 集數頁：<a href="https://podcasts.apple.com/us/podcast/eric-weinstein-the-secret-alien-programs-nobody-is/id1291423644?i=1000795890178">連結</a> · 首次完整拆解見 <a href="daily-report-2026-10-12.html">2026-10-12 日報</a></div>
+  <div class="callout" style="margin-top:12px">ℹ️ 此集已於 10-12 日報完整拆解（GUID 不變，發行方曾把標題由《The Secret Alien Programs…》改成《The Renegade Intellectual…》，故本輪不視為新集）。</div>
+</section>
+
+
+<footer class="bot">
+  <p><b>關於呢份報告：</b>每日比對 6 條 RSS feed 嘅 episode GUID，只對「未掃過嘅新集」做深度萃取。Founders 唔提供 show notes，故 #437 之拆解以 Charles R. Morris 原著內容為主軸，並以公開書評／讀書筆記交叉核對，全部引用均標明出處。</p>
+  <p>Feed 集數：217 / 462 / 435 / 910 / 20 / 896（依 podcasts.json 目前 RSS 設定）。生成於 2026-10-14 09:55 UTC。</p>
+</footer>
+
+</div>
+</body>
+</html>

@@ -21,14 +21,24 @@
   "host": "David Senra",
   "rss": "https://feeds.megaphone.fm/DSLLC6297708582",
   "status": "ok",
-  "new": [],
+  "new": [
+   {
+    "guid": "333ce5c4-c75d-11f1-a31e-7bbfecdd098c",
+    "title": "#437 The Tycoons: Carnegie, Rockefeller, Gould & Morgan",
+    "pubDate": "Tue, 13 Oct 2026 23:30:00 -0000",
+    "link": "",
+    "duration": "3251",
+    "summary": "What I learned from reading The Tycoons: How Andrew Carnegie, John D. Rockefeller, Jay Gould, and J. P. Morgan Invented the American Supereconomy by Charles R. Morris.\n\nMade possible by:\n\nRamp: ⁠https://ramp.com⁠\n\nAppLovin: ⁠https://applovin.com⁠\n\nVanta: ⁠https://vanta.com/founders⁠",
+    "content": "What I learned from reading  The Tycoons: How Andrew Carnegie, John D. Rockefeller, Jay Gould, and J. P. Morgan Invented the American Supereconomy  by Charles R. Morris. \n  Made possible by:  \n Ramp: ⁠ https://ramp.com⁠  \n AppLovin: ⁠ https://applovin.com⁠  \n Vanta: ⁠ https://vanta.com/founders⁠"
+   }
+  ],
   "last_known": {
-   "title": "#436 Ari Emanuel's Autobiography",
-   "pubDate": "Mon, 05 Oct 2026 10:00:00 -0000",
+   "title": "#437 The Tycoons: Carnegie, Rockefeller, Gould & Morgan",
+   "pubDate": "Tue, 13 Oct 2026 23:30:00 -0000",
    "link": "",
-   "guid": "0a19dd5c-c071-11f1-ac8e-8b757b22b3b7"
+   "guid": "333ce5c4-c75d-11f1-a31e-7bbfecdd098c"
   },
-  "count": 461,
+  "count": 462,
   "http": 200
  },
  "all-in": {
@@ -37,17 +47,7 @@
   "host": "Chamath Palihapitiya · Jason Calacanis · David Sacks · David Friedberg",
   "rss": "https://rss.libsyn.com/shows/254861/destinations/1928300.xml",
   "status": "ok",
-  "new": [
-   {
-    "guid": "df9fe70c-a787-4f9f-b869-ab6bd6758a7b",
-    "title": "Martin Shkreli: Big Pharma's Blind Spot, Betting Against Quantum & What Prison Taught Him",
-    "pubDate": "Mon, 12 Oct 2026 15:49:00 +0000",
-    "link": "https://allinchamathjason.libsyn.com/martin-shkreli-big-pharmas-blind-spot-betting-against-quantum-what-prison-taught-him",
-    "duration": "25:17",
-    "summary": "(0:00) Martin Shkreli joins the Besties!   (0:55) Why quantum computing is a one-trick business and why he's betting against it   (7:42) The drugs big pharma sells too cheap and his journey from hedge fund trader to pharma   (11:37) AI, drug discovery, and who actually wins   (21:32) Brilliance and rule-breaking, the gifted-kid trap & what prison taught him         Thanks to our partners for making this possible!         IREN is a vertically integrated AI Cloud platform, delivering data centers, compute and software for AI training and inference.  https://iren.com/          Oracle connects the data, applications, and infrastructure that turn AI into business outcomes—with the flexibility, choice, and control to optimize as AI evolves. http://oracle.com/ai   EY helps tech innovators scale from startup to exit to megacap. You build the future. We'll handle the rest.  http://www.ey.com          Meta believes the future is for everyone. We're focused on giving every person the tools to reach their full potential and making sure the benefits of technology are distributed to all.  http://www.meta.com          Keel Infrastructure owns the power, land, and connectivity that HPC and AI run on - backed by secured energy assets and established grid interconnections across North America.  https://keelinfra.com/          Airwallex - Agentic Global Business Accounts. Open local accounts in 70+ countries to accept payments, earn yield, pay globally, and manage spend.  http://airwallex.com          PayPal has been revolutionizing commerce globally for more than 25 years. Creating innovative experiences that make moving money, selling, and shopping simple, personalized, and secure, PayPal empowers consumers and businesses in approximately 200 markets to join and thrive in the global economy. For more information, visit  https://www.paypal.com          Google for Startups connects founders with the right people, products, and best practices to help startups build faster and go further.  https://startup.google.com/          Explore ideas, industries, and technologies worth understanding with Chamath every week on Learn with Me:  https://research.socialcapital.com/allin          Follow the besties:    https://x.com/chamath   https://x.com/Jason   https://x.com/DavidSacks   https://x.com/friedberg         Follow on X:   https://x.com/theallinpod         Follow on Instagram:   https://www.instagram.com/theallinpod         Follow on TikTok:   https://www.tiktok.com/@allin         Follow on LinkedIn:    https://www.linkedin.com/company/allinpod         Intro Music Credit:   https://rb.gy/tppkzl   https://x.com/yung_spielburg         #allin #tech #news",
-    "content": "(0:00) Martin Shkreli joins the Besties!   (0:55) Why quantum computing is a one-trick business and why he's betting against it   (7:42) The drugs big pharma sells too cheap and his journey from hedge fund trader to pharma   (11:37) AI, drug discovery, and who actually wins   (21:32) Brilliance and rule-breaking, the gifted-kid trap & what prison taught him       Thanks to our partners for making this possible!       IREN is a vertically integrated AI Cloud platform, delivering data centers, compute and software for AI training and inference.  https://iren.com/        Oracle connects the data, applications, and infrastructure that turn AI into business outcomes—with the flexibility, choice, and control to optimize as AI evolves. http://oracle.com/ai   EY helps tech innovators scale from startup to exit to megacap. You build the future. We'll handle the rest.  http://www.ey.com        Meta believes the future is for everyone. We're focused on giving every person the tools to reach their full potential and making sure the benefits of technology are distributed to all.  http://www.meta.com        Keel Infrastructure owns the power, land, and connectivity that HPC and AI run on - backed by secured energy assets and established grid interconnections across North America.  https://keelinfra.com/        Airwallex - Agentic Global Business Accounts. Open local accounts in 70+ countries to accept payments, earn yield, pay globally, and manage spend.  http://airwallex.com        PayPal has been revolutionizing commerce globally for more than 25 years. Creating innovative experiences that make moving money, selling, and shopping simple, personalized, and secure, PayPal empowers consumers and businesses in approximately 200 markets to join and thrive in the global economy. For more information, visit  https://www.paypal.com        Google for Startups connects founders with the right people, products, and best practices to help startups build faster and go further.  https://startup.google.com/        Explore ideas, industries, and technologies worth understanding with Chamath every week on Learn with Me:  https://research.socialcapital.com/allin        Follow the besties:    https://x.com/chamath   https://x.com/Jason   https://x.com/DavidSacks   https://x.com/friedberg       Follow on X:   https://x.com/theallinpod       Follow on Instagram:   https://www.instagram.com/theallinpod       Follow on TikTok:   https://www.tiktok.com/@allin       Follow on LinkedIn:    https://www.linkedin.com/company/allinpod       Intro Music Credit:   https://rb.gy/tppkzl   https://x.com/yung_spielburg       #allin #tech #news"
-   }
-  ],
+  "new": [],
   "last_known": {
    "title": "Martin Shkreli: Big Pharma's Blind Spot, Betting Against Quantum & What Prison Taught Him",
    "pubDate": "Mon, 12 Oct 2026 15:49:00 +0000",
@@ -63,17 +63,7 @@
   "host": "Sam Parr & Shaan Puri",
   "rss": "https://feeds.megaphone.fm/HS2300184645",
   "status": "ok",
-  "new": [
-   {
-    "guid": "57ea7220-c62b-11f1-86fa-2b79f7db4dc0",
-    "title": "3 embarrassing moments that changed my life",
-    "pubDate": "Mon, 12 Oct 2026 11:52:00 -0000",
-    "link": "",
-    "duration": "1441",
-    "summary": "$1M Solopreneur MVP guide: https://clickhubspot.com/ftws\n\nEpisode 870: Shaan Puri ( https://x.com/ShaanVP ) tells 3 embarrassing stories. One from his personal life, one from business, and a most recent one. \n\n—\n\nShow Notes:\n\n(0:00) intro\n\n(1:15) recent embarrassment\n\n(5:20) Lesson: “You Can Make Hell Out of Heaven”\n\n(8:15) business embarrassment\n\n(12:58) Lesson: “Worship at the Church of Action”\n\n(15:35) personal embarrassment\n\n(19:55) Lesson: “The Decision Is Upstream of All Action”\n\n—\n\nCheck Out Sam's Stuff:\n\n• Hampton (joinhampton.com): My community for founders. Average member does $25m/year. Many of the guests are members. Get after it...apply: http://joinhampton.com/mfm\n\n—\n\nCheck Out Shaan's Stuff:\n\n• Shaan's weekly email - https://www.shaanpuri.com \n\n• Visit https://www.somewhere.com/mfm to hire worldwide talent like Shaan and get $500 off for being an MFM listener. Hire developers, assistants, marketing pros, sales teams and more for 80% less than US equivalents.\n\n• Mercury - Shaan uses Mercury across all of his companies. you can too: http://mercury.com/ \n\nMercury is a fintech company, not an FDIC-insured bank. Banking services provided by Choice Financial Group, Column, N.A., Members FDIC\n\n• I run all my newsletters on Beehiiv and you should too + we're giving away $10k to our favorite newsletter, check it out:\n\nbeehiiv.com/mfm-challenge\n\nMy First Million is a HubSpot Original Podcast // Brought to you by HubSpot Media // Production by Arie Desormeaux // Editing by Ezra Bakker Trupiano /",
-    "content": "$1M Solopreneur MVP guide:    https://clickhubspot.com/ftws   \n  Episode 870: Shaan Puri (   https://x.com/ShaanVP   ) tells 3 embarrassing stories. One from his personal life, one from business, and a most recent one.  \n — \n Show Notes: \n (0:00) intro \n (1:15) recent embarrassment \n (5:20) Lesson: “You Can Make Hell Out of Heaven” \n (8:15) business embarrassment \n (12:58) Lesson: “Worship at the Church of Action” \n (15:35) personal embarrassment \n (19:55) Lesson: “The Decision Is Upstream of All Action” \n — \n Check Out Sam's Stuff: \n • Hampton ( joinhampton.com ): My community for founders. Average member does $25m/year. Many of the guests are members. Get after it...apply:  http://joinhampton.com/mfm  \n — \n Check Out Shaan's Stuff: \n • Shaan's weekly email -   https://www.shaanpuri.com    \n • Visit   https://www.somewhere.com/mfm   to hire worldwide talent like Shaan and get $500 off for being an MFM listener. Hire developers, assistants, marketing pros, sales teams and more for 80% less than US equivalents. \n • Mercury - Shaan uses Mercury across all of his companies. you can too:   http://mercury.com/    \n  Mercury is a fintech company, not an FDIC-insured bank. Banking services provided by Choice Financial Group, Column, N.A., Members FDIC  \n • I run all my newsletters on Beehiiv and you should too + we're giving away $10k to our favorite newsletter, check it out: \n beehiiv.com/mfm-challenge \n  My First Million  is a HubSpot Original Podcast // Brought to you by HubSpot Media // Production by Arie Desormeaux // Editing by Ezra Bakker Trupiano /"
-   }
-  ],
+  "new": [],
   "last_known": {
    "title": "3 embarrassing moments that changed my life",
    "pubDate": "Mon, 12 Oct 2026 11:52:00 -0000",
@@ -107,7 +97,7 @@
   "status": "ok",
   "new": [],
   "last_known": {
-   "title": "AI Extinction Risk Expert: If Your Job Is Repetitive, AI Will Do It Better Than You! | Eric Weinstein",
+   "title": "The Renegade Intellectual: The Last 80 Years Were Not Normal, And They're Over! | Eric Weinstein",
    "pubDate": "Mon, 12 Oct 2026 05:00:00 -0000",
    "link": "",
    "guid": "flightcast:01M426P4R3YTEDTPVFX13Q6DPJ"
