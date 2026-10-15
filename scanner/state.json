@@ -1,5 +1,5 @@
 {
- "lastScan": "2026-10-14T09:55:13Z",
+ "lastScan": "2026-10-15T09:55:22Z",
  "scannedEpisodes": {
   "acquired": [
    "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -1125,7 +1125,8 @@
    "1c456716-c38b-472a-9dd0-9d8800f22dd8",
    "16094471-70e5-4698-9bac-3958d237b7b7",
    "995e85a6-c5d7-46cc-a282-54d6a5eb8d9b",
-   "df9fe70c-a787-4f9f-b869-ab6bd6758a7b"
+   "df9fe70c-a787-4f9f-b869-ab6bd6758a7b",
+   "8c597438-75df-42fd-85bc-7c08156b38b6"
   ],
   "my-first-million": [
    "008875e2-1b94-11f0-88fe-3312f0cbe7a3",
@@ -2993,7 +2994,8 @@
    "flightcast:01M26N4N40D24TJPZ6V4N7JMTY",
    "flightcast:01M46YN191EJ0V3NPANXPEM9WA",
    "flightcast:01M1KG7RQ525JTCTET05G29VH6",
-   "flightcast:01M426P4R3YTEDTPVFX13Q6DPJ"
+   "flightcast:01M426P4R3YTEDTPVFX13Q6DPJ",
+   "flightcast:01M4782E2HS3CAH5B71G0KB9KB"
   ]
  },
  "lastScanResult": {
@@ -3004,18 +3006,18 @@
   },
   "founders": {
    "status": "ok",
-   "count": 461,
+   "count": 462,
    "new": 0
   },
   "all-in": {
    "status": "ok",
-   "count": 433,
-   "new": 0
+   "count": 436,
+   "new": 1
   },
   "my-first-million": {
    "status": "ok",
-   "count": 909,
-   "new": 1
+   "count": 910,
+   "new": 0
   },
   "knowledge-project": {
    "status": "ok",
@@ -3024,7 +3026,7 @@
   },
   "diary-of-a-ceo": {
    "status": "ok",
-   "count": 894,
+   "count": 897,
    "new": 1
   }
  }
