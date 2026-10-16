@@ -1,5 +1,5 @@
 {
- "lastScan": "2026-10-15T09:55:22Z",
+ "lastScan": "2026-10-16T09:54:00Z",
  "scannedEpisodes": {
   "acquired": [
    "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -2995,7 +2995,8 @@
    "flightcast:01M46YN191EJ0V3NPANXPEM9WA",
    "flightcast:01M1KG7RQ525JTCTET05G29VH6",
    "flightcast:01M426P4R3YTEDTPVFX13Q6DPJ",
-   "flightcast:01M4782E2HS3CAH5B71G0KB9KB"
+   "flightcast:01M4782E2HS3CAH5B71G0KB9KB",
+   "flightcast:01M1P5R2DYEM65ABQ1YNEB6FXH"
   ]
  },
  "lastScanResult": {
@@ -3012,7 +3013,7 @@
   "all-in": {
    "status": "ok",
    "count": 436,
-   "new": 1
+   "new": 0
   },
   "my-first-million": {
    "status": "ok",
@@ -3026,7 +3027,7 @@
   },
   "diary-of-a-ceo": {
    "status": "ok",
-   "count": 897,
+   "count": 898,
    "new": 1
   }
  }

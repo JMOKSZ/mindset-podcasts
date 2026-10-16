@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-10-16</title>
+<style>
+
+  :root{
+    --bg:#fdfaf6;
+    --card:#fffdf9;
+    --ink:#2b2620;
+    --muted:#7a7065;
+    --line:#e8ddcd;
+    --accent:#b8862b;
+    --accent-soft:#f4e8cf;
+    --new:#2e7d5b;
+    --warn:#a8571f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;
+    line-height:1.78;
+    margin:0;
+    padding:0 16px 90px;
+    font-size:16.5px;
+  }
+  .wrap{max-width:840px;margin:0 auto;}
+  header.top{
+    padding:46px 0 26px;
+    border-bottom:2px solid var(--line);
+    margin-bottom:32px;
+  }
+  header.top h1{font-size:31px;margin:0 0 8px;letter-spacing:.5px;}
+  header.top .sub{color:var(--muted);font-size:14.5px;}
+  header.top .meta{margin-top:14px;font-size:13.5px;color:var(--muted);}
+  .summary{
+    background:var(--accent-soft);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:18px 22px;
+    margin-bottom:38px;
+    font-size:15px;
+  }
+  .summary b{color:var(--accent);}
+  .summary ul{margin:8px 0 0;padding-left:20px;}
+  .stats{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0 4px;}
+  .stat{flex:1 1 120px;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;padding:10px 14px;text-align:center;}
+  .stat .n{font-size:24px;color:var(--accent);display:block;line-height:1.3;}
+  .stat .l{font-size:12px;color:var(--muted);}
+  section.pod{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 26px 22px;
+    margin-bottom:32px;
+    box-shadow:0 1px 0 rgba(0,0,0,.02);
+  }
+  .pod-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;border-bottom:1px dashed var(--line);padding-bottom:12px;margin-bottom:18px;}
+  .pod-head h2{font-size:22px;margin:0;flex:1 1 auto;}
+  .pod-head .host{color:var(--muted);font-size:13.5px;}
+  .tag{font-size:12px;padding:2px 10px;border-radius:20px;letter-spacing:.5px;white-space:nowrap;}
+  .tag.new{background:var(--new);color:#fff;}
+  .tag.none{background:#eee6d8;color:var(--muted);}
+  .tag.warn{background:var(--warn);color:#fff;}
+  .tag.recap{background:#e8ecf4;color:#3f5070;}
+  .ep-title{font-size:19px;font-weight:bold;color:var(--accent);line-height:1.45;margin:2px 0 6px;}
+  .ep-meta{font-size:13px;color:var(--muted);margin-bottom:14px;}
+  h3{font-size:17px;margin:26px 0 8px;color:#423a2e;border-left:3px solid var(--accent);padding-left:10px;}
+  h4{font-size:15px;margin:20px 0 6px;color:var(--accent);letter-spacing:.4px;}
+  ul{margin:6px 0 12px;padding-left:22px;}
+  li{margin:6px 0;}
+  ol{margin:6px 0 12px;padding-left:22px;}
+  blockquote{
+    margin:14px 0;
+    padding:11px 18px;
+    border-left:3px solid var(--accent);
+    background:#fbf5e9;
+    color:#4a4034;
+    font-style:italic;
+    font-size:15px;
+    border-radius:0 8px 8px 0;
+  }
+  blockquote cite{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:6px;}
+  .kv{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:14.5px;}
+  .kv th,.kv td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+  .kv th{background:#f7efe0;font-weight:normal;color:#6a5f52;width:38%;}
+  .callout{
+    border:1px dashed var(--line);
+    background:#fcf8f1;
+    border-radius:10px;
+    padding:12px 16px;
+    font-size:14px;
+    color:#5d5347;
+    margin:14px 0;
+  }
+  .label{font-size:11.5px;letter-spacing:.6px;padding:1px 7px;border-radius:4px;background:#f0e8d8;color:#7a6a52;margin-right:6px;white-space:nowrap;}
+  .label.ext{background:#e9f0ea;color:#3f6b52;}
+  .label.jev{background:#f3e6e0;color:#8a4a2c;}
+  .label.ts{background:#e8ecf4;color:#3f5070;}
+  .chapters{font-size:13.8px;color:#5d5347;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;padding:14px 18px;line-height:1.9;columns:2;column-gap:26px;}
+  @media(max-width:560px){.chapters{columns:1;}}
+  .chapters .tc{color:#8a6a2c;font-family:Georgia,serif;}
+  .last-ep{
+    margin-top:6px;
+    padding:16px 18px;
+    background:#fbf8f1;
+    border:1px solid var(--line);
+    border-radius:10px;
+  }
+  .last-ep .lbl{color:var(--muted);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;}
+  .last-ep .le-title{font-size:16.5px;font-weight:bold;color:var(--accent);margin:5px 0 3px;line-height:1.45;}
+  .last-ep .le-meta{font-size:13px;color:var(--muted);margin-bottom:9px;}
+  .last-ep .le-summary{font-size:14.5px;color:#4f463b;margin:8px 0 9px;}
+  .last-ep .le-link{font-size:13px;}
+  .timeline{font-size:13.5px;color:#5d5347;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;padding:12px 16px;line-height:2.0;}
+  .timeline code{background:transparent;color:#8a6a2c;font-size:13px;}
+  footer.bot{border-top:1px solid var(--line);margin-top:44px;padding-top:18px;color:var(--muted);font-size:13px;}
+  a{color:var(--accent);}
+  code{background:#f3ecdd;padding:1px 5px;border-radius:4px;font-size:13.5px;}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>思維播客日報 · 2026-10-16</h1>
+  <div class="sub">6 個英文商業／思維播客 · 每日深度掃描 · 為 James 而設的「第二對耳仔」</div>
+  <div class="meta">
+    🕘 報告生成時間：<b>2026-10-16 09:53 UTC</b>（= 香港時間 2026-10-16 17:53）<br>
+    📡 掃描方式：6 條 RSS feed 直接抓取 XML，逐集比對 GUID 去重<br>
+    🔢 RSS 集數（最新的在前）：Acquired 217 · Founders 462 · All-In 436 · MFM 910 · KP 20 · DOAC 898<br>
+    🧮 Jev 前置過濾（TypeSafe System One, <code>news</code> profile）：本輪僅 <b>1 條</b>新集候選 → DOAC <code>worth 0.61</code>（保留，剛過 0.6 噪音線）、<code>primary_source 0.24</code>（節目自述，屬二手轉述口徑 → 文中已標示）<br>
+    🧑💻 Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">JMOKSZ/mindset-podcasts</a> · 累計已掃 GUID：2985
+  </div>
+</header>
+
+<div class="summary">
+  <b>今日重點：只有 1 台有新集 —— DOAC 推出「最高重播時刻」精華剪輯《Christian vs Atheist: Is Faith A Human Creation?》，把上季最hit嘅三方宗教辯論（基督徒 × 無神論者 × 精神科醫生）重新剪成 29 分鐘的「信仰係唔係人類創造」核心段落。</b>
+  <ul>
+    <li>🆕 <b>DOAC · 宗教辯論精華</b>（28:50）：Greg Koukl（基督徒護教學者）× Alex O'Connor（無神論哲學家，Cosmic Skeptic）× Dr K / Alok Kanojia（哈佛出身精神科醫生）。三人正面交鋒同一條問題：<b>信仰／宗教究竟係「人類為應對死亡恐懼而發明嘅工具」，抑或指向一個客觀存在嘅超越真相？</b></li>
+    <li>📭 其餘 5 台（Acquired / Founders / All-In / MFM / Knowledge Project）本輪無新集；All-In 上集「Billy Evans 專訪」、MFM 上集、KP 上集均已於過去幾日報完整拆解。</li>
+    <li>🔁 註：呢集係 <b>clip／精華回顧</b>而唔係全新錄音——原始辯論（3 小時 21 分）於 <b>2025-09-29</b> 播出，題為《Atheist vs Christian vs Spiritual Thinker: The Paperclip Problem That Exposes Religion》。今日呢條係 DOAC 官方「Most Replayed Moment」系列重新發佈嘅 28:50 剪輯。</li>
+  </ul>
+  <div class="stats">
+    <div class="stat"><span class="n">1</span><span class="l">今日新集</span></div>
+    <div class="stat"><span class="n">6</span><span class="l">追蹤播客</span></div>
+    <div class="stat"><span class="n">29m</span><span class="l">新集長度</span></div>
+    <div class="stat"><span class="n">2985</span><span class="l">累計已掃 GUID</span></div>
+  </div>
+</div>
+
+
+<!-- ==================== DOAC ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Diary of a CEO</h2>
+    <span class="host">Steven Bartlett</span>
+    <span class="tag new">🆕 新集數</span>
+    <span class="tag recap">精華剪輯</span>
+  </div>
+
+  <div class="ep-title">Most Replayed Moment: Christian vs Atheist — Is Faith A Human Creation?</div>
+  <div class="ep-meta">
+    🗓 發佈：<b>2026-10-16 05:00 UTC</b>（香港時間 10-16 13:00）· ⏱ <b>28 分 50 秒（1,730 秒）</b>· 🎙 嘉賓：<b>Greg Koukl</b>（基督徒護教學者、Stand to Reason 創辦人）· <b>Alex O'Connor</b>（哲學家、Cosmic Skeptic 主持人）· <b>Dr K / Alok Kanojia</b>（哈佛培訓精神科醫生、Healthy Gamer 共同創辦人）· 主持：<b>Steven Bartlett</b><br>
+    🧬 原始集數：<i>Atheist vs Christian vs Spiritual Thinker: The Paperclip Problem That Exposes Religion</i>（<b>2025-09-29</b>，全長 3 小時 21 分）<br>
+    🎧 <a href="https://thediaryofaceo.com/">官方網站</a> ·
+    <a href="https://podcasts.apple.com/us/podcast/atheist-vs-christian-vs-spiritual-thinker-the/id1291423644?i=1000728984173">Apple Podcasts（原集）</a> ·
+    <a href="https://www.youtube.com/watch?v=3vUjsvmOp20">YouTube（原集）</a> · RSS GUID <code>flightcast:01M1P5R2DYEM65ABQ1YNEB6FXH</code>
+  </div>
+
+  <div class="callout">
+    <span class="label ext">來源說明</span>DOAC 呢條 clip 嘅官方 show notes 只有約 120 字（見下方摘要原文），不足以支撐深度拆解。故以下內容以 <b>同一場辯論嘅公開逐字稿</b>（Singju Post 轉錄，2025-09-29 播出）為骨幹，輔以 Apple Podcasts 官方章節。凡從逐字稿取得嘅引文，均以原文 blockquote 標明；<b>已明確區分「clip 內內容」同「原始全集中同主題段落」，冇任何杜撰對白</b>。
+  </div>
+
+  <h3>🎯 一集講咩（一句話）</h3>
+  <p>呢條 29 分鐘剪輯抽嘅係整場辯論最核心、最多人重播嘅一條線：<b>「信仰／宗教是唔係人類自己創造出嚟嘅？」</b>三個人坐喺同一張枱，背後係三套完全唔同嘅世界觀——</p>
+  <ul>
+    <li><b>Alex O'Connor（無神論）</b>：宗教係人類面對「自身有限性」（finitude）同死亡恐懼時，自發演化出嚟嘅文化工程。它嘅真偽，同它能唔能令人感覺有意義，係<b>兩條完全獨立嘅問題</b>。</li>
+    <li><b>Dr K（精神科／不可知論）</b>：唔理真偽，宗教係「一套誘發主觀體驗嘅結構」——同靜觀、冥想、迷幻藥 ego death 一樣，係可量度、可操作嘅 mechanism。</li>
+    <li><b>Greg Koukl（基督徒）</b>：如果上帝真係造人「為祂自己」，人內心嗰種「唔夠」就唔係 bug 而係設計；純自然主義解釋唔到意識，所以「宗教係人創造」呢個講法本身企唔穩。</li>
+  </ul>
+  <p>主持 Steven Bartlett 開場就搬出一堆數據，講明呢場辯論唔係象牙塔遊戲——而係一個正在發生嘅<b>意義危機（meaning crisis）</b>。</p>
+
+  <h3>📊 開場數據框架（Steven 引述，全部出自原集開場）</h3>
+  <table class="kv">
+    <tr><th>美國年輕人</th><td><b>3 分之 2</b>（three in five）認為自己人生缺乏目的</td></tr>
+    <tr><th>英國年輕人</th><td><b>10 分之 9</b> 認為人生缺乏目的</td></tr>
+    <tr><th>英國成人對比</th><td><b>59%</b> 英國人稱自己過住有意義嘅人生；<b>25%</b> 明確話冇</td></tr>
+    <tr><th>性別差距</th><td>英國男性 <b>34%</b> 話人生無意義，女性 <b>18%</b></td></tr>
+    <tr><th>連鎖關係</th><td>自認「人生缺目的」嗰組，<b>50%</b> 話自己嘅精神健康問題同「唔知做人為乜」有關</td></tr>
+    <tr><th>英國宗教復興（YouGov）</th><td>18–24 歲「相信上帝」由 <b>2021 年 18% → 2025 年 37%</b>（翻倍）</td></tr>
+    <tr><th>英國教會出席</th><td>每月出席率由 <b>4% → 15%</b>（2025）</td></tr>
+  </table>
+  <div class="callout">📈 <b>信號解讀：</b>西方年輕世代唔係走向更世俗，而係<b>「去教會化之後再回教會化」</b>——拋棄制度性宗教一代之後，Z 世代反而係幾十年嚟第一次令「信上帝比例」同「教會出席率」同時上升嘅世代。呢個係本集一切討論嘅現實底色。</div>
+
+  <h3>🧠 三方立論：逐個拆</h3>
+
+  <p><b>① Alex O'Connor ——「宗教係人類對自身有限性嘅回應，唔係對真相嘅發現」</b></p>
+  <p>O'Connor 自爆佢少年時曾「深深捲入 New Atheism」（Dawkins / Hitchens 那一波），但佢今日嘅立場已經唔係「宗教邪惡」，而係一個更精緻嘅心理學／人類學解釋：</p>
+  <blockquote>
+    「Well, for my own part, I was quite swept up in the New Atheism movement… People tried that and it didn't seem to work. And I think that's because the New Atheist movement was quite philosophically shallow. It didn't seriously engage with the existential component of religious belief and why it exists in the first place.」
+    <cite>— Alex O'Connor（原集逐字稿）</cite>
+  </blockquote>
+  <p>佢最鋒利嘅一句，係拒絕接受「現代意義危機」係新現象——佢認為呢個係<b>把人類處境誤讀成時代病</b>：</p>
+  <blockquote>
+    「There is this idea that we are living in a meaning crisis… I think that's way too easy. I think that if there is such thing as a meaning crisis, it is literally the human condition and the reason why these projects were invented in the first place.」
+    <cite>— Alex O'Connor（原集逐字稿）</cite>
+  </blockquote>
+  <p>然後佢落最後一釘——宗教嘅功能係「同唔那麼有限嘅東西連結」：</p>
+  <blockquote>
+    「I think literally speaking, what people are doing in religious traditions is realizing the finitude of their existence and therefore trying to commune with something less finite.」
+    <cite>— Alex O'Connor（原集逐字稿）</cite>
+  </blockquote>
+  <p>佢同場提出嘅「紙夾問題（The Paperclip Problem）」係整場辯論嘅題眼：設想一個有意識、有感情嘅 AI，佢被創造者賦予嘅唯一目的係「造萬字夾」。佢問：<b>「有創造者、有被賦予嘅目的」係唔係就等於「人生有意義」？</b>佢認為大部分人嘅直覺係「唔夠」——連被一個權威創造者賦予目的都唔夠，所以意義一定要嚟自更深嘅地方。</p>
+
+  <p><b>② Dr K（Alok Kanojia）——「唔理真偽，宗教係一套可量度嘅體驗工程」</b></p>
+  <p>Dr K 係三個之中最「臨床」嘅一個。佢開場就話，佢每日面對嘅係真係話「我冇理由活下去」嘅病人，所以佢唔可以停留喺形而上討論：</p>
+  <blockquote>
+    「I'm a psychiatrist, so for me finding meaning and purpose is a very practical thing… So I've got, you know, a couple of weeks, hopefully 15, 20 weeks to teach them how to find purpose.」
+    <cite>— Dr K（原集逐字稿）</cite>
+  </blockquote>
+  <p>佢對宗教嘅定義係全場最精準嘅一句：</p>
+  <blockquote>
+    「When I look at the project of religion, which is a little bit different from spirituality, one of the things that I've observed is that religion is a series of structures to evoke a personal experience.」
+    <cite>— Dr K（原集逐字稿）</cite>
+  </blockquote>
+  <p>佢用大教堂做例子：你唔需要係基督徒，行入一座偉大嘅大教堂都會被震撼（awe）——因為「結構」本身就能誘發體驗。佢進一步指出，今日嘅科學終於可以拆解呢啲 mechanism，所以「讀福音書／上教會／祈禱」不再係盲信，而係<b>知道自己在做什麼的練習</b>。</p>
+  <p>佢仲做咗一個極有說服力嘅對照：迷幻藥（psychedelics）治療難治型抑鬱／PTSD 時，<b>真正令病情改善嘅唔係「睇到顏色」，而係有冇出現 ego death（自我消融）體驗</b>。即係話，「體驗」先係療效變量，藥本身唔係。</p>
+
+  <p><b>③ Greg Koukl ——「兩幅唔同嘅現實圖畫」</b></p>
+  <p>Koukl 冇直接否定心理學解釋，反而將戰場拉高：他認為 O'Connor 講嘅係「心理學」，而佢要講嘅係「現實本身係點」。佢用「兩幅現實圖畫（two different pictures of reality）」框住整場辯論：</p>
+  <blockquote>
+    「We're really offering two different pictures of reality here… People have to ask themselves two questions… Does it seem to them that this is just a psychological thing that people can satisfy in all kinds of different ways depending on the individual? Or does it seem to them… that there's something transcendent, something bigger than them?」
+    <cite>— Greg Koukl（原集逐字稿）</cite>
+  </blockquote>
+  <p>佢對「覺得人生無意義」嘅人，答案係毫不含糊嘅本體論斷言：</p>
+  <blockquote>
+    「They feel like they don't have meaning… But they were made for a purpose. If they're not in touch with that meaning and purpose, then they're going to feel bereft.」
+    <cite>— Greg Koukl（原集逐字稿）</cite>
+  </blockquote>
+  <p>佢最有技術含量嘅一擊係<b>意識難題（problem of consciousness）</b>：如果達爾文式機制解釋唔到意識，咁「一切只係分子運動」嘅自然主義就企唔穩。他點名引用哲學家 Thomas Nagel 嘅《Mind and Cosmos》——一位<b>無神論者</b>，都因為意識問題而認為新達爾文唯物論「幾乎肯定係錯」。</p>
+
+  <h3>⚔️ 全場最精采嘅交鋒：機制 vs 幻覺</h3>
+  <p>當 Dr K 話「態度決定快樂，而且呢個係有數據支持嘅」時，O'Connor 反擊得極狠——他稱「在荒謬處境中仍然滿足嘅人」<b>幾乎係定義上嘅 delusory（受幻覺支配）</b>。Dr K 嘅回擊係本集最實用嘅一句：</p>
+  <blockquote>
+    「So you can absolutely differentiate between a psychological cope and an attitude towards life that is not a cope. And the reason you can differentiate that is because of what is underneath.」
+    <cite>— Dr K（原集逐字稿）</cite>
+  </blockquote>
+  <p>O'Connor 亦貢獻咗一條清界線嘅原則，值得記住：<b>「你可以用經驗解釋某個人嘅腦點解咁做，但呢個唔等於佢腦裡面相信嘅東西有任何理性或真理。」</b>——即「機制解釋」永遠殺唔死「真假問題」。呢條線其實同 Koukl 嘅立場暗合，只係推論方向相反。</p>
+
+  <h3>🔗 延伸：卡繆與薛西弗斯（Sisyphus）</h3>
+  <p>Dr K 講到「最深嘅目的感來自『唔為死後而做，只為當下而做』——可以日日造萬字夾而滿足」時，O'Connor 即刻接上：<i>「You're describing Sisyphus being happy.」</i> 佢引卡繆《薛西弗斯的神話》：諸神罰薛西弗斯永遠推石上山、石到頂又滾落，真正嘅折磨唔係推石嘅痛，而係<b>「知道呢件事毫無意義」</b>。卡繆嘅解法係要人想像薛西弗斯「是快樂的」，作為對荒謬處境嘅反抗。O'Connor 直認自己一生都唔收貨，認為嗰種「照樣寫書、照樣推石」嘅滿足感比較似 a cope。</p>
+
+  <h3>💡 行業／思維 Insight（James 版）</h3>
+  <ul>
+    <li><b>①「功能」與「真假」係兩個獨立軸。</b>本集最有遷移價值嘅思維工具：一項信念／一個產品／一個習慣，能唔能令人「有感覺、有效果」（mechanism），同佢係唔係「真」（truth），係兩條要分開評估嘅軸。O'Connor 反覆強調呢點；Koukl 想把它合併；Dr K 則乾脆只玩前者。任何做產品、做內容、做信念判斷嘅人，都應該分開問兩次。</li>
+    <li><b>②宗教復興係真數據，唔係印象。</b>英國 18–24 歲信上帝比例四年翻倍（18%→37%）、教會出席 4%→15%——呢個係過去 20 年「世俗化必然論」預測落空嘅實證。做市場、做內容、做品牌敘事嘅人都應該更新「年輕人唔信教」呢個舊假設。</li>
+    <li><b>③「結構誘發體驗」係可移植嘅設計原則。</b>Dr K 嘅「religion is a series of structures to evoke a personal experience」幾乎就係一句產品設計哲學——你要嘅唔係叫用戶「相信」，而係設計一套流程（節奏、空間、儀式、重複），令體驗自然發生。社群、習慣養成、品牌儀式感，全部通用。</li>
+    <li><b>④ 意識難題係宗教辯論嘅隱藏槓桿。</b>Koukl 唔靠聖經唔靠見證，而係攻「自然主義解釋唔到意識」——呢個係當代最有生產力嘅宗教哲學前線（Nagel、Chalmers 一派）。想認真參與呢個辯論，讀《Mind and Cosmos》比讀護教手冊有用。</li>
+    <li><b>⑤ 對「意義」嘅最務實介入法。</b>Dr K 嘅臨床路徑值得抄：先減 alexithymia（練到能辨識內在感受）→ 再處理 ego（降低 default mode network 過度活躍）→ 最後才是哲學／宗教內容。順序錯咗，哲學只會變成「intellectualizing」——即係不停睇 podcast、睇書，但人生完全唔變。呢句對「知識型癮君子」係直接點名。</li>
+  </ul>
+
+  <h3>📋 官方 show notes（原文摘要）</h3>
+  <div class="callout">
+    「Do we find meaning in life — or do we have to create it ourselves? Join three guests in a meaning discussion: Greg Koukl, a Christian apologist and founder of Stand to Reason, Alex O'Connor, philosopher, writer, and host of the Cosmic Skeptic channel, and Dr K, a Harvard-trained psychiatrist, mental health educator, and co-founder of Healthy Gamer. In this moment, they explore what happens when faith, philosophy and psychology attempt to answer the same question. From our fear of death to the need for control and something bigger than ourselves, this discussion reveals some unexpected forces that may be shaping how meaningful our lives feel.」
+    <cite>— DOAC 官方 show notes（2026-10-16 clip）</cite>
+  </div>
+
+  <div class="callout">
+    <span class="label jev">Jev 過濾</span>TypeSafe System One（<code>news</code> profile）對本條評 <code>worth&nbsp;0.61</code>（保留，僅微過 0.6 噪音線）、<code>category other</code>、<code>primary_source&nbsp;0.24</code>。低一手概率反映：呢條係<b>節目自述精華剪輯（secondary／marketing 口徑）</b>，而非一手研究或新聞事件。故本卡已把「節目／逐字稿原文」同「可獨立核實嘅統計來源（YouGov、學術研究）」分開呈現，並明確標示原始播出日期（2025-09-29）以免誤當新內容。
+  </div>
+</section>
+
+
+<!-- ==================== Acquired ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Acquired</h2>
+    <span class="host">Ben Gilbert &amp; David Rosenthal</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-16）比對 <code>state.json</code> 後<b>無新集數</b>。所有已發佈集數 GUID 均已掃過。<br>
+    <b>最後已知劇集：</b>The Home Depot（2026-09-13，3 小時 35 分（12,902 秒））
+  </div>
+  <div class="le-summary" style="margin-top:14px;font-size:14.5px;color:#4f463b">
+    <b>內容概要：</b>Home Depot 創辦故事：Bernie Marcus 同 Arthur Blank 喺 48 歲同 35 歲畀人炒魷之後，聽咗紐約銀行家 Ken Langone 嘅一句話——「你哋係畀金馬蹄鐵踢中咗屁股」——然後寫下美國零售史上最強複利故事之一。官方描述形容成一部「Avengers 電影」。
+  </div>
+  <div class="le-link" style="margin-top:10px;font-size:13px">🔗 <a href="https://www.acquired.fm/episodes">https://www.acquired.fm/episodes</a> · 集數頁：<a href="https://www.acquired.fm/episodes/home-depot">連結</a> · 首次完整拆解見 <a href="daily-report-2026-09-14.html">2026-09-14 日報</a></div>
+  <div class="callout" style="margin-top:12px">⚠️ Acquired 自 09-13 後已 <b>33 日</b>無新集；本台節奏約每月 1–2 集（長篇研究型），下一集隨時會出，屆時會第一時間拆解。</div>
+</section>
+
+<!-- ==================== Founders ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>Founders</h2>
+    <span class="host">David Senra</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-16）比對 <code>state.json</code> 後<b>無新集數</b>。所有已發佈集數 GUID 均已掃過。<br>
+    <b>最後已知劇集：</b>#437 The Tycoons: Carnegie, Rockefeller, Gould &amp; Morgan（2026-10-13，54 分 11 秒（3,251 秒））
+  </div>
+  <div class="le-summary" style="margin-top:14px;font-size:14.5px;color:#4f463b">
+    <b>內容概要：</b>Senra 讀 Charles R. Morris《The Tycoons》：四位寒微出身的巨人——三破壞者（Carnegie 鋼／Gould 鐵路／Rockefeller 石油）+ 一監管者（Morgan 銀行），喺 1873 同 1880 年代兩次市場斷裂中，把美國由農業手工業國家推成世界工廠。核心 insight：「發明嘅消費者」勝過發明者、先滿產再算賬、壟斷經濟學反直覺結論。
+  </div>
+  <div class="le-link" style="margin-top:10px;font-size:13px">🔗 <a href="https://www.founderspodcast.com/">https://www.founderspodcast.com/</a> · 首次完整拆解見 <a href="daily-report-2026-10-14.html">2026-10-14 日報</a></div>
+  <div class="callout" style="margin-top:12px">ℹ️ Senra 每日／隔日更新，今次已連續 3 日無新集（上次 10-13），屬近期較長空檔——值得留意下一集。</div>
+</section>
+
+<!-- ==================== All-In ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>All-In with Chamath, Jason, Sacks &amp; Friedberg</h2>
+    <span class="host">Chamath · Jason · Sacks · Friedberg</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-16）比對 <code>state.json</code> 後<b>無新集數</b>。所有已發佈集數 GUID 均已掃過。<br>
+    <b>最後已知劇集：</b>Elizabeth Holmes' Husband Billy Evans: The Trial, Prison &amp; Nathan Fielder's Documentary（2026-10-15，41 分 55 秒（2,515 秒））
+  </div>
+  <div class="le-summary" style="margin-top:14px;font-size:14.5px;color:#4f463b">
+    <b>內容概要：</b>All-In Summit 場次，Friedberg 單對單訪問 <b>Billy Evans</b>——Elizabeth Holmes 嘅伴侶、Haemanthus 新血液檢測公司 CEO。講相遇、審訊期間生仔、融資邊度出錯、判刑、監獄來電、點解參與 Nathan Fielder 紀錄片、賠償條數點計，同點解佢覺得新公司唔係 Theranos 2.0。
+  </div>
+  <div class="le-link" style="margin-top:10px;font-size:13px">🔗 <a href="https://allin.com/">https://allin.com/</a> · 集數頁：<a href="https://allinchamathjason.libsyn.com/elizabeth-holmes-husband-billy-evans-the-trial-prison-nathan-fielders-documentary">連結</a> · 首次完整拆解見 <a href="daily-report-2026-10-15.html">2026-10-15 日報</a></div>
+  <div class="callout" style="margin-top:12px">ℹ️ All-In 通常週五／週末出最佳ies 圓桌；上集（Billy Evans）已於昨日日報深度拆解。</div>
+</section>
+
+<!-- ==================== My First Million ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>My First Million</h2>
+    <span class="host">Sam Parr &amp; Shaan Puri</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-16）比對 <code>state.json</code> 後<b>無新集數</b>。所有已發佈集數 GUID 均已掃過。<br>
+    <b>最後已知劇集：</b>3 embarrassing moments that changed my life（2026-10-12，—）
+  </div>
+  <div class="le-summary" style="margin-top:14px;font-size:14.5px;color:#4f463b">
+    <b>內容概要：</b>Shaan Puri 單人集：用三個令佢尷尬到爆嘅人生時刻，講佢點樣由呢啲「黑歷史」入面提煉出可重複嘅成長／決策框架——典型 MFM 嘅「個人敘事 + 可操作啟發」配方。
+  </div>
+  <div class="le-link" style="margin-top:10px;font-size:13px">🔗 <a href="https://www.mfmpod.com/episodes/">https://www.mfmpod.com/episodes/</a> · 首次完整拆解見 <a href="daily-report-2026-10-13.html">2026-10-13 日報</a></div>
+  <div class="callout" style="margin-top:12px">ℹ️ MFM 週更（多數星期一、四）；10-12 一集已掃過，已 4 日無新集。</div>
+</section>
+
+<!-- ==================== The Knowledge Project ==================== -->
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Knowledge Project</h2>
+    <span class="host">Shane Parrish</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-16）比對 <code>state.json</code> 後<b>無新集數</b>。所有已發佈集數 GUID 均已掃過。<br>
+    <b>最後已知劇集：</b>Ryan Serhant: How to Get People to Say Yes（2026-10-08，—）
+  </div>
+  <div class="le-summary" style="margin-top:14px;font-size:14.5px;color:#4f463b">
+    <b>內容概要：</b>Ryan Serhant（SERHANT. 創辦人、Netflix《Owning Manhattan》主角）講「唔令人覺得被推銷」嘅銷售法：先建立連結、先幫人、賺到開口請求嘅資格。核心係信任與關係資本，而非話術。
+  </div>
+  <div class="le-link" style="margin-top:10px;font-size:13px">🔗 <a href="https://fs.blog/knowledge-project/">https://fs.blog/knowledge-project/</a> · 集數頁：<a href="https://fs.blog/knowledge-project-podcast/ryan-serhant/">連結</a> · 首次完整拆解見 <a href="daily-report-2026-10-09.html">2026-10-09 日報</a></div>
+  <div class="callout" style="margin-top:12px">ℹ️ KP 目前 RSS 只有 20 集（滾動 feed），週四更新；上一集 10-08，本週四（10-15）未見新集，下一集預料 10-22 前後。</div>
+</section>
+
+
+<footer class="bot">
+  <p><b>關於呢份報告：</b>每日比對 6 條 RSS feed 嘅 episode GUID，只對「未掃過嘅新集」做深度萃取。今日唯一新集係 DOAC 官方「Most Replayed Moment」系列嘅<b>精華剪輯</b>（原始全長集數 2025-09-29 播出），故本卡拆解以該場辯論嘅<b>公開逐字稿</b>為基礎，並已明確標示原始播出日期；所有引用均以原文 blockquote 呈現。</p>
+  <p>Feed 集數：217 / 462 / 436 / 910 / 20 / 898（依 podcasts.json 目前 RSS 設定，2026-10-16 09:53 UTC 抓取）。生成於 2026-10-16 09:53 UTC。</p>
+</footer>
+
+
+</div>
+</body>
+</html>
