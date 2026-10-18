@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-10-18</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --card:#fffdf9; --ink:#2b2620; --muted:#7a7065;
+    --line:#e8ddcd; --accent:#b8862b; --accent-soft:#f4e8cf;
+    --new:#2e7d5b; --warn:#a8571f;
+  }
+  *{box-sizing:border-box;}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,"Noto Serif SC","Songti SC",serif;
+    line-height:1.78;margin:0;padding:0 16px 90px;font-size:16.5px;}
+  .wrap{max-width:840px;margin:0 auto;}
+  header.top{padding:46px 0 26px;border-bottom:2px solid var(--line);margin-bottom:32px;}
+  header.top h1{font-size:31px;margin:0 0 8px;letter-spacing:.5px;}
+  header.top .sub{color:var(--muted);font-size:14.5px;}
+  header.top .meta{margin-top:14px;font-size:13.5px;color:var(--muted);line-height:1.85;}
+  .summary{background:var(--accent-soft);border:1px solid var(--line);border-radius:12px;
+    padding:18px 22px;margin-bottom:38px;font-size:15px;}
+  .summary b{color:var(--accent);}
+  .summary ul{margin:8px 0 0;padding-left:20px;}
+  .stats{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0 4px;}
+  .stat{flex:1 1 120px;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;
+    padding:10px 14px;text-align:center;}
+  .stat .n{font-size:24px;color:var(--accent);display:block;line-height:1.3;}
+  .stat .l{font-size:12px;color:var(--muted);}
+  section.pod{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:26px 26px 22px;margin-bottom:32px;box-shadow:0 1px 0 rgba(0,0,0,.02);}
+  .pod-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;
+    border-bottom:1px dashed var(--line);padding-bottom:12px;margin-bottom:18px;}
+  .pod-head h2{font-size:22px;margin:0;flex:1 1 auto;}
+  .pod-head .host{color:var(--muted);font-size:13.5px;}
+  .tag{font-size:12px;padding:2px 10px;border-radius:20px;letter-spacing:.5px;white-space:nowrap;}
+  .tag.new{background:var(--new);color:#fff;}
+  .tag.none{background:#eee6d8;color:var(--muted);}
+  .tag.warn{background:var(--warn);color:#fff;}
+  .tag.recap{background:#e8ecf4;color:#3f5070;}
+  .ep-title{font-size:19px;font-weight:bold;color:var(--accent);line-height:1.45;margin:2px 0 6px;}
+  .ep-meta{font-size:13px;color:var(--muted);margin-bottom:14px;}
+  h3{font-size:17px;margin:26px 0 8px;color:#423a2e;border-left:3px solid var(--accent);padding-left:10px;}
+  h4{font-size:15px;margin:20px 0 6px;color:var(--accent);letter-spacing:.4px;}
+  ul{margin:6px 0 12px;padding-left:22px;}
+  li{margin:6px 0;}
+  ol{margin:6px 0 12px;padding-left:22px;}
+  blockquote{margin:14px 0;padding:11px 18px;border-left:3px solid var(--accent);
+    background:#fbf5e9;color:#4a4034;font-style:italic;font-size:15px;border-radius:0 8px 8px 0;}
+  blockquote cite{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:6px;}
+  .kv{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:14.5px;}
+  .kv th,.kv td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+  .kv th{background:#f7efe0;font-weight:normal;color:#6a5f52;width:30%;}
+  .callout{border:1px dashed var(--line);background:#fcf8f1;border-radius:10px;
+    padding:12px 16px;font-size:14px;color:#5d5347;margin:14px 0;}
+  .label{font-size:11.5px;letter-spacing:.6px;padding:1px 7px;border-radius:4px;
+    background:#f0e8d8;color:#7a6a52;margin-right:6px;white-space:nowrap;}
+  .label.ext{background:#e9f0ea;color:#3f6b52;}
+  .label.jev{background:#f3e6e0;color:#8a4a2c;}
+  .last-ep{margin-top:6px;padding:16px 18px;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;}
+  .last-ep .lbl{color:var(--muted);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;}
+  .last-ep .le-title{font-size:16.5px;font-weight:bold;color:var(--accent);margin:5px 0 3px;line-height:1.45;}
+  .last-ep .le-meta{font-size:13px;color:var(--muted);margin-bottom:9px;}
+  .le-summary{font-size:14.5px;color:#4f463b;margin:8px 0 9px;}
+  .le-link{font-size:13px;}
+  .week{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0 4px;}
+  .week th,.week td{border-bottom:1px solid var(--line);padding:9px 8px;text-align:left;vertical-align:top;}
+  .week th{background:#f7efe0;color:#6a5f52;font-weight:normal;}
+  .week td.d{white-space:nowrap;color:var(--accent);font-size:13px;}
+  .week td.p{white-space:nowrap;font-size:13px;color:#5d5347;}
+  footer.bot{border-top:1px solid var(--line);margin-top:44px;padding-top:18px;
+    color:var(--muted);font-size:13px;line-height:1.9;}
+  a{color:#8a6a2c;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>思維播客日報 · 2026-10-18</h1>
+  <div class="sub">6 個英文商業／思維播客 · 每日深度掃描 · 為 James 而設的「第二對耳仔」</div>
+  <div class="meta">
+    🕘 報告生成時間：<b>2026-10-18 09:54 UTC</b>（= 香港時間 2026-10-18 17:54）<br>
+    📡 掃描方式：6 條 RSS feed 直接抓取 XML，逐集比對 GUID 去重（HTTP 200 × 6）<br>
+    🔢 RSS 集數（最新在前）：Acquired 217 · Founders 462 · All-In 437 · MFM 911 · KP 20 · DOAC 898<br>
+    🧮 Jev 前置過濾（TypeSafe System One, <code>news</code> profile）：本輪 <b>0 條</b>新集候選 → 無需過濾，直接如實報告「零新集」<br>
+    🧑‍💻 Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">JMOKSZ/mindset-podcasts</a> · 累計已掃 GUID：2987
+  </div>
+</header>
+
+<div class="summary">
+  <b>今日重點：六台全部靜止 —— 0 條新集。</b>呢個係一次乾淨嘅「無更新」掃描，唔係故障：六條 feed 全部 HTTP 200，最新集數同昨日報告完全一致，無任何漏掃或 GUID 漂移。
+  <ul>
+    <li>📭 <b>6/6 台無新集</b>：Acquired（35 日）、Founders（5 日）、All-In（1 日）、MFM（2 日）、Knowledge Project（10 日）、DOAC（2 日）。</li>
+    <li>✅ <b>無「補漏」需要</b>：All-In 10-17 嘅 CoreWeave 集、MFM 10-16 嘅「6 traits」集、DOAC 10-16 嘅宗教辯論精華，全部已喺過去兩日嘅日報完整拆解，唔存在「出了但未掃」嘅情況。</li>
+    <li>🗓 <b>週日節奏</b>：呢六台嘅發佈高峰集中喺週四至週六（All-In 通常週五／六、MFM 週五、DOAC 週四／五），週日基本上係最靜嘅一日。下一個更新窗口預計係 <b>10-22（週四）至 10-24（週六）</b>。</li>
+    <li>📚 <b>今日報告改為「補聽指南」</b>：下面每張卡保留最後一集嘅實質內容同補聽理由，另外加咗一段「本週已拆解回顧」，等呢一日嘅報告仍然有存量價值。</li>
+  </ul>
+  <div class="stats">
+    <div class="stat"><span class="n">0</span><span class="l">今日新集</span></div>
+    <div class="stat"><span class="n">6</span><span class="l">追蹤播客</span></div>
+    <div class="stat"><span class="n">6/6</span><span class="l">Feed 正常</span></div>
+    <div class="stat"><span class="n">2987</span><span class="l">累計已掃 GUID</span></div>
+  </div>
+</div>
+
+<h3 style="margin-top:0">📅 本週已拆解回顧（10-12 → 10-17）</h3>
+<div class="callout" style="background:#fbf8f1;border-style:solid">
+  <table class="week">
+    <tr><th style="width:76px">日期</th><th style="width:110px">節目</th><th>集數與一句話重點</th></tr>
+    <tr><td class="d">10-12</td><td class="p">All-In</td><td>Eric Weinstein：所謂「外星計劃」同 UAP 敘事——拆解佢點樣用「秘密計劃」框架去解釋制度失能。</td></tr>
+    <tr><td class="d">10-13</td><td class="p">All-In</td><td>Martin Shkreli：大藥廠盲點、做空量子計算、監獄教識佢嘅事。</td></tr>
+    <tr><td class="d">10-13</td><td class="p">MFM</td><td>「3 個改變我人生嘅尷尬時刻」——Sam &amp; Shaan 講丟臉事件點樣變成資產。</td></tr>
+    <tr><td class="d">10-14</td><td class="p">Founders</td><td>#437 The Tycoons：Carnegie／Rockefeller／Gould／Morgan——三破壞者 + 一監管者，點樣焊接出美國超級經濟體。</td></tr>
+    <tr><td class="d">10-15</td><td class="p">All-In</td><td>Billy Evans（Elizabeth Holmes 丈夫）：審訊、監獄、Nathan Fielder 紀錄片。</td></tr>
+    <tr><td class="d">10-15</td><td class="p">DOAC</td><td>Dr Sahar Yousef：手機成癮科學——一個小改動每日慳返一小時。</td></tr>
+    <tr><td class="d">10-16</td><td class="p">DOAC</td><td>Christian vs Atheist 精華：Koukl × O'Connor × Dr K，信仰係人類創造定超越真相。</td></tr>
+    <tr><td class="d">10-17</td><td class="p">All-In</td><td>CoreWeave 債券拋售、AI 交易裂縫、Anthropic IPO 紅旗、Bill Gates 末日論。</td></tr>
+    <tr><td class="d">10-17</td><td class="p">MFM</td><td>「6 traits of people who can't stop making money」——天生賺錢者嘅六個特質。</td></tr>
+  </table>
+  <div style="font-size:12.8px;color:#7a7065;margin-top:8px">※ 以上均為過去六日已完整拆解嘅集數，非今日新內容；點擊各卡內連結可回到當日深度報告。</div>
+</div>
+
+<section class="pod">
+  <div class="pod-head">
+    <h2>Acquired</h2>
+    <span class="host">Ben Gilbert &amp; David Rosenthal</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-18）比對 <code>state.json</code> 後<b>無新集數</b>。Feed 內所有集數 GUID 均已掃過，無遺漏。<br>
+    <b>最後已知劇集：</b>The Home Depot（2026-09-13，3 小時 35 分 02 秒（12,902 秒））
+  </div>
+  <div class="le-summary"><b>內容概要：</b>Home Depot 嘅創辦故事被官方形容為「Avengers 電影——如果 Avengers 被炒魷、破產、再疊起十呎高空油漆罐扮有貨」。Bernie Marcus（48 歲）同 Arthur Blank（35 歲）畀前東家 Handy Dan 無情解僱，紐約銀行家 Ken Langone 同佢哋講：「你哋係畀金馬蹄鐵踢中屁股。」（kicked in the ass with a golden horseshoe）之後三人聯手，寫下美國零售史上最強複利故事之一；客串人物包括 Sol Price、Jamie Dimon、Ross Perot。由 1981 年 IPO 至今，Home Depot 係全美國股票市場回報最高嘅單一股票——高過 Apple、Microsoft、Berkshire Hathaway 同所有其他公司。</div>
+  <div class="le-summary"><b>補聽價值：</b>如果你只聽一集 Acquired，呢集係「複利 + 逆境創業 + 資本配置」三合一。重點唔係 Home Depot 賣咩，而係：兩個中年人被炒之後，點樣用 40 年把一間五金店變成美股歷史回報王。適合配飯／通勤分段聽。</div>
+  <div class="le-link">🔗 <a href="https://www.acquired.fm/episodes/home-depot">acquired.fm/episodes/home-depot</a> · RSS GUID <code>68b66323-6e74-4c90-8157-ef3f1ed0d042</code> · 完整拆解見 <a href="daily-report-2026-09-14.html">2026-09-14 日報</a></div>
+  <div class="callout" style="margin-top:12px">⏳ 距今 <b>35 日</b>無新集。</div>
+</section>
+
+<section class="pod">
+  <div class="pod-head">
+    <h2>Founders</h2>
+    <span class="host">David Senra</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-18）比對 <code>state.json</code> 後<b>無新集數</b>。Feed 內所有集數 GUID 均已掃過，無遺漏。<br>
+    <b>最後已知劇集：</b>#437 The Tycoons: Carnegie, Rockefeller, Gould &amp; Morgan（2026-10-13，54 分 11 秒（3,251 秒））
+  </div>
+  <div class="le-summary"><b>內容概要：</b>Senra 讀 Charles R. Morris《The Tycoons: How Andrew Carnegie, John D. Rockefeller, Jay Gould, and J. P. Morgan Invented the American Supereconomy》（2005）。核心框架係「三破壞者 + 一監管者」：Carnegie（鋼）、Rockefeller（石油）、Gould（鐵路）帶住「火焰劍」入場，專門打破當時商人信奉嘅「有序市場、君子利潤」；Morgan 則相反——佢唔係破壞者，而係秩序嘅調節器，專門出手制止毀滅性競爭，把別人砌好嘅機器接管、整合、規模化。Morris 想答嘅大問題係：點解 1850 年代仲係農業手工業國家嘅美國，到 1900 年就變成世界工廠。</div>
+  <div class="le-summary"><b>補聽價值：</b>Founders 官方 feed 唔出 show notes，所以呢集嘅價值幾乎全部嚟自書本身。如果你對「規模化」有興趣，Carnegie 嘅六字信條（cut costs, take share, gain scale）同「先跑滿產能、再算賬」嘅反直覺定價法，係可以直接搬去任何製造／SaaS 業務嘅。</div>
+  <div class="le-link">🔗 <a href="https://www.founderspodcast.com/">founderspodcast.com</a> · RSS GUID <code>333ce5c4-c75d-11f1-a31e-7bbfecdd098c</code> · 完整拆解見 <a href="daily-report-2026-10-14.html">2026-10-14 日報</a></div>
+  <div class="callout" style="margin-top:12px">⏳ 距今 <b>5 日</b>無新集。</div>
+</section>
+
+<section class="pod">
+  <div class="pod-head">
+    <h2>All-In with Chamath, Jason, Sacks &amp; Friedberg</h2>
+    <span class="host">Chamath Palihapitiya · Jason Calacanis · David Sacks · David Friedberg</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-18）比對 <code>state.json</code> 後<b>無新集數</b>。Feed 內所有集數 GUID 均已掃過，無遺漏。<br>
+    <b>最後已知劇集：</b>CoreWeave Crash, AI Trade Cracks, Anthropic IPO Red Flags, Bill Gates Doomer（2026-10-17 01:51 UTC，1 小時 34 分 06 秒）
+  </div>
+  <div class="le-summary"><b>內容概要：</b>Ben Horowitz 代班 Friedberg。官方章節：CoreWeave 債券拋售——AI 泡沫係咪爆咗？（02:18）· AI 嘅通縮效應：decompiled software（31:14）· Anthropic investor day 反應兩極（45:44）· Psyop Corner：Anthropic 警告IoT 上自我複製模型（1:03:45）· 理解 Bill Gates 嘅末日論（1:22:19）。</div>
+  <div class="le-summary"><b>補聽價值：</b>呢集係本週最重要嘅一集宏觀／AI 資本市場討論：唔係講「AI 有冇用」，而係講「AI 嘅資本科學數唔數得通」。CoreWeave 債券拋售 + Anthropic IPO 紅旗，兩件事放埋一齊睇，就係 2026 年 AI 交易嘅壓力測試。</div>
+  <div class="le-link">🔗 <a href="https://allinchamathjason.libsyn.com/coreweave-crash-ai-trade-cracks-anthropic-ipo-red-flags-bill-gates-doomer">allin.com（集數頁）</a> · RSS GUID <code>f5b1cd7e-b9a3-4c1d-9159-375cab50f6a8</code> · 完整拆解見 <a href="daily-report-2026-10-17.html">2026-10-17 日報</a></div>
+  <div class="callout" style="margin-top:12px">⏳ 距今 <b>1 日</b>無新集。</div>
+</section>
+
+<section class="pod">
+  <div class="pod-head">
+    <h2>My First Million</h2>
+    <span class="host">Sam Parr &amp; Shaan Puri</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-18）比對 <code>state.json</code> 後<b>無新集數</b>。Feed 內所有集數 GUID 均已掃過，無遺漏。<br>
+    <b>最後已知劇集：</b>the 6 traits of people who can’t stop making money（2026-10-16，39 分 18 秒（2,358 秒））
+  </div>
+  <div class="le-summary"><b>內容概要：</b>Episode 872。Sam 同 Shaan 拆「天生賺錢者」嘅六個特質，用三個真人故事做案例：Nick Kokonas（Alinea／Tock）、Jay Gould（19 世紀鐵路大亨）、Syed Balkhi（WPBeginner／OptinMonster）。官方章節仲有兩個值得留意嘅概念：「Only Spend the Second Derivative」（只花二階導數——即係本金唔動，只用增長部分）同「Trading Valuable Hours for Useless Dollars」（用有價值嘅鐘頭去換冇用嘅美金）。</div>
+  <div class="le-summary"><b>補聽價值：</b>呢集唔係「如何創業」，而係「點解有啲人停唔到賺錢」。如果你自認係 founder 型，六個特質入面應該有幾個會刺中你——特別係「Can It Be Learned?」嗰段，Sam 同 Shaan 嘅答案唔一致。</div>
+  <div class="le-link">🔗 <a href="https://www.mfmpod.com/episodes/">mfmpod.com/episodes</a> · RSS GUID <code>610b43b4-c8e4-11f1-af17-cbb687bfb677</code> · 完整拆解見 <a href="daily-report-2026-10-17.html">2026-10-17 日報</a></div>
+  <div class="callout" style="margin-top:12px">⏳ 距今 <b>2 日</b>無新集。</div>
+</section>
+
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Knowledge Project</h2>
+    <span class="host">Shane Parrish</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-18）比對 <code>state.json</code> 後<b>無新集數</b>。Feed 內所有集數 GUID 均已掃過，無遺漏。<br>
+    <b>最後已知劇集：</b>Ryan Serhant: How to Get People to Say Yes（2026-10-08，長度未標示（Members 有加長版））
+  </div>
+  <div class="le-summary"><b>內容概要：</b>Ryan Serhant（SERHANT. 創辦人兼 CEO；16 年地產銷售額累計約 100 億美元；Bravo《Million Dollar Listing New York》、Netflix《Owning Manhattan》主角）。核心框架：「1,000 分鐘定律」——一日 1,440 分鐘，扣除食睡家庭約 440 分鐘，淨低 1,000 分鐘係可以推進目標嘅清醒時間；以 15 分鐘為單位堆疊。另外三個主題：注意力三步鏈（拎到 → 揸住 → 變成生意）、拒絕 fake it till you make it（用「未來嘅自己」身份去準備試鏡）、ego 係成交嘅敵人。</div>
+  <div class="le-summary"><b>補聽價值：</b>KP 呢一集嘅密度比起佢平時嘅嘉賓低少少（Jev 當時評 0.71，屬二手／營銷口徑），但「1,000 分鐘」呢個框架係實用嘅——特別適合用嚟審視自己每日嘅時間預算。如果你未聽，呢個係本週最輕鬆嘅一集。</div>
+  <div class="le-link">🔗 <a href="https://fs.blog/knowledge-project-podcast/ryan-serhant/">fs.blog/knowledge-project-podcast/ryan-serhant</a> · 完整拆解見 <a href="daily-report-2026-10-09.html">2026-10-09 日報</a></div>
+  <div class="callout" style="margin-top:12px">⏳ 距今 <b>10 日</b>無新集。</div>
+</section>
+
+<section class="pod">
+  <div class="pod-head">
+    <h2>The Diary of a CEO</h2>
+    <span class="host">Steven Bartlett</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="callout">
+    📭 本台今日（2026-10-18）比對 <code>state.json</code> 後<b>無新集數</b>。Feed 內所有集數 GUID 均已掃過，無遺漏。<br>
+    <b>最後已知劇集：</b>Most Replayed Moment: Christian vs Atheist — Is Faith A Human Creation?（2026-10-16，28 分 50 秒（1,730 秒））
+  </div>
+  <div class="le-summary"><b>內容概要：</b>DOAC 官方「Most Replayed Moment」精華剪輯。三位嘉賓：Greg Koukl（基督徒護教學者、Stand to Reason 創辦人）、Alex O'Connor（哲學家、Cosmic Skeptic 主持人）、Dr K / Alok Kanojia（哈佛培訓精神科醫生、Healthy Gamer 共同創辦人）。三人正面交鋒同一條問題：信仰／宗教究竟係「人類為應對死亡恐懼而發明嘅工具」，抑或指向一個客觀存在嘅超越真相？討論由死亡恐懼、控制欲、對「更大事物」嘅需要，一路講到呢啲力量點樣塑造我哋覺得人生有幾 meaningful。</div>
+  <div class="le-summary"><b>補聽價值：</b>注意：呢條係 2025-09-29 播出、全長 3 小時 21 分嘅原始辯論《Atheist vs Christian vs Spiritual Thinker: The Paperclip Problem That Exposes Religion》嘅 28:50 剪輯，唔係新錄音。如果你時間有限，呢個剪輯版係最低成本嘅入口；想聽完整交鋒就要搵原集。</div>
+  <div class="le-link">🔗 <a href="https://thediaryofaceo.com/">thediaryofaceo.com</a> · RSS GUID <code>flightcast:01M1P5R2DYEM65ABQ1YNEB6FXH</code> · 完整拆解見 <a href="daily-report-2026-10-16.html">2026-10-16 日報</a></div>
+  <div class="callout" style="margin-top:12px">⏳ 距今 <b>2 日</b>無新集。</div>
+</section>
+
+<footer class="bot">
+  <b>掃描詳情</b><br>
+  · 執行時間：2026-10-18 09:54 UTC · 6 條 feed 全部 HTTP 200 · feedparser 解析正常<br>
+  · 去重方法：以 <code>entry.id / guid</code> 對比 <code>state.json</code>；本輪新 GUID 數 = <b>0</b><br>
+  · 六台最新集數發佈時間：Acquired 2026-09-13 · Founders 2026-10-13 · All-In 2026-10-17 · MFM 2026-10-16 · KP 2026-10-08 · DOAC 2026-10-16<br>
+  · Jev（TypeSafe System One）本輪無候選可送，未進行 triage；下輪有新集時自動啟用 <code>news</code> profile<br>
+  · 所有內容摘要均取自各台 RSS 官方描述／已核實嘅往期拆解，無杜撰；引用已標明出處<br>
+  · 下一份報告：2026-10-19（週一）09:5x UTC｜預計下一個更新窗口：10-22 至 10-24<br>
+  · <a href="https://jmoksz.github.io/mindset-podcasts/">所有日報索引</a> · <a href="https://github.com/JMOKSZ/mindset-podcasts">GitHub Repo</a>
+</footer>
+
+</div>
+</body>
+</html>

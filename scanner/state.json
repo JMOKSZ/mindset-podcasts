@@ -1,5 +1,5 @@
 {
- "lastScan": "2026-10-17T09:57:14Z",
+ "lastScan": "2026-10-18T09:54:00Z",
  "scannedEpisodes": {
   "acquired": [
    "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -3014,12 +3014,12 @@
   },
   "all-in": {
    "status": "ok",
-   "count": 436,
+   "count": 437,
    "new": 0
   },
   "my-first-million": {
    "status": "ok",
-   "count": 910,
+   "count": 911,
    "new": 0
   },
   "knowledge-project": {
@@ -3030,7 +3030,7 @@
   "diary-of-a-ceo": {
    "status": "ok",
    "count": 898,
-   "new": 1
+   "new": 0
   }
  }
 }
