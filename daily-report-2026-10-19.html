@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-10-19</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --card:#fffdf9; --ink:#2b2620; --muted:#7a7065;
+    --line:#e8ddcd; --accent:#b8862b; --accent-soft:#f4e8cf;
+    --new:#2e7d5b; --warn:#a8571f; --deep:#5b4a7a;
+  }
+  *{box-sizing:border-box;}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,"Noto Serif SC","Songti SC",serif;
+    line-height:1.82;margin:0;padding:0 16px 90px;font-size:16.5px;}
+  .wrap{max-width:860px;margin:0 auto;}
+  header.top{padding:46px 0 26px;border-bottom:2px solid var(--line);margin-bottom:32px;}
+  header.top h1{font-size:31px;margin:0 0 8px;letter-spacing:.5px;}
+  header.top .sub{color:var(--muted);font-size:14.5px;}
+  header.top .meta{margin-top:14px;font-size:13.5px;color:var(--muted);line-height:1.9;}
+  .summary{background:var(--accent-soft);border:1px solid var(--line);border-radius:12px;
+    padding:18px 22px;margin-bottom:38px;font-size:15px;}
+  .summary b{color:var(--accent);}
+  .summary ul{margin:8px 0 0;padding-left:20px;}
+  .stats{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0 4px;}
+  .stat{flex:1 1 120px;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;
+    padding:10px 14px;text-align:center;}
+  .stat .n{font-size:24px;color:var(--accent);display:block;line-height:1.3;}
+  .stat .l{font-size:12px;color:var(--muted);}
+  section.pod{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:26px 26px 22px;margin-bottom:32px;box-shadow:0 1px 0 rgba(0,0,0,.02);}
+  .pod-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;
+    border-bottom:1px dashed var(--line);padding-bottom:12px;margin-bottom:18px;}
+  .pod-head h2{font-size:22px;margin:0;flex:1 1 auto;}
+  .pod-head .host{color:var(--muted);font-size:13.5px;}
+  .tag{font-size:12px;padding:2px 10px;border-radius:20px;letter-spacing:.5px;white-space:nowrap;}
+  .tag.new{background:var(--new);color:#fff;}
+  .tag.none{background:#eee6d8;color:var(--muted);}
+  .tag.warn{background:var(--warn);color:#fff;}
+  .tag.deep{background:var(--deep);color:#fff;}
+  .ep-title{font-size:19px;font-weight:bold;color:var(--accent);line-height:1.5;margin:2px 0 6px;}
+  .ep-meta{font-size:13px;color:var(--muted);margin-bottom:14px;}
+  h3{font-size:17px;margin:26px 0 8px;color:#423a2e;border-left:3px solid var(--accent);padding-left:10px;}
+  h4{font-size:15px;margin:20px 0 6px;color:var(--accent);letter-spacing:.4px;}
+  ul{margin:6px 0 12px;padding-left:22px;}
+  li{margin:6px 0;}
+  ol{margin:6px 0 12px;padding-left:22px;}
+  blockquote{margin:14px 0;padding:11px 18px;border-left:3px solid var(--accent);
+    background:#fbf5e9;color:#4a4034;font-style:italic;font-size:15px;border-radius:0 8px 8px 0;}
+  blockquote cite{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:6px;}
+  .kv{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:14.5px;}
+  .kv th,.kv td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+  .kv th{background:#f7efe0;font-weight:normal;color:#6a5f52;width:28%;}
+  .callout{border:1px dashed var(--line);background:#fcf8f1;border-radius:10px;
+    padding:12px 16px;font-size:14.5px;color:#5d5347;margin:14px 0;}
+  .label{font-size:11.5px;letter-spacing:.6px;padding:1px 7px;border-radius:4px;
+    background:#f0e8d8;color:#7a6a52;margin-right:6px;white-space:nowrap;}
+  .label.ext{background:#e9f0ea;color:#3f6b52;}
+  .label.jev{background:#f3e6e0;color:#8a4a2c;}
+  .last-ep{margin-top:6px;padding:16px 18px;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;}
+  .last-ep .lbl{color:var(--muted);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;}
+  .last-ep .le-title{font-size:16.5px;font-weight:bold;color:var(--accent);margin:5px 0 3px;line-height:1.5;}
+  .last-ep .le-meta{font-size:13px;color:var(--muted);margin-bottom:9px;}
+  .le-summary{font-size:14.5px;color:#4f463b;margin:8px 0 9px;}
+  .le-link{font-size:13px;}
+  .toc{font-size:14px;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;
+    padding:12px 18px;margin:0 0 30px;}
+  .toc a{text-decoration:none;}
+  footer.bot{border-top:1px solid var(--line);margin-top:44px;padding-top:18px;
+    color:var(--muted);font-size:13px;line-height:1.9;}
+  a{color:#8a6a2c;}
+  .small{font-size:13px;color:var(--muted);}
+  .divider{height:1px;background:var(--line);margin:24px 0;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>思維播客日報 · 2026-10-19</h1>
+  <div class="sub">6 個英文商業／思維播客 · 每日深度掃描 · 為 James 而設的「第二對耳仔」</div>
+  <div class="meta">
+    🕘 報告生成時間：<b>2026-10-19 09:55 UTC</b>（= 香港時間 2026-10-19 17:55）<br>
+    📡 掃描方式：6 條 RSS feed 直接抓取 XML，逐集比對 GUID 去重（HTTP 200 × 6）<br>
+    🔢 RSS 集數（最新在前）：Acquired 218 · Founders 462 · All-In 442 · MFM 935 · KP 32 · DOAC 899<br>
+    🧮 Jev 前置過濾（TypeSafe System One, <code>news</code> profile）：2 條候選 → <b>2 keep</b>（0.65 / 0.79），無噪音丟棄<br>
+    🧑‍💻 Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">JMOKSZ/mindset-podcasts</a> · 累計已掃 GUID：2,989
+  </div>
+</header>
+
+<div class="summary">
+  <b>今日重點：2 條新集，兩條都係「重量級長集」——唔好當普通日更跳過。</b>
+  <ul>
+    <li>🎬 <b>Acquired —「Seinfeld」</b>（3 小時 50 分）：表面上係電視懷舊，實際上係一堂關於 <b>ownership、監管套利、content library 複利</b> 嘅 masterclass。一個 pilot 測試失敗嘅節目，點樣變成 2026 年仍然有 7,200 萬美國人每年睇、累計產生 40–50 億美元授權收入嘅資產。</li>
+    <li>🕯️ <b>Diary of a CEO — Dr Christopher Kerr</b>（1 小時 23 分）：一位做咗近 30 年臨終照顧、訪問過約 1,500 位病人嘅醫生，用研究同錄像拆解「臨終夢境與異象」。呢集唔止講死亡，係講<b>點樣活</b>——因為病人最後在意嘅嘢，同我哋每日追嘅嘢，幾乎完全相反。</li>
+    <li>📭 <b>其餘 4 台無新集</b>：Founders（10-13）、All-In（10-17）、MFM（10-16）、Knowledge Project（10-08）。下面保留最後一集嘅實質內容同補聽理由。</li>
+    <li>🧠 <b>今日一條共同主線</b>：Acquired 講「價值最後落在擁有資產嘅人手上」，DOAC 講「人生最後價值落在關係上」。一個講錢，一個講愛，但兩集其實都喺問同一條問題：<b>你而家花時間同資源去換嘅嘢，係咪真係你想要嘅？</b></li>
+  </ul>
+  <div class="stats">
+    <div class="stat"><span class="n">2</span><span class="l">今日新集</span></div>
+    <div class="stat"><span class="n">6</span><span class="l">追蹤播客</span></div>
+    <div class="stat"><span class="n">6/6</span><span class="l">Feed 正常</span></div>
+    <div class="stat"><span class="n">2,989</span><span class="l">累計已掃 GUID</span></div>
+  </div>
+</div>
+
+<div class="toc">
+  <b>今日目錄：</b>
+  <a href="#acquired">🎬 Acquired — Seinfeld</a> ·
+  <a href="#doac">🕯️ Diary of a CEO — The Deathbed Doctor</a> ·
+  <a href="#founders">Founders（無更新）</a> ·
+  <a href="#allin">All-In（無更新）</a> ·
+  <a href="#mfm">MFM（無更新）</a> ·
+  <a href="#kp">Knowledge Project（無更新）</a>
+</div>
+
+<!-- ================= ACQUIRED ================= -->
+<section class="pod" id="acquired">
+  <div class="pod-head">
+    <h2>🎬 Acquired</h2>
+    <span class="host">Ben Gilbert &amp; David Rosenthal</span>
+    <span class="tag new">新集</span>
+    <span class="tag deep">深度</span>
+  </div>
+
+  <div class="ep-title">Seinfeld</div>
+  <div class="ep-meta">
+    發佈：2026-10-19 04:00 UTC（原 feed：Sun, 18 Oct 2026 21:00:46 -0700） ·
+    長度：<b>3 小時 50 分 20 秒</b> ·
+    <a href="https://www.acquired.fm/episodes/seinfeld">Episode 頁面</a> ·
+    <a href="https://www.acquired.fm/artifacts/seinfeld">Research artifacts</a>
+  </div>
+
+  <div class="callout">
+    <b>一句話：</b>Seinfeld 係「電視最後一間偉大 startup」——一個測試失敗嘅 pilot，靠一位中層主管自己嘅節目預算復活，用 9 年做到全美第一，然後靠一個當年電視台<b>唔准擁有</b>嘅資產（syndication rights），變成一部每年仍然有 7,200 萬美國人睇嘅現金流機器。
+  </div>
+
+  <h3>為什麼呢集值得你 4 個鐘</h3>
+  <p>Acquired 好少做純電視題材。呢集表面係 Seinfeld 懷舊，但佢哋真正拆嘅係一條 business model：<b>內容嘅價值，最後由誰擁有？</b>NBC 當年把 Seinfeld 養到全美第一，但因為一條 1970 年代嘅監管規則（Fin-Syn），NBC 只可以買「播映權」，唔可以擁有節目本身。結果節目由 Castle Rock 擁有，syndication 嘅長期現金流歸咗 studio 同創作者。NBC 賺咗廣告費，但錯過咗一個 40–50 億美元嘅 annuity。</p>
+  <p>呢個結構，對今天做 content、SaaS、marketplace 嘅人一樣 relevant：<b>你係喺度起一個資產，定係喺度幫別人分發佢嘅資產？</b></p>
+
+  <h3>時間線：由 Queens 棟樓到 Netflix 續約</h3>
+  <table class="kv">
+    <tr><th>1954–1988</th><td>Jerry Seinfeld 喺紐約 Queens／Massapequa 長大，由 stand-up 俱樂部打起。1981 年首次上 The Tonight Show，之後成為 NBC 晚間節目常客。呢段時間佢累積嘅唔止係笑話，而係一套「觀察日常荒謬」嘅素材庫。</td></tr>
+    <tr><th>1988</th><td>NBC 找 Jerry 做一個 late-night special；佢同 Larry David 合作，將一個「about conversation」嘅概念賣給 NBC。電視台想要一個 sitcom，唔係 talk show，於是變成《The Seinfeld Chronicles》。</td></tr>
+    <tr><th>1988–1989</th><td>Fin-Syn 規則 + Castle Rock deal：節目由 Castle Rock Entertainment 製作同擁有，NBC 只買播映權。呢個結構日後決定咗幾十億美元嘅歸屬。</td></tr>
+    <tr><th>1989-07-05</th><td>Pilot《The Seinfeld Chronicles》播出。測試反應災難級：觀眾唔明白為何要睇 Jerry；研究報告寫「好難對兩個男人去洗衣店感到興奮」。NBC 決定唔訂購系列。</td></tr>
+    <tr><th>1989–1990</th><td>NBC 節目主管 Rick Ludwin 用自己部門嘅預算，訂購額外 4 集。呢 4 集成為救命符。Ludwin 後來講，當年有人話個 show「too New York…too Jewish」，佢嘅回應係：「我唔係紐約人，我唔係猶太人，但我覺得好笑，所以我覺得佢行得通。」</td></tr>
+    <tr><th>1990–1991</th><td>Elaine 加入；Larry David 定下「No Hugging, No Learning」寫作室規則。角色唔會學乖、唔會擁抱、唔會成長。NBC 對《The Chinese Restaurant》有意見（成套劇就係等位），Larry David 拒絕改：「我照做同一個 show，唔會變。」</td></tr>
+    <tr><th>1992</th><td>第四季《The Contest》——一個關於自慰嘅 episode，NBC 容許用委婉語拍。呢集成為系列標誌，亦證明「禁忌題材 + 聰明寫法」可以同時拿到收視同評論。</td></tr>
+    <tr><th>1993</th><td>NBC 將 Seinfeld 由週三 9 點（對住 ABC 嘅 Home Improvement）搬到週四 9:30，跟住 Cheers。製作人 Howard West 講得直接：「我哋喺拿到週四時段之前，乜都唔係。」搬檔後收視進入 Nielsen Top 10，正式由 cult favorite 變成 national franchise。</td></tr>
+    <tr><th>1994–1995</th><td>成為全美最高收視節目；第五季平均 2,960 萬觀眾。NBC 嘅週四「Must See TV」成為廣告黃金時段。</td></tr>
+    <tr><th>1995</th><td>進入 syndication：首輪賣給破紀錄嘅 <b>224 間本地電視台</b>，每集 license fee 超過 <b>300 萬美元</b>。呢個係 Seinfeld 由「節目」變成「資產」嘅一刻。</td></tr>
+    <tr><th>1996</th><td>Larry David 離開（最後一季仍參與部分創作）；cast 薪酬重新談判；Jerry 成為史上首位每集超過 100 萬美元嘅電視演員。</td></tr>
+    <tr><th>1997</th><td>NBC 開出每集 <b>500 萬美元</b>、一季超過 <b>1 億美元</b> 嘅條件，希望 Jerry 拍第 10 季。Jerry 拒絕，理由係生活質素：「我冇生活，我未結婚，我冇細路。」</td></tr>
+    <tr><th>1998-05-14</th><td>大結局：<b>7,630 萬觀眾</b>、41.3 rating／58 share；NBC 估計連戶外收看，有 1.339 億人至少睇過 6 分鐘。30 秒廣告賣到 <b>200 萬美元</b>，比同年 Super Bowl 嘅 130 萬美元高 54%。</td></tr>
+    <tr><th>1998–2010s</th><td>第二輪 syndication 叫價每集約 <b>600 萬美元</b>、五年約 <b>11 億美元</b>；2010 年累計 rerun 收入約 <b>27 億美元</b>；2017 年估計超過 <b>40 億美元</b>。</td></tr>
+    <tr><th>2019–2026</th><td>Netflix 以超過 <b>5 億美元</b> 買下五年全球 streaming 權（2021 年上架），擊敗 Amazon、HBO Max、Hulu 等。2026 年再續約五年，條款未公開。</td></tr>
+  </table>
+
+  <h3>核心論點：五個令 Seinfeld 與別不同嘅商業決定</h3>
+
+  <h4>1. Pilot 失敗唔等於產品失敗：internal champion 值幾多錢？</h4>
+  <p>Seinfeld 嘅 pilot 測試差到 NBC 直接 pass。如果當日冇 Rick Ludwin 由自己節目預算撥錢拍多 4 集，電視史上就冇呢套劇。呢個係 product development 嘅經典教訓：<b>早期 signal 好噪；真正嘅 signal 係有冇一個 inside champion 願意用自己的資源幫你買時間。</b>Ludwin 唔係因為數據而信，係因為佢自己笑。佢嘅 taste 打敗咗 focus group。</p>
+
+  <h4>2. Fin-Syn：一條監管規則，決定咗幾十億美元誰屬</h4>
+  <p>1980–90 年代，美國 FCC 嘅 Financial Interest and Syndication Rules（Fin-Syn）禁止三大電視網擁有黃金時段節目的財務利益同 syndication 權。所以 NBC 只能買播映權，Seinfeld 由 Castle Rock 擁有，syndication 由 Columbia TriStar（後來 Sony）負責。</p>
+  <p>呢個安排當年對 NBC 嚟講係保護——佢唔需要承担製作風險。但當 Seinfeld 變成 hit，NBC 才發現自己養大咗一隻唔屬於自己嘅金蛋。1998 年 Forbes 估計，Seinfeld 九季已經產生接近 <b>17 億美元利潤</b>，係「史上最賺錢嘅單一娛樂作品」；Castle Rock + Columbia TriStar 合共拿接近 <b>10 億美元</b>，Jerry 同 Larry 合共約 <b>5 億美元</b>。NBC 拿嘅係廣告同「週四夜晚」嘅戰略價值，但冇份分 syndication。</p>
+  <p>更諷刺嘅係：Fin-Syn 喺 1995 年正式廢除，之後電視網開始垂直整合、自己擁有節目。Seinfeld 係「舊規則」下誕生嘅最後一批超級 hit 之一——佢嘅 syndication 黃金期，剛好同規則消失重疊。之後嘅創作者面對嘅係另一個世界：Netflix、Disney、Amazon 自己擁有 IP，唔會再出現「network 幫你養大、studio 獨吞長期價值」嘅結構。</p>
+
+  <h4>3. 「No Hugging, No Learning」：一個產品設計規則，令套劇可以重看 30 年</h4>
+  <p>Larry David 嘅寫作室規則，表面係喜劇風格，實際上係一個極聰明嘅 product decision：角色唔成長、唔學乖、唔會有 sentimental resolution。每個 episode 都係一個 self-contained 嘅社會實驗，觀眾唔需要記住上一集，也不需要情感投資。呢個令 Seinfeld 成為 streaming 時代最理想嘅「comfort TV」：<b>短、熟悉、可隨時加入、每次重看都有新細節。</b></p>
+  <p>對比同期好多 sitcom 要靠「will they/won't they」同連續劇情留住觀眾，Seinfeld 嘅 rewatchability 高得多。呢個亦解釋咗為何 2021 年 Nielsen 數據顯示，41% 嘅 Seinfeld 觀眾喺 1998 年完結時仲係幼兒或者未出世——佢哋唔需要「追進度」，可以直接由任何一集開始。</p>
+
+  <h4>4. 180 集：syndication 嘅魔法數字</h4>
+  <p>美國電視 syndication 嘅核心產品係「strip」：週一至週五、每日同一時段播同一套劇。要跑一個 36 週嘅 season 而唔重複，你需要大約 180 集。Seinfeld 剛好 180 集。呢個唔係巧合，而係一個極重要嘅經濟門檻：<b>少過 100 集，好難做 daily strip；150–200 集，先可以建立觀眾慣性同廣告定價權。</b></p>
+  <p>一旦跨過呢個門檻，library 就變成 annuity：每賣一次，邊際成本近乎零。1995 年首輪 224 間電視台、每集 300 萬美元；1998 年第二輪每集叫價 600 萬美元；2010 年累計 27 億；2017 年超過 40 億；2026 年研究估算 40–50 億（包括 Netflix 5 億）。同一批 180 集，賣咗三十年。</p>
+
+  <h4>5. 薪酬係定價，股權才係複利</h4>
+  <p>Jerry Seinfeld 嘅人工由 1989 年每集約 <b>2 萬美元</b>，升到最後一季每集 <b>100 萬美元</b>，複合年增長約 54%。呢個已經係天文數字。但真正令佢成為 billionaire 嘅，係佢同 Larry David 各自 <b>15% 嘅 profit participation</b>。Forbes 2026 年 9 月估 Jerry 身家約 <b>11 億美元</b>，主要來自 Seinfeld 嘅 syndication 同授權收入；Larry David 2024 年身家約 <b>4 億美元</b> 以下，雖然兩人嘅 Seinfeld 分成都係 15%，但 Larry 2007 年離婚分走了一半，加上他之後產出較慢。</p>
+  <p>NBC 最後開到每集 500 萬美元、一季 1 億美元，Jerry 都唔做。因為佢知道：<b>再高嘅 salary 都係一次性的；ownership 才係持續的。</b>呢個係 founder 同 employee 嘅分水嶺，亦係呢集最值得帶走嘅一句。</p>
+
+  <h3>關鍵數據一覽</h3>
+  <table class="kv">
+    <tr><th>2026 年美國觀眾</th><td><b>7,200 萬人</b>（Acquired 節目簡介）；Nielsen 2026 上半年約 <b>6,000 萬人</b>透過 streaming + linear 睇過至少一分鐘，約美國人口 20%</td></tr>
+    <tr><th>原播出</th><td>1989-07-05 至 1998-05-14；9 季、<b>180 集</b></td></tr>
+    <tr><th>大結局</th><td><b>7,630 萬觀眾</b>、41.3 rating／58 share；NBC 估計 1.339 億人至少睇過 6 分鐘</td></tr>
+    <tr><th>廣告價</th><td>1995 年 30 秒約 <b>49 萬美元</b> → 1996 年約 <b>55 萬美元</b> → 1997 年每分鐘超過 <b>100 萬美元</b> → 大結局 30 秒最高 <b>200 萬美元</b></td></tr>
+    <tr><th>製作成本</th><td>1994 年約 <b>75 萬美元／集</b> → 最後一季超過 <b>300 萬美元／集</b>（22 集約 7,000 萬美元）</td></tr>
+    <tr><th>Jerry 薪酬</th><td>1989 年約 <b>2 萬美元／集</b> → 1998 年 <b>100 萬美元／集</b>；NBC 最後開價 <b>500 萬美元／集</b>、一季超過 <b>1 億美元</b></td></tr>
+    <tr><th>1998 年累計利潤</th><td>Forbes 估接近 <b>17 億美元</b>；Castle Rock + Columbia TriStar 約 <b>10 億</b>；Jerry + Larry 約 <b>5 億</b></td></tr>
+    <tr><th>Syndication</th><td>1995 年首輪 <b>224 間電視台</b>、每集 <b>300 萬+</b>；1998 年第二輪每集約 <b>600 萬</b>、五年約 <b>11 億</b>；2010 年累計 <b>27 億</b>；2017 年 <b>40 億+</b>；2026 年估 <b>40–50 億</b></td></tr>
+    <tr><th>Streaming</th><td>Hulu 2015 年約 <b>1.3 億美元</b>／6 年（約 70 萬／集）；Netflix 2019 年 <b>5 億+</b>／5 年（約 300 萬／集）；2026 年續約 5 年</td></tr>
+    <tr><th>NBC 嘅依賴</th><td>1997 年 Seinfeld 估計佔 NBC 約 <b>4.5 億美元年度利潤</b> 的 20–40%；NBC 當年 preseason 廣告約 <b>21.5 億美元</b>，比 CBS 多約 9 億</td></tr>
+    <tr><th>Jerry 身家</th><td>Forbes 2026-09：約 <b>11 億美元</b>；Larry David 2024 年約 <b>4 億美元以下</b></td></tr>
+    <tr><th>製作總成本 vs 回報</th><td>以 1994 年 75 萬／集 × 180 集估算，製作成本至少 <b>1.35 億美元</b>；相對 40–50 億授權收入，回報倍數約 <b>30–37 倍</b>（粗略估算）</td></tr>
+  </table>
+
+  <h3>原文引用</h3>
+  <blockquote>
+    「Seinfeld, which ended three decades ago, has been watched by 72 million Americans so far THIS YEAR. Behind that incredible stat is an equally incredible business story: obsessive creators, perfect market timing, an ownership structure that aligned incentives for the long term…all of which created a sitcom that became number one by breaking all the rules.」
+    <cite>— Acquired 節目簡介（2026-10-19）</cite>
+  </blockquote>
+
+  <blockquote>
+    「I'm not from New York, I'm not Jewish, and I thought it was funny, so I thought it could work.」
+    <cite>— Rick Ludwin（NBC 前節目主管），回顧當年反對聲音；引自本集研究資料 Worldly Partners《Seinfeld》study</cite>
+  </blockquote>
+
+  <blockquote>
+    「Over $100 million. We offered him $5 million an episode. We didn't mess around. What we put on the table was unheard of… He came to me and said, 'I don't have a life, I'm not married, I don't have kids.' We gave it everything we had, he was tempted, but in the end it was a quality of life decision.」
+    <cite>— Warren Littlefield（NBC 前 Entertainment President），2012 年 Fox News 訪問；本集研究資料引用</cite>
+  </blockquote>
+
+  <blockquote>
+    「All the networks are nothing but distribution vehicles… Take away the hits and they lose money. People don't watch distribution.」
+    <cite>— Sumner Redstone（Viacom 主席），1998 年；本集研究資料引用</cite>
+  </blockquote>
+
+  <blockquote>
+    「We said it would be a show about conversation, which is almost the same as nothing… It wouldn't be heavy on story.」
+    <cite>— Jerry Seinfeld，1993 年；本集研究資料引用</cite>
+  </blockquote>
+
+  <h3>行業 insight：呢集真正教嘅五件事</h3>
+  <ol>
+    <li><b>Regulatory arbitrage 係一種真實嘅 competitive advantage。</b>Fin-Syn 令電視網唔可以擁有節目，反而創造咗一個獨立 studio 嘅黃金時代。今天嘅 AI、金融、醫療都有類似嘅監管裂縫；問題係你有冇能力喺規則改變之前建立資產。</li>
+    <li><b>Distribution 會商品化，IP 唔會。</b>NBC 有全美最大嘅廣播網絡，但佢只係「distribution vehicle」。真正嘅定價權喺 Castle Rock 嘅 library 同 Jerry/Larry 嘅創作聲音。對今天嘅創作者：平台會換，觀眾會走，但一個有辨識度嘅 IP 同 library 可以跨越平台。</li>
+    <li><b>Rewatchability 係一種設計出來的資產。</b>Self-contained episodes、universal social situations、無連續劇情負擔——呢啲令 Seinfeld 在 streaming 時代仍然有 41% 觀眾係「完結後才出世」嘅人。唔係所有內容都需要「追看性」；有時「隨時可加入」更有長期價值。</li>
+    <li><b>Syndication 係內容行業嘅 compounding machine。</b>180 集嘅邊際成本近乎零，但每次授權都係純利。呢個 model 後來被 The Office、Friends、Seinfeld 反覆證明；亦解釋咗為何 Netflix 願意用 5 億美元買一套 30 年前嘅 sitcom。</li>
+    <li><b>Ownership > salary，長遠永遠成立。</b>Jerry 嘅 15% 比佢任何一季嘅人工都值錢。對 founder、creator、employee 都一樣：如果你相信你參與嘅嘢會複利，爭取 equity，唔好只爭取現金。</li>
+  </ol>
+
+  <h3>7 Powers / Quintessence：Acquired 嘅框架分析</h3>
+  <p>Acquired 喺 03:30:00 用 Hamilton Helmer 嘅《7 Powers》逐項檢視 Seinfeld。以下係重點映射（部分為本報歸納）：</p>
+  <table class="kv">
+    <tr><th>Branding</th><td>極強。Seinfeld 已經係一個 cultural shorthand；30 年後仍然有 7,200 萬美國人每年睇。Brand 令佢可以跨越平台同世代。</td></tr>
+    <tr><th>Cornered Resource</th><td>極強。180 集 library + 四個 iconic characters + Larry David/Jerry 嘅寫作聲音，無法複製。你唔可以「再做一套 Seinfeld」。</td></tr>
+    <tr><th>Process Power</th><td>強。每週 production week 嘅寫作室流程、stand-up 打磨、Harvard Lampoon 傳統嘅 writer room，令節目可以穩定產出高質素 episode。</td></tr>
+    <tr><th>Counter-Positioning</th><td>當年嘅監管結構（Fin-Syn）令 NBC 唔可以擁有節目，反而逼出 Castle Rock 嘅獨立 ownership。呢個係「規則造成嘅 counter-position」。</td></tr>
+    <tr><th>Scale Economies</th><td>Syndication 嘅邊際成本近零；越多電視台/平台播，單位成本越低，利潤越高。</td></tr>
+    <tr><th>Switching Costs</th><td>對電視台：Seinfeld 係收視保證，唔播會輸給對手。對觀眾：情懷同熟悉感，令重看成本極低。</td></tr>
+    <tr><th>Network Economies</th><td>較弱，但存在：Seinfeld 係一種 social currency，「識得引用」本身有社交價值。</td></tr>
+  </table>
+  <p><b>Quintessence（本報歸納）：</b>一個偉大嘅 content asset，通常需要三樣嘢同時出現——(1) 一個不肯妥協嘅創作聲音；(2) 一個願意幫你買時間嘅內部 champion；(3) 一個令你可以擁有長期 upside 嘅結構。Seinfeld 三樣都有。缺任何一樣，佢可能只會係另一套 90 年代 sitcom。</p>
+
+  <h3>批判與盲點</h3>
+  <ul>
+    <li><b>Survivorship bias：</b>Seinfeld 係極少數。同期有大量 pilot 失敗、大量 sitcom 被 cut。呢集好容易令人以為「堅持就會成功」，但實際上 Rick Ludwin 只有一個，Larry David 只有一個。</li>
+    <li><b>72M 係 reach，唔係平均收視：</b>「今年有 7,200 萬美國人睇過」同「每集有 7,200 萬人睇」係兩回事。呢個數字反映嘅係 library 嘅長尾曝光，唔係節目仍然有當年嘅文化中心地位。</li>
+    <li><b>Finale 評價兩極：</b>大結局收視驚人，但評論界反應分裂。不過呢個無損 library 價值——反而證明 Seinfeld 嘅價值喺「日常重看」，唔係「一次性的高潮」。</li>
+    <li><b>Fin-Syn 已死：</b>今天嘅創作者面對 Netflix/Disney/Amazon 垂直整合，唔可以照抄「獨立 studio 擁有 IP、network 只買播映權」嘅模式。你要麼自己成為平台，要麼接受平台嘅條款。</li>
+    <li><b>「Most profitable single piece of entertainment」係 1998 年嘅講法：</b>通脹同後來嘅遊戲/IP 可能已超越，但作為一個相對製作成本嘅回報倍數，仍然驚人。</li>
+  </ul>
+
+  <h3>補聽指南（如果只有 1 小時）</h3>
+  <ul>
+    <li><b>00:35:04</b> — Fin-Syn Rules &amp; The Castle Rock Deal：最重要嘅結構性 insight。</li>
+    <li><b>01:35:56</b> — The Structural Mechanics of Seinfeld：「No Hugging, No Learning」同 episode 設計。</li>
+    <li><b>02:15:44</b> — The Syndication Cash Cow：180 集點樣變成 annuity。</li>
+    <li><b>02:42:13</b> — Jack Welch's Brunch Offer &amp; Jerry Walks：500 萬美元一集都拒絕嘅理由。</li>
+    <li><b>03:11:21</b> — The Modern Streaming Era &amp; Netflix's Massive Deals：2026 年仍然值錢嘅原因。</li>
+  </ul>
+</section>
+
+<!-- ================= DOAC ================= -->
+<section class="pod" id="doac">
+  <div class="pod-head">
+    <h2>🕯️ The Diary of a CEO</h2>
+    <span class="host">Steven Bartlett</span>
+    <span class="tag new">新集</span>
+    <span class="tag deep">深度</span>
+  </div>
+
+  <div class="ep-title">The Deathbed Doctor: Weeks Before Death, Patients Start Having Visions! | Dr Christopher Kerr</div>
+  <div class="ep-meta">
+    發佈：2026-10-19 05:00 UTC ·
+    長度：<b>1 小時 23 分 21 秒</b> ·
+    <a href="https://podcasts.apple.com/us/podcast/the-diary-of-a-ceo-with-steven-bartlett/id1291423644">Apple Podcasts（節目頁）</a> ·
+    <a href="https://singjupost.com/diary-of-a-ceo-w-deathbed-doctor-christopher-kerr-transcript/">完整逐字稿</a>
+  </div>
+
+  <div class="callout">
+    <b>一句話：</b>一位照顧咗臨終病人近 30 年、做過約 1,500 次訪問嘅醫生，用數據同錄像告訴你：死亡唔係你想像嘅痛苦折磨，而係一個感官慢慢 dim、夢境愈來愈真實、同逝去摯愛重聚嘅過程；人喺最後幾日最在意嘅，唔係 legacy，而係唔想成為家人嘅負擔。
+  </div>
+
+  <div class="callout" style="border-color:#e2c4b6;background:#fdf3ee">
+    ⚠️ <b>Trigger warning：</b>本集涉及死亡、臨終、哀傷，包括兒童離世。如果最近有相關經歷，可能會被觸動。
+  </div>
+
+  <h3>嘉賓背景</h3>
+  <p><b>Dr. Christopher Kerr</b> 係 hospice physician（臨終關懷醫生）、neurobiologist（神經生物學博士），亦係 Hospice &amp; Palliative Care Buffalo 嘅 CEO。佢做咗近 30 年臨終照顧，訪問過約 <b>1,500 位</b>病人，發表過約 <b>15 篇</b>研究論文，專門研究 end-of-life dreams and visions（ELDVs，臨終夢境與異象）。佢嘅暢銷書《Death Is But a Dream: Finding Hope and Meaning at Life's End》就係呢集嘅基礎。</p>
+  <p>佢唔係一個「靈性導師」——佢受嘅係神經科學訓練，講嘢有研究數據、有方法論。但佢亦唔掩飾自己嘅立場：佢相信有靈魂、相信愛喺肉體消失後仍然存在。呢個「科學家 + 信仰者」嘅雙重身份，正係呢集最有趣嘅張力。</p>
+
+  <h3>核心論點：死亡嘅十個真相</h3>
+
+  <h4>1. Dying is a process. Death is a moment.</h4>
+  <p>Kerr 一開始就拆解最大嘅誤解：死亡唔係一個「事件」，而係一個過程。身體功能逐步關閉，感官慢慢 dim，好似「 постепенно 拉低窗簾」。大部分人喺睡眠中離世。呢個過程可以持續幾日到幾週，唔係電影裡面嗰種突然嘅、痛苦嘅掙扎。</p>
+  <blockquote>
+    「Dying is a process. Death is a moment. It changes over time.」
+    <cite>— Dr Christopher Kerr（00:17:07–00:18:18）</cite>
+  </blockquote>
+
+  <h4>2. Dying is progressive sleep.</h4>
+  <p>Kerr 用一個好精準嘅比喻：臨終過程好似「 progressively 進入更深嘅睡眠」。Sleep architecture 改變、sleep cycle 改變，病人愈來愈多時間喺 dream-like state。呢啲內在經驗通常喺最後一至兩週變得頻繁同 immersive。病人醒來時，有時會「想返去」嗰個狀態。</p>
+  <blockquote>
+    「Dying is progressive sleep. Your sleep architecture changes, your sleep cycle changes, and evermore you start to have these kind of inner experiences… the frequency of these events increases as people approach death.」
+    <cite>— Dr Christopher Kerr（00:04:00–00:05:10）</cite>
+  </blockquote>
+
+  <h4>3. 80–90% 病人有 end-of-life dreams and visions。</h4>
+  <p>節目簡介寫「超過 80%」；Kerr 喺對話中講「接近 90%」。差異可能來自定義同研究樣本，但重點一致：<b>呢個係常態，唔係例外。</b>其中約 <b>50%</b> 發生喺病人清醒嘅時候——佢哋會望住房間、望穿牆壁、摸一隻唔存在嘅狗。病人通常唔鍾意你叫呢啲做「dreams」，因為對佢哋嚟講，呢啲係「happening」，真實度自評 <b>10/10</b>。</p>
+  <blockquote>
+    「They're not dreams in the sense they're not metaphorical, they're not fantastical, they don't require interpretation… When we ask them to scale it 0 to 10 on the degree of realism, it's always a 10.」
+    <cite>— Dr Christopher Kerr（00:11:56–00:12:49）</cite>
+  </blockquote>
+
+  <h4>4. 呢啲唔係 delirium（譫妄）。</h4>
+  <p>呢個係 Kerr 研究最重要嘅方法論貢獻。佢哋每日做 delirium screening，只邀請 cognitively intact、可以 consent 嘅病人做問卷。結果發現 ELDVs 同 delirium 有明顯分別：delirium 係 disorganized、令人恐懼同 distress；ELDVs 係清晰、連貫、有敘事、帶來 comfort。病人事後可以準確描述，唔係模糊嘅幻覺。</p>
+  <blockquote>
+    「Delirium is very disorganized. And the biggest difference is most people are left frightened or distressed by delirium. These events are recalled with acuity. They're based on real happenings, and they're left with a feeling of comfort, not distress or fear.」
+    <cite>— Dr Christopher Kerr（00:16:18–00:16:55）</cite>
+  </blockquote>
+
+  <h4>5. 主題係 reconnection，唔係恐懼。</h4>
+  <p>ELDVs 裡面出現嘅人，幾乎都係「曾經無條件愛過佢哋」嘅人——父母、祖父母、伴侶、朋友。唔愛佢哋嘅人唔會出現。呢個唔係「日有所思夜有所夢」，因為病人自己都話呢啲經驗「唔似夢」：冇隱喻、冇解釋空間、冇恐懼。Kerr 播咗幾段病人錄像，最震撼嘅共通點係：<b>絕對冇恐懼。</b>病人知道自己就快死，但夢境唔否認死亡，反而 transcend 咗佢。</p>
+  <blockquote>
+    「What you'll notice in all these videos that's striking is the absolute absence of fear. So these dreams never deny the fact that they're dying. They almost transcend it.」
+    <cite>— Dr Christopher Kerr（00:06:37–00:06:58）</cite>
+  </blockquote>
+
+  <h4>6. 價值觀會翻轉：由「成就」轉向「關係」。</h4>
+  <p>Kerr 做咗一個 peer-reviewed 研究，請臨終病人將 11 項「最後在乎嘅事」排序，再同醫學生嘅預測比較。結果差距驚人：</p>
+  <table class="kv">
+    <tr><th>病人實際排序（高→低）</th><td>1. 唔想成為負擔 · 2. 同家人嘅時間 · 3. 痛楚／症狀管理 · 4. 同神／宇宙和平 · 5. 保持清醒 · 6. 在家離世 · 7. 醫療指示被遵從 · 8. 人生有意義（偏低） · 9. 活得愈長愈好（最低之一） · 10. 財務安排 · 11. 解決衝突（最低之一）</td></tr>
+    <tr><th>醫學生以為最重要</th><td>人生意義、解决衝突、legacy、成就——全部係「自我」中心嘅嘢</td></tr>
+    <tr><th>最大落差</th><td>病人最在意「唔想成為負擔」同「關係」；醫學生最低估呢兩項，亦高估「人生意義」同「解決衝突」</td></tr>
+  </table>
+  <p>Kerr 嘅解釋好靚：人臨終時唔係變得自我中心，反而變得 <b>other-focused</b>。佢哋唔想 illness 影響家人嘅生活，想見家人但又唔想阻住家人生活。呢個同「happiness science」吻合：最快樂嘅人，意義嚟自「為別人做嘢」，唔係「為自己做嘢」。</p>
+
+  <h4>7. 痛楚係最大迷思；真正嘅恐懼係 isolation。</h4>
+  <p>Kerr 講得好直接：大部分人以為死亡好痛，但「實際上，罕有痛楚係我哋控制唔到」。現代 hospice 嘅 symptom management 已經好成熟。真正令病人恐懼嘅，唔係痛，而係 <b>孤立同斷連</b>。佢話："we've looked at that and what they actually fear is isolation and being disconnected."</p>
+  <blockquote>
+    「The big myths are that pain is expected or anticipated, and that's actually not true… It's less painful than people think. Oh my gosh, by a mile. That's probably the biggest myth.」
+    <cite>— Dr Christopher Kerr（00:17:07–00:18:18；00:27:15–00:27:35）</cite>
+  </blockquote>
+
+  <h4>8. 後悔研究（Bronnie Ware）唔可靠？</h4>
+  <p>Steven 提到 Bronnie Ware 嘅「臨終五大後悔」。Kerr 直接反駁：呢個研究唔係 empirical，係基於對話；而佢自己嘅量化研究顯示，當你叫病人 rank 優先事項，<b>「解決衝突」同「後悔」排最低</b>。當你直接問「你有冇後悔？」，人會答有；但呢個只係因為你問咗，唔代表佢哋臨終時真係喺度諗。Kerr 嘅觀察係：病人唔係活喺 rearview mirror，佢哋喺度保護「令佢係佢」嘅嘢——家人、家、同神嘅和平。</p>
+  <blockquote>
+    「Regrets… don't come to the surface actually. A lot of that gets let go of. I can honestly say I've done this for nearly 30 years and that's not what I hear.」
+    <cite>— Dr Christopher Kerr（00:18:31–00:19:10）</cite>
+  </blockquote>
+
+  <h4>9. 死亡嘅醫療化，係一種 harm。</h4>
+  <p>Kerr 提出一個好尖銳嘅概念：<b>medical harm</b>。80% 美國人想在家離世，但只有約 30% 做到。三分一 hospice 病人入院 7 日內死亡——唔係因為佢哋 7 日前才開始 dying，而係因為佢哋 7 日前才「被告知」。醫療系統一直否認死亡，直到無法否認，結果病人被剝奪咗知情、選擇、同道別嘅時間。</p>
+  <blockquote>
+    「A third of our patients who come into hospice are dead in 7 days. They didn't just start dying 7 days, they became aware of it… We deny them and separate them and deny their reality. So they're left to figure it out suddenly and acutely. That injury is you're robbing people of their agency, their time to spend the way they want to, the conversations they need to have.」
+    <cite>— Dr Christopher Kerr（00:57:28–00:57:58）</cite>
+  </blockquote>
+  <p>佢亦批評現代醫療嘅「death-defying」文化：醫院愈高級、治療愈積極，病人反而更常死喺 ICU，死喺陌生環境。佢話死亡由「家裡面、社區裡面、教會裡面」變成「institutionalized」，變成「a rumor」——好似只會發生喺遠處、其他人身上。</p>
+
+  <h4>10. 臨終都可以成長、可以 healing。</h4>
+  <p>Kerr 用 post-traumatic growth scale 研究病人，發現即使身體機能下降，心理同靈性仍然可以成長，直到最後幾日。佢講咗幾個案例：</p>
+  <ul>
+    <li>一個 8 歲失去手臂嘅男人，一生都在證明自己「可以獨立、可以養家」。臨終時，他夢見所有共事過嘅人來告訴他：「你係我哋最好嘅工人。」</li>
+    <li>一個兒子因毒品入獄嘅母親，一生質疑自己係咪好媽媽。臨終時，她嘅父母來告訴她：「你係被愛嘅，你係一个好母親。」</li>
+    <li>Dwayne，一個在街頭生活、曾經犯過兩次謀殺（自衛）嘅人，臨終前 12 日被噩夢纏繞，夢見受害者來割他頸上嘅腫瘤位置。呢個 negative experience 逼他面對自己，最后他要求見女兒，第一次抱住她幾分鐘，說「我愛你，對唔住」。女兒原諒了他。他最後安詳離世。</li>
+  </ul>
+  <p>Kerr 嘅結論係：<b>12% 病人有 distressing dreams，但呢啲有時係最 transformational 嘅。</b>「You die how you live… but the end can also heal what life broke.」</p>
+
+  <h4>11. 兒童嘅死亡，同大人好唔同。</h4>
+  <p>Steven 問：「有咩我哋應該講但冇講？」Kerr 答：「兒童。」兒童唔會掙扎接受死亡，佢哋唔講 finality，只接受「而家嘅狀態」。佢哋可能會見到動物（因為佢哋唔區分人類同動物世界），訊息都係「你被愛、你唔孤單」。最震撼嘅係佢哋嘅 <b>quiet courage</b>：一個小女孩唔想食止痛藥，因為她想保持清醒，但又唔想媽媽見到她痛到皺眉；一個敘利亞女孩知道自己就快死，父母唔敢講，但她已經在 Facebook 同朋友道別、留下人生建議。13 歲嘅 Jessica 見到媽媽一位已故朋友喺窗簾邊，但她唔敢話俾媽媽知，怕嚇親她——她只覺得「relief、happiness」，因為她知道媽媽唔會孤單。</p>
+
+  <h4>12. 意義 = love。</h4>
+  <p>Steven 問：「人生嘅意義係咩？」Kerr 嘅答案係全集最靚嘅一句：</p>
+  <blockquote>
+    「I don't know about meaning, but I know the destination is always love. And I think that we're meant to get there together and we're meant to endure struggle together.」
+    <cite>— Dr Christopher Kerr（01:16:10–01:16:37）</cite>
+  </blockquote>
+  <p>佢唔係講緊浪漫嘅愛，而係 <b>interdependency</b>：人係互相依賴嘅生物，最好嘅自己永遠出現喺關係裡面——作為兒子、兄弟、朋友、伴侶。死亡只係把呢個真相剝到最裸。</p>
+
+  <h4>13. 佢自己嘅故事：12 歲喪父、後來患 stage 4 cancer。</h4>
+  <p>Kerr 嘅父親喺他 12 歲時因癌症去世，终年 42 歲。他最後一次見父親，父親正經歷 ELDV。之後很多年，他無法講出父親個名，也無法談論最後一次見面。他話：「The irony that the thing I could never talk about is the thing that I now share with millions of people. I feel like I'm getting punked.」</p>
+  <p>後來他自己患 stage 4 cancer。康復期間，他在農場慢慢行，見到幾十年前種嘅柳樹，覺得「從未見過咁靚嘅樹」。然後他明白了：「The trees hadn't changed. I changed.」苦難改變咗他對時間、對 presence 嘅理解。他引用 Viktor Frankl《Man's Search for Meaning》嘅 sunset 故事：美唔係關於做嘢或成就，而係內在嘅體驗。</p>
+
+  <h3>關鍵數據一覽</h3>
+  <table class="kv">
+    <tr><th>研究規模</th><td>近 30 年臨終照顧；約 <b>1,500 位</b>病人訪問；約 <b>15 篇</b>論文；<b>750 個</b>哀傷家庭訪問</td></tr>
+    <tr><th>ELDV 普及率</th><td>節目簡介：<b>超過 80%</b>；Kerr 對話中：<b>接近 90%</b>；約 <b>50%</b> 發生喺清醒時</td></tr>
+    <tr><th>真實感</th><td>病人自評 <b>10/10</b>；多數人唔認為係「夢」，而係「真實發生」</td></tr>
+    <tr><th>Distressing dreams</th><td>約 <b>12%</b> 病人有令人不安嘅夢；部分係最 transformational 嘅</td></tr>
+    <tr><th>在家離世</th><td><b>80%</b> 美國人想在家死；只有約 <b>30%</b> 做到</td></tr>
+    <tr><th>Late referral</th><td><b>三分一</b> hospice 病人入院 <b>7 日內</b>死亡（Kerr 稱之為 medical harm）</td></tr>
+    <tr><th>美國人靈性經驗</th><td><b>53%</b> 話有已故親人喺夢中或其他形式探望；<b>34%</b> 過去一年感覺過去世親人存在；<b>28%</b> 過去一年同已故親人講過自己嘅事；<b>15%</b> 過去一年有「溝通」</td></tr>
+    <tr><th>健康壽命</th><td>節目提到：西方部分地區 healthspan 約 <b>66–68 歲</b>；美國人一生約有 <b>11 年</b>處於 poor health</td></tr>
+    <tr><th>基因與壽命</th><td>Kerr 引用 Science 文章：約 <b>55%</b> 壽命由基因決定（其餘受環境、行為影響）</td></tr>
+  </table>
+
+  <h3>原文引用</h3>
+  <blockquote>
+    「My colleagues, particularly in nursing, were much more attuned to what the actual patient was experiencing. What I've come to understand is that the patient perspective is the one that matters. And when you start to see patients as people, you start to understand that they have these rich emotional and personal lives, and that's what matters at the end of life.」
+    <cite>— Dr Christopher Kerr（00:02:48–00:03:23）</cite>
+  </blockquote>
+
+  <blockquote>
+    「You can't sleep if you're in discomfort and you can't die if you can't sleep.」
+    <cite>— Dr Christopher Kerr（00:18:18）</cite>
+  </blockquote>
+
+  <blockquote>
+    「We're defined only by our relationships. That's the only surviving thing, not by these other things that seem in a transient sense important.」
+    <cite>— Dr Christopher Kerr（00:23:57–00:24:27）</cite>
+  </blockquote>
+
+  <blockquote>
+    「You die how you live… You can't reinvent it. It's not rainbows and flowers.」
+    <cite>— Dr Christopher Kerr（00:33:44–00:33:58）</cite>
+  </blockquote>
+
+  <blockquote>
+    「The art is to carry grief in one hand, gratitude in the other, and be stretched by both. You don't deny the grief, but you learn how to be grateful.」
+    <cite>— Dr Christopher Kerr（01:01:39–01:01:54）</cite>
+  </blockquote>
+
+  <blockquote>
+    「I can't show you where love is. I can't recreate love in a dish, and I can't create this. I think it really goes beyond brain function into something else.」
+    <cite>— Dr Christopher Kerr（00:13:51–00:14:31）</cite>
+  </blockquote>
+
+  <blockquote>
+    「The dying aren't fighting against anything. If anything, they're fighting towards, and what they're fighting towards is to get back to those that they've loved and they've lost.」
+    <cite>— Dr Christopher Kerr（01:12:24 附近）</cite>
+  </blockquote>
+
+  <h3>方法論與行業 insight</h3>
+  <ul>
+    <li><b>研究設計係呢集嘅 credibility 來源：</b>每日 delirium screening、只收 cognitively intact 病人、書面同意、錄像記錄、標準化問卷、post-traumatic growth scale、bereavement outcome measures。呢啲唔係「聽故事」，係有 protocol 嘅質性 + 量化混合研究。</li>
+    <li><b>Hospice care 嘅經濟結構：</b>美國 home-based hospice 長期 underfunded，導致病人要入院、要 aggressive treatment，最後死喺醫院。Kerr 嘅批評唔係反醫療，而係反對「以治療為默認、以死亡為失敗」嘅制度誘因。</li>
+    <li><b>Psychedelic-assisted therapy：</b>Kerr 提到臨終病人用 psychedelics 後，對死亡嘅恐懼會消散，感覺自己「immersed within and connected to life at large」，而且「die differently」。呢個係觀察，唔係 RCT 結論，但同 ELDV 嘅現象互相呼應。</li>
+    <li><b>Longevity movement 嘅盲點：</b>Kerr 唔反對長壽研究，但提醒「healthspan > lifespan」。他批評部分 biohacking 缺乏證據，並指出 Blue Zones 嘅共通點其實好朴素：move、eat more plants、highly social、downshift（prayer/meditation/music）。</li>
+    <li><b>哀傷研究：</b>750 個家庭嘅數據顯示，<b>死亡方式直接影響哀傷質素</b>。見到親人喺臨終夢境中被「reconnect」、被「healed」嘅家屬，哀傷時較少創傷，較能記住親人「rich in love」而非「empty and defined by physical dimensions」。</li>
+  </ul>
+
+  <h3>批判與盲點</h3>
+  <ul>
+    <li><b>Selection bias：</b>樣本主要係 hospice 病人、多數係癌症、單一地區（Buffalo）、cognitively intact、願意受訪同被拍攝。呢啲人可能本身較多反思、較多支持系統。唔可以推論到 sudden death、ICU 昏迷病人、或者非西方文化。</li>
+    <li><b>數字不一致：</b>節目簡介講「超過 80%」，Kerr 講「接近 90%」。 prevalence 取決於定義（dream vs vision、時間窗口、詢問方式）。讀者應該理解為「大多數」，唔好當精確統計。</li>
+    <li><b>回溯性自述：</b>病人喺臨終階段回憶 dream/vision，可能受藥物、缺氧、睡眠剝奪影響。Kerr 用 delirium screening 排除咗一部分，但唔可能完全排除生理因素。</li>
+    <li><b>靈性結論 vs 科學結論：</b>Kerr 明確講「I do believe there is a soul」，呢個係個人信仰，唔係研究結論。神經科學可以描述 correlational 現象，但未證明超自然。觀眾要分開「數據」同「詮釋」。</li>
+    <li><b>對 Bronnie Ware 嘅批評有力，但唔代表後悔完全唔重要：</b>Ware 嘅樣本同樣係臨終病人，方法論亦有限制。兩者嘅差異可能係「開放式對話」vs「強迫排序」造成嘅 framing effect。</li>
+  </ul>
+
+  <h3>給 James 嘅三個 actionable takeaways</h3>
+  <ol>
+    <li><b>做一次「deathbed test」：</b>如果你最後只在意「邊個喺床邊、佢哋覺得你係咪一個好人」，咁你今週嘅時間分配，有幾多百分比係俾咗呢啲人？唔需要即刻改變人生，但可以試一個星期，每日留 30 分鐘俾一個你真正在乎嘅人，唔傾工作。</li>
+    <li><b>唔好等「最後一刻」才談：</b>Kerr 講 "honest conversations don't take away hope, they restore agency." 同家人早啲講：如果有一天，你想喺邊度離世？你想唔想插喉？邊個可以幫你決定？呢啲唔係詛咒，係禮物。</li>
+    <li><b>Presence over fixing：</b>面對哀傷或者臨終，唔需要「解決」啲咩。Kerr 嘅研究顯示，病人最需要嘅係有人在場、有人聽、有人唔好當佢係「一個問題」。呢個原則同樣適用於任何處於低潮嘅朋友。</li>
+  </ol>
+
+  <h3>補聽章節（如果只有 40 分鐘）</h3>
+  <ul>
+    <li><b>00:03:29</b> — Do dying people see their loved ones who've passed? 最直接嘅現象描述。</li>
+    <li><b>00:11:31</b> — How deathbed dreams differ from normal dreams：真實感 10/10、50% 清醒時發生。</li>
+    <li><b>00:19:17</b> — What dying patients actually care about：11 項排序，全集最重要嘅數據。</li>
+    <li><b>00:28:42</b> — How modern medicine has changed the way we die：medical harm 同在家離世嘅落差。</li>
+    <li><b>00:46:53</b> — How dying brings unresolved trauma to the surface：Dwayne 嘅故事。</li>
+    <li><b>01:08:52</b> — How death can heal：六個 lessons 嘅總結。</li>
+    <li><b>01:17:03</b> — How death is different for children：最觸動嘅一段。</li>
+  </ul>
+</section>
+
+<!-- ================= FOUNDERS ================= -->
+<section class="pod" id="founders">
+  <div class="pod-head">
+    <h2>📚 Founders</h2>
+    <span class="host">David Senra</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+
+  <div class="last-ep">
+    <div class="lbl">Last known episode</div>
+    <div class="le-title">#437 The Tycoons: Carnegie, Rockefeller, Gould &amp; Morgan</div>
+    <div class="le-meta">發佈：2026-10-13 · 長度：約 2 小時（feed 未提供精確秒數）</div>
+    <div class="le-summary">
+      Senra 用一本書嘅框架，一次過拆四位 19 世紀美國工業巨頭：Andrew Carnegie（鋼鐵）、John D. Rockefeller（石油）、Jay Gould（鐵路／金融）、J.P. Morgan（銀行）。佢一貫嘅做法唔係講傳記流水帳，而係抽「可操作嘅原則」：點樣由零建立一個 industry、點樣處理資本同風險、點樣用 reputation 做杠杆、以及 builder 同 speculator 嘅分別。呢集適合鍾意「一個人 = 一個作業系統」嘅聽眾。
+    </div>
+    <div class="le-link">🔗 <a href="https://www.founderspodcast.com/">Founders Podcast</a> · 下一集通常週二／週三更新</div>
+  </div>
+</section>
+
+<!-- ================= ALL-IN ================= -->
+<section class="pod" id="allin">
+  <div class="pod-head">
+    <h2>🎙️ All-In with Chamath, Jason, Sacks &amp; Friedberg</h2>
+    <span class="host">Chamath Palihapitiya · Jason Calacanis · David Sacks · David Friedberg</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+
+  <div class="last-ep">
+    <div class="lbl">Last known episode</div>
+    <div class="le-title">CoreWeave Crash, AI Trade Cracks, Anthropic IPO Red Flags, Bill Gates Doomer</div>
+    <div class="le-meta">發佈：2026-10-17 · 長度：約 1 小時 20 分</div>
+    <div class="le-summary">
+      四個人拆當前 AI 交易嘅裂縫：CoreWeave 嘅債務同股價壓力、AI infra 資本開支係咪過度、Anthropic IPO 前嘅結構性紅旗、以及 Bill Gates 對 AI 末日風險嘅最新表態。重點唔係「邊隻股票」，而係佢哋對 AI capex cycle 同 private credit 風險嘅分歧——Chamath 偏向擔心泡沫，Friedberg 偏向睇基本面，Sacks 就從政策同地緣角度切入。
+    </div>
+    <div class="le-link">🔗 <a href="https://allin.com/">All-In Podcast</a> · 下一集通常週五／週六更新</div>
+  </div>
+</section>
+
+<!-- ================= MFM ================= -->
+<section class="pod" id="mfm">
+  <div class="pod-head">
+    <h2>💸 My First Million</h2>
+    <span class="host">Sam Parr &amp; Shaan Puri</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+
+  <div class="last-ep">
+    <div class="lbl">Last known episode</div>
+    <div class="le-title">the 6 traits of people who can't stop making money</div>
+    <div class="le-meta">發佈：2026-10-16 · 長度：約 1 小時</div>
+    <div class="le-summary">
+      Sam 同 Shaan 拆解「天生賺錢者」嘅六個共同特質：對機會嘅敏感度、行動速度、對風險嘅定價方式、講故事能力、建立 distribution 嘅本能、同埋一種「唔做嘢會唔舒服」嘅內在驅力。呢集唔係心靈雞湯，而係用具體例子同行為模式去對照，適合用嚟自我診斷或者招聘時參考。
+    </div>
+    <div class="le-link">🔗 <a href="https://www.mfmpod.com/episodes/">My First Million</a> · 下一集通常週五更新</div>
+  </div>
+</section>
+
+<!-- ================= KP ================= -->
+<section class="pod" id="kp">
+  <div class="pod-head">
+    <h2>🧠 The Knowledge Project</h2>
+    <span class="host">Shane Parrish</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+
+  <div class="last-ep">
+    <div class="lbl">Last known episode</div>
+    <div class="le-title">Ryan Serhant: How to Get People to Say Yes</div>
+    <div class="le-meta">發佈：2026-10-08 · 長度：約 1 小時 30 分</div>
+    <div class="le-summary">
+      Ryan Serhant（紐約地產經紀、真人騷明星、Serhant 創辦人）同 Shane 講「說服」嘅底層結構：唔係套路，而係建立信任、讀懂對方真正嘅恐懼、同埋將一個大決定拆成一系列細嘅「yes」。佢亦講咗自己由演員夢碎到地產、再由打工到創業嘅轉折，適合做 sales、 fundraising、或者任何要「令人點頭」嘅人。
+    </div>
+    <div class="le-link">🔗 <a href="https://fs.blog/knowledge-project-podcast/ryan-serhant/">Episode 頁面</a> · 下一集通常週四更新</div>
+  </div>
+</section>
+
+<footer class="bot">
+  <b>方法與限制</b><br>
+  · RSS 以 GUID 去重；同日重複集數（例如 All-In 嘅 re-feed）會自動略過。<br>
+  · 深度內容優先採用節目官方 show notes、官方 artifacts、公開逐字稿同節目引用嘅研究資料；所有數字同引用均標明來源或章節時間。<br>
+  · 嘉賓觀點不等於事實；本報會分開「節目內容」同「本報分析／批判」。<br>
+  · Acquired 嘅 3 小時 50 分版本包含贊助同較多細節；本報以章節時間標記，方便你直接跳聽。<br>
+  · Jev 前置過濾只作噪音篩選，不用作事實判斷；今日 2 條候選均為 keep。<br><br>
+  <b>今日來源</b><br>
+  · Acquired: <a href="https://www.acquired.fm/episodes/seinfeld">episode page</a> · <a href="https://worldlypartners.com/wp-content/uploads/2026/10/Seinfeld.pdf">Worldly Partners《Seinfeld》study（2026-10-09）</a> · <a href="https://www.acquired.fm/artifacts/seinfeld">artifacts</a><br>
+  · Diary of a CEO: <a href="https://singjupost.com/diary-of-a-ceo-w-deathbed-doctor-christopher-kerr-transcript/">完整逐字稿</a> · <a href="https://podcasts.apple.com/us/podcast/the-diary-of-a-ceo-with-steven-bartlett/id1291423644">Apple Podcasts</a><br>
+  · 其他節目：各自官網／RSS。<br><br>
+  <span class="small">Generated 2026-10-19 09:55 UTC · mindset-podcasts daily scanner · 為 James 而設</span>
+</footer>
+
+</div>
+</body>
+</html>
