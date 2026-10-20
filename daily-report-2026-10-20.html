@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-10-20</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --card:#fffdf9; --ink:#2b2620; --muted:#7a7065;
+    --line:#e8ddcd; --accent:#b8862b; --accent-soft:#f4e8cf;
+    --new:#2e7d5b; --warn:#a8571f; --deep:#5b4a7a;
+  }
+  *{box-sizing:border-box;}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,"Noto Serif SC","Songti SC",serif;
+    line-height:1.82;margin:0;padding:0 16px 90px;font-size:16.5px;}
+  .wrap{max-width:860px;margin:0 auto;}
+  header.top{padding:46px 0 26px;border-bottom:2px solid var(--line);margin-bottom:32px;}
+  header.top h1{font-size:31px;margin:0 0 8px;letter-spacing:.5px;}
+  header.top .sub{color:var(--muted);font-size:14.5px;}
+  header.top .meta{margin-top:14px;font-size:13.5px;color:var(--muted);line-height:1.9;}
+  .summary{background:var(--accent-soft);border:1px solid var(--line);border-radius:12px;
+    padding:18px 22px;margin-bottom:38px;font-size:15px;}
+  .summary b{color:var(--accent);}
+  .summary ul{margin:8px 0 0;padding-left:20px;}
+  .stats{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0 4px;}
+  .stat{flex:1 1 120px;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;
+    padding:10px 14px;text-align:center;}
+  .stat .n{font-size:24px;color:var(--accent);display:block;line-height:1.3;}
+  .stat .l{font-size:12px;color:var(--muted);}
+  section.pod{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:26px 26px 22px;margin-bottom:32px;box-shadow:0 1px 0 rgba(0,0,0,.02);}
+  .pod-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;
+    border-bottom:1px dashed var(--line);padding-bottom:12px;margin-bottom:18px;}
+  .pod-head h2{font-size:22px;margin:0;flex:1 1 auto;}
+  .pod-head .host{color:var(--muted);font-size:13.5px;}
+  .tag{font-size:12px;padding:2px 10px;border-radius:20px;letter-spacing:.5px;white-space:nowrap;}
+  .tag.new{background:var(--new);color:#fff;}
+  .tag.none{background:#eee6d8;color:var(--muted);}
+  .tag.warn{background:var(--warn);color:#fff;}
+  .tag.deep{background:var(--deep);color:#fff;}
+  .ep-title{font-size:19px;font-weight:bold;color:var(--accent);line-height:1.5;margin:2px 0 6px;}
+  .ep-meta{font-size:13px;color:var(--muted);margin-bottom:14px;}
+  h3{font-size:17px;margin:26px 0 8px;color:#423a2e;border-left:3px solid var(--accent);padding-left:10px;}
+  h4{font-size:15px;margin:20px 0 6px;color:var(--accent);letter-spacing:.4px;}
+  ul{margin:6px 0 12px;padding-left:22px;}
+  li{margin:6px 0;}
+  ol{margin:6px 0 12px;padding-left:22px;}
+  blockquote{margin:14px 0;padding:11px 18px;border-left:3px solid var(--accent);
+    background:#fbf5e9;color:#4a4034;font-style:italic;font-size:15px;border-radius:0 8px 8px 0;}
+  blockquote cite{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:6px;}
+  .kv{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:14.5px;}
+  .kv th,.kv td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+  .kv th{background:#f7efe0;font-weight:normal;color:#6a5f52;width:28%;}
+  .callout{border:1px dashed var(--line);background:#fcf8f1;border-radius:10px;
+    padding:12px 16px;font-size:14.5px;color:#5d5347;margin:14px 0;}
+  .label{font-size:11.5px;letter-spacing:.6px;padding:1px 7px;border-radius:4px;
+    background:#f0e8d8;color:#7a6a52;margin-right:6px;white-space:nowrap;}
+  .label.ext{background:#e9f0ea;color:#3f6b52;}
+  .label.jev{background:#f3e6e0;color:#8a4a2c;}
+  .last-ep{margin-top:6px;padding:16px 18px;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;}
+  .last-ep .lbl{color:var(--muted);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;}
+  .last-ep .le-title{font-size:16.5px;font-weight:bold;color:var(--accent);margin:5px 0 3px;line-height:1.5;}
+  .last-ep .le-meta{font-size:13px;color:var(--muted);margin-bottom:9px;}
+  .le-summary{font-size:14.5px;color:#4f463b;margin:8px 0 9px;}
+  .le-link{font-size:13px;}
+  .toc{font-size:14px;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;
+    padding:12px 18px;margin:0 0 30px;}
+  .toc a{text-decoration:none;}
+  footer.bot{border-top:1px solid var(--line);margin-top:44px;padding-top:18px;
+    color:var(--muted);font-size:13px;line-height:1.9;}
+  a{color:#8a6a2c;}
+  .small{font-size:13px;color:var(--muted);}
+  .divider{height:1px;background:var(--line);margin:24px 0;}
+  .two{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0;}
+  .two > div{flex:1 1 240px;border:1px solid var(--line);border-radius:10px;padding:12px 15px;background:#fcf9f3;}
+  .two h5{margin:0 0 6px;font-size:14px;color:var(--accent);letter-spacing:.4px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>思維播客日報 · 2026-10-20</h1>
+  <div class="sub">6 個英文商業／思維播客 · 每日深度掃描 · 為 James 而設的「第二對耳仔」</div>
+  <div class="meta">
+    🕘 報告生成時間：<b>2026-10-20 09:56 UTC</b>（= 香港時間 2026-10-20 17:56）<br>
+    📡 掃描方式：6 條 RSS feed 直接抓取 XML，逐集比對 GUID 去重（HTTP 200 × 6，全部正常）<br>
+    🔢 RSS 集數（最新在前）：Acquired 218 · Founders 462 · All-In 438 · MFM 912 · KP 20 · DOAC 899<br>
+    🧮 Jev 前置過濾（TypeSafe System One, <code>news</code> profile）：2 條候選 → <b>2 keep</b>（0.66 / 0.67），0 條丟棄<br>
+    🧑‍💻 Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">JMOKSZ/mindset-podcasts</a> · 累計已掃 GUID：2,991
+  </div>
+</header>
+
+<div class="summary">
+  <b>今日重點：兩條新集，主題意外地撞在一起——「AI 令入場變便宜，但令出眾變昂貴」。</b>
+  <ul>
+    <li>🎨 <b>All-In — Figma CEO Dylan Field</b>（40 分 33 秒）：全場最硬的一句唔係講 AI 有幾強，而係 <b>「AI 只係降低地板，天花板從來冇升過——升天花板嘅係人」</b>。佢用 Figma 被 Adobe 以 200 億美元收購失敗、再獨立上市、被全網宣告「Claude 殺死 Figma」之後仍然加速增長 48% 嘅完整經歷，拆解為什麼「設計是新代碼」、為什麼 taste 同 boldness 變成最貴嘅資產。</li>
+    <li>💰 <b>My First Million #873</b>（48 分 37 秒）：一個賣公司套現八位數嘅投資者，<b>十二年只做 2.9 個決定一年</b>，照樣跑贏標普 11 年（21.8% vs 13.5%）。佢唔係靠內幕，係靠「研究六個月、然後等」。下半場更離奇：Sam 請咗 executive coach，講到自己比較心態、驚恐症、同埋點樣用 UFC 冠軍 Georges St-Pierre 嘅「恐懼預演」方法去準備最驚嘅場面。</li>
+    <li>📭 <b>其餘 4 台無新集</b>：Acquired（10-18 已於昨日報告）、Founders（10-13）、Knowledge Project（10-08）、Diary of a CEO（10-19 已於昨日報告）。下面保留最後一集嘅實質內容同補聽理由。</li>
+    <li>🧠 <b>今日一條共同主線</b>：All-In 講「唔好做平均」——平均嘅軟件、平均嘅設計、平均嘅 point of view，AI 一秒幫你做到，所以唔值錢。MFM 講「唔好做多餘動作」——大部分決定係可逆嘅、唔重要嘅，真正改寫命運嘅一年只得兩三個。兩集合起來其實係一句：<b>把資源集中喺少數真正唔可逆、又真正屬於你嘅選擇上。</b></li>
+  </ul>
+  <div class="stats">
+    <div class="stat"><span class="n">2</span><span class="l">今日新集</span></div>
+    <div class="stat"><span class="n">6</span><span class="l">追蹤播客</span></div>
+    <div class="stat"><span class="n">6/6</span><span class="l">Feed 正常</span></div>
+    <div class="stat"><span class="n">2,991</span><span class="l">累計已掃 GUID</span></div>
+  </div>
+</div>
+
+<div class="toc">
+  <b>今日目錄：</b>
+  <a href="#allin">🎨 All-In — Dylan Field（Figma）</a> ·
+  <a href="#mfm">💰 MFM #873 — 一年 2.9 個決定</a> ·
+  <a href="#acquired">Acquired（無更新）</a> ·
+  <a href="#founders">Founders（無更新）</a> ·
+  <a href="#kp">Knowledge Project（無更新）</a> ·
+  <a href="#doac">Diary of a CEO（無更新）</a> ·
+  <a href="#synthesis">🧩 兩集對照</a>
+</div>
+
+<!-- ================= ALL-IN ================= -->
+<section class="pod" id="allin">
+  <div class="pod-head">
+    <h2>🎨 All-In with Chamath, Jason, Sacks &amp; Friedberg</h2>
+    <span class="host">主持：Jason Calacanis（本集單人訪問）</span>
+    <span class="tag new">新集</span>
+  </div>
+
+  <div class="ep-title">Dylan Field: Is AI Replacing Designers?, Design is the New Code &amp; Democratizing Creativity</div>
+  <div class="ep-meta">📅 2026-10-19 20:43 UTC · ⏱ 40 分 33 秒 · 🎙 嘉賓：Dylan Field（Figma 聯合創辦人兼 CEO）· 錄音地點：加州 Napa / Yountville</div>
+
+  <table class="kv">
+    <tr><th>嘉賓背景</th><td>Dylan Field，Figma 聯合創辦人兼 CEO。Figma 2012 年 8 月推出，2025 年獨立上市（Adobe 200 億美元收購被美／歐／英監管機構阻止後）。產品由 UI 設計延伸至白板、簡報、廣告、圖表——「只要係視覺嘅嘢，就有人喺 Figma 做」。</td></tr>
+    <tr><th>一句話總結</th><td>AI 把「做出來」的成本推向零，於是價值全部轉移到「做什麼、為什麼做、憑什麼係你」——即 design、brand、taste、courage。</td></tr>
+    <tr><th>為什麼值得聽</th><td>呢集唔係 AI 樂觀／悲觀之爭，而係一位真正被 AI 直接威脅嘅上市公司 CEO，用自己嘅收入數字回答「軟件係咪已死」。而且佢提供咗一個可以即刻用嘅判準：<b>你嘅工作係喺分佈中間，定係喺分佈外面？</b></td></tr>
+    <tr><th>節目章節</th><td>0:00 Figma 起源與使命 · 3:16 Adobe 200 億交易被阻內幕 · 12:29 AI 係咪殺死 SaaS · 18:52 AI 時代嘅創造力 · 36:02 人類能動性與下一步</td></tr>
+  </table>
+
+  <h3>1. 核心論點：AI 只降低地板，天花板係人抬高的</h3>
+  <p>這是全集的思想支點，也是 Dylan 自己承認「講錯過」的地方。幾年前他在 Figma 年度大會 Config 上預言：AI 會<em>提高</em>創作的 ceiling，令你可以更快做到更大的事。他現在收回這句話：</p>
+  <blockquote>「Ironically, even a few years ago, when I said this at our annual Config user conference, I believed AI would raise the ceiling… I was wrong. The ceiling remained unchanged. AI doesn't raise the ceiling, but people do.」
+    <cite>— Dylan Field（本集原話，按節目轉錄）</cite></blockquote>
+  <p>他的拆解是這樣：AI 令 coding、motion、video、design 這些「數位生產過程」全部變便宜，於是<strong>供給爆炸</strong>。但人類的注意力沒有爆炸——他引用 App Store 的觀察：上架的 app 數量指數式上升，但<strong>每個人實際使用的 app 數量基本上冇變</strong>。供給曲線右移、需求曲線不動，結果只有一個：<strong>平均品質的東西價格趨向零，差異化的東西價格趨向無限</strong>。</p>
+  <p>所以「design is the new code」不是一句口號，而是一個經濟結論：</p>
+  <blockquote>「How do you do it? It's not code, because now anyone can create code. That's not the difficult part anymore. In my opinion, design is the new code. It's the top layer. You have to make your design unique, and you have to have a point of view, good branding, and marketing.」
+    <cite>— Dylan Field</cite></blockquote>
+  <div class="callout">
+    <span class="label">技術細節</span>他對「設計」的定義係 <b>creativity meeting problem-solving</b>——唔係純藝術。設計師要同時在同一個腦入面 hold 住：使用者需求、品牌、文化、商業模型、營銷，然後喺一個 combinatorial explosion 嘅搜索空間入面，畫出一條 flow 或一個畫面。呢種「多層抽象同時在線」嘅能力，正正係目前模型最弱嘅一環。
+  </div>
+
+  <h3>2. Adobe 200 億美元交易被截：16 個月監管的真實代價</h3>
+  <p>背景：Figma 做了十一年，Adobe 提出 200 億美元收購，雙方簽約，然後美國、歐盟、英國 CMA 分別介入，交易在 16 個月監管審查後告吹。Dylan 的態度值得留意——他沒有把自己包裝成受害者，而是提出一個制度層面的批評：</p>
+  <blockquote>「Sixteen months of regulatory oversight is a punishment for any company. In a real anticompetitive situation, it could be very damaging to one of the parties, or both.」
+    <cite>— Dylan Field</cite></blockquote>
+  <p>他舉了 iRobot（Roomba）做反例：一單細交易被攔，結果 Roomba 破產——「當時整個市場其實在望向中國，從美國角度咁做唔 make sense」。他更鋒利的一句，係關於監管者如何<em>定義市場</em>：</p>
+  <blockquote>「Almost anything that looks like 'Oh, this is a market' isn't actually a market. The market is artificial intelligence.」
+    <cite>— Dylan Field</cite></blockquote>
+  <p>意思係：監管者用歷史向後看，把「設計軟件」切成一個市場，計出 Adobe + Figma 市佔過高；但技術人向前看，真正的競爭場係 AI，而嗰個市場大到 Adobe 收購 Figma 只佔 1% 甚至 0.2%。同一件事，兩個 lens，兩個結論。</p>
+
+  <h4>公告當日：他如何處理 1,200 人的「冇咗筆橫財」</h4>
+  <p>這一幕係全集最實用嘅管理教材。時間係聖誕假期第一日，星期五晚上確認交易告吹，週末內部消化，週一中午召開全員通話（自願參加）。他觀察到的最反直覺現象：</p>
+  <blockquote>「The mood was one of relief—not relief that there was no Adobe, but relief that there was no uncertainty. Having uncertainty for so long is really intense. People have to have 2 worlds in their heads.」
+    <cite>— Dylan Field</cite></blockquote>
+  <p>然後他做了一個「極度透明」的動作：在 Slack 發 video + 全公司 email，明確講——如果你當初加入是想去 Adobe、而 startup 唔啱你，冇問題，我哋照樣好來好去，<strong>俾幾個月人工，你即刻可以走</strong>；唯一條件係六個月內唔可以重新申請，六個月後可以再面試。結果：<strong>只得極小比例的人接受</strong>。他的評語是「有些人之後轉咗完全不同的人生方向，我覺得對所有人都好」。</p>
+  <div class="callout">
+    <span class="label ext">可操作</span>呢個 design pattern 值得抄：<b>不確定性本身比利空更傷人</b>。當壞消息確定，最快的止血方法唔係激勵演講，而係（1）第一時間講清楚、（2）給一條體面的退出通道、（3）把條件寫得簡單到可以一句話講完。留低嘅人會因為「你冇困住我」而更投入。
+  </div>
+
+  <h3>3.「SaaS 末日」與 Claude Design：+48% 的正面回答</h3>
+  <p>2026 年初 Anthropic 發布 Claude Design，市場即時結論係「Figma 玩完」。Jason 直接問：你被宣告死亡幾次？Dylan 答：「可能好多次，我自己都唔知。」但佢跟住講咗一句很關鍵的區分：</p>
+  <blockquote>「I think it's easy to confuse model progress with product progress.」
+    <cite>— Dylan Field</cite></blockquote>
+  <p>他的論證：模型能力是一條曲線，但產品係另一條曲線——要把模型變成專業人士可以日日用八小時的工具，中間係 workflow、細節、肌肉記憶、協作、版本、權限、生態。Figma 花咗十幾年；「專業設計工具係難做嘅」，所以 Claude Design 上線後，Figma 該季<strong>同比增長 48%，而且增速加快</strong>。他補一句：「No, no, not that it matters.」——即係就算有影響都唔重要，因為方向冇變。</p>
+  <p>他亦唔係盲目樂觀，反而點名讚 Cursor：</p>
+  <blockquote>「Cursor definitely shouldn't have evolved the way it did. You have all these frontier labs chasing them with their own models, before Cursor had any model. But Cursor is truly obsessed with the user… SaaS is not dead.」
+    <cite>— Dylan Field</cite></blockquote>
+  <p>邏輯係：Cursor 冇自己的模型，被所有 frontier lab 追殺，仍然跑出——因為它對使用者極度偏執。所以「SaaS 已死」係一個懶惰的總體判斷；真相係「<strong>唔差異化的 SaaS 已死</strong>」。</p>
+
+  <h3>4. 創造力：為什麼「taste」同「boldness」變成最貴</h3>
+  <p>Jason 拋出一個場景：將來你只需講「我想要一個感覺係 X、功能係 Y 嘅嘢」，AI 就交貨，時好時壞。咁人類的角色係乜？Dylan 的回答分三層：</p>
+  <ol>
+    <li><b>冇 vision 嘅人，只會得到 AI 的分佈。</b>如果你腦入面冇「應該係點」的畫面，你就會透過 AI 的 lens 去創作——模型會把你拉向它的平均值。相反，如果你有強烈品味，AI 的輸出就變成「一個可以反抗的對象」，解決了 blank canvas 問題。</li>
+    <li><b>Novelty 的定義就係「在訓練分佈之外」。</b>他講得非常直接：「If you don't do something that's never been done before, you're not creating something; you're imitating something. You copy something, you photocopy something.」而 novelty 之所以有市場價值，正因為它唔可以被複製。</li>
+    <li><b>信任會分叉。</b>他透露自己收過一份由 AI 生成的 deck，而「我甚至唔肯定寫嗰個人知唔知入面寫咩」。Figma 內部做法係：任何用 AI 寫嘅嘢，開頭註明「written with AI」。他的理由唔係道德，而係訊號經濟：<em>當內容無限，唯一稀缺嘅訊號係「有人真係花時間照顧過呢件事」</em>。</li>
+  </ol>
+  <blockquote>「I think we're going to see some kind of bifurcation when it comes to trust. One way to gain trust is to do something with your own hands.」
+    <cite>— Dylan Field</cite></blockquote>
+
+  <h4>一個很深的技術觀察：人腦的 reward function 同 RL 唔同</h4>
+  <p>Jason 問：創造力係咪只係「潛意識入面把見過嘅點連起來」？Dylan 唔同意得咁簡單，並用一個具體例子說明：</p>
+  <blockquote>「If I opened this bottle of water and splashed it on you, you'd get mad at me if I did it again. With AI, with reinforcement learning, you'd need to repeat it many times.」
+    <cite>— Dylan Field</cite></blockquote>
+  <p>人一次就學識（one-shot aversion），而且人天生追求 novelty；RL 需要大量重複，而且係向 reward 收斂。呢個差異，就係為什麼模型在<strong>形式化領域（數學、網絡安全）</strong>進步神速——因為有明確 reward——但在<strong>創造力與設計</strong>只能緩慢前進。用他的話：IQ 分數不斷堆高，品味卻係漸進的。</p>
+  <p>他亦提到 Figma 的產品 Weave（node-based 生成系統）：「生成係容易嘅，但你需要一個方法去處理舊黏土，去塑形。」——呢個比喻其實適用於所有 AI 工作流：<strong>生成 ≠ 完成，中間永遠有一段「加工」工序，而嗰段工序就係專業所在。</strong></p>
+
+  <h3>5. 人類能動性：兩條路，你每日都在選</h3>
+  <p>最後十分鐘係全集最「哲學」但最實用嘅部分。他把 AI 時代的人分成兩條路：</p>
+  <div class="two">
+    <div>
+      <h5>路 A：讓 AI 替你想</h5>
+      <p>把判斷外包，加入「collective mind」。好處係快、舒服、唔使承受不確定性。代價係你嘅 output 會越來越接近平均值，而平均值正在貶值。</p>
+    </div>
+    <div>
+      <h5>路 B：用 AI 深化理解</h5>
+      <p>用它去學、去教自己、去做以前因為「太難、太耐」而唔敢做嘅事。他承認呢條路辛苦，但「你可以擴張作為人嘅可能性」。</p>
+    </div>
+  </div>
+  <blockquote>「Why should I want someone else to think for me? My whole life has been about figuring out how to think.」
+    <cite>— Dylan Field</cite></blockquote>
+  <p>結尾 Jason 提到 OpenAI 一日內放出超過 700 篇數學論文，說「這可能係人類史上最偉大嘅發現日」，但同時有一種失落感。Dylan 的回應難得地誠實：</p>
+  <blockquote>「Something about it was brilliant and exciting, and something about it was a little sad… I also don't think it's wrong to mourn the loss of a little secret.」
+    <cite>— Dylan Field</cite></blockquote>
+  <p>呢句值得停一停：佢冇用「進步必然好」去壓抑情緒，亦冇用「末日論」去否定進步。佢同時容納兩者——而呢種<strong>不被單一敘事綁架</strong>的能力，可能就係他講嘅「taste」的另一種表現。</p>
+
+  <h3>6. 關鍵引用（原文）</h3>
+  <blockquote>「AI doesn't raise the ceiling, but people do.」
+    <cite>— Dylan Field</cite></blockquote>
+  <blockquote>「It's not code, because now anyone can create code. That's not the difficult part anymore. In my opinion, design is the new code. It's the top layer.」
+    <cite>— Dylan Field</cite></blockquote>
+  <blockquote>「You're actually doing something groundbreaking and unique, and I think that will be rewarded by the market.」
+    <cite>— Dylan Field</cite></blockquote>
+  <blockquote>「Everyone can be a creator. Everyone can do both. The main thing is willpower and curiosity.」
+    <cite>— Dylan Field</cite></blockquote>
+
+  <h3>7. 對 James 的三個 takeaway</h3>
+  <ol>
+    <li><b>用「分佈」做自我審查。</b>每做完一件作品／一份報告／一個產品，問一句：呢個係「AI 默認會生成嘅版本」，定係「只有我會做嘅版本」？如果係前者，你嘅議價能力正在流失，無論你看起來幾忙。</li>
+    <li><b>把「不可替代性」放在流程的末端，不是開端。</b>生成能力已經商品化；價值在 curation、taste、取捨、同「加工舊黏土」的那段工序。呢點對做內容、做產品、做投資都一樣。</li>
+    <li><b>管理不確定性要快過管理壞消息。</b>Figma 那場全員會的示範：講清楚、給退出、條件簡單。呢個 pattern 可以用在任何團隊、任何合作、任何家庭決定。</li>
+  </ol>
+
+  <div class="callout">
+    <span class="label">補聽建議</span>如果只有 15 分鐘：聽 18:52–36:02（創造力與 taste 那段）。如果你想抄管理手法：3:16–12:29（Adobe 交易與全員溝通）。想要一句可以貼在牆上的話：<b>「AI 降低地板，人抬高天花板。」</b>
+  </div>
+</section>
+
+<!-- ================= MFM ================= -->
+<section class="pod" id="mfm">
+  <div class="pod-head">
+    <h2>💰 My First Million</h2>
+    <span class="host">主持：Sam Parr &amp; Shaan Puri</span>
+    <span class="tag new">新集</span>
+  </div>
+
+  <div class="ep-title">We put a multimillionaire's portfolio into Claude (the results shocked us)</div>
+  <div class="ep-meta">📅 2026-10-19 11:06 UTC · ⏱ 48 分 37 秒 · 🎙 Episode 873 · 無嘉賓（Sam &amp; Shaan 對談）</div>
+
+  <table class="kv">
+    <tr><th>一句話總結</th><td>一個十二年只做 2.9 個投資決定一年的人，跑贏標普 11 年——而真正嘅技術唔係選股，係「忍住唔做」。下半場把同一套邏輯搬去人生：認清你玩緊邊個遊戲，然後預演你最驚嘅場面。</td></tr>
+    <tr><th>節目章節</th><td>0:00 Zero Action Investing · 7:55 Premortems · 10:05 Zuck's Victory Lap · 16:50 The Superpower of 100x Leaders · 20:45 Sam Hires an Executive Coach · 21:35 Identify the Game You're Playing · 30:15 Keep Your Sails Up · 33:45 Sam Attacks His Panic Attacks · 38:55 Role Playing Hard Situations · 41:00 How to Prep for the Scariest Moments</td></tr>
+    <tr><th>為什麼值得聽</th><td>因為它把「投資」還原成一種可遷移的<strong>決策衛生</strong>：哪些決定可逆、哪些不可逆；幾時應該研究、幾時應該甚麼都不做。而後半段關於恐懼預演的部分，係近年 MFM 少見地「貼身」的自我暴露。</td></tr>
+  </table>
+
+  <h3>1. 數字先講：2.9 個決定一年，21.8% 年回報</h3>
+  <p>起點係 Sam 在 Hampton 社群識到的一個人：賣掉公司，套現八位數（eight figures），之後做公開市場投資。Sam 直接叫對方「打開券商戶口」，然後把整個組合匯出去，掉進 Claude 分析。結果：</p>
+  <ul>
+    <li>過去約十二年，年均回報 <b>21.8%</b>，同期標普 500 約 <b>13.5%</b>。</li>
+    <li>十二年之中<b>十一年跑贏</b>，唯一輸的一年係 <b>2022</b>。</li>
+    <li>十年間大約持有 <b>15 隻股票</b>（±5）。</li>
+    <li>平均每年做 <b>2.9 個決定</b>（定義：買入或賣出）。</li>
+    <li>十年中有 <b>三年完全零決定</b>；最長一段静止期係 <b>2022–2025</b>；單年最多亦只係 <b>6 個決定</b>。</li>
+    <li>如果一开始投入 1,000 萬美元，視乎入場時間，大約變成 <b>6,000 萬美元</b>。</li>
+  </ul>
+  <p>Sam 的自我批評係全集的鑰匙：</p>
+  <blockquote>「Even though I preach patience… you and I are very similar. We move a lot and we oftentimes mistake movement with progress.」
+    <cite>— Sam Parr</cite></blockquote>
+  <p>注意他沒有說「我唔識投資」，他說的是「我分唔清動作同進展」。呢個區分比任何選股技巧都重要。</p>
+
+  <h3>2. 佢到底點做決定？「研究六個月，然後等」</h3>
+  <p>Sam 直接 text 問他：「你實際上點做決定？」對方的回答，基本上就係 Buffett 的現代版：</p>
+  <blockquote>「I study a few things that I can understand. And I study them very deeply. I keep very detailed notes and then I just wait for an opportunity.」
+    <cite>— 該投資者（Sam 引述）</cite></blockquote>
+  <p>具體案例（他要求匿名，所以只講行業）：一間公司，他在 COVID 前已經研究了<strong>約六個月</strong>，很喜歡，但覺得太貴。於是他持續寫筆記、讀年報、記錄自己學到咩，然後<strong>持續盯住</strong>。當市場崩盤、價格終於夠便宜，「我當日就買」。不是因為他預測了 COVID，而是因為<strong>他早就做完功課，只等價格來找他</strong>。</p>
+  <p>持倉亦唔神秘：一隻是大型旅遊股（「想像一間熱門航空公司」），一隻是熱門服裝股（「不是 Lululemon，但想像類似 Lululemon 的東西」）。換句話說——<strong>常識範圍內的好公司，極度有耐性地等一個價格</strong>。呢個比「發掘十倍股」難得多，因為它要求你在別人恐慌時仍然記得自己的筆記。</p>
+
+  <h3>3. 他從這類人身上歸納出的四個共同模式</h3>
+  <ol>
+    <li><b>一年只做極少決定。</b>Shaan 提到 Kevin Ryan（連續創業者／incubator 經營者）：「我基本上一年得一個好 idea。」Buffett 的名言被引用為「lethargy bordering on sloth」（懶到接近樹懶）。</li>
+    <li><b>唔會為小事痛苦。</b>關鍵操作係<strong>先分類：呢個決定可唔可逆？</strong>可逆的，唔好花心神；不可逆的，才值得慢下來。Sam 承認自己相反——「the way you do one thing is the way you do everything」呢類格言，令他把所有事都當成大事。</li>
+    <li><b>非常清楚自己的能力圈。</b>Shaan 講了一個朋友的示範：聽完一個很好的投資邏輯，回答「聽起來很好，但我對嗰個行業一無所知，所以我永遠唔會做，亦從來冇諗過」。Say no 唔係因為機會差，而係因為<strong>唔在自己嘅 realm of genius</strong>。</li>
+    <li><b>把想法寫落嚟，特別係 premortem。</b>他們會寫下「呢件事會點樣失敗」，會 journal，會自己同自己辯論。</li>
+  </ol>
+  <blockquote>「You don't want to do this thing called resulting, where you say, like, this was a bad decision because the result was bad. It should be this was a bad decision because the input or the framework was bad.」
+    <cite>— Sam Parr</cite></blockquote>
+  <p>呢句係整集的判斷力核心：<strong>用結果評價決策，係最常見的學習錯誤</strong>。好決策可以輸，壞決策可以贏；如果你用結果回頭改寫框架，你最終會學到一套迎合隨機性的規則。</p>
+
+  <h4>Jack Dorsey 的「140 個失敗理由」</h4>
+  <p>Shaan 補充了一個 premortem 的極端案例：Dorsey 在創辦 Square 之前，寫了一份清單叫 <strong>「140 reasons why Square will fail」</strong>，逐條寫低，然後交給團隊。邏輯係 Charlie Munger 那句：「我只想知道我會喺邊度死，咁我就唔會去嗰度。」如果你預先知道所有失敗模式，你就可以<strong>設計一間即使踩中這些坑仍然會成功的公司</strong>。</p>
+
+  <h3>4. Zuck 的勝利巡遊：一種完全相反的決策哲學</h3>
+  <p>中段轉向 Mark Zuckerberg。背景：Meta 在 AI 這一年表現強勢，Zuck 四出受訪，講粗口、飲 Guinness（被全網笑「似 17 歲第一次去大學 party」）、同 Alexander Wang 對談。Shaan 的觀察：</p>
+  <blockquote>「You don't get judged by your mistakes. You're only judged by the things you got right and how right you got them when you got them right.」
+    <cite>— Shaan Puri 引述 Zuckerberg 的意思</cite></blockquote>
+  <p>對比投資：Buffett 的規則一係「唔好輸錢」，規則二係「唔好忘記規則一」。創業則相反——你可以錯很多次，只要中一次夠大。Bezos 的比喻：棒球一次全壘打最多四分，但商業上一次正確揮棒可以拿一千分。所以 Zuck 為自己創造了「犯錯的許可」：只要贏的方式夠徹底，輸掉的戰役會被戰爭的結果抹去。</p>
+
+  <h4>Meta 買 Scale AI 的真正理由：talent density</h4>
+  <p>2025 年 Meta 以約 150 億美元取得 Scale AI 的重大部分（核心係創辦人 Alexander Wang，當時 29 歲，Scale 估值約 140 億美元）。外界看不懂：一個做資料標註的运营型公司創辦人，同社交媒體巨頭搞 AI lab，點解會係佢？Zuck 給出的三個理由：</p>
+  <ul>
+    <li><b>Strategic mind</b>——判斷「我們應該做什麼」。</li>
+    <li><b>Clarity of communication</b>——能夠把判斷講得極清楚。</li>
+    <li><b>Strong beliefs on execution</b>——例如他堅持：Meta 要在 AI 贏，團隊必須<strong>極細</strong>。不是 2,000 個幾聰明的人，而是 20 到最多 200 個極度聰明、可以「把整個問題 hold 在腦入面」、互相認識、極扁平、極少雜音的人。</li>
+  </ul>
+  <p>更值得抄的是 Zuck 的<strong>資訊收集方式</strong>。Wang 說：每隔幾個月，Zuck 會用 WhatsApp 問他「你覺得 X 應該點做？」回覆係一篇 blog post 長度、極度清晰、極度完整的訊息。而且他不是只問 Wang——他同時問大約 20 個不在正式顧問委員會的人。他不等季度董事會，也不只聽五星上將。他同時用這些回覆<strong>評估誰的判斷持續有 signal</strong>。</p>
+  <div class="callout">
+    <span class="label">對比</span>同一集裡，Shaan 用 Vanderbilt 做反面：19 世紀美國首富做決定極度不透明，人們六個月後才明白他為何這樣做。兩種都贏過——但現代的資訊環境下，<b>「廣泛索取、快速迭代、公開承認不確定」</b>明顯比「密室判斷、事後才解釋」更可規模化。
+  </div>
+
+  <h3>5. Sam 的 executive coach：原來我一直在錯的遊戲裡贏</h3>
+  <p>這是全集最貼身的一段。Sam 因為做這個 podcast（長期接觸世界級人物），請了一位 executive coach，做了三、四次 session 加一個 assessment。Coach 的第一個反饋：</p>
+  <blockquote>「You're really self-critical of yourself… You described yourself as lazy. You said that you're not ambitious. He's like, you seem very ambitious.」
+    <cite>— Sam Parr</cite></blockquote>
+  <p>Sam 的解釋很真實：<strong>他的工作就是天天同「世界上最叻的人」相處</strong>，所以他清楚知道 level 有幾高。「我同緊地球第 30 富有嘅人一齊玩，你叫我點比較？」這種比較不是虛榮，而是<strong>座標系被外力持續校準</strong>的副作用。</p>
+  <p>Shaan 給出的解法分兩步，第一步是今日最值得記低的一句：</p>
+  <blockquote>「Get comfortable in the game you're playing. I'm not playing the game that those guys are playing. Those guys are trying to change the world… I don't want to do any of those things.」
+    <cite>— Shaan Puri</cite></blockquote>
+  <p>第二步更狠：「<strong>I don't think most people even are aware of what game they're playing in life.</strong>」他開始做一個練習——當有人想找他 brainstorm，他先反問：「你五年後想喺邊？」答案通常是「我唔知，我從來冇諗過」。即使係非常成功、非常有 drive 的人，都講唔出 end state。</p>
+
+  <h4>「The Score」：遊戲會決定你想要咩、要成為邊種人</h4>
+  <p>Shaan 引用一本書的框架，解釋為何「認清遊戲」不是心靈雞湯，而是機制：</p>
+  <ul>
+    <li>玩 <b>charades</b>（比手畫腳）：你想要「隊友估中」，所以你要<strong>善於表達、協作、溝通</strong>。</li>
+    <li>玩 <b>mafia</b>（狼人殺）：你想要「騙過所有人」，所以你要<strong>講大話、做 scoundrel</strong>。</li>
+    <li>同一個人，換一個遊戲，性格會完全唔同。</li>
+  </ul>
+  <p>佢用 NBA 做例子更具體：42 歲的 LeBron 玩的是「對抗時間、追上 Jordan」；同隊的 Jalen Brown 玩的是「證明自己被交易是錯的」；大部分角色球員玩的是「趁麵包仲有得搵，搵夠佢」。三個人都喺同一個球場，但玩緊三個完全不同的遊戲——所以你唔可以用同一把尺去評價他們。</p>
+  <blockquote>「The hero has something that they want and there's something that stands in their way. That's a story. Intention and obstacle.」
+    <cite>— Shaan Puri（引 Sorkin 式敘事結構）</cite></blockquote>
+  <p>Sam 與 Shaan 自己的版本：20 幾歲時，兩人玩的是同一個遊戲——「make it」（成功、賺錢、成為千萬富翁），所以他們一拍即合；30 幾歲換了遊戲：「組織家庭，同時保持成功，但不再用那種榨乾自己的方式」。認清這一點之後，比較就失效了，因為你唔再同人比同一件事。</p>
+
+  <h3>6. 恐懼預演：由 DARE 到 Georges St-Pierre</h3>
+  <p>下半場的主題係「如何準備最驚的場面」。Sam 先講自己的：<strong>十五年來每次搭飛機都食 Xanax</strong>。最近讀了一本書《DARE》，四個字母係一套對付驚恐發作的方法：</p>
+  <table class="kv">
+    <tr><th>D — Dismiss</th><td>「又嚟啦，咁又點？邊個 care？」把恐懼降級為背景噪音。</td></tr>
+    <tr><th>A — Allow</th><td>「好，嚟啦，我準備好，我開放接受。」不抵抗，反而允許它存在。</td></tr>
+    <tr><th>R — Run towards</th><td>「我想要你嚟快啲。」主動靠近，而不是逃避。</td></tr>
+    <tr><th>E — Engage</th><td>高峰過後，把注意力轉向一件新活動：讀書、聽音樂、投入對話。</td></tr>
+  </table>
+  <p>他的實測：去 Jackson Hole 的一班機，<strong>十五年來第一次唔食藥</strong>。他在起飛前 40 分鐘開始刻意「迎接」恐慌：「嚟啦，睇下你幾厲害。」然後——飛機落地後在跑道重新起飛，機長廣播「brakes 有問題，要轉飛 Salt Lake City，落地會有消防車，唔好驚」。他照樣冇食藥。</p>
+  <blockquote>「It was as if instead of being like 'I'm trapped in here with you', it was like, 'you're trapped in here with me now.'」
+    <cite>— Sam Parr</cite></blockquote>
+  <p>呢個反轉（由「我被困住」變成「你被困住喺我呢度」）係一個典型嘅<strong>認知重評</strong>（cognitive reappraisal）：唔改變刺激，改變你同刺激嘅關係。</p>
+
+  <h4>GSP 的八角籠預演：把不確定性降到最低</h4>
+  <p>Sam 之後講咗一段他很喜歡的影片：Georges St-Pierre（GSP）的 MMA 教練，如何準備 UFC 比賽。GSP 本身<strong>唔喜歡打人、亦很恐懼</strong>——他不是 Conor McGregor 那種享受衝突的人。教練的做法係：比賽前幾個月，<strong>把比賽日的一切搬進訓練</strong>：</p>
+  <ul>
+    <li>食比賽日早上會食的同一餐；</li>
+    <li>戴<strong>比賽用的 UFC 手套</strong>（不是練習手套）；</li>
+    <li>著比賽當日的出場服裝；</li>
+    <li>播放對手的出場音樂；</li>
+    <li>在八角籠周圍架起<strong>同樣熱、同樣亮的大燈</strong>。</li>
+  </ul>
+  <p>目的不是「模擬壓力」，而是<strong>讓神經系統提前習慣</strong>——到真正上場時，一切都「唔新鮮」，恐懼的燃料就少了。</p>
+  <p>Sam 的推論：如果地球上最恐怖的活動都用這招，為什麼我哋面對「炒人、談判、難對話」時，只係在腦入面想一想就上場？他的新做法：下次要開一個難談的會，他會<strong>真係行一次流程</strong>——入會議室、坐低、講一次開場白。就連搭飛機，他也開始提前執行李，因為「執行李本身就令我緊張」。</p>
+
+  <h4>兩個補充：預期心理與接受</h4>
+  <ul>
+    <li><b>期待往往大於事件本身。</b>Shaan 指出：科學研究顯示，享受的高峰通常在<strong>期待期</strong>，不在事件本身。所以期待會令好事失望；但對<strong>壞事</strong>，期待反而有用——因為真正發生時，「已經冇咁新鮮、冇咁刺激」，恐懼被預先消耗。</li>
+    <li><b>接受，而非勇敢。</b>Sam 講跳傘：真正令他恐懼消退的不是「說服自己唔驚」，而是「接受它一定會發生」——「我已經上咗飛機，佢一定會跳，我勾住佢」。接受 neutralizing 了大概一半的恐懼；剩下的，才用「既然要做，就全力感受」去處理。</li>
+  </ul>
+  <blockquote>「Once I accepted that it is already going to happen, that already like neutralized, I don't know, 50% of the fear.」
+    <cite>— Sam Parr</cite></blockquote>
+
+  <h3>7. 兩個故事：Elon 的 24 小時，與 Sam 的垃圾袋</h3>
+  <p>中段 Shaan 講了一個「唔知真定假，但係一個好寓言」的故事：有人在一場私人晚宴問 Elon Musk——如果 SpaceX 同 Tesla 同時失敗，你輸掉每一分錢，你會點？答案講了八分鐘，全枱靜默。</p>
+  <p>他說：搬到最便宜的公寓，買一部電腦，<strong>24 小時內</strong>開始建下一個東西。不是一星期後，不是處理完傷痛之後。金錢的損失唔會困擾他，但公司的失去會令他崩潰——而他只會讓自己崩潰<strong>一晚</strong>。有人問：下一個東西係咩？他說：唔知。而「唔知」唔會拖慢他。</p>
+  <blockquote>「The thing finds you. You just have to be building when it arrives.」
+    <cite>— Shaan Puri 引述 Elon Musk 的故事</cite></blockquote>
+  <p>Sam 接住講他爸爸的原話：「你想知方向，但如果你唔知，你就要<strong>郁</strong>。重點係 motion，唔係 direction。郁咗之後，搵方向容易好多；但由静止開始，你幾乎做唔到任何事。」Napoleon 的版本更簡潔：「我行動，計劃從行動中浮現。」</p>
+  <p>然後 Sam 講了自己的 Boulder 故事，這是全集最赤裸的一段：第一次創業唔順利，住 apartment、睡氣墊床、<strong>連垃圾桶都冇，只用釘子把垃圾袋釘在牆上</strong>。朋友或女生上來，都會說「你哋搞咩呀，好恐怖」。</p>
+  <blockquote>「We were letting the badness of our company seep into the badness of our life… We had a last play mentality.」
+    <cite>— Sam Parr</cite></blockquote>
+  <p>轉折唔係新策略、唔係新資金，而係<strong>改日常</strong>：有一日他們決定唔做嘢，去行 Flatirons（Boulder 的山）。身體上完成一件難事，即使同生意無關，也是一個「贏」。回來之後態度不同了，想法不同了，而且更相信自己嘅想法。</p>
+  <blockquote>「It's like get the trash can, go for the hike, clean up the room… start stacking some small wins, and then operate from that place.」
+    <cite>— Sam Parr</cite></blockquote>
+  <p>Scott Galloway 的版本是「Keep your sails up」：船在無風時最容易垂頭喪氣、把帆收埋；但你要保持帆升起，因為風一定會來——而風來的時候，只有帆仍然升起嘅船才接得住。</p>
+
+  <h3>8. 關鍵引用（原文）</h3>
+  <blockquote>「I study a few things that I can understand. And I study them very deeply. I keep very detailed notes and then I just wait for an opportunity.」
+    <cite>— 該投資者（Sam 引述）</cite></blockquote>
+  <blockquote>「It should be this was a bad decision because the input or the framework was bad.」
+    <cite>— Sam Parr</cite></blockquote>
+  <blockquote>「I don't think most people even are aware of what game they're playing in life.」
+    <cite>— Shaan Puri</cite></blockquote>
+  <blockquote>「You just have to be building when it arrives.」
+    <cite>— Shaan Puri 引述 Elon Musk 的故事</cite></blockquote>
+  <blockquote>「Keep your sails up.」
+    <cite>— Scott Galloway（Sam 引述）</cite></blockquote>
+
+  <h3>9. 對 James 的三個 takeaway</h3>
+  <ol>
+    <li><b>建立「決定日誌」，並分「可逆／不可逆」。</b>每次做決定前寫低：呢個決定嘅輸入係咩、我預期咩結果、如果錯咗成本幾多。三個月後回顧，只評價<em>框架</em>，不評價<em>結果</em>。呢個動作可以直接殺死「resulting」。</li>
+    <li><b>把「研究」同「行動」分開計時。</b>那個投資者的節奏係：六個月研究 → 然後可能三年唔動手。大部分人相反：三分鐘研究 → 即刻動手 → 再花三年後悔。你可以照抄呢個比例，但用在自己嘅領域（投資、招聘、買樓、甚至內容選題）。</li>
+    <li><b>為最驚嘅場面做一次「物理預演」。</b>唔係在腦入面想，而係真係行一次：坐喺張椅、講一次開場白、著返套衫、執一次行李。呢個係 GSP 方法，成本近乎零，效果即時。</li>
+  </ol>
+
+  <div class="callout">
+    <span class="label">補聽建議</span>如果只有 20 分鐘：0:00–10:05（2.9 決定 + premortem）＋ 33:45–41:00（驚恐症 + GSP 預演）。中間的 Zuck 段落係最好嘅「創業 vs 投資」決策哲學對照，但可以留待有時間再聽。
+  </div>
+</section>
+
+<!-- ================= ACQUIRED ================= -->
+<section class="pod" id="acquired">
+  <div class="pod-head">
+    <h2>🎬 Acquired</h2>
+    <span class="host">Ben Gilbert &amp; David Rosenthal</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">Last known episode · 2026-10-18</div>
+    <div class="le-title">Seinfeld</div>
+    <div class="le-meta">⏱ 約 3 小時 50 分 · 昨日（10-19）報告已深度拆解</div>
+    <div class="le-summary">一套完結咗三十年嘅 sitcom，今年仍然有 <b>7,200 萬美國人</b>收看。Acquired 用近四小時拆解： obsessive creators、完美嘅市場時機、以及一個令 incentives 長期對齊嘅 ownership structure——三個條件加起來，令一個 pilot 測試失敗嘅節目變成電視史上最賺錢嘅資產之一。核心係 Fin-Syn 規則、Castle Rock 交易、以及 syndication 嘅複利數學。</div>
+    <div class="le-link">🔗 <a href="https://www.acquired.fm/episodes/seinfeld">acquired.fm/episodes/seinfeld</a></div>
+  </div>
+  <p class="small">今日 feed 最新一集仍然係 10-18 的 Seinfeld，GUID 已在昨日入账，無新集。</p>
+</section>
+
+<!-- ================= FOUNDERS ================= -->
+<section class="pod" id="founders">
+  <div class="pod-head">
+    <h2>📜 Founders</h2>
+    <span class="host">David Senra</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">Last known episode · 2026-10-13</div>
+    <div class="le-title">#437 The Tycoons: Carnegie, Rockefeller, Gould &amp; Morgan</div>
+    <div class="le-meta">📚 讀 Charles R. Morris《The Tycoons》· 無 show notes（Founders 慣例）</div>
+    <div class="le-summary">Senra 一次過處理四個人物：Andrew Carnegie（鋼鐵）、John D. Rockefeller（石油）、Jay Gould（鐵路）、J.P. Morgan（資本）。書的副標題就係論點——他們「發明咗美國的超級經濟」。四人分別代表四種可複製的能力：Carnegie 的成本會計與 vertical integration、Rockefeller 的規模經濟與「消滅浪費」、Gould 的資本結構與資訊不對稱操作、Morgan 的信任中介與企業重組。Senra 的選書角度一貫：不是歷史，而是「如果你今日要由零開始，這四個人分別教你哪一招」。</div>
+    <div class="le-link">🔗 <a href="https://www.founderspodcast.com/">founderspodcast.com</a>（RSS 未提供單集連結）</div>
+  </div>
+  <p class="small">Founders 自 10-13 後未更新（RSS 462 集，最新仍是 #437）。呢集適合配合作日 Acquired 的 Seinfeld 一齊聽：一個講「擁有資產」，一個講「建立帝國」。</p>
+</section>
+
+<!-- ================= KP ================= -->
+<section class="pod" id="kp">
+  <div class="pod-head">
+    <h2>🧠 The Knowledge Project</h2>
+    <span class="host">Shane Parrish</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">Last known episode · 2026-10-08</div>
+    <div class="le-title">Ryan Serhant: How to Get People to Say Yes</div>
+    <div class="le-meta">🎙 嘉賓：Ryan Serhant（SERHANT. 創辦人、Million Dollar Listing New York）</div>
+    <div class="le-summary">一個把「銷售」重新定義為「先幫人、後開口」的實務框架。四個可操作模組：（1）<b>1,000 分鐘框架</b>——把每日當作 1,000 分鐘的銀行戶口來分配；（2）<b>3Fs 跟進法</b>——令 follow-up 不討厭；（3）<b>談判中的 ego</b>——為什麼自尊心是成交的最大障礙；（4）<b>成功的個人代價</b>——達到所有夢想之後仍然覺得不足。他亦解釋為何反對「fake it till you make it」，以及如何用「未來自己的身份」去準備一個 audition。</div>
+    <div class="le-link">🔗 <a href="https://fs.blog/knowledge-project-podcast/ryan-serhant/">fs.blog/knowledge-project-podcast/ryan-serhant</a></div>
+  </div>
+  <p class="small">KP 節奏約兩星期一次，10-08 後未更新。如果只聽一段：20:57 的 3Fs 同 31:21 的 ego 談判。</p>
+</section>
+
+<!-- ================= DOAC ================= -->
+<section class="pod" id="doac">
+  <div class="pod-head">
+    <h2>🕯️ The Diary of a CEO</h2>
+    <span class="host">Steven Bartlett</span>
+    <span class="tag none">最近無更新</span>
+  </div>
+  <div class="last-ep">
+    <div class="lbl">Last known episode · 2026-10-19</div>
+    <div class="le-title">The Deathbed Doctor: Weeks Before Death, Patients Start Having Visions! | Dr Christopher Kerr</div>
+    <div class="le-meta">⏱ 約 1 小時 23 分 · 昨日（10-19）報告已深度拆解</div>
+    <div class="le-summary">臨終醫生 Christopher Kerr 近三十年訪問超過 <b>1,500 位</b>病人，研究 end-of-life dreams and visions。核心發現：死亡是感官逐步調暗，而非痛苦事件；<b>超過 80%</b> 病人會見到已故親人且感到安慰；臨終者不再在意成就與 legacy，只在意關係、以及<em>唔想成為家人負擔</em>；有些人會在最後日子修復幾十年的童年創傷。這一集講死亡，但真正的題目是「點樣活」。</div>
+    <div class="le-link">🔗 <a href="https://thediaryofaceo.com/">thediaryofaceo.com</a></div>
+  </div>
+  <p class="small">DOAC 每日更新，最新一集（10-19）已在昨日掃描入账，今日無新集。⚠️ 內容含死亡與兒童離世，情緒負荷較重。</p>
+</section>
+
+<!-- ================= SYNTHESIS ================= -->
+<section class="pod" id="synthesis">
+  <div class="pod-head">
+    <h2>🧩 兩集對照：同一個問題，兩種答案</h2>
+    <span class="tag deep">綜合</span>
+  </div>
+  <table class="kv">
+    <tr><th></th><th>All-In — Dylan Field</th><th>MFM #873</th></tr>
+    <tr><th>核心問題</th><td>當生產成本趨零，價值去了哪裡？</td><td>當決策數量可以趨零，回報從哪裡來？</td></tr>
+    <tr><th>答案</th><td>價值去了「不能複製的東西」：taste、brand、point of view、勇氣。</td><td>回報來自「不做多餘的事」：深度研究、極度耐性、只打少數幾球。</td></tr>
+    <tr><th>敵人是誰</th><td>平均值。AI 令你極容易交出「還不錯」的作品。</td><td>動作。人很容易把「忙」誤認為「進展」。</td></tr>
+    <tr><th>可操作原則</th><td>每次交付前問：這是默認版本，還是只有我會做的版本？</td><td>每個決定前問：這是可逆的嗎？不可逆的才值得慢。</td></tr>
+    <tr><th>共同盲點</th><td colspan="2">兩集都預設你有「自己的判斷」。但判斷力本身需要練習場——所以 Dylan 講「用 AI 深化理解而非代替思考」，同 MFM 講「寫決定日誌、做 premortem、預演恐懼」，其實係同一件事嘅兩面：<b>把判斷力當成一項要訓練的肌肉，而不是一種天賦。</b></td></tr>
+  </table>
+  <p>如果今日只帶走一句：<strong>AI 令「做得多」變得便宜，於是「做得少但做得對」變成唯一稀缺的能力。</strong>Dylan 用設計講這件事，MFM 用投資講同一件事。</p>
+</section>
+
+<footer class="bot">
+  <div>📋 <b>掃描記錄</b>：6/6 feeds HTTP 200；新增 2 集（All-In、MFM）；4 台無更新（Acquired、Founders、Knowledge Project、Diary of a CEO）。</div>
+  <div>🧮 <b>Jev 前置過濾</b>：2 條候選全部 keep（0.66 / 0.67），無 drop。兩條 primary_source 分數偏低（0.43 / 0.20），代表屬二手轉述——因此本報告的引用全部回到<strong>節目原始轉錄</strong>核對，而非依賴新聞摘要。</div>
+  <div>📝 <b>方法</b>：RSS GUID 去重 → 全文轉錄抓取（All-In 官方 show page / MFM via Podscripts）→ 人工核對數字與引語 → 生成報告。所有引號內容均取自節目轉錄；自動轉錄可能有細微誤差，數字以節目口述為準。</div>
+  <div>🔗 <b>Repo</b>：<a href="https://github.com/JMOKSZ/mindset-podcasts">github.com/JMOKSZ/mindset-podcasts</a> · 明日同一時間再掃。</div>
+</footer>
+
+</div>
+</body>
+</html>
