@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日思維播客掃描 · 2026-10-21</title>
+<style>
+  :root{
+    --bg:#fdfaf6;
+    --card:#fffdf9;
+    --ink:#2b2620;
+    --muted:#7a6f62;
+    --line:#e9e0d2;
+    --accent:#9a6b2f;
+    --accent-soft:#f3e8d6;
+    --new:#2f6b4f;
+    --new-bg:#e8f3ec;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC","Source Han Serif SC",serif;
+    line-height:1.85;font-size:17px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:56px 22px 90px}
+  header{border-bottom:1px solid var(--line);padding-bottom:30px;margin-bottom:42px}
+  .eyebrow{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent);font-weight:600;margin-bottom:16px;
+  }
+  h1{font-size:40px;line-height:1.2;margin:0 0 14px;font-weight:600;letter-spacing:-.01em}
+  .dateline{font-size:18px;color:var(--muted);margin-bottom:18px}
+  .meta{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:12.5px;color:var(--muted);letter-spacing:.02em;
+  }
+  .lede{
+    font-size:19px;line-height:1.9;color:#3a332b;
+    border-left:3px solid var(--accent);padding-left:20px;margin:34px 0 0;
+  }
+  .stats{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);
+    margin:38px 0 48px;border-radius:4px;overflow:hidden;
+  }
+  .stat{background:var(--card);padding:18px 14px;text-align:center}
+  .stat b{display:block;font-size:26px;line-height:1.1;color:var(--accent);font-weight:600}
+  .stat span{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;
+  }
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:34px 34px 30px;margin-bottom:30px;
+    box-shadow:0 1px 0 rgba(120,100,70,.03);
+  }
+  .card-head{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .pod{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--accent);font-weight:700;margin-bottom:8px;
+  }
+  h2{font-size:27px;line-height:1.35;margin:0 0 8px;font-weight:600;letter-spacing:-.01em}
+  .epmeta{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:12.5px;color:var(--muted);margin-bottom:22px;
+  }
+  .badge{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+    background:var(--new-bg);color:var(--new);border:1px solid #cfe4d7;
+    padding:4px 10px;border-radius:100px;font-weight:700;white-space:nowrap;
+  }
+  .badge.quiet{background:#f4f0e8;color:#8a7c68;border-color:#e6dccb}
+  h3{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--accent);margin:34px 0 12px;font-weight:700;
+  }
+  p{margin:0 0 16px}
+  ul,ol{margin:0 0 18px;padding-left:22px}
+  li{margin-bottom:9px}
+  strong{font-weight:600}
+  blockquote{
+    margin:22px 0;padding:16px 22px;background:var(--accent-soft);
+    border-left:3px solid var(--accent);border-radius:0 4px 4px 0;
+    font-size:18px;line-height:1.8;color:#4a3d2c;font-style:italic;
+  }
+  blockquote cite{
+    display:block;font-style:normal;font-size:12.5px;color:var(--muted);
+    margin-top:8px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    letter-spacing:.03em;
+  }
+  table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:15px}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+    background:#faf6ee;font-weight:600;
+  }
+  td:first-child{font-weight:600;white-space:nowrap}
+  .num{font-variant-numeric:tabular-nums}
+  .callout{
+    background:#faf5eb;border:1px solid var(--line);border-radius:5px;
+    padding:20px 24px;margin:26px 0;
+  }
+  .callout p:last-child{margin-bottom:0}
+  .kv{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px}
+  .quiet-card{background:#fcfaf5}
+  .quiet-card h2{font-size:22px;color:#4d453b}
+  .tiny{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:12px;color:var(--muted);line-height:1.7;
+  }
+  footer{
+    border-top:1px solid var(--line);margin-top:54px;padding-top:26px;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:12.5px;color:var(--muted);line-height:1.8;
+  }
+  footer a{color:var(--accent);text-decoration:none;border-bottom:1px solid #d9c6a8}
+  .tag{
+    display:inline-block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:11px;letter-spacing:.06em;color:#6b5c46;background:#f4ece0;
+    padding:3px 9px;border-radius:3px;margin:0 6px 6px 0;
+  }
+  @media(max-width:620px){
+    .wrap{padding:36px 16px 60px}
+    h1{font-size:30px}
+    h2{font-size:22px}
+    .card{padding:24px 20px}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    body{font-size:16px}
+    blockquote{font-size:16.5px;padding:14px 16px}
+    table{font-size:14px}
+    td:first-child{white-space:normal}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Mindset Podcasts · Daily Scan</div>
+  <h1>每日思維播客掃描</h1>
+  <div class="dateline">2026 年 10 月 21 日，星期三</div>
+  <div class="meta">6 個播客 · 1 集新內容 · 總長 55 分 42 秒 · 報告生成於 2026-10-21 09:54 UTC</div>
+
+  <p class="lede">
+    今日只有一集新內容，但這一集值得你整段時間。My First Million 兩位主持拆解 Nathan Fielder 那部秘密拍了三年、關於 Elizabeth Holmes 的 A24 紀錄片——講到最後，他們給出的結論比電影本身更狠：<strong>她不是不知道自己在做什麼，她只是從沒把那件事叫做「詐騙」。</strong>
+  </p>
+</header>
+
+<div class="stats">
+  <div class="stat"><b>6</b><span>已掃描</span></div>
+  <div class="stat"><b>1</b><span>新集數</span></div>
+  <div class="stat"><b>55:42</b><span>新內容時長</span></div>
+  <div class="stat"><b>5</b><span>今日無更新</span></div>
+</div>
+
+<!-- ============ MFM ============ -->
+<article class="card">
+  <div class="card-head">
+    <div>
+      <div class="pod">My First Million · Episode 874</div>
+      <h2>This 3-hour Elizabeth Holmes doc broke our brains</h2>
+      <div class="epmeta">2026 年 10 月 20 日 · 55 分 42 秒 · Sam Parr &amp; Shaan Puri · 嘉賓：Ben（節目常客）</div>
+    </div>
+    <span class="badge">新集數</span>
+  </div>
+
+  <p>
+    先講清楚這集是什麼：它不是一集「創業點子」節目，也不是 Theranos 案件重述。它是兩個看完全片的人，試圖回答一個比「她有罪嗎」更難的問題——<strong>為什麼一部聲稱讓你看見一切的紀錄片，看完之後你反而更不確定？</strong>
+  </p>
+
+  <p>
+    Shaan Puri 是在錄音前一晚看的首映。他的第一反應，就是這集標題的由來：
+  </p>
+
+  <blockquote>
+    It's like I saw everything and I know less than I knew at the beginning.
+    <cite>— Shaan Puri，談看完《You Can See Everything》之後的感覺</cite>
+  </blockquote>
+
+  <p>
+    這不是修辭。紀錄片由 Nathan Fielder 執導、A24 發行，在 Holmes 入獄前 34 天完成拍攝，然後<strong>保密了接近三年</strong>，在影展無預警首映。全片不提供旁白定論、不做時間線梳理、不用檔案片段幫你建立「她是騙子」的敘事。它只把鏡頭放在她臉前幾吋，讓她講，讓她沉默，讓她說「我不知道」。據主持人在節目中的說法，電影在 Letterboxd 與 Rotten Tomatoes 都是最高評分，並且是史上第一部被看好奪奥斯卡最佳影片的紀錄片；開畫周末票房約 1,500 萬美元（CNBC 亦有報道），製作成本僅 500–700 萬美元，首映前大約只有 30 人知道這部片存在。
+  </p>
+
+  <h3>一、電影真正在問的問題</h3>
+
+  <p>
+    節目把整部片的張力，拆成三個互相排斥的版本。你信哪一個，決定你怎樣看這個人：
+  </p>
+
+  <table>
+    <thead>
+      <tr><th>版本</th><th>你要相信什麼</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>矽谷式吹噓</td>
+        <td>她賣的是一個未完成的產品，就像 Musk 賣自駕時間表一樣；她只是在兌現之前被抓住了，而醫療把後果放大了。</td>
+      </tr>
+      <tr>
+        <td>知情詐騙</td>
+        <td>她明知裝置做不到，仍然對投資者、合作夥伴、病人作出誤導。</td>
+      </tr>
+      <tr>
+        <td>被操縱的下屬</td>
+        <td>Sunny Balwani 才是背後拉線的人——電影有暗示，但沒有替這個說法辯護。</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Ben 入場前只看了 Fielder 以前的作品、未看這部片。他的說法很直接：「她對我也做了同樣的事。她對他也做了。」Puri 則把這組對決形容為「一個以製造假現實為職業的人，對上一個距離監獄只有幾日、仍然堅守自己版本的女子」——不敗的矛，對上不動的山。
+  </p>
+
+  <h3>二、電影刻意略去的，才是整個案件的骨</h3>
+
+  <p>
+    這是本集最有價值的一段。Puri 即場叫 AI 工具列出「最有力的定罪證據」，然後在節目中逐條讀出來。這些不是傳聞，而是法庭記錄過、或她本人宣誓承認過的事實：
+  </p>
+
+  <ul>
+    <li><strong>偽造藥廠標誌。</strong>Holmes 親自把藥廠 logo 加進提交給 Walgreens 的報告，令對方以為報告獲藥廠背書。Walgreens 代表作證說，正因為這些文件，他們相信報告是真實的；Holmes 在宣誓作證時承認自己做過，並承認那「完全誤導」且「違法」。</li>
+    <li><strong>假示範。</strong>投資者演示中，機器被設定為「null protocol」——看起來在處理血液，樣本其實暗中送到第三方傳統儀器上跑。</li>
+    <li><strong>300 分之 12。</strong>公司開發過大約 300 種小樣本檢測，真正在自己裝置上跑過的，只有大約 12 種。</li>
+    <li><strong>戰場謊言。</strong>她聲稱技術已用於戰場，事實並無。</li>
+    <li><strong>2.3 億 對 194 萬。</strong>她向投資者預測 2.3 億美元收入，實際收入 194 萬美元。</li>
+  </ul>
+
+  <p>
+    Puri 最鋒利的批評是：Fielder 從未在片中提出「偽造 logo 的宣誓承認」。而這一點，正好推翻電影預設的命題——「她不說謊，她不知道自己為何在獄中」。電影讓你凝視她的臉，卻不讓你看見那份筆錄。
+  </p>
+
+  <blockquote>
+    Under oath, she testified, she admitted that she added the Fizer logo to some documents when she presented to Walgreens that made it look like they had signed off on her tests, but they hadn't, and that was completely misleading, and that was illegal.
+    <cite>— Shaan Puri，引述 Holmes 在庭上的宣誓作證</cite>
+  </blockquote>
+
+  <div class="callout">
+    <p class="tiny"><strong>誠實標記：</strong>Sam Parr 另外提到兩項更嚴重的指控——一名 Theranos 員工在作證壓力下自殺、以及病人收到錯誤的癌症結果。Puri 在節目中明說自己沒有查證、無法確認。本報告同樣不當作已證實事實處理。</p>
+  </div>
+
+  <h3>三、三個令人不安的場景</h3>
+
+  <p>
+    電影不用論證，用場面。主持選出的三個片段，剛好對應三種不同的「不可知」：
+  </p>
+
+  <ul>
+    <li><strong>炒蛋。</strong>Holmes 正在打蛋，Billy Evans 走過來，把碗拿走，兩三下替她完成。問她原本的手法有什麼問題，Evans 說沒有問題。Holmes 說：「他覺得我做得不好。」Ben 認為這是全片對兩人權力關係最狠的一次「show, don't tell」。</li>
+    <li><strong>Who's on First。</strong>Fielder 播 Abbott and Costello 的經典相聲，Holmes 完全跟不上——包括不明白一壘手的名字就叫「Who」。Puri：「那一段直接把我腦袋弄壞。」看到這裡，你會開始懷疑她是「聰明的笨人」、是活在否認裡的騙子、還是根本有別的狀況。</li>
+    <li><strong>看《The Dropout》。</strong>Fielder 播 Hulu 劇集裡 Amanda Seyfried 演她的片段。Holmes 的反應是：那個人不像我。而這正是電影想要的——你用來理解她的那個流行版本，本身也是一種虛構。</li>
+  </ul>
+
+  <h3>四、Billy Evans：全片最令人不安的角色</h3>
+
+  <p>
+    Holmes 的伴侶、兩個孩子的父親（二人未結婚；Puri 推測與她背負的數億美元賠償有關，Evans 對外稱她是妻子）。主持一致認為，電影真正拍出的「反派」不是 Holmes，而是他。
+  </p>
+
+  <ul>
+    <li><strong>上映前要求分紅。</strong>Evans 向 A24 要求電影上漲空間的一份，並引用 Harry 與 Meghan 那筆據報 1 億美元的紀錄片交易作比較。電影方認為這不合慣例、模糊道德界線——尤其電影本身的論點正是「她不是為錢而騙」——但因為手上沒有籌碼而答應。Holmes 声称不知情，主持對此存疑。</li>
+    <li><strong>AI 分身。</strong>Holmes 入獄後，Evans 找人用一次攝影建成她的 AI 模型，可以讓她說任何話，放在飯桌旁的大螢幕上；旁邊還養了一條三尺長的科莫多龍。</li>
+    <li><strong>「我們是一體」。。</strong>他持有她的授權書，親自替她打 tweet，對導演說不需要她口述，因為「we're one」。</li>
+    <li><strong>「我心中有復仇」。</strong>在一場 Amanda Seyfried 也在場的飯局中，他說自己「vengeance in my heart」，自稱策略性、比敵人聰明，並威脅要「燒毀」某些人；他攻擊《The Dropout》的製作人，Seyfried 替他們辯護，他回她一句：你是「fake for a living」。</li>
+  </ul>
+
+  <p>
+    Puri 由此拉出一條很關鍵的推理線：<strong>如果 Evans 現在是控制的一方，那麼當年 Balwani 可能也是控制的一方</strong>——而這正好是 Holmes 目前最有力的辯護。電影沒有明說，但它把這個可能性種在觀眾心裡。
+  </p>
+
+  <h3>五、Fielder 的方法，為何剛好對上這個題目</h3>
+
+  <p>
+    Fielder 十幾年來的簽名手法，是把真實環境一吋一吋重建，讓拍攝對象在裡面排練或觀察。當 Holmes 入獄、無法再被拍攝或錄音之後，這個手法由「風格」變成「結構」：他重建了監獄內部，有守衛、有臨時演員演囚犯、有自動販賣機。Puri 形容這種「技能與題材的吻合」是 lock and key。
+  </p>
+
+  <p>
+    更微妙的是導演自己的位置變化：開場他躲在角落、戴耳機、努力不入鏡；到最後他成為主要角色。鏡頭大部分時間貼在 Holmes 臉前幾吋——這就是片名《You Can See Everything》的字面來源，也是它最大的反諷：<strong>看得越近，判斷越難。</strong>
+  </p>
+
+  <p>
+    Amanda Seyfried 被請來看片段、給反應。她的反應跟主持一樣；之後她見到 Evans，在兩分鐘的監獄電話裡慌了，後來甚至叫 Fielder 去「挖 Evans 的黑材料」拆散二人：「我不希望任何女人跟這樣的男人在一起。」Puri 把她讀成「房間裡唯一的正常人」，同時也是全片最尖銳的後設一層：
+  </p>
+
+  <blockquote>
+    You're mad at her for being a lie, but you're obviously telling fiction and it has a pretty big impact on the way the world sees her.
+    <cite>— Shaan Puri，談 Amanda Seyfried 與《The Dropout》的關係</cite>
+  </blockquote>
+
+  <h3>六、主持人的裁決</h3>
+
+  <p>
+    這是全集的重心。Ben 的結論：Holmes 是共謀，她知道發生什麼事，但她<strong>沒有用「詐騙」去理解自己的行為</strong>。
+  </p>
+
+  <blockquote>
+    She viewed it as doing whatever it took to ultimately get there.
+    <cite>— Ben，對 Holmes 心理狀態的判斷</cite>
+  </blockquote>
+
+  <p>
+    Puri 同意：她一直在圈內，不是被蒙在鼓裡；她把自己看成「堅定」和「fake it till you make it」，而不是罪犯。他補了一句，幾乎是整集的總結：
+  </p>
+
+  <blockquote>
+    I walked out of this thing — we all got duped by everybody.
+    <cite>— Shaan Puri</cite>
+  </blockquote>
+
+  <p>
+    節目的「計分板」也很有意思：最大贏家是 Nathan Fielder（由小眾狂熱躍升為大眾名人，而且終於找到完全對得上他方法的題材）；第二贏家是 Holmes 本人（電影把「邪惡主謀」換成「複雜的人」，出獄後可以靠演講巡迴變現）；A24 再贏一仗；最大輸家是 Billy Evans；附帶損傷是 Amanda Seyfried（在網上被讀成「太批判」）。Puri 給電影的評語是：「不是最令人滿足的電影，但它是一部驚人的電影。」
+  </p>
+
+  <h3>七、關鍵數字</h3>
+
+  <table>
+    <thead><tr><th>項目</th><th>數字</th><th>意義</th></tr></thead>
+    <tbody>
+      <tr><td>拍攝窗口</td><td class="num">34 天</td><td>Holmes 入獄前的 34 天，之後保密近三年</td></tr>
+      <tr><td>預測收入</td><td class="num">$230M</td><td>對投資者的預測</td></tr>
+      <tr><td>實際收入</td><td class="num">$1.94M</td><td>差距約 118 倍</td></tr>
+      <tr><td>開發檢測</td><td class="num">~300 種</td><td>真正在自家裝置跑過的僅 ~12 種</td></tr>
+      <tr><td>刑期</td><td class="num">10 年</td><td>主持稱預計在本集前後約一年內出獄</td></tr>
+      <tr><td>製作成本</td><td class="num">$5–7M</td><td>開畫周末約 $15M，回報率極高</td></tr>
+      <tr><td>知情者</td><td class="num">~30 人</td><td>首映前知道這部片存在的人數</td></tr>
+    </tbody>
+  </table>
+
+  <h3>八、對創業者與投資者的四個 insight</h3>
+
+  <ol>
+    <li><strong>「知情」與「認罪」是兩回事，而創辦人往往卡在中間。</strong>Holmes 不是不知道機器做不到，她是不把「明知做不到仍然賣」歸類為欺詐。這種自我敘事的重寫能力，正是創辦人能把不可能的事做出來的同一種能力。它沒有開關，只有程度。</li>
+    <li><strong>「fake it till you make it」在醫療、金融、國防這類領域不是文化問題，是法律問題。</strong>同一句話在消費軟件裡是增長策略，在病人身上是身體傷害。Puri 說那條界線比大家想的更薄——而這條界線的厚度，其實由行業的不可逆後果決定。</li>
+    <li><strong>敘事權已經可以外包給 AI。</strong>一個持有授權書的伴侶，加上一個能讓她說任何話的模型，就可以在當事人坐牢時持續「代表」她發聲。這是本集最前瞻、也最毛骨悚然的一點：<strong>公眾記憶不再由事實決定，而由誰控制 likeness、軼事與合約分帳決定。</strong></li>
+    <li><strong>「看得見一切」不等於「看得懂」。</strong>電影給你近距離、無旁白、無定論的素材；結果觀眾更困惑。這對做研究、做盡調的人是個警告：<strong>資訊密度從來不是判斷力的替代品，框架才是。</strong></li>
+  </ol>
+
+  <div class="callout">
+    <p><strong>如果你只記得一句：</strong>陪審團裁定的是「她的行為是否犯罪」；這部電影改變的是「公眾如何記住她」。前者已結案，後者仍然在被人重新剪接——而且剪接權，現在可以在一個人的丈夫、一間片廠、和一個 AI 模型手上。</p>
+  </div>
+
+  <p class="tiny">
+    節目來源：My First Million #874（2026-10-20）。本集為主持人對電影的評論與轉述，涉及票房、評分、上映安排等數字均為節目中的說法或媒體報道，未經獨立核實；法庭相關事實（偽造 logo、假示範、300 分之 12、收入預測）為主持引述公開審訊記錄。
+  </p>
+</article>
+
+<!-- ============ 其餘五個 ============ -->
+<article class="card quiet-card">
+  <div class="card-head">
+    <div>
+      <div class="pod">Acquired</div>
+      <h2>Seinfeld</h2>
+      <div class="epmeta">2026 年 10 月 18 日 · 3 小時 50 分 · Ben Gilbert &amp; David Rosenthal</div>
+    </div>
+    <span class="badge quiet">最近無更新</span>
+  </div>
+  <p>
+    對上一次更新是三日前的《Seinfeld》——一集近四小時的長篇，講這部 1989 年首播、被稱為「about nothing」的情境喜劇如何成為電視史上最賺錢的版權機器之一。Acquired 的節奏一向是兩至四星期一大集，今日無新內容屬正常。
+  </p>
+  <p class="tiny">上一集之前：#The Home Depot（2026-09-13）。</p>
+</article>
+
+<article class="card quiet-card">
+  <div class="card-head">
+    <div>
+      <div class="pod">Founders · David Senra</div>
+      <h2>#437 The Tycoons: Carnegie, Rockefeller, Gould &amp; Morgan</h2>
+      <div class="epmeta">2026 年 10 月 13 日 · 54 分 11 秒</div>
+    </div>
+    <span class="badge quiet">最近無更新</span>
+  </div>
+  <p>
+    八日前的一集，一次過講四個美國工業時代的巨人：Carnegie 的鋼、Rockefeller 的油、Gould 的鐵路、Morgan 的資本。Senra 的格式通常是一本傳記抽出一個人，這集罕有地把四人並置——重點不是他們各自多成功，而是他們如何在同一個沒有規則的市場裡，用完全不同的手段（成本控制、垂直整合、金融槓桿、資訊不對稱）取得控制權。
+  </p>
+  <p class="tiny">上一集之前：#436 Ari Emanuel's Autobiography（2026-10-05）。</p>
+</article>
+
+<article class="card quiet-card">
+  <div class="card-head">
+    <div>
+      <div class="pod">All-In</div>
+      <h2>Dylan Field: Is AI Replacing Designers?, Design is the New Code &amp; Democratizing Creativity</h2>
+      <div class="epmeta">2026 年 10 月 19 日 · 40 分 33 秒 · 嘉賓：Dylan Field（Figma 聯合創辦人兼 CEO）</div>
+    </div>
+    <span class="badge quiet">最近無更新</span>
+  </div>
+  <p>
+    前日的一對一訪談，不是四人 roundtable。主題圍繞 AI 對設計工作的衝擊：當生成工具能直接把意圖變成介面，「設計」會不會變成一種新的程式語言、而設計師的角色由「畫」轉為「定義問題與品味」。上一集 roundtable（10 月 17 日）則講 CoreWeave 股價震盪、AI 交易出現裂縫、Anthropic IPO 的紅旗、以及 Bill Gates 的末日論調。
+  </p>
+  <p class="tiny">All-In 通常逢星期四／五出 roundtable，週末前後有機會更新。</p>
+</article>
+
+<article class="card quiet-card">
+  <div class="card-head">
+    <div>
+      <div class="pod">The Knowledge Project · Shane Parrish</div>
+      <h2>Ryan Serhant: How to Get People to Say Yes</h2>
+      <div class="epmeta">2026 年 10 月 8 日 · Shane Parrish</div>
+    </div>
+    <span class="badge quiet">最近無更新</span>
+  </div>
+  <p>
+    兩星期前的一集，嘉賓是紐約地產經紀、真人騷主角兼 SERHANT 創辦人 Ryan Serhant，主題是說服與成交——如何在對方未準備好之前建立信任、如何處理「不」，以及銷售作為一種可訓練的結構而非天賦。Knowledge Project 目前維持大約每週一集，但今週未見更新。
+  </p>
+  <p class="tiny">上一集之前：[Outliers] Charlie Munger's Interview with Todd Combs（2026-10-01）。</p>
+</article>
+
+<article class="card quiet-card">
+  <div class="card-head">
+    <div>
+      <div class="pod">The Diary of a CEO · Steven Bartlett</div>
+      <h2>The Deathbed Doctor: Weeks Before Death, Patients Start Having Visions! | Dr Christopher Kerr</h2>
+      <div class="epmeta">2026 年 10 月 19 日 · 1 小時 23 分 21 秒</div>
+    </div>
+    <span class="badge quiet">最近無更新</span>
+  </div>
+  <p>
+    前日的一集，嘉賓 Dr Christopher Kerr 是臨終關懷醫生與研究者，長年記錄臨終病人出現的夢境與幻象。這一集屬於 Diary of a CEO 近年最受歡迎的「生死／意識」路線，跟商業主題距離最遠，但通常是收聽率最高的一類。上一集（10 月 16 日）是重播的精華片段：基督徒與無神論者辯論「信仰是否人類的發明」。
+  </p>
+  <p class="tiny">Diary of a CEO 一般逢星期一、四更新。</p>
+</article>
+
+<footer>
+  <p><strong>掃描方法：</strong>直接讀取 6 個播客的 RSS feed，以 episode GUID 對比 <code>state.json</code> 內的歷史記錄，只對未掃過的集數做深度萃取。Apple Podcasts 頁面與節目官網用於補全描述；描述不足時以 web_search 補證。今日六個 feed 全部成功讀取（Acquired 218 集、Founders 462 集、All-In 438 集、My First Million 913 集、Knowledge Project 20 集、Diary of a CEO 899 集）。</p>
+  <p><strong>透明度：</strong>本報告的引文來自節目整理報道與節目頁，並非逐字稿；已標明哪些是主持轉述、哪些是法庭記錄、哪些未經核實。Jev 前置過濾對今日唯一新集給出低分（0.38，主因是「二手來源、無可核實數字」），但該集內容本身含多項可核對的庭審數字，故保留全文深度處理，並在此標記其二手性質。</p>
+  <p>Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">JMOKSZ/mindset-podcasts</a> · 存檔：<a href="https://jmoksz.github.io/mindset-podcasts/">jmoksz.github.io/mindset-podcasts</a></p>
+  <p class="tiny">下一次掃描：2026-10-22 09:53 UTC</p>
+</footer>
+
+</div>
+</body>
+</html>
