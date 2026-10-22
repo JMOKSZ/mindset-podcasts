@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日思維播客深度掃描 · 2026-10-22</title>
+<style>
+  :root{
+    --bg:#fdfaf6;
+    --card:#fffdf9;
+    --ink:#2b2620;
+    --muted:#7a6f62;
+    --line:#e9e0d2;
+    --accent:#9a6b2f;
+    --accent-soft:#f3e8d6;
+    --new:#2f6b4f;
+    --new-bg:#e8f3ec;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC","Source Han Serif SC",serif;
+    line-height:1.85;font-size:17px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:56px 22px 90px}
+  header{border-bottom:1px solid var(--line);padding-bottom:30px;margin-bottom:42px}
+  .eyebrow{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent);font-weight:600;margin-bottom:16px;
+  }
+  h1{font-size:40px;line-height:1.2;margin:0 0 14px;font-weight:600;letter-spacing:-.01em}
+  .dateline{font-size:18px;color:var(--muted);margin-bottom:18px}
+  .meta{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:12.5px;color:var(--muted);letter-spacing:.02em;
+  }
+  .lede{
+    font-size:19px;line-height:1.9;color:#3a332b;
+    border-left:3px solid var(--accent);padding-left:20px;margin:34px 0 0;
+  }
+  .stats{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);
+    margin:38px 0 48px;border-radius:4px;overflow:hidden;
+  }
+  .stat{background:var(--card);padding:18px 14px;text-align:center}
+  .stat b{display:block;font-size:26px;line-height:1.1;color:var(--accent);font-weight:600}
+  .stat span{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;
+  }
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:34px 34px 30px;margin-bottom:30px;
+    box-shadow:0 1px 0 rgba(120,100,70,.03);
+  }
+  .card-head{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .pod{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--accent);font-weight:700;margin-bottom:8px;
+  }
+  h2{font-size:27px;line-height:1.35;margin:0 0 8px;font-weight:600;letter-spacing:-.01em}
+  .epmeta{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:12.5px;color:var(--muted);margin-bottom:22px;
+  }
+  .badge{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+    background:var(--new-bg);color:var(--new);border:1px solid #cfe4d7;
+    padding:4px 10px;border-radius:100px;font-weight:700;white-space:nowrap;
+  }
+  .badge.quiet{background:#f4f0e8;color:#8a7c68;border-color:#e6dccb}
+  h3{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--accent);margin:34px 0 12px;font-weight:700;
+  }
+  h4{font-size:19px;margin:26px 0 10px;font-weight:600}
+  p{margin:0 0 16px}
+  ul,ol{margin:0 0 18px;padding-left:22px}
+  li{margin-bottom:9px}
+  strong{font-weight:600}
+  blockquote{
+    margin:22px 0;padding:16px 22px;background:var(--accent-soft);
+    border-left:3px solid var(--accent);border-radius:0 4px 4px 0;
+    font-size:18px;line-height:1.8;color:#4a3d2c;font-style:italic;
+  }
+  blockquote cite{
+    display:block;font-style:normal;font-size:12.5px;color:var(--muted);
+    margin-top:8px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    letter-spacing:.03em;
+  }
+  blockquote.zh{font-style:normal;font-size:17px}
+  table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:15px}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+    background:#faf6ee;font-weight:600;
+  }
+  td:first-child{font-weight:600;white-space:nowrap}
+  .num{font-variant-numeric:tabular-nums}
+  .callout{
+    background:#faf5eb;border:1px solid var(--line);border-radius:5px;
+    padding:20px 24px;margin:26px 0;
+  }
+  .callout p:last-child{margin-bottom:0}
+  .callout.warn{background:#fdf6e9;border-left:3px solid var(--accent)}
+  .kv{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px}
+  .quiet-card{background:#fcfaf5}
+  .quiet-card h2{font-size:22px;color:#4d453b}
+  .tiny{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:12px;color:var(--muted);line-height:1.7;
+  }
+  footer{
+    border-top:1px solid var(--line);margin-top:54px;padding-top:26px;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:12.5px;color:var(--muted);line-height:1.8;
+  }
+  footer a{color:var(--accent);text-decoration:none;border-bottom:1px solid #d9c6a8}
+  .tag{
+    display:inline-block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:11px;letter-spacing:.06em;color:#6b5c46;background:#f4ece0;
+    padding:3px 9px;border-radius:3px;margin:0 6px 6px 0;
+  }
+  .divider{height:1px;background:var(--line);margin:30px 0}
+  @media(max-width:620px){
+    .wrap{padding:36px 16px 60px}
+    h1{font-size:30px}
+    h2{font-size:22px}
+    .card{padding:24px 20px}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    body{font-size:16px}
+    blockquote{font-size:16.5px;padding:14px 16px}
+    table{font-size:14px}
+    td:first-child{white-space:normal}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Mindset Podcasts · Daily Deep Scan</div>
+  <h1>每日思維播客深度掃描</h1>
+  <div class="dateline">2026 年 10 月 22 日（星期四）</div>
+  <div class="meta">掃描 6 個播客 · 3 集新內容 · 生成時間 2026-10-22 09:55 UTC</div>
+  <p class="lede">今日三集，三條完全不同的戰線：IBM 與 Palo Alto 的 CEO 把量子破解加密的「死線」拉到 2030 年，順手拆解 open-weight 模型如何用十分一價錢吃掉 75–90% 的 token；澤連斯基用 110 分鐘講清楚一場戰爭裡「領導」到底長什麼樣——不是勇敢，是每日兩三次走到街上讓人民看見你還在；Shane Parrish 則請來 Steven Kotler，把「flow」從玄學拉回可訓練的生理與心理條件。資訊量最大的是前兩集，但最值得反覆聽的是第三集。</p>
+</header>
+
+<div class="stats">
+  <div class="stat"><b>6</b><span>掃描播客</span></div>
+  <div class="stat"><b>3</b><span>新集數</span></div>
+  <div class="stat"><b>2.5h+</b><span>新內容時長</span></div>
+  <div class="stat"><b>3</b><span>無更新</span></div>
+</div>
+
+<!-- ============================ ALL-IN ============================ -->
+<div class="card">
+  <div class="card-head">
+    <div>
+      <div class="pod">All-In with Chamath, Jason, Sacks &amp; Friedberg</div>
+      <h2>Arvind Krishna &amp; Nikesh Arora：量子威脅、Open vs Frontier AI、AI 網絡戰與 SaaS 崩塌</h2>
+    </div>
+    <span class="badge">新集數</span>
+  </div>
+  <div class="epmeta">2026-10-21 23:42 UTC · 39 分 56 秒 · 嘉賓：Arvind Krishna（IBM 董事長兼 CEO）、Nikesh Arora（Palo Alto Networks 董事長兼 CEO）· 主持：Chamath Palihapitiya、Jason Calacanis</div>
+
+  <p>這不是平時四個 besties 各自開火的 All-In，而是一集「兩個真正管着幾十萬人和幾千億美元 IT 預算的營運者」的對談。Sacks 與 Friedberg 缺席，Chamath 與 Jason 主要做提問者。正因為如此，這集的價值不在於觀點夠不夠刺激，而在於每一句判斷背後都連着真實的採購、部署與損益表。</p>
+
+  <h3>核心論點一：量子破解加密的死線是 2030，而企業已經遲了</h3>
+  <p>Krishna 開場就把爭論從「會不會」變成「幾時」。他引用 DARPA 的 Quantum Benchmarking Initiative（QBI）：兩年前還有兩百多家公司，現在只剩大約 13 家。對「現有公鑰加密何時被破」的估計範圍是 2028 到 2033，他取中位數 2030。</p>
+  <blockquote>“If you pick the middle point, let's call it 2030, it will break this cryptography. That's not a supposition, that's just a reality.”<cite>Arvind Krishna</cite></blockquote>
+  <p>他給了兩個可以驗證的里程碑，而不是空泛預言：</p>
+  <table>
+    <thead><tr><th>里程碑</th><th>意義</th><th>Krishna 的時間表</th></tr></thead>
+    <tbody>
+      <tr><td>錯誤糾正／緩解</td><td>在真實機器上（非模擬）首次可信展示，需第三方驗證</td><td>2027 年出現 claim，之後一兩家真正跑出</td></tr>
+      <tr><td>Gate 運算規模</td><td>由今日約 1 萬，每年加一個零</td><td>2029 年約 1,000 萬</td></tr>
+      <tr><td>加密被破</td><td>現有公鑰密碼體系倒下</td><td>約 2030（中位估計）</td></tr>
+    </tbody>
+  </table>
+  <p>他也拆解了「logical qubit」這個他不太喜歡但接受的說法：10,000 個 physical qubits 大約只等於 200 個 logical qubits。至於 post-quantum 算法是否「真安全」，他的答案很誠實——是「quantum proof」在與今日密碼學抵抗經典電腦相同的嚴謹度上：基於複雜度理論與假設，不是定理級證明。</p>
+
+  <h3>核心論點二：真正的危險不是未來的機器，是今天被偷走的硬盤</h3>
+  <p>這是全集最實用的一段。Krishna 的警告是「store now, decrypt later」：今天被偷走的加密硬盤，可以放五年，等機器成熟再解。Arora 把問題翻譯成營運語言：每一層 IT、每一個 endpoint 都跑着 crypto key，任何未 quantum-safe 的東西都可被破；而你不可能在一年內換掉一個 5 萬億美元的 IT estate。</p>
+  <blockquote>“You can't wait for 2029 or 2030 because it's not like one day all of us are going to go out and say, let's go burn $5 trillion of IT infrastructure and let's go build it again in one year because now we need quantum safe infrastructure.”<cite>Nikesh Arora · 00:05:46</cite></blockquote>
+  <p>Arora 的方案是兩層：現在買 quantum-safe 基建（趁正常 refresh cycle），同時用 post-quantum-ready 的 key 包住現有流量做過渡。Krishna 補上技術現況：演算法早已標準化、code 也寫好了，問題純粹是執行意願。</p>
+  <blockquote>“The good news is post-quantum cryptography is understood. It's well known. The code is written, but people have been too lazy to get to it. But I think the wake-up moment is now.”<cite>Arvind Krishna</cite></blockquote>
+
+  <h3>核心論點三：AI 不會比量子電腦更早破解密碼學</h3>
+  <p>Calacanis 提出一個他歸因於某位資深 AI 研究者的反論：AI 模型可能透過數論新結果先破密碼學，並把本週 OpenAI 的數學發布當作早期信號。Krishna 讓了一步，但守住核心：AI 可以發現新的量子算法，卻不能讓它在經典硬件上高效運行。</p>
+  <blockquote>“You cannot simulate something on a different architecture and expect a more efficient result.”<cite>Arvind Krishna · 00:07:40</cite></blockquote>
+  <p>他也承認經典電腦理論上可能存在捷徑，但用實用性否決：</p>
+  <blockquote>“I think it is going to be possible, but if it takes 10 years to break one key, most people are going to rest in peace. That's not a practical answer.”<cite>Arvind Krishna · 00:08:48</cite></blockquote>
+
+  <h3>核心論點四：Open-weight 會吃掉 75–90% 的 token，理由是錢、IP 與地緣政治</h3>
+  <p>這是全集對創業者與投資者最直接的一段。Krishna 預測 75–90% 的 token 使用者會轉向 open-weight 模型，三個理由：</p>
+  <ul>
+    <li><strong>經濟</strong>：frontier 定價約每百萬 token 20 美元（落後一代的模型），最極端可達 50 美元；而自架一個約 8,000 億參數的 open-weight 模型（他舉 Kimi K2 為例），用自己 GPU、花約一週工程，成本降到每百萬 token 1–2 美元。10 到 40 倍差距，換來「95% 的工作做得到」。</li>
+    <li><strong>IP</strong>：如果 chain-of-thought 被記錄、被第三方審計，你等於把推理過程送出去。frontier lab 不會交出 weights，所以 open-weight 是唯一能完全 in-house 跑的路。</li>
+    <li><strong>地緣</strong>：今日最好的 open-weight 模型來自中國。他認為本地 sandbox 跑風險低，從雲端消費則是另一回事；西方 open-weight 模型會在一兩年內出現，能力差距最多 6 到 12 個月。</li>
+  </ul>
+  <p>Arora 從買方補上操作框架：<strong>實驗期用最強、最易用的模型</strong>，讓兩萬名員工真正學會 AI 能做什麼；<strong>生產期把模型智能匹配任務價值</strong>。他舉 Palo Alto 自己為例：檢查 endpoint 流量約每個 endpoint 每年 20–25 美元，用的是壓縮到 99.9% 準確率的小型專用模型；若全部走 frontier token，「sounds like the sound of revenue」——那是 OpenAI 的營收，不是你的成本結構。唯一例外是 live breach：商業損失以十億計，客戶願意付錢買 agent swarm 與最新 frontier 模型來推理防守。</p>
+  <p>Krishna 補了一個行為觀察：開發者默認選最貴的選項，除非被管控。所以便宜模型應該放在生產，貴模型放在實驗。Arora 另外提到一個容易被忽略的風險：很多 Claude Code 用戶沒有 zero-data-retention 安排，等於在用自己的程式碼訓練模型——這同時教會模型「壞程式碼長什麼樣」，而攻擊者只需要一個漏洞。</p>
+
+  <h3>核心論點五：AI 網絡戰，攻方只需一個洞</h3>
+  <p>Arora 對 AI code review 的現狀描述得很直白：模型找得到真漏洞，但大約 20% 的 finding 是幻覺（他估計房間裡的人會認為 60–80% 是真的），而且沒有人會在未重測的情況下就打補丁。不對稱性對攻方有利——一個未補的洞就夠——所以防守方必須全部找到。</p>
+  <p>Krishna 把這映射到三條戰爭教訓：</p>
+  <ol>
+    <li><strong>聯盟可以抵消單一攻擊者</strong>：共享漏洞、集中分發補丁，勝過每家公司各自去補開源漏洞。</li>
+    <li><strong>不對稱決定消耗戰</strong>：如果攻擊更便宜，防守方會先破產讓步；所以目標是讓防守同樣便宜。</li>
+    <li><strong>技術優勢直接決定勝負</strong>：找到、修補、提高穿透成本，這才是真正的目標。</li>
+  </ol>
+  <p>關於 agent 寫的程式碼，Krishna 說在 IBM 內部它已經優於人類寫的——代理大約寫了一半的程式碼，因為它們同時跑 eval、在發布前修掉問題。但完整驗證今日「almost computationally infeasible」，而且這個循環只找得到「我們已知怎樣找」的缺陷。Arora 的責任線很簡單：一間收費的商業企業，必須為自己出貨的東西負責——</p>
+  <blockquote>“You can't unleash and say oops I don't know how to control it.”<cite>Nikesh Arora（大意轉述）</cite></blockquote>
+
+  <h3>核心論點六：沒有人會慢下來，監管是政治不是現實</h3>
+  <p>Calacanis 轉述華盛頓一位資深國會議員的說法：某位大 CEO 對網絡安全「完全嚇壞」，並提出 Q4 可能出現 50 州聯手禁 data center。Arora 不相信 50 個州能在任何事上達成一致，並認為行業已過度聚焦 AI 的陰暗面。Krishna 更直接：data center 與 AI 監管辯論「driven by populism, not by any reality」；一個國家慢下來，只會讓日本、中國、印度追上。他認為目前平衡大致正確，但選舉可以改變它；50 州全禁的機率「essentially zero」，30 州可能出手，其餘 20 州會「rubbing their hands in glee」。</p>
+  <p>談到算力不平等，Arora 的判斷是：制約是<strong>供應</strong>，不是價格。離美中兩極越遠的公司，無論意圖多好，拿到的 compute 越少。Krishna 則把它框成勞動與資本的歷史循環——資本密集經濟在每一輪都贏——並認為那些不惜一切保護每一個既有職位的國家，會輸給接受置換、換取更好工作的國家。</p>
+
+  <h3>核心論點七：垂直整合的真正目的是「決定哪一層可以被商品化」</h3>
+  <p>Krishna 用 IBM 主機（活了 65 年）做案例。1960 年代 IBM「all the way to dirt」：沙、晶圓、fab、晶片、軟件全做，目的是防止 IP 泄漏，把整個 stack 的利潤留在公司內。今日 IBM 設計晶片與大部分軟件，但不做 fab，因為 fab 的規模已經是 commodity game。他的規則一句話：<strong>優勢決定性的地方整合，commodity 的地方外購。</strong></p>
+  <p>Arora 稱 Nvidia 是現代版本：Jensen Huang 由「泥土」一路做到應用層，並資助生態（包括 Hugging Face）讓參與者留在他的 stack 上。擁有 stack 的戰略回報，是可以選擇把哪一層商品化：對手攻哪一層，就在那裡摧毀利潤池，把利潤搬到別層。</p>
+  <blockquote>“If you control the vertical stack, you can decide which part of the stack to commoditize. So you can decide to move profit between layers.”<cite>Nikesh Arora · 00:32:11</cite></blockquote>
+  <p>應用到應用層，Arora 認為 open vs closed 的真正戰場是<strong>open stack vs closed stack</strong>。</p>
+  <blockquote>“We start saying open models, open weight. It's literally an open stack versus a closed stack.”<cite>Nikesh Arora · 00:32:54</cite></blockquote>
+  <p>隨着模型記憶與 context 變大，把 reasoning 與 context/memory 分離會越來越不合理，一個只傳遞 reasoning token 的「open router」在實務上會站不住。一個用你的 context、API、連接性訓練出來的個人 agent，會形成 moat——搬到另一個 stack 就等於失去這一切。他預測未來三個月每一個 frontier lab 都會對 consumer agent 全力開火（跟隨 Meta 的示範），而很多 iPhone app 會變成 headless。</p>
+
+  <h3>核心論點八：SaaS 的終值正在被 AI 重估</h3>
+  <p>Arora 的網絡安全 M&amp;A 邏輯：客戶不應該自己縫合 40 個安全產品。他類比 CRM——幾十年前 Fidelity 內部有 23 套系統，最後收斂到 Salesforce、Microsoft Dynamics、Oracle；一旦產品趨同，差異化消失，平台贏。網絡安全估值現在偏高，部分是因為 AI 安全恐慌，他預期會正常化，即使客戶會持續大幅增加國防支出。</p>
+  <p>網絡安全以外，他對軟件的終值偏淡：未來五到八年，不清楚哪些 SaaS 產品能活下來，因為 AI 正在重設 product-market fit，「there's going to be huge disruption in the SaaS space over the next few years」。</p>
+  <p>Krishna 把同一件事量化：</p>
+  <blockquote>“The average enterprise uses anywhere from 500 to 5,000 distinct software vendors... could I replace 490 of them with minor AI capabilities and do I need to go back and leverage five to ten main platforms?”<cite>Arvind Krishna · 00:37:47</cite></blockquote>
+  <p>他補了一條重要的分界線：互動密集的軟件很容易被 AI 取代；但需要 10<sup>-15</sup> 可靠度的系統——零售銀行的資料庫查詢、埋數——很難換，而且重寫沒有成本優勢。至於 M&amp;A 時機，他說年初估值吸引，一個月前已不那么吸引，他在等。</p>
+
+  <h3>關鍵數據一覽</h3>
+  <table>
+    <thead><tr><th>項目</th><th>數字</th></tr></thead>
+    <tbody>
+      <tr><td>量子破解中位估計</td><td class="num">2030（範圍 2028–2033）</td></tr>
+      <tr><td>DARPA QBI 入圍者</td><td class="num">約 200 家 → 約 13 家</td></tr>
+      <tr><td>Gate 運算</td><td class="num">今日約 1 萬 → 2029 約 1,000 萬</td></tr>
+      <tr><td>Physical → logical qubits</td><td class="num">10,000 → 約 200</td></tr>
+      <tr><td>Frontier vs open-weight 成本</td><td class="num">US$20–50 vs US$1–2 / 百萬 token</td></tr>
+      <tr><td>Krishna 預測 open-weight 佔比</td><td class="num">75–90% token</td></tr>
+      <tr><td>企業軟件供應商數量</td><td class="num">500–5,000 家</td></tr>
+      <tr><td>Palo Alto endpoint 檢查成本</td><td class="num">US$20–25 / endpoint / 年</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <h3 style="margin-top:0">James 的 takeaway：三個可以立刻動的判斷</h3>
+    <p><strong>1. 加密遷移是合規與否的「已經逾期」項目，不是 2030 年的項目。</strong>任何涉及長期敏感資料（客戶個資、醫療、金融、源碼、合約）的業務，現在就應該做 crypto inventory：哪些系統用 RSA/ECC、哪些供應商已支援 PQC、refresh cycle 幾時到。等到 2029 才開始，你買不到足夠的專業人力與硬件。</p>
+    <p><strong>2. 模型架構要按「任務價值」分層，而不是按「哪個模型最強」。</strong>Krishna 與 Arora 罕有地一致：frontier 模型留給實驗與高價值推理（live breach、複雜談判、架構設計），生產流量交給蒸餾／fine-tune 的小模型。若你的產品毛利被 token 成本吃掉，問題通常不是模型太貴，是 routing 太懶。</p>
+    <p><strong>3. SaaS 收斂是未來五年的結構性機會，也是結構性風險。</strong>如果你持有或經營 SaaS，問一句：這個產品的價值是「互動與工作流」還是「可靠地處理數字」？前者會被 AI 重寫，後者不會——但也不會給你定價權。中間那些「只是把資料搬來搬去」的產品，是最危險的一層。</p>
+  </div>
+</div>
+
+<!-- ============================ DOAC ============================ -->
+<div class="card">
+  <div class="card-head">
+    <div>
+      <div class="pod">The Diary of a CEO with Steven Bartlett</div>
+      <h2>澤連斯基：和平是巨大的妥協，以及俄羅斯戰爭罪行的殘酷真相</h2>
+    </div>
+    <span class="badge">新集數</span>
+  </div>
+  <div class="epmeta">2026-10-22 05:00 UTC · 110 分 17 秒 · 嘉賓：烏克蘭總統 Volodymyr Zelenskyy · 主持：Steven Bartlett</div>
+
+  <p>這是 DOAC 近年最重的一集，也是少數能讓一個戰時總統坐下來講足 110 分鐘的訪問。它不是戰況簡報，而是一個人在近五年高壓下的心理剖面：睡眠、眼淚、復仇、家庭、以及他如何把「妥協」重新定義成一個道德上可辯護的詞。以下按主題拆解，並盡量保留原文的語氣。</p>
+
+  <h3>一、開場：一個不會睡的總統</h3>
+  <p>Steven 第一個問題很直接：「你好嗎？」澤連斯基沒有外交辭令。</p>
+  <blockquote>“Well, it's hard. I'll be honest. I don't sleep. It's a huge, terrifying pain that I wouldn't wish on anyone.”<cite>Volodymyr Zelenskyy · 00:00:05</cite></blockquote>
+  <p>他解釋這不是失眠，而是工作結構：每晚與防空指揮官通話、互傳短訊，協調哪個區域要抽調系統。「Thanks to modern technology, it's very easy.」他淡淡地說，然後補一句：這幾年幾乎沒有八小時睡眠這回事。「I'm not complaining.」</p>
+  <p>最刺痛的一段，是他講授勳給陣亡士兵父母的時候。他會握着對方的手，很多父母只說一句：「Can we hug?」</p>
+  <blockquote class="zh">「那一刻我好像不存在了。那不是痛，是某種更可怕的東西……他們作為人，已經不在了——至少有一段時間。然後堅強的人會繼續活下去。」</blockquote>
+  <p>Steven 注意到他眼裡有淚，他說：「I'm a human being. I'm not ashamed to be who I am. I'm not the strongest man in the world.」支撐他的是孩子——「I have to set an example.」但他同時拒絕掩飾痛苦：「If you have it, you shouldn't say, I don't feel anything. Because human beings, by nature, they're alive. And that's their weakness. But it's also where a person's strength lies.」</p>
+
+  <h3>二、出身：橫跨兩個國家的人</h3>
+  <p>他生於蘇聯時期的烏克蘭克里沃羅格（Kryvyi Rih），在獨立的烏克蘭長大。他用「兩個人生」形容自己這一代：父母是學術家庭，不有錢，但給了他教育、價值觀與愛——「those three things are enough to be grateful to your parents.」</p>
+  <p>小時候想過當外交官、邊防軍，結果讀法律，讀到一半發現自己更愛媒體。17 歲加入喜劇團體，一直做到 26 歲，主要是編劇，偶爾演出。28 歲贏了烏克蘭《與星共舞》。之後為《柏靈頓熊》烏克蘭語版配音——他強調那不是只給小朋友看的東西。34 到 37 歲拍了一堆電影，最重要的一個角色：《人民公僕》裡意外當上總統的中學歷史老師。</p>
+  <p>Steven 問他：你當時有想過自己真的會當總統嗎？</p>
+  <blockquote>“Absolutely. I definitely didn't expect it.”<cite>Volodymyr Zelenskyy（原文如此，語氣是否定）</cite></blockquote>
+  <p>他說那個 idea 在腦裡放了 10 到 12 年，直到他覺得世界變了、烏克蘭變了，這個題材才變得相關。2014 年克里米亞被吞併、頓巴斯被佔領之後，他與俄羅斯的生意、辦公室、拍攝項目都還在，但他想全部放下。「那種被俄羅斯背叛的感覺」改變了他。所以政黨註冊不是精密計算，而是「社會情緒與我內心狀態、我的決心剛好對上了」。</p>
+
+  <h3>三、戰爭從幾時開始：2014，不是 2022</h3>
+  <p>他的答案很清楚：對新一代烏克蘭而言，戰爭從 2014 年佔領克里米亞開始，只是那是一場「creeping occupation」——沒有明確命令要保衛土地，俄軍不承認自己是俄軍，被叫做「小綠人」。他的結論帶着悔意：</p>
+  <blockquote class="zh">「我們當時的錯誤是沒有把他們推回去。如果當時有保衛國家的命令，我相信就不會發生今天這種全面戰爭。」</blockquote>
+  <p>他家族的歷史讓這個判斷更沉重：祖父打了整場二戰，家族幾個兄弟都被納粹殺死。所以他說，俄羅斯以「去納粹化」為理由入侵，是「bizarre and completely wild」——因為二戰時烏克蘭被完全佔領，是付出巨大代價的一方，而俄羅斯本土並沒有被佔領。</p>
+
+  <h3>四、普京的動機：一個蘇聯人想重建帝國</h3>
+  <p>他用一個 16 歲少年都聽得懂的框架解釋：蘇聯是一個帝國，帝國靠專制、暴政、封建、奴隸維持，不可能靠自由。帝國會倒，因為人想要自由，會比較別國的生活，而鐵幕存在的目的就是不讓你看見外面。「People live like fish in a fish tank. The fish tank can be massive like the Soviet Union, but it's still a fish tank.」</p>
+  <p>普京是「a purely Soviet man」，KGB 出身，說過蘇聯解體是「20 世紀最大的地緣政治災難」。他要重建帝國，而帝國的核心是烏克蘭：人才鍛造廠、火箭與核工業、龐大的知識階層。如果烏克蘭成功加入歐洲，俄羅斯就會瓦解成多個國家——所以必須先拿下烏克蘭。他亦提到車臣作為先例：同一批指揮官，先摧毀車臣，再來到烏克蘭東部。</p>
+
+  <h3>五、2022 年 2 月 24 日：他們以為三日就會結束</h3>
+  <p>戰前，美方情報一路升級：2021 年 10 月國家情報總監與 CIA 局長向美國領導層及北約簡報，指普京在制定多線入侵計劃；11 月 CIA 局長親赴莫斯科警告；12 月美方罕有地解密地圖與兵力估計（最多 17.5 萬人），以防止假旗行動；1 月底公開警告入侵可能隨時開始。澤連斯基的說法是：這些信號一直有，但「nobody fully believed it」，歐洲領袖打電話給普京，普京說不會入侵——「He lied to all of them.」</p>
+  <p>他當時向拜登提出的要求很具體：<strong>現在就制裁</strong>，以及<strong>現在就給武器</strong>。他認為拜登上任後的做法是錯的：</p>
+  <blockquote class="zh">「我說，如果你知道可能會有入侵，就現在制裁。然後他就不會進去。但拜登總統說，我們會在入侵之後制裁。事後制裁，不是預防性制裁。我不是上帝，不能審判一位總統，但我相信那是錯的。」</blockquote>
+  <p>入侵當天清晨，他在家。接到辦公室電話，說夜裡有導彈。他叫醒妻子和孩子：</p>
+  <blockquote>“I told my wife, wake up quickly. The war has started. I love you. I'll call you. And ran out.”<cite>Volodymyr Zelenskyy</cite></blockquote>
+  <p>他說自己「didn't think there would be a full-scale invasion」，因為如果伙伴真的知道，就應該採取預防行動、把普京按在桌上問他是不是瘋了。至於特朗普常說「如果我當時是總統就不會發生」——他的回答很克制，也很有力：</p>
+  <blockquote>“I think that nobody knows the answer, honestly.”<cite>Volodymyr Zelenskyy</cite></blockquote>
+  <p>他承認事實層面：這件事發生在拜登任內，不在特朗普任內；普京選了那個時刻。特朗普與普京有特殊關係，也許真的能阻止。但他補了一句，這是整集最清醒的戰略判斷：</p>
+  <blockquote>“Neither I nor Trump, we're not eternal in these presidential seats... it doesn't matter who the president is as long as Putin is there.”<cite>Volodymyr Zelenskyy</cite></blockquote>
+
+  <h3>六、基輔：200,000 對 200,000，與 64 公里的車隊</h3>
+  <p>他解釋了俄軍的算盤與失算。烏軍主力在東部頓涅茨克、盧甘斯克，頂着俄軍最強的集團；沒有人預期俄軍會從白俄羅斯南下直取基輔，所以首都方向沒有強兵。當時烏軍約 20 萬，俄軍在烏境內各方向約 70 萬。衛星拍到 64 公里（40 英里）長的車隊沿一條公路撲向基輔。</p>
+  <p>「Just imagine, 200,000 people are coming at you. It's simply impossible to defend.」但他說，正因為守不住，才要靠人：動員、志願者、國民警衛隊。軍隊由 20 萬擴到 80 萬。俄軍切斷食物、水、一切，試圖逼基輔投降，也有人來勸他交出權力——</p>
+  <blockquote class="zh">「我告訴那些人，滾出我的辦公室。用比較禮貌的說法。」</blockquote>
+  <p>拜登打電話來，說可以幫他撤離。他的回答成了整場戰爭的其中一句名言：「I need ammunition, not a ride.」他沒有叫家人離開——安全人員把他們帶到別處，他則下到辦公室地底深處的掩體，在那裡工作、與各國領袖通話、第一次與歐洲視像會議求援。</p>
+  <p>最關鍵的領導決策，不是軍事，而是<strong>可見度</strong>。俄羅斯不斷放消息說他跑了、在邊境、在國外。所以他決定每日兩三次走到街上、拍片、講話，讓人民看見他仍在 Bankova 街的辦公室。</p>
+  <blockquote>“That would be betrayal... betrayal of my human decency and the constitution of Ukraine.”<cite>Volodymyr Zelenskyy</cite></blockquote>
+  <p>後來軍人告訴他，這件事對士氣非常重要：他們守住的不是抽象的首都，而是「沒有拋棄我們的總統」。他曾被問到怕不怕，答案很值得記住：</p>
+  <blockquote>“It's not about fear. It's about being laser focused on what needs to be done right now.”<cite>Volodymyr Zelenskyy</cite></blockquote>
+  <p>他說首幾天只睡 15 分鐘，整個人在危機管理：基輔被封，就叫人打開道路運食物和水；銀行卡要能用；哪個城市斷水斷電就調資源。直到大約開戰 20 日後，節奏稍慢，他才真正意識到：「My God, this is war.」</p>
+
+  <h3>七、Hostomel 機場：一場改變首都命運的小戰役</h3>
+  <p>他把俄軍計劃講得很清楚：封鎖基輔、奪取機場、電視塔、資訊與物流節點，切斷補給，逼領袖逃跑——「no leader means chaos, no chain of command」。Hostomel（安東諾夫機場）是關鍵，因為它可以讓大型運輸機降落，運進重兵。</p>
+  <p>俄軍空降兵一度奪下機場；烏方立即反擊，國民警衛隊與特種部隊投入，還<strong>自己炸毀跑道</strong>，防空部隊擊落多架俄軍運輸直升機。機場多次易手。澤連斯基的判斷很直白：如果機場丟了，「they could have taken most of the capital」。</p>
+  <p>談到特朗普說「俄軍將軍轉錯彎走入泥地，否則一日就結束」，他直接否認：俄軍已經包圍基輔、佔領沿途城鎮，是城鎮抵抗拖住了他們。「If someone took a wrong turn, I don't know what President Trump is talking about.」他給出更硬的算術：要守住通往基輔的每一個城鎮，需要 30 到 40 萬人，是他們投入的兩倍；俄軍根本沒有預期會遇到抵抗。</p>
+
+  <h3>八、布查：最黑暗的一天</h3>
+  <p>Steven 問他四年多以來最難的一天。答案是布查（Bucha）。</p>
+  <blockquote class="zh">「我這輩子從未見過人的屍體就這樣散在街上。那不是戰爭，那是屠殺。手被綁着，被折磨，然後埋在坑裡。大約 500 人埋在一個墳裡。」</blockquote>
+  <p>他下令「不要碰任何東西，把全世界記者帶來」——因為俄羅斯立刻說這是擺拍。他要讓全世界親眼看見。他提到一位在二戰時期經歷過納粹佔領的老人家，說了一句讓他永遠記得的話：法西斯是敵人、是佔領者，但他們沒有這樣折磨人。</p>
+  <p>那天之後，他說自己變了一個人：</p>
+  <blockquote>“You want revenge. I had never had it where I couldn't forgive someone... I had never wanted to kill a single human being. I had never felt anything like that. Pure revenge.”<cite>Volodymyr Zelenskyy</cite></blockquote>
+  <p>這也是他回應「妥協」的基礎。特朗普說要找到 compromise，他說：停火本身就是巨大的妥協。</p>
+  <blockquote class="zh">「沒有人能站進那些失去孩子的父母的鞋裡。你不能強迫人原諒。當他們的孩子被折磨致死，你怎麼原諒？……但正因如此，停火是唯一的一步。仇恨不會消失，它需要時間與正義。」</blockquote>
+  <p>他強調「just peace」不是口號：有罪的人必須被懲罰，至少要有路徑讓人看見正義會來。否則那個洞不會癒合，「and there will be revenge」——而大量失去一切的人復仇，會帶來持續的軍事與暴力風險。這是他反對「簡單原諒」的理性理由，不只是道德理由。</p>
+
+  <h3>九、特朗普、柴油與能源停火</h3>
+  <p>本週的爭議是：特朗普說與俄羅斯達成柴油協議，要求烏克蘭不要攻擊俄羅斯能源設施，並指澤連斯基「could have settled this war many times」，甚至說烏克蘭需要新總統。澤連斯基逐點反駁：</p>
+  <ul>
+    <li><strong>柴油價格</strong>：俄羅斯柴油出口量「negligible」，對美國價格「zero impact」。「That is totally false information.」</li>
+    <li><strong>攻擊理由</strong>：是報復，不是挑釁。俄羅斯打烏克蘭電網，人民沒有電；烏克蘭打俄羅斯柴油，因為他們用柴油賺錢買武器。「What hurts us is electricity. They hit our electricity. We strike back at their diesel.」</li>
+    <li><strong>他開的條件</strong>：他早就向特朗普提出「能源停火」——雙方都停打能源設施，讓人民有燈。但普京拒絕。他說特朗普無法逼普京達成能源停火，於是把問題推到他頭上。</li>
+    <li><strong>他要的東西</strong>：防空導彈，用來保護能源設施。「Not for free」——歐洲人在出錢，有協議，但導彈去了中東。</li>
+    <li><strong>民意</strong>：他引用近期調查，約 76% 烏克蘭人不想現在選舉。</li>
+  </ul>
+  <p>他對特朗普的評價並非敵意，而是困惑：「I have a good relationship with him... I think it's wrong and unacceptable that he pins Russia's aggression and Russia's killings on me.」他認為特朗普只需用對待他的同一種語氣對待普京，就能把普京帶到談判桌；制裁法案已在桌上，國會已通過，特朗普可以簽。為什麼不簽？「I don't know. Honestly, I don't know. Maybe they have a special relationship.」他猜測中期選舉與美國能源價格是考量。</p>
+
+  <h3>十、戰場現實：18–19% 領土，與一個「倒轉的地圖」</h3>
+  <p>他用手指在桌上畫地圖（Steven 說畫面很有趣）。俄羅斯佔領克里米亞、頓涅茨克、盧甘斯克大部、扎波羅熱部分、赫爾松部分，以及亞速海沿岸——馬里烏波爾、別爾江斯克、梅利托波爾，把亞速海變成內海。赫爾松市被第聶伯河分割，俄軍在對岸炮擊。Oleshky 有約 2,500 人被困，沒有食物，不被放行。總計約 18–19% 領土。</p>
+  <p>他說普京真正想要的是整個東部：Slovyansk、Kramatorsk、Druzhkivka，然後推向 Dnipropetrovsk、Pavlohrad，還有他的家鄉 Kryvyi Rih、工業重鎮 Nikopol。如果這些城市交出去，俄軍可以再往西推，沒有安全保證。「The biggest compromise we're already making is a ceasefire.」但俄羅斯要的是烏軍再撤——那安全保證在哪裡？</p>
+  <p>至於核武，他認為普京不會冒這個險：一旦使用，連中國、美國這些國家都不會再站在他那邊；而且「if a nuclear weapon is used once, it might be used a second and a third time」，這對所有核武國家都是紅線。但他補了一句對普京的結構性判斷：這個人與這個體系會互相抓緊，直到他生命終結才會離開克里姆林宮。</p>
+
+  <h3>十一、私人一面：母親的 12 個未接來電</h3>
+  <p>整集最柔軟的一段。他說母親每天打電話，有時一天 12 個未接。「Mom, I'm working. How can you call someone so many times?」但最後還是每天講一次。她問：「你覺得怎樣？孩子怎樣？普京幾時會結束戰爭？」他答：「Mom, we're doing everything we can.」</p>
+  <p>談到妻子 Alina，他說她「very smart, and she is so real」，兩人有愛與尊重，而且「people should find each other interesting」——這是他認為最重要的。孩子們這四年長大了，女兒已是年輕女子。他說即使在家人身邊，有時也會想念他們，因為多年來的工作習慣讓他專注到近乎缺席。「I chose my own path. I didn't choose the war, but I chose this path.」</p>
+  <p>Steven 問他，這場戰爭不可逆轉地改變了他，他是否會想這件事。他的回答是價值重估：</p>
+  <blockquote class="zh">「商業是次要的。一切都是次要的。這些人，才是最重要的。」</blockquote>
+
+  <h3>十二、給美國觀眾的最後一段話</h3>
+  <p>他沒有要求更多武器，而是說：</p>
+  <blockquote>“I wish America would stay a great nation, be strong, be peaceful, have the chance. Someone works, someone wants to be home with the kids, pray, have a family, a family dinner. I wish America tranquility, peace, and we're grateful for everything America has done for Ukraine. We won't forget this.”<cite>Volodymyr Zelenskyy · 結尾</cite></blockquote>
+
+  <h3>關鍵數據一覽</h3>
+  <table>
+    <thead><tr><th>項目</th><th>數字</th></tr></thead>
+    <tbody>
+      <tr><td>訪問長度</td><td class="num">110 分 17 秒</td></tr>
+      <tr><td>開戰時烏軍規模</td><td class="num">約 20 萬 → 動員後約 80 萬</td></tr>
+      <tr><td>俄軍在烏境內兵力</td><td class="num">約 70 萬（各方向合計）</td></tr>
+      <tr><td>基輔車隊長度</td><td class="num">64 公里（40 英里）</td></tr>
+      <tr><td>俄軍預期戰爭長度</td><td class="num">3–10 日（攜帶 3–10 日口糧、閱兵制服）</td></tr>
+      <tr><td>攻基輔所需兵力（澤連斯基估算）</td><td class="num">30–40 萬，是實際投入的兩倍</td></tr>
+      <tr><td>布查集體墳墓</td><td class="num">約 500 人</td></tr>
+      <tr><td>被佔領土比例</td><td class="num">約 18–19%</td></tr>
+      <tr><td>Oleshky 被困人數</td><td class="num">約 2,500 人</td></tr>
+      <tr><td>不想現在選舉的烏克蘭人</td><td class="num">約 76%（他引用的調查）</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <h3 style="margin-top:0">James 的 takeaway：這集其實是一堂「極端壓力下的領導課」</h3>
+    <p><strong>1. 合法性來自可見度，不是頭銜。</strong>澤連斯基在開戰初期的核心決策，不是某一場戰役，而是每日兩三次走到街上。俄羅斯的信息戰目標是讓他「消失」，因為領袖消失＝人民各自逃生。任何組織在危機中都一樣：創辦人不出現，團隊就會自行解讀最壞情況。你不需要演講，你需要被看見。</p>
+    <p><strong>2. 「專注」是恐懼的替代品，不是它的反面。</strong>他說不怕，是因為腦袋被「現在要做什麼」完全佔滿。這與 Kotler 的 flow 研究驚人地一致：極高的挑戰、極清晰的即時反饋、行動與意識融合。危機中的高效不是情緒管理，是任務顆粒度管理。</p>
+    <p><strong>3. 談判前先定義「不可讓」與「已讓」。</strong>他把停火本身框成「巨大的妥協」，把正義（審判、問責）框成不可讓，這讓他在道德上站得住，同時保留談判空間。這是任何艱難商業談判都可以借用的結構：先說清楚你已經讓了什麼，再說清楚什麼不能讓，最後才談條件。</p>
+    <p><strong>4. 讀這集要帶着來源意識。</strong>這是單方敘事，受訪者是被訪者，不是歷史學家。他對特朗普、拜登、歐洲領袖的描述都有其立場。但正因為如此，它對理解烏方當下的心理與談判底線，價值極高。</p>
+  </div>
+</div>
+
+<!-- ============================ KNOWLEDGE PROJECT ============================ -->
+<div class="card">
+  <div class="card-head">
+    <div>
+      <div class="pod">The Knowledge Project · Shane Parrish</div>
+      <h2>The Science of Doing Your Best Work（Steven Kotler）</h2>
+    </div>
+    <span class="badge">新集數 · 會員優先</span>
+  </div>
+  <div class="epmeta">Feed 發佈 2026-10-22 09:50 UTC · 公開發佈 2026-10-27 · 嘉賓：Steven Kotler（Flow Research Collective 執行總監、暢銷作者）</div>
+
+  <div class="callout warn">
+    <p><strong>透明度說明：</strong>這集目前是 Farnam Street 會員優先收聽，公開發佈日為 10 月 27 日；逐字稿與完整音頻尚未對外開放。以下內容嚴格基於官方節目簡介與 Kotler 已公開的研究框架整理，<strong>不是</strong>本集逐字引用。等 10 月 27 日公開後，值得再補一次完整萃取。</p>
+  </div>
+
+  <h3>為什麼這集值得等</h3>
+  <p>Shane Parrish 的節目一向不追新聞，追的是「不會過期的東西」。這次他找來 Steven Kotler——Flow Research Collective 執行總監、《The Rise of Superman》《Stealing Fire》等書作者，研究 peak performance 超過二十年。官方簡介把問題意識講得很清楚：</p>
+  <blockquote>“Most of us have felt it. Hours disappear, everything else fades away, and the work seems to do itself. But what's actually happening in those moments, and can you make them happen on purpose?”<cite>官方節目簡介</cite></blockquote>
+  <p>節目的核心主張是：flow 遠比大多数人以為的更可訓練（“far more trainable than most people think”）。這句話如果成立，對知識工作者的意義很大——因為它把「狀態」從運氣變成設計問題。</p>
+
+  <h3>官方簡介透露的五個主題</h3>
+  <ol>
+    <li><strong>什麼觸發 flow</strong>：不是放鬆，而是特定條件組合。Kotler 多年研究的框架通常圍繞「挑戰—技能平衡」：任務太易會無聊，太難會焦慮，只有略高於當前能力時，注意力才會被「拉」進去。簡介特別提到「how hard a task should be before it pulls you in」。</li>
+    <li><strong>你成年後放棄的嗜好，可能比你想像中重要</strong>：簡介說「why the hobby you gave up as an adult might matter more than you realize」。這背後是 flow 的觸發器之一：深度專注需要「novelty、complexity、unpredictability」——而成年後被效率邏輯淘汰的嗜好，往往正是這些屬性的來源。</li>
+    <li><strong>學習中的挫敗感是信號，不是判決</strong>：「what frustration is really telling you when you're learning」。在 flow 研究裡，挫敗通常意味着挑戰略高於技能，這是成長區，不是失敗區。問題是你如何解讀它。</li>
+    <li><strong>Play 與 practice 的分別</strong>：「how play compares with practice」。兩者都能產生學習，但機制不同：play 降低後果、提高探索；practice 提高精度、建立模式。頂尖表現者通常不是二選一，而是交替。</li>
+    <li><strong>如何專注在你不想做的工作上，以及在資訊過載中保持清晰</strong>：這是本集最實用的部分。簡介的措辭很準確——「more information than ever and fewer people checking it」。這不只是注意力問題，是判斷力問題。</li>
+  </ol>
+
+  <h3>Kotler 框架的骨幹（背景，非本集內容）</h3>
+  <p>要理解這集，先要知道 Kotler 的兩個核心概念：</p>
+  <ul>
+    <li><strong>Flow 的神经生物學</strong>：他主張 flow 狀態伴隨一串「transient hypofrontality」現象——前額葉部分功能暫時下線，自我意識減弱、時間感變形、模式識別增強。這解釋了為什麼人在 flow 中能做出平時做不到的連結，也解釋了為什麼 flow 不能長時間維持（代價是認知疲勞）。</li>
+    <li><strong>Flow triggers</strong>：他把它們分成環境、心理、社會、創意四組。環境類包括高後果風險、豐富環境、深度具象化；心理類包括高度專注、清晰目標、即時反饋、挑戰—技能平衡；社會類包括共同目標、風險共擔、密切溝通、平等參與、利他；創意類則是模式識別與跨界連結。</li>
+  </ul>
+  <p>如果這集按照 Shane 一貫的問法，他大概率會追問：這些 trigger 在一般辦公室裡如何落地？哪些是個人可控，哪些需要組織設計？以及——flow 有沒有陰暗面（成癮、忽略家人、道德盲區）？值得留意 Kotler 如何回答最後一題。</p>
+
+  <h3>可以預先做的三個練習</h3>
+  <div class="callout">
+    <p><strong>1. 記錄一週的「時間消失」時刻。</strong>不要憑記憶。每次發現兩小時不見了，立刻記下：任務是什麼、難度主觀評分（1–10）、是否有清晰目標、是否有即時反饋、環境有無干擾。一週後你會看到自己的 trigger 模式，而不是別人的。</p>
+    <p><strong>2. 把一件「不想做」的任務重新切粒。</strong>Flow 需要清晰目標與即時反饋。大部分拖延不是懶，是任務顆粒太大、反饋太遠。把它切到「25 分鐘內可以完成並判斷對錯」的大小，再試一次。</p>
+    <p><strong>3. 找回一個你成年後放棄的嗜好。</strong>不是為了休閒，是為了重新接觸 novelty 與 complexity。簡介特別點出這一項，值得認真對待——尤其是那些「學了也沒用」的技能。</p>
+  </div>
+</div>
+
+<!-- ============================ QUIET ============================ -->
+<div class="card quiet-card">
+  <div class="card-head">
+    <div>
+      <div class="pod">Acquired · Ben Gilbert &amp; David Rosenthal</div>
+      <h2>最近無更新</h2>
+    </div>
+    <span class="badge quiet">無新集數</span>
+  </div>
+  <p>最後已知劇集：<strong>《Seinfeld》</strong>（2026-10-18，約 3 小時 50 分）。Acquired 一向是「一集講一間公司/一個現象」的長篇格式，更新頻率約每月一至兩集。對上一次是 9 月 13 日的《The Home Depot》，再上一次是 8 月 9 日的《Disney: The Renaissance and the Empire》。</p>
+  <p class="tiny">如果你未聽《Seinfeld》，它表面講一齣 sitcom，實際是關於「談判籌碼如何在一間公司內部形成」——Larry David 與 Jerry Seinfeld 當年的分成結構，是整個電視業後來重寫經濟模型的起點。</p>
+</div>
+
+<div class="card quiet-card">
+  <div class="card-head">
+    <div>
+      <div class="pod">Founders · David Senra</div>
+      <h2>最近無更新</h2>
+    </div>
+    <span class="badge quiet">無新集數</span>
+  </div>
+  <p>最後已知劇集：<strong>#437《The Tycoons: Carnegie, Rockefeller, Gould &amp; Morgan》</strong>（2026-10-13，約 54 分鐘）。再之前是 #436《Ari Emanuel's Autobiography》（10 月 5 日）與 #435《Mark Zuckerberg's Empire》（9 月 28 日）。</p>
+  <p class="tiny">Founders 的格式是「讀一本傳記，抽出可以用的東西」。這集把四個 19 世紀美國資本家放在一起講，主題是他們如何處理恐慌、信貸緊縮與競爭——在今日的利率與 AI 資本開支周期裡，並不過時。</p>
+</div>
+
+<div class="card quiet-card">
+  <div class="card-head">
+    <div>
+      <div class="pod">My First Million · Sam Parr &amp; Shaan Puri</div>
+      <h2>最近無更新</h2>
+    </div>
+    <span class="badge quiet">無新集數</span>
+  </div>
+  <p>最後已知劇集：<strong>《This 3-hour Elizabeth Holmes doc broke our brains》</strong>（2026-10-20，約 56 分鐘）。再之前是《We put a multimillionaire's portfolio into Claude (the results shocked us)》（10 月 19 日）與《the 6 traits of people who can't stop making money》（10 月 16 日）。</p>
+  <p class="tiny">MFM 本週仍然維持「一週三集」的節奏，只是今日未更新。Elizabeth Holmes 那集值得聽的原因不是八卦，是它拆解了「敘事能力」如何在一段時間內完全替代產品——以及什麼時候會斷。</p>
+</div>
+
+<footer>
+  <p><strong>關於這份報告</strong><br>
+  每日自動掃描 6 個英文商業／思維播客的 RSS，對比歷史 GUID，只對新集數做深度萃取。所有引用均來自節目音頻逐字稿、官方 show notes 或可核查的公開報導；無法取得逐字稿的集數會明確標示。</p>
+  <p><strong>今日來源</strong><br>
+  All-In：RSS show notes、YouTube 節目音頻、Scuttlebutt 逐段整理、BigGo Finance 節目摘要（含時間戳引用）。<br>
+  Diary of a CEO：Flightcast 官方 VTT 逐字稿（110 分 17 秒，完整校對）。<br>
+  The Knowledge Project：Farnam Street 官方節目頁與簡介（會員優先，逐字稿未公開）。</p>
+  <p><strong>下一份報告</strong>：2026-10-23 09:5x UTC。若 Knowledge Project 在 10 月 27 日公開發佈，會另做一次完整萃取。</p>
+  <p class="tiny">Generated 2026-10-22 09:55 UTC · mindset-podcasts scanner</p>
+</footer>
+
+</div>
+</body>
+</html>

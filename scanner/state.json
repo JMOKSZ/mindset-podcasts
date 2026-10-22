@@ -1,5 +1,5 @@
 {
- "lastScan": "2026-10-21T09:54:56Z",
+ "lastScan": "2026-10-22T09:56:49Z",
  "scannedEpisodes": {
   "acquired": [
    "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -1129,7 +1129,8 @@
    "df9fe70c-a787-4f9f-b869-ab6bd6758a7b",
    "8c597438-75df-42fd-85bc-7c08156b38b6",
    "f5b1cd7e-b9a3-4c1d-9159-375cab50f6a8",
-   "ec72ab3a-2b5c-4f7b-9194-875ce45930d1"
+   "ec72ab3a-2b5c-4f7b-9194-875ce45930d1",
+   "21690ac7-0a5e-4f6b-84e3-91f41bbb7680"
   ],
   "my-first-million": [
    "008875e2-1b94-11f0-88fe-3312f0cbe7a3",
@@ -2102,7 +2103,8 @@
    "https://fs.blog/?post_type=podcast&p=80049",
    "https://fs.blog/?post_type=podcast&p=80015",
    "https://fs.blog/?post_type=podcast&p=81763",
-   "https://fs.blog/?post_type=podcast&p=81853"
+   "https://fs.blog/?post_type=podcast&p=81853",
+   "https://fs.blog/?post_type=podcast&p=81938"
   ],
   "diary-of-a-ceo": [
    "flightcast:01M0ECWWKZKQ93WCFTA6JV03WZ",
@@ -3003,7 +3005,8 @@
    "flightcast:01M426P4R3YTEDTPVFX13Q6DPJ",
    "flightcast:01M4782E2HS3CAH5B71G0KB9KB",
    "flightcast:01M1P5R2DYEM65ABQ1YNEB6FXH",
-   "flightcast:01M52K4W4RGVJVCWCEV5Q2CWM6"
+   "flightcast:01M52K4W4RGVJVCWCEV5Q2CWM6",
+   "flightcast:01M53CGQ1FY66A1WPVXBRD1ZKG"
   ]
  },
  "lastScanResult": {
