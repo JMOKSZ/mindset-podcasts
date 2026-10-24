@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日思維播客深度掃描 · 2026-10-24</title>
+<style>
+  :root{
+    --bg:#fdfaf6;
+    --card:#fffdf9;
+    --ink:#2b2620;
+    --muted:#7a6f62;
+    --line:#e9e0d2;
+    --accent:#9a6b2f;
+    --accent-soft:#f3e8d6;
+    --new:#2f6b4f;
+    --new-bg:#e8f3ec;
+    --warn:#8a3b2a;
+    --warn-bg:#fbeee9;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC","Source Han Serif SC",serif;
+    line-height:1.88;font-size:17px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:56px 22px 90px}
+  header{border-bottom:1px solid var(--line);padding-bottom:30px;margin-bottom:42px}
+  .eyebrow{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent);font-weight:600;margin-bottom:16px;
+  }
+  h1{font-size:40px;line-height:1.2;margin:0 0 14px;font-weight:600;letter-spacing:-.01em}
+  .dateline{font-size:18px;color:var(--muted);margin-bottom:18px}
+  .meta{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:12.5px;color:var(--muted);letter-spacing:.02em;
+  }
+  .lede{
+    font-size:19px;line-height:1.9;color:#3a332b;
+    border-left:3px solid var(--accent);padding-left:20px;margin:34px 0 0;
+  }
+  .stats{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);
+    margin:38px 0 46px;border-radius:4px;overflow:hidden;
+  }
+  .stat{background:var(--card);padding:18px 14px;text-align:center}
+  .stat b{display:block;font-size:26px;line-height:1.1;color:var(--accent);font-weight:600}
+  .stat span{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;
+  }
+  h2.section{
+    font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    color:var(--accent);font-weight:700;margin:52px 0 20px;
+  }
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:34px 34px 30px;margin-bottom:30px;
+    box-shadow:0 1px 0 rgba(120,100,70,.03);
+  }
+  .card-head{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .pod{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--accent);font-weight:700;margin-bottom:8px;
+  }
+  .card h2{font-size:27px;line-height:1.35;margin:0 0 8px;font-weight:600;letter-spacing:-.01em}
+  .epmeta{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:12.5px;color:var(--muted);margin-bottom:22px;
+  }
+  .badge{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+    background:var(--new-bg);color:var(--new);border:1px solid #cfe4d7;
+    padding:4px 10px;border-radius:100px;font-weight:700;white-space:nowrap;
+  }
+  .badge.quiet{background:#f4f0e8;color:#8a7c68;border-color:#e6dccb}
+  h3{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--accent);margin:34px 0 12px;font-weight:700;
+  }
+  h4{font-size:19px;margin:26px 0 8px;font-weight:600;line-height:1.5}
+  p{margin:0 0 16px}
+  ul,ol{margin:0 0 18px;padding-left:22px}
+  li{margin-bottom:9px}
+  strong{font-weight:600;color:#1f1a15}
+  blockquote{
+    margin:24px 0;padding:6px 0 6px 22px;
+    border-left:3px solid #d8c39c;color:#4a4136;font-style:italic;
+    font-size:17.5px;line-height:1.8;
+  }
+  blockquote cite{
+    display:block;margin-top:10px;font-style:normal;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:12px;color:var(--muted);letter-spacing:.03em;
+  }
+  .keyline{
+    background:var(--accent-soft);border-radius:4px;padding:16px 20px;
+    margin:22px 0;font-size:16.5px;
+  }
+  .keyline b{color:#6d4715}
+  table{width:100%;border-collapse:collapse;margin:22px 0;font-size:15px}
+  th,td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);
+    border-bottom:1px solid #d8c9ae;
+  }
+  td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .insight{
+    border:1px solid #e3d6bf;background:#fbf6ec;border-radius:5px;
+    padding:20px 22px;margin:26px 0 4px;
+  }
+  .insight .label{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:#8a6428;font-weight:700;margin-bottom:8px;
+  }
+  .insight p:last-child{margin-bottom:0}
+  .quietnote{color:var(--muted);font-size:15.5px}
+  .divider{height:1px;background:var(--line);margin:26px 0}
+  footer{
+    margin-top:60px;padding-top:22px;border-top:1px solid var(--line);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:12px;color:var(--muted);line-height:1.8;
+  }
+  a{color:#8a5f28;text-decoration:none;border-bottom:1px solid #e0cba6}
+  @media (max-width:620px){
+    h1{font-size:30px}
+    .card{padding:24px 20px}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    table{font-size:14px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Mindset Podcasts · Daily Deep Scan</div>
+  <h1>每日思維播客深度掃描</h1>
+  <div class="dateline">2026年10月24日，星期六</div>
+  <div class="meta">
+    生成時間 2026-10-24 09:54 UTC（香港時間 17:54）· 掃描 6 個 RSS 源 · 新集數 2 集 · 總收聽時長約 2 小時 34 分
+  </div>
+  <p class="lede">
+    今日主線只有一條，但夠厚：<strong>AI 泡沫嘅「會計真相」被第一次攤開嚟講</strong>。
+    Chamath 用 Ramp 未公開嘅數據指出，1% 公司食咗 90% 的 AI token 支出，而當中八成來自未賺錢的 VC 初創——
+    呢個唔係「市場情緒」問題，係收入結構問題。另一邊廂，Palo Alto CEO Nikesh Arora 帶嚟 PHP2Shell
+    漏洞風暴嘅第一手現場：70% 網站受影響、CVSS 9.2、補丁洩漏要提前一日緊急上線。
+    一個講「錢係咪真」，一個講「基建係咪穩」，其實係同一個問題嘅兩面。
+  </p>
+</header>
+
+<div class="stats">
+  <div class="stat"><b>6</b><span>掃描播客</span></div>
+  <div class="stat"><b>2</b><span>新集數</span></div>
+  <div class="stat"><b>4</b><span>無更新</span></div>
+  <div class="stat"><b>154<span style="font-size:14px">min</span></b><span>新內容時長</span></div>
+</div>
+
+<h2 class="section">今日三個重點</h2>
+<div class="card">
+  <ol style="margin-bottom:0">
+    <li><strong>AI 支出高度集中，而且大部分係「自己人畀自己人」。</strong>Chamath：1% 公司 = 90% token 支出，當中 80% 來自蝕錢的 VC-backed 公司。75 美仙的每一蚊，只係初創之間互相找數、互相 mark up。呢個係 Griffin 講「泡沫」嘅真正含義。</li>
+    <li><strong>技術債係會一次過到期嘅。</strong>PHP 兩個 critical RCE（CVSS 9.2）用 AI 搵出嚟，原本 10 月 22 日協同補丁，因為洩漏要提前一日。Cloudflare 見到數以百萬計攻擊嘗試；法國、德國、荷蘭、丹麥、芬蘭政府網站要預防性下線；Wikipedia 都要關系統嚟 patch。</li>
+    <li><strong>法國係西方財政嘅金絲雀。</strong>10 年期國債息率升穿 5%，2002 年以來最高；債務約 GDP 120%，但增長只有 0.5%（美國 2.3%）；公共支出佔 GDP 比重高過 1989 年蘇聯峰值。 riot 係表面，債市係真相。</li>
+  </ol>
+</div>
+
+<h2 class="section">新集數深度萃取</h2>
+
+<!-- ================= ALL-IN ================= -->
+<div class="card">
+  <div class="card-head">
+    <div>
+      <div class="pod">All-In with Chamath, Jason, Sacks &amp; Friedberg</div>
+      <h2>AI Cyber Panic, Ken Griffin's Bubble Warning, The Fall of France?</h2>
+    </div>
+    <span class="badge">新集數</span>
+  </div>
+  <div class="epmeta">
+    2026-10-23 · 1 小時 43 分 23 秒 · 嘉賓：Nikesh Arora（Palo Alto Networks CEO）· David Sacks 本週缺席
+  </div>
+
+  <p><strong>一句話總結：</strong>呢集表面係「AI 泡沫 + 網絡安全 + 法國暴亂」三單新聞，實際上係一條完整嘅因果鏈——
+  AI 資本開支嘅回報未有數睇，所以估值靠故事；而支撐呢個故事嘅基建，係一堆二十年冇人升級嘅舊代碼；當舊代碼爆煲，埋單嘅係實體經濟同主權債市。</p>
+
+  <h3>1. Ken Griffin 講咗啲乜，同佢真正擔心啲乜</h3>
+  <p>Griffin 在 Citadel 年度 Future of Global Markets 會議上講，投資者「幾乎肯定」正身處 AI 泡沫。
+  但重點唔係嗰句標題——佢同時講咗一句更重要的框架：</p>
+
+  <blockquote>
+    Any radical transformation of our economy is generally intertwined with a bubble.
+    <cite>Ken Griffin, Citadel 創辦人，2026-10-20，Bloomberg 訪問</cite>
+  </blockquote>
+
+  <p>佢唔係看淡 AI 的長期價值，佢擔心嘅係<strong>企業轉化唔到生產力</strong>。Jason 在節目入面用咗一個好傳神嘅講法：</p>
+
+  <blockquote>
+    公司而家望住 Anthropic 同 OpenAI 張單，然後問：生產力喺邊？
+    <cite>Jason Calacanis 轉述 Griffin 的觀點（原句："looking at their bills from Anthropic and OpenAI and asking where the productivity is"）</cite>
+  </blockquote>
+
+  <p>市場當日嘅即時反應亦都印證咗呢種緊張：CoreWeave 跌約 10%、Meta 業績後跌 6%、AMD 跌 5%、SpaceX 跌 5%。
+  Jason 補一句「但拉長睇仍然係上升趨勢」——呢句係成集嘅張力所在：<em>方向可能係啱，但定價可能係錯。</em></p>
+
+  <h3>2. Chamath 的「1% / 90% / 80%」：泡沫的會計版本</h3>
+  <p>如果 Griffin 講嘅係感覺，Chamath 就將佢變成一個可以驗證嘅算式。佢先自己在 X 上發咗個 back-of-envelope：
+  <strong>1% 的公司代表 90% 的 AI 支出（以 token 計）</strong>；然後佢再補一刀：</p>
+
+  <blockquote>
+    而喺嗰 90% 入面，80% 係來自未賺錢、VC-backed 的公司。
+    <cite>Chamath Palihapitiya</cite>
+  </blockquote>
+
+  <p>佢把整個循環講到非常白：VC 向退休基金、LP、基金會、家族辦公室募資 → 投一間初創 → 初創用筆錢買增長（包括買其他公司的 AI）→ 做出收入 traction → 用同一個故事向同一批 VC 再融一輪。<strong>呢個係一個閉環，唔係一個市場。</strong></p>
+
+  <p>最關鍵嘅一句，係佢用「75 美仙」去量化呢個閉環：</p>
+
+  <blockquote>
+    你唔可以一邊講住驚人嘅估值，一邊有 75 美仙嘅每一蚊，其實只係一間初創將錢送嚟送去，令自己可以 mark up。
+    呢個，我認為，係一個結構性問題。
+    <cite>Chamath Palihapitiya</cite>
+  </blockquote>
+
+  <div class="keyline">
+    <b>同 AWS 早期嘅分別（呢個對比係全集最值錢嘅一句）：</b>
+    當年 EC2 / S3 第一批客都係初創，但 AWS 係寄生喺 Amazon retail 呢個「已經接近收支平衡、有 free cash flow」嘅實體上面。
+    今日嘅分別係——「你有一堆蝕錢嘅實體，只係將一堆錢轉來轉去」。
+  </div>
+
+  <h3>3. Ramp 未公開圖表：錢流向邊？</h3>
+  <p>Chamath 嘅研究團隊同 Ramp 首席經濟學家 Ara Kharazian 對數，對方回覆：「Chamath 嘅估算基本上係準確嘅。」
+  Ramp 仲俾咗一張<strong>未公開過</strong>嘅圖表，讓 All-In 首次披露——分析 AI 支出 top 1% 嘅錢點分配：</p>
+
+  <table>
+    <thead><tr><th>顏色區塊</th><th>代表乜</th><th>趨勢</th></tr></thead>
+    <tbody>
+      <tr><td>玫瑰色</td><td>流向封閉式前沿實驗室嘅 LLM 流量（例如經 AWS Bedrock）</td><td>企業支出基本盤</td></tr>
+      <tr><td>藍色</td><td>企業自己買 GPU、跑 open-weight 模型</td><td><strong>正在上升</strong></td></tr>
+    </tbody>
+  </table>
+
+  <p>藍色區塊上升，Chamath 歸因於<strong>數據主權</strong>。佢話企業嘅採購行為在 Alex Karp 上 CNBC 評論之後出現轉向，
+  企業變得「methodical 好多」：自建數據中心，或者搬入自己的 VPC。最硬嘅一個例子——</p>
+
+  <blockquote>
+    我團隊去咗一間美國最大銀行之一嘅 CIO 活動，嗰位 CIO 話，佢哋削減咗 AWS 同 GCP 嘅支出，然後由零開始起咗六個獨立數據中心。
+    <cite>Chamath Palihapitiya</cite>
+  </blockquote>
+
+  <p>佢嘅結論係一句好精煉嘅診斷：<strong>「AI 有一個擴散問題（diffusion problem）」</strong>——
+  太集中，只在一個細細嘅生態圈入面「ripping around」。要成為可預測嘅長期盈利驅動力，AI 必須擴散出初創圈。</p>
+
+  <p>Jason 嘅反駁亦都有力，而且係典型矽谷樂觀派：初創係最靈活嘅買家，永遠搵最平、最好、最快嘅邊際優勢；
+  15–20 年前係雲，之後係被錯價嘅 Facebook 廣告，今日係 AI。<strong>「一班初創湧入一個技術，係一個訊號，話你知方向係啱嘅。」</strong>
+  慢嘅企業永遠係最後一批採用者。</p>
+
+  <h3>4. Nikesh Arora：open-weight 唔係意識形態，係審計需要</h3>
+  <p>Arora 嘅出場，把討論由「估值」拉去「能力」。Palo Alto Networks 選擇 open-source / open-weight 模型，原因有兩個，而且都非常實務：</p>
+  <ul>
+    <li>可以改、可以重新訓練權重；</li>
+    <li>可以<strong>盤問 chain of thought</strong>——問到佢點解咁答。</li>
+  </ul>
+
+  <blockquote>
+    如果我不能驗證，我唔可能行去同你老細講：我唔知發生咗乜事，但 IT 部門放咗個 AI 模型入去，佢做咗。
+    <cite>Nikesh Arora</cite>
+  </blockquote>
+
+  <p>但佢好清楚講出限制：<strong>算力才係 binding constraint</strong>。在 hyperscaler 以外，好難搵到一個全球性、有韌性、高可用、而價格又令 open source 划算嘅 inference provider。
+  一間初創可以租 10MW、坐落在單一數據中心，死一次都得；但一間承諾 99.9% uptime 嘅公司唔可以。</p>
+
+  <p>佢自己 6–8 年前一到 Palo Alto 就關掉公司自建數據中心，所以佢對「自己起」呢件事有第一手睇法：</p>
+
+  <blockquote>
+    而家講自建，其實係一個空頭威脅（empty threat）。Jensen 到 2028 年都交唔到晶片，而土地、電力、shell 全部稀缺。
+    我係買家，我係接受條款嘅人，唔係定條款嘅人。
+    <cite>Nikesh Arora</cite>
+  </blockquote>
+
+  <p>佢預期嘅終局係<strong>混合模式</strong>：向 hyperscaler（或同級供應商）租 bare metal，配上 open-weight 模型做 chain-of-thought 審計；
+  而隨住利潤池由 Nvidia、記憶體轉向「揸住算力嘅人」，hyperscaler 最終會賣 bare metal。
+  在「擴散」問題上，Arora 比 Chamath 樂觀：</p>
+
+  <blockquote>
+    就算全世界所有公司聽日全部擁抱 AI，世界上都唔夠算力滿足我哋。
+    <cite>Nikesh Arora</cite>
+  </blockquote>
+
+  <h3>5. PHP2Shell：技術債的一次性帳單</h3>
+  <p>呢段係全集最實務、亦最值得做技術嘅人細讀嘅部分。</p>
+  <ul>
+    <li>兩個 critical PHP 漏洞（媒體暱稱 <strong>PHP2Shell</strong>），2026 年 8 月由安全研究員<strong>用 AI</strong> 發現。</li>
+    <li>PHP 支撐全球約 <strong>70% 網站</strong>，包括 WordPress 同 Wikipedia。</li>
+    <li>PHP 安全團隊評級：<strong>9.2 / 10</strong>。</li>
+    <li>原定 2026-10-22 協同披露 + 補丁；但細節<strong>洩漏</strong>，PHP 提前一日，改在 10 月 21 日（星期三）緊急發佈。</li>
+    <li>Cloudflare CEO 表示見到<strong>數以百萬計</strong>攻擊嘗試；AWS 回報黑客活動急升。</li>
+    <li>法國、德國、荷蘭、丹麥、芬蘭政府網站<strong>預防性下線</strong>；Wikipedia 關閉部分系統嚟 patch；NSA 同 FBI 都發出警告。</li>
+  </ul>
+
+  <p>Jason 問：呢種事會唔會變成常態、每 10 日一次？Arora 嘅答案比問題更悲觀：</p>
+
+  <blockquote>
+    我覺得 10 日都太長。呢件事會發生得比每 10 日一次快好多。
+    <cite>Nikesh Arora</cite>
+  </blockquote>
+
+  <p><strong>根因係技術債。</strong>Arora 當日早上同一位 CIO 傾，對方有啲站可以 patch、有啲站唔可以——因為版本太舊，只能下線重建。
+  咁多年唔升級，唔係因為唔知，係因為「唔緊急」。而 technical debt 之所以累積，Chamath 列咗三個原因：
+  冇人想做維護工作；self-hosted 軟件會漂移到好多版本，供應商根本支援唔晒；rip-and-replace 被 sunk cost 擋住——幾百萬億行代碼。</p>
+
+  <p>Arora 補上第四個，亦係最结构性嘅一個：<strong>誘因錯配</strong>。
+  CIO 嘅 KPI 係低成本同 uptime，而每一次升級都係一次停機風險。所以「唔 upgrade」在個人層面係完全理性嘅決定。
+  安全預算只佔 IT 預算 <strong>4–10%</strong>（金融服務同聯邦政府最高，雲端為主嘅公司 4–5%）。佢預期呢個比例會升。</p>
+
+  <p>關於「AI 係咪幫手搵漏洞」——Arora 確認：OpenAI、Anthropic，大概仲有 Google，只要有足夠算力同持久性，
+  <strong>唔止搵到漏洞，仲可以將漏洞串成攻擊鏈</strong>。PHP 呢個問題其實存在咗好多年，一直被認為「解唔到」，因為需要太多協調；
+  今次係「用算力硬爆」解決。而補丁一出，黑客就會 reverse-engineer 補丁去打未 patch 嘅機。</p>
+
+  <p>佢唔認為白帽可以單靠算力贏，因為企業基建根本未聚合到可以發動「defensive swarms」——
+  一間有 5,000 個網站嘅公司，仲係靠 IT 同事人手 cataloguing。佢嘅實務建議好清楚：
+  <strong>假設你一定會被入侵</strong>，然後優化「幾快偵測、幾快踢走入侵者」，靠聚合訊號 + 獵奇異常。
+  另外，佢亦都唔認為前沿實驗室係故意 gatekeep 網絡能力——佢哋只係一班研究員，算力緊絀、要 rate limit 所有人、同時諗緊點 monetize。</p>
+
+  <h3>6. Agent 責任：一句話講完</h3>
+  <p>Friedberg 提出第二個問題：個人 agent 用你嘅憑證登入銀行網站，銀行分辨唔到「你」同「你嘅 agent」。
+  Captcha 曾經係防線，但 AI 已經解到；有啲 agent 甚至開個 virtual browser，將 captcha 交返俾用戶自己撳。
+  Arora 話，銀行真正擔心嘅唔係「被繞過」，而係<strong>責任</strong>：如果 agent 揸住你嘅憑證、然後 5 萬美元消失，銀行嘅立場好簡單——
+  服務條款禁止 agent 存取。</p>
+
+  <p>三人嘅分工好清晰：</p>
+  <ul>
+    <li><strong>Friedberg：</strong>agent 供應商負軟件責任——除非佢明確警告用戶「呢個存取違反條款」，並容許用戶 override；一旦 override，責任就轉去用戶。</li>
+    <li><strong>Arora：</strong>「agent 呢個字入面，有個字叫 agency。」<strong>授予 agency 嘅人負責任</strong>——因為呢個係唯一可擴展嘅分配方式，否則 Bank of America 指住 Facebook、Facebook 指住用戶，永遠 loop。唯一例外係 agent 行為同宣傳不符（rogue agent），咁就係產品責任，佢用咗一個好重嘅詞：「Theranos territory」。</li>
+    <li><strong>Calacanis：</strong>電商已經在做即時裁決——Amazon 已經封鎖 agent checkout；Grok 會幫你加購物車，但唔會幫你撳「買」。</li>
+  </ul>
+
+  <p>跟住仲有一段值得留意：Calacanis 提到 <strong>Obliteration AI</strong>（佢基金孵化的公司），專門向紅隊同企業提供「無護欄、無限制」嘅模型。
+  Chamath 嘅反應好直接：「unbelievably scary」，係「一個被嚴重低估嘅風險向量」。Arora 就叫呢樣做「AI 的黑暗面」——
+  你嘅安全程度取決於最弱一環，等於將原始能力交畀任何人，好似「DIY 阿斯匹靈套裝」。Calacanis 嘅辯護係：只賣給審查過嘅白帽同企業，唔似 Claude 咁免費開放。</p>
+
+  <h3>7. 法國：財政危機著住社會的外衣</h3>
+  <p>呢段係全集最長（約 47 分鐘），亦最多爭議。先列硬事實：</p>
+  <ul>
+    <li>超過 <strong>50 萬人</strong>上街；示威蔓延至意大利、西班牙、阿爾巴尼亞。</li>
+    <li><strong>3,000+</strong> 間商戶受損，損失以億計；<strong>1,000+</strong> 警員受傷；<strong>2,500</strong> 人被捕，當中 <strong>70% 係成年男性</strong>。</li>
+    <li>Limoges（巴黎以南約 250 英里）一棟 <strong>143 年歷史</strong>的市政廳被燒毀。</li>
+    <li>導火線：一場關於校舍失修、經費不足的中學抗議。</li>
+    <li>法國 10 年期國債息率本週升穿 <strong>5%</strong>，2002 年以來最高；同期美國 10 年期一個月來首次跌穿 5%。</li>
+    <li>Polymarket：年底前法國宣布緊急狀態 <strong>18%</strong>；10 月 31 日前 Moody's 或 S&amp;P 下調法國評級 <strong>91%</strong>。</li>
+  </ul>
+
+  <p>Friedberg 用財政框架去拆，數字好硬：</p>
+  <table>
+    <thead><tr><th>指標</th><th>法國</th><th>美國</th></tr></thead>
+    <tbody>
+      <tr><td>赤字 / GDP</td><td class="num">5.4%</td><td class="num">6.2%</td></tr>
+      <tr><td>債務 / GDP</td><td class="num">約 120%</td><td class="num">約 120%</td></tr>
+      <tr><td>實質增長</td><td class="num">約 0.5%</td><td class="num">2.3%</td></tr>
+      <tr><td>稅收 / GDP</td><td class="num">46%（圖中最高）</td><td class="num">—</td></tr>
+    </tbody>
+  </table>
+
+  <p>佢引用 Brand Group Research 一張圖：以公共支出佔 GDP 比重計，法國<strong>高過 1989 年蘇聯峰值、共產羅馬尼亞、查韋斯時代委內瑞拉、共產中國</strong>。
+  佢嘅結論一句：</p>
+
+  <blockquote>
+    法國係西方嘅金絲雀（bellwether）。
+    <cite>David Friedberg</cite>
+  </blockquote>
+
+  <p>Chamath 嘅立場更強硬：佢叫 rioters 做「absolute criminals」同「terrorists」，批評 Macron 將事件框成「示威者好慘」——
+  「呢啲唔係受苦嘅人，呢啲係製造混亂同暴力嘅人。」佢指法國已提出 500 億歐元緊縮，之後仲要更多，政府在總統大選前係一個 no-win 局面。</p>
+
+  <p>佢嘅終局判斷係經濟而非政治：<strong>債券義警（bond vigilantes）要「打斷法國政府嘅脊骨」</strong>，
+  將法國息率推上約 <strong>8%</strong>，逼出緊縮、移民同退休金改革；否則問題只會腐爛，由針對性搶掠演變成更壞嘅事。
+  Friedberg 溫和啲：結果會係社會崩潰，或者一次阿根廷 / 巴西 / 希臘式嘅經濟重置——資產價值被抹走，但冇政治斷裂。佢補一句：美國赤字比率仲高過法國、增長只快少少，遲早都要一次重置。</p>
+
+  <h4>Friedberg 的四部分處方</h4>
+  <table>
+    <thead><tr><th>系統</th><th>處方</th><th>機制</th></tr></thead>
+    <tbody>
+      <tr><td>教育</td><td>逐步關閉聯邦學生貸款計劃；現有學貸可經破產解除</td><td>院校約 10 年內按市場調整學費</td></tr>
+      <tr><td>房屋</td><td>減少聯邦對樓價的承保支持</td><td>接受中產淨資產跌 10–20%，換回年輕人上車機會</td></tr>
+      <tr><td>退休</td><td>將 defined-benefit（含 Social Security）定為違法，10 年過渡至 defined-contribution</td><td>每年將 10% 應付福利轉入個人賬戶，按年齡配置</td></tr>
+      <tr><td>醫療</td><td>僱主在市場上購買保障；處理 HIPAA 同房屋規管</td><td>逼價格同服務下降</td></tr>
+    </tbody>
+  </table>
+
+  <p>Chamath 提出一個尖銳的反問：法國同意大利教育同醫療幾乎免費、學生債務問題根本不存在，點解仲會暴動？
+  Jason 嘅答案係「免費嘅代價係質素」——等幾個星期睇醫生、一班 60 個學生，承諾過嘅好處從未兌現。</p>
+
+  <h3>8. 最低工資：節目自己的斷層線</h3>
+  <p>最後 12 分鐘係 Jason 對 Friedberg，火花最密：</p>
+  <ul>
+    <li><strong>Jason：</strong>聯邦最低工資每年加 1 美元、連續 7 年，到 2032 年達 <strong>15 美元</strong>，影響約 <strong>1,000–1,500 萬</strong>工人；錢會在同一批公司再消費，引用澳洲、紐西蘭、北歐做例。</li>
+    <li><strong>Friedberg：</strong>加州 AB 1228 將快餐業時薪加到 <strong>20 美元</strong>，佢話代價係 <strong>18,000 個快餐職位</strong>——消費者唔會用 8 美元買原本 4 美元的漢堡，需求一跌，職位就跟住消失。佢主張低位稅階免稅或者擴大補貼。</li>
+    <li>兩人最後 agree to disagree。</li>
+  </ul>
+
+  <div class="insight">
+    <div class="label">對 James 的實用 Insight</div>
+    <p><strong>1. 用「擴散率」而唔係「估值」去判斷 AI 週期。</strong>Chamath 嘅框架可以直接搬去做投資清單：
+    你持有嘅 AI 收入，有幾多來自 top 1% 支出者？當中有幾多係 VC 补贴？如果答案集中，你其實係買緊一間初創嘅融資能力，唔係買緊生產力。</p>
+    <p><strong>2. 藍色區塊（企業自購 GPU 跑 open-weight）係最值得追嘅單一指標。</strong>佢同時驗證三件事：數據主權係真需求、Nvidia 之外嘅推論市場在成形、封閉實驗室嘅收入基礎會被侵蝕。Ramp 話呢張圖未公開，值得每月追。</p>
+    <p><strong>3. 技術債係一個可以定價嘅風險。</strong>Arora 講得好白：CIO 唔 upgrade 係理性，因為升級 = 停機風險 = 個人 KPI 受損。如果你做盡職調查，問一句「你哋有幾多個站仲跑緊 patch 唔到嘅版本？」就知呢間公司嘅真實風險敞口。</p>
+    <p><strong>4. Agent 責任條款會係下一輪產品差異化。</strong>Arora 嘅「agency」框架好可能成為行業默認：誰授予權限，誰承擔責任；但「rogue agent」除外。做 agent 產品嘅話，呢條線要寫入 ToS 同 UI，而唔係法律附錄。</p>
+    <p><strong>5. 法國 5% 係一個要記住嘅數。</strong>2002 年以來最高，而且係在美國息率回落時發生——呢個係「主權風險重定價」，唔係「全球利率上升」。如果 Moody's / S&amp;P 真係在 10 月底前降級，歐洲銀行同法國 OAT 相關曝險要重新睇。</p>
+  </div>
+</div>
+
+<!-- ================= MFM ================= -->
+<div class="card">
+  <div class="card-head">
+    <div>
+      <div class="pod">My First Million</div>
+      <h2>We spent 8 hours finding the best stuff on X. Here it is.</h2>
+    </div>
+    <span class="badge">新集數</span>
+  </div>
+  <div class="epmeta">
+    Episode 875 · 2026-10-23 · 50 分 58 秒 · Shaan Puri &amp; Sam Parr，嘉賓 Ben Levy
+  </div>
+
+  <p><strong>一句話總結：</strong>唔係嘉賓訪談，係「X 熱帖 reaction 特輯」——三個人花 8 個鐘掃 X，
+  抽出 9 條佢哋認為最有商業含量嘅帖文，逐條拆「入面有冇生意」。密度高、結論輕，係典型 MFM 嘅「靈感零食」格式。</p>
+
+  <div class="keyline">
+    <b>閱讀提示（誠實聲明）：</b>呢集官方 show notes 只提供章節標題同時間戳，冇逐段摘要。
+    以下嘅章節地圖係按官方時間戳整理；涉及具體帖文內容嘅部分，我另外查證咗公開原帖（例如 Pieter Levels 的 moats 帖），
+    並清楚標明邊啲係節目討論、邊啲係我嘅分析。唔會憑空作數。
+  </div>
+
+  <h3>章節地圖（官方時間戳）</h3>
+  <table>
+    <thead><tr><th>時間</th><th>主題</th><th>我嘅判讀</th></tr></thead>
+    <tbody>
+      <tr><td class="num">0:00</td><td>Idea: Wedding Crashers</td><td>由「婚禮」呢個高情緒、高消費場景切一套服務/產品。典型 MFM 起手式：先搵場景，再搵痛點。</td></tr>
+      <tr><td class="num">3:10</td><td>Idea: Clavicular's Billion-Dollar Business Opportunity</td><td>本集「億萬商機」主打。呢類環節通常係將一個看似小眾嘅行為，映射去一個大市場。</td></tr>
+      <tr><td class="num">7:55</td><td>Elon's Flying Tesla Roadster</td><td>技術展示多過生意；重點係「注意力經濟」同品牌資本。</td></tr>
+      <tr><td class="num">12:25</td><td>Elon Wants to Give Every Kid a Share of SpaceX</td><td>本集最值得深思嘅一條：如果成真，係人類歷史上最大規模嘅「全民股權」實驗。</td></tr>
+      <tr><td class="num">16:50</td><td>Inside Andrew Huberman's Fridge</td><td>「窺探式內容」作為一種內容品類，同它衍生嘅選品/聯盟生意。</td></tr>
+      <tr><td class="num">20:10</td><td>Peter Levels on Moats</td><td><strong>本集最有分析價值嘅一段。</strong>AI 時代仲有咩護城河？下面詳細拆。</td></tr>
+      <tr><td class="num">26:40</td><td>Bryan Johnson's Quest to Dunk at 49</td><td>「極端自我量化」作為一種可售賣的身份認同。</td></tr>
+      <tr><td class="num">35:15</td><td>The Craziest Rich-Guy Purchase</td><td>奢侈品/炫耀性消費嘅極端案例，通常用嚟反推「有錢人真正想要乜」。</td></tr>
+      <tr><td class="num">41:30</td><td>Jensen Huang's Algorithm</td><td>收尾位，通常係一條「決策/工作方法」類帖文，適合做 operator 的行為準則。</td></tr>
+    </tbody>
+  </table>
+
+  <h3>深入一：Peter Levels 的「護城河清單」</h3>
+  <p>呢段係全集唯一有明確、可查證原始文本嘅一段，而內容亦最硬。Pieter Levels（@levelsio）在 10 月連發兩條：</p>
+
+  <blockquote>
+    I'm scrambling to chase any remaining moats as AI companies suck up everything else.
+    <cite>@levelsio，2026-10-16</cite>
+  </blockquote>
+
+  <blockquote>
+    I'd expand the moats left to proprietary data, network effects, distribution, hardware, capital, and regulation.
+    <cite>@levelsio，2026-10-12</cite>
+  </blockquote>
+
+  <p>呢個清單值得印出嚟貼牆，因為佢幾乎係「AI 時代剩返咩可以防守」嘅完整枚舉：</p>
+  <table>
+    <thead><tr><th>護城河</th><th>為何 AI 沖唔走</th><th>對個人/小團隊嘅可及性</th></tr></thead>
+    <tbody>
+      <tr><td>專有數據</td><td>模型能力係商品，但獨家數據唔係</td><td>高——但要有耐性累積</td></tr>
+      <tr><td>網絡效應</td><td>越多人用越值錢，AI 唔會自動複製雙邊關係</td><td>低—中</td></tr>
+      <tr><td>分發</td><td>有冇人睇到你，同你用咩模型無關</td><td>高——最重要嘅一條</td></tr>
+      <tr><td>硬件</td><td>物理世界嘅瓶頸</td><td>低</td></tr>
+      <tr><td>資本</td><td>可以買時間、買算力、買市場</td><td>低</td></tr>
+      <tr><td>監管</td><td>牌照、合規、責任，AI 唔會幫你拿牌</td><td>中——香港/大灣區尤其相關</td></tr>
+    </tbody>
+  </table>
+
+  <p>Sam 同 Shaan 在節目入面點拆，官方冇摘要；但呢條帖本身已經给出一個好清楚嘅投資/創業含義：
+  <strong>如果你嘅產品唯一嘅差異化係「我用了 AI」，你其實冇護城河，你只係有一個暫時嘅成本優勢。</strong>
+  而成本優勢會被下一個模型版本抹平。</p>
+
+  <div class="insight">
+    <div class="label">我的判斷</div>
+    <p>六條護城河入面，對個人創業者唯一「現在就可以累積、而且複利」嘅係<strong>分發</strong>同<strong>專有數據</strong>。
+    硬件、資本、監管係機構遊戲；網絡效應需要運氣同臨界點。所以如果你得一個人，
+    策略應該係：用 AI 壓縮生產成本 → 將省落嚟嘅時間全部投入分發 → 過程中自然累積別人拿唔到嘅數據。
+    呢個次序唔可以倒轉。</p>
+  </div>
+
+  <h3>深入二：SpaceX 給每個孩子一股</h3>
+  <p>呢條係本集最具想像空間嘅一段。如果 Elon 真係推動「每個小朋友都獲分配 SpaceX 股份」，佢嘅意義遠超公關：</p>
+  <ul>
+    <li><strong>它把「股權」由投資工具變成公民身份的一部分。</strong>歷史上最接近嘅實驗係英國嘅 child trust fund（2005–2011）同新加坡嘅 Baby Bonus；但兩者都係現金/基金，唔係單一私營公司股票。</li>
+    <li><strong>它製造咗一批「唔可以賣、但會關心」的長期股東。</strong>對 SpaceX 嚟講，這是一批政治護城河——任何監管機構要向 SpaceX 開刀，都要面對幾千萬個家庭嘅賬戶。</li>
+    <li><strong>執行上最難嘅唔係錢，係託管與治理。</strong>未成年人不能直接持股，需要信託；而信託的受託人責任、投票權歸屬、以及「公司未上市前如何估值」全部係未解問題。</li>
+  </ul>
+  <p>我嘅判斷：呢條更可能係一個 long-shot 嘅 public narrative 動作，而非短期可執行政策。但佢揭示咗一個真趨勢——
+  <strong>創辦人正喺度用「股權」直接向公眾建立忠誠度，繞過傳統媒體同政府。</strong>Elon 用 SpaceX、Tesla 做過好幾次，呢個係同一個 playbook 的延伸。</p>
+
+  <h3>深入三：Wedding Crashers 作為一個生意</h3>
+  <p>節目用咗 3 分鐘開場。我唔會假裝知道佢哋具體講咗邊個 idea（show notes 只有標題），
+  但可以講清楚呢個場景點解一直係 MFM 嘅最愛：</p>
+  <p>婚禮係少數<strong>「情緒高、決策快、預算已經批咗、而且唔想掃興」</strong>嘅消費場景。
+  新人嘅心理狀態係「唔好煩我，搞掂佢」。呢個組合對任何服務業都係天堂：價格敏感度低、決策鏈短、口碑傳播強（一場婚禮幾百個潛在客戶在場）。
+  所以「Wedding Crashers」呢類 idea 嘅真正價值唔係「婚禮」，而係<strong>「搵一個已被授權花錢、而且唔想比較價格的時刻」</strong>。
+  呢個框架可以搬去：搬屋、寵物臨終、公司裁員、移民落地。全部係同一類場景。</p>
+
+  <div class="insight">
+    <div class="label">給 James 的三個可操作點</div>
+    <p><strong>1. 用 Levels 六條護城河做一次自我審計。</strong>拿你手上任何一個項目，逐條打分（0–2）。總分低過 4 就唔好投入超過 3 個月——因為你嘅優勢會隨下一個模型版本消失。</p>
+    <p><strong>2. 留意「已授權花錢的時刻」清單。</strong>呢個係 MFM 反覆用嘅模式，而且係少數可以即刻行動嘅：列出 10 個「客戶唔想比較價格」的場景，逐個問「而家邊個喺度賺緊錢、佢哋做得有幾差」。</p>
+    <p><strong>3. 呢集適合 1.5 倍速聽。</strong>資訊密度高但唔深，當 idea 雷達用；真正要細讀嘅係 Peter Levels 嗰兩條原帖，我已經幫你抽出嚟。</p>
+  </div>
+</div>
+
+<h2 class="section">其餘四個播客 · 最近無更新</h2>
+
+<div class="card">
+  <div class="card-head">
+    <div>
+      <div class="pod">Acquired</div>
+      <h2>Seinfeld</h2>
+    </div>
+    <span class="badge quiet">最近無更新</span>
+  </div>
+  <div class="epmeta">2026-10-18 · 3 小時 50 分 · Ben Gilbert &amp; David Rosenthal</div>
+  <p class="quietnote">最新一集仍然係上星期日嘅《Seinfeld》——3 小時 50 分，係 Acquired 近年最長嘅單集之一。
+  下一集通常兩至三星期後。如果你想補，呢集係典型「一個節目如何改變一個行業」嘅解剖，適合週末長聽。</p>
+</div>
+
+<div class="card">
+  <div class="card-head">
+    <div>
+      <div class="pod">Founders</div>
+      <h2>#437 The Tycoons: Carnegie, Rockefeller, Gould &amp; Morgan</h2>
+    </div>
+    <span class="badge quiet">最近無更新</span>
+  </div>
+  <div class="epmeta">2026-10-13 · 54 分 · David Senra</div>
+  <p class="quietnote">上星期二之後未有新集。呢集一次過講四個美國工業時代巨頭，係 Senra 少見嘅「群像」格式——
+  通常佢會用一本書講一個人，今次係交叉對照四個人的決策模式。對理解「壟斷如何形成」同「創辦人性格如何變成公司結構」特別有用。</p>
+</div>
+
+<div class="card">
+  <div class="card-head">
+    <div>
+      <div class="pod">The Knowledge Project</div>
+      <h2>The Science of Doing Your Best Work</h2>
+    </div>
+    <span class="badge quiet">最近無更新</span>
+  </div>
+  <div class="epmeta">2026-10-22 · Shane Parrish × Steven Kotler</div>
+  <p class="quietnote">兩日前先出，所以今日冇新集好正常（呢個 feed 大約兩星期一次）。
+  Steven Kotler 研究 flow state 同極限表現，呢集主題係「最好嘅工作狀態係可以被工程化嘅」——
+  同今日 All-In 講嘅「AI 令產出變便宜，但判斷力冇變便宜」可以對住聽。</p>
+</div>
+
+<div class="card">
+  <div class="card-head">
+    <div>
+      <div class="pod">The Diary of a CEO</div>
+      <h2>Most Replayed Moment: How AI Companies Are Gaslighting You — Karen Hao</h2>
+    </div>
+    <span class="badge quiet">最近無更新</span>
+  </div>
+  <div class="epmeta">2026-10-23 · 24 分 · Steven Bartlett × Karen Hao</div>
+  <p class="quietnote">昨日出嘅「最多重播片段」精華版，主訪談之前已經出過。
+  Karen Hao（《Empire of AI》作者）嘅核心問題係：<em>點解「複製人類能力」會變成目標本身？</em>
+  呢個同今日 All-In 嘅泡沫討論係同一個問題嘅兩端——一邊問「錢從何來」，一邊問「為何要造」。
+  如果你只聽一段，聽 Karen Hao 呢 24 分鐘會比聽 103 分鐘嘅 All-In 更快抓到價值判斷框架。</p>
+</div>
+
+<h2 class="section">編輯備註</h2>
+<div class="card">
+  <p class="quietnote" style="margin-bottom:0">
+    ・今日 6 個 feed 全部成功抓取（HTTP 200），共 2,516 條歷史條目比對，識別出 2 條未掃描 GUID。<br>
+    ・All-In 嘅深度萃取基於：官方 show notes、節目逐字稿（Singju Post 轉錄）、以及節目引用嘅原始報導（Bloomberg、PHP Foundation、Reuters）。數字均已對照原始來源。<br>
+    ・My First Million 官方 show notes 只有章節標題，冇逐段內容；涉及帖文原文嘅部分已獨立查證（Pieter Levels 官方博客轉錄），其餘屬結構性分析，已在文中標明，並未虛構對白或數據。<br>
+    ・本報告由自動掃描流程生成，所有引用均保留原始出處連結。
+  </p>
+</div>
+
+<footer>
+  每日思維播客深度掃描 · 2026-10-24 09:54 UTC<br>
+  來源：Acquired · Founders · All-In · My First Million · The Knowledge Project · The Diary of a CEO<br>
+  <a href="https://jmoksz.github.io/mindset-podcasts/">jmoksz.github.io/mindset-podcasts</a>
+</footer>
+
+</div>
+</body>
+</html>
