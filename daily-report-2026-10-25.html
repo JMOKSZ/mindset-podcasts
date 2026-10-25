@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-10-25</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;
+    line-height:1.85; font-size:17px;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px;margin-bottom:8px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;
+    color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.9;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:26px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:14px}
+  .card{background:var(--card);border:1px solid var(--line);padding:28px 30px;margin:0 0 22px}
+  .badge{display:inline-block;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10.5px;
+    letter-spacing:.1em;padding:3px 9px;border-radius:2px;vertical-align:middle;margin-left:8px}
+  .badge.none{background:#efe7db;color:#8a755c}
+  .badge.new{background:#e6f0e9;color:var(--ok)}
+  .ep{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13.5px;color:var(--muted);
+    padding:12px 0;border-top:1px dotted var(--line);border-bottom:1px dotted var(--line);margin:16px 0}
+  .ep b{color:var(--ink);font-weight:600}
+  .card p{margin:0 0 14px}
+  .card ul{margin:0 0 14px;padding-left:22px}
+  .card li{margin-bottom:8px}
+  .why{font-size:15.5px;color:#4c3f30;background:#faf5ec;padding:14px 18px;margin-top:6px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.8}
+  .why b{color:var(--accent)}
+  table{width:100%;border-collapse:collapse;font-family:-apple-system,"Helvetica Neue",sans-serif;
+    font-size:13.5px;margin:8px 0 18px}
+  th{text-align:left;font-weight:600;color:var(--muted);font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;border-bottom:1px solid var(--ink);padding:8px 10px 8px 0}
+  td{border-bottom:1px solid var(--line);padding:11px 10px 11px 0;vertical-align:top}
+  td.n{color:var(--accent);white-space:nowrap}
+  .tag{display:inline-block;font-size:10.5px;letter-spacing:.06em;background:#f1e9dd;color:#7a6349;
+    padding:2px 7px;margin-left:6px;border-radius:2px}
+  blockquote{margin:18px 0;padding:2px 0 2px 20px;border-left:2px solid var(--accent);
+    font-style:italic;color:#4a3d2d}
+  .foot{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);line-height:1.9}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid #e3cfa9}
+  @media(max-width:620px){
+    .wrap{padding:32px 18px 60px} h1{font-size:30px} .stats{grid-template-columns:repeat(2,1fr)}
+    .card{padding:22px 20px} body{font-size:16px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcasts · Daily Deep Scan</div>
+  <h1>每日思維播客深度掃描</h1>
+  <p class="date">2026 年 10 月 25 日，星期日</p>
+  <div class="meta">
+    報告生成時間：<b>2026-10-25 09:54 UTC</b>（香港時間 17:54）<br>
+    掃描方式：6 條 RSS feed 直接抓取 XML，逐集比對 GUID 去重（<b>HTTP 200 × 6</b>）<br>
+    Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">JMOKSZ/mindset-podcasts</a> · 累計已掃 GUID：<b>2,998</b><br>
+    上一個掃描點：2026-10-24 09:55 UTC
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">6</div><div class="l">掃描播客</div></div>
+  <div class="stat"><div class="n">0</div><div class="l">新集數</div></div>
+  <div class="stat"><div class="n">6/6</div><div class="l">Feed 正常</div></div>
+  <div class="stat"><div class="n">2,998</div><div class="l">累計已掃 GUID</div></div>
+</div>
+
+<p class="lede">今日六個 feed <em>全部零新集數</em>。不是抓取失敗——六條 feed 全部 HTTP 200，最新一集分別停在 10 月 13 至 23 日，全部已在過去六日的報告裡處理過。所以今日沒有新內容可萃取，也就沒有半句需要生成。</p>
+
+<div class="note">
+  <b>誠實標記：</b>本報告不會為了填版面而重寫舊集數、假裝有新內容。今日的價值在兩件事——(1) 確認六個 feed 健康、無漏抓；(2) 把本週（10/19–10/24）已萃取的 11 集整理成一頁索引，方便你補聽或重溫。下一個可能出新集的時點：Acquired 慣常在美国時間週日發布，DOAC 平日早上 05:00 UTC 更新。
+</div>
+
+<h2 class="section">今日掃描結果</h2>
+<div class="rule"></div>
+
+<table>
+  <thead>
+    <tr><th>播客</th><th>最後一集</th><th>發布日</th><th>狀態</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Acquired</td><td>Seinfeld</td><td class="n">2026-10-18</td><td>最近無更新</td></tr>
+    <tr><td>Founders</td><td>#437 The Tycoons: Carnegie, Rockefeller, Gould &amp; Morgan</td><td class="n">2026-10-13</td><td>最近無更新</td></tr>
+    <tr><td>All-In</td><td>AI Cyber Panic, Ken Griffin's Bubble Warning, The Fall of France?</td><td class="n">2026-10-23</td><td>最近無更新</td></tr>
+    <tr><td>My First Million</td><td>We spent 8 hours finding the best stuff on X. Here it is.</td><td class="n">2026-10-23</td><td>最近無更新</td></tr>
+    <tr><td>The Knowledge Project</td><td>The Science of Doing Your Best Work</td><td class="n">2026-10-22</td><td>最近無更新</td></tr>
+    <tr><td>The Diary of a CEO</td><td>Most Replayed Moment: How AI Companies Are Gaslighting You — Karen Hao</td><td class="n">2026-10-23</td><td>最近無更新</td></tr>
+  </tbody>
+</table>
+
+<h2 class="section">逐台狀態 · 最近無更新</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <h3>🎬 Acquired<span class="badge none">最近無更新</span></h3>
+  <div class="byline">Ben Gilbert &amp; David Rosenthal · 每集通常 2–4 小時</div>
+  <div class="ep">最後已知劇集：<b>Seinfeld</b> · 2026-10-18 · 3 小時 50 分</div>
+  <p>Feed 觀察到的節奏：8 月 9 日 → 9 月 13 日 → 10 月 18 日，大約每月一集，屬於「大製作、長周期」。今日距離上一集只有 7 日，未到正常更新窗口。</p>
+  <div class="why"><b>補聽理由：</b>這一集表面是電視懷舊，實際是一堂關於 ownership、監管套利與 content library 複利的 masterclass——一個 pilot 測試失敗的節目，如何變成每年 7,200 萬美國人收看、累計 40–50 億美元授權收入的資產。已於 10 月 19 日報告完整拆解。</div>
+</div>
+
+<div class="card">
+  <h3>📚 Founders<span class="badge none">最近無更新</span></h3>
+  <div class="byline">David Senra · 每週一集，多為 1–2 小時</div>
+  <div class="ep">最後已知劇集：<b>#437 The Tycoons: Carnegie, Rockefeller, Gould &amp; Morgan</b> · 2026-10-13</div>
+  <p>節奏穩定：9 月 28 日 → 10 月 5 日 → 10 月 13 日，基本上是週更。已連續 12 日無新集，比慣常間隔長，值得留意下週是否補發。這台不提供完整 show notes，過去需要靠外部資料補足。</p>
+  <div class="why"><b>補聽理由：</b>四個人物、一個時代，講的是「基礎設施 + 資本結構 + 監管環境」如何同時造就一批人。如果你只聽過 Carnegie 的雞湯版本，這集給的是條款與帳目。</div>
+</div>
+
+<div class="card">
+  <h3>🎙️ All-In with Chamath, Jason, Sacks &amp; Friedberg<span class="badge none">最近無更新</span></h3>
+  <div class="byline">每週 2–3 集，通常 1–2 小時</div>
+  <div class="ep">最後已知劇集：<b>AI Cyber Panic, Ken Griffin's Bubble Warning, The Fall of France?</b> · 2026-10-23 · 1 小時 43 分 23 秒</div>
+  <p>節奏：10 月 19 日 → 10 月 21 日 → 10 月 23 日。今日（週日）未更新，但這台偶爾會在週末補一集，明早掃描值得優先看。</p>
+  <div class="why"><b>補聽理由：</b>三條新聞其實是一條因果鏈——AI 資本開支回報未見數，估值靠故事；支撐故事的基建是二十年未升級的舊代碼；舊代碼爆煲，埋單的是實體經濟與主權債市。Chamath 的「1% 公司吃 90% token 支出、當中 80% 來自蝕錢初創」是全集最硬的一組數字。</div>
+</div>
+
+<div class="card">
+  <h3>💸 My First Million<span class="badge none">最近無更新</span></h3>
+  <div class="byline">Sam Parr &amp; Shaan Puri · 每週 2–3 集，40–60 分鐘</div>
+  <div class="ep">最後已知劇集：<b>We spent 8 hours finding the best stuff on X. Here it is.</b> · 2026-10-23</div>
+  <p>節奏：10 月 19 日 → 10 月 20 日 → 10 月 23 日。這台更新最密，通常 48–72 小時內會再有新集，今日空白屬正常。</p>
+  <div class="why"><b>補聽理由：</b>這集是「兩人口述互聯網尋寶」的形式，價值不在單一 insight，而在他們如何判斷什麼值得看——可以用來校準自己的資訊篩選品味。</div>
+</div>
+
+<div class="card">
+  <h3>🧠 The Knowledge Project<span class="badge none">最近無更新</span></h3>
+  <div class="byline">Shane Parrish · 隔週，多為 1.5–2.5 小時</div>
+  <div class="ep">最後已知劇集：<b>The Science of Doing Your Best Work</b>（嘉賓：Steven Kotler） · 2026-10-22</div>
+  <p>節奏：10 月 1 日 → 10 月 8 日 → 10 月 22 日，屬隔週／三週一集。剛於三天前更新，今日無新集完全在預期內。</p>
+  <div class="why"><b>補聽理由：</b>把「flow」從玄學拉回可訓練的生理與心理條件——這是本週最可操作的一集，適合真的拿筆記本邊聽邊抄。</div>
+</div>
+
+<div class="card">
+  <h3>🕯️ The Diary of a CEO<span class="badge none">最近無更新</span></h3>
+  <div class="byline">Steven Bartlett · 每週 2–4 集，多為 60–120 分鐘</div>
+  <div class="ep">最後已知劇集：<b>Most Replayed Moment: How AI Companies Are Gaslighting You — Karen Hao</b> · 2026-10-23 · 24 分 08 秒（精選重發）</div>
+  <p>節奏：10 月 19 日 → 10 月 22 日 → 10 月 23 日，幾乎隔日更新。今日是週日，通常無更新；明日 05:00 UTC 前後應有新集。</p>
+  <div class="why"><b>補聽理由：</b>24 分鐘，講清楚一件比「AI 會不會毀滅人類」更根本的事——「AGI」從來沒有定義，所以永遠不會失敗，只會需要更多資源。這是本週資訊密度最高的一集。</div>
+</div>
+
+<h2 class="section">本週回顧 · 11 集已萃取（10/19–10/24）</h2>
+<div class="rule"></div>
+
+<p>今日沒有新內容，於是把過去六日報告已處理的集數整理成索引。每條都是當時基於節目內容寫的，不是今日重寫。</p>
+
+<table>
+  <thead>
+    <tr><th>日期</th><th>播客 / 集數</th><th>一句話重點</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="n">10/19</td><td>Acquired · Seinfeld</td><td>pilot 失敗的節目如何變成 40–50 億美元授權資產：ownership + 監管套利 + library 複利。</td></tr>
+    <tr><td class="n">10/19</td><td>DOAC · Dr Christopher Kerr</td><td>近 30 年、約 1,500 位臨終病人：最後在意的東西，和我們每天追的幾乎完全相反。</td></tr>
+    <tr><td class="n">10/19</td><td>All-In · Dylan Field（Figma）</td><td>「AI 只降低地板，天花板從來沒升過」；Figma 被宣告「被 Claude 殺死」後仍增長 48%。</td></tr>
+    <tr><td class="n">10/19</td><td>MFM #873</td><td>十二年每年只做 2.9 個決定，11 年 21.8% vs 標普 13.5%：研究六個月，然後等。</td></tr>
+    <tr><td class="n">10/20</td><td>MFM #874 · Elizabeth Holmes 紀錄片</td><td>「看完一切，卻知道得更少」；12/300 種檢測、2.3 億預測 vs 194 萬實際。</td></tr>
+    <tr><td class="n">10/21</td><td>All-In · Krishna &amp; Arora</td><td>量子破密死線 2030；open-weight 將吃掉 75–90% token，理由是錢、IP 與地緣政治。</td></tr>
+    <tr><td class="n">10/22</td><td>DOAC · 澤連斯基（110 分鐘）</td><td>領導不是勇敢，是每日兩三次走到街上，讓人民看見你還在。</td></tr>
+    <tr><td class="n">10/22</td><td>KP · Steven Kotler</td><td>Flow 不是靈感，是可訓練的生理與心理條件。</td></tr>
+    <tr><td class="n">10/23</td><td>DOAC · Karen Hao（24 分鐘）</td><td>AGI 的四個版本，對準四種聽眾：國會、消費者、Microsoft、官網。沒有終點線，就沒有失敗。</td></tr>
+    <tr><td class="n">10/23</td><td>All-In · AI Cyber Panic</td><td>PHP2Shell：CVSS 9.2、70% 網站受影響、補丁洩漏提前上線；法國 10 年期國債息率升穿 5%。</td></tr>
+    <tr><td class="n">10/23</td><td>MFM · Best of X</td><td>八小時人工篩選：價值在篩選品味，不在清單本身。</td></tr>
+  </tbody>
+</table>
+
+<div class="card" style="background:#fbf6ec">
+  <h3 style="font-size:22px">如果你今日只有 30 分鐘</h3>
+  <p style="margin-bottom:8px"><b>1. Karen Hao（24 分鐘，DOAC）</b> — 最短、密度最高，講的是定義權。<br>
+  <b>2. All-In 10/21 開頭 40 分鐘（Krishna / Arora）</b> — 量子時程表與 open-weight 經濟學，全是可驗證的數字。<br>
+  <b>3. KP · Kotler</b> — 唯一一集你聽完可以立即改變做法，而不是只改變看法。</p>
+</div>
+
+<h2 class="section">編輯備註</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <p><b>為甚麼今日零新集？</b>六條 feed 的最新條目日期分別是 10/18、10/13、10/23、10/23、10/22、10/23，全部早於上一次掃描（10/24 09:55 UTC）。也就是說，昨日報告已把它們全部覆盖，這不是抓取漏失。</p>
+  <p><b>已做的驗證：</b>除了 feedparser 解析，另外用 no-cache 的原始 HTTP 請求重抓六條 feed，逐一核對最新三集的標題與 pubDate，結果一致。</p>
+  <p><b>下一個觀察點：</b>Founders 已 12 日未更新（慣常週更），是六台中唯一明顯偏離節奏的；若明日仍無新集，下期報告會標記為「延遲」而非單純「無更新」。Acquired 慣常美国時間週日發布，今晚至明早有可能出現新集。</p>
+  <p style="margin-bottom:0"><b>下次掃描：</b>2026-10-26 09:55 UTC。</p>
+</div>
+
+<div class="foot">
+  報告由 Vee Mok 自動生成 · 資料來源：各播客官方 RSS feed（直接抓取 XML）· 所有引用與數字均取自 feed 描述及過往報告，未經證實的內容會明確標記。<br>
+  完整歷史報告：<a href="https://jmoksz.github.io/mindset-podcasts/">jmoksz.github.io/mindset-podcasts</a>
+</div>
+
+</div>
+</body>
+</html>
