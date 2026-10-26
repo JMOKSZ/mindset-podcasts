@@ -1,0 +1,402 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Generate daily report for 2026-10-26."""
+import json, os, datetime
+
+BASE = "/root/.openclaw/workspace/mindset-podcasts"
+OUT = os.path.join(BASE, "daily-report-2026-10-26.html")
+SCAN = json.load(open(os.path.join(BASE, "scanner", "scan_result.json")))
+
+HTML = r"""<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-10-26</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a; --warn:#a4442f;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;
+    line-height:1.85; font-size:17px;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px;margin-bottom:8px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;
+    color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.9;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:26px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:14px}
+  .card{background:var(--card);border:1px solid var(--line);padding:28px 30px;margin:0 0 22px}
+  .badge{display:inline-block;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10.5px;
+    letter-spacing:.1em;padding:3px 9px;border-radius:2px;vertical-align:middle;margin-left:8px}
+  .badge.none{background:#efe7db;color:#8a755c}
+  .badge.new{background:#e6f0e9;color:var(--ok)}
+  .ep{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13.5px;color:var(--muted);
+    padding:12px 0;border-top:1px dotted var(--line);border-bottom:1px dotted var(--line);margin:16px 0}
+  .ep b{color:var(--ink);font-weight:600}
+  .card p{margin:0 0 14px}
+  .card ul{margin:0 0 14px;padding-left:22px}
+  .card li{margin-bottom:8px}
+  .card ol{margin:0 0 16px;padding-left:24px}
+  .card ol li{margin-bottom:14px}
+  .why{font-size:15.5px;color:#4c3f30;background:#faf5ec;padding:14px 18px;margin-top:6px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.8}
+  .why b{color:var(--accent)}
+  table{width:100%;border-collapse:collapse;font-family:-apple-system,"Helvetica Neue",sans-serif;
+    font-size:13.5px;margin:8px 0 18px}
+  th{text-align:left;font-weight:600;color:var(--muted);font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;border-bottom:1px solid var(--ink);padding:8px 10px 8px 0}
+  td{border-bottom:1px solid var(--line);padding:11px 10px 11px 0;vertical-align:top}
+  td.n{color:var(--accent);white-space:nowrap}
+  .tag{display:inline-block;font-size:10.5px;letter-spacing:.06em;background:#f1e9dd;color:#7a6349;
+    padding:2px 7px;margin-left:6px;border-radius:2px}
+  blockquote{margin:18px 0;padding:2px 0 2px 20px;border-left:2px solid var(--accent);
+    font-style:italic;color:#4a3d2d}
+  blockquote .src{display:block;font-style:normal;font-family:-apple-system,"Helvetica Neue",sans-serif;
+    font-size:11.5px;color:var(--muted);margin-top:8px;letter-spacing:.04em}
+  .kickerline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--accent);margin:26px 0 6px;font-weight:600}
+  .three{background:#fff;border:1px solid var(--line);padding:22px 26px;margin:0 0 30px}
+  .three h4{margin:0 0 12px;font-size:15px;font-family:-apple-system,"Helvetica Neue",sans-serif;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .three ol{margin:0;padding-left:20px;font-size:16px}
+  .three li{margin-bottom:10px}
+  .chapter{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;color:#5d4a30;
+    columns:2;column-gap:28px;line-height:2}
+  .chapter span{display:block;break-inside:avoid}
+  .chapter b{color:var(--accent);font-weight:600;display:inline-block;min-width:52px}
+  .verdict{border-top:2px solid var(--ink);border-bottom:1px solid var(--line);padding:18px 0;margin:26px 0}
+  .verdict p{margin:0;font-size:16.5px}
+  .foot{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);line-height:1.9}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid #e3cfa9}
+  @media(max-width:620px){
+    .wrap{padding:32px 18px 60px} h1{font-size:30px} .stats{grid-template-columns:repeat(2,1fr)}
+    .card{padding:22px 20px} body{font-size:16px} .chapter{columns:1}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcasts · Daily Deep Scan</div>
+  <h1>每日思維播客深度掃描</h1>
+  <p class="date">2026 年 10 月 26 日，星期一</p>
+  <div class="meta">
+    報告生成時間：<b>2026-10-26 09:56 UTC</b>（香港時間 17:56）<br>
+    掃描方式：6 條 RSS feed 並行抓取 XML，逐集比對 GUID 去重（<b>HTTP 200 × 6</b>）<br>
+    Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">JMOKSZ/mindset-podcasts</a> · 累計已掃 GUID：<b>2,998</b><br>
+    上一個掃描點：2026-10-25 09:54 UTC
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">6</div><div class="l">掃描播客</div></div>
+  <div class="stat"><div class="n">1</div><div class="l">新集數</div></div>
+  <div class="stat"><div class="n">6/6</div><div class="l">Feed 正常</div></div>
+  <div class="stat"><div class="n">91<span style="font-size:16px">分鐘</span></div><div class="l">新內容總長</div></div>
+</div>
+
+<p class="lede">今日只有一集新內容，但這一集值得你整段時間：<em>Mark Cuban 在 Diary of a CEO 講了 91 分鐘</em>，從 12 歲賣垃圾袋讲到 68 歲想改寫美國醫療，中間夾著他對 AI 泡沫、對債務週期、對「普通人如何爬出來」最直白的一套講法。而這一集最有價值的部分，不是他說了 AI 會怎樣，而是他<em>用自己 40 年的操作方式</em>去反駁 AI 敘事——這是一個從 PC 革命一路活到 AI 革命的人，告訴你哪一套打法仍然有效。</p>
+
+<div class="note">
+  <b>今日覆蓋率：</b>1 / 6 有新集數。<b>Diary of a CEO</b> 上新（Mark Cuban，91:28，10-26 05:00 UTC）。其餘五個 feed 全部 HTTP 200、無漏抓，最新一集仍停在 10/13–10/23 之間，皆已在過往報告處理。<br>
+  <b>下一個值得等的時點：</b>Knowledge Project 的 Steven Kotler 一集 RSS 標明「Public Release: Oct 27」——即明日公開，屆時會由「會員早鳥」轉為正式上架，值得盯。
+</div>
+
+<h2 class="section">今日新集數 · 深度拆解</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <h3>Mark Cuban：下一次崩盤，才是真錢落袋的時候<span class="badge new">NEW</span></h3>
+  <p class="byline">The Diary of a CEO with Steven Bartlett · 2026-10-26 05:00 UTC · 91 分 28 秒（5,488 秒）</p>
+
+  <div class="ep">
+    <b>嘉賓：</b>Mark Cuban — MicroSolutions 創辦人、Broadcast.com 創辦人（1999 年以 57 億美元股票賣給 Yahoo）、Dallas Mavericks 前大股東（2000 年 2.85 億買入 → 2023 年 43 億賣出多數股權，保留 27%）、ABC《Shark Tank》前常駐評審、現任 Cost Plus Drugs 共同創辦人。<br>
+    <b>主持：</b>Steven Bartlett　<b>類型：</b>長篇人物訪談（非技術訪談，是「一個生意人怎麼看現在的局」）
+  </div>
+
+  <p class="kickerline">一句話總結</p>
+  <p>這一集表面在談 AI 與泡沫，實際上是一場關於<b>「準備」的辯論</b>：Cuban 認為 AI 是史上最強的 brute-force 工具、也是史上最被誤讀的工具，而真正的護城河從來不是資訊，是「你願意在沒人看見的時候，比所有人多讀幾遍手冊」。</p>
+
+  <p class="kickerline">為什麼這集對你有用</p>
+  <p>因為 Cuban 給的不是預測，是<b>一套在任何技術週期都能重複執行的動作</b>：找一件你能做到「僅次於原作者」的事 → 把它變成生意 → 用銷售把生意撐住 → 在崩盤時有現金。他自己在 1990 年代用這套打 PC 軟件，現在用同一套打 AI。這集等於是他把 40 年的操作手冊，用 91 分鐘口述了一次。</p>
+
+  <p class="kickerline">核心論點（逐條拆）</p>
+  <ol>
+    <li><b>AI 不是「聰明」，是「暴力」。</b>Cuban 的反覆論旨：現有模型是統計式下一詞預測（predictive, not deterministic），不是推理。同一個問題丟給四個模型會得到四個答案；同一個模型收到語義相同但措辭微調的問題，答案又會變。他給的判準很硬：<i>如果它真的那麼強大、終點那麼明確，那這件事應該對所有人都很明顯才對——但事實是沒有兩個人給你同一個答案。</i></li>
+    <li><b>「僅次於原作者」策略。</b>這是他整套方法論的原點。1990 年代賣軟件時他的假設是：任何一套軟件，全世界只有寫它的那個人比我懂，所以只要我把手冊讀到爛，我就<b>獨佔第二名</b>。他說現在面對 AI 完全一樣——新模型一出，作者第一、所有人並列第二，而他要靠學得更快更好來「踢他們屁股」。</li>
+    <li><b>銷售是唯一不會被取代的技能。</b>「沒有生意是靠不銷售成功的。」他 12 歲挨家挨戶賣垃圾袋（3 美元入貨、6 美元卖出）的經驗，被他定義為「比任何事都更能 catapult 我」的起點，因為「如果你能敲門賣東西，你什麼都能做」。而他認為銷售的核心不是說服，是<i>真的相信自己在幫對方</i>。</li>
+    <li><b>「熱情」是錯的指標，「時間去哪」才是對的。</b>他直接打掉熱情論：「我對當棒球員很有熱情，一點用都沒有。」他認為你會變強的領域，就是你實際投注時間的領域；變強 → 信心上升 → 更想學 → 更強，這才是複利迴路。所以「我想創業，該做什麼？」這個問題本身就是錯的問法。</li>
+    <li><b>百萬富翁不是靠 VC 故事，是靠「擅長一件事」。</b>他點名年輕人被 Zuckerberg / Altman 敘事誤導：以為要募資、要衝營收數字，卻不知道真正人數最多的一群是「賺到幾百萬、五千萬、一億」的人——「這不是矽谷夢，這是美國夢」。他自己的 MicroSolutions 八年間<b>每個月都賺錢</b>，靠的是賣夠多 + 成本壓住，不是融資。</li>
+    <li><b>泡沫的定義變了：現在什麼都是迷因股。</b>他認為這次不是 2000 年的網絡泡沫，而是「連 Google、Apple、Micron 都被當迷因股交易」——財報差一美分，股價跌 18%，但公司內在價值根本沒變 18%。「我們在像交易棒球卡一樣交易它們。」他明說不知什麼會引爆，但斷言「一定还会有熊市，而錢就是在那裡賺到的」。</li>
+    <li><b>真正的風險不是 AI 造反，是人類的認知失調。</b>他引 Leon Festinger 的 cognitive dissonance：整個世界同時在經歷同一種不適，於是有人把頭埋進沙裡否認，有人則說「let's go」。他的原話是：<i>比起 AI 會做什麼，我更怕人因為不理解 AI 而做出來的事。</i></li>
+    <li><b>財富的唯一真實用途是「時間主權」。</b>賣掉 MicroSolutions 那天他把手錶脫下來，說「我再也不戴錶，因為戴錶代表我在為別人的時間工作」。他買了 American Airlines 的終身 pass，目標不是再賺錢，是「盡可能跟盡可能多的人、在盡可能多的國家，把自己搞得亂七八糟」。</li>
+    <li><b>創業不是自由，是更少自由。</b>他反直覺地講：很多人以為創業可以擺脫老闆，事實是「你對自己的人生完全沒有控制權」——客戶、員工、員工小孩生病，全部是你的。而「如果你需要問自己能不能創業，你大概就不是創業者」。</li>
+  </ol>
+
+  <p class="kickerline">關鍵數據</p>
+  <table>
+    <thead><tr><th>項目</th><th>數字 / 事實</th></tr></thead>
+    <tbody>
+      <tr><td>父親一生最高年薪</td><td class="n">&lt; $40,000</td></tr>
+      <tr><td>12 歲第一門生意</td><td class="n">$3 入貨 / $6 卖出（垃圾袋，逐戶推銷）</td></tr>
+      <tr><td>MicroSolutions 出售</td><td class="n">賣 $5M，實收 $2M（約 31–32 歲）</td></tr>
+      <tr><td>MicroSolutions 盈利紀錄</td><td class="n">8 年，每一個月都賺錢</td></tr>
+      <tr><td>被軟件店炒魷魚的導火線</td><td class="n">為了一張 $1,500 佣金支票</td></tr>
+      <tr><td>Broadcast.com</td><td class="n">37 歲創立，4 年後 Yahoo 以 $5.7B 股票收購</td></tr>
+      <tr><td>帳面身家（當時）</td><td class="n">約 $1.5B–1.7B（他自己強調是 paper）</td></tr>
+      <tr><td>Mavericks 買入 → 賣出</td><td class="n">$285M（2000）→ $4.3B（2023，保留 27%）</td></tr>
+      <tr><td>接手時戰績 → 該季餘下 50 場</td><td class="n">9 勝 23 負 → 31 勝 19 負</td></tr>
+      <tr><td>執掌期間勝率變化</td><td class="n">39% → 接近 60%（NBA 同期常規賽第二高）</td></tr>
+      <tr><td>2011 奪冠時年齡</td><td class="n">53 歲</td></tr>
+      <tr><td>美國每年國債利息支出</td><td class="n">$1 兆 / 年（10 年期殖利率約 5.2%）</td></tr>
+      <tr><td>僱主醫保中「自保」比例</td><td class="n">67%——帳單責任在僱主身上</td></tr>
+      <tr><td>美國醫療主導者</td><td class="n">3 家巨頭，合計數千億美元銷售額</td></tr>
+    </tbody>
+  </table>
+
+  <p class="kickerline">原文引用</p>
+  <blockquote>
+    Everybody's got the will to win. But it's only those with the will to prepare that actually do win.
+    <span class="src">— Bobby Knight，Cuban 說他在大學時看 60 Minutes 聽到這句，「我的下巴掉了，這就是我的句子」</span>
+  </blockquote>
+
+  <blockquote>
+    AI is not smart. It just knows how to use statistics basically to predict the next word. It's predictive. It's not deterministic. Meaning if you asked four different AIs the same question, you're going to get four different answers.
+    <span class="src">— Cuban 對「智能」的定義反駁</span>
+  </blockquote>
+
+  <blockquote>
+    If I'm standing at a four-way intersection and there's cars going back and forth … I'm letting the seeing eye dog take me across the street before I let the AI take me across the street.
+    <span class="src">— 他用来解释「latency 就是人類的護城河」的比喻</span>
+  </blockquote>
+
+  <blockquote>
+    If those were good businesses, they wouldn't be telling you about them. They would just be doing them. … Nobody who has an edge in the stock market is selling it. They're using it.
+    <span class="src">— 回應 17 歲兒子在 Instagram 上看到的 dropshipping / get-rich-quick 內容</span>
+  </blockquote>
+
+  <blockquote>
+    We're trading them like baseball cards. You know, there's no intrinsic value to this. It's just perceived value and what you think somebody else will pay for it.
+    <span class="src">— 論「什麼都是迷因股」的泡沫結構</span>
+  </blockquote>
+
+  <blockquote>
+    There's always going to be a bear market, and that's where the money was made. During COVID, I just started buying up everything when it hit, and I crushed it.
+    <span class="src">— 他的現金策略：耐心 + 乾火藥</span>
+  </blockquote>
+
+  <blockquote>
+    And I'm like, just be patient. You can invest a little bit for the fun of it, but be patient. Have some cash because at some point it's going to turn. And when that happens, that's when the real magic happens, when all the real money is made.
+    <span class="src">— 集數標題的出處</span>
+  </blockquote>
+
+  <blockquote>
+    The day I sold MicroSolutions, I took off my watch and I said, "I'm never going to wear a watch again because that means I'm working on somebody else's time."
+    <span class="src">— 論財富的真正定義</span>
+  </blockquote>
+
+  <blockquote>
+    If you're miserable when you're poor, good chance you're going to be miserable when you're rich. Money can't change who you are. Money can't change your approach to life.
+    <span class="src">— 論錢買不到的東西</span>
+  </blockquote>
+
+  <blockquote>
+    I got a lot further by being nice than by being a dick.
+    <span class="src">— 他自認在 MicroSolutions 時期會咆哮、拍桌，是 Todd Wagner 點醒他</span>
+  </blockquote>
+
+  <blockquote>
+    If you have to ask yourself if you can be an entrepreneur, you're probably not an entrepreneur.
+    <span class="src">— 論創業者的人格前提</span>
+  </blockquote>
+
+  <blockquote>
+    You have no control of your life as an entrepreneur because your customers, your employees, there's always something.
+    <span class="src">— 直接反駁「創業＝自由」</span>
+  </blockquote>
+
+  <blockquote>
+    I hadn't read a non-fiction book in 25 years. And the only reason I had the time to do it was I have these agents.
+    <span class="src">— 他對 AI agent 最誠實的辯護：不是取代人，是把雜活清掉</span>
+  </blockquote>
+
+  <p class="kickerline">技術細節：他對 AI 架構的具體批評</p>
+  <p>這部分比一般人物訪談硬得多，值得單獨抽出來——因為他給的是<b>可證偽的技術命題</b>，不是感想：</p>
+  <ul>
+    <li><b>非確定性（non-deterministic）是根本缺陷，不是 bug。</b>他把它對照到現實世界的要求：真實決策需要可重複、可問責的輸出，而機率式生成做不到。</li>
+    <li><b>無後果認知（no consequence model）。</b>「AI 不知道它行為的後果，也沒有內在倫理。」他用兩歲小孩在高腳椅上推杯子的例子：小孩知道杯子掉了媽媽會跑過來、而且知道這很好笑——這件事 AI「永遠不會自己搞懂」。</li>
+    <li><b>即時性 / 延遲（latency）是硬牆。</b>他認為只要存在 latency，人在閉環裡就仍有優勢；世界可以在眨眼間改變。</li>
+    <li><b>對抗性輸入（adversarial inputs）。</b>他點名自駕：某些特定視覺pattern會讓系統做出錯誤反應；一旦方法外流，「就會有很多人一直這樣做」。</li>
+    <li><b>IP 結構正在重組：專利 → 營業秘密。</b>他給醫院與研究者的建議是：你如果什麼都發表、什麼都申請專利，等於即時送給每一個模型，<b>失去對自己 IP 的控制</b>。所以他觀察到越來越多人改走 trade secret，或「放進自己的模型」。這導致各模型訓練資料分叉，進一步加劇「四個模型四個答案」。</li>
+    <li><b>資安的本質是 brute force 的攻守平衡被打破。</b>他問安全圈一個很尖的問題：<i>這些 AI 攻擊，有哪一次是發明了新手法？</i>答案是沒有——它們只是把既有清單用無限 agent 窮舉。他認為防守方同樣可以用同樣的窮舉去找自己的洞，這才是他「不是 doomster」的技術理由。</li>
+    <li><b>AGI 的判準（他自己的版本）：</b>如果一個<b>資源極少的 AI</b>（不是更多 GPU、更多電力）能自己找資訊、問對問題、解決問題——像一個來自世界最糟角落、毫無資源的 12 歲小孩卻能想出辦法——那才叫聰明。「需要歷史上最多的電力與 GPU，那不是智能，那是暴力。」</li>
+    <li><b>他對資料中心的著名比喻：</b>很多資料中心最後會變成 pickleball 球場。意思是——要達到大家想要的 AI 巔峰，必須是「更少的電力做更多的事」，而不是「更多電力做更多的事」，否則一定會撞上物理與財務約束。</li>
+  </ul>
+
+  <p class="kickerline">行業 insight：三個值得帶走的判斷</p>
+  <ol>
+    <li><b>AI 的錢不是在模型層賺，是在「應用層的雜活」賺。</b>他示範了自己怎麼用 agent 打 Cost Plus Drugs 的仗：對手一被起訴、一參與投標，agent 就通知他；然後 agent 幫他起草給 Open Records Act 的申請信，去調合約副本。他說這種事以前「除非我請人、訓練人、管人，否則永遠不會發生」。這是把 agent 當「組織能力的替代品」，不是當「聊天對象」。</li>
+    <li><b>槓桿正在從「誰有 GPU」轉移到「誰有現金」。</b>他的債務論證很具體：超大規模業者借的比賺的多，Meta 的借款超過自身現金流；Nvidia 因為手握現金，「基本上在補貼半個行業」；而美國 10 年期在 5.2%，全國一年付 1 兆利息。如果利率走到 6%、8%，「something's got to give」。這是一個<b>時序判斷</b>，不是方向判斷——他自己也說不知道何時、不知道哪一家會贏（「Anthropic？OpenAI？我不知道」）。</li>
+    <li><b>「面對面」會變成溢價資產。</b>他提到自己投的其中一件小事是 silent disco（無聲耳機派對）——純粹的 face-to-face 社交。他的推論是：當 agent 接管螢幕，人與人的實體互動只會更貴。這也解釋了他對運動球隊估值長期上升的看法。</li>
+  </ol>
+
+  <div class="three">
+    <h4>如果只記住三件事</h4>
+    <ol>
+      <li><b>護城河是「準備」，不是「資訊」。</b>當所有人手上都有同一個模型，差距只剩下「誰問得更好、誰驗證得更狠、誰願意讀完手冊」。</li>
+      <li><b>現在該做的不是加倉，是留現金。</b>他的原話是「be patient, have some cash」——真錢在崩盤時賺。</li>
+      <li><b>財富的目的地是時間主權，不是消費品。</b>他 40 年後回頭，最後悔的不是錯過的交易，是小孩那些「太小不會記得」的場合。</li>
+    </ol>
+  </div>
+
+  <p class="kickerline">章節時間軸（91 分鐘）</p>
+  <div class="chapter">
+    <span><b>00:00</b>開場</span>
+    <span><b>02:16</b>為何「適應力」最重要</span>
+    <span><b>03:09</b>我的成長背景</span>
+    <span><b>04:40</b>12 歲賣垃圾袋</span>
+    <span><b>06:18</b>如何成為好銷售</span>
+    <span><b>08:34</b>年輕創業者最大的錯</span>
+    <span><b>11:17</b>百萬富翁的共同點</span>
+    <span><b>13:38</b>我如何改造小牛隊</span>
+    <span><b>18:48</b>討厭工作又沒存款，怎麼辦</span>
+    <span><b>22:16</b>成功背後付出的代價</span>
+    <span><b>25:10</b>AI：機會還是威脅</span>
+    <span><b>27:34</b>社群媒體如何誤導年輕人</span>
+    <span><b>31:18</b>我們在泡沫裡嗎</span>
+    <span><b>33:10</b>為何人永遠比 AI 聰明</span>
+    <span><b>40:02</b>AI agent 將如何改變工作</span>
+    <span><b>44:45</b>為何 AI 其實不聰明（以及我為何不是末日論者）</span>
+    <span><b>49:05</b>AI 會帶來烏托邦嗎</span>
+    <span><b>50:38</b>AI 與電腦革命的不同</span>
+    <span><b>51:35</b>AI 正在讓我們背債嗎</span>
+    <span><b>58:28</b>我的不安全感如何驅動我</span>
+    <span><b>1:01:04</b>成為億萬富翁改變了我什麼</span>
+    <span><b>1:03:06</b>做生意一定要狠嗎</span>
+    <span><b>1:04:52</b>名氣的代價與失去的隱私</span>
+    <span><b>1:06:02</b>名氣如何影響我的兄弟</span>
+    <span><b>1:11:56</b>每個人都該創業嗎</span>
+    <span><b>1:14:35</b>我最大的弱點</span>
+    <span><b>1:15:50</b>為何招聘決定一切</span>
+    <span><b>1:17:13</b>小牛隊教我的文化課</span>
+    <span><b>1:23:23</b>我如何平衡家庭與事業</span>
+    <span><b>1:27:26</b>Cost Plus Drugs 與美國醫療</span>
+    <span><b>1:29:47</b>最難而我沒被問到的問題</span>
+  </div>
+
+  <p class="kickerline">幾個容易被漏掉、但很值錢的細節</p>
+  <ul>
+    <li><b>他被炒魷魚的真正原因是「選擇」。</b>在軟件店工作 9 個月，為了拿一張 1,500 美元佣金支票，他違背老闆「今天必須留在店裡」的指令。他拿到了支票，然後被當場解僱。他的結論不是「老闆壞」，是「我作為員工很爛，這不是我要的，我要開自己的公司」。</li>
+    <li><b>他不是靠「招聘」贏的，是靠「承認自己不會招聘」贏的。</b>他說自己面試時會像做 Shark Tank 一樣——看到對方就覺得「我可以幫他、我可以讓他成功」——於是錄用了最差的人。他的做法是把招聘交給別人，自己專注在領導與文化。原話：「Don't send it to me… cuz I might hire you.」</li>
+    <li><b>小牛隊的文化改造有具體抓手，不是口號。</b>(1) 把「三個助理教練管全部球員發展」改成「找前小牛球員一對一帶技能相近的現役球員」，成本極低卻立刻提升專注度；(2) 買球隊專機，並叫球員對外宣稱機上有 weight room 和 steam room（其實沒有）；(3) 請營養師、供餐——當年沒有球隊這樣做。他要的不是福利，是<b>用資源配置發送「我們要贏」的訊號</b>。</li>
+    <li><b>他是 NBA 第一個全职 analytics 員工的推手。</b>那個人在印第安納是他 18 歲時旁聽 MBA 統計課的老師 Wayne Winston；多年後他在 Jeopardy 上看到對方大殺四方，幾週後在對溜馬的比賽中聽到有人喊他名字，當場聘用。</li>
+    <li><b>「hire slow, fire fast」</b>——這句是老話，但他的版本有一個前提：小於 100 人的公司「每個人某種程度上都是家人」，所以慢與快要同時成立。</li>
+    <li><b>集數結尾的情緒高點不是商業，是一封信。</b>主持讀出他弟弟 Brian 寫的信：2005 年 7 月是 Brian 人生最低點、曾想結束一切，是 Mark 和另一個弟弟 Jeff 把他送進勒戒、此後一直清醒。信的結尾是「離匹茲堡 1,200 英里、幾十年後，我們全都住在彼此步行距離之內」。Cuban 當場哭出來，說 2005 年那段「不是他選的負擔，是我出名帶給他的」。</li>
+    <li><b>他對「最難而沒被問到的問題」的回答：</b>就是家庭問題。他說真正讓他情緒崩掉的，是這一類，而不是商業。</li>
+  </ul>
+
+  <div class="verdict">
+    <p><b>評價：</b>本集是 10 月最好的一集「非技術訪談」。如果你只有 30 分鐘，聽 <b>22:00–58:00</b>（AI 與泡沫段）＋ <b>1:23:00–1:30:00</b>（家庭與醫療）。如果你要學方法論，聽 <b>02:00–13:00</b>（準備與銷售）。缺點是 Cuban 的 AI 斷言有些在技術上過於簡化（他把「需要大量算力」直接等同「不是智能」，跳過了架構效率正在快速改善的事實），聽的時候要把他的結論當「投資人的風險姿態」，而不是「AI 研究者的判斷」。</p>
+  </div>
+</div>
+
+<h2 class="section">其餘五個播客 · 最近無更新</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <h3>Acquired<span class="badge none">最近無更新</span></h3>
+  <p class="byline">Ben Gilbert &amp; David Rosenthal · 最新一集：2026-10-18</p>
+  <p><b>最後已知劇集：Seinfeld</b>（230 分鐘）</p>
+  <p>一集完結三十年的處境喜劇，今年仍然有 <b>7,200 萬美國人</b>在看。他們拆的是三個變數：偏執的創作者、完美的市場時機、以及一個讓 incentives 長期對齊的股權結構——三者加起來，做出了一部「靠打破所有規則成為第一」的 sitcom。</p>
+  <p class="why"><b>狀態：</b>feed 正常（218 集），距上次發布 8 天。Acquired 慣常週日更新，下一個窗口是 10/25 深夜或 11/01。</p>
+</div>
+
+<div class="card">
+  <h3>Founders<span class="badge none">最近無更新</span></h3>
+  <p class="byline">David Senra · 最新一集：2026-10-13</p>
+  <p><b>最後已知劇集：#437 The Tycoons: Carnegie, Rockefeller, Gould &amp; Morgan</b>（54 分鐘）</p>
+  <p>讀 Charles R. Morris 的《The Tycoons》，講這四個人如何發明「美國超級經濟」。Senra 的格式一貫是：只講書裡他劃線的段落，不講背景、不講客套。</p>
+  <p class="why"><b>狀態：</b>feed 正常（462 集），距上次發布 13 天——這個間隔比平常長（他通常 5–7 天一集），值得留意是否在準備大題目。</p>
+</div>
+
+<div class="card">
+  <h3>All-In<span class="badge none">最近無更新</span></h3>
+  <p class="byline">Chamath · Jason · Sacks · Friedberg · 最新一集：2026-10-23</p>
+  <p><b>最後已知劇集：AI Cyber Panic, Ken Griffin's Bubble Warning, The Fall of France?</b>（1 小時 43 分）</p>
+  <p>四段：Ken Griffin 的 AI 泡沫警告（0:11）→ Palo Alto Networks CEO Nikesh Arora 談 PHP 漏洞與未來一年動盪的資安局勢（14:24）→ 法國瀕臨臨界點：暴動、移民公投、債務危機（44:17）→ 特朗普下半場策略（1:31:49）。</p>
+  <p class="why"><b>狀態：</b>feed 正常（440 集），週五常規更新，下一集預計 10/30。</p>
+</div>
+
+<div class="card">
+  <h3>My First Million<span class="badge none">最近無更新</span></h3>
+  <p class="byline">Sam Parr &amp; Shaan Puri · 最新一集：2026-10-23</p>
+  <p><b>最後已知劇集：We spent 8 hours finding the best stuff on X. Here it is.</b>（51 分鐘，EP 875）</p>
+  <p>與 Ben Levy 一起 reaction 本週 X 上最好的東西。清單包括：Wedding Crashers 生意點子、Clavicular 的十億美元機會、Elon 的飛行 Tesla Roadster、Elon 想給每個小孩一份 SpaceX 股份、Andrew Huberman 的冰箱、Peter Levels 談 moats、Bryan Johnson 想 49 歲灌籃、Jensen Huang 的算法。</p>
+  <p class="why"><b>狀態：</b>feed 正常（914 集），每週二、五更新，下一集預計 10/27。</p>
+</div>
+
+<div class="card">
+  <h3>The Knowledge Project<span class="badge none">最近無更新 · 明日轉公開</span></h3>
+  <p class="byline">Shane Parrish · 最新一集：2026-10-22</p>
+  <p><b>最後已知劇集：The Science of Doing Your Best Work</b>（Steven Kotler）</p>
+  <p>Kotler 是《Flow Research Collective》執行總監，研究 peak performance 的科學。主題是「flow」到底在腦裡發生什麼——那種幾小時消失、事情自己完成的狀態。RSS 標明 <b>Public Release: Oct 27</b>，現階段是會員優先。</p>
+  <p class="why"><b>狀態：</b>feed 正常（20 集，只保留近期），<b>明日（10/27）正式公開</b>，屆時會有完整描述可萃取。</p>
+</div>
+
+<h2 class="section">覆蓋率與方法</h2>
+<div class="rule"></div>
+
+<table>
+  <thead><tr><th>播客</th><th>Feed</th><th>集數</th><th>最後發布</th><th>今日</th></tr></thead>
+  <tbody>
+    <tr><td>Acquired</td><td class="n">HTTP 200</td><td>218</td><td>10-18</td><td>—</td></tr>
+    <tr><td>Founders</td><td class="n">HTTP 200</td><td>462</td><td>10-13</td><td>—</td></tr>
+    <tr><td>All-In</td><td class="n">HTTP 200</td><td>440</td><td>10-23</td><td>—</td></tr>
+    <tr><td>My First Million</td><td class="n">HTTP 200</td><td>914</td><td>10-23</td><td>—</td></tr>
+    <tr><td>Knowledge Project</td><td class="n">HTTP 200</td><td>20</td><td>10-22</td><td>—</td></tr>
+    <tr><td>Diary of a CEO</td><td class="n">HTTP 200</td><td>902</td><td>10-26</td><td><span class="tag">1 新</span></td></tr>
+  </tbody>
+</table>
+
+<p style="font-family:-apple-system,'Helvetica Neue',sans-serif;font-size:13.5px;color:#7a6a58">
+今日新增 GUID：1（<code>flightcast:01M53ASGWHBBHQJ0C8NDDD61AR</code>）。累計已掃 GUID 由 2,998 增至 2,999。
+</p>
+
+<div class="foot">
+  <b>取材誠實聲明：</b>本集的引文全部來自該集官方 YouTube 上架版本的自動字幕（auto-caption），已逐句對照上下文、去除重複與填充詞；語法錯誤（口語碎片）保留原樣，未經改寫或美化。所有數字（收購價、勝負場、利率）均為 Cuban 在節目中親口所講，非外部推測。他對技術的判斷屬個人觀點，本報告已在評價段標明保留。<br><br>
+  報告生成：2026-10-26 09:56 UTC · 掃描器 <code>scanner/scan_fast.py</code> · 資料來源：6 條官方 RSS + iTunes Search API + 官方 YouTube 字幕<br>
+  <a href="https://github.com/JMOKSZ/mindset-podcasts">github.com/JMOKSZ/mindset-podcasts</a>
+</div>
+
+</div>
+</body>
+</html>
+"""
+
+open(OUT, "w", encoding="utf-8").write(HTML)
+print("written", OUT, len(HTML), "bytes")

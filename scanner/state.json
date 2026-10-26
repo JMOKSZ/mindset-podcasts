@@ -1,5 +1,5 @@
 {
- "lastScan": "2026-10-25T09:54:00Z",
+ "lastScan": "2026-10-26T09:55:59Z",
  "scannedEpisodes": {
   "acquired": [
    "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -3009,21 +3009,22 @@
    "flightcast:01M1P5R2DYEM65ABQ1YNEB6FXH",
    "flightcast:01M52K4W4RGVJVCWCEV5Q2CWM6",
    "flightcast:01M53CGQ1FY66A1WPVXBRD1ZKG",
-   "flightcast:01M1PECBRTP7YPXSHDZJAM5XAC"
+   "flightcast:01M1PECBRTP7YPXSHDZJAM5XAC",
+   "flightcast:01M53ASGWHBBHQJ0C8NDDD61AR"
   ]
  },
  "lastScanResult": {
-  "date": "2026-10-20",
-  "newCount": 2,
+  "date": "2026-10-26",
+  "newCount": 1,
   "byPodcast": {
-   "all-in": 1,
-   "my-first-million": 1
+   "diary-of-a-ceo": 1
   },
   "noUpdate": [
    "acquired",
    "founders",
-   "knowledge-project",
-   "diary-of-a-ceo"
+   "all-in",
+   "my-first-million",
+   "knowledge-project"
   ]
  }
 }
