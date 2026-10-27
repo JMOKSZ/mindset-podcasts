@@ -1,5 +1,5 @@
 {
- "lastScan": "2026-10-26T09:55:59Z",
+ "lastScan": "2026-10-27T09:56:00Z",
  "scannedEpisodes": {
   "acquired": [
    "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -684,7 +684,8 @@
    "fd3ef7d9-a07f-4034-b308-0ac85a34433a",
    "ff743e93-b927-4ff0-9077-f369da4ffc3d",
    "ffc8ea55-ae6e-416f-b47b-7193f118bf7d",
-   "333ce5c4-c75d-11f1-a31e-7bbfecdd098c"
+   "333ce5c4-c75d-11f1-a31e-7bbfecdd098c",
+   "ac362fae-d0e9-11f1-aaaa-bb1e5f76cf23"
   ],
   "all-in": [
    "688c4809-9cf4-4d77-b5d7-482ee43e7ccc",
@@ -2071,7 +2072,8 @@
    "610b43b4-c8e4-11f1-af17-cbb687bfb677",
    "140afff2-cbad-11f1-8b99-3b8894703c43",
    "3b253f7a-cc99-11f1-9f91-bb08f63fa057",
-   "3f241c5c-ced0-11f1-87b3-138dd21a06c3"
+   "3f241c5c-ced0-11f1-87b3-138dd21a06c3",
+   "d70fc726-d12a-11f1-85ee-6705a2c908df"
   ],
   "knowledge-project": [
    "https://fs.blog/?post_type=podcast&p=81515",
@@ -3014,17 +3016,17 @@
   ]
  },
  "lastScanResult": {
-  "date": "2026-10-26",
-  "newCount": 1,
+  "date": "2026-10-27",
+  "newCount": 2,
   "byPodcast": {
-   "diary-of-a-ceo": 1
+   "founders": 1,
+   "my-first-million": 1
   },
   "noUpdate": [
    "acquired",
-   "founders",
    "all-in",
-   "my-first-million",
-   "knowledge-project"
+   "knowledge-project",
+   "diary-of-a-ceo"
   ]
  }
 }

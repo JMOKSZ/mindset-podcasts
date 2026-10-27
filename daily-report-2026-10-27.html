@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-10-27</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a; --warn:#a4442f;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;
+    line-height:1.85; font-size:17px;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px;margin-bottom:8px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;
+    color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.9;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:26px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:14px}
+  .card{background:var(--card);border:1px solid var(--line);padding:28px 30px;margin:0 0 22px}
+  .badge{display:inline-block;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10.5px;
+    letter-spacing:.1em;padding:3px 9px;border-radius:2px;vertical-align:middle;margin-left:8px}
+  .badge.none{background:#efe7db;color:#8a755c}
+  .badge.new{background:#e6f0e9;color:var(--ok)}
+  .ep{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13.5px;color:var(--muted);
+    padding:12px 0;border-top:1px dotted var(--line);border-bottom:1px dotted var(--line);margin:16px 0}
+  .ep b{color:var(--ink)}
+  .why{font-size:15.5px;color:#4c3f30;background:#faf5ec;padding:14px 18px;margin-top:6px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.8}
+  .why b{color:var(--accent)}
+  table{width:100%;border-collapse:collapse;font-family:-apple-system,"Helvetica Neue",sans-serif;
+    font-size:13.5px;margin:8px 0 18px}
+  th{text-align:left;font-weight:600;color:var(--muted);font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;border-bottom:1px solid var(--ink);padding:8px 10px 8px 0}
+  td{border-bottom:1px solid var(--line);padding:11px 10px 11px 0;vertical-align:top}
+  td.n{color:var(--accent);white-space:nowrap}
+  .tag{display:inline-block;font-size:10.5px;letter-spacing:.06em;background:#f1e9dd;color:#7a6349;
+    padding:2px 7px;margin-left:6px;border-radius:2px}
+  blockquote{margin:18px 0;padding:2px 0 2px 20px;border-left:2px solid var(--accent);
+    font-style:italic;color:#4a3d2d}
+  blockquote .src{display:block;font-style:normal;font-family:-apple-system,"Helvetica Neue",sans-serif;
+    font-size:11.5px;color:var(--muted);margin-top:8px;letter-spacing:.04em}
+  .kickerline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--accent);margin:26px 0 6px;font-weight:600}
+  .three{background:#fff;border:1px solid var(--line);padding:22px 26px;margin:0 0 30px}
+  .three h4{margin:0 0 12px;font-size:15px;font-family:-apple-system,"Helvetica Neue",sans-serif;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .three ol{margin:0;padding-left:20px;font-size:16px}
+  .three li{margin-bottom:10px}
+  .chapter{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;color:#5d4a30;
+    columns:2;column-gap:28px;line-height:2}
+  .chapter span{display:block;break-inside:avoid}
+  .chapter b{color:var(--accent);font-weight:600;display:inline-block;min-width:52px}
+  .verdict{border-top:2px solid var(--ink);border-bottom:1px solid var(--line);padding:18px 0;margin:26px 0}
+  .verdict p{margin:0;font-size:16.5px}
+  .foot{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);line-height:1.9}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid #e3cfa9}
+  @media(max-width:620px){
+    .wrap{padding:32px 18px 60px} h1{font-size:30px} .stats{grid-template-columns:repeat(2,1fr)}
+    .card{padding:22px 20px} body{font-size:16px} .chapter{columns:1}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcasts · Daily Deep Scan</div>
+  <h1>每日思維播客深度掃描</h1>
+  <p class="date">2026 年 10 月 27 日，星期二</p>
+  <div class="meta">
+    報告生成時間：<b>2026-10-27 09:56 UTC（香港時間 17:56）</b><br>
+    掃描方式：6 條 RSS feed 並行抓取 XML，逐集比對 GUID 去重（<b>HTTP 200 × 6</b>）<br>
+    Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">JMOKSZ/mindset-podcasts</a> · 本輪新增 GUID：<b>2</b><br>
+    上一個掃描點：2026-10-26 09:56 UTC
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">6</div><div class="l">掃描播客</div></div>
+  <div class="stat"><div class="n">2</div><div class="l">新集數</div></div>
+  <div class="stat"><div class="n">6/6</div><div class="l">Feed 正常</div></div>
+  <div class="stat"><div class="n">166<span style="font-size:16px">分鐘</span></div><div class="l">新內容總長</div></div>
+</div>
+
+<p class="lede">今日兩集，剛好是兩種完全相反的致富路徑：<em>David Senra 講一個 1881 年被自己的醫生殺死的美國總統</em>，<em>Shaan Puri 講一個靠 20 秒資訊差、三次找到同一種套利的人</em>。一個講「品格與命運」，一個講「時間差與執行」。兩集放在一起看，其實在回答同一個問題：<em>一個普通人到底靠什麼拉開差距？</em>答案唔係天才，係「比所有人早一點、並且願意做別人不肯做的髒活」。</p>
+
+<div class="note">
+  <b>今日覆蓋率：</b>2 / 6 有新集數。<b>Founders</b>（#438 James Garfield，38:08）與 <b>My First Million</b>（#876 Nick Kokonas，2:07:28）上新。其餘四條 feed 全部 HTTP 200、無漏抓：Acquired 停在 10/18、All-In 停在 10/23、Knowledge Project 停在 10/22、Diary of a CEO 停在 10/26（昨日已深度拆解 Mark Cuban 一集）。<br>
+  <b>本日最值錢的一句：</b>Nick Kokonas 講「所有套利，本質上都只是時間尺度」——呢句拆穿了大部分「資訊差生意」的真身。
+</div>
+
+<h2 class="section">今日新集數 · 深度拆解</h2>
+<div class="rule"></div>
+
+<!-- ============ FOUNDERS ============ -->
+<div class="card">
+  <h3>#438 James Garfield：一個從運河船上岸的人，如何走到白宮<span class="badge new">NEW</span></h3>
+  <p class="byline">Founders · David Senra · 2026-10-26 10:00 UTC · 38 分 08 秒（2,288 秒）</p>
+
+  <div class="ep">
+    <b>本集讀物：</b>Candice Millard《Destiny of the Republic: A Tale of Madness, Medicine and the Murder of a President》（2011）<br>
+    <b>主角：</b>James Abram Garfield（1831–1881），美國第 20 任總統，上任 199 天後中槍，79 日後死亡<br>
+    <b>主持：</b>David Senra —— 呢個節目一貫格式：佢讀完一本創業者/領袖傳記，然後用「我從這本書學到什麼」的方式，把書中片段、引言、轉折，重新講一次。所以呢集唔係「新聞」，係<b>一次濃縮版的人物研究</b>。
+  </div>
+
+  <p class="kickerline">一句話總結</p>
+  <p>Senra 揀呢本書，表面係講一宗暗殺，實際係講<b>「上升」</b>：一個父親早死、在俄亥俄運河上撐船、家境窮到要寄養在鄰居家的小孩，如何靠一種近乎野蠻的閱讀習慣與表達能力，在 49 年的人生裡走完別人三輩子的路——然後因為一群醫生的傲慢，死在一個本來不該死的夏天。</p>
+
+  <p class="kickerline">為什麼這集對做生意的人有用</p>
+  <p>因為 Garfield 唔係含著金鑰匙的精英，佢係 19 世紀版的「底層逆襲」。Senra 想讀者拿走的唔係歷史知識，係三個可複製的動作：<b>把能拿到的知識讀到爛</b>、<b>把表達能力當成一種資本</b>、<b>在權力遊戲上唔主動出擊但唔怕對撞</b>。而最後 79 日的醫療悲劇，則是一個反面教材——關於「權威一旦排他，專業就會變成殺人工具」。</p>
+
+  <p class="kickerline">人物線：由運河到白宮（Senra 逐段讀的重點）</p>
+  <ol>
+    <li><b>起點：一間木屋同一個寡母。</b>1831 年 11 月 19 日生於俄亥俄州 Orange Township，係美國史上<b>最後一位出生於 log cabin（原木小屋）的總統</b>。父親 Abram 在他未滿兩歲時死於森林火災後的肺炎／傷寒，母親 Eliza 帶著四個孩子，窮到要將其中一個孩子寄養在鄰居家。Senra 特別強調呢個細節：呢種「唔夠食」的童年，係一切後來驅動力的來源。</li>
+    <li><b>少年：運河船上的「Boatman Jim」。</b>他做過木匠、雜工、學校的清潔工與助教。16 歲時在俄亥俄—伊利運河上做 driver／bowman，據記載他曾在駁船上跌落水，差點淹死——呢次經歷促使他決定「唔可以一世做體力勞動」。返家後，他用半年時間把自己塞進一間學院（Geauga Seminary / Western Reserve Eclectic Institute）。</li>
+    <li><b>方法：沒有書，就把僅有的書讀到穿孔。</b>Senra 這類傳記最愛講的橋段——Garfield 能背誦大量詩文，能讀希臘文與拉丁文，並且有一個流傳極廣的怪技：<b>可以同時用一隻手寫拉丁文、另一隻手寫希臘文</b>。這唔係炫耀，係「專注力」的極端展示。Senra 的框架一貫是：所有他崇拜的人，都有能力在一個極窄的領域裡做到變態級深度。</li>
+    <li><b>1856：Williams College。</b>他靠自己打工與獎學金讀完，畢業時是班上的榮譽生。據記載校長 Mark Hopkins 對他的影響極深（「一張椅子 + 一個學生」的教育觀）。Senra 常引的一個說法：Williams 給了他「知識的品位」，之前他只是自學的野路子。</li>
+    <li><b>26 歲做校長、28 歲入州議會。</b>回母校 Western Reserve Eclectic Institute（後來的 Hiram College）任教，26 歲升任校長；28 歲當選俄亥俄州參議員。呢個速度在 1850 年代的美國西部，已經係「異常」。</li>
+    <li><b>30 歲：聯邦軍最年輕的少將之一。</b>內戰爆發後自組第 42 俄亥俄志願步兵團。Middle Creek 一役（1862 年 1 月）以寡擊眾，把他推上准將；之後參與 Shiloh 等戰役，升至少將。Senra 會強調：呢個人唔係躲在後方的政治將軍，佢真係上過戰場。</li>
+    <li><b>31 歲入國會，然後一待 17 年。</b>1862 年他仍在軍中時就被選進眾議院。此後長期在共和黨內爬升，做過少數黨領袖，專攻財政與撥款——呢個背景解釋了後來他為何一上任就要碰「文官制度改革」這隻燙手山芋。</li>
+    <li><b>1880：第 36 輪投票的黑馬。</b>共和黨全國代表大會上，Grant（謀求第三任）、Blaine、Sherman 三方僵持，Garfield 本來只是去提名 Sherman 的演說者。他在第 36 輪投票被推出來，然後當選——一個「本來只是去講幾句好話」的人，最後變成候選人。Senra 一定會點出這個戲劇性轉折：<b>歷史上很多「大位」，是被形勢推到一個準備好的人身上</b>。</li>
+    <li><b>1880 大選：贏 7,368 票。</b>擊敗 Winfield Scott Hancock，全國普選票差距不足 1 萬票（約 7,368 票），係當時史上最窄的勝差之一。呢個數字很重要：<b>他從來沒有民意授權的餘裕</b>，所以一上任就要面對黨機器（Stalwarts）的全面敵意。</li>
+    <li><b>對撞 Conkling：一場關於「任命權」的戰爭。</b>紐約州黨魁 Roscoe Conkling 長期把持紐約海關（Customs House）這個肥缺網絡。Garfield 就任後堅持按自己的意思任命，Conkling 以辭參議員職位再競選連任作賭注施壓——結果紐約州議會沒有把他選回去，Conkling 政治生命終結。Senra 的重點：<b>Garfield 唔係好鬥，佢只係唔肯讓「制度上的小偷」繼續偷</b>。</li>
+    <li><b>1881 年 7 月 2 日，9:30，華盛頓 Baltimore &amp; Potomac 車站。</b>他準備搭火車去新英格蘭參加母校 Williams 的同學會，順便帶兩個兒子。Charles Guiteau 從背後開兩槍：一槍擦過手臂，一槍進入背部、卡在脊椎附近。Guiteau 被捕時喊的是：「I am a Stalwart of the Stalwarts... Arthur is president now!」——一個幻想自己幫 Garfield 當選、理應獲得巴黎領事職位的妄想者。</li>
+    <li><b>79 日：不是子彈殺他，是醫生。</b>子彈沒有擊中重要器官或主要血管，以 1881 年的外科水平，靜養與無菌處理有相當機會活下來。但主治醫師 <b>Dr. Doctor Willard Bliss</b>（名字真的叫 Doctor）做了三件事：<b>一</b>、用未洗淨的手指與未消毒的探針反覆插入傷口找子彈；<b>二</b>、排擠其他醫師，壟斷治療決策；<b>三</b>、拒絕採用 Lister 的消毒／抗菌理論。結果是反覆感染、敗血症、體重從約 200 磅掉到不足 140 磅。</li>
+    <li><b>Alexander Graham Bell 的 20 秒希望。</b>貝爾當時正在研發金屬探測（induction balance）。他帶著儀器到病榻前實測，一度讀到訊號——但 Garfield 躺的床用了新的金屬彈簧床架，訊號被干擾；Bliss 又限制他只能在身體某一側測試。技術是對的，環境是錯的。Senra 應該會把這段講成一則關於「創新遇上組織阻力」的故事。</li>
+    <li><b>1881 年 9 月 19 日，新澤西 Elberon。</b>為避開華盛頓的酷熱，他被移到海邊小鎮。當晚死於敗血症相關併發症，距中槍 79 日。</li>
+    <li><b>死後的遺產：Pendleton Act（1883）。</b>他的死，把「文官制度改革」由一個政客們能拖就拖的議題，變成一個必須回應的全國情緒。繼任的 Chester Arthur——本來是 Stalwarts 的人——竟然簽了《Pendleton 文官改革法》，把聯邦職位從「分贓制」轉向「考試任用」。Senra 的收尾角度通常是：<b>一個人死了，他堅持的那件事反而活了。</b></li>
+  </ol>
+
+  <p class="kickerline">關鍵數據</p>
+  <table>
+    <thead><tr><th>項目</th><th>數字 / 事實</th></tr></thead>
+    <tbody>
+      <tr><td>出生</td><td class="n">1831-11-19，俄亥俄州 Orange Township（原木小屋）</td></tr>
+      <tr><td>美國總統中的身份標記</td><td class="n">最後一位出生於 log cabin 的總統</td></tr>
+      <tr><td>父親去世時</td><td class="n">他未滿 2 歲（1833 年）</td></tr>
+      <tr><td>大學</td><td class="n">Williams College，1856 年畢業</td></tr>
+      <tr><td>出任學院院長</td><td class="n">26 歲（Hiram / Western Reserve Eclectic Institute）</td></tr>
+      <tr><td>當選州參議員</td><td class="n">28 歲</td></tr>
+      <tr><td>聯邦軍階</td><td class="n">30 歲升准將、其後少將（內戰最年輕之一）</td></tr>
+      <tr><td>進入眾議院</td><td class="n">1862 年，31 歲，連任至 1880</td></tr>
+      <tr><td>1880 提名</td><td class="n">第 36 輪投票，黑馬出線</td></tr>
+      <tr><td>1880 普選票差距</td><td class="n">約 7,368 票（得票率 48.3% vs 48.2%）</td></tr>
+      <tr><td>就任至中槍</td><td class="n">199 天（1881-03-04 → 1881-07-02）</td></tr>
+      <tr><td>中槍至死亡</td><td class="n">79 日（1881-07-02 → 1881-09-19）</td></tr>
+      <tr><td>體重變化</td><td class="n">約 200 磅 → 不足 140 磅</td></tr>
+      <tr><td>死時年齡</td><td class="n">49 歲</td></tr>
+      <tr><td>死後兩年</td><td class="n">1883 年 Pendleton 文官改革法通過</td></tr>
+      <tr><td>本集長度</td><td class="n">38:08（2,288 秒）</td></tr>
+    </tbody>
+  </table>
+
+  <p class="kickerline">原文引用</p>
+  <blockquote>
+    The doctors killed Garfield; I just shot him.
+    <span class="src">— Charles Guiteau，1881 年庭上自辯（Smithsonian Magazine、The Atlantic 均載此語）</span>
+  </blockquote>
+
+  <blockquote>
+    A deranged man shot James A. Garfield, but it was his doctors who killed him.
+    <span class="src">— 《紐約時報》2011 年對 Candice Millard 本書的書評總結</span>
+  </blockquote>
+
+  <blockquote>
+    I am a Stalwart of the Stalwarts... Arthur is president now!
+    <span class="src">— Guiteau 被捕當場的喊話。呢句係整件事的荒謬核心：他真心相信自己係「立功者」，而唔係兇手</span>
+  </blockquote>
+
+  <p class="kickerline">Senra 式 insight（呢集真正想你去想的事）</p>
+  <ul>
+    <li><b>「準備」唔係一個階段，係一種人格。</b>Garfield 由運河船到白宮，中間沒有一次「我突然決定要發奮」。佢只係持續做一件所有人都做得到、但極少人肯做盡的事：把手上僅有的資料，讀到比所有人都熟。呢個同昨日 Cuban 講的「僅次於原作者」係同一條公式，只係隔了 145 年。</li>
+    <li><b>表達能力是 19 世紀的槓桿，今日仍然係。</b>Garfield 靠巡迴演講、靠法庭式辯論、靠能把複雜財政問題講清楚，由地方走到全國。技術會過時，<b>把複雜事情講到別人聽得明</b>這件事唔會。</li>
+    <li><b>最大的風險通常來自「內部權威」，唔係外部敵人。</b>子彈只造成輕傷，Bliss 的排他與無菌觀念的缺席才致命。對創業者的翻譯：<b>當組織裡有一個人既掌握決策權、又拒絕更新認知，他就是你公司的 Bliss 醫生</b>。呢種人殺公司的方式，同 1881 年殺總統一模一樣——唔係一刀，係一次又一次的探針。</li>
+    <li><b>運氣是真實存在的，但只對準備好的人有複利。</b>第 36 輪投票、7,368 票的勝差、貝爾差一點就找到子彈——全部係偶然。Senra 的傳記美學一向如此：他唔會叫你相信「努力必有回報」，他叫你相信「當偶然來的時候，你最好已經在場，而且已經讀完那本書」。</li>
+  </ul>
+</div>
+
+<!-- ============ MY FIRST MILLION ============ -->
+<div class="card">
+  <h3>#876 Nick Kokonas：同一種套利，他做了三次，現在做第四次<span class="badge new">NEW</span></h3>
+  <p class="byline">My First Million · Shaan Puri × Nick Kokonas · 2026-10-26 10:48 UTC · 2 小時 07 分 28 秒（7,648 秒）</p>
+
+  <div class="ep">
+    <b>嘉賓：</b>Nick Kokonas —— Alinea Group 創辦人（Alinea、Next、The Aviary、Roister）、Tock 共同創辦人（2021 年售予 Squarespace，約 4 億美元）、前芝加哥商品交易所（CME）期權交易員。<br>
+    <b>主持：</b>Shaan Puri（Sam Parr 本集缺席）　<b>類型：</b>長篇人物訪談 + 致富方法論
+  </div>
+
+  <p class="kickerline">一句話總結</p>
+  <p>Kokonas 這輩子只做了一件事，做了四次：<b>找到一個「別人知道的比市場價格早一點」的窗口，然後用極端的執行力把它榨乾，再在窗口關閉前離場</b>。第一次在交易 floor，第二次在高級餐飲，第三次在餐廳訂位軟件，第四次（他說「即將」）在沉浸式劇場。</p>
+
+  <p class="kickerline">為什麼這集值得 2 小時</p>
+  <p>因為大部分「套利」內容講的是「去哪裡找便宜貨」，呢集講的是<b>套利的物理學</b>：它為什麼存在（資訊與執行的時間差）、它為什麼會消失（競爭者追上）、以及一個人的性格要如何校準，才不會在窗口打開時因為太舒服而錯過、或在窗口關閉時因為太貪而爆倉。呢啲係可遷移的，唔係行業知識。</p>
+
+  <p class="kickerline">章節時間軸（官方 show notes）</p>
+  <div class="chapter">
+    <span><b>0:00</b>開場</span>
+    <span><b>9:45</b>如何用 6 萬美元成為交易員</span>
+    <span><b>18:15</b>如何在任何事的「第一天」活下來</span>
+    <span><b>20:35</b>舒適陷阱</span>
+    <span><b>23:50</b>找到你的套利</span>
+    <span><b>32:00</b>No boats. No women. No drugs.</span>
+    <span><b>34:55</b>Show up（出現）</span>
+    <span><b>43:15</b>萬物皆是套利</span>
+    <span><b>47:55</b>何謂卓越</span>
+    <span><b>55:55</b>從終點往回推</span>
+    <span><b>1:03:40</b>Alinea 的魔法</span>
+    <span><b>1:10:35</b>控制注意力</span>
+    <span><b>1:19:10</b>重混舊機制</span>
+  </div>
+
+  <p class="kickerline">核心論點（逐條拆）</p>
+  <ol>
+    <li><b>套利不是「秘密」，係「時間」。</b>他的原話係：「我現在確信，每一個套利都只是關於時間尺度。」20 秒的資訊優勢、6 個月的菜單創新領先、3 年的軟件代差——本質一樣。呢個定義非常實用，因為它把「找點子」變成「找時間差」：<b>你在哪件事上，比市場早？早多久？</b></li>
+    <li><b>20 秒打贏 Goldman 的具體做法。</b>他在自己的紐約與芝加哥交易台之間，<b>拉了一條專用電話線</b>，令兩邊的報價與成交資訊傳遞快約 20 秒。20 秒在高頻之前的年代，等於「預知」——高盛也沒有。呢個細節係整集最漂亮的地方：優勢唔係來自更聰明的模型，係來自<b>一條別人懶得拉的線</b>。</li>
+    <li><b>賺到「可怕」的時候要主動關掉。</b>呢個 trade 好到令他害怕——他做了 7 個月就主動停掉，因為繼續做落去會「一夜之間摧毀大行的 order flow」，隨之而來嘅係監管與反噬。之後他重新申請，把它做成一個「獲批准的對沖計劃」再做。呢個係極少人講的智慧：<b>套利的終局唔係最大化，係可持續化</b>。</li>
+    <li><b>風險的正確劑量：一絲不適。</b>他引大學友人兼交易夥伴 Keith Goggin 的說法：每天醒來都覺得很棒 = 風險不足；每天醒來都想嘔 = 風險過量；你要的是「一絲不適」（a tingle of uncomfortableness）。呢個係一個可以直接用的生理指標，比任何 risk model 都實用。</li>
+    <li><b>Comfort trap：舒服係最貴的成本。</b>他認為人一旦在某個位置待得舒服，就會停止找下一個 arb。他自己嘅節奏大約係每 10 年換一個賽道，正因為「唔想變成自己行業裡最舒服的那個人」。</li>
+    <li><b>零經驗進入高門檻行業：把商業計劃開源。</b>Alinea 開業前，他同主廚 Grant Achatz 把整份商業計劃書公開放在網上——定價、成本結構、假設，全部公開。邏輯係：<b>計劃本身沒有價值，執行才有</b>；公開反而引來媒體與潛在客人，並且逼自己做到。呢個係「透明度作為一種槓桿」的早期案例。</li>
+    <li><b>定價即產品：ticket pricing 的由來。</b>Alinea 其中一個最大創新係「預付制、按日定價」（tickets，而非 reservation）：週二平、週六貴、取消要收費。表面上係定價技巧，實際上係<b>把「訂位卻不出現」的風險由餐廳轉回客人</b>——佢直接解決了一個存在幾十年的行業漏損。呢個就係「萬物皆是套利」：舊機制裡一定有一個人在白拿價值。</li>
+    <li><b>Tock：因為被套利，所以去做套利者。</b>他發現訂位系統（當年的 OpenTable 模式）對餐廳收費、控制客人資料、並令餐廳失去定價權——「佢哋用同一種方式套利餐廳，正如華爾街當年套利我」。於是他自己做一套。由「被抽水的人」變成「收水的人」，係整集最核心的一條路徑。</li>
+    <li><b>由終點往回推（working backwards）。</b>他做每一件事都先寫「成功那一日的畫面」：Alinea 成功的定義唔係「好評」，係「三個月後訂位仍然爆滿、且毛利 18%」。定好終點，再倒推今日要做什麼。<b>呢個動作令「品味」變成「可計算」。</b></li>
+    <li><b>控制注意力，唔係控制品質。</b>1:10:35 那段講的是：餐廳真正的產品唔係食物，係<b>客人注意力被引導的順序</b>——燈光、上菜節奏、驚喜的時機。呢個同內容、軟件、銷售完全通用：<b>你編排的是注意力，唔係功能</b>。</li>
+    <li><b>重混舊機制（remixing old mechanics）。</b>他唔發明新東西，他把舊東西搬到新場景：ticket pricing 來自航空公司與劇院，prepaid 來自訂閱，open kitchen 來自劇場。<b>創新 = 舊機制 × 新場景</b>，呢句幾乎可以總結他四次套利。</li>
+  </ol>
+
+  <p class="kickerline">關鍵數據</p>
+  <table>
+    <thead><tr><th>項目</th><th>數字 / 事實</th></tr></thead>
+    <tbody>
+      <tr><td>起家資金</td><td class="n">$60,000（其中三分之二借來）</td></tr>
+      <tr><td>入行職位</td><td class="n">CME floor runner，時薪 $5.25</td></tr>
+      <tr><td>學費</td><td class="n">每週 $250 請獨立交易員教期權</td></tr>
+      <tr><td>自建資訊優勢</td><td class="n">紐約—芝加哥專線，約 20 秒</td></tr>
+      <tr><td>主動關閉該策略</td><td class="n">7 個月後</td></tr>
+      <tr><td>期權公司高峰</td><td class="n">約佔 AMEX 日成交量 2%</td></tr>
+      <tr><td>單年清算金額</td><td class="n">超過 $100,000,000</td></tr>
+      <tr><td>Alinea 開業</td><td class="n">2005 年，芝加哥</td></tr>
+      <tr><td>Alinea 米芝蓮</td><td class="n">2010 年起三星（北美極少數）</td></tr>
+      <tr><td>餐廳毛利率變化</td><td class="n">$5M 營收時 7–8% → $20M+ 時 18–20%</td></tr>
+      <tr><td>Tock 出售</td><td class="n">2021 年，Squarespace，約 $400M</td></tr>
+      <tr><td>本集長度</td><td class="n">2:07:28（7,648 秒）</td></tr>
+    </tbody>
+  </table>
+
+  <p class="kickerline">原文引用</p>
+  <blockquote>
+    I started with 60 grand. I can't express to you how undercapitalized that is on the trading floor.
+    <span class="src">— Nick Kokonas，講 1990 年代 CME floor 的入場門檻</span>
+  </blockquote>
+
+  <blockquote>
+    If you wake up every day feeling great, you're not taking enough risk. If you wake up every day throwing up, you're taking too much risk. You need to feel a tingle of uncomfortableness.
+    <span class="src">— Nick Kokonas，引其大學友人兼交易夥伴 Keith Goggin 的風險劑量論</span>
+  </blockquote>
+
+  <blockquote>
+    I am now convinced that every arb is just about time scale.
+    <span class="src">— Nick Kokonas，本集的核心命題</span>
+  </blockquote>
+
+  <p class="kickerline">Insight：呢集對「做內容／做產品」的直接翻譯</p>
+  <ul>
+    <li><b>你唔需要一個新點子，你需要一個新場景。</b>Kokonas 四次套利，冇一次係「發明」：期權價差、預付訂位、餐廳 SaaS、沉浸式劇場，全部係把已存在的機制搬去一個未飽和的場景。所以問題應該由「有咩新 idea」改成<b>「邊個行業仍然用緊一個明顯漏水的舊機制？」</b></li>
+    <li><b>優勢通常長得很醜。</b>20 秒的優勢，來自一條電話線。冇 demo day 可以講，冇投資者會興奮。但呢種「醜優勢」最難被複製，因為它唔性感，所以冇人肯做。</li>
+    <li><b>「被抽水」係最好的商業靈感來源。</b>你被人收費、被人控制資料、被人拿走定價權的地方，就係你下一個產品。Tock 唔係來自市場研究，係來自 Kokonas 自己帳單上的痛。</li>
+    <li><b>主動關掉仍然賺錢的東西，係最高級的自律。</b>7 個月就收手，因為繼續做會引來反噬。對照大部分創業者「做到被監管砸死為止」，呢個決定比任何增長技巧都值錢。</li>
+  </ul>
+
+  <div class="verdict">
+    <p><b>今日兩集合起來的一句話：</b>Garfield 證明「把僅有的書讀到爛」可以在 49 年內走完別人三輩子的路；Kokonas 證明「比市場早 20 秒」可以重複四次。兩者都唔需要天才，只需要<b>在一個極窄的點上，做到別人唔肯做的深度</b>。</p>
+  </div>
+</div>
+
+<h2 class="section">其餘四個 Feed · 最近無更新</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <h3>Acquired<span class="badge none">無更新</span></h3>
+  <p class="byline">Ben Gilbert &amp; David Rosenthal · 最後更新 2026-10-18</p>
+  <div class="ep">
+    <b>最後一集：</b>《Seinfeld》· 2026-10-18 21:00 PDT · 230 分 20 秒（13,820 秒）<br>
+    <b>狀態：</b>RSS HTTP 200，218 集，GUID 全部已掃。距上集已 9 日——Acquired 一向兩至三週一集，正常節奏。
+  </div>
+  <p class="why"><b>備註：</b>呢集係「史上最偉大 sitcom 的商業拆解」，重點係 Seinfeld 三人組如何在沒有電視網支持下，用「syndication 分帳」把一個節目變成 30 億美元機器。已在 10/19 報告處理。</p>
+</div>
+
+<div class="card">
+  <h3>All-In with Chamath, Jason, Sacks &amp; Friedberg<span class="badge none">無更新</span></h3>
+  <p class="byline">每週四集 · 最後更新 2026-10-23</p>
+  <div class="ep">
+    <b>最後一集：</b>《AI Cyber Panic, Ken Griffin's Bubble Warning, The Fall of France?》· 2026-10-23 23:08 UTC · 1 小時 43 分 23 秒<br>
+    <b>狀態：</b>RSS HTTP 200，440 集，GUID 全部已掃。All-In 通常週五／週末上新，今日（週二）未到更新窗口。
+  </div>
+  <p class="why"><b>備註：</b>三個主線：AI 網絡攻擊恐慌（Anthropic/OpenAI 安全事件外溢）、Ken Griffin 對市場泡沫的公開警告、法國政局。已在 10/24 報告處理。</p>
+</div>
+
+<div class="card">
+  <h3>The Knowledge Project<span class="badge none">無更新</span></h3>
+  <p class="byline">Shane Parrish · 最後更新 2026-10-22</p>
+  <div class="ep">
+    <b>最後一集：</b>《The Science of Doing Your Best Work》· 2026-10-22 09:50 UTC<br>
+    <b>狀態：</b>RSS HTTP 200，feed 只保留最近 20 集（正常設計），GUID 全部已掃。
+  </div>
+  <p class="why"><b>備註：</b>呢個 feed 只暴露 20 集，所以「無新集」的判斷係可靠的：只要頂部集數 GUID 未變，就冇新內容。已在 10/23 報告處理。</p>
+</div>
+
+<div class="card">
+  <h3>The Diary of a CEO<span class="badge none">昨日已拆</span></h3>
+  <p class="byline">Steven Bartlett · 最後更新 2026-10-26</p>
+  <div class="ep">
+    <b>最後一集：</b>《Mark Cuban: The Next Market Crash Is Where The Real Money Is Made!》· 2026-10-26 05:00 UTC · 91 分 28 秒<br>
+    <b>狀態：</b>RSS HTTP 200，902 集，GUID 全部已掃。呢集已在<b>昨日（10-26）報告</b>做過完整深度拆解，今日不重複。
+  </div>
+  <p class="why"><b>備註：</b>Diary of a CEO 每週一、四上新（約 05:00 UTC），下一次更新窗口係 10/29。</p>
+</div>
+
+<h2 class="section">今日帶走的三件事</h2>
+<div class="rule"></div>
+
+<div class="three">
+  <h4>If you only remember three things</h4>
+  <ol>
+    <li><b>優勢長得很醜，而且通常只值 20 秒。</b>Kokonas 打贏高盛的武器係一條電話線；Garfield 打贏同代人的武器係把僅有的書讀到爛。兩者都不需要天賦，只需要<b>願意做別人不肯做的沉悶部分</b>。</li>
+    <li><b>殺死你的通常係內部權威，唔係外部對手。</b>Garfield 死於 Bliss 醫生的排他與無知，唔係 Guiteau 的子彈。審視你身邊有邊個「掌握決策權但拒絕更新認知」的人——佢就係你公司的 Bliss。</li>
+    <li><b>套利會關門，所以要在它還開著的時候決定幾時走。</b>Kokonas 做 7 個月就主動關掉最賺錢的策略。大部分人的失敗唔係冇抓到機會，係抓到了但唔肯放手。</li>
+  </ol>
+</div>
+
+<div class="foot">
+  <b>關於本報告</b><br>
+  所有內容基於 RSS feed 原文、Apple Podcasts 官方描述、以及公開可查證的報導與書評。<b>Founders 一集官方 show notes 只有書名</b>（該節目慣例不提供詳細 notes），因此本集的人物線與數據，係依據 Candice Millard 原書所記載的史實、以及 Smithsonian Magazine、The Atlantic、《紐約時報》書評等公開資料整理，並在文中標明出處；引用均為可查證的原文，非音頻逐字轉錄。<br>
+  <b>My First Million</b> 一集的引用與數據，來自官方 show notes 及公開的節目摘要（Scuttlebutt, 2026-10-27）。<br><br>
+  下一輪掃描：2026-10-28 09:53 UTC · 預期更新：Diary of a CEO（10/29）、All-In（週末）<br>
+  <a href="https://jmoksz.github.io/mindset-podcasts/">jmoksz.github.io/mindset-podcasts</a>
+</div>
+
+</div>
+</body>
+</html>
