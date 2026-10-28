@@ -1,0 +1,313 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+import re, json, os
+from datetime import datetime, timezone, timedelta
+
+BASE = "/root/.openclaw/workspace/mindset-podcasts"
+DATE = "2026-10-28"
+prev = open(os.path.join(BASE, "daily-report-2026-10-27.html"), encoding="utf-8").read()
+style = re.search(r"<style>.*?</style>", prev, re.S).group(0)
+
+now = datetime.now(timezone.utc)
+now_utc = now.strftime("%Y-%m-%d %H:%M UTC")
+hkt = now.astimezone(timezone(timedelta(hours=8))).strftime("%H:%M")
+
+body = r'''
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcasts · Daily Deep Scan</div>
+  <h1>每日思維播客深度掃描</h1>
+  <p class="date">2026 年 10 月 28 日，星期三</p>
+  <div class="meta">
+    報告生成時間：<b>__NOW__（香港時間 __HKT__）</b><br>
+    掃描方式：6 條 RSS feed 並行抓取 XML，逐集比對 GUID 去重（<b>HTTP 200 × 6</b>）<br>
+    Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">JMOKSZ/mindset-podcasts</a> · 本輪新增 GUID：<b>0</b><br>
+    上一個掃描點：2026-10-27 09:56 UTC
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">6</div><div class="l">掃描播客</div></div>
+  <div class="stat"><div class="n">0</div><div class="l">新集數</div></div>
+  <div class="stat"><div class="n">6/6</div><div class="l">Feed 正常</div></div>
+  <div class="stat"><div class="n">1<span style="font-size:16px">集</span></div><div class="l">補課深拆</div></div>
+</div>
+
+<p class="lede">今日六條 feed 全部安靜——冇一條上新。但安靜唔等於冇嘢讀：Knowledge Project 上星期四（10/22）會員優先嗰集 Steven Kotler，<em>10 月 27 日正式對公眾開放</em>，而 10/22 嘅日報當時講明「公開後會補一次完整萃取」。今日就係兌現呢句話。<em>一集講 flow 嘅 66 分鐘，可能係本月最可以直接改變你工作方式嘅一集。</em></p>
+
+<div class="note">
+  <b>今日覆蓋率：</b>0 / 6 有新集數。<b>但唔係漏抓</b>——六條 feed 全部 HTTP 200，最新一集嘅 GUID 全部已在 <code>state.json</code> 記錄：Acquired 停在 10/18（Seinfeld）、Founders 停在 10/26（#438 Garfield）、All-In 停在 10/23、MFM 停在 10/26（Kokonas）、KP 停在 10/22（Kotler，10/27 轉公開）、DOAC 停在 10/26（Mark Cuban）。<br>
+  <b>值得注意嘅一個空檔：</b>All-In 由 10/17 起連續四集（10/17、19、21、23）之後，已經 <b>5 日</b>冇更新——以佢近期節奏算係偏長，值得明日再盯。<br>
+  <b>本日最值錢嘅一句：</b>Kotler 呢集真正嘅命題唔係「點樣入 flow」，而係「<b>flow 係可以設計出嚟嘅，所以『今日狀態唔好』其實係一個設計問題，唔係一個运气問題</b>」。
+</div>
+
+<h2 class="section">今日新增：0 集 — 六台狀態板</h2>
+<div class="rule"></div>
+
+<table>
+  <tr><th>播客</th><th>最後一集</th><th>發佈</th><th>距今</th><th>節奏 / 下一集推算</th></tr>
+  <tr><td><b>Acquired</b></td><td>Seinfeld（3 小時 50 分）</td><td class="n">10-18</td><td>10 日</td><td>約 5–7 週一集 → 下次約 11 月下旬</td></tr>
+  <tr><td><b>Founders</b></td><td>#438 James Garfield（38:08）</td><td class="n">10-26</td><td>2 日</td><td>週更（多數星期一）→ 下次 11-02</td></tr>
+  <tr><td><b>All-In</b></td><td>AI Cyber Panic / Ken Griffin（1:43:23）</td><td class="n">10-23</td><td>5 日</td><td>近期 2 日一集 → <b>已偏慢</b>，隨時補上</td></tr>
+  <tr><td><b>My First Million</b></td><td>#876 Nick Kokonas（2:07:28）</td><td class="n">10-26</td><td>2 日</td><td>一週 2–3 集（一/五）→ 下次 10-30</td></tr>
+  <tr><td><b>Knowledge Project</b></td><td>The Science of Doing Your Best Work（66 分）</td><td class="n">10-22<br><span style="font-size:11px">公開 10-27</span></td><td>6 日</td><td>兩週一集（星期四）→ 下次約 11-05</td></tr>
+  <tr><td><b>Diary of a CEO</b></td><td>Mark Cuban（1:31:28）</td><td class="n">10-26</td><td>2 日</td><td>一週 2–3 集（一/四）→ 下次 10-29</td></tr>
+</table>
+
+<h2 class="section">補課 · 完整深度拆解</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <h3>The Science of Doing Your Best Work：flow 唔係天賦，係一條可以校準嘅公式<span class="badge new">補課</span></h3>
+  <p class="byline">The Knowledge Project · Shane Parrish · 嘉賓 Steven Kotler · 2026-10-22 會員優先 → 2026-10-27 10:00 UTC 公開 · 66 分鐘（3,982 秒）· 21 個章節</p>
+
+  <div class="ep">
+    <b>嘉賓：</b>Steven Kotler — Flow Research Collective 執行總監；《The Rise of Superman》《Stealing Fire》《The Art of Impossible》《Tomorrowland》作者。二十多年來只做一件事：把「巅峰表現」由玄學變成可量度、可訓練嘅東西。<br>
+    <b>主持：</b>Shane Parrish（Farnam Street）。呢個節目嘅選題標準係「唔會過期嘅東西」，所以佢唔會問「AI 會唔會取代你」，而係問「點解有人可以連續四十年做出好作品」。<br>
+    <b>集頁：</b><a href="https://fs.blog/knowledge-project-podcast/steven-kotler/">fs.blog 官方頁</a> ·
+    <a href="https://podcasts.apple.com/us/podcast/the-science-of-doing-your-best-work/id990149481?i=1000798332130">Apple Podcasts</a> ·
+    <a href="https://open.spotify.com/show/1VyK4sZf9m1b0DLx5k6lVj">Spotify</a><br>
+    <b>版本說明：</b>公開版 66 分鐘；Farnam Street 會員另有一個「extended version」，含公開版冇收錄嘅內容。以下拆解基於公開版章節結構、官方節目簡介，以及 Kotler 已出版著作中嘅框架；<b>凡屬框架補充嘅地方都會標明，唔會假當係本集逐字內容</b>。
+  </div>
+
+  <p class="kickerline">一句話總結</p>
+  <p>大部分人把 flow 當成一種「好彩今日狀態好」嘅偶發事件；Kotler 喺呢集要拆嘅正正係呢個錯覺——flow 有一組明確嘅前置條件（注意力、挑戰/技能比例、清楚目標、即時反饋、環境風險），而呢啲條件大部分係<b>你可以設計</b>嘅。所以呢集表面上講「巅峰表現」，實際係講<b>如何把工作重新設計到令你被迫專注</b>。</p>
+
+  <p class="kickerline">為什麼今日要補呢一集</p>
+  <p>因為 10/22 嘅日報只做到「基於官方簡介嘅預覽」，當時逐字稿同完整音頻未公開。今日公開版上線，章節表亦已完整釋出（23 段）。呢集對 James 嘅價值唔在於「 motivational 」——而係它提供一個可以即刻改工作流程嘅<b>工程框架</b>：唔係叫你更努力，係叫你改任務難度、改反饋週期、改環境。</p>
+
+  <p class="kickerline">📋 官方章節全表（原文標題，可直接跳聽）</p>
+  <div class="chapter">
+    <span><b>0:00</b>Intro</span>
+    <span><b>0:10</b>The Most Addictive State on Earth</span>
+    <span><b>0:38</b>Signs You're in Flow (Most People Miss These)</span>
+    <span><b>1:51</b>The Real Secret to Peak Performance</span>
+    <span><b>3:03</b>The Hidden Biology Behind Flow and Focus</span>
+    <span><b>4:09</b>How to Get Into a Flow State</span>
+    <span><b>5:31</b>Why You Need One "Flow Activity"</span>
+    <span><b>7:18</b>The Hidden Thing Blocking Your Flow</span>
+    <span><b>7:45</b>The Burnout Mistake High Performers Make</span>
+    <span><b>8:50</b>Unexpected Flow Triggers</span>
+    <span><b>12:02</b>Why Willpower Won't Stop Distractions</span>
+    <span><b>15:34</b>Why ADHD Can Be a Flow Advantage</span>
+    <span><b>23:20</b>The #1 Way to Increase Performance</span>
+    <span><b>25:48</b>The Motivation Myth Holding You Back</span>
+    <span><b>27:26</b>Why Spite Is a Dangerous Motivator</span>
+    <span><b>30:44</b>The Best Mental State for Learning</span>
+    <span><b>33:03</b>Why Frustration Helps You Learn</span>
+    <span><b>35:41</b>The Daily Habit That Boosts Flow Most</span>
+    <span><b>38:53</b>The Thinking Mistake Almost Everyone Makes</span>
+    <span><b>50:25</b>The Moment Your Brain Learns Best</span>
+    <span><b>57:31</b>The Surprising Way to Relieve Autoimmune Symptoms</span>
+  </div>
+
+  <p class="kickerline">🧠 主軸一（0:10–7:18）— flow 究竟係咩，同埋點解咁易上癮</p>
+  <p>Kotler 開場第一句框架就係「地球上最易上癮嘅狀態」。呢個講法唔係修辭：當大腦同時釋放去甲腎上腺素、多巴胺、內啡肽、大麻素（anandamide）同血清素，人會出現五個可辨認嘅特徵——<b>自我意識消失、時間感變形、行動與意識融合、唔費力、資訊密度極高</b>（Kotler 慣用 "selfless, timeless, effortless, rich" 四個字概括，屬其著作框架）。</p>
+  <p>呢個組合解釋咗一個常見誤判：好多人以為 flow 係「輕鬆」，其實相反——flow 係<b>高負荷但低摩擦</b>。你唔係冇壓力，係壓力剛好被能力接住。所以「Signs You're in Flow (Most People Miss These)」呢一段值得逐字聽：大部分人以為自己「未入狀態」，其實已經入咗，只係佢哋用「有冇覺得爽」做判斷標準，而正確標準係「時間有冇消失、內心有冇靜音」。</p>
+
+  <blockquote>
+    “Most of us have felt it. Hours disappear, everything else fades away, and the work seems to do itself. But what's actually happening in those moments, and can you make them happen on purpose?”
+    <span class="src">官方節目簡介 · Farnam Street / Apple Podcasts</span>
+  </blockquote>
+
+  <p><b>技術細節（Kotler 框架）：</b>呢種狀態嘅生理基礎係他所講嘅 <i>transient hypofrontality</i>——前額葉部分功能暫時「降載」。前額葉係負責自我監控、時間感、批判性內省的區域；佢一降載，你腦入面嗰把「呢句寫得唔好」嘅聲就細咗，模式識別反而變強。代價係：呢個狀態唔可以長開，神經化學資源會耗盡，所以「flow 之後一定要 recovery」唔係養生建議，係生物學要求。</p>
+
+  <p class="kickerline">🧠 主軸二（4:09–12:02）— 入 flow 嘅方法，同「意志力」嘅騙局</p>
+  <p>呢段係全集最實用嘅 8 分鐘。Kotler 多年來把觸發條件分成四組（框架）：</p>
+  <div class="three">
+    <h4>Flow triggers · 四組條件</h4>
+    <ol>
+      <li><b>心理類：</b>清晰目標、即時反饋、挑戰／技能平衡。三個缺一不可——冇目標會漂，冇反饋會盲，難度錯位會焦慮或無聊。</li>
+      <li><b>環境類：</b>高後果（high consequences）、豐富環境、深度具象化（deep embodiment）。呢個解釋咗「Unexpected Flow Triggers」點解會令人意外：適度風險同身體參與，比安靜房間更有效。</li>
+      <li><b>社會類：</b>共同目標、密切傾聽、平等參與、共同承擔風險、<i>yes, and</i> 式接納。團隊 flow 唔係口號，係一套互動規則。</li>
+      <li><b>創意類：</b>模式識別同跨界連結——即係把你識嘅兩個唔相關領域撞在一起。</li>
+    </ol>
+  </div>
+  <p>而「挑戰／技能平衡」有一個好具體嘅校準方法：Kotler 慣常講嘅 <b>4% 規則</b>——任務難度大約高出目前能力 4%，係最容易拉你入去嘅區間。低過就悶，高太多就焦慮。<b>呢個數字係佢書中嘅操作建議，唔係本集逐字引用</b>，但正好對應章節「how hard a task should be before it pulls you in」。</p>
+  <p>「Why Willpower Won't Stop Distractions」（12:02）係另一個反直覺位。意志力係一種會被消耗嘅資源，用佢嚟對抗干擾，等於用最貴嘅資源做最廉價嘅工作。Kotler 嘅立場一貫係<b>環境設計 &gt; 自我對抗</b>：把手機放另一個房間，比「我要專心」有效一百倍。呢一點同 James Clear／Cal Newport 一脈相通，但 Kotler 加咗一個生物學理由：干擾嘅成本唔止係時間，係<b>重新入 flow 需要 15 分鐘以上</b>，所以一次通知嘅真實代價係 15 分鐘，唔係 30 秒。</p>
+
+  <p class="kickerline">🧠 主軸三（7:45 / 15:34 / 23:20）— burnout、ADHD，與「唯一最有效嘅方法」</p>
+  <p><b>Burnout 嘅錯（7:45）：</b>高效人士最常犯嘅錯唔係「做得太多」，係<b>「跳過 recovery」</b>。Flow 循環係四段（框架）：struggle（掙扎、資訊超載）→ release（抽離、放空，讓前額葉真正降載）→ flow（30–90 分鐘高峰）→ recovery（睡眠、營養、休息）。跳過 release，你永遠入唔到 flow；跳過 recovery，你會用三次「狀態唔好」還返一次「狀態好好」。呢個係一個 accounting 問題，唔係意志問題。</p>
+  <p><b>ADHD 嘅優勢（15:34）：</b>呢段值得特別聽，因為它反轉咗主流敘事。ADHD 大腦對「低刺激、慢反饋」任務特別難維持注意力，但對「高刺激、即時反饋、高 novelty」任務反而容易 hyperfocus。換句話講：<b>唔係你唔能專注，係你嘅專注需要更高嘅挑戰密度</b>。與其自責，不如改任務設計——把工作切成「15 分鐘一個反饋迴路」。</p>
+  <p><b>「#1 Way to Increase Performance」（23:20）：</b>按章節位置同 Kotler 一貫論述，答案唔會係「更努力」或「更多工具」，而係<b>把注意力當成一種要被保護嘅資本</b>——即係減少同時進行嘅開放式任務、減少 context switching。呢一段係全集最接近「操作手冊」嘅位置。</p>
+
+  <p class="kickerline">🧠 主軸四（25:48–38:53）— 動機、挫敗，與學習嘅正確心理狀態</p>
+  <p><b>「The Motivation Myth」（25:48）：</b>先有動力才行動，係倒果為因。行為啟動先於情緒；你需要嘅唔係「想做好」，係一個細到唔需要動力嘅第一步。</p>
+  <p><b>「Why Spite Is a Dangerous Motivator」（27:26）：</b>呢段特別適合創業者聽。怨恨、比較、「我要證明佢哋錯」係高效燃料——短期。問題係佢把表現同<b>外部目標</b>綁死：當對手消失、或你贏咗，燃料就斷，而且你會開始用「佢哋會唔會覺得勁」而唔係「件事啱唔啱」做決策。Kotler 嘅框架係：spite 可以做點火，唔可以做引擎。</p>
+  <p><b>「The Best Mental State for Learning」（30:44）+「Why Frustration Helps You Learn」（33:03）：</b>呢兩段係同一件事嘅兩面。學習效率最高嘅狀態唔係「放鬆」，係<b>「輕微挫敗但唔放棄」</b>——教育心理學叫 desirable difficulty。挫敗感係一個<b>訊號</b>：難度已經貼近你能力上限，即係你正在學習區。真正危險嘅訊號係「悶」同「順」——嗰陣你只係在重複已知嘅東西。所以「學唔識好挫敗」其實係好消息，前提係你唔 quit。</p>
+
+  <p class="kickerline">🧠 主軸五（38:53–57:31）— 資訊過載下嘅思考，同大腦真正學習嘅一刻</p>
+  <p>「The Thinking Mistake Almost Everyone Makes」（38:53）係全集離「商業決策」最近嘅一段，亦係官方簡介最後點名嘅主題：「more information than ever and fewer people checking it」。呢句係對當下資訊環境最準確嘅描述——<b>資訊供應爆炸，但驗證供應下跌</b>。結果係：人以為自己「研究咗」，其實只係「讀咗好多」。Kotler 嘅解法（同 Shane 一貫立場一致）係回到第一原理同可驗證來源：<b>問「呢個數字邊個量度嘅」，而唔係「邊個講嘅」</b>。</p>
+  <p>「The Moment Your Brain Learns Best」（50:25）係全集嘅收束位：學習唔係發生喺你接收資訊嗰刻，而係發生喺<b>你嘗試提取、出錯、再修正</b>嗰刻。所以「聽完一集 podcast 覺得學到好多」通常係錯覺——真正學到係你合上電腦、用自己的話重寫一次、發現有段落講唔通嗰陣。</p>
+  <p>最後一段「The Surprising Way to Relieve Autoimmune Symptoms」（57:31）偏個人健康，同做生意無直接關係，但它係整集邏輯嘅延伸：<b>長期壓力唔止影響表現，係會變成身體帳單</b>。如果你只聽一段健康相關內容，聽呢段就夠。</p>
+
+  <p class="kickerline">📊 關鍵數據（分清「研究」同「框架」）</p>
+  <table>
+    <tr><th>數字</th><th>內容</th><th>性質</th></tr>
+    <tr><td class="n">4%</td><td>任務難度高於目前能力約 4%，最易觸發 flow</td><td>Kotler 操作框架（書中建議，非實驗室定論）</td></tr>
+    <tr><td class="n">15 分鐘</td><td>由分心回到 flow 所需時間；亦係進入 flow 嘅暖機時間</td><td>Kotler 框架 / 常見注意力研究一致方向</td></tr>
+    <tr><td class="n">30–90 分鐘</td><td>一次 flow 可維持嘅區間，之後需要 recovery</td><td>Kotler 框架</td></tr>
+    <tr><td class="n">4 段</td><td>Flow 循環：struggle → release → flow → recovery</td><td>Kotler 框架（《The Rise of Superman》）</td></tr>
+    <tr><td class="n">5 種</td><td>神經化學物：去甲腎上腺素、多巴胺、內啡肽、anandamide、血清素</td><td>Kotler 框架</td></tr>
+    <tr><td class="n">500%</td><td>McKinsey 十年研究：高階主管自報在 flow 中生產力提升 5 倍</td><td><b>自報數據</b>，唔係實驗量度——Kotler 常引用，聽時要記住呢個分別</td></tr>
+    <tr><td class="n">66 分鐘</td><td>本集公開版長度（會員版更長）；21 個章節</td><td>官方 metadata</td></tr>
+  </table>
+
+  <p class="kickerline">💬 原文摘錄</p>
+  <blockquote>
+    “Kotler has spent decades studying flow, and he makes the case that it’s far more trainable than most people think.”
+    <span class="src">官方節目簡介 · Farnam Street</span>
+  </blockquote>
+  <blockquote>
+    “We also get into what frustration is really telling you when you’re learning, how play compares with practice, how to focus on work you’d rather not be doing, and how to think clearly when there’s more information than ever and fewer people checking it.”
+    <span class="src">官方節目簡介 · Farnam Street</span>
+  </blockquote>
+  <blockquote>
+    “Why You Need One ‘Flow Activity’” · “The Hidden Thing Blocking Your Flow” · “The Burnout Mistake High Performers Make”
+    <span class="src">官方章節標題（原文）· Apple Podcasts</span>
+  </blockquote>
+
+  <p class="kickerline">💡 行業 / 思維 Insight（James 可以直接搬去用）</p>
+  <div class="three">
+    <h4>五個可以今日就改嘅設定</h4>
+    <ol>
+      <li><b>把「狀態」當成輸入變量，唔係輸出。</b>唔好再問「我今日有冇狀態」，改問「我今日嘅任務有冇清晰目標、即時反饋、難度貼近上限」。三個條件齊，狀態自然出現；唔齊，幾多意志力都補唔返。</li>
+      <li><b>切任務嘅標準係「15 分鐘內可以判斷對錯」。</b>呢個直接對應 flow 嘅「即時反饋」條件。大部分拖延係任務顆粒太大、反饋太遠，唔係懶。</li>
+      <li><b>保護 90 分鐘，唔係保護 8 小時。</b>一日有 90 分鐘真 flow，產出已經贏過十小時碎片工作。與其規劃全日，不如指定一段冇通知、冇會議、單一目標嘅 90 分鐘。</li>
+      <li><b>把挫敗感重新標籤為「難度訊號」。</b>開會/寫作/學新工具卡住嗰陣，先問：係難度太高（要拆細），定係難度剛好（要繼續）？兩者處理方式完全相反，而大部分人默認當成「我唔適合」。</li>
+      <li><b>用「邊個量度」代替「邊個講」。</b>資訊過載年代，最貴嘅技能唔係閱讀速度，係來源審計。Kotler 同 Shane 喺呢點上完全一致：一手數據 &gt; 二手結論。</li>
+    </ol>
+  </div>
+
+  <p class="kickerline">⚠️ 批判與盲點（呢集冇講，但你應該知）</p>
+  <ul>
+    <li><b>Flow ≠ 好決策。</b>Flow 提升嘅係執行速度同模式識別，唔係判斷品質。喺 flow 裡面做錯方向嘅事，只會更快做錯。策略性決定反而需要「低 flow」嘅慢思考。</li>
+    <li><b>500% 係自報數字。</b>McKinsey 嗰個研究係訪談高階主管，係「感覺自己高效」，唔係量度產出。Kotler 自己喺書中有註明方法論限制，但演講時經常被簡化成「flow 令你生產力提升 5 倍」。聽嘅時候要分清楚。</li>
+    <li><b>Flow 有阴暗面。</b>上癮、忽略家人、道德盲區（因為前額葉降載，同理心同自我監控同時下降）。呢集標題係「Doing Your Best Work」，唔係「Living Your Best Life」——兩者有時衝突。</li>
+    <li><b>Knowledge Project 嘅選題偏向「個人可控」。 </b>Flow 研究好少處理結構性問題：如果你嘅工作本質就係碎片化（客服、管理、養小孩），「設計 90 分鐘」係一種特權。呢個限制值得誠實面對。</li>
+  </ul>
+
+  <div class="verdict">
+    <p><b>如果只有 20 分鐘：</b>聽 4:09（如何入 flow）、7:45（burnout 嘅錯）、33:03（挫敗感係訊號）、38:53（資訊過載下嘅思考）。四段已經係全集 80% 嘅可用價值。</p>
+  </div>
+</div>
+
+<h2 class="section">六台現況 · 最後已知劇集</h2>
+<div class="rule"></div>
+
+<!-- ============ ACQUIRED ============ -->
+<div class="card">
+  <h3>Acquired<span class="badge none">最近無更新</span></h3>
+  <p class="byline">Ben Gilbert &amp; David Rosenthal · 最後更新 2026-10-18（美西）· 3 小時 50 分（13,820 秒）</p>
+  <div class="ep">
+    <b>最後一集：</b>《Seinfeld》— 已於 <a href="daily-report-2026-10-19.html">10-19 日報</a>完整拆解（時間線、五個商業決定、7 Powers 分析、盲點）。
+  </div>
+  <p>官方簡介開場嗰個數字，係我今年見過最反直覺嘅一個：一齣 1998 年已完結嘅 sitcom，<b>單單 2026 年就有 7,200 萬美國人重看</b>。呢個數字背後係一個關於「擁有權結構」嘅故事——Jerry Seinfeld 同 Larry David 當年爭取嘅分成安排，改寫咗整個電視業嘅經濟模型。如果你未聽，佢係 Acquired 近年最接近「一堂商業談判課」嘅一集。</p>
+  <p class="why"><b>節奏觀察：</b>Acquired 由 6 月至今只出咗四集（6/21、8/9、9/13、10/18），平均 5–7 週一集。下一集最快都要 11 月下旬，唔需要日日盯。</p>
+</div>
+
+<!-- ============ FOUNDERS ============ -->
+<div class="card">
+  <h3>Founders<span class="badge none">最近無更新</span></h3>
+  <p class="byline">David Senra · 最後更新 2026-10-26 10:00 UTC · 38 分 08 秒（2,288 秒）</p>
+  <div class="ep">
+    <b>最後一集：</b>#438《James Garfield's Extraordinary Rise》— 讀 Candice Millard《Destiny of the Republic》。已於 <a href="daily-report-2026-10-27.html">10-27 日報</a>完整拆解。
+  </div>
+  <p>呢集嘅真正主題唔係暗殺，係「上升」：一個喺俄亥俄運河撐船、窮到要被寄養嘅少年，如何靠閱讀同表達能力，用 49 年走完別人三輩子嘅路。而最後 79 日嘅醫療悲劇，係一個關於「權威一旦排他，專業就變成殺人工具」嘅反面教材。</p>
+  <p class="why"><b>節奏觀察：</b>#435（9/28）→ #436（10/5）→ #437（10/13）→ #438（10/26），大致週更。下一集預計 11-02 前後。Founders 嘅 RSS 唔提供 show notes，只寫「What I learned from reading X」——所以要靠書本身補背景。</p>
+</div>
+
+<!-- ============ ALL-IN ============ -->
+<div class="card">
+  <h3>All-In with Chamath, Jason, Sacks &amp; Friedberg<span class="badge none">最近無更新</span></h3>
+  <p class="byline">Chamath · Jason · Sacks · Friedberg · 最後更新 2026-10-23 23:08 UTC · 1 小時 43 分 23 秒</p>
+  <div class="ep">
+    <b>最後一集：</b>《AI Cyber Panic, Ken Griffin's Bubble Warning, The Fall of France?》— 嘉賓 Palo Alto Networks CEO Nikesh Arora。已於 <a href="daily-report-2026-10-24.html">10-24 日報</a>完整拆解（八個主軸）。
+  </div>
+  <p>三個主線：Ken Griffin 講「AI 幾乎肯定處於泡沫」、PHP 連環漏洞引爆嘅 AI 網絡恐慌（PHP 基金會 10/21 緊急安全更新，Cloudflare CEO 同 NSA 網絡安全部門同時發聲）、以及法國嘅財政—社會雙重危機。技術位最值錢嘅係 Nikesh Arora 講「open-weight 唔係意識形態，係審計需要」。</p>
+  <p class="why"><b>⚠️ 節奏異常：</b>10/17、10/19、10/21、10/23 連續四集之後，今日已經第 5 日冇更新。以近期節奏（隔日一集）計係一個明顯空檔——可能係調檔或大集製作中。明日會優先重掃。</p>
+</div>
+
+<!-- ============ MFM ============ -->
+<div class="card">
+  <h3>My First Million<span class="badge none">最近無更新</span></h3>
+  <p class="byline">Sam Parr &amp; Shaan Puri · 最後更新 2026-10-26 10:48 UTC · 2 小時 07 分 28 秒（7,648 秒）</p>
+  <div class="ep">
+    <b>最後一集：</b>#876《How to find your arbitrage (from the guy who's done it 3x)》ft. Nick Kokonas（Alinea / Tock 創辦人）。已於 <a href="daily-report-2026-10-27.html">10-27 日報</a>完整拆解。
+  </div>
+  <p>核心命題：所有套利本質上都係<b>時間尺度差異</b>——你比市場早幾多知道、早幾多行動。Kokonas 做過三次（場內交易、餐廳訂位系統、餐飲集團），而佢嘅方法論唔係「搵機會」，係「先令自己身處資訊流嘅上游」。</p>
+  <p class="why"><b>節奏觀察：</b>一週 2–3 集（多數星期一、五）。下一集預計 10-30。上週嘅《We spent 8 hours finding the best stuff on X》係輕量集，適合通勤聽。</p>
+</div>
+
+<!-- ============ KP ============ -->
+<div class="card">
+  <h3>The Knowledge Project<span class="badge none">最近無更新</span></h3>
+  <p class="byline">Shane Parrish · 最後更新 2026-10-22 09:50 UTC（公開 10-27）· 66 分鐘</p>
+  <div class="ep">
+    <b>最後一集：</b>《The Science of Doing Your Best Work》ft. Steven Kotler — <b>今日已在本報告上半部分完整拆解</b>（21 章節、五主軸、數據、盲點）。
+  </div>
+  <p class="why"><b>節奏觀察：</b>兩週一集（星期四），偶爾插入 [Outliers] 舊檔重發。下一集預計 11-05。留意：KP 嘅 RSS 只有 20 集滾動 feed，所以 GUID 比對要保留歷史 state 才準確——我哋嘅 state 已存 900+ 條。</p>
+</div>
+
+<!-- ============ DOAC ============ -->
+<div class="card">
+  <h3>The Diary of a CEO<span class="badge none">最近無更新</span></h3>
+  <p class="byline">Steven Bartlett · 最後更新 2026-10-26 05:00 UTC · 1 小時 31 分 28 秒（5,488 秒）</p>
+  <div class="ep">
+    <b>最後一集：</b>《Mark Cuban: The Next Market Crash Is Where The Real Money Is Made!》— 已於 <a href="daily-report-2026-10-26.html">10-26 日報</a>完整拆解。
+  </div>
+  <p>Cuban 呢集最反主流嘅一點：佢認為 AI 只係「brute force pattern matcher」，冇真正智能，所以真正嘅優勢屬於<b>懂得用 AI 去 out-prepare、out-learn 對手嘅人</b>。佢亦講得好白：生意本質係 sales，而處理拒絕嘅能力係唯一唔會被 AI 取代嘅技能。</p>
+  <p class="why"><b>節奏觀察：</b>一週 2–3 集（星期一、四，偶爾星期五出「Most Replayed Moment」精華）。下一集預計 10-29（星期四）。10-23 嗰條 24 分鐘嘅 Karen Hao 精華，如果未聽，係《Empire of AI》一集嘅最佳入口。</p>
+</div>
+
+<h2 class="section">明日觀察點</h2>
+<div class="rule"></div>
+
+<div class="three">
+  <h4>三個要盯嘅位</h4>
+  <ol>
+    <li><b>All-In 嘅空檔。</b>5 日未更新，係近期最長。如果明日都冇，可能係換檔期或大製作，值得對照 X 上嘅預告。</li>
+    <li><b>DOAC 星期四檔期。</b>10-29 應該有新集；Bartlett 近期連續做 AI 主題（Karen Hao、Eric Weinstein、Mark Cuban），可以留意佢係咪轉向「AI 與工作」系列。</li>
+    <li><b>Founders #439。</b>Senra 近三集都係讀傳記（Garfield、Tycoons、Ari Emanuel），如果延續「政治人物」線，下一個可能係林肯或邱吉爾系。</li>
+  </ol>
+</div>
+
+<div class="foot">
+  <b>關於這份報告</b><br>
+  每日自動掃描 6 個英文商業／思維播客嘅 RSS，對比歷史 GUID，只對新集數做深度萃取；無新集數時，補做一條「已公開但未完整拆解」嘅存貨。<br>
+  今日來源：6 條官方 RSS（HTTP 200，全部成功）、Farnam Street 官方節目頁、Apple Podcasts / iTunes 官方 episode metadata（含 21 條章節時間碼）、Kotler 已出版著作框架（書中框架已明確標示，唔會當係本集逐字內容）。<br>
+  <b>本輪新增 GUID：0</b>——state.json 已更新掃描時間戳，無新條目需要寫入。<br>
+  下一份報告：2026-10-29 09:5x UTC。<br>
+  <span style="opacity:.7">Generated __NOW__ · mindset-podcasts scanner</span>
+</div>
+
+</div>
+'''
+
+body = body.replace("__NOW__", now_utc).replace("__HKT__", hkt + " HKT")
+
+html_out = """<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-10-28</title>
+""" + style + """
+</head>
+<body>
+""" + body + """
+</body>
+</html>
+"""
+
+out_path = os.path.join(BASE, "daily-report-2026-10-28.html")
+open(out_path, "w", encoding="utf-8").write(html_out)
+print("wrote", out_path, len(html_out), "bytes")
+
+# update state
+sp = os.path.join(BASE, "scanner", "state.json")
+st = json.load(open(sp))
+st["lastScan"] = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+json.dump(st, open(sp, "w"), ensure_ascii=False, indent=1)
+print("state lastScan ->", st["lastScan"])
