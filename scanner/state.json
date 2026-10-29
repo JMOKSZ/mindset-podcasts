@@ -1,5 +1,5 @@
 {
- "lastScan": "2026-10-28T09:56:12Z",
+ "lastScan": "2026-10-29T09:56:02Z",
  "scannedEpisodes": {
   "acquired": [
    "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -2073,7 +2073,8 @@
    "140afff2-cbad-11f1-8b99-3b8894703c43",
    "3b253f7a-cc99-11f1-9f91-bb08f63fa057",
    "3f241c5c-ced0-11f1-87b3-138dd21a06c3",
-   "d70fc726-d12a-11f1-85ee-6705a2c908df"
+   "d70fc726-d12a-11f1-85ee-6705a2c908df",
+   "eb705d12-d2be-11f1-8137-233c6aa71177"
   ],
   "knowledge-project": [
    "https://fs.blog/?post_type=podcast&p=81515",
@@ -2108,7 +2109,8 @@
    "https://fs.blog/?post_type=podcast&p=80015",
    "https://fs.blog/?post_type=podcast&p=81763",
    "https://fs.blog/?post_type=podcast&p=81853",
-   "https://fs.blog/?post_type=podcast&p=81938"
+   "https://fs.blog/?post_type=podcast&p=81938",
+   "https://fs.blog/?post_type=podcast&p=82018"
   ],
   "diary-of-a-ceo": [
    "flightcast:01M0ECWWKZKQ93WCFTA6JV03WZ",
@@ -3012,7 +3014,8 @@
    "flightcast:01M52K4W4RGVJVCWCEV5Q2CWM6",
    "flightcast:01M53CGQ1FY66A1WPVXBRD1ZKG",
    "flightcast:01M1PECBRTP7YPXSHDZJAM5XAC",
-   "flightcast:01M53ASGWHBBHQJ0C8NDDD61AR"
+   "flightcast:01M53ASGWHBBHQJ0C8NDDD61AR",
+   "flightcast:01M5NXR742DT1QNDCDPS193Q51"
   ]
  },
  "lastScanResult": {

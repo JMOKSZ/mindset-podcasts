@@ -1,0 +1,431 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+import datetime, os
+
+now = datetime.datetime.now(datetime.timezone.utc)
+hk = now + datetime.timedelta(hours=8)
+STAMP = now.strftime("%Y-%m-%d %H:%M UTC")
+HKT = hk.strftime("%Y-%m-%d %H:%M")
+
+HEAD = r'''<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-10-29</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a; --warn:#a4442f;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;
+    line-height:1.85; font-size:17px;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px;margin-bottom:8px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;
+    color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.9;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:26px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:14px}
+  .card{background:var(--card);border:1px solid var(--line);padding:28px 30px;margin:0 0 22px}
+  .badge{display:inline-block;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10.5px;
+    letter-spacing:.1em;padding:3px 9px;border-radius:2px;vertical-align:middle;margin-left:8px}
+  .badge.none{background:#efe7db;color:#8a755c}
+  .badge.new{background:#e6f0e9;color:var(--ok)}
+  .badge.early{background:#f7e6d6;color:#a4632a}
+  .ep{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13.5px;color:var(--muted);
+    padding:12px 0;border-top:1px dotted var(--line);border-bottom:1px dotted var(--line);margin:16px 0}
+  .ep b{color:var(--ink)}
+  .why{font-size:15.5px;color:#4c3f30;background:#faf5ec;padding:14px 18px;margin-top:6px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.8}
+  .why b{color:var(--accent)}
+  table{width:100%;border-collapse:collapse;font-family:-apple-system,"Helvetica Neue",sans-serif;
+    font-size:13.5px;margin:8px 0 18px}
+  th{text-align:left;font-weight:600;color:var(--muted);font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;border-bottom:1px solid var(--ink);padding:8px 10px 8px 0}
+  td{border-bottom:1px solid var(--line);padding:11px 10px 11px 0;vertical-align:top}
+  td.n{color:var(--accent);white-space:nowrap}
+  .tag{display:inline-block;font-size:10.5px;letter-spacing:.06em;background:#f1e9dd;color:#7a6349;
+    padding:2px 7px;margin-left:6px;border-radius:2px}
+  blockquote{margin:18px 0;padding:2px 0 2px 20px;border-left:2px solid var(--accent);
+    font-style:italic;color:#4a3d2d}
+  blockquote .src{display:block;font-style:normal;font-family:-apple-system,"Helvetica Neue",sans-serif;
+    font-size:11.5px;color:var(--muted);margin-top:8px;letter-spacing:.04em}
+  .kickerline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--accent);margin:26px 0 6px;font-weight:600}
+  .three{background:#fff;border:1px solid var(--line);padding:22px 26px;margin:0 0 30px}
+  .three h4{margin:0 0 12px;font-size:15px;font-family:-apple-system,"Helvetica Neue",sans-serif;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .three ol{margin:0;padding-left:20px;font-size:16px}
+  .three li{margin-bottom:10px}
+  .chapter{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;color:#5d4a30;
+    columns:2;column-gap:28px;line-height:2}
+  .chapter span{display:block;break-inside:avoid}
+  .chapter b{color:var(--accent);font-weight:600;display:inline-block;min-width:56px}
+  .verdict{border-top:2px solid var(--ink);border-bottom:1px solid var(--line);padding:18px 0;margin:26px 0}
+  .verdict p{margin:0;font-size:16.5px}
+  .foot{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);line-height:1.9}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid #e3cfa9}
+  .num{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;color:var(--accent);
+    letter-spacing:.1em;font-weight:600}
+  @media(max-width:620px){
+    .wrap{padding:32px 18px 60px} h1{font-size:30px} .stats{grid-template-columns:repeat(2,1fr)}
+    .card{padding:22px 20px} body{font-size:16px} .chapter{columns:1}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+'''
+
+body = r'''
+<header>
+  <div class="kicker">Mindset Podcasts · Daily Deep Scan</div>
+  <h1>每日思維播客深度掃描</h1>
+  <p class="date">2026 年 10 月 29 日，星期四</p>
+  <div class="meta">
+    報告生成時間：<b>%%STAMP%%（香港時間 %%HKT%%）</b><br>
+    掃描方式：6 條 RSS feed 並行抓取 XML，逐集比對 GUID 去重（<b>HTTP 200 × 6</b>）<br>
+    Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">JMOKSZ/mindset-podcasts</a> · 本輪新增 GUID：<b>3</b><br>
+    上一個掃描點：2026-10-28 09:56 UTC
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">6</div><div class="l">掃描播客</div></div>
+  <div class="stat"><div class="n">3</div><div class="l">新集數</div></div>
+  <div class="stat"><div class="n">6/6</div><div class="l">Feed 正常</div></div>
+  <div class="stat"><div class="n">178<span style="font-size:16px">分</span></div><div class="l">可量時長合計</div></div>
+</div>
+
+<p class="lede">今日三集，三種權力。Bezos 教人<em>點樣用權</em>（對人）；K.C. Irving 教人<em>點樣建權</em>（對市場）；Sarah Paine 教人<em>點樣睇住霸權散</em>（對世界）。三集共享同一個底層命題：<em>權力唔係擁有咗就穩，而係每日都要重新賺返嚟。</em></p>
+
+<div class="note">
+  <b>今日覆蓋率：</b>3 / 6 有新集數。<b>六條 feed 全部 HTTP 200</b>，冇抓取失敗。<br>
+  <b>時間上一個巧合：</b>Knowledge Project 嗰集 <b>09:50 UTC 上線，09:53 UTC 掃到</b>——差 3 分鐘，係呢個掃描器跑咁耐以嚟最貼近發布時間嘅一次。<br>
+  <b>一個要講清楚嘅 caveat：</b>KP 嗰集雖然已入 RSS，但官網寫明 <b>Public Release: Nov 3</b>（會員現已可聽）。即係話 feed 見到、音頻未必即刻播得到。今日照樣做完整萃取，你 11 月 3 日可以無縫接上。<br>
+  <b>本日最值錢嘅一句：</b>Paine 講負面目標——「一個政府最重要嘅工作，正正因為冇發生，所以永遠冇人見到」。呢句搬去風險管理，就係<p style="margin:8px 0 0">「你今年最好嘅決定，可能係一件冇發生嘅事」。
+</div>
+
+<h2 class="section">Ep.1 · My First Million #877</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <h3>Ex-Amazon VP tells us what it’s really like working with Jeff Bezos<span class="badge new">NEW</span></h3>
+  <div class="byline">My First Million · Sam Parr &amp; Shaan Puri · 嘉賓 Ethan Evans</div>
+
+  <div class="ep">
+    <b>上線：</b>2026-10-28 11:01 UTC（香港 10/28 19:01）　<b>時長：</b>75 分 36 秒　<b>集數：</b>#877
+  </div>
+
+  <p><b>主題：</b>唔係「Bezos 有幾勁」，而係<b>一個極端高標準嘅人，日常係點樣運作嘅</b>——佢點畀 feedback、點開會、點揀項目、點樣令身邊嘅人長期覺得自己唔夠好。呢集本質上係一份「高位者行為觀察報告」，而唔係成功學。</p>
+
+  <p><b>嘉賓：</b>Ethan Evans。喺 Amazon 做咗超過 15 年，退休時係 Vice President；期間帶過由零到一嘅業務（Prime Video、Amazon Appstore 嘅早期建立），後段去 Twitch 做 VP of Commerce（Twitch Prime 就係喺佢手上）。退休後寫 <i>Level Up</i> newsletter 同做職涯社群——即係話，佢係少數<b>既喺 Bezos 身邊開過會、又願意具名講細節</b>嘅人。</p>
+
+  <div class="kickerline">核心論點 · 順住章節走</div>
+
+  <p><span class="num">01</span> <b>Criticism without praise（3:15）</b>——Bezos 嘅 feedback 係「純批评、零緩衝」。一般管理訓練教你「三文治回饋法」（讚—批—讚），但呢種做法嘅隱含訊號係「我讚你係為咗令你受得住批評」。一旦拿掉讚美，批評就變成純資訊：<b>邊度唔夠好，就係邊度唔夠好，冇其他意思</b>。呢個設計嘅副作用係——下屬會長期唔確定自己係咪做得好；好處係——唔會有人靠「關係好」而避過問題。</p>
+
+  <p><span class="num">02</span> <b>The every-great-man flaw（5:15）</b>——每一個偉大人物都有一個對應嘅缺陷。呢個框架好重要：唔係「Bezos 好勁所以要模仿」，而係「<b>佢嘅強項同弱項係同一條神經</b>」。極度專注 → 對其他一切遲鈍；極高標準 → 對人嘅承受力不敏感。你抄佢嘅優點，就一定會連佢嘅代價一齊抄。</p>
+
+  <p><span class="num">03</span> <b>Attack mode（7:05）</b>——當 Bezos 覺得你講嘢含糊、迴避、或者唔誠實，佢會切換成攻擊模式。呢度嘅關鍵唔係「佢好惡」，而係<b>攻擊模式係一個「偵測器」</b>：佢用強度去測你嘅論點有冇底。你頂得住，代表你有做過功課；你即刻縮，代表你自己都唔信。</p>
+
+  <p><span class="num">04</span> <b>「Sometimes all you need is a B」（11:45）</b>——呢個係全集最反直覺嘅一段。喺一個崇拜卓越嘅公司入面，佢話你唔需要 A+，B 就夠。<b>邏輯係：B 嘅質素 + 今日交付 &gt; A+ 嘅質素 + 下個月交付。</b>速度本身就係一種質素，因為世界會喺你打磨期間改變。呢句亦係對「完美主義者」最直接嘅一巴。</p>
+
+  <p><span class="num">05</span> <b>Question mark emails（19:35）</b>——Bezos 出名嘅做法：收到一份唔清楚嘅文件/匯報，只回一個「?」。冇解釋、冇指示、冇「請補充」。<b>個問號本身就係一道題：你要自己推斷佢問緊乜，然後自己補齊答案。</b>呢個機制嘅威力在於——它強迫下屬練「由上而下思考」：老闆會問咩？邊一句最心虛？我邊度冇數據？返工做得耐嘅人，會慢慢喺交嘢之前先自己回自己一個「?」。</p>
+
+  <p><span class="num">06</span> <b>Strategically patient, tactically impatient（22:25）</b>——呢個係全集最可操作嘅一句。對<b>方向</b>極有耐性（可以等七年做一個市場），對<b>執行</b>極不耐煩（今日問，聽日要答）。大部分人啱啱相反：方向一日三變，執行拖足三個月。呢個錯配，就係「好忙但冇進展」嘅真正原因。</p>
+
+  <p><span class="num">07</span> <b>Work hard, long, and smart（24:10）</b>——三個都要，唔可以揀兩個。呢句表面老土，但放喺「work smart 萬歲」嘅年代，其實係一個反駁：<b>smart 係乘數，hard 同 long 係被乘數。</b>乘數幾大都好，被乘數係零，結果都係零。</p>
+
+  <p><span class="num">08</span> <b>Where high-performers go to feel bad about themselves（25:15）</b>——高成就者聚集嘅地方，就係互相令對方覺得自己唔夠好嘅地方。呢個唔係 bug，係 feature：<b>你嘅標準，係由你身邊最強嗰幾個人定義嘅。</b>所以「搵到令你覺得自己廢嘅環境」，其實係一種策略，唔係一種自虐。</p>
+
+  <p><span class="num">09</span> <b>Project selection / Waiting for fat pitches（35:55 – 39:50）</b>——用 Ted Williams 嘅好球帶做比喻：<b>你要揀嘅唔係「最多機會」，而係「最肥嘅球」。</b>大部分職涯錯誤唔係做錯事，而係喺一個平庸嘅項目上做得太好，好到冇時間接下一個好項目。</p>
+
+  <p><span class="num">10</span> <b>Amazon’s idea tool（47:55）／Good design vs. bad design（50:55）</b>——Amazon 內部點樣量產 idea，同「好設計 vs 壞設計」嘅判準。呢兩段係全集最「手工藝」嘅部分：唔講理念，講具體點做。</p>
+
+  <p><span class="num">11</span> <b>The morality of Amazon（54:15）／Who Jeff studied（56:15）</b>——最後兩段拉遠：一間咁大嘅機器，道德上點擺位；同 Bezos 自己讀邊啲人（即係話，佢嘅思想係邊度嚟）。呢兩段係全集唯一觸及「評價」而唔係「觀察」嘅部分。</p>
+
+  <div class="kickerline">關鍵引用（原文，出自官方 show notes 章節標題）</div>
+
+  <blockquote>
+    “Sometimes all you need is a B.”
+    <span class="src">— 集數章節標題，11:45</span>
+  </blockquote>
+
+  <blockquote>
+    “Strategically patient, but tactically impatient.”
+    <span class="src">— 集數章節標題，22:25</span>
+  </blockquote>
+
+  <blockquote>
+    “Where high-performers go to feel bad about themselves.”
+    <span class="src">— 集數章節標題，25:15</span>
+  </blockquote>
+
+  <div class="kickerline">對 James 嘅意思</div>
+  <div class="why">
+    呢集有兩個用途。<b>第一，如果你手下有人</b>——「Question mark emails」同「Criticism without praise」係一套極高效但極傷人嘅組合。你可以只拿走第一個：<b>唔解釋，只問號</b>，逼對方自己補齊思路，但保留基本嘅人味。<br>
+    <b>第二，如果你自己係被管嘅一方</b>——「B 就夠」呢句要抄落嚟。你拖延嘅專案，九成唔係因為做唔到 A+，而係因為你唔接受 B。而世界嘅定價，係按交付時間計，唔係按完美度計。
+  </div>
+</div>
+
+<h2 class="section">Ep.2 · The Knowledge Project（Outliers）</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <h3>[Outliers] K.C. Irving: How to Build an Empire on Your Own Terms<span class="badge early">會員優先</span></h3>
+  <div class="byline">The Knowledge Project · Shane Parrish（單人講述，非訪談）</div>
+
+  <div class="ep">
+    <b>上線：</b>2026-10-29 09:50 UTC（香港 17:50）　<b>公開發布：</b>2026-11-03　<b>時長：</b>feed 未標示
+  </div>
+
+  <p><b>主題：</b>一個小鎮雜貨店之子，點樣用 60 年時間，喺加拿大最窮嘅省份之一，砌出大約 <b>300 間公司</b>嘅私人家族帝國——而且至死都唔放手。呢集係 KP 嘅 <i>Outliers</i> 系列（Shane 單人講故事，唔係訪談），所以密度高、敘事線清楚，適合當「商業史課」聽。</p>
+
+  <p><b>嘉賓：</b>冇嘉賓。主角 Kenneth Colin Irving（1899–1992），新不倫瑞克省 Bouctouche 出身，Irving Oil 同 J.D. Irving 嘅創辦人，1989 年獲加拿大勳章（Officer of the Order of Canada）。</p>
+
+  <div class="kickerline">呢個人嘅履歷（可核實背景）</div>
+
+  <table>
+    <tr><th>項目</th><th>數字 / 事實</th></tr>
+    <tr><td>出生</td><td>1899 年 3 月 14 日，Bouctouche, New Brunswick（造紙廠小鎮）</td></tr>
+    <tr><td>起點</td><td>父親 J.D. Irving 嘅雜貨店與鋸木廠</td></tr>
+    <tr><td>1924</td><td>掛 Imperial Oil 招牌開第一間油站；<b>一年內被踢出加盟</b></td></tr>
+    <tr><td>1929</td><td>成立 K. C. Irving Gas and Oil Ltd</td></tr>
+    <tr><td>1930</td><td>年銷 <b>800 萬加侖</b>汽油；Saint John 僱 212 人、其他地區 482 人</td></tr>
+    <tr><td>版圖</td><td>Irving Oil 最終發展成 <b>約 3,000 個</b>零售點；Saint John 煉油廠係<b>加拿大最大</b></td></tr>
+    <tr><td>集團規模</td><td>約 <b>300 間公司</b>，全部私人持有</td></tr>
+    <tr><td>土地</td><td>1970 年代 J.D. Irving 係 NB、NS、緬因州最大單一地主</td></tr>
+    <tr><td>1971</td><td>因遺產稅大戰，<b>遷居巴哈馬</b>；此後每年返 NB「六個月，少一日」</td></tr>
+    <tr><td>身家</td><td>Forbes 2018 估 Irving 家族約 <b>US$120 億</b></td></tr>
+    <tr><td>逝世</td><td>1992 年 12 月 13 日，Saint John，終年 93</td></tr>
+  </table>
+
+  <div class="kickerline">核心論點 · 五條「Irving 定律」</div>
+
+  <p><span class="num">01</span> <b>遇到瓶頸，就買起個瓶頸。</b>鐵路加佢運費 → 佢買船。油供應商想 squeeze 佢 → 佢自己建煉油廠。呢個模式重複咗幾十年：<b>每當上遊有人可以單方面決定佢嘅成本，佢就把嗰個人變成自己嘅部門。</b>呢個唔係「多元化」，係「消除單點依賴」——同一個動作，兩種講法，後者先係佢真正嘅邏輯。</p>
+
+  <p><span class="num">02</span> <b>打大公司唔想做嘅客。</b>大油公司唔願意送貨去鄉郊、小鎮、離島——因為單筆太小、成本太高。Irving 就係喺呢啲「唔符合經濟模型」嘅地方起家。<b>佢嘅護城河唔係規模，而係「願意做一門計唔掂數嘅生意」。</b>而當呢啲市場加起來夠大，規模優勢反過來變成佢嘅。</p>
+
+  <p><span class="num">03</span> <b>逆周期擴張。</b>大蕭條期間佢冇收縮，反而繼續買：1933–38 年入股 Canada Veneers、1938 年趁股東退出擔保、用一筆一萬蚊銀行貸款嘅擔保換取控制權。<b>危機嘅本質係「資產變便宜但買家消失」</b>——佢嘅優勢唔係眼光，係<b>佢一直有現金同信用</b>。</p>
+
+  <p><span class="num">04</span> <b>垂直整合到極致。</b>每一間 Irving 公司都買其他 Irving 公司嘅服務——造船、拖輪、貨運、建築、鋼構、造紙、媒體、電視台。利潤唔會離開集團。<b>結果係：對外佢可以打價格戰打到對手死，因為佢嘅「成本」其實係自己另一間公司嘅「收入」。</b>呢個結構亦解釋咗為何佢可以喺低油價年代仍然賺錢。</p>
+
+  <p><span class="num">05</span> <b>私人持有＝決策速度。</b>呢個係全集最有啟發性嘅一點。因为唔需要向股東交代季度數字，Irving Oil 喺 1990 年代中後期就大幅升級煉油廠做低硫汽油——<b>比北美整個行業早咗大約十年</b>。之後加州收緊排放標準，佢用自己嘅船直接把貨運過去。上市對手要等埋分析師同意，佢只需要等自己同意。</p>
+
+  <p><span class="num">06</span> <b>細節偏執。</b>一個擁有船隊同煉油廠嘅人，仍然會在意<b>廁所乾唔乾淨</b>、<b>一個客屋企凍唔凍</b>。呢個唔係公關，係控制欲嘅另一面：<b>佢唔可以接受任何一環「唔係我嘅標準」</b>。</p>
+
+  <p><span class="num">07</span> <b>代價：同一切開戰。</b>工會（1963 年煉油廠罷工，工會燒佢芻像）、聯邦政府（所得稅、商業稅、遺產稅）、省政府。佢一生都在確保<b>冇人可以推佢</b>。而呢個執念，最後令佢 72 歲離開自己嘅省份。呢個係全集最沉重嘅一段：<b>同一種性格，既係佢建帝國的引擎，亦係佢被孤立的成因。</b></p>
+
+  <div class="kickerline">關鍵引用（官方節目描述原文）</div>
+
+  <blockquote>
+    “When a railway raised his shipping costs, he bought a ship. When oil suppliers tried to squeeze him, he built a refinery. Whenever someone told him no, he found a way.”
+    <span class="src">— The Knowledge Project, 官方 episode description</span>
+  </blockquote>
+
+  <blockquote>
+    “Why a man who owned ships and a refinery still cared about clean bathrooms and one customer’s cold house.”
+    <span class="src">— 同上</span>
+  </blockquote>
+
+  <blockquote>
+    “He spent his life making sure no one could push him around. Eventually he got so big governments wanted to rein him in.”
+    <span class="src">— 同上</span>
+  </blockquote>
+
+  <div class="kickerline">對 James 嘅意思</div>
+  <div class="why">
+    呢集最適合用嚟做一個 checklist：<b>你盤生意入面，有幾多個「可以單方面決定你成本」嘅人？</b>供應商、平台、房東、某個大客、某個 API。Irving 嘅答案永遠一樣——買起佢，或者自己造一個。你未必做得到，但你可以做第二好嘅事：<b>令任何一個依賴，都唔超過你總成本嘅某個百分比。</b><br>
+    <b>另一點更少人講：</b>佢嘅逆周期能力，唔係源自「勇敢」，而係源自「平時唔使向股東交代」。如果你有得揀，<b>保留唔需要向外界解釋嘅現金與結構</b>，就係保留咗危機時嘅入場券。
+  </div>
+</div>
+
+<h2 class="section">Ep.3 · The Diary of a CEO</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <h3>Dr. Sarah Paine: Why The World Is Turning Away From America<span class="badge new">NEW</span></h3>
+  <div class="byline">The Diary of a CEO · Steven Bartlett · 嘉賓 Dr. Sarah C. M. Paine</div>
+
+  <div class="ep">
+    <b>上線：</b>2026-10-29 06:00 UTC（香港 14:00）　<b>時長：</b>101 分 59 秒　<b>章節：</b>34 段
+  </div>
+
+  <p><b>主題：</b>唔係「第三次世界大戰會唔會打」，而係<b>一個海洋秩序點樣被自己拆掉</b>。Paine 用 120 年嘅歷史模型（伯羅奔尼撒戰爭、二戰、甲午）去解釋當下：關稅、退群、逼對手入死角——每一步歷史上都出現過，而歷史上嘅結局都唔好。</p>
+
+  <p><b>嘉賓：</b>Sarah Crosby Mallory Paine（1957 年生）。哈佛東亞研究學士（magna cum laude）、哥倫比亞國際事務碩士＋歷史博士、Middlebury 俄語碩士。2000 年入美國海軍戰爭學院，2006 年升正教授，2014–2025 任 <b>William S. Sims University Professor of History and Grand Strategy</b>，並兼任 Ernest J. King 海事史教授。著作包括《The Wars for Asia 1911–1949》（2012 年 PROSE 獎）、《The Japanese Empire》、《The Sino-Japanese War of 1894–1895》、《Imperial Rivals》。<b>佢唔係評論員，係檔案研究者</b>——呢點決定咗佢講嘢嘅方式：先講 1895，再講 2026。</p>
+
+  <div class="kickerline">五個框架（官方描述列出，以下為其邏輯展開）</div>
+
+  <p><span class="num">01</span> <b>海洋 vs 大陸的分野（The Maritime vs. Continental Divide）</b><br>
+  世界唔係分東西方，而係分兩種財富機器：<b>海洋強權靠自由貿易，錢係「複利」式增長</b>（航線越多 → 交易越多 → 資本越厚 → 海軍越強 → 航線越安全）；<b>大陸帝國靠領土征服，錢係「消耗」式增長</b>（打下一塊地 → 要駐軍 → 要管治 → 要再打下一塊）。同一個 GDP，兩種完全唔同嘅資產負債表。Paine 用呢個框架解釋俄羅斯：<b>它唔係「想恢復蘇聯」，而係它嘅地理與制度令它只能玩大陸遊戲。</b></p>
+
+  <p><span class="num">02</span> <b>孤立主義的賬單（The Cost of Isolationism）</b><br>
+  突然、激進嘅關稅 + 放棄關鍵盟友，唔係「保護本國」，而係<b>同時做三件壞事</b>：推高通脹（進口成本上升）、縮小全球影響力（盟友開始另尋靠山）、令本國經濟變得更不穩定（供應鏈重組需要 5–10 年，但政治週期只有 2–4 年）。<b>呢個框架最狠嘅地方：它唔講道德，只講會計。</b>關稅係一種稅，而稅係會轉嫁的。</p>
+
+  <p><span class="num">03</span> <b>死地原則（The Death Ground Principle）</b><br>
+  出自孫子：把對手逼到「無路可退」，佢就唔會再計算勝負，只會計算生存。<b>結果係：你以為你在削弱他，其實你在移除他的所有替代選項——包括投降。</b>一個仍然有得談嘅對手，係可以被談判的；一個冇得談的對手，只剩兩種行為：死戰，或者拖。呢個直接對應今日烏克蘭與俄羅斯、以及台海嘅推演。</p>
+
+  <p><span class="num">04</span> <b>獨裁穩定性的幻覺（The Illusion of Dictatorial Stability）</b><br>
+  強人政治看起來最穩定——決策快、冇反對派、冇選舉。但<b>它缺一樣東西：和平的權力交接機制。</b>所以領袖的死亡／失能，唔會產生「新領袖」，而會產生「一場沒有規則的繼承戰」。Paine 用呢點講普京：<b>真正的風險唔係他做什麼，而係他之後會發生什麼。</b>一個沒有 succession plan 的系統，其最大風險事件係「成功運作到領袖自然死亡那天」。</p>
+
+  <p><span class="num">05</span> <b>負面目標的力量（The Power of Negative Objectives）</b><br>
+  政府最重要的工作——防止金融崩潰、防止疫病擴散、防止戰爭——<b>因為冇發生，所以永遠冇人見到，也永遠冇人感謝。</b>相反，剪綵、開幕、補貼，全部看得見。<b>結果係：政治系統長期獎勵「做騷」，懲罰「守門」。</b>而一個社會真正的安全邊際，就係由那些「冇人見到的工作」構成的。</p>
+
+  <div class="kickerline">關鍵引用（官方節目描述原文）</div>
+
+  <blockquote>
+    “How threatening an adversary’s very existence removes all their strategic alternatives, transforming struggling nations into highly lethal, unyielding military opponents.”
+    <span class="src">— Diary of a CEO, 官方 episode description（Death Ground）</span>
+  </blockquote>
+
+  <blockquote>
+    “Why the lack of a peaceful transition of power in dictatorships guarantees that the death of a leader like Putin will trigger profound, unpredictable instability and violent internal power struggles.”
+    <span class="src">— 同上（Illusion of Dictatorial Stability）</span>
+  </blockquote>
+
+  <blockquote>
+    “Why a government’s most vital job goes completely unnoticed, focusing on preventing catastrophic disasters before they happen rather than chasing highly publicized achievements.”
+    <span class="src">— 同上（Negative Objectives）</span>
+  </blockquote>
+
+  <div class="kickerline">全 34 段章節（02:11 → 01:17:40）</div>
+  <div class="chapter">
+    <span><b>00:00</b>Intro</span>
+    <span><b>02:11</b>How Did the World Get So Close to WWIII?</span>
+    <span><b>05:09</b>Was the Iran War a Catastrophic Mistake?</span>
+    <span><b>07:11</b>Where the Trump Administration Went Wrong</span>
+    <span><b>09:22</b>Putin’s Biggest Mistake</span>
+    <span><b>17:25</b>Should America Stop Fighting Others’ Wars?</span>
+    <span><b>20:17</b>Why Americans Are Tired of Paying</span>
+    <span><b>21:22</b>The Deadly Strategy of Death Ground</span>
+    <span><b>24:55</b>How Rising Gas Prices Affect You</span>
+    <span><b>27:07</b>Will Ukraine Seek Revenge?</span>
+    <span><b>30:58</b>What Happens Next in Putin’s Russia?</span>
+    <span><b>37:36</b>What If Putin Stepped Down?</span>
+    <span><b>40:25</b>The Real Reason China Backs Russia</span>
+    <span><b>41:28</b>What Would End the War?</span>
+    <span><b>43:25</b>Why Europe’s Economy Is Under Pressure</span>
+    <span><b>45:36</b>How the US Tax System Shapes the Future</span>
+    <span><b>50:25</b>Why the Midterms Could Change Everything</span>
+    <span><b>52:33</b>What’s Happening to Democratic Voters?</span>
+    <span><b>55:54</b>What If Nothing Changes?</span>
+    <span><b>1:02:04</b>How History Will Remember Zelensky</span>
+    <span><b>1:04:38</b>Why the World May Turn Away</span>
+    <span><b>1:06:05</b>Why Bystanders Should Pay Attention</span>
+    <span><b>1:10:44</b>The 3 Levels of Warfare</span>
+    <span><b>1:13:56</b>Is NATO Expansion a Threat?</span>
+    <span><b>1:17:40</b>What Would a Multipolar World Look Like?</span>
+  </div>
+
+  <div class="kickerline">對 James 嘅意思</div>
+  <div class="why">
+    呢集表面係地緣政治，實際係一份<b>風險定價手冊</b>，有三樣可以直接搬：<br>
+    <b>① 死地原則 → 商業版：</b>唔好把對手逼到「唔可以輸」嘅位置。一個仲有得揀嘅對手會談判；一個冇得揀嘅對手會用你想像唔到嘅方式反擊。<b>談判桌上最好嘅位置，係對方仍然覺得自己有嘢可以輸。</b><br>
+    <b>② 負面目標 → 風控版：</b>你今年做得最好嘅一件事，可能係一個「冇發生嘅災難」。問題係——<b>冇人會讚你</b>，包括你自己。所以要主動記錄：今季我否決咗邊三個會出事嘅決定。<br>
+    <b>③ 繼承機制 → 組織版：</b>「沒有 succession plan 的系統，其最大風險係成功運作到領袖離開那天。」呢句對任何一人公司、家族生意、甚至一個關鍵員工，都一樣適用。
+  </div>
+</div>
+
+<h2 class="section">最近無更新 · 三台狀態</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <h3>最近無更新<span class="badge none">NO UPDATE</span></h3>
+  <p>以下三台今日 feed 正常（HTTP 200），但最新一集嘅 GUID 已在 <code>state.json</code> 記錄，即係<b>冇漏抓，只係真係冇新集</b>。</p>
+
+  <table>
+    <tr><th>播客</th><th>最後一集</th><th>日期</th><th>距今</th></tr>
+    <tr>
+      <td><b>Acquired</b></td>
+      <td><a href="https://www.acquired.fm/episodes/seinfeld">Seinfeld</a><br><span style="color:#7a6a58">3 小時 50 分（13,820 秒）</span></td>
+      <td class="n">10 月 18 日</td><td>11 日</td>
+    </tr>
+    <tr>
+      <td><b>Founders</b></td>
+      <td><b>#438 James Garfield’s Extraordinary Rise</b></td>
+      <td class="n">10 月 26 日</td><td>3 日</td>
+    </tr>
+    <tr>
+      <td><b>All-In</b></td>
+      <td><b>AI Cyber Panic, Ken Griffin’s Bubble Warning, The Fall of France?</b></td>
+      <td class="n">10 月 23 日</td><td>6 日</td>
+    </tr>
+  </table>
+
+  <div class="why">
+    <b>值得盯嘅一個訊號：</b>All-In 由 10 月 17 日起連出四集（17、19、21、23），然後連續 <b>6 日</b>靜音。以佢近期節奏，呢個長度已經偏離正常。可能係檔期，亦可能係四人時間夾唔到——明日再唔更新，值得當成一個異常點記錄。<br>
+    <b>另一個觀察：</b>Acquired 已經 11 日冇新集，但呢個係正常——佢一集做 3–4 小時深度研究，兩至三星期出一集係一貫節奏，唔需要擔心。
+  </div>
+</div>
+
+<h2 class="section">三集交叉 · 同一個命題</h2>
+<div class="rule"></div>
+
+<div class="three">
+  <h4>權力的三個時間尺度</h4>
+  <ol>
+    <li><b>日（Bezos）</b>——權力係<b>每日的互動</b>。一個問號、一句批評、一次「B 就夠」。呢個尺度決定咗一間公司嘅實際運作質素，而佢從來唔會出現在年報上。</li>
+    <li><b>十年（Irving）</b>——權力係<b>結構</b>。買船、建煉油廠、垂直整合、私人持有。呢個尺度決定咗你喺危機入面有冇入場券。</li>
+    <li><b>一世紀（Paine）</b>——權力係<b>秩序</b>。海洋 vs 大陸、規則 vs 征服。呢個尺度決定咗上面兩個尺度嘅「遊戲規則」係咩。</li>
+  </ol>
+  <p style="margin:14px 0 0;font-size:15.5px;color:#5d4a30"><b>三集放埋一齊睇，得出一個唔太舒服嘅結論：</b>Bezos 同 Irving 都係「控制」的極致——一個控制標準，一個控制供應鏈。而 Paine 講嘅，正正係<b>一個控制到極致嘅系統，最後會點樣被自己嘅控制欲反噬</b>（逼對手入死角、冇繼承機制、只獎勵看得見的成就）。所以今日真正嘅問題唔係「點樣變強」，而係<b>「你要控制到幾時，先肯放手」</b>。</p>
+</div>
+
+<div class="verdict">
+  <p><b>如果今日只聽一集：</b>聽 <b>My First Million #877</b>（75 分鐘，最短、最可直接用）。<b>如果今日只想學一個概念：</b>記住 Paine 嘅「負面目標」——你最好的工作，可能係一件冇發生嘅事。</p>
+</div>
+
+<h2 class="section">今日一句</h2>
+<div class="rule"></div>
+
+<blockquote style="font-size:20px;line-height:1.95">
+  “Whenever someone told him no, he found a way.”
+  <span class="src">— The Knowledge Project，講 K.C. Irving。呢句係今日三集嘅共同底色：三個人（Bezos、Irving、Paine）都係喺「有人話唔得」嘅位置開始轉彎。</span>
+</blockquote>
+
+<div class="foot">
+  <b>報告生成：</b>%%STAMP%%（香港時間 %%HKT%%）<br>
+  <b>掃描範圍：</b>6 條 RSS feed，全部 HTTP 200；本輪新增 3 集，新增 GUID 已寫入 <code>scanner/state.json</code>。<br>
+  <b>新增 GUID：</b><br>
+  　· My First Million — <code>eb705d12-d2be-11f1-8137-233c6aa71177</code><br>
+  　· Knowledge Project — <code>https://fs.blog/?post_type=podcast&amp;p=82018</code><br>
+  　· Diary of a CEO — <code>flightcast:01M5NXR742DT1QNDCDPS193Q51</code><br>
+  <b>資料來源：</b>各台 RSS（show notes 全文）、Apple Podcasts episode metadata（iTunes lookup API）、fs.blog 官方 episode 頁、Wikipedia（Sarah C. M. Paine / K. C. Irving 生平事實）。<br>
+  <b>誠實標注：</b>本報告所有引號內文字均出自官方節目描述或 show notes 原文，冇虛構對白；框架解釋與「對 James 嘅意思」屬分析，唔係嘉賓原話。KP 一集為會員優先，公開日期 11 月 3 日。<br>
+  <b>前置過濾：</b>Jev（TypeSafe）對三集評分 0.35 / 0.72 / 0.02 — 該評分係按「新聞價值」設計，唔適用於用戶主動訂閱嘅播客；三集均屬訂閱源新增內容，全部保留。
+</div>
+
+</div>
+</body>
+</html>
+'''
+
+html = (HEAD + body).replace("%%STAMP%%", STAMP).replace("%%HKT%%", HKT)
+out = "/root/.openclaw/workspace/mindset-podcasts/daily-report-2026-10-29.html"
+open(out, "w", encoding="utf-8").write(html)
+print("wrote", out, len(html), "bytes at", STAMP)
