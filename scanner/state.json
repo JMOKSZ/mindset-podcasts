@@ -1,5 +1,5 @@
 {
- "lastScan": "2026-10-31T09:56:29Z",
+ "lastScan": "2026-11-01T09:53:00Z",
  "scannedEpisodes": {
   "acquired": [
    "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -3022,17 +3022,10 @@
   ]
  },
  "lastScanResult": {
-  "date": "2026-10-31",
-  "newCount": 1,
-  "byPodcast": {
-   "all-in": 1
-  },
-  "noUpdate": [
-   "acquired",
-   "founders",
-   "my-first-million",
-   "knowledge-project",
-   "diary-of-a-ceo"
-  ]
+  "date": "2026-11-01",
+  "newEpisodes": 0,
+  "feedsOk": 6,
+  "feedsError": 0,
+  "note": "all six feeds returned 200; no unseen GUIDs"
  }
 }
