@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-11-02</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a; --warn:#a4442f;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;
+    line-height:1.85; font-size:17px;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px;margin-bottom:8px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;
+    color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.9;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:26px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  h4.sub{font-size:19px;font-weight:normal;margin:34px 0 8px;color:#3a2f21;
+    border-bottom:1px dotted var(--line);padding-bottom:6px}
+  h5.mini{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin:24px 0 6px;font-weight:600}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:14px}
+  .card{background:var(--card);border:1px solid var(--line);padding:28px 30px;margin:0 0 22px}
+  .badge{display:inline-block;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10.5px;
+    letter-spacing:.1em;padding:3px 9px;border-radius:2px;vertical-align:middle;margin-left:8px}
+  .badge.none{background:#efe7db;color:#8a755c}
+  .badge.new{background:#e6f0e9;color:var(--ok)}
+  .ep{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13.5px;color:var(--muted);
+    padding:12px 0;border-top:1px dotted var(--line);border-bottom:1px dotted var(--line);margin:16px 0}
+  .ep b{color:var(--ink)}
+  .why{font-size:15.5px;color:#4c3f30;background:#faf5ec;padding:14px 18px;margin-top:6px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.8}
+  .why b{color:var(--accent)}
+  table{width:100%;border-collapse:collapse;font-family:-apple-system,"Helvetica Neue",sans-serif;
+    font-size:13.5px;margin:8px 0 18px}
+  th{text-align:left;font-weight:600;color:var(--muted);font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;border-bottom:1px solid var(--ink);padding:8px 10px 8px 0}
+  td{border-bottom:1px solid var(--line);padding:11px 10px 11px 0;vertical-align:top}
+  td.n{color:var(--accent);white-space:nowrap}
+  blockquote{margin:18px 0;padding:2px 0 2px 20px;border-left:2px solid var(--accent);
+    font-style:italic;color:#4a3d2d}
+  blockquote .src{display:block;font-style:normal;font-family:-apple-system,"Helvetica Neue",sans-serif;
+    font-size:11.5px;color:var(--muted);margin-top:8px;letter-spacing:.04em}
+  .kickerline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--accent);margin:26px 0 6px;font-weight:600}
+  .three{background:#fff;border:1px solid var(--line);padding:22px 26px;margin:0 0 30px}
+  .three h4{margin:0 0 12px;font-size:15px;font-family:-apple-system,"Helvetica Neue",sans-serif;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600;border:0;padding:0}
+  .three ol{margin:0;padding-left:20px;font-size:16px}
+  .three li{margin-bottom:10px}
+  .chapter{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;color:#5d4a30;
+    columns:2;column-gap:28px;line-height:2}
+  .chapter span{display:block;break-inside:avoid}
+  .chapter b{color:var(--accent);font-weight:600;display:inline-block;min-width:56px}
+  .verdict{border-top:2px solid var(--ink);border-bottom:1px solid var(--line);padding:18px 0;margin:26px 0}
+  .verdict p{margin:0;font-size:16.5px}
+  .foot{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);line-height:1.9}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid #e3cfa9}
+  .num{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;color:var(--accent);
+    letter-spacing:.1em;font-weight:600}
+  .flag{background:#fdf0ef;border-left:3px solid var(--warn);padding:14px 18px;margin:16px 0;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:14.5px;color:#7d3122;line-height:1.8}
+  .bull{background:#f2f7f3;border-left:3px solid var(--ok);padding:16px 20px;margin:16px 0;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:14.8px;color:#2f5a41;line-height:1.85}
+  ul.tight{margin:8px 0 18px;padding-left:22px}
+  ul.tight li{margin-bottom:8px}
+  .ledger{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;color:#5d4a30;
+    background:#fff;border:1px solid var(--line);padding:14px 18px;margin:14px 0}
+  .ledger b{color:var(--accent)}
+  @media(max-width:620px){
+    .wrap{padding:32px 18px 60px} h1{font-size:30px}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .card{padding:22px 18px} .chapter{columns:1} h3{font-size:22px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcasts &middot; Daily Deep Scan</div>
+  <h1>Trickle-down 不是理論，是盜竊：一位德州參議員候選人把美國經濟講成一場產權轉移</h1>
+  <p class="date">2026 年 11 月 2 日（一）</p>
+  <div class="meta">
+    生成時間：<b>2026-11-02 09:56 UTC</b>（香港時間 2026-11-02 17:56）<br>
+    掃描範圍：6 個英文商業／思維播客 · 合共 <b>2,964</b> 條 RSS item · 逐條對比歷史 GUID<br>
+    本期新增：<b>1 集</b>（Diary of a CEO，96 分鐘）　｜　六個 feed 全部 HTTP 200，無抓取失敗
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">6</div><div class="l">播客來源</div></div>
+  <div class="stat"><div class="n">1</div><div class="l">新集數</div></div>
+  <div class="stat"><div class="n">2,964</div><div class="l">比對條目</div></div>
+  <div class="stat"><div class="n">96<span style="font-size:14px">min</span></div><div class="l">本集長度</div></div>
+</div>
+
+<p class="lede">今日六條線只有一條出貨，但呢一集值得用整份報告去講。Diary of a CEO 上咗一個 96 分鐘嘅政治訪談——主持 Steven Bartlett 平時賣嘅係「創辦人如何成功」，今次請嚟嘅係一個正在競選美國參議員嘅民主黨人 James Talarico，講嘅係<em>制度如何令你窮</em>。對做生意嘅人嚟講，呢集嘅價值唔在於你同不同意他，而在於他提供咗一套完整嘅「監管風險定價框架」：如果你相信他有一半機會贏，你手上嘅醫療、保險、AI、勞動密集生意，估值模型就要改。</p>
+
+<div class="note">
+<b>掃描方法：</b>直接打六個 RSS feed（非經 Apple Podcasts），用 <code>&lt;guid&gt;</code> 對比 <code>state.json</code> 已記錄嘅 GUID 集合。今日全部 feed 返回 200，無 403／timeout／截斷。本集 Apple Podcasts 描述只有章節，因此另外抓取咗 YouTube 官方完整字幕（18,507 字）做逐字稿層級嘅萃取——下面所有引文都係原話，經自動字幕校正（刪去 <code>um</code>、<code>&gt;&gt;</code> 等轉錄雜訊），並非改寫。上次掃描：2026-11-01 09:53 UTC。
+</div>
+
+<h2 class="section">今日新集 · 深度</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <span class="num">01</span>
+  <h3>The Diary of a CEO <span class="badge new">新集</span></h3>
+  <div class="byline">Steven Bartlett · 905 集可讀 · 本集 1 小時 36 分 43 秒</div>
+
+  <h5 class="mini">本集</h5>
+  <h4 class="sub">James Talarico: America's Corrupt System Is Designed To Keep You Poor!</h4>
+  <div class="ep">
+    <b>發佈：</b>2026-11-02 06:00 UTC　·　<b>錄製：</b>2026-09-08（距發佈約 8 週，正值中期選舉前夕）<br>
+    <b>嘉賓：</b>James Talarico — 德州州眾議員、美國參議員民主黨候選人　·　<b>對手：</b>Ken Paxton（德州檢察長）
+  </div>
+
+  <p>呢集唔係典型 DOAC。冇「我如何由零到一億」，冇失敗與重生嘅英雄敘事。Bartlett 今次做嘅係一份<b>系統診斷書</b>：一個 8 代德州人、前公立學校教師、現任州眾議員，用 96 分鐘去論證一件事——美國中產嘅消失唔係技術變遷嘅副作用，而係過去 50 年一套<em>刻意設計</em>嘅政策選擇。</p>
+
+  <p>如果他在 11 月贏，會係 1988 年 Lloyd Bentsen 之後第一位德州民主黨參議員。呢個背景令整集有一種奇異嘅張力：一個仍在拉票嘅人，被要求講清楚他到底信什麼、以及為什麼他認為換人唔夠、要換制度。</p>
+
+  <h4 class="sub">人物：由一個衣櫃裡嘅嬰兒床開始</h4>
+  <p>他嘅自我介紹冇用履歷，用一個畫面：</p>
+  <blockquote>「我係第八代德州人。出生於一個單親媽媽，她是一個牧師的女兒。她超時工作養我。我嘅生父變得有暴力傾向，所以她把我們所有東西塞進她那架小 Ford Escort。我們找到一個小公寓，沒有空間做育嬰房，所以我睡在她衣櫃裡的一張嬰兒床。」<span class="src">— 本集逐字稿（開場）</span></blockquote>
+  <p>呢個細節唔止係情感鋪墊。它之後被用來支撐他整個政治人格：<b>「我唔係從外面看貧窮，我係從衣櫃裡面看。」</b>他 2018 年當選德州眾議員（District 52，Round Rock 一帶），之前在中學教書；四個任期內自稱推動過 60 條兩黨法案——房屋、醫療、幼兒教育、教師薪酬、物業稅。呢個數字他反覆用來回應「你只係一個講理念嘅人」嘅質疑：<em>我喺一個共和黨主導嘅議會裡面，仍然過到 60 條兩黨法案。</em></p>
+
+  <h4 class="sub">論點一：診斷——把 1971 年的一份備忘錄當成分水嶺</h4>
+  <p>Bartlett 問他：美國經濟明明有創新、有 GDP 增長、有生產力，為什麼你說是「被操縱」？他冇講抽象嘅不平等，而是指向一份具體文件——<b>1971 年的 Powell Memo</b>。Lewis Powell 當時係企業律師（後來被任命為最高法院大法官），份備忘錄被他形容為一份「企業利益如何拆解 New Deal 與 Great Society 的藍圖」：</p>
+  <blockquote>「份藍圖說：企業利益會聯合起來，在我們的政治中花巨額金錢，買下兩黨的政治人物，在媒體中放大企業聲音，任命同情他們的法官。它是一整套如何逆轉 New Deal 與 Great Society 成果的綜合策略。」<span class="src">— 本集逐字稿</span></blockquote>
+  <p>然後係那句全集最鋒利、也最容易被斷章取義的話：</p>
+  <blockquote>「Trickle-down economics，在我看來，不是一個理論，是盜竊。」<span class="src">— 本集逐字稿</span></blockquote>
+  <p>他嘅證據係一組收入結構數字，值得完整列出，因為這是整集唯一一組他主動給出前後對照的數據：</p>
+
+  <table>
+    <tr><th>指標</th><th>1970</th><th>今日</th><th>方向</th></tr>
+    <tr><td>中產家庭佔全美總收入</td><td class="n">62%</td><td class="n">42%</td><td>−20 個百分點</td></tr>
+    <tr><td>上層收入家庭佔全美總收入</td><td class="n">29%</td><td class="n">&gt;50%</td><td>+21 個百分點以上</td></tr>
+    <tr><td>低收入人群佔人口比例</td><td class="n">—</td><td class="n">+5pp</td><td>擴大</td></tr>
+    <tr><td>中產人群佔人口比例</td><td class="n">—</td><td class="n">−10pp</td><td>縮小</td></tr>
+  </table>
+
+  <blockquote>「1970 年，中產家庭持有全美總收入的 62%，上層收入家庭持有 29%。今日，角色對調了。上層收入家庭取得超過 50% 的總收入，而中產只持有 42%。」<span class="src">— 本集逐字稿</span></blockquote>
+
+  <p>他嘅結論唔係「資本主義壞」，恰恰相反——他反覆強調自己是來<b>拯救</b>資本主義：</p>
+  <blockquote>「資本主義曾經是一項創新。我們現在忘記了。你應該因為你的時間、你的工作得到回報——這曾經是一個革命性的想法。而那不是我們今日擁有的東西。我們沒有資本主義，至少在這個國家沒有。我們有裙帶資本主義（crony capitalism）。」<span class="src">— 本集逐字稿</span></blockquote>
+  <p>他引 Martin Luther King Jr. 的句子做補強：「我們有給富人的社會主義，和給窮人的粗獷個人主義。」然後用 2008 年救市做例子：華爾街拿到黃金降落傘，單親媽媽、建築工人、護士、教師冇。呢個對照他講得極快，顯然係競選演講中打磨過嘅段落。</p>
+
+  <h4 class="sub">論點二：機制——裙帶資本主義如何運作（醫療、競選財務、學券）</h4>
+  <p>全集最具體、也最接近商業分析嘅部分，係他講醫療壟斷。呢度他有一個罕見嘅跨黨派盟友：Mark Cuban。</p>
+  <blockquote>「你可以現在有一間公司，同時擁有健康保險公司、醫院和藥房。當我說這不是資本主義——更少競爭意味著更少選擇，意味著對普通人更高的價格。」<span class="src">— 本集逐字稿</span></blockquote>
+  <p>Bartlett 追問，他直接把 CVS 拆開講：CVS 擁有一間大型 PBM（藥品福利管理公司，即你與藥廠之間嘅中間人）、一間大型健康保險公司、以及全國最大嘅藥房網絡。他與 Mark Cuban 討論過一個「拆分醫療壟斷」嘅方案，目標唔係國有化，而係<b>恢復競爭</b>。他亦提到 Cost Plus Drugs 係「好嘅那一種」私營解法——直接把藥價透明化。</p>
+
+  <div class="ledger">
+    <b>他引用的三個「制度性價格」例子：</b><br>
+    ① 醫療垂直整合 → 同一集團掌握保險、醫院、藥房、PBM，價格失去參照點。<br>
+    ② 競選財務無上限（德州）→ 一位外州億萬富翁向州長捐 1,200 萬美元，換來私立學校學券法案。<br>
+    ③ 學券 → 用公共教育經費補貼已在私校嘅家庭，他称之为「由底層與中層向上層的財富轉移」。
+  </div>
+
+  <p>關於學券，他給了一個可以查證嘅細節：德州每名學生教育經費全國排<b>第 43</b>；而該筆 1,200 萬美元來自一位賓夕法尼亞州嘅外州億萬富翁。呢個例子嘅殺傷力在於它同時證明兩件事——錢可以買政策，而政策可以逆向再分配。</p>
+
+  <h4 class="sub">論點三：錢在哪裡——每年 1,720 億美元「已經欠咗但冇收」</h4>
+  <p>Bartlett 問他：你要加稅，但富人會走。他嘅回答分兩層，第一層係「唔需要新稅，只需要收返已經欠嘅」：</p>
+  <blockquote>「如果我哋只係收返 top 1% 已經欠嘅稅——唔加新稅，只係收返已經欠嘅——每年可以收到大約 1,720 億美元。而呢筆錢足夠終結美國嘅貧窮。」<span class="src">— 本集逐字稿</span></blockquote>
+  <p>Bartlett 本能地反問：如果佢哋冇交，唔係應該坐監？Talarico 嘅答案係：<b>冇資源去查。</b>稅務稽查嘅預算被削，於是「合法漏洞」與「明知唔會被查」兩件事同時存在。他列出嘅漏洞包括：私人飛機與巨型遊艇可以報作商業支出、carried interest、資本利得稅率。</p>
+  <p>第二層係他對財富稅嘅立場——注意他講得非常謹慎，係全集中少見嘅「留有餘地」：</p>
+  <blockquote>「我知道執行上有挑戰，但我認為我們應該探索每一條路，令這個國家最有錢的人付出公平份額。」<span class="src">— 本集逐字稿</span></blockquote>
+  <p>而當 Bartlett 用「加州推財富稅、Zuckerberg 等創辦人搬走」做反駁，他嘅回答暴露了整集最有趣嘅一個政治計算：</p>
+  <blockquote>「德州冇州所得稅。這是一件好事，我也不想要州所得稅——我們嘅市民已經被物業稅和銷售稅抽得夠多。但這正是為什麼我們需要好的聯邦政策；這正是為什麼州自己解決不了這個問題。」<span class="src">— 本集逐字稿</span></blockquote>
+  <p>換句話說：<b>他唔會攻擊德州嘅 0% 州所得稅</b>（那是他選區的賣點），但他會把財富稅推到聯邦層面，因為資本可以跨州移動，州級財富稅在結構上注定失敗。這是一個相當誠實、也相當務實的回答——比「富人應該自願多交稅」高明得多。</p>
+
+  <h4 class="sub">論點四：AI——三個優先次序，與一個「假選擇」</h4>
+  <p>呢一節係全集對商業讀者最直接有用嘅部分。Bartlett 問他具體要監管什麼，他給了三個優先：</p>
+  <div class="three">
+    <h4>他會優先處理的三件事</h4>
+    <ol>
+      <li><b>工人與經濟。</b>確保 AI 令工作更容易，而唔係單純取代人；目標係讓人「少啲時間在工作，多啲時間與所愛的人在一起」。</li>
+      <li><b>兒童。</b>他直接把社交媒體嘅前科搬過來：自殘、抑鬱、焦慮上升；他擔心 AI 聊天機械人重演一次，尤其係兒童把 AI 當作心理治療師嘅個案。</li>
+      <li><b>民主。</b>Deepfake 政治廣告已經出現在德州這場參議員選舉；他承認自己作為千禧一代也越來越難分真假，而「大部分時候唔需要標註」。</li>
+    </ol>
+  </div>
+
+  <p>但整節嘅思想核心唔係這三點，而係他反覆使用嘅一個修辭工具：<b>拒絕假選擇（false choice）</b>。Bartlett 用自駕車與貨車司機做測試：如果數據顯示冇人類更安全，為什麼要保留人類監督？</p>
+  <blockquote>「即使數據顯示冇人類更安全，我仍然會希望——尤其當我們講的是在德州高速公路上奔馳的 18 輪大卡車——有一個人類在那裡監控這些技術。想想飛機：飛機大部分時間是自己飛的。我仍然非常安心，因為控制台後面有一個受過訓練的專業人員，以防任何事出錯。」<span class="src">— 本集逐字稿</span></blockquote>
+  <p>呢個類比唔完美（航空業有極嚴格嘅認證體系，AI 冇），但它精準捕捉了一種正在成形嘅政治直覺：<b>安全冗餘唔係效率嘅敵人，而係社會接受新技術嘅入場費。</b>對做 AI 產品嘅人，這句話應該被貼在牆上——你要賣嘅唔止係能力，係「可以被社會接受嘅能力」。</p>
+  <p>他亦提到一個具體政策工具：<b>AI dividend / 創業補助</b>。邏輯係：向 AI 公司徵稅，把部分收入投入冇 wealthy investors 網絡嘅普通人——「就像我們當年投資 Tesla、投資互聯網一樣，那些創新最後都回本有餘。」</p>
+
+  <blockquote>「我同一位做很多 AI 工作的人談過，他說他擔心我們正走向五個兆億富翁和 30% 失業率。而那令我恐懼。」<span class="src">— 本集逐字稿（他引述一位未具名 AI 業者）</span></blockquote>
+  <p>注意：<b>5 個兆億富翁 + 30% 失業</b>係他轉述別人嘅話，唔係他自己嘅預測。呢個區分好重要——它顯示他嘅論述策略係「把極端情境放入公共議程」，而唔係「我預測會發生」。同一集裡，他對 AI 的態度其實比標題溫和：他反覆說「我們仍然有時間一起決定」。</p>
+
+  <h4 class="sub">論點五：政治與信仰——為什麼「換人」冇用</h4>
+  <p>整集最深嘅一層，其實唔係經濟，係他對「制度 vs 人格」嘅看法。Bartlett 問他 2028 年民主黨應該派誰，他列了 Harris、Newsom、AOC、Bernie、Buttigieg，然後話：</p>
+  <blockquote>「我唯一會看的是：邊個在講系統性改革。我做了八年，我看到制度本身才是阻礙我們在所有重要議題上取得進展的東西。」<span class="src">— 本集逐字稿</span></blockquote>
+  <p>然後他講了一句非常少政治人物會講嘅話：</p>
+  <blockquote>「這也是為什麼我為自己設了一個自我任期限制。因為我知道，這個制度除非被改革，否則會把我們所有人最差的一面逼出來——包括我。」<span class="src">— 本集逐字稿</span></blockquote>
+  <p>呢句係全集嘅鑰匙。他嘅核心命題係：<b>政治人物係理性演員，會回應制度給他們的誘因。</b>所以與其換人，不如換誘因結構——競選財務、gerrymandering、兩黨制、遊說。這也解釋了他為何不選總統（章節標題直接問「Why He Won't Run for President」），以及他為何願意在一個共和黨主導嘅議會裡做 60 條兩黨法案：制度內嘅漸進，與制度層面嘅激进，可以並存。</p>
+  <p>關於民主黨為何輸給 Trump，他嘅答案難得地唔離地：很多德州人真心相信 Trump 會搞好經濟、壓低物價、結束 forever wars、公開 Epstein 檔案；一年幾之後，這些承諾冇兌現。但他同時承認：「他是對的，Biden 政府在南部邊境失敗了。」——呢種「對手有一半對」嘅表態，在一個仍在競選嘅民主黨人口中並不常見。</p>
+  <p>關於「woke 政治」是否傷害民主黨，他唔會否認，但把問題重新定義：</p>
+  <blockquote>「我確實認為出現了一種表演式政治——人們更關心使用由學術界定義的正確詞彙，而不是圍繞共同價值把人團結起來，例如種族主義是錯的、每個人都應該有尊嚴和尊重。當你開始規管人的語言，當你因為別人唔熟悉正確術語而評判他，你已經唔再係建立聯盟去解決真正的問題。」<span class="src">— 本集逐字稿</span></blockquote>
+  <p>最後 20 分鐘轉向信仰。他 31 歲、第二個任期時去讀神學院，因為他從小仰望祖父與牧師——「人們失去親人時，第一個電話係打給我牧師」。他嘅牧師告訴他：<b>一場競選也可以是一種事工（ministry）</b>——如果你給人希望、把人聚在一起、幫人看見彼此身上的上帝形象。</p>
+  <p>然後他講 Good Samaritan 嘅比喻，並把它翻譯成德州語言：</p>
+  <blockquote>「這就像耶穌站在德州大學 Daryl K. Royal 紀念球場中央，講一個叫『好 Aggie』的故事——人們會激怒，因為那是宿敵。但他在提醒我們：我們唔只被呼召去愛那些長得像我們、祈禱像我們、投票像我們的人。」<span class="src">— 本集逐字稿</span></blockquote>
+  <p>（Texas Longhorns 嘅宿敵係 Texas A&amp;M Aggies。呢個比喻在當地係一秒生效嘅。）</p>
+
+  <h5 class="mini">章節地圖（實際錄音長度 1:36:43）</h5>
+  <div class="chapter">
+    <span><b>00:00</b>開場：三個男人與整個中產</span>
+    <span><b>02:24</b>單親媽媽與衣櫃裡的嬰兒床</span>
+    <span><b>07:45</b>為何他不選總統</span>
+    <span><b>14:08</b>2028 民主黨應派誰</span>
+    <span><b>15:51</b>民主社會主義與 Powell Memo</span>
+    <span><b>20:42</b>如何重建中產</span>
+    <span><b>25:07</b>德州州長腐敗嗎</span>
+    <span><b>27:54</b>做兆億富翁是精神疾病嗎</span>
+    <span><b>31:50</b>如何對非現金財富徵稅</span>
+    <span><b>36:01</b>億萬富翁會否搬走</span>
+    <span><b>38:30</b>拆解醫療壟斷</span>
+    <span><b>42:37</b>AI 監管三優先</span>
+    <span><b>47:09</b>億萬富翁應否寫 AI 規則</span>
+    <span><b>49:39</b>自駕車會否消滅司機</span>
+    <span><b>52:02</b>AI 會否走向 30% 失業</span>
+    <span><b>56:03</b>Woke 政治有否傷害民主黨</span>
+    <span><b>57:40</b>民主黨為何輸給 Trump</span>
+    <span><b>1:01:03</b>他真正點看 Trump</span>
+    <span><b>1:02:16</b>如何不以極端方式修移民</span>
+    <span><b>1:06:37</b>美國如何走出伊朗戰爭</span>
+    <span><b>1:13:37</b>給 Trump 的建議與中期選舉</span>
+    <span><b>1:17:07</b>好 Samaritan 與他的信仰</span>
+    <span><b>1:20:36</b>他愛對手 Ken Paxton 嗎</span>
+    <span><b>1:23:13</b>31 歲為何去讀神學院</span>
+    <span><b>1:31:09</b>他與其他政治人物有何不同</span>
+    <span><b>1:34:33</b>最大挑戰：贏德州</span>
+  </div>
+
+  <h5 class="mini">批判性備註（請讀）</h5>
+  <div class="flag">
+    這是一集<b>政治訪談</b>，不是商業分析。支撐他論點的大部分數字係他引用、而非主持人事後核實：62%／29% 的收入結構、每年 1,720 億未收稅款、51,000 人「非必要死亡」、德州教育經費排 43——這些都應該當作<b>競選主張的證據</b>去聽，而不是當作已核實的統計。他亦從未定義「middle class」的邊界，而所有收入佔比結論都對這個定義極度敏感。至於「trickle-down 是盜竊」，那是修辭，不是經濟學命題——一個嚴肅的自由的市場經濟學者會反駁：1970 年代中產佔比高，部分原因是戰後美國製造業獨霸全球，而那是一個不可複製的歷史窗口，不是一套可以被「取消」的政策。
+  </div>
+
+  <h5 class="mini">給做生意的人：四個可操作讀數</h5>
+  <div class="bull">
+    <b>1. 監管風險已經是一級變數，唔再係 footnote。</b>他把「拆醫療壟斷」、「AI 三優先」、「財富稅」講成一個連貫議程，而呢個議程有一個明確嘅政治載體（他本人）。如果你持有醫療垂直整合、PBM、或 labor-intensive 嘅 AI 自動化業務，呢集就係一份免費嘅政策風險簡報。<br><br>
+    <b>2. 垂直整合會招來反壟斷，尤其當它同時掌握「定價參照點」。</b>CVS 嘅問題唔係大，而係它同時係買方（PBM）、賣方（藥房）、同付款方（保險）。任何人做 marketplace 或 aggregator，都應該問：我係唔係同時企喺交易兩邊？<br><br>
+    <b>3. 「假選擇」係最好用嘅談判框架。</b>「安全 vs 效率」、「自動化 vs 就業」、「增長 vs 公平」——他每次都用同一招拆掉：先承認兩邊的好處，再指出第三條路（人類監督、AI dividend、創業補助）。呢個框架可以直接搬去 product positioning 同 stakeholder 溝通。<br><br>
+    <b>4. 稅務稽查缺口 = 一個被低估的財政事實。</b>不論你同不同意財富稅，「已欠但未收」每年 1,720 億呢個講法，比「向富人加稅」更難反駁，也更可能成為未來兩黨的共同語言。任何做 public-sector 生意的人，值得把這個數字記住。
+  </div>
+
+  <div class="verdict">
+    <p><b>一句總結：</b>如果你只有 20 分鐘，聽 15:51–40:00（Powell Memo → 稅 → 醫療壟斷）同 42:37–56:00（AI 三優先 → 假選擇）。呢兩段係乾貨；其餘係人物傳記與選舉政治，好聽但可跳。</p>
+  </div>
+</div>
+
+<h2 class="section">其餘五台 · 最近無更新</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <span class="num">02</span>
+  <h3>Acquired <span class="badge none">最近無更新</span></h3>
+  <div class="byline">Ben Gilbert &amp; David Rosenthal · 218 集可讀</div>
+  <h4 class="sub">Seinfeld</h4>
+  <div class="ep"><b>發佈：</b>2026-10-18　·　<b>長度：</b>3 小時 50 分　·　<b>類型：</b>單一 IP 深度解剖</div>
+  <p>官方簡介嘅開場數字仍然係最強嘅鉤：一套 1998 年已經完結嘅處境喜劇，<b>今年以內</b>有 7,200 萬美國人看過。唔係累計，係本年至今。Acquired 用三個支柱拆解：偏執嘅創作者（Larry David 與 Jerry Seinfeld 對細節嘅病態堅持）、完美嘅市場時機（NBC 需要周四夜武器）、以及一個把所有激勵綁定到長期嘅<b>所有權結構</b>。</p>
+  <p>第三點係商業內核：Seinfeld 能夠「打破所有規則卻拿到第一名」，靠嘅唔係收視，而係 syndication 分帳比例——演員與創作人拿嘅唔係薪水，係資產嘅切片。</p>
+  <div class="why"><b>為何今日仍然值得補：</b>同今日 Talarico 那集形成有趣對照。Talarico 講「邊個擁有資產決定財富分配」；Acquired 用 Seinfeld 證明同一件事——創作人堅持要 ownership 而唔止 fee，30 年後仍然在收租。</div>
+</div>
+
+<div class="card">
+  <span class="num">03</span>
+  <h3>Founders <span class="badge none">最近無更新</span></h3>
+  <div class="byline">David Senra · 463 集可讀</div>
+  <h4 class="sub">#438 James Garfield's Extraordinary Rise</h4>
+  <div class="ep"><b>發佈：</b>2026-10-26　·　<b>長度：</b>38 分　·　<b>底本：</b>Candice Millard《Destiny of the Republic》</div>
+  <p>Senra 嘅格式一貫：讀完一本傳記，把最鋒利嘅部分抽出來。今次底本係《Destiny of the Republic: A Tale of Madness, Medicine and the Murder of a President》——書名已經劇透三個元素：瘋狂、醫學、謀殺。</p>
+  <p>選題角度值得留意：Garfield 在 Senra 框架裡唔係「一位總統」，而係<b>一個極端起點嘅故事</b>——極度貧困、做過碼頭工人與教師，靠自學與辯論能力向上爬。標題用「Extraordinary Rise」而唔係「Assassination」，說明重心在前半段。</p>
+  <p>而 Millard 那本書真正嘅主角其實係<b>醫學嘅無知</b>：Garfield 中槍後並非當場死亡，而是在接下來數週被醫生用未消毒嘅手指與器械反覆探查傷口，最終死於感染。對做生意嘅人很殘忍——殺死你嘅往往唔係那一槍，係之後每一次「我們一直都是這樣做」。</p>
+  <div class="why"><b>為何值得補：</b>38 分鐘，一堂關於「上升曲線」與「致命慣性」嘅雙面課。Senra 唔會給你 step-by-step，但會給你一個可以反覆回想嘅人生標本。</div>
+</div>
+
+<div class="card">
+  <span class="num">04</span>
+  <h3>All-In <span class="badge none">最近無更新</span></h3>
+  <div class="byline">Chamath · Jason · Sacks · Friedberg · 442 集可讀</div>
+  <h4 class="sub">Anthropic S-1 Shocker, Greatest Business Ever? Google's $500B Wipeout, Midterm Predictions</h4>
+  <div class="ep"><b>發佈：</b>2026-10-30　·　<b>長度：</b>1 小時 25 分 47 秒</div>
+  <p>三個板塊：Anthropic 嘅 S-1（30 分鐘拆解，標題直接問「史上最偉大生意？」）、Google 單日蒸發 5,000 億美元市值（史上最差單日）、以及中期選舉預測。</p>
+  <p>中間有一段值得注意：「AI's Biggest Problem and Anthropic's Doomer Showdown」——四位主持人向來對 AI 監管路線分歧極大（Sacks 偏自由放任、Friedberg 偏技術樂觀、Chamath 偏資本視角），而 Anthropic 嘅 doomer 立場正好係試金石。</p>
+  <div class="why"><b>為何值得補：</b>如果你聽咗今日 Talarico 那集，呢集係完美嘅反面論述。同一組事實（AI 集中度、監管、失業），兩種完全相反嘅因果解釋。兩集連住聽，你會清楚自己站在哪一邊。</div>
+</div>
+
+<div class="card">
+  <span class="num">05</span>
+  <h3>My First Million <span class="badge none">最近無更新</span></h3>
+  <div class="byline">Sam Parr &amp; Shaan Puri · 916 集可讀</div>
+  <h4 class="sub">Ex-Amazon VP tells us what it's really like working with Jeff Bezos</h4>
+  <div class="ep"><b>發佈：</b>2026-10-28　·　<b>長度：</b>75 分 36 秒　·　<b>嘉賓：</b>Ethan Evans（前 Amazon VP）</div>
+  <p>Show notes 已經列出全集骨架：「Criticism without praise」、「The every-great-man flaw」、「Attack mode」、「Sometimes all you need is...」。呢個結構本身已經係一堂管理課：Bezos 嘅反饋文化係<em>先講問題、極少讚美</em>，而 Evans 嘅框架係——頂尖人物都有一個致命缺陷（the every-great-man flaw），管理層嘅工作唔係消滅它，而係設計一個讓它唔會殺死公司嘅環境。</p>
+  <div class="why"><b>為何值得補：</b>同今日主題嘅隱藏連接：Talarico 講「制度塑造行為」，Evans 講「Bezos 如何用制度塑造高管行為」。一個講國家，一個講公司，同一套邏輯。</div>
+</div>
+
+<div class="card">
+  <span class="num">06</span>
+  <h3>The Knowledge Project <span class="badge none">最近無更新</span></h3>
+  <div class="byline">Shane Parrish · 20 集可讀（feed 只保留近期）</div>
+  <h4 class="sub">[Outliers] K.C. Irving: Competing with Giants</h4>
+  <div class="ep"><b>發佈：</b>2026-10-29　·　<b>系列：</b>Outliers（非訪談，單人敘事）</div>
+  <p>官方簡介已經係最好嘅摘要：<b>「當鐵路提高他的運輸成本，他買了一艘船。當石油供應商試圖擠壓他，他建了一座煉油廠。當一間工廠罷工，他脫下外套，走到糾察線，向體型大得多的工會領袖挑戰打一架。」</b></p>
+  <p>K.C. Irving 係加拿大最傳奇也最被低估嘅實業家——一個把垂直整合當作自衛武器嘅人。呢種「每一條被卡住嘅咽喉，都要自己建一條替代管道」嘅策略，同今日 Talarico 講嘅「醫療垂直整合」正好相反：Irving 係被上游擠壓而向下游整合，CVS 係主動向上游整合去捕獲定價權。同一個動作，兩種道德。</p>
+  <div class="why"><b>為何值得補：</b>20 分鐘左右，適合通勤。如果你做緊 supply chain 或任何被單一供應商卡住嘅生意，呢集係一份戰略模板。</div>
+</div>
+
+<h2 class="section">今日總結</h2>
+<div class="rule"></div>
+
+<div class="three">
+  <h4>三個可以帶走的觀察</h4>
+  <ol>
+    <li><b>「制度 vs 人格」正在成為 2026 年嘅主敘事。</b>今日呢集嘅核心唔係 «Trump 好壞»，而係 «點解換咗人都冇用»。Talarico 用自我任期限制做證據——他把自己也放進「制度會腐蝕人」嘅命題裡。呢種論述比傳統左右之爭更難反駁，也更可能跨黨派傳播。</li>
+    <li><b>AI 監管嘅討論已經由「會不會發生」轉向「誰來寫規則」。</b>Bartlett 問「億萬富翁應否寫 AI 規則」，Talarico 嘅答案係「唔係唔俾他們寫，係唔可以只有他們寫」。對做 AI 產品嘅人，呢個係產品定位問題：你嘅 safety story 係成本，還是護城河？</li>
+    <li><b>六條線今日只有一條出貨，但質素補償了數量。</b>其餘五台嘅最後一集都仍然在「可補聽」窗口內（最舊係 10 月 18 日）。如果你只有一個週末，路徑建議：Talarico（96 分）→ All-In（86 分，反面論述）→ K.C. Irving（20 分，策略模板）→ Seinfeld（230 分，留給長途機）。</li>
+  </ol>
+</div>
+
+<div class="foot">
+  <b>關於這份報告：</b>由 RSS GUID 對比自動偵測新集，逐集抓取官方描述；今日新集另外抓取 YouTube 官方字幕（18,507 字）做逐字稿層級萃取。所有 blockquote 均為原話（自動字幕經輕度清理，刪除 <code>um</code>、<code>&gt;&gt;</code> 等轉錄雜訊），非改寫、非翻譯後再引。<br><br>
+  報告生成：2026-11-02 09:56 UTC　｜　掃描器：<code>mindset-podcasts/scanner/</code>　｜　狀態檔已更新<br>
+  來源：Acquired · Founders · All-In · My First Million · The Knowledge Project · The Diary of a CEO
+</div>
+
+</div>
+</body>
+</html>
