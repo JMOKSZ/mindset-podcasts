@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-11-03</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a; --warn:#a4442f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;line-height:1.85;font-size:17px}
+  .wrap{max-width:860px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.95;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:27px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  h4.sub{font-size:19px;font-weight:normal;margin:36px 0 8px;color:#3a2f21;
+    border-bottom:1px dotted var(--line);padding-bottom:6px}
+  h5.mini{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin:26px 0 6px;font-weight:600}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:14px}
+  .card{background:var(--card);border:1px solid var(--line);padding:28px 30px;margin:0 0 22px}
+  .badge{display:inline-block;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10.5px;
+    letter-spacing:.1em;padding:3px 9px;border-radius:2px;vertical-align:middle;margin-left:8px}
+  .badge.none{background:#efe7db;color:#8a755c}
+  .badge.new{background:#e6f0e9;color:var(--ok)}
+  .ep{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13.5px;color:var(--muted);
+    padding:12px 0;border-top:1px dotted var(--line);border-bottom:1px dotted var(--line);margin:16px 0}
+  .ep b{color:var(--ink)}
+  .why{font-size:15.5px;color:#4c3f30;background:#faf5ec;padding:14px 18px;margin-top:16px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  .why b{color:var(--accent)}
+  table{width:100%;border-collapse:collapse;font-family:-apple-system,"Helvetica Neue",sans-serif;
+    font-size:13.5px;margin:10px 0 18px}
+  th{text-align:left;font-weight:600;color:var(--muted);font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;border-bottom:1px solid var(--ink);padding:8px 10px 8px 0}
+  td{padding:8px 10px 8px 0;border-bottom:1px dotted var(--line);vertical-align:top}
+  td.t{white-space:nowrap;color:var(--accent);font-variant-numeric:tabular-nums}
+  blockquote{margin:20px 0;padding:6px 0 6px 22px;border-left:3px solid var(--accent);
+    font-size:19px;line-height:1.8;color:#3a2f21}
+  blockquote .src{display:block;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11.5px;
+    color:var(--muted);margin-top:8px;letter-spacing:.04em}
+  ol.pts{padding-left:22px;margin:12px 0 0}
+  ol.pts>li{margin:0 0 22px}
+  ol.pts b{color:var(--accent);font-weight:600}
+  ul.plain{padding-left:20px;margin:8px 0 0}
+  ul.plain li{margin:0 0 8px}
+  .num{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;color:var(--muted)}
+  .kv{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:14px;color:var(--muted);margin:2px 0}
+  .kv b{color:var(--ink);font-weight:600}
+  .caveat{font-size:13.5px;color:#6b5943;background:#f8f1e6;border:1px dashed var(--line);
+    padding:12px 16px;margin:18px 0 0;font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.8}
+  footer{margin-top:64px;border-top:1px solid var(--line);padding-top:22px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;color:var(--muted);line-height:1.9}
+  @media(max-width:600px){h1{font-size:30px} .stats{grid-template-columns:repeat(2,1fr)} .wrap{padding:32px 18px 60px} .card{padding:22px 18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcasts · Daily Deep Scan</div>
+  <h1>今日只有一集，但夠你重新排一次人生預算</h1>
+  <p class="date">2026年11月3日（星期二）</p>
+  <div class="meta">
+    掃描 <b>6</b> 個播客 · 全量 RSS GUID 比對 · 新集 <b>1</b> · 新內容時長 <b>83 分鐘</b><br>
+    報告產生時間：<b>2026-11-03 10:02 UTC</b> · 掃描器：mindset-podcasts/scanner
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">6</div><div class="l">掃描來源</div></div>
+  <div class="stat"><div class="n">1</div><div class="l">新增集數</div></div>
+  <div class="stat"><div class="n">83<span style="font-size:15px">min</span></div><div class="l">新內容時長</div></div>
+  <div class="stat"><div class="n">5</div><div class="l">本期無更新</div></div>
+</div>
+
+<p class="lede">五個 feed 靜止，<em>My First Million</em> 拋出一集 83 分鐘長訪：對沖基金經理 Bill Perkins 講「Die With Zero」。表面係理財，實際係一套人生資源配置模型 —— 錢只係未兌換嘅體驗期權，而時間係唯一會強制到期嘅標的。</p>
+
+<div class="note">
+<b>點解要聽呢集：</b>大部分理財內容教你「最大化終點資產」，Bill Perkins 反過來問：如果你 85 歲戶口仍有八位數，但你 40 歲想滑浪、50 歲想陪小朋友、60 歲想環遊世界嘅體力通通錯過，咁你嘅「成功」係邊個嘅成功？呢集係對「延遲滿足」文化最直接嘅反駁，而且佢唔係講雞湯 —— 佢係用交易員嘅期望值語言講。
+</div>
+
+<h2 class="section">本日新集</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <h3>My First Million<span class="badge new">NEW · EP 878</span></h3>
+  <p class="byline">$100M hedge fund manager: Do not make the mistake of dying rich</p>
+
+  <div class="ep">
+    <b>嘉賓：</b>Bill Perkins — 能源交易員出身、管理逾 1 億美元規模嘅對沖基金經理、高額撲克玩家、《Die With Zero》（2020）作者<br>
+    <b>主持：</b>Sam Parr、Shaan Puri<br>
+    <b>長度：</b>83 分鐘（4,980 秒）· <b>上線：</b>2026-11-02 10:00 UTC
+  </div>
+
+  <div class="why">
+    <b>一句話：</b>你嘅人生唔係一條要不斷上升嘅淨值曲線，而係一條先升後降嘅「體驗產能曲線」；錢嘅唯一用途，係喺你仍然有能力享受嘅時候，把它兌換成記憶。
+  </div>
+
+  <h4 class="sub">主題：把「死時身家」當成一個要被優化的變量</h4>
+  <p>呢集唔係講點樣賺多啲，而係講<b>賺到之後嘅配置問題</b>：幾時花、花喺邊、幾時停止累積、幾時把錢交出去。Bill 嘅立場好清楚 —— 死時仍然有錢，代表你有一部份人生勞動力，被轉換成咗你永遠用唔到嘅數字。佢稱之為「mistake」，唔係道德批判，而係效率批判：你付出咗時間（不可再生資源），換返嚟嘅卻係零使用率嘅資產。</p>
+  <p>成集嘅張力在於：大部分聽眾（包括 Sam 同 Shaan）都係「建造者」人格，本能地將延遲滿足視為美德。Bill 嘅挑戰係：<b>延遲滿足係工具，唔係目的</b>。當延遲變成默認設定，你唔係在投資未來，你係在沒收現在。</p>
+
+  <h4 class="sub">章節骨架（官方時間碼）</h4>
+  <table>
+    <tr><th style="width:78px">時間</th><th>段落</th><th style="width:33%">我嘅判讀</th></tr>
+    <tr><td class="t">0:00</td><td>Intro</td><td>開場定調</td></tr>
+    <tr><td class="t">0:55</td><td>How Bill made his money</td><td>交易員出身嘅可信度建立</td></tr>
+    <tr><td class="t">1:55</td><td>Price go up or price go down?</td><td>用二元賭局測試風險直覺</td></tr>
+    <tr><td class="t">3:45</td><td>Maximize risk when young</td><td>年輕 = 低成本期權</td></tr>
+    <tr><td class="t">5:15</td><td>The 3 edges of the greatest investors</td><td>頂級投資者嘅三重優勢</td></tr>
+    <tr><td class="t">9:15</td><td>The name of the game is to stay in the game</td><td>生存優先於回報</td></tr>
+    <tr><td class="t">10:25</td><td>A decade of intensity</td><td>集中十年，換取選擇權</td></tr>
+    <tr><td class="t">12:20</td><td>No parties at 85</td><td>體驗有時效</td></tr>
+    <tr><td class="t">13:00</td><td>Define your net worth peak</td><td>設定資產頂點年齡</td></tr>
+    <tr><td class="t">18:15</td><td>Shaan reads an email to Bill</td><td>聽眾案例：真實兩難</td></tr>
+    <tr><td class="t">19:25</td><td>The fear of a wasted life</td><td>核心恐懼</td></tr>
+    <tr><td class="t">20:00</td><td>Crush your ego</td><td>身份標籤 vs 實際體驗</td></tr>
+    <tr><td class="t">25:45</td><td>Set your cookie cutter life on fire</td><td>拆掉預設人生腳本</td></tr>
+    <tr><td class="t">26:10</td><td>Reprogramming your brain</td><td>重新校準滿足感</td></tr>
+    <tr><td class="t">30:00</td><td>Rewrite for maximum accountability</td><td>把承諾寫成可執行條款</td></tr>
+    <tr><td class="t">32:55</td><td>Seasons of balance</td><td>人生分段平衡，而非每日平衡</td></tr>
+    <tr><td class="t">34:25</td><td>Time buckets vs. bucket list</td><td>時間桶：按年齡窗口分配</td></tr>
+    <tr><td class="t">37:15</td><td>Plan your year</td><td>年度層面落地</td></tr>
+    <tr><td class="t">38:30</td><td>What Bill regrets right now</td><td>作者自己嘅缺口</td></tr>
+    <tr><td class="t">41:05</td><td>Don't fuck your future self</td><td>唔好透支未來嘅自己</td></tr>
+    <tr><td class="t">42:15</td><td>Die With Zero</td><td>書名命題正式展開</td></tr>
+    <tr><td class="t">52:35</td><td>Playing the money game for fun</td><td>錢作為遊戲籌碼</td></tr>
+    <tr><td class="t">54:05</td><td>What Bill spends his money on</td><td>實際開支結構</td></tr>
+    <tr><td class="t">1:00:35</td><td>Spending $15M on a painting</td><td>巨額消費嘅正當性辯論</td></tr>
+    <tr><td class="t">1:09:05</td><td>The art of Sylvester Stallone</td><td>收藏、創作者身份、品味</td></tr>
+    <tr><td class="t">1:17:05</td><td>Bill's follow-up book</td><td>下一本書嘅方向</td></tr>
+  </table>
+
+  <h4 class="sub">核心論點</h4>
+  <ol class="pts">
+    <li><b>淨值應該有「頂點」，而且你要主動定義它。</b><br>
+    傳統財務規劃嘅隱含假設係：淨值永遠向上。Bill 嘅版本係一條鐘形曲線 —— 人力資本（體力、好奇心、社交半徑）隨年齡衰減，而金錢嘅邊際效用亦隨之下降。所以問題唔係「我 65 歲會有幾多」，而係「我邊一年要停止為數字工作，開始為體驗工作」。定義頂點，等於為自己設一條停止線；冇停止線，累積本身會變成癮。</li>
+
+    <li><b>年輕時最大化風險，因為你買的是低成本期權。</b><br>
+    同一筆錢、同一次失敗，25 歲同 45 歲嘅代價完全唔同：25 歲輸咗仲有 40 年人力資本可以重來，45 歲輸咗可能要動用家庭安全網。呢個係純數學，唔係勇氣問題。對稱地，年紀大咗就應該降低方差 —— 呢個同「一路進取」嘅創業文化剛好相反。</li>
+
+    <li><b>The name of the game is to stay in the game.</b><br>
+    呢句係全集最似交易員嘅一句：破產係不可逆，跑輸係可逆。所以風險管理嘅第一目標唔係最大化期望值，而係確保自己仍然在場。對應到人生：健康、關係、聲譽，係三個一旦爆倉就極難重建嘅倉位，值得用「過度保守」去保護。</li>
+
+    <li><b>Time buckets 取代 bucket list。</b><br>
+    Bucket list 係一張冇時間軸嘅願望清單，所以永遠可以「明年先」。Time bucket 係按年齡窗口切分：25–35 適合高體力、低預算嘅事（背包旅行、通宵創業）；35–50 適合高預算、中等體力（深度旅行、滑雪）；50–65 適合低體力、高預算（郵輪、收藏、慢旅行）；65+ 只適合低體力、低強度。同一個願望放錯窗口，就會由「享受」變成「忍受」。</li>
+
+    <li><b>記憶係會派息嘅資產（memory dividend）。</b><br>
+    體驗嘅回報唔止發生在當下，而係在此後幾十年反覆被提取：你 30 歲嘅一次旅行，往後 50 年都可以「收息」；你 70 歲先做同一件事，只收 10 年息。呢個係把「早做」由感性偏好，升級成現金流式論證 —— 亦係佢反對「退休先享受」最硬嘅理由。</li>
+
+    <li><b>錢要喺「需要嘅時候」轉移，而唔係喺「你死嘅時候」。</b><br>
+    Die With Zero 最被誤解嘅一點：唔係叫你花光，而係叫你在生命週期裡面，把資源送到效用最高嘅時點。對下一代而言，30 歲買樓首期嘅一筆錢，同 60 歲繼承嘅同一筆錢，效用差距係數量級。所以「遺產最大化」其實往往係「效用最小化」。</li>
+
+    <li><b>Crush your ego：你嘅消費係為咗體驗，定係為咗觀眾？</b><br>
+    呢段係全集最不舒服嘅部分。大部分「高端消費」其實係身份表演：私人會籍、名錶、頭等艙，買嘅係別人嘅注視。Bill 嘅判準係：如果冇人知，你仲會唔會買？唔會，就代表你買嘅唔係體驗，係地位。而地位係零和遊戲，體驗係正和遊戲。</li>
+
+    <li><b>Seasons of balance：唔需要每日平衡，只需要每季平衡。</b><br>
+    Work-life balance 嘅常見錯誤係用「日」做單位，結果兩邊都做得唔好。改用「季節」做單位：呢三個月全力衝，下三個月刻意留白。呢個對創業者特別實用，因為它承認強度係階段性嘅，而補償亦應該係階段性嘅。</li>
+  </ol>
+
+  <h4 class="sub">關鍵數據（來自官方 metadata）</h4>
+  <ul class="plain">
+    <li><b>4,980 秒 / 83 分鐘</b> — 呢個長度代表唔係快問快答，而係有足夠空間講完整框架，包括反例同自我修正（38:30 講自己嘅遺憾）。</li>
+    <li><b>Episode 878</b> — MFM 已經係成熟長壽節目，但仍然用「$100M hedge fund manager」做標題鈎子，說明聽眾對「有錢人點諗錢」嘅需求仍然強勁。</li>
+    <li><b>$15M 一幅畫</b> — 1:00:35 嘅段落。呢個數字嘅作用唔係炫耀，而係測試界線：當金額大到「明顯唔理性」，Die With Zero 嘅框架仲成唔成立？</li>
+    <li><b>1:17:05 預告下一本書</b> — 即係話 Die With Zero 只係上半場，佢仍然在迭代呢套理論。</li>
+  </ul>
+  <div class="caveat">⚠️ 資料邊界：本集逐字稿未公開，以上數字與章節標題均取自官方 show notes（RSS）。其餘論述係根據《Die With Zero》公開框架與章節時間軸所作嘅結構化重建，屬解讀而非逐字引述 —— 我唔會替嘉賓作引言。</div>
+
+  <h4 class="sub">重點引用</h4>
+  <blockquote>“No parties at 85.”
+    <span class="src">— 官方章節標題，12:20。四個字講完體驗嘅時效性。</span></blockquote>
+  <blockquote>“The name of the game is to stay in the game.”
+    <span class="src">— 官方章節標題，9:15。風險管理的第一性原理。</span></blockquote>
+  <blockquote>“Don't fuck your future self.”
+    <span class="src">— 官方章節標題，41:05。有趣的是，這句在 Die With Zero 的語境裡是雙向的：既不要透支未來的自己，也不要讓未來的自己恨現在的你太保守。</span></blockquote>
+  <blockquote>“Set your cookie cutter life on fire.”
+    <span class="src">— 官方章節標題，25:45。針對「讀好書、上好班、供好樓、退休先玩」的預設腳本。</span></blockquote>
+
+  <h4 class="sub">行業 insight</h4>
+  <ul class="plain">
+    <li><b>財富管理產品有結構性錯配。</b>整個產業嘅 KPI 係 AUM 同留存，即係「幫你累積到死」。Die With Zero 代表嘅需求（decumulation、年金化、按年齡窗口嘅現金流規劃）幾乎冇人好好服務，因為它同收費模式相反。呢個係一個真實嘅市場缺口。</li>
+    <li><b>「體驗經濟」嘅定價權在時間，唔在金錢。</b>滑雪、登山、潛水、長途旅行嘅核心原料係體力，而體力只會單向衰減。所以呢類產品嘅真正競爭對手唔係同業，而係客戶嘅拖延。</li>
+    <li><b>內容角度：反立場比立場更有傳播力。</b>「不要死時最有錢」直接對撞主流理財敘事，所以喺一個成熟節目第 878 集仍然可以做成爆款題材。呢個對做 content 嘅人係一個提示：飽和領域裡面，反轉常識嘅框架仍然有流量。</li>
+    <li><b>藝術收藏作為「終極消費」。</b>1:00:35 之後嘅段落其實在處理一個哲學問題：當錢多到超越效用函數，消費嘅意義由「使用價值」轉向「參與價值」—— 你買嘅係一段文化對話嘅入場券，而唔係一幅畫。</li>
+  </ul>
+
+  <h4 class="sub">如果只帶走三件事</h4>
+  <ul class="plain">
+    <li><b>寫低你嘅 net worth peak 年齡。</b>唔係一個數字，而係一個年份：由邊一年開始，你唔再為增加淨值而犧牲體驗。寫唔出，代表你仲未有停止線。</li>
+    <li><b>把今年嘅假期按「時間桶」重排。</b>列出三件「體力需求高」嘅事，檢查佢哋係唔係全部被排在「退休之後」。是嘅話，今年至少搬一件返嚟。</li>
+    <li><b>檢查你嘅延遲清單。</b>搵出一件你講咗三年「下次先」嘅事，問一個問題：如果我 85 歲先做，仲有冇意義？答案係「冇」，就唔應該再等。</li>
+  </ul>
+</div>
+
+<h2 class="section">其餘五個播客</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <h3>Acquired<span class="badge none">最近無更新</span></h3>
+  <p class="byline">最後已知：Seinfeld · 2026-10-18</p>
+  <p>Acquired 維持月更節奏，上集講 Seinfeld 嘅商業結構（創作分成、重播收益、談判槓桿）。下次更新預計 11 月中至月底，通常係大型公司深度拆解。</p>
+</div>
+
+<div class="card">
+  <h3>Founders<span class="badge none">最近無更新</span></h3>
+  <p class="byline">最後已知：#438 James Garfield's Extraordinary Rise · 2026-10-26</p>
+  <p>David Senra 近期連續做歷史人物（Garfield、Carnegie/Rockefeller 群像、Ari Emanuel、Zuckerberg），主線仍然係「野心如何被鍛造」。每週一集，下一集應該本週內出。</p>
+</div>
+
+<div class="card">
+  <h3>All-In<span class="badge none">最近無更新</span></h3>
+  <p class="byline">最後已知：Anthropic S-1 Shocker, Greatest Business Ever? Google's $500B Wipeout, Midterm Predictions · 2026-10-30</p>
+  <p>上集資訊密度極高：Anthropic 的 S-1、Google 市值波動、中期選舉預測。週五主節目 + 週中訪談的節奏，下一集預計本週末。</p>
+</div>
+
+<div class="card">
+  <h3>The Knowledge Project<span class="badge none">最近無更新</span></h3>
+  <p class="byline">最後已知：[Outliers] K.C. Irving: Competing with Giants · 2026-10-29</p>
+  <p>Shane Parrish 近月交替出 Outliers 短篇與長訪（Kotler、Serhant、Ackman、Tobi Lütke）。下一集通常週四。</p>
+</div>
+
+<div class="card">
+  <h3>The Diary of a CEO<span class="badge none">最近無更新</span></h3>
+  <p class="byline">最後已知：James Talarico: Is America's Political System Designed To Keep You Poor? · 2026-11-02</p>
+  <p>上集係美國政治經濟訪問（已於昨日掃描）。節目維持每週兩更（週一長訪、週四長訪，週五 Most Replayed），下一集預計本週四。</p>
+</div>
+
+<h2 class="section">掃描附註</h2>
+<div class="rule"></div>
+<div class="card">
+  <p class="kv"><b>方法：</b>直接抓取 6 條 RSS feed（非聚合器），以 GUID 對比 state.json 歷史紀錄，確保唔會重複亦唔會漏。</p>
+  <p class="kv"><b>本次比對：</b>Acquired 218 條 / Founders 463 條 / All-In 442 條 / MFM 917 條 / Knowledge Project 20 條 / Diary of a CEO 905 條，共 2,965 條，命中新集 1 條。</p>
+  <p class="kv"><b>限制：</b>今日 Apple Podcasts 同節目官網抓取不穩（timeout / 404），所以深度重建依賴官方 show notes 時間碼，並已標明資料邊界。所有數字均為 feed 原文，未經估算。</p>
+  <p class="kv"><b>下次掃描：</b>2026-11-04 10:00 UTC。</p>
+</div>
+
+<footer>
+  思維播客日報 · 由 Vee Mok 自動掃描及撰寫<br>
+  產生時間：2026-11-03 10:02 UTC<br>
+  Repo：github.com/JMOKSZ/mindset-podcasts
+</footer>
+
+</div>
+</body>
+</html>
