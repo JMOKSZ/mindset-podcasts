@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-11-04</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a; --warn:#a4442f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;line-height:1.85;font-size:17px}
+  .wrap{max-width:860px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.95;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:27px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  h4.sub{font-size:19px;font-weight:normal;margin:36px 0 8px;color:#3a2f21;
+    border-bottom:1px dotted var(--line);padding-bottom:6px}
+  h5.mini{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin:26px 0 6px;font-weight:600}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:14px}
+  .card{background:var(--card);border:1px solid var(--line);padding:28px 30px;margin:0 0 22px}
+  .badge{display:inline-block;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10.5px;
+    letter-spacing:.1em;padding:3px 9px;border-radius:2px;vertical-align:middle;margin-left:8px}
+  .badge.none{background:#efe7db;color:#8a755c}
+  .badge.catch{background:#e9eef4;color:#3c5a78}
+  .ep{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13.5px;color:var(--muted);
+    padding:12px 0;border-top:1px dotted var(--line);border-bottom:1px dotted var(--line);margin:16px 0}
+  .ep b{color:var(--ink)}
+  .why{font-size:15.5px;color:#4c3f30;background:#faf5ec;padding:14px 18px;margin-top:16px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  .why b{color:var(--accent)}
+  table{width:100%;border-collapse:collapse;font-family:-apple-system,"Helvetica Neue",sans-serif;
+    font-size:13.5px;margin:10px 0 18px}
+  th{text-align:left;font-weight:600;color:var(--muted);font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;border-bottom:1px solid var(--ink);padding:8px 10px 8px 0}
+  td{padding:8px 10px 8px 0;border-bottom:1px dotted var(--line);vertical-align:top}
+  td.t{white-space:nowrap;color:var(--accent);font-variant-numeric:tabular-nums}
+  blockquote{margin:20px 0;padding:6px 0 6px 22px;border-left:3px solid var(--accent);
+    font-size:19px;line-height:1.8;color:#3a2f21}
+  blockquote .src{display:block;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11.5px;
+    color:var(--muted);margin-top:8px;letter-spacing:.04em}
+  ol.pts{padding-left:22px;margin:12px 0 0}
+  ol.pts>li{margin:0 0 22px}
+  ol.pts b{color:var(--accent);font-weight:600}
+  ul.plain{padding-left:20px;margin:8px 0 0}
+  ul.plain li{margin:0 0 8px}
+  .num{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;color:var(--muted)}
+  .kv{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:14px;color:var(--muted);margin:2px 0}
+  .kv b{color:var(--ink);font-weight:600}
+  .caveat{font-size:13.5px;color:#6b5943;background:#f8f1e6;border:1px dashed var(--line);
+    padding:12px 16px;margin:18px 0 0;font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.8}
+  footer{margin-top:64px;border-top:1px solid var(--line);padding-top:22px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;color:var(--muted);line-height:1.9}
+  @media(max-width:600px){h1{font-size:30px} .stats{grid-template-columns:repeat(2,1fr)} .wrap{padding:32px 18px 60px} .card{padding:22px 18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcasts · Daily Deep Scan</div>
+  <h1>六條 feed 同時靜默，但呢個空檔本身係一個訊號</h1>
+  <p class="date">2026年11月4日（星期三）</p>
+  <div class="meta">
+    掃描 <b>6</b> 個播客 · 全量 RSS GUID 比對 · 新集 <b>0</b> · 比對條目 <b>2,965</b><br>
+    報告產生時間：<b>2026-11-04 09:54 UTC</b> · 掃描器：mindset-podcasts/scanner
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">6</div><div class="l">掃描來源</div></div>
+  <div class="stat"><div class="n">0</div><div class="l">新增集數</div></div>
+  <div class="stat"><div class="n">2,965</div><div class="l">GUID 比對</div></div>
+  <div class="stat"><div class="n">2</div><div class="l">連續靜默日</div></div>
+</div>
+
+<p class="lede">六個 feed 全部回 200，全部有內容，但<em>零條未掃 GUID</em>。呢個唔係抓取失敗 —— 係六條發佈節奏刚好喺星期三撞出一個空檔：All-In 逢週五、Diary 週一/四、MFM 週一/三、Founders 週一、Knowledge Project 週四、Acquired 月更。今日冇新料，所以呢份報告改做另一件事：把你過去十日已經收到、但大概未消化嘅六集，壓成一份可以一次過補完嘅深讀。</p>
+
+<div class="note">
+<b>老實講：</b>連續兩日零新集，最容易出現嘅壞習慣係「照交一份空報告」或者「作幾集出嚟」。兩樣都唔做。今日報告嘅結構係：先確認掃描結果（附每條 feed 嘅條目數同最後一集），再對最近六集做結構化深讀，最後抽一條橫向主線。所有數字來自 RSS 原文，所有章節標題來自官方 show notes，我嘅判斷另外標明。
+</div>
+
+<h2 class="section">一 · 本日掃描結果</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <table>
+    <tr><th>播客</th><th style="width:80px">條目</th><th>最後一集</th><th style="width:96px">上線</th><th style="width:62px">距今</th></tr>
+    <tr><td><b>Acquired</b></td><td class="t">218</td><td>Seinfeld</td><td class="t">10-18</td><td class="t">17 日</td></tr>
+    <tr><td><b>Founders</b></td><td class="t">463</td><td>#438 James Garfield's Extraordinary Rise</td><td class="t">10-26</td><td class="t">9 日</td></tr>
+    <tr><td><b>All-In</b></td><td class="t">442</td><td>Anthropic S-1 Shocker, Greatest Business Ever? Google's $500B Wipeout, Midterm Predictions</td><td class="t">10-30</td><td class="t">5 日</td></tr>
+    <tr><td><b>My First Million</b></td><td class="t">917</td><td>$100M hedge fund manager: Do not make the mistake of dying rich</td><td class="t">11-02</td><td class="t">2 日</td></tr>
+    <tr><td><b>Knowledge Project</b></td><td class="t">20</td><td>[Outliers] K.C. Irving: Competing with Giants</td><td class="t">10-29</td><td class="t">6 日</td></tr>
+    <tr><td><b>Diary of a CEO</b></td><td class="t">905</td><td>James Talarico: 3 Men Now Own More Wealth Than The Entire Middle Class!</td><td class="t">11-02</td><td class="t">2 日</td></tr>
+  </table>
+  <p class="kv"><b>判定：</b>0 條新集。六條 feed HTTP 200、entry 數正常、GUID 集合與 state.json 完全一致 → 屬「真靜默」，唔係「抓唔到」。</p>
+  <p class="kv"><b>知識庫總量：</b>218 + 463 + 442 + 917 + 20 + 905 = <b>2,965</b> 條已追蹤條目。</p>
+</div>
+
+<h2 class="section">二 · 補課：最近六集（非新集）</h2>
+<div class="rule"></div>
+
+<p class="byline" style="margin-bottom:20px">以下六集你都收過，但除咗 MFM 之外都未做過深度拆解。呢一節唔係重複新聞，而係把每集嘅骨架同真正嘅商業機制講清楚。</p>
+
+<div class="card">
+  <h3>Acquired<span class="badge catch">補課 · 3小時50分</span></h3>
+  <p class="byline">Seinfeld · 2026-10-18 · 13,820 秒</p>
+
+  <p>呢集嘅真正題目唔係「一套處境喜劇有幾好笑」，而係<b>一個創作者如何用所有權結構，把一次文化成功轉換成三十年現金流</b>。開場數字已經夠狠：一套 1998 年完結嘅劇，今年（2026）仍然有 7,200 萬美國人睇過。</p>
+
+  <h5 class="mini">骨架（官方時間碼，節錄）</h5>
+  <table>
+    <tr><td class="t">04:52</td><td>Jerry Seinfeld 的棟篤笑出身（1954–1988）</td></tr>
+    <tr><td class="t">16:16</td><td>NBC 原本只想買一個 late-night special</td></tr>
+    <tr><td class="t">21:35</td><td>Larry David 加入</td></tr>
+    <tr><td class="t">35:04</td><td><b>Fin-Syn 規則與 Castle Rock 交易</b></td></tr>
+    <tr><td class="t">52:45</td><td>試播集與試映災難</td></tr>
+    <tr><td class="t">1:04:24</td><td>Rick Ludwin 如何救返套劇</td></tr>
+    <tr><td class="t">1:28:41</td><td>第二季：頂住電視台 note</td></tr>
+    <tr><td class="t">1:45:11</td><td>第四季與 "The Contest"</td></tr>
+    <tr><td class="t">2:15:44</td><td><b>Syndication 現金牛（1995）</b></td></tr>
+    <tr><td class="t">2:42:13</td><td>Jack Welch 的 brunch 收購邀約、Jerry 離場</td></tr>
+    <tr><td class="t">2:55:04</td><td>大結局與最終電視經濟學</td></tr>
+    <tr><td class="t">3:11:21</td><td>串流年代與 Netflix 的天價合約</td></tr>
+    <tr><td class="t">3:30:00</td><td>7 Powers 分析</td></tr>
+  </table>
+
+  <h5 class="mini">三個機制，值得記住</h5>
+  <ol class="pts">
+    <li><b>Fin-Syn 規則造咗個窗口。</b>美國聯邦規則限制電視網擁有自己播出嘅節目，電視網被迫向外採購 —— 即係製作方可以保留所有權。Castle Rock 站在正確嘅一側，所以 Seinfeld 嘅重播收益唔會自動流入 NBC 口袋。呢個係「監管扭曲創造價值」嘅經典案例：同一套劇，如果由電視台自己製作，創作人嘅長期回報會細一個數量級。</li>
+    <li><b>Syndication 係內容業嘅複利機器。</b>2:15:44 一段係全集嘅財務核心：當一季累積到足夠集數（通常 88–100 集），就可以賣畀地方電視台重播。邊際成本近零、收入按年重複，而且談判籌碼隨集數增加。呢個係「先虧損四年，然後收租三十年」嘅商業模式。</li>
+    <li><b>"No hugging, no learning" 係產品規格，唔係藝術宣言。</b>1:10:17。拒絕角色成長，等於拒絕情境喜劇嘅標準敘事弧，換嚟嘅係每一集都可以獨立重播 —— 對 syndication 極度友善。藝術選擇同分發經濟學喺呢度完全對齊。</li>
+  </ol>
+
+  <div class="why">
+    <b>對你嘅用途：</b>呢集係一條「內容資產估值」嘅教科書。任何做內容、做 IP、做訂閱制嘅人，都應該聽 2:15:44 同 3:11:21 兩段，因為佢講清楚咗同一份資產喺有線年代同串流年代嘅定價邏輯點樣改變。
+  </div>
+</div>
+
+<div class="card">
+  <h3>All-In<span class="badge catch">補課 · 85分鐘</span></h3>
+  <p class="byline">Anthropic S-1 Shocker, Greatest Business Ever? Google's $500B Wipeout, Midterm Predictions · 2026-10-30 · 01:25:47</p>
+
+  <p>呢集嘅資訊密度係四集中最高，而且有具體錨點：Anthropic 遞交 S-1、Google 單日蒸發約 5,000 億美元市值、中期選舉最後預測。三個題目其實係同一條問題嘅三個切面 —— <b>當 AI 資本開支大到你唔可以靠營運現金流支付，錢從邊嚟、風險由邊個承擔</b>。</p>
+
+  <h5 class="mini">骨架（官方時間碼）</h5>
+  <table>
+    <tr><td class="t">03:22</td><td>Anthropic S-1 拆解：史上最好嘅生意？</td></tr>
+    <tr><td class="t">32:47</td><td>AI 最大問題與 Anthropic 的 doomer 對決</td></tr>
+    <tr><td class="t">1:01:57</td><td>Google 單日失去 5,000 億市值：邊度出錯</td></tr>
+    <tr><td class="t">1:14:17</td><td>中期選舉最終預測與情境</td></tr>
+  </table>
+
+  <h5 class="mini">Show notes 內引用嘅關鍵事實</h5>
+  <ul class="plain">
+    <li><b>Reuters（10-20）：</b>Anthropic 今年上半年錄得超過 <b>800 億美元淨虧損</b>（引 WSJ 報道）。呢個數字係理解 S-1 嘅前提 —— 收入增長同虧損擴大同時發生。</li>
+    <li><b>Fortune（10-28）：</b>Alphabet 雲業務收入翻倍，但<b>自由現金流轉負</b>。呢個就係「5,000 億蒸發」嘅基本面解釋：市場唔係嫌增長慢，係嫌增長要用現金流找數。</li>
+    <li><b>NBC News：</b>Anthropic 在高調上市前公開 IPO 文件。</li>
+    <li><b>Vox / Anthropic Institute：</b>兩條關於「AI 競賽可否停」同「如何量度 AI 發展速度」嘅參考資料 —— 即係話 32:47 一段唔係純粹口水，背後有政策文本。</li>
+  </ul>
+
+  <div class="why">
+    <b>我嘅判讀：</b>呢集真正嘅爭論唔係「Anthropic 值幾錢」，而係<b>科技巨頭嘅資產負債表仲可以承載幾多輪資本開支</b>。當雲業務收入翻倍但 FCF 轉負，代表增長係用折舊同債務買返嚟嘅。呢個結構喺利率下行時無敵，喺利率上行時會突然變成壓力測試。值得注意嘅係 show notes 引用咗 Semafor 一篇「All-In 對 superintelligence 降溫」嘅報道 —— 節目自己都被寫入故事，呢個細節比任何預測都有意思。
+  </div>
+</div>
+
+<div class="card">
+  <h3>The Diary of a CEO<span class="badge catch">補課 · 97分鐘</span></h3>
+  <p class="byline">James Talarico: 3 Men Now Own More Wealth Than The Entire Middle Class! · 2026-11-02 · 5,803 秒（錄於 2026-09-08）</p>
+
+  <p>嘉賓係德州州眾議員 James Talarico —— 第八代德州人、前公立學校教師，正競逐自 1988 年以來德州第一個民主黨聯邦參議員席位。呢集唔係一般「政治人物上節目宣傳」，因為 Steven 嘅提問直接跳去機制層：錢點樣由中產流向頂層、非現金資產點樣徵稅、AI 失業由邊個找數。</p>
+
+  <h5 class="mini">五個官方主張（節目自述）</h5>
+  <ul class="plain">
+    <li><b>Rigged System：</b>過去 50 年嘅 trickle-down 唔係經濟理論，而係一次刻意嘅財富轉移。</li>
+    <li><b>Crony Capitalism：</b>醫療壟斷 + 寬鬆競選財務法 = 企業可以「買」政治人物，消滅競爭、推高價格。</li>
+    <li><b>The AI Threat：</b>把 AI 交畀利潤導向嘅億萬富翁，會造成大規模失業而冇公共收益或勞工保障。</li>
+    <li><b>False Immigration Choices：</b>邊境強硬 vs. 合法通道係假二選一，實際要同時做。</li>
+    <li><b>Systemic Overhaul：</b>唔拆掉 gerrymandering、兩黨制、企業遊說嘅誘因結構，換幾多個人都冇用。</li>
+  </ul>
+
+  <h5 class="mini">章節中最尖銳嘅幾條問題</h5>
+  <table>
+    <tr><td class="t">27:54</td><td>「做 trillionaire 係唔係一種精神疾病？」</td></tr>
+    <tr><td class="t">31:50</td><td>如何向「唔係現金」嘅財富徵稅</td></tr>
+    <tr><td class="t">36:01</td><td>億萬富翁會唔會直接搬走</td></tr>
+    <tr><td class="t">42:37</td><td>規管 AI 佢會優先做嘅三件事</td></tr>
+    <tr><td class="t">52:02</td><td>AI 會唔會推向 30% 失業率</td></tr>
+  </table>
+
+  <div class="why">
+    <b>點解值得補：</b>呢集嘅價值唔在於你同唔同意佢，而在於佢把「財富集中」由一個道德抱怨，翻譯成幾個可操作嘅政策槓桿：資產型徵稅、醫療反壟斷、競選財務、AI 監管。你可以逐項反駁，但你唔會覺得佢只係喊口號。對做投資或者做生意嘅人，31:50 同 36:01 兩段最實用 —— 因為佢們直接指向資本會點樣避開監管。
+  </div>
+</div>
+
+<div class="card">
+  <h3>My First Million<span class="badge catch">補課 · 83分鐘</span></h3>
+  <p class="byline">$100M hedge fund manager: Do not make the mistake of dying rich · 2026-11-02 · Episode 878 · 4,980 秒</p>
+
+  <p>昨日報告已做完整拆解（Bill Perkins 的 Die With Zero 框架），呢度只補一個今日先留意到嘅細節：<b>18:15 有一段「Shaan 讀一封 email 畀 Bill 聽」</b>。呢個安排係成集嘅轉折點 —— 前面 17 分鐘係框架，之後 65 分鐘係用一個真實個案壓力測試框架。大部分理財內容只有框架、冇反例；呢集嘅價值有一半在嗰封 email。</p>
+  <div class="why">
+    <b>重聽建議：</b>跳去 18:15 開始聽，聽 Bill 點樣處理「我已經 40 歲、有家庭、唔可以承受高方差」呢個反例。框架喺極端個案面前會唔會塌，係判斷一個框架係唔係真嘢嘅最快方法。
+  </div>
+</div>
+
+<div class="card">
+  <h3>The Knowledge Project<span class="badge catch">補課 · Outliers 短篇</span></h3>
+  <p class="byline">[Outliers] K.C. Irving: Competing with Giants · 2026-10-29</p>
+
+  <p>K.C. Irving 係加拿大東部嘅實業家，新不倫瑞克省（New Brunswick）經濟史上最集中嘅權力之一：木材、報紙、石油、航運、零售，垂直整合到一個省嘅經濟幾乎繞唔開佢。呢集係 Outliers 短篇，長度短，但邏輯極清晰 —— 全部係「被卡脖子之後向上游買」嘅連續動作。</p>
+
+  <blockquote>“When a railway raised his shipping costs, he bought a ship. When oil suppliers tried to squeeze him, he built a refinery. When a plant went on strike, he pulled up to the picket line, took off his coat, and challenged the much larger union boss to a fight.”
+    <span class="src">— 官方 show notes 摘要（Farnam Street）</span>
+  </blockquote>
+
+  <div class="why">
+    <b>一句話機制：</b>每一次被上游或者中間商擠壓，答案都唔係談判，而係<b>收購嗰個環節</b>。呢個係垂直整合最純粹嘅版本：把「交易對手嘅定價權」變成「自己嘅成本中心」。代價係資本密度極高、退出極難 —— 所以呢套打法只適合現金流穩定、負債能力強、時間視野以十年計嘅人。同昨日 Bill Perkins 嘅「唔好死時最有錢」剛好係兩個極端：一個講退出，一個講控制。
+  </div>
+</div>
+
+<div class="card">
+  <h3>Founders<span class="badge catch">補課 · 38分鐘</span></h3>
+  <p class="byline">#438 James Garfield's Extraordinary Rise · 2026-10-26 · 2,288 秒</p>
+
+  <p>David Senra 呢集讀嘅係 Candice Millard 嘅《Destiny of the Republic: A Tale of Madness, Medicine and the Murder of a President》。注意：Founders 嘅 show notes 向來只有書名同贊助商，冇章節、冇摘要 —— 所以以下係書本背景，唔係節目逐字內容，我明確標開。</p>
+
+  <p><b>背景（書本層面）：</b>Garfield 出生於俄亥俄州木屋，父親早逝，靠半工半讀讀完 Williams College；內戰時成為最年輕嘅聯邦軍少將之一；之後當選國會議員，1880 年成為共和黨全國大會嘅黑馬候選人並當選總統。上任不足一年被 Charles Guiteau 槍擊，之後因為當時醫學界拒絕相信病菌理論、醫生反覆用手指探入傷口，拖了 79 天死於感染。呢個細節係書名「Madness, Medicine」嘅來源。</p>
+
+  <p><b>Senra 系列嘅一貫主題：</b>佢揀 Garfield 唔係因為「勵志」，而係因為呢個人物同時具備三樣佢反覆講嘅元素 —— 極端起點劣勢、極高學習速度、以及一個唔靠出身嘅上升通道（19 世紀美國嘅教育與政治流動性）。刺殺之後嘅公務員制度改革（Pendleton Act）亦係呢個故事嘅製度尾巴：一個人嘅死亡，換嚟一套 spoils system 嘅終結。</p>
+
+  <div class="caveat">⚠️ 資料邊界：本集冇官方 show notes 或逐字稿，以上為書本內容與歷史背景重建，唔代表 David Senra 在節目中嘅原話。想聽佢本人嘅框架，建議直接聽音檔 0:00–10:00 嘅開場段。</div>
+</div>
+
+<h2 class="section">三 · 橫向主線：邊個承擔下行</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <p>六集擺埋一齊，有一條線穿過全部：<b>每一個體系都把上升留給自己，把下行外部化。</b></p>
+  <ol class="pts">
+    <li><b>Anthropic 的 800 億半年虧損</b>，唔係一家公司嘅事 —— 佢係整個 AI 資本開支週期嘅會計表達。當 Alphabet 雲收入翻倍而 FCF 轉負，代表呢輪增長係用資產負債表買返嚟。下行由邊個承擔？初期由股東，後期由納稅人同員工（如果就業結構真係被重寫）。</li>
+    <li><b>Talarico 講嘅財富集中</b>，係同一條問題嘅分配面：如果 AI 生產力收益全部流向資本，而勞動份額繼續下跌，咁「三個男人嘅財富多過整個中產」就唔係一句口號，而係一個會計結果。</li>
+    <li><b>Seinfeld 的 syndication 結構</b>則展示咗相反案例：因為 Fin-Syn 規則強迫電視網外部化製作，創作方意外獲得所有權，於是上行被留在創作者手上。同一個行業，規則一改，誰拿上行就跟住改。</li>
+    <li><b>K.C. Irving 講嘅係防守版：</b>如果你唔想被別人定價，就去擁有嗰個環節。垂直整合係把外部風險內部化 —— 代價係你唔可以走。</li>
+    <li><b>Garfield 的刺殺與 Pendleton Act</b> 係制度版本：一個系統嘅腐敗（spoils system）要等到極端事件先被修正，而修正嘅代價通常唔係由設計制度嘅人支付。</li>
+  </ol>
+  <div class="why">
+    <b>實務結論：</b>無論你係投資者、創業者抑或打工，值得問嘅問題都係同一條 —— <b>呢個結構嘅下行情境，最終落在邊張資產負債表上？</b>如果答案係「唔知」或者「總之唔係我」，通常代表你就是那張表。
+  </div>
+</div>
+
+<h2 class="section">四 · 發佈節奏預測</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <table>
+    <tr><th>播客</th><th style="width:120px">節奏</th><th>下一集預計</th><th style="width:110px">信心</th></tr>
+    <tr><td>All-In</td><td>週五主節目 + 週中訪談</td><td>11-06（五）主節目；11-05（四）可能先出訪談</td><td class="t">高</td></tr>
+    <tr><td>Diary of a CEO</td><td>週一 / 週四長訪，週五 Most Replayed</td><td>11-05（四）</td><td class="t">高</td></tr>
+    <tr><td>Knowledge Project</td><td>約每週四</td><td>11-05（四）</td><td class="t">中高</td></tr>
+    <tr><td>My First Million</td><td>週一 / 週三不定期</td><td>本週內，可能 11-04 晚或 11-05</td><td class="t">中</td></tr>
+    <tr><td>Founders</td><td>每週一</td><td>11-09（一）</td><td class="t">高</td></tr>
+    <tr><td>Acquired</td><td>月更（9 月 Home Depot、10 月 Seinfeld）</td><td>11 月中至月底</td><td class="t">中</td></tr>
+  </table>
+  <p class="kv">即係話：<b>明後兩日大機會一次過補回 2–4 集</b>。今日呢個空檔，係本週唯一嘅落後機會。</p>
+</div>
+
+<h2 class="section">五 · 如果只帶走三件事</h2>
+<div class="rule"></div>
+<div class="card">
+  <ul class="plain">
+    <li><b>用「邊張資產負債表承擔下行」做過濾器。</b>睇任何新商業模式（AI capex、訂閱制、垂直整合）先問呢條，比問「市場有幾大」有用得多。</li>
+    <li><b>重聽 MFM 18:15 起。</b>一個框架值唔值錢，睇它在反例面前會唔會塌。嗰封 email 就係反例。</li>
+    <li><b>把 Acquired 2:15:44 同 3:11:21 當成一堂資產定價課。</b>同一份內容資產，喺有線年代同串流年代嘅現金流曲線完全唔同 —— 呢個對任何做 IP 嘅人都直接適用。</li>
+  </ul>
+</div>
+
+<h2 class="section">掃描附註</h2>
+<div class="rule"></div>
+<div class="card">
+  <p class="kv"><b>方法：</b>直接抓取 6 條 RSS feed（非聚合器），以 GUID 對比 state.json 歷史紀錄；比對集合完整，唔做抽樣。</p>
+  <p class="kv"><b>本次比對：</b>Acquired 218 / Founders 463 / All-In 442 / MFM 917 / KP 20 / Diary 905，共 2,965 條；命中新集 0 條。</p>
+  <p class="kv"><b>Jev 前置過濾：</b>本日輸入為 0 條新集，無內容可篩，直接空過（設計上 fail-open，唔會阻斷流程）。</p>
+  <p class="kv"><b>資料邊界：</b>章節標題、時長、條目數、上線時間全部取自 RSS 原文；All-In 段內嘅公司數字來自其 show notes 引用嘅 Reuters / Fortune / NBC 報道。Founders 一集冇官方 notes，該段已明確標為書本背景而非節目內容。其餘分析屬我嘅判讀。</p>
+  <p class="kv"><b>下次掃描：</b>2026-11-05 10:00 UTC。</p>
+</div>
+
+<footer>
+  思維播客日報 · 由 Vee Mok 自動掃描及撰寫<br>
+  產生時間：2026-11-04 09:54 UTC<br>
+  Repo：github.com/JMOKSZ/mindset-podcasts
+</footer>
+
+</div>
+</body>
+</html>
