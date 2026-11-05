@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-11-05</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a; --warn:#a4442f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;line-height:1.85;font-size:17px}
+  .wrap{max-width:860px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.95;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:27px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  h4.sub{font-size:19px;font-weight:normal;margin:36px 0 8px;color:#3a2f21;
+    border-bottom:1px dotted var(--line);padding-bottom:6px}
+  h5.mini{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin:26px 0 6px;font-weight:600}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:14px}
+  .card{background:var(--card);border:1px solid var(--line);padding:28px 30px;margin:0 0 22px}
+  .badge{display:inline-block;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10.5px;
+    letter-spacing:.1em;padding:3px 9px;border-radius:2px;vertical-align:middle;margin-left:8px}
+  .badge.none{background:#efe7db;color:#8a755c}
+  .badge.catch{background:#e9eef4;color:#3c5a78}
+  .badge.fresh{background:#e7f1e9;color:#2f6b47}
+  .ep{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13.5px;color:var(--muted);
+    padding:12px 0;border-top:1px dotted var(--line);border-bottom:1px dotted var(--line);margin:16px 0}
+  .ep b{color:var(--ink)}
+  .why{font-size:15.5px;color:#4c3f30;background:#faf5ec;padding:14px 18px;margin-top:16px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  .why b{color:var(--accent)}
+  table{width:100%;border-collapse:collapse;font-family:-apple-system,"Helvetica Neue",sans-serif;
+    font-size:13.5px;margin:10px 0 18px}
+  th{text-align:left;font-weight:600;color:var(--muted);font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;border-bottom:1px solid var(--ink);padding:8px 10px 8px 0}
+  td{padding:8px 10px 8px 0;border-bottom:1px dotted var(--line);vertical-align:top}
+  td.t{white-space:nowrap;color:var(--accent);font-variant-numeric:tabular-nums}
+  blockquote{margin:20px 0;padding:6px 0 6px 22px;border-left:3px solid var(--accent);
+    font-size:19px;line-height:1.8;color:#3a2f21}
+  blockquote .src{display:block;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11.5px;
+    color:var(--muted);margin-top:8px;letter-spacing:.04em}
+  ol.pts{padding-left:22px;margin:12px 0 0}
+  ol.pts>li{margin:0 0 22px}
+  ol.pts b{color:var(--accent);font-weight:600}
+  ul.plain{padding-left:20px;margin:8px 0 0}
+  ul.plain li{margin:0 0 8px}
+  .num{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;color:var(--muted)}
+  .kv{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:14px;color:var(--muted);margin:2px 0}
+  .kv b{color:var(--ink);font-weight:600}
+  .caveat{font-size:13.5px;color:#6b5943;background:#f8f1e6;border:1px dashed var(--line);
+    padding:12px 16px;margin:18px 0 0;font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.8}
+  footer{margin-top:64px;border-top:1px solid var(--line);padding-top:22px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;color:var(--muted);line-height:1.9}
+  @media(max-width:600px){h1{font-size:30px} .stats{grid-template-columns:repeat(2,1fr)} .wrap{padding:32px 18px 60px} .card{padding:22px 18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcasts · Daily Deep Scan</div>
+  <h1>思維播客日報</h1>
+  <p class="date">2026 年 11 月 5 日 · 星期四</p>
+  <div class="meta">
+    掃描時間：<b>2026-11-05 09:56 UTC</b>（香港時間 2026-11-05 17:56）<br>
+    掃描來源：<b>6 個</b>英文商業／思維播客 RSS · 逐一比對 <code>state.json</code> GUID<br>
+    本期新集：<b>3 集</b> · 新增音頻長度：<b>約 2 小時 34 分</b>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">6</div><div class="l">播客頻道</div></div>
+  <div class="stat"><div class="n">3</div><div class="l">今日新集</div></div>
+  <div class="stat"><div class="n">154</div><div class="l">新內容分鐘</div></div>
+  <div class="stat"><div class="n">3,009</div><div class="l">累計已掃 GUID</div></div>
+</div>
+
+<p class="lede">今日三集，三條完全不同的線：<em>一個漫畫家如何用近乎非人的工作倫理，把原本五年的故事畫成三十年</em>；<em>AI 把技術門檻拆掉之後，普通人仍然可以贏的兩種「唔性感」生意</em>；以及<em>一位研究政治暴力四十年的學者，警告未來八週可能係我們一生中最危險的窗口</em>。</p>
+
+<div class="note">
+<b>點解今日值得聽：</b>Founders 講的是「創作工藝的極端值」——尾田榮一郎的作息與取捨，對任何做長期作品的人都是一面鏡。My First Million 講的是 AI 時代的反直覺結論：越「無聊」、越靠人與人信任的生意，越難被取代。Diary of a CEO 則把地緣政治由新聞標題拉回可操作的風險框架：升級陷阱、能源、選舉、社會火藥桶。<br>
+<b>收聽優先次序：</b>若只有 30 分鐘 → 聽 MFM（資訊密度最高、可即刻抄）；若想被刺痛一下 → 聽 Founders；若要理解未來半年的宏觀風險 → 聽 DOAC（最長，但框架最完整）。
+</div>
+
+<h2 class="section">Today's New Episodes</h2>
+<div class="rule"></div>
+
+<!-- ==================== FOUNDERS ==================== -->
+<section class="card">
+  <div class="byline">FOUNDERS · DAVID SENRA · 每週深度讀書筆記</div>
+  <h3>#439 How Eiichiro Oda Works<span class="badge fresh">新集</span></h3>
+  <div class="ep">
+    <b>集數：</b>#439 ｜ <b>發佈：</b>2026-11-04 19:18 UTC ｜ <b>長度：</b>32 分 30 秒（1,950 秒）<br>
+    <b>類型：</b>單人敘事（David Senra 讀傳記＋訪談，無嘉賓）｜ <b>主題人物：</b>尾田榮一郎（Eiichiro Oda），《ONE PIECE》作者
+  </div>
+
+  <h4 class="sub">這一集在講什麼</h4>
+  <p>David Senra 一向不做「成功學摘要」，他做的是把一個創作者的一生拆開，找出那個令人不安的核心。這一集的核心不是「尾田很努力」這種廢話，而是：<b>一個人為了保護自己十五歲時想看到的漫畫，願意把整個成年人生押上去，並且拒絕任何形式的妥協。</b></p>
+  <p>《ONE PIECE》1997 年 7 月開始在《週刊少年 Jump》連載。尾田當時以為這個故事五年就會完。結果到了 2026 年，它將近三十年、全球發行量達六億冊，仍然是同一條主線、同一個主角、同一個作者。Senra 用大量訪談與傳記材料，拼出一個「產能不是靠靈感，而是靠坐在桌前不斷畫」的創作系統——以及這個系統對一個人的身體、家庭與壽命所收的費。</p>
+
+  <h4 class="sub">核心論點</h4>
+  <ol class="pts">
+    <li><b>他只為一個讀者畫：十五歲的自己。</b>Senra 的關鍵觀察是：尾田不是為「全世界」創作，因為那是不可能的任務；他只鎖定一個具體的人——當年那個在熊本等著看下一話的少年。這個選擇令作品不需要討好所有人，只需要對得起那個人的期待。這是最強的創作定位，也是最難抄的護城河。</li>
+    <li><b>死線不是管理工具，是品質控制器。</b>尾田一路畫到交稿前最後一刻，因為只有這樣他才覺得自己盡了力。他做了十二年、明明可以系統化、可以分工、可以簡化劇情、可以少畫幾個角色，但他接受不了「妥協」。Senra 把這點類比 Jerry Seinfeld 的創作觀：如果你覺得自己很有效率，你大概做錯了；正確的方法永遠是笨的方法。</li>
+    <li><b>點子不是散步時撿到的，是畫出來的。</b>尾田最好的想法出現在書桌前： intense 地想、一張接一張地畫，畫的動作本身幫他發現自己到底想說什麼。他明確拒絕「天才在街頭靈光一閃」的浪漫敘事。靈感是勞動的副產品，不是勞動的前提。</li>
+    <li><b>選舞台，不選條件。</b>有其他漫畫雜誌找他，他拒絕，只因《週刊少年 Jump》是鳥山明（《龍珠》）工作的地方。這是一個很少被講的決策模式：職涯早期，與其計較稿費與自由度，不如先擠進你偶像所在的那個房間。</li>
+    <li><b>對合作者的標準，是「你準備好為這部作品死嗎」。</b>一位新編輯上任，尾田給他的見面禮是這句話。另一位編輯說：也許有一天會遇到比尾田更有才華的人，但他不相信會遇到比尾田更努力的人。這不是脾氣，是標準的傳遞——你要麼跟上，要麼離開。</li>
+    <li><b>最大的張力：創作野心 vs 人類肉身。</b>Senra 說，尾田傳記最強的主題，是一個人想畫的東西與一條命能承載的工時之間，永遠解不開的衝突。他反覆低估結局所需的時間：五年變十年，十年變二十年，二十年變三十年。這不只是拖稿，是一個人拒絕在作品未達標時放手。</li>
+  </ol>
+
+  <h4 class="sub">關鍵數據與時間線</h4>
+  <table>
+    <tr><th>項目</th><th>數字／事實</th></tr>
+    <tr><td class="t">1975-01-01</td><td>出生於日本熊本縣熊本市。四歲時決定要做漫畫家，理由是「不想做正經工作」。</td></tr>
+    <tr><td class="t">1992（17 歲）</td><td>投稿《Wanted!》，獲手塚獎佳作（第二名），正式進入《週刊少年 Jump》體系。</td></tr>
+    <tr><td class="t">1993–1996</td><td>歷任新谷信、徳弘正也等漫畫家助手；19 歲起擔任和月伸宏《浪客劍心》助手。1996 年發表兩個海盜題材短篇《Romance Dawn》，主角正是路飛。</td></tr>
+    <tr><td class="t">1997-07</td><td>《ONE PIECE》開始連載。尾田原以為整套故事約五年完結。</td></tr>
+    <tr><td class="t">2026-03</td><td>全球累計發行量達 <b>6 億冊</b>，史上最暢銷漫畫系列。單卷最高初版紀錄：第 67 卷 <b>405 萬冊</b>（2012）。</td></tr>
+    <tr><td class="t">2016 訪談</td><td>凌晨 2 點睡、5 點起床，持續約 <b>15 年</b>。他計算得很清楚：多睡一小時，就少畫一小時。</td></tr>
+    <tr><td class="t">年輕時期</td><td>曾每 <b>48 小時</b>只睡約 <b>2 小時</b>，拆成 15 分鐘的小睡。交完稿才讓自己睡一天。</td></tr>
+    <tr><td class="t">2022 訪談</td><td>每週只見家人一次，因為家庭時光「太放鬆」，會把他從工作狀態拉走。</td></tr>
+    <tr><td class="t">2013</td><td>因扁桃腺周圍膿腫住院兩週，一年後接受扁桃腺切除手術。</td></tr>
+    <tr><td class="t">2018</td><td>熊本地震後捐出 <b>8 億日圓</b>：5 億以「路飛」名義（當時路飛的懸賞金數字），另 3 億。</td></tr>
+  </table>
+
+  <blockquote>
+    「Eiichiro Oda is a relentlessly obsessive creative genius who has devoted nearly every waking hour of his adult life to building one of the most extraordinary fictional universes ever imagined.」
+    <span class="src">— 本集官方簡介原文（Founders, 2026-11-04）</span>
+  </blockquote>
+
+  <h5 class="mini">最刺人的一句</h5>
+  <p>Senra 在節目裡轉述：尾田說，回望二十幾歲，如果漫畫交稿與父母的葬禮撞期，他會選擇漫畫。這句話不是用來崇拜的，是用來量度「極致」到底長什麼樣——以及你自己願不願意付那個價。</p>
+
+  <h4 class="sub">行業洞察：這一集對做內容／產品的人意味著什麼</h4>
+  <ul class="plain">
+    <li><b>「為一個人而做」比「為所有人而做」 scalable。</b>當你試圖討好全世界，你會得到平均值；當你死守一個具體讀者的品味，你會得到極端值。極端值才有記憶點。</li>
+    <li><b>工藝型生意的產能上限，是創辦人的肉身。</b>尾田模式無法複製、無法槓桿、無法交棒。它產生驚人的複利，也產生驚人的集中風險。任何以「創作者本人」為核心的 IP，都要提早回答：作者倒下之後，作品是什麼？</li>
+    <li><b>「效率」有時是品質的敵人。</b>當 AI 令生產邊際成本趨近零，真正稀缺的反而是「不肯交行貨」的判斷力。尾田的啟示不是工時，而是：你願不願意在沒有人看見的地方，再改第十版。</li>
+    <li><b>長期主義不是耐性，是拒絕完結。</b>五年變三十年，不是因為他計劃得差，而是因為他對「這樣就夠好」的容忍度極低。這既是偉大的來源，也是悲劇的來源。</li>
+  </ul>
+
+  <div class="caveat">
+    ⚠️ <b>資料說明：</b>Founders 官方 show notes 只有一段簡介，沒有逐字稿。以上論點與引述整理自本集官方頁、Smash Notes 的逐點摘要（含 Senra 在節目中的具體說法），以及尾田榮一郎的公開生平資料（維基百科、歷年訪談）。傳記細節以公開資料補齊，並未虛構節目內容；節目標題與主旨則直接對應官方發佈。
+  </div>
+</section>
+
+<!-- ==================== MY FIRST MILLION ==================== -->
+<section class="card">
+  <div class="byline">MY FIRST MILLION · SAM PARR &amp; SHAAN PURI · 每週商業點子</div>
+  <h3>The 2 businesses AI can never make obsolete<span class="badge fresh">新集</span></h3>
+  <div class="ep">
+    <b>集數：</b>Episode 879 ｜ <b>發佈：</b>2026-11-04 12:19 UTC ｜ <b>長度：</b>31 分 58 秒（1,918 秒）<br>
+    <b>主持：</b>Shaan Puri、Sam Parr ｜ <b>類型：</b>點子拆解、商業模式逆向工程
+  </div>
+
+  <h4 class="sub">這一集在講什麼</h4>
+  <p>標題講「AI 永遠取代不了的兩種生意」，但真正有價值的不是那兩個答案，而是推導過程：<b>當 AI 把「技術」這道門檻拆掉，剩下的護城河是什麼？</b>Sam 與 Shaan 用一堆看起來很土、很舊、很不起眼的生意做樣本，反覆指向同一組答案——<b>人與人之間的信任網絡</b>，以及<b>人對身份、收藏與賭性的消費</b>。</p>
+  <p>這集沒有嘉賓，節奏很快，幾乎是兩個做過生意的人對著一份「不性感生意資料庫」逐個拆帳。以下按節目章節順序整理，並補上每個模式的經濟結構。</p>
+
+  <h4 class="sub">核心案例一：同業小組（20 Groups）——把「比較損益表」變成訂閱制</h4>
+  <p>Sam 描述的是美國汽車經銷商行之有年的「20 人小組」：經銷商每年付約 <b>6,000–8,000 美元</b>，加入一個約 <b>24 人</b>、彼此不在同一區域、不直接競爭的小組。一年飛到同一個城市三次，每人帶自己的損益表，坐下來逐行解釋：你這行成本為什麼比我高？我這行毛利為什麼比你好？然後互相抄作業。這個模式據稱 1970 年代在全國汽車經銷商協會（NADA）體系下成形，後來擴展到 HVAC、碼頭、船隻維修等行業。Sam 估這門生意年營收約 <b>1,300–1,500 萬美元</b>，網站做得極差、幾乎不買廣告。</p>
+  <p><b>他看到的機會：</b>把同一套「同業問責小組」複製到其他高收入專業——牙醫診所、律師事務所——做得好一點、買廣告、建立品牌。這是一個典型「舊模式 × 新垂直」的套利。</p>
+  <p><b>為什麼 AI 取代不了：</b>AI 可以幫你分析損益表，但不能令一個競爭對手願意把真實數字交出來。那個「願意坦白的房間」本身就是產品；信任、匿名性、非競爭結構、同儕壓力，全部是社會資本，不是軟件功能。</p>
+
+  <h4 class="sub">核心案例二：BNI——把「互相轉介」做成 80 萬人的收費網絡</h4>
+  <p>BNI 是一個本地商家轉介組織：一個分會裡坐著會計師、HVAC 公司、地產經紀、車庫門維修、律師、園藝公司——彼此不做同一門生意，所以可以安心互相派單。Sam 說每個分會約 <b>30 人</b>，每人每次聚會要帶一個具體 lead（例如「隔籬新搬來的鄰居要裝車庫門」）。會員約 <b>80 萬人</b>，年費「低四位數美元」。他見過 CEO，並聽說 BNI 已被收購，作價傳聞在 <b>十億美元以上</b>。</p>
+  <p><b>為什麼 AI 取代不了：</b>這門生意的資產不是配對演算法，而是「這個人上次真的幫我帶了一單」的記憶。AI 可以令配對更有效率，但無法代替一個人為另一個人背書。轉介的本質是聲譽抵押。</p>
+
+  <h4 class="sub">核心案例三：MODA Communities——Facebook 群組長成 60 萬人的交易市場</h4>
+  <p>2018 年，創辦人在南達科他州蘇瀑市開了一個 Facebook 群組，只因自己「冇地方買賣手錶」。今天 MODA 營運約 <b>23 個社群</b>、合共 <b>60 萬會員</b>、十幾名全職員工。收入來自向 dealer 收年費：<b>1,000／5,000／10,000 美元</b> 三檔，賣手錶、汽車、黃金、珠寶，而且要經過面試與第二位會員審核。Shaan 估年營收 <b>500–1,000 萬美元</b>。群組按價位分層：一萬美元以下、一萬以上、以及他相信存在的十萬美元以上「超級買家」群。</p>
+  <p><b>護城河：</b>Shaan 引用 Pieter Levels 的觀點——以前技術是護城河，AI 把技術抹平；但社群、網絡、市場仍然有護城河。Sam 補一刀：風險是平台不屬於你，Facebook 一改規則就可以掐死你的觸及與邀請權限。</p>
+
+  <h4 class="sub">核心案例四：鯨魚經濟（Whales）——4% 的人付 80–90% 的錢</h4>
+  <p>Shaan 的框架：所謂 whale，就是那小小一群一年花幾千美元的人。Candy Crush 有 <b>8,200 萬</b>月活，但所有收入幾乎來自 <b>4%</b> 的玩家；80–90% 的收入由重度付費者貢獻，他們要養活所有免費玩家與只付 2.99 美元去廣告的人。同樣結構出現在主機遊戲、Pokémon 卡、市場平台。Twitch 的「送訂閱」是另一個例子：一個觀眾可以一次送 200 個訂閱給聊天室裡的陌生人，以每月 5 美元計即約 <b>1,000 美元</b>，實況主點名感謝，頻道收入即刻跳升——不是因為多了新觀眾，而是因為 existing whale 多了一個花錢的出口。</p>
+  <p><b>可操作結論：</b>如果你已經有一小群重度用戶，增長問題往往不是「怎樣拉新」，而是「怎樣設計一個得體的新消費理由」。收藏、限量、身份、排名、gifting，都是把同一批人的預算搬到你的賬上。</p>
+
+  <h4 class="sub">核心案例五：盲盒——同樣的貨，7 倍收入</h4>
+  <p>Shaan 的朋友做玩具，本來在 Walmart、Target 正常上架，讓客人自己揀；同一批產品改裝成 mystery box，收入變成 <b>7 倍</b>。客人選擇更少、風險更高（可能抽到垃圾），理論上應該更難賣，但數據在五個品類反覆驗證。心理機制並不新：日本 gacha 曾紅到要立法限制，Overwatch、FIFA 的 loot box 是同一條路；再加上收藏的二級市場（最貴的 Pikachu 卡曾以 <b>1,500 萬美元</b>成交），盲盒同時提供了「賭」與「投資」兩種快感。</p>
+
+  <h4 class="sub">節目裡順帶拆解的兩個小生意</h4>
+  <table>
+    <tr><th>生意</th><th>模式</th><th>值得抄的地方</th></tr>
+    <tr><td><b>Triumph Labs</b></td><td>手機 app 拆卡（rip）：由手機落單，實體卡由倉庫拆封、驗真、保險、郵寄到家。官網稱已寄出超過 <b>100 萬張卡</b>。</td><td>把「拆卡」這個實體儀式數位化，解決信任與物流；收入同時來自卡價差、運費與二級市場。</td></tr>
+    <tr><td><b>Private Photo Vault</b></td><td>2011 年做到現在的私密相簿 app：本機 AES 加密、免帳號、可離線；Face ID＋PIN 雙重解鎖、獨立密碼相簿；Cloud Vault 與 Space Saver 為付費訂閱。</td><td>「私隱」是一個永遠有需求的窄品類；免帳號＝零摩擦；十幾年只做一件事，靠訂閱與存儲升級收費。</td></tr>
+    <tr><td><b>Collector Crypt</b></td><td>收藏卡（graded cards）交易／代幣化平台，節目列為相關資源。</td><td>把非流動的收藏品包裝成可交易資產，賺交易與託管。</td></tr>
+  </table>
+
+  <blockquote>
+    「Shaan Puri and Sam Parr talk about businesses that non-technical people can still win at in the age of AI.」
+    <span class="src">— 本集官方簡介原文（My First Million, Ep. 879）</span>
+  </blockquote>
+
+  <h4 class="sub">行業洞察：AI 時代的「反技術護城河」</h4>
+  <ol class="pts">
+    <li><b>技術民主化之後，稀缺的是「場」。 </b>20 Groups 賣的是一個可以講真話的房間；BNI 賣的是一個互相背書的早餐會；MODA 賣的是一個已驗證買家與賣家的圍欄。AI 越強，這些「場」越值錢，因為它們不能被 prompt 出來。</li>
+    <li><b>「無聊」是低競爭的同義詞。</b>汽車經銷商損益表、車庫門轉介、私密相簿——這些品類不會出現在 Twitter 的 indie hacker 時間線，所以沒有大量聰明人湧入。對非技術創業者，這是最現實的不對稱。</li>
+    <li><b>收費對象要選「有錢的賣方」，不是「沒錢的買方」。</b>MODA 向 dealer 收 1,000–10,000 美元，而不是向買家收月費；20 Groups 向老闆收年費。B2B 的可預測收入，遠勝 consumer 的增長黑客。</li>
+    <li><b>平台依賴是最大的單點風險。</b>MODA 長在 Facebook 上；一旦演算法或群組政策改變，60 萬會員可以一夜之間失去觸及。任何建在別人花園裡的社群生意，都應該及早把名單、交易與通訊搬到自有渠道。</li>
+    <li><b>Whale 經濟的道德張力。</b>同一套「給重度用戶新花錢方式」的技巧，用在收藏與 gifting 是增長，用在賭博與成癮設計就是掠奪。節目沒有迴避這一點：Shaan 明確把 gambling 與 luxury 並列為 whale 模式。</li>
+  </ol>
+
+  <div class="caveat">
+    📌 <b>資料說明：</b>本集官方 show notes 提供了完整章節與外部連結；上述數字（6,000–8,000 美元年費、24 人、1,300–1,500 萬營收、80 萬 BNI 會員、60 萬 MODA 會員、Candy Crush 8,200 萬 MAU／4% 付費、7 倍盲盒收入等）均為主持人在節目中的估算或陳述，屬「訪談中的判斷」，不是審計數字。Triumph Labs 與 Private Photo Vault 的產品描述取自其官網。
+  </div>
+</section>
+
+<!-- ==================== DIARY OF A CEO ==================== -->
+<section class="card">
+  <div class="byline">THE DIARY OF A CEO · STEVEN BARTLETT · 長篇訪談</div>
+  <h3>Iran War Expert: If This Escalation Continues, 2027 Will Be Devastating! | Prof Robert Pape<span class="badge fresh">新集</span></h3>
+  <div class="ep">
+    <b>發佈：</b>2026-11-05 06:00 UTC ｜ <b>錄製：</b>2026-10-29 ｜ <b>長度：</b>1 小時 29 分 39 秒（5,379 秒）<br>
+    <b>嘉賓：</b>Robert Pape 教授 ｜ <b>類型：</b>地緣政治、政治暴力、風險框架
+  </div>
+
+  <h4 class="sub">嘉賓是誰</h4>
+  <p>Robert Pape 是芝加哥大學政治學教授，研究全球政治暴力約三十年，主題橫跨空權戰略、自殺式恐怖主義、美國國內政治暴力。官方簡介說他自 9/11 以來「advising every US White House」；他创办了 Chicago Project on Security and Threats（CPOST），近年出版《Our Own Worst Enemies》，並在 Substack 經營《Escalation Trap》——一個實時追蹤伊朗戰爭升級路徑的訂閱專欄。他同時是那種會令主持人緊張的嘉賓：不是評論員，而是用模型與歷史模式說話的人。</p>
+
+  <h4 class="sub">這一集的核心命題</h4>
+  <p>問題設定很直接：<b>我們是否正在夢遊步入一生中最危險的八個星期？</b>Pape 的答案是：未來幾個月可能觸發前所未有的政治暴力與戰爭升級，而 2027 年的局面，取決於現在這幾步。節目在 10 月 29 日錄製，正好卡在美國中期選舉前後與伊朗戰事的關鍵節點，所以很多討論是「如果 X 發生，Y 會怎樣」的條件式推演，而不是單純預測。</p>
+
+  <h4 class="sub">五個核心框架</h4>
+  <ol class="pts">
+    <li><b>升級陷阱（The Escalation Trap）。</b>Pape 的核心比喻：國際衝突不像下棋，更像一個輸急了的賭徒在輪盤上加注，想追回虧損。每一次「精準打擊成功」都會製造新的政治後果，而決策者只看戰術命中率，不看對方與本國的政治反應。于是戰術上的贏，累積成戰略上的輸；然後為了補救，再加注。</li>
+    <li><b>「Instant Thunder」的三日錯覺。</b>官方描述提到一個看似只需三天的空中轟炸計劃。Pape 的警告是：這類計劃的簡報會令它看起來短、準、可控；但一旦啟動，能源、航運、代理武裝、國內政治會同時被捲入，三天可以迅速變成癱瘓全球基建的長期戰爭。<b>「短期精準」是升級陷阱最有效的麻醉劑。</b></li>
+    <li><b>暴力民粹主義的火藥桶。</b>他把當下的美國形容為：數以千萬計、政治高度對立的公民，本身就是可燃材料；他們不需要組織，只需要一根結構性的火柴（一個爭議性判決、一次選舉結果、一段執法影片）就會點燃。這解釋了為何「獨狼式」政治暴力會增加：不是因為有更多極端分子，而是因為更多普通人站在臨界點上。</li>
+    <li><b>《叛亂法》（Insurrection Act）的合法路徑。</b>節目用一個具體序列說明：在權力交接期間，總統可以援引《叛亂法》，合法地把軍隊部署到美國街頭以「鎮壓抗議」。這不是政變，而是法律文本允許的灰色地帶——正因如此才可怕。Pape 的重點不是「會不會」，而是「制度上已經沒有護欄」。</li>
+    <li><b>三條防火線（The Three Core Firebreaks）。</b>他提出普通公民與全球政治人物必須共同提出的具體要求，以降低升級動能、阻止區域代理戰變成世界大戰。節目沒有把這三條包裝成口號，而是當成一組可檢查的條件：能源通道、代理武裝的補給、以及國內政治暴力的觸發點。</li>
+  </ol>
+
+  <h4 class="sub">節目章節導航（官方時間碼）</h4>
+  <table>
+    <tr><th>時間</th><th>內容</th></tr>
+    <tr><td class="t">00:00</td><td>開場：為何政治暴力正在上升</td></tr>
+    <tr><td class="t">02:14</td><td>當前地緣危機是怎樣開始的</td></tr>
+    <tr><td class="t">08:47</td><td>如果民主黨贏得中期選舉，會發生什麼</td></tr>
+    <tr><td class="t">12:45</td><td>逐週推演：未來八週的可能劇本</td></tr>
+    <tr><td class="t">14:58</td><td>伊朗戰爭會怎樣結束</td></tr>
+    <tr><td class="t">24:01</td><td>中期選舉如何震動加密市場</td></tr>
+    <tr><td class="t">27:34</td><td>什麼是「三日計劃」，為何關鍵</td></tr>
+    <tr><td class="t">35:09</td><td>什麼是「啟發式攻擊」（inspired attack），有多危險</td></tr>
+    <tr><td class="t">46:10</td><td>普京真正想從烏克蘭得到什麼</td></tr>
+    <tr><td class="t">49:30</td><td>中期選舉後烏克蘭會怎樣</td></tr>
+    <tr><td class="t">50:13</td><td>「第七號」是什麼，為何重要</td></tr>
+    <tr><td class="t">52:22</td><td>兩場戰爭可以怎樣同時結束</td></tr>
+    <tr><td class="t">52:57</td><td>什麼是暴力民粹主義，為何上升</td></tr>
+    <tr><td class="t">59:09</td><td>英國為何呼籲民眾囤現金、水、電池</td></tr>
+    <tr><td class="t">01:04:01</td><td>美國情報機構是否曾叫記者忽略一次網絡攻擊</td></tr>
+    <tr><td class="t">01:08:21</td><td>美軍是否曾在美國街頭部署</td></tr>
+    <tr><td class="t">01:11:39</td><td>美軍地面部隊會否進入伊朗</td></tr>
+    <tr><td class="t">01:11:54</td><td>《叛亂法》是什麼，何時可動用</td></tr>
+    <tr><td class="t">01:15:42</td><td>我們是否已在打代理戰</td></tr>
+    <tr><td class="t">01:16:42</td><td>世界大戰三的機率</td></tr>
+    <tr><td class="t">01:17:20</td><td>我們可以做什麼阻止世界大戰</td></tr>
+    <tr><td class="t">01:20:18</td><td>公眾應該做什麼準備</td></tr>
+    <tr><td class="t">01:25:08</td><td>白宮有沒有直接聯絡他</td></tr>
+  </table>
+
+  <blockquote>
+    「Are we secretly sleepwalking into the most dangerous 8 weeks of our lifetimes? … The Escalation Trap: why international conflict is less like a strategic game of chess and more like a desperate gambler playing roulette to chase their mounting losses.」
+    <span class="src">— 本集官方簡介原文（The Diary Of A CEO, 2026-11-05）</span>
+  </blockquote>
+
+  <h4 class="sub">關鍵概念與數據</h4>
+  <ul class="plain">
+    <li><b>時間窗口：</b>未來約 <b>8 週</b>。這是主持人與嘉賓共同設定的框架，不是精確預言；重点在「窗口」而非「日期」。</li>
+    <li><b>2027 年的意義：</b>標題所說的 devastating，不是單一事件，而是多條曲線（戰爭升級、能源價格、政治暴力、選舉合法性爭議）在 2027 年疊加後的複合效果。</li>
+    <li><b>能源是傳導器：</b>霍爾木茲海峽、油價、航運保險、全球通脹——Pape 把地緣事件翻譯成經濟變量，這是本集對投資者最實用的部分。</li>
+    <li><b>英國的民間準備：</b>節目提到英國政府呼籲民眾準備現金、水、電池。這不是末日論，而是「關鍵基礎設施風險」的標準清單：斷電、斷網、斷支付。</li>
+    <li><b>加密與中期選舉：</b>第 24 分鐘的章節把選舉結果與加密監管預期連在一起——政治事件如何被市場定價，是本集的隱線。</li>
+    <li><b>「啟發式攻擊」：</b>不需要組織訓練，只需要一個被廣泛傳播的敘事與一個願意行動的人。社交媒體令「啟發」的成本趨近零，這是國內恐怖主義的新常態。</li>
+  </ul>
+
+  <h4 class="sub">行業洞察：把地緣風險變成可操作的判斷</h4>
+  <ol class="pts">
+    <li><b>不要問「會不會開戰」，要問「升級的下一步是什麼」。</b>Pape 的框架把二元問題換成路徑問題：每一步的觸發條件、決策者誘因、以及退出的成本。這對投資與供應鏈管理都直接可用。</li>
+    <li><b>戰術成功 ≠ 戰略成功。</b>企業也一樣：一個季度達標、一次成功的 campaign、一個漂亮的產品發佈，可能正在累積長期的品牌或監管負債。Pape 的「升級陷阱」其實是一個通用的組織決策陷阱。</li>
+    <li><b>「法律允許」不等於「制度安全」。</b>《叛亂法》的例子提醒：最大的風險往往不是違法濫權，而是合法地使用一條從未被認真約束的權力。對企業管治的啟示：檢查那些「條款寫得很鬆」的地方。</li>
+    <li><b>個人層面的準備是理性，不是恐慌。</b>現金、水、電池、備份、離開單一平台——這些都是低成本、高選擇權的動作。真正的風險管理，是在平靜時買保險。</li>
+  </ol>
+
+  <div class="caveat">
+    ⚠️ <b>資料說明：</b>本集長 89 分鐘，官方描述與章節表提供了完整骨架；上述框架解釋部分是根據 Pape 一貫公開研究與本集簡介的整理，並非逐字稿。節目中的具體預測（例如某些機率、某些事件時間）屬嘉賓判斷，會隨事態變化；請把它們當作「思考框架」而非「預言」。香港讀者特別注意：節目中的「英國呼籲囤物資」是英國情境，不等於本地官方建議。
+  </div>
+</section>
+
+<h2 class="section">Also Tracked · 最近無更新</h2>
+<div class="rule"></div>
+
+<section class="card">
+  <div class="byline">ACQUIRED · BEN GILBERT &amp; DAVID ROSENTHAL</div>
+  <h3>Seinfeld<span class="badge none">最近無更新</span></h3>
+  <div class="ep"><b>最後已知：</b>2026-10-18 ｜ <b>長度：</b>3 小時 50 分（13,820 秒）｜ <b>狀態：</b>已於過往日報完整拆解</div>
+  <p><b>為什麼這一集仍然值得回頭聽：</b>《Seinfeld》完結三十年，今年仍有 <b>7,200 萬</b>美國人收看。Acquired 把它拆成一個商業案例：偏執的創作者、完美的市場時機、一個把長期誘因綁在一起的股權結構——以及一個靠打破所有規則成為收視第一的情境喜劇。這是 Acquired 最擅長的「娛樂業 × 資本結構」交叉分析。</p>
+  <div class="why"><b>與今日的關聯：</b>Founders 講尾田的創作極端值，Acquired 講《Seinfeld》的創作與所有權結構——兩集併起來，是一堂「創作者如何保留 upside」的對照課。</div>
+</section>
+
+<section class="card">
+  <div class="byline">ALL-IN · CHAMATH · JASON · SACKS · FRIEDBERG</div>
+  <h3>Anthropic S-1 Shocker, Greatest Business Ever? Google's $500B Wipeout, Midterm Predictions<span class="badge none">最近無更新</span></h3>
+  <div class="ep"><b>最後已知：</b>2026-10-30 ｜ <b>長度：</b>1 小時 25 分 47 秒 ｜ <b>狀態：</b>已於過往日報完整拆解</div>
+  <p><b>本集重点：</b>Anthropic 的 S-1 拆解（「史上最好的生意？」）、AI 最大的問題與 Anthropic 的 doomer 對決、Google 單日蒸發 <b>5,000 億美元</b>市值、以及四人對中期選舉的最終預測。若你關心中期選舉後的政策與科技股定價，這一集與今日 DOAC 的 Pape 訪問可以對讀：一個講政治暴力的制度風險，一個講選舉結果的市場定價。</p>
+</section>
+
+<section class="card">
+  <div class="byline">THE KNOWLEDGE PROJECT · SHANE PARRISH</div>
+  <h3>[Outliers] K.C. Irving: Competing with Giants<span class="badge none">最近無更新</span></h3>
+  <div class="ep"><b>最後已知：</b>2026-10-29 ｜ <b>狀態：</b>已於過往日報完整拆解</div>
+  <p><b>一句話：</b>K.C. Irving 的垂直整合生存術——鐵路加價，他就買船；供應商擠壓，他就建煉油廠；工廠罷工，他脫下外套走到糾察線，向工會領袖挑機。這是一個「被巨頭包圍的小子，用控制關鍵環節逐一反殺」的故事，與今日 MFM 的「護城河」主題正好互補：一邊講現代服務業的信任護城河，一邊講工業時代的資產護城河。</p>
+</section>
+
+<h2 class="section">Editor's Take</h2>
+<div class="rule"></div>
+<div class="card">
+  <p><b>今日三集，其實在講同一件事的三個尺度。</b></p>
+  <p><b>個人尺度：</b>尾田榮一郎用三十年證明，極致的作品不是靠靈感，是靠「不肯交行貨」的日常紀律；代價是睡眠、家庭與健康。這是一個關於取捨的極端樣本。</p>
+  <p><b>商業尺度：</b>MFM 的三個案例——20 Groups、BNI、MODA——都在說明：當技術被 AI 抹平，剩下的價值來自「人願不願意在同一個房間裡說真話」。護城河由社會資本構成，不由代碼構成。</p>
+  <p><b>系統尺度：</b>Pape 把同一套邏輯推到國家層面：決策者只看戰術命中，不看政治反饋；每一次「成功」都在為下一次升級加注。個人、企業、國家，都會跌入同一個陷阱——<b>用短期可量度的勝利，換取長期不可逆的風險。</b></p>
+  <p>如果今日只能帶走一個問題，我會選這個：<b>你現在正在優化的那個指標，會不會正是你的升級陷阱？</b></p>
+</div>
+
+<footer>
+  <b>掃描方法：</b>讀取 6 個 RSS feed，逐集比對 <code>state.json</code> 的 GUID；新集以官方 show notes／Apple Podcasts／節目頁為第一手，不足之處以公開資料補齊，並在每張卡片標明資料來源與限制。<br>
+  <b>本報告生成時間：</b>2026-11-05 09:56 UTC（香港時間 2026-11-05 17:56）<br>
+  <b>累計掃描：</b>3,009 個已記錄 GUID ｜ <b>今日新增：</b>Founders #439、My First Million #879、The Diary Of A CEO（Robert Pape）<br>
+  <b>下一期：</b>2026-11-06 上午（UTC）
+</footer>
+
+</div>
+</body>
+</html>

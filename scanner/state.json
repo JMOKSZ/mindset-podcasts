@@ -1,5 +1,5 @@
 {
- "lastScan": "2026-11-04T09:54:00Z",
+ "lastScan": "2026-11-05T09:56:45Z",
  "scannedEpisodes": {
   "acquired": [
    "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -685,7 +685,8 @@
    "ff743e93-b927-4ff0-9077-f369da4ffc3d",
    "ffc8ea55-ae6e-416f-b47b-7193f118bf7d",
    "333ce5c4-c75d-11f1-a31e-7bbfecdd098c",
-   "ac362fae-d0e9-11f1-aaaa-bb1e5f76cf23"
+   "ac362fae-d0e9-11f1-aaaa-bb1e5f76cf23",
+   "8357e972-d884-11f1-b150-9b25a4fc0eeb"
   ],
   "all-in": [
    "688c4809-9cf4-4d77-b5d7-482ee43e7ccc",
@@ -2077,7 +2078,8 @@
    "3f241c5c-ced0-11f1-87b3-138dd21a06c3",
    "d70fc726-d12a-11f1-85ee-6705a2c908df",
    "eb705d12-d2be-11f1-8137-233c6aa71177",
-   "74c83080-d64d-11f1-886e-1f323249cea8"
+   "74c83080-d64d-11f1-886e-1f323249cea8",
+   "0cbdd090-d84a-11f1-abaf-3380f9b2c3d9"
   ],
   "knowledge-project": [
    "https://fs.blog/?post_type=podcast&p=81515",
@@ -3020,7 +3022,8 @@
    "flightcast:01M53ASGWHBBHQJ0C8NDDD61AR",
    "flightcast:01M5NXR742DT1QNDCDPS193Q51",
    "flightcast:01M4BFEBPEK1CKAKZ2BYPSHPK1",
-   "flightcast:01M5XRNCEJK9HGGCQQ268PCK6T"
+   "flightcast:01M5XRNCEJK9HGGCQQ268PCK6T",
+   "flightcast:01M653W8EP3Y02KJRDZYYCGE0N"
   ]
  },
  "lastScanResult": {
