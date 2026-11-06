@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-11-06</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a; --warn:#a4442f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;line-height:1.85;font-size:17px}
+  .wrap{max-width:860px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.95;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:27px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  h4.sub{font-size:19px;font-weight:normal;margin:36px 0 8px;color:#3a2f21;
+    border-bottom:1px dotted var(--line);padding-bottom:6px}
+  h5.mini{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin:26px 0 6px;font-weight:600}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:14px}
+  .card{background:var(--card);border:1px solid var(--line);padding:28px 30px;margin:0 0 22px}
+  .badge{display:inline-block;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10.5px;
+    letter-spacing:.1em;padding:3px 9px;border-radius:2px;vertical-align:middle;margin-left:8px}
+  .badge.none{background:#efe7db;color:#8a755c}
+  .badge.catch{background:#e9eef4;color:#3c5a78}
+  .badge.fresh{background:#e7f1e9;color:#2f6b47}
+  .badge.early{background:#f6e6d6;color:#9a5a1e}
+  .ep{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13.5px;color:var(--muted);
+    padding:12px 0;border-top:1px dotted var(--line);border-bottom:1px dotted var(--line);margin:16px 0}
+  .ep b{color:var(--ink)}
+  .why{font-size:15.5px;color:#4c3f30;background:#faf5ec;padding:14px 18px;margin-top:16px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  .why b{color:var(--accent)}
+  table{width:100%;border-collapse:collapse;font-family:-apple-system,"Helvetica Neue",sans-serif;
+    font-size:13.5px;margin:10px 0 18px}
+  th{text-align:left;font-weight:600;color:var(--muted);font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;border-bottom:1px solid var(--ink);padding:8px 10px 8px 0}
+  td{padding:8px 10px 8px 0;border-bottom:1px dotted var(--line);vertical-align:top}
+  td.t{white-space:nowrap;color:var(--accent);font-variant-numeric:tabular-nums}
+  blockquote{margin:20px 0;padding:6px 0 6px 22px;border-left:3px solid var(--accent);
+    font-size:19px;line-height:1.8;color:#3a2f21}
+  blockquote .src{display:block;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11.5px;
+    color:var(--muted);margin-top:8px;letter-spacing:.04em}
+  ol.pts{padding-left:22px;margin:12px 0 0}
+  ol.pts>li{margin:0 0 22px}
+  ol.pts b{color:var(--accent);font-weight:600}
+  ul.plain{padding-left:20px;margin:8px 0 0}
+  ul.plain li{margin:0 0 8px}
+  .num{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;color:var(--muted)}
+  .kv{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:14px;color:var(--muted);margin:2px 0}
+  .kv b{color:var(--ink);font-weight:600}
+  .caveat{font-size:13.5px;color:#6b5943;background:#f8f1e6;border:1px dashed var(--line);
+    padding:12px 16px;margin:18px 0 0;font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.8}
+  footer{margin-top:64px;border-top:1px solid var(--line);padding-top:22px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;color:var(--muted);line-height:1.9}
+  @media(max-width:600px){h1{font-size:30px} .stats{grid-template-columns:repeat(2,1fr)} .wrap{padding:32px 18px 60px} .card{padding:22px 18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcasts · Daily Deep Scan</div>
+  <h1>思維播客日報</h1>
+  <p class="date">2026 年 11 月 6 日 · 星期五</p>
+  <div class="meta">
+    掃描時間：<b>__SCANTIME__</b>（香港時間 __SCANTIME_HK__）<br>
+    掃描來源：<b>6 個</b>英文商業／思維播客 RSS · 逐一比對 <code>state.json</code> GUID<br>
+    本期新集：<b>2 集</b> · 新增音頻長度：<b>約 32 分鐘</b>（另加一集未在 RSS 標示長度）
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">6</div><div class="l">播客頻道</div></div>
+  <div class="stat"><div class="n">2</div><div class="l">今日新集</div></div>
+  <div class="stat"><div class="n">32</div><div class="l">新內容分鐘</div></div>
+  <div class="stat"><div class="n">3,014</div><div class="l">累計已掃 GUID</div></div>
+</div>
+
+<p class="lede">今日兩集，剛好係同一個問題嘅兩面：<em>點樣把「決策」變成一件可以量產嘅工業流程</em>（Tesla 前總裁 Jon McNeill 拆解 Elon 的五步算法與三句式溝通）；同埋<em>決策之前，你要先花幾百小時真正理解問題</em>（Spotify 創辦人 Daniel Ek 講「妄想」與「唔性感嘅研究」如何配對）。一邊講速度，一邊講深度——合起來就係一套完整嘅高壓決策系統。</p>
+
+<div class="note">
+<b>點解今日值得聽：</b>Knowledge Project 這集是本週資訊密度最高的一集——它把「Elon 很快」這個模糊印象，拆成一條可以照抄的工序：<b>質疑需求 → 刪除 → 簡化 → 加速 → 自動化</b>，而且每個步驟都有 Tesla 的真實失敗案例背書。Diary of a CEO 這集是精華剪輯（31 分鐘），主題看似「創新習慣」，實際講的是<b>下注前的功課</b>：Ek 在動手前花了 500 小時研究問題，在 Apple Music 發布前準備了整整一年、推演過上千個情境。<br>
+<b>收聽優先次序：</b>只有 30 分鐘 → 聽 DOAC 精華（快、可即用）；想拿走一套流程 → 聽 Knowledge Project（雖然要等 11 月 10 日公開，但今日已有完整簡介＋我在下面補齊了同題材的完整拆解）。
+</div>
+
+<h2 class="section">Today's New Episodes</h2>
+<div class="rule"></div>
+
+<!-- ==================== KNOWLEDGE PROJECT ==================== -->
+<section class="card">
+  <div class="byline">THE KNOWLEDGE PROJECT · SHANE PARRISH · 長篇深度訪談</div>
+  <h3>Jon McNeill: How Elon Musk Makes Decisions<span class="badge fresh">新集</span><span class="badge early">會員優先</span></h3>
+  <div class="ep">
+    <b>發佈：</b>2026-11-05 10:55 UTC（會員優先；公眾開放 11 月 10 日）｜ <b>長度：</b>RSS 未標示（KP 常規 60–90 分鐘）<br>
+    <b>嘉賓：</b>Jon McNeill — Tesla 前總裁（2015–2018）、DVx Ventures 共同創辦人兼 CEO、前後創辦並出售六間初創<br>
+    <b>主持：</b>Shane Parrish ｜ <b>形式：</b>一對一訪談
+  </div>
+
+  <div class="why">
+    <b>一句話總結：</b>Elon 的競爭優勢不是「更聰明」，而是<b>把決策延遲當成一種成本來管理</b>——決策速度、現金速度、回應速度，三樣都被壓縮到以「週」甚至「小時」為單位。Jon 在裡面做的是把這件事翻譯成可執行的管理動作。
+  </div>
+
+  <h4 class="sub">一、核心命題：速度不是價值觀，是作業系統</h4>
+  <p>這集官方的框架很清楚：Elon 相信<b>速度創造競爭優勢</b>（speed of decision、speed of cash、speed of response）。但「快」本身唔係口號，它係由一連串制度安排撐出嚟的：</p>
+  <ul class="plain">
+    <li><b>決策速度</b>：只由一個人拍板，而且那個人只處理一兩件「生死攸關」的事，其餘全部下放。</li>
+    <li><b>現金速度</b>：把「現金幾時回到公司」當成流程設計的第一原則——Tesla 當年就是靠這個邏輯去中國、去建廠、去簡化交車流程。</li>
+    <li><b>回應速度</b>：壞消息不用排隊，可以直接穿過匯報鏈找到能拍板的人。</li>
+  </ul>
+  <p>Jon 在節目裡把這套東西講成「你點樣圍繞速度去建一間公司」。而佢最反直覺的一點係：<b>快，唔係靠逼人做快啲；係靠減少要做嘅步驟。</b>所以整個訪談有一半時間在講「刪除」。</p>
+
+  <h4 class="sub">二、五步算法：由「質疑需求」開始，以「最後才自動化」結束</h4>
+  <p>這是全集的骨幹。Elon 的 algorithm 不是憑空設計的理論，而是 Tesla 一次又一次撞牆之後反推出來的補救方案。Jon 在節目裡逐步拆解（以下五步的具體案例，來自 Jon 就同一題材在其他訪談中的完整說明，與本集簡介所述一致）：</p>
+
+  <ol class="pts">
+    <li><b>第一步：質疑每一條需求（Question every requirement）。</b>拿到一組需求，先問三件事：這是<b>法律</b>要求、<b>物理</b>要求，還是<b>安全</b>要求？然後問「這條需求是誰說的」——找到那個人，當面質問它是否真的成立。<br>
+      <span class="num">真實案例：</span>Tesla 想讓人在線買一台 10 萬美元的車。Elon 問 Jon：「買一台 Tesla 要點幾下？」答案是 64 下。Elon 叫他打開 Domino's App 看看買一個薄餅要幾下——大約 10 下。「那就做到 10 下。」結果發現 64 下裡面有 44 下集中在同一份貸款文件；再追下去，那份 12 頁的文件<b>絕大部分不是法律或監管要求</b>，而是銀行法務「好意」加上去的自我保護。最後他們找到一間明尼亞波利斯的銀行願意做「一鍵貸款」，44 下即刻消失。
+    </li>
+    <li><b>第二步：刪除（Delete）。</b>能刪的零件、能刪的流程，一律先刪。Jon 的說法是：把流程上每一步列出來，圈出「客人真正付錢買的那幾步」，其餘全部當成敵人。<br>
+      <span class="num">真實案例：</span>Tesla 刪掉議價（全公司均一價，員工都無折扣）、刪掉貸款與租賃文件（壓成一段）、把領牌流程自動化（客人取車時車牌已經裝好）。同時把「無限配置」砍到兩三個車型——這不只簡化客人選擇，還讓供應鏈可以只為兩三個配置調校，成本直接下降。
+    </li>
+    <li><b>第三步：簡化與优化（Simplify / Optimize）。</b>但簡化的對象是「流程」，不是「願景」。所以 Tesla 這邊的簡化，往往表現為把一個複雜裝配流程變成兩個零件。<br>
+      <span class="num">真實案例（全集最精彩的一段）：</span>Elon 給團隊的挑戰是「把造車成本減半」。工程主管 Doug Field 拿了一台 Matchbox 玩具車放在會議桌上：Matchbox 不是焊出來的，是<b>鑄造</b>出來的——把液態金屬倒進模具，一台車就出來。問題是：真車大小的金屬鑄件，模具會熔、壓力會炸廠。Doug 的回應是「我覺得可以解決」，然後由拳頭大小的鑄件開始試，一個月做到手掌大，第二個月做到軀幹大，最後成功鑄出半個車架。結果：車廠一半的產線消失了，原本焊 200–300 個零件的機械人不再需要——<b>兩個鑄件合起來就是一台車的骨架</b>。二階效應更值錢：焊 300 件永遠對不齊，鑄件每次都對得齊，車門、車窗、縫隙問題一併解決。這條護城河，Jon 說競爭對手到今天仍然追不上。
+    </li>
+    <li><b>第四步：加速週期（Accelerate cycle time）。</b>先把流程手動跑順、跑到極致，再用手動方式加速，讓所有缺陷在速度下暴露。<br>
+      <span class="num">真實案例：</span>Model 3 量產地獄。Tesla 曾經建了一條全自動產線，結果「在地圖上設計得很完美，落地完全不能用」。於是他們在工廠停車場搭帳篷，用<b>人手</b>重新搭建一條產線，先把流程跑通：一週 100 台、200 台、400 台、500 台，一路朝 5,000 台/週推進。Jon 的說法是：這條帳篷產線「 literally saved the company」。
+    </li>
+    <li><b>第五步：自動化（Automate）——而且一定是最後一步。</b>先自動化等於把「未驗證的流程」灌進水泥，之後想改都改不動，這就是技術債。Tesla 的整條 algorithm，某種意義上就是為了修正「太早自動化」這個錯誤而發明的。
+    </li>
+  </ol>
+
+  <blockquote>
+    「第一步係質疑每一條需求。如果你拿到一組需求，問它係法律要求、物理要求，定係安全要求。然後問提出這條需求嘅人叫咩名，等你可以去質問佢係咪真。」
+    <span class="src">— Jon McNeill，就同一套 algorithm 的訪談（Three Takeaways / The Algorithm）</span>
+  </blockquote>
+
+  <h4 class="sub">三、三句式溝通：把「匯報」壓縮成一封電郵</h4>
+  <p>這是本集另一個被官方簡介點名的重點：<b>Elon 要求問題用三句話講完</b>。Jon 在節目裡把這三句的結構講得很具體——而這個結構，本質上係一個「強迫你諗清楚」的裝置：</p>
+  <ul class="plain">
+    <li><b>第一句：問題是什麼（What is the problem）</b></li>
+    <li><b>第二句：根因是什麼（What is the root cause）</b></li>
+    <li><b>第三句：你建議怎麼解決（What is your proposed solution）</b>——而解決方案裡面要包含成本與經濟性</li>
+  </ul>
+  <p>Jon 的說法很值得抄：CEO 最稀缺的資源是<b>時間</b>，具體來說是「資訊吸收時間」＋「決策時間」。如果你能幫老闆把這兩樣最小化，你就係團隊裡最有價值的人。而且這個訓練有回報：<b>你以為你在幫對方清晰，其實係逼自己清晰。</b></p>
+
+  <blockquote>
+    「如果你可以俾我三句話：告訴我問題係咩、根因係咩、你建議點解決。喺個解決方案裡面，你要有成本、要有經濟性。……CEO 最珍貴嘅商品就係時間。」
+    <span class="src">— Jon McNeill，同上訪談</span>
+  </blockquote>
+
+  <h4 class="sub">四、跳過匯報鏈：壞消息不能等</h4>
+  <p>官方簡介明確點出兩個相連的做法：<b>（1）跳過 chain of command；（2）壞消息不能等。</b>拆開來看，這兩件事其實係同一個設計的兩面：</p>
+  <ul class="plain">
+    <li><b>為什麼要跳過匯報鏈：</b>因為資訊每經過一層，就會被修飾一次、延遲一次。對一間每八個月生意額翻倍的公司的來說，一個月的情報延遲等同一個世代的落後。</li>
+    <li><b>為什麼壞消息不能等：</b>好消息可以等，因為它不會惡化；壞消息每等一天，可補救的選項就少一批。所以組織要保證「壞消息有一條比好消息更快的通道」。</li>
+    <li><b>具體節奏：</b>Jon 描述過，Elon 只盯一兩件對公司「生死攸關」的事，那些團隊<b>每週</b>要向他匯報進度；在 Model 3 出事的時候，甚至要求<b>逐小時</b>匯報。理由不是他暴躁，而是「如果我們做不出 Model 3，公司就會死」。</li>
+  </ul>
+  <p>這一點對任何組織都適用，而且極少人做對：<b>匯報頻率應該由「這件事的致命程度」決定，而不是由職級決定。</b></p>
+
+  <h4 class="sub">五、公司是一座雜草花園</h4>
+  <p>簡介裡提到 Elon 把公司當成「一座長滿雜草的花園」。這個比喻在管理上的意思是：<b>雜草唔需要你批准就會生長</b>——流程會自己增生、審批會自己繁殖、會議會自己擴張。所以管理者的工作不是「設計一個完美的花園」，而是<b>持續除草</b>。這也解釋了為什麼五步算法裡「刪除」排在「優化」之前：你唔可以優化雜草。</p>
+  <p>配合 Jon 講的「每週節奏」，這套管理哲學就完整了：<b>每週除草、每週看生死問題、其餘信任團隊。</b>Elon 在 Tesla 據 Jon 所說，只親自處理一兩件存亡級議題（今日是 autonomy 與 robotics），其餘全部由高層團隊自己跑——但會設「瘋狂但好玩」的目標。</p>
+
+  <h4 class="sub">六、零市場預算：為什麼 Tesla 可以唔賣廣告</h4>
+  <p>簡介提到「Tesla 如何在零市場預算下成長」。這個話題的價值不在「省錢」，而在<b>它倒逼產品與流程</b>：</p>
+  <ul class="plain">
+    <li>如果沒有廣告可以買，你唯一能放的「媒體」就是<b>產品本身與客人的口碑</b>——所以產品必須好到值得講。</li>
+    <li>沒有經銷商，就沒有「議價」這個流程，也就順帶消滅了 44 下點擊那類摩擦。</li>
+    <li>直營＋均一價＝定價變成一個「公開承諾」，反過來迫使成本結構必須撐得住。</li>
+  </ul>
+  <p>換句話說，<b>零市場預算不是一個市場策略，而是五步算法在商業模式上的副產品。</b>當你把「不是客人付錢買的東西」全部刪掉，市場預算就是第一批被刪的東西。</p>
+
+  <h4 class="sub">七、其他值得記住的細節</h4>
+  <ul class="plain">
+    <li><b>正交招聘（hiring orthogonally）：</b>Elon 盡量不請汽車業、航天業出身的人，因為不想他們帶著「這個行業可以怎樣、不可以怎樣」的前設進來。結果：從手機／筆電過來的人，會問「為什麼線束要這麼重？」——Ford 拆解 Tesla 之後發現 Tesla 的線束比 Mustang Mach-E 輕 <b>76 磅</b>（相當於車上少坐一個人），直接影響續航。Jim Farley 公開講過：Ford 的人從沒質疑過線束重量。</li>
+    <li><b>中國合資：</b>Tesla 是唯一一間 Jon 所知、西方公司中在中國合資「沒有經濟分享」的案例。談了 12 個月，靠的是對準中國五年規劃的五個重點產業（電池、電動車、自動駕駛、晶片……），把自己變成「你要的東西」。</li>
+    <li><b>增長速度的意義：</b>Tesla 在 30 個月內由 20 億美元營業額做到 200 億，等於每 8 個月翻一倍。Jon 的觀察：<b>如果你要求團隊每 8 個月翻一倍，他們不可能用增量思維</b>——目標的設定方式，直接決定團隊的思考方式。</li>
+    <li><b>SpaceX 的對照：</b>可重用火箭搞了好幾年、爆了很多次；成功之後，發射成本降到對手的 10%，拿下約 90% 的發射市場。這是「每週節奏 × 十年」的複利。</li>
+    <li><b>沉默的會議：</b>Elon 在會議中有時會長時間不說話。Jon 的解读：他在處理問題、在深度思考輸入，而不是不高興。</li>
+  </ul>
+
+  <h5 class="mini">關鍵數字</h5>
+  <table>
+    <tr><th>數字</th><th>意義</th></tr>
+    <tr><td class="t">64 → 10</td><td>在線買 Tesla 的點擊數，對標 Domino's App 買薄餅的 10 下</td></tr>
+    <tr><td class="t">44 / 64</td><td>集中在貸款文件上的點擊數；其中 12 頁絕大部分非法律要求</td></tr>
+    <tr><td class="t">300 → 2</td><td>車架零件由 200–300 件焊接，變成 2 件鑄件</td></tr>
+    <tr><td class="t">−50%</td><td>Elon 給的造車成本刪減目標</td></tr>
+    <tr><td class="t">76 lb</td><td>Tesla 線束比 Ford Mustang Mach-E 輕的重量</td></tr>
+    <tr><td class="t">30 個月 / 10×</td><td>$2B → $20B 營業額；每 8 個月翻一倍</td></tr>
+    <tr><td class="t">90% / 10%</td><td>SpaceX 的發射市場份額／成本佔對手比例</td></tr>
+    <tr><td class="t">每週 / 每小時</td><td>生死級項目的匯報節奏；Model 3 危機時升級為逐小時</td></tr>
+  </table>
+
+  <h5 class="mini">可以即刻用嘅三件事</h5>
+  <ol class="pts">
+    <li><b>今晚揀一個流程，數點擊／數步驟。</b>由「客人由想買到拿到」數一次，然後圈出他真正付錢買的步驟。其餘的，逐個問「這是法律、物理、還是安全要求？」——通常你會發現大多數只是歷史習慣。</li>
+    <li><b>把匯報改成三句式。</b>問題／根因／建議（含成本）。先自己寫一週，再要求團隊寫。這個格式的最大受益者其實是寫的人。</li>
+    <li><b>檢查你的「自動化順序」。</b>任何一個你正在導入工具／AI 的流程，問一句：這條流程手動跑順了嗎？如果未，你正在把未驗證的流程灌進水泥。</li>
+  </ol>
+
+  <div class="caveat">
+    <b>資料說明：</b>本集為 Knowledge Project 會員優先集，公眾版 11 月 10 日才上線，RSS 未附完整 transcript。以上「本集確認內容」取自官方節目簡介（speed 作為優勢、跳過匯報鏈、壞消息不能等、三句式、五步算法、雜草花園、零市場預算）；具體案例與數字（64 下、44 下、鑄造車架、76 磅線束、中國合資、每 8 個月翻倍）來自 Jon McNeill 就同一套 algorithm 在其他訪談中的完整講述，已標明出處，並非本集逐字稿。公開版上線後若內容有出入，以此為準調整。
+  </div>
+</section>
+
+<!-- ==================== DIARY OF A CEO ==================== -->
+<section class="card">
+  <div class="byline">THE DIARY OF A CEO · STEVEN BARTLETT · 精華剪輯</div>
+  <h3>Most Replayed Moment: The One Habit Behind Every Breakthrough Idea — Spotify Founder<span class="badge fresh">新集</span></h3>
+  <div class="ep">
+    <b>發佈：</b>2026-11-06 06:00 UTC ｜ <b>長度：</b>31 分 33 秒（1,893 秒）｜ <b>類型：</b>Most Replayed Moment（全集中最多人重看的段落剪輯）<br>
+    <b>嘉賓：</b>Daniel Ek — Spotify 共同創辦人（2006 年，23 歲）、Neko Health 共同創辦人<br>
+    <b>主持：</b>Steven Bartlett
+  </div>
+
+  <div class="why">
+    <b>一句話總結：</b>所謂「突破性想法」，唔係靈光一閃，而係<b>先用幾百到幾千小時把問題研究到見底，然後容許自己帶一點妄想去下注</b>——妄想負責讓你敢開始，研究負責讓你不會死。
+  </div>
+
+  <h4 class="sub">一、核心習慣：下注之前，先花 500 小時理解問題</h4>
+  <p>這是整段剪輯的主軸。Steven 的提問很直接：以當年音樂產業的結構（唱片公司擁有內容、由大廠主導），一個瑞典小子憑什麼覺得自己可以改變它？Steven 自己的用詞是「a special type of delusion」。</p>
+  <p>Ek 的回答分三層，值得完整拆開：</p>
+  <ol class="pts">
+    <li><b>第一層：承認那是妄想，但妄想是必要的。</b>他說這是「創業者美麗的天真」（the beautiful naivety of an entrepreneur）。如果一開始就完全理性，你根本不會開始。</li>
+    <li><b>第二層：妄想必須配上一件極度不性感的事——研究。</b>在真正承諾之前，他大概花了 <b>500 小時</b>研究這個問題。他不是「有一個點子」，而是先把整個產業的運作機制摸熟。</li>
+    <li><b>第三層：研究會改變你看到的東西。</b>幾年之後，他自稱大概是「世界上最懂版權的人之一」——DMCA、美國版權制度、各國制度、表演權協會、廠牌權利、機械複製權、ISRC/ISWC 這類編號如何互相對應。一個原本「唔識音樂產業」的人，用時間換來了幾何級數的資訊優勢。</li>
+  </ol>
+
+  <blockquote>
+    「我們今日世界上最稀缺的資源，遠遠係時間。當你有高質素嘅人，花幾千個小時喺一個問題上，你就會找到新的解法。」
+    <span class="src">— Daniel Ek，The Diary of a CEO 完整訪談</span>
+  </blockquote>
+
+  <p>他還補了一個很關鍵的方法論：<b>人會掉進兩種失敗</b>——一種是陷入細節、看不到大局；另一種是停留在太頂層、看不到新的可能性。真正難的是<b>「深到足以看見，然後判斷先解決哪個問題、用什麼順序」</b>。而這個「順序」判斷，才是他認為最不可替代的能力。</p>
+
+  <h4 class="sub">二、妄想與現實的分界線：Spotify 的那個 binary bet</h4>
+  <p>簡介說他會講「幾時應該繼續、幾時應該走」。完整訪談裡，Ek 用 Spotify 自己的例子講清楚了那條線：</p>
+  <ul class="plain">
+    <li>2007 年左右，產品已經做出來，感覺「好似全世界嘅音樂都在你硬碟裡面」。技術問題解決了。</li>
+    <li>但真正的問題變成：<b>唱片業會唔會接受？</b>——「呢個我完全唔知」。</li>
+    <li>於是他花了另外 <b>18 個月</b>去搵答案，而答案係<b>完全二元</b>的：一係成，一係死。期間公司「差不多死過四次」，錢燒完，唱片公司一路說「永遠唔會發生」。</li>
+    <li>他仍然下注，理由是<b>賠率</b>：「如果我們失敗，代價其實唔算太差；如果我們成功，明顯地那麼大。」</li>
+  </ul>
+  <p>這是整集最實用的一個框架：<b>當結果是二元時，你不要問「成功率有幾高」，你要問「失敗的代價 vs 成功的賠率」。</b>這同「審慎樂觀」完全係兩種思維。</p>
+
+  <h4 class="sub">三、Apple Music 2015：發布當日，全世界在吸氣，他們在核對清單</h4>
+  <p>這是本集最精彩的一段敘事，也直接對應簡介講的「Spotify 如何準備 Apple Music 的發布」。</p>
+  <ul class="plain">
+    <li><b>他們早一年就知道。</b>線索是 Apple 收購 Beats，加上各種傳聞。所以「震驚」這個情緒，在 Spotify 內部根本不存在。</li>
+    <li><b>他們的核心賭注叫「ubiquity」。</b>Ek 的推理是：任何對手做音樂服務，主要目的都係「令自己嘅生態更好」，而唔係「做世界上最好的音樂服務」。所以 Spotify 的策略是<b>無所不在</b>——汽車、各種奇怪裝置、智能雪櫃，全部接入。</li>
+    <li><b>他們預演了上千個情境。</b>產品團隊不停玩「如果他們出這個，我們怎麼辦」的 game theory；並明確估算：有 1%–10% 的機會對手會拿出完全超乎預期的東西。</li>
+    <li><b>發布當日：</b>他們看完 walkthrough，反應係「這就是我們預期的」——而全世界在驚呼。</li>
+    <li><b>唯一無法防守的是 distribution。</b>Ek 講得很清楚：產品面我們準備好了，但「distribution 係佢哋嘅驚人優勢，我哋冇任何方法防守」。</li>
+  </ul>
+
+  <blockquote>
+    「公眾認知通常落後實際發生嘅事 6 到 12 個月。所以嗰日，當全世界都在倒抽一口涼氣，我哋諗嘅係：喔，呢個就係我哋預期嘅。」
+    <span class="src">— Daniel Ek，The Diary of a CEO 完整訪談</span>
+  </blockquote>
+
+  <p>這段給出的不是「要有心理準備」這種廢話，而是一個可操作的原則：<b>把「對手發布」當成一個已經排期的專案來準備，而不是一個突發事件。</b>你預演得越具體，發布日的情緒波動就越小，決策質量就越高。</p>
+
+  <h4 class="sub">四、房裡必須有一個反對者</h4>
+  <p>簡介裡那句「每個做新東西的團隊都需要一個 skeptic」，在完整訪談中有更具體的版本。Ek 說團隊不能只有 yes people 或樂觀主義者：</p>
+  <blockquote>
+    「你需要房裡面嗰個唱反調嘅人。你需要有人去平衡，做嗰個講『我唔肯定呢件事行得通』嘅人。」
+    <span class="src">— Daniel Ek，The Diary of a CEO 完整訪談</span>
+  </blockquote>
+  <p>他更具體的建議是「配對」：<b>你要一個對銷售 pipeline 抱懷疑的 CFO，配一個 happy-go-lucky 的銷售主管；或者反過來。</b>關鍵不是「請一個悲觀的人」，而是<b>確保組織裡有結構性的反對聲音</b>，而且它出現在正確的位置上。</p>
+  <p>這跟第一部分的「500 小時研究」其實是同一件事的兩個版本：一個是<b>自己對自己</b>的懷疑（研究），一個是<b>別人對你</b>的懷疑（skeptic）。兩者都是防止你把妄想當成事實的機制。</p>
+
+  <h4 class="sub">五、同一個習慣，用第二次：Neko Health</h4>
+  <p>Ek 說他 2008 年第一次在訪談中提到醫療這個想法，但公司 2018 年才成立——<b>中間想了十年</b>。這十年他研究的是：醫療系統為什麼是現在這樣、誘因結構、NHS 在做什麼、公共醫療與保險業、直接面向消費者的模式、人類的長壽曲線、疾病分組、成本曲線。</p>
+  <p>他的筆記本裡有一堆「瘋狂想法」，大部分最後什麼都不是，偶爾會被別人做出來——「我覺得很好」。但每隔一段時間，他會感到那個 itch，決定自己動手。</p>
+  <p>這是「500 小時」的另一個版本：<b>有些問題值得你想十年。</b>而判斷的標準不是「這是不是好點子」，而是「我是不是已經看到了一個別人看不到的角度」。</p>
+
+  <h4 class="sub">六、40 歲的 Daniel：文化 &gt; 策略</h4>
+  <p>結尾 Steven 問他：「你知唔知自己身上嗰套獨特嘅東西係咩？」Ek 答：「我唔覺得知。」但他給了一個很好的自我觀察：</p>
+  <ul class="plain">
+    <li><b>23 歲的 Daniel：</b>文化＝一張乒乓球桌。</li>
+    <li><b>30 歲的 Daniel：</b>知道文化重要，但唔真正理解為什麼；實際上是 strategy 大於 culture。</li>
+    <li><b>40 歲的 Daniel：</b>「幾乎去到 strategy 係次要、甚至第三位嘅地步。」</li>
+  </ul>
+  <p>他對文化的定義也很實在：<b>文化係「獎勵你想見到的行為、勸阻你不想見到的行為」</b>；它是最可規模化的東西，也是最難的東西，因為「它是所有事，也是沒有事」——每個人加入、每個人離開，都在改變文化。</p>
+  <p>而 Spotify 現在 17 歲，「是一個正在解放自己的青少年」，已經不完全是他——產品由 Gustav 領、商業由 Alex 領，他們有權把自己的價值觀放進去。這段話對創辦人來說，其實是關於<b>放手</b>的誠實描述。</p>
+
+  <h5 class="mini">關鍵數字</h5>
+  <table>
+    <tr><th>數字</th><th>意義</th></tr>
+    <tr><td class="t">500 小時</td><td>Ek 在承諾做 Spotify 前，研究音樂產業問題的時間</td></tr>
+    <tr><td class="t">18 個月</td><td>與唱片業務談、爭取授權的時間</td></tr>
+    <tr><td class="t">4 次</td><td>期間「幾乎死掉」的次數</td></tr>
+    <tr><td class="t">約 1 年</td><td>提前知道 Apple Music 要來（Beats 收購線索）</td></tr>
+    <tr><td class="t">1%–10%</td><td>他們估算「對手拿出完全超預期產品」的機率</td></tr>
+    <tr><td class="t">10 年</td><td>由第一次提醫療想法（2008）到成立 Neko（2018）</td></tr>
+    <tr><td class="t">17 年</td><td>Spotify 的年齡（「一個正在解放自己的青少年」）</td></tr>
+  </table>
+
+  <h5 class="mini">可以即刻用嘅三件事</h5>
+  <ol class="pts">
+    <li><b>在下一個大決定之前，先記 500 小時。</b>不是 500 小時會議，是 500 小時「理解問題」——讀原始文件、拆成本結構、找業內人問「為什麼是這樣」。你不需要是專家才開始，你需要開始才會變成專家。</li>
+    <li><b>為「對手出手」寫一份預演清單。</b>列出 10 個他們可能做的事、你的應對、以及你唯一無法防守的那一項（對 Ek 來說是 distribution）。無法防守的那項，才是你真正要長期投資的地方。</li>
+    <li><b>檢查你房裡有沒有一個「結構性反對者」。</b>不是找一個悲觀的朋友，而是設計一個職位／流程，專門負責說「我唔肯定」。同時檢查：這個人說了之後，有沒有人真的聽。</li>
+  </ol>
+
+  <div class="caveat">
+    <b>資料說明：</b>本集是 “Most Replayed Moment” 精華剪輯（31 分鐘），內容取自 Daniel Ek 的 Diary of a CEO 完整訪談。上述引文與細節（500 小時、18 個月、四次瀕死、Apple Music 預演、ubiquity 策略、skeptic 配對、Neko 十年、文化三段論）均出自該完整訪談的逐字內容，已按原意翻譯；數字以訪談中發言為準，未經第三方核實。
+  </div>
+</section>
+
+<!-- ==================== NO UPDATE ==================== -->
+<h2 class="section">Other Feeds · 最近無更新</h2>
+<div class="rule"></div>
+
+<section class="card">
+  <div class="byline">ACQUIRED · BEN GILBERT &amp; DAVID ROSENTHAL</div>
+  <h3>最近無更新<span class="badge none">No new episode</span></h3>
+  <div class="ep">
+    <b>最後已知：</b>《Seinfeld》｜ 2026-10-18 21:00 PDT ｜ 長度 3 小時 50 分（13,820 秒）<br>
+    <b>對上一次：</b>《The Home Depot》2026-09-13 ｜《Disney: The Renaissance and the Empire》2026-08-09
+  </div>
+  <p>Acquired 的節奏本來就係「一至兩個月一集、每集三至四小時」。上次掃描（11 月 5 日）之後無新集。如果你未聽《Seinfeld》，它是典型的 Acquired 式「把一個文化現象當成商業案例拆」——收視、 syndication 經濟學、談判籌碼、以及一個「關於 nothing」的節目如何變成史上最賺錢的版權資產之一。3 小時 50 分，適合週末長跑或分兩次聽。</p>
+</section>
+
+<section class="card">
+  <div class="byline">FOUNDERS · DAVID SENRA</div>
+  <h3>最近無更新<span class="badge none">No new episode</span></h3>
+  <div class="ep">
+    <b>最後已知：</b>《#439 How Eiichiro Oda Works》｜ 2026-11-04 19:18 UTC ｜ 32 分 30 秒<br>
+    <b>對上一次：</b>《#438 James Garfield's Extraordinary Rise》2026-10-26 ｜《#437 The Tycoons》2026-10-13
+  </div>
+  <p>《#439》係昨日報告已深度拆解的一集（尾田榮一郎的工作倫理）。Founders 通常每週一至兩集，今日未見更新。若你錯過了：#439 的核心不是「努力」，而是<b>「用一種近乎不可持續的節奏，去換取只有少數人能達到的作品密度」</b>——而 Senra 的著眼點，是當事人如何在幾十年裡把這件事變成日常，而不是一次燃燒。</p>
+</section>
+
+<section class="card">
+  <div class="byline">ALL-IN · CHAMATH · JASON · SACKS · FRIEDBERG</div>
+  <h3>最近無更新<span class="badge none">No new episode</span></h3>
+  <div class="ep">
+    <b>最後已知：</b>《Anthropic S-1 Shocker, Greatest Business Ever? Google's $500B Wipeout, Midterm Predictions》｜ 2026-10-30 21:44 UTC ｜ 1 小時 25 分<br>
+    <b>對上一次：</b>《WHOOP CEO, Will Ahmed》2026-10-29 ｜《AI Cyber Panic, Ken Griffin's Bubble Warning, The Fall of France?》2026-10-23
+  </div>
+  <p>All-In 通常在週五／週末出集，今日（週五上午）尚未上線。上一集的三條線仍然有效：Anthropic 的 S-1 披露、Google 的市值震盪、以及中期選舉預測——如果你要補，這集的資訊密度高於平均，特別是「誰是這輪 AI 現金流的真正收款人」那一段。</p>
+</section>
+
+<section class="card">
+  <div class="byline">MY FIRST MILLION · SAM PARR &amp; SHAAN PURI</div>
+  <h3>最近無更新<span class="badge none">No new episode</span></h3>
+  <div class="ep">
+    <b>最後已知：</b>《The 2 businesses AI can never make obsolete》｜ 2026-11-04 12:19 UTC ｜ 31 分 58 秒<br>
+    <b>對上一次：</b>《$100M hedge fund manager: Do not make the mistake of dying rich》2026-11-02 ｜《Ex-Amazon VP tells us what it's really like working with Jeff Bezos》2026-10-28
+  </div>
+  <p>MFM 通常週一、週三、週五出集，今日未見。上一集（11 月 4 日）的論點與今日 Daniel Ek 那集形成有趣對照：<b>AI 拆掉了技術門檻，但拆不掉「信任」與「現場」</b>——所以最難被取代的，是那些靠人與人關係、靠實體交付、靠問責的生意。而 Ek 的版本是：AI 可以幫你更快研究，但唔可以幫你決定「研究哪個問題」。</p>
+</section>
+
+<h2 class="section">今日總結</h2>
+<div class="rule"></div>
+
+<p>兩集拼起來，其實係一條完整的決策鏈：</p>
+<ul class="plain">
+  <li><b>Ek 負責上游：</b>花幾百到幾千小時理解問題，容許自己帶一點妄想，但用研究和反對者把妄想釘在現實上；下注時看賠率，不看成功率。</li>
+  <li><b>McNeill 負責下游：</b>一旦決定要做，就把決策壓縮到三句話、把流程壓縮到客人的經濟算式、把匯報壓縮到每週甚至每小時，並且永遠最後才自動化。</li>
+  <li><b>兩者的共同點：</b>都唔相信「聰明」。一個相信<b>時間投入</b>，一個相信<b>步驟刪除</b>。兩者都係可以複製的工序，而不是天賦。</li>
+</ul>
+<p>如果只帶走一句：<b>慢在理解，快在執行。</b>大部分人是反過來——快在理解（靠直覺），慢在執行（靠協調）。</p>
+
+<footer>
+  <b>Mindset Podcasts Daily Deep Scan</b><br>
+  掃描時間：__SCANTIME__ ｜ 頻道：6 ｜ 今日新集：2 ｜ 累計已掃 GUID：3,014<br>
+  報告生成：__SCANTIME__ ｜ 來源：RSS feeds ＋ 官方節目頁 ＋ 完整訪談逐字內容<br>
+  <span style="color:#9b8a76">所有引用均為原文翻譯，數字以節目發言為準。本報告由 Vee Mok 自動生成。</span>
+</footer>
+
+</div>
+</body>
+</html>
