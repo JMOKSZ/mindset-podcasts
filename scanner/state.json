@@ -1,5 +1,5 @@
 {
- "lastScan": "2026-11-06T09:56:56Z",
+ "lastScan": "2026-11-07T09:55:53Z",
  "scannedEpisodes": {
   "acquired": [
    "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -3034,5 +3034,11 @@
   "feedsOk": 6,
   "feedsError": 0,
   "note": "all six feeds HTTP 200; entry counts 218/463/442/917/20/905; no unseen GUIDs"
+ },
+ "lastRun": {
+  "date": "2026-11-07",
+  "newEpisodes": 0,
+  "feedsOk": 6,
+  "note": "all feeds 200, no new GUIDs; All-In 8d gap noted"
  }
 }

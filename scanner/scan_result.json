@@ -205,17 +205,7 @@
   "host": "Shane Parrish",
   "rss": "https://fs.blog/knowledge-project-podcast/feed/",
   "status": "ok",
-  "new": [
-   {
-    "guid": "https://fs.blog/?post_type=podcast&p=82106",
-    "title": "Jon McNeill: How Elon Musk Makes Decisions",
-    "pubDate": "Thu, 05 Nov 2026 10:55:00 +0000",
-    "link": "https://fs.blog/knowledge-project-podcast/jon-mcneill/",
-    "duration": "",
-    "summary": "Jon McNeill is the former President of Tesla and the co-founder and CEO of DVx Ventures. Elon Musk believes speed creates a competitive advantage, whether it’s speed of decision, speed of cash, or speed of response. But what does that look like day to day, and how do you build a company around it? Jon …\n The post Jon McNeill: How Elon Musk Makes Decisions appeared first on Farnam Street .",
-    "content": "Jon McNeill is the former President of Tesla and the co-founder and CEO of DVx Ventures.\n Elon Musk believes speed creates a competitive advantage, whether it’s speed of decision, speed of cash, or speed of response. But what does that look like day to day, and how do you build a company around it?\n Jon spent years inside Elon’s companies, and he explains how they work. We talk about what happens when you skip the chain of command, why bad news can’t wait, and why Elon wanted problems explained in three sentences.\n We also get into the five-step algorithm Jon uses to simplify problems, why Elon treats a company like a garden full of weeds, and how Tesla grew with zero marketing budget.\n Public Release: Nov 10. \nMembers have access now .\n Join us . \n Coming Soon: YouTube | Spotify | Apple Podcasts | Transcript \n The post Jon McNeill: How Elon Musk Makes Decisions appeared first on Farnam Street ."
-   }
-  ],
+  "new": [],
   "last_known": {
    "title": "Jon McNeill: How Elon Musk Makes Decisions",
    "pubDate": "Thu, 05 Nov 2026 10:55:00 +0000",
@@ -265,17 +255,7 @@
   "host": "Steven Bartlett",
   "rss": "https://rss2.flightcast.com/xmsftuzjjykcmqwolaqn6mdn",
   "status": "ok",
-  "new": [
-   {
-    "guid": "flightcast:01M6GF258K36JJSW9BMPS9DY5H",
-    "title": "Most Replayed Moment: The One Habit Behind Every Breakthrough Idea - Spotify Founder",
-    "pubDate": "Fri, 06 Nov 2026 06:00:00 -0000",
-    "link": "",
-    "duration": "1893",
-    "summary": "Are you trying to innovate before you truly understand the problem?\nDaniel Ek is the co-founder of Spotify, the world's most popular audio streaming service, and the co-founder of preventative health company Neko Health.\nIn this moment, Daniel shares the approach that lets innovators crack problems most people write off as impossible, and why a healthy dose of delusion only works when it's paired with something far less glamorous. He takes you behind the scenes of how Spotify prepared for Apple Music's launch, explains how to tell when to keep going and when to walk away, and reveals why every team building something new needs a skeptic in the room.\nListen to the full episode here!\nSpotify: https://g2ul0.app.link/G2QZbVroP7b\nApple: https://g2ul0.app.link/6bjbfAuoP7b\nWatch the Episodes On YouTube: https://www.youtube.com/c/%20TheDiaryOfACEO/videos\nT-Mobile: https://www.superbroadband.com/",
-    "content": "Are you trying to innovate before you truly understand the problem?\nDaniel Ek is the co-founder of Spotify, the world's most popular audio streaming service, and the co-founder of preventative health company Neko Health.\nIn this moment, Daniel shares the approach that lets innovators crack problems most people write off as impossible, and why a healthy dose of delusion only works when it's paired with something far less glamorous. He takes you behind the scenes of how Spotify prepared for Apple Music's launch, explains how to tell when to keep going and when to walk away, and reveals why every team building something new needs a skeptic in the room.\nListen to the full episode here!\nSpotify: https://g2ul0.app.link/G2QZbVroP7b \nApple: https://g2ul0.app.link/6bjbfAuoP7b \nWatch the Episodes On YouTube: https://www.youtube.com/c/%20TheDiaryOfACEO/videos \nT-Mobile: https://www.superbroadband.com/"
-   }
-  ],
+  "new": [],
   "last_known": {
    "title": "Most Replayed Moment: The One Habit Behind Every Breakthrough Idea - Spotify Founder",
    "pubDate": "Fri, 06 Nov 2026 06:00:00 -0000",
@@ -294,7 +274,7 @@
    },
    {
     "guid": "flightcast:01M653W8EP3Y02KJRDZYYCGE0N",
-    "title": "Iran War Expert: If This Escalation Continues, 2027 Will Be Devastating! | Prof Robert Pape",
+    "title": "Iran War Expert: If The Bombing Resumes, It Won't Be Over By Christmas! | Prof Robert Pape",
     "pubDate": "Thu, 05 Nov 2026 06:00:00 -0000",
     "link": "",
     "duration": "5379",
@@ -302,7 +282,7 @@
    },
    {
     "guid": "flightcast:01M5XRNCEJK9HGGCQQ268PCK6T",
-    "title": "James Talarico: America's Corrupt System Is Designed To Keep You Poor! | Texas Senate Candidate",
+    "title": "James Talarico: Is America's Political System Designed To Keep You Poor?",
     "pubDate": "Mon, 02 Nov 2026 06:00:00 -0000",
     "link": "",
     "duration": "5803",
