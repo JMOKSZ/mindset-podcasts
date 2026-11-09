@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-11-09</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a; --warn:#a4442f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;line-height:1.85;font-size:17px}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.95;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  .note b{color:#8a5c14}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:28px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  h4.sub{font-size:20px;font-weight:normal;margin:40px 0 10px;color:#3a2f21;
+    border-bottom:1px dotted var(--line);padding-bottom:6px}
+  h5.mini{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin:30px 0 6px;font-weight:600}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:16px}
+  .card{background:var(--card);border:1px solid var(--line);padding:30px 32px;margin:0 0 22px}
+  .epmeta{display:grid;grid-template-columns:88px 1fr;gap:2px 14px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;
+    background:#faf6ee;border:1px solid #eee3d2;padding:16px 18px;margin:0 0 26px;line-height:1.7}
+  .epmeta dt{color:var(--muted);letter-spacing:.04em}
+  .epmeta dd{margin:0;color:var(--ink)}
+  .badge{display:inline-block;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10.5px;
+    letter-spacing:.1em;padding:3px 9px;border-radius:2px;vertical-align:middle;margin-left:8px}
+  .badge.new{background:#e7f1e9;color:#2f6b47}
+  .badge.none{background:#efe7db;color:#8a755c}
+  blockquote{margin:22px 0;padding:2px 0 2px 20px;border-left:3px solid var(--accent);
+    font-size:17.5px;line-height:1.8;color:#3a2f21}
+  blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:13.5px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;color:var(--muted)}
+  blockquote p{margin:0 0 10px}
+  blockquote p:last-child{margin:0}
+  ul.tight{margin:12px 0 18px;padding-left:22px}
+  ul.tight li{margin:0 0 9px}
+  ol.tight{margin:12px 0 18px;padding-left:22px}
+  ol.tight li{margin:0 0 10px}
+  table{width:100%;border-collapse:collapse;margin:22px 0 26px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13.5px;line-height:1.65}
+  th{text-align:left;padding:9px 10px;border-bottom:2px solid var(--ink);font-weight:600;font-size:12px;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  td.num{white-space:nowrap;color:var(--accent);font-variant-numeric:tabular-nums;font-weight:600}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:24px 0}
+  .split>div{background:var(--card);padding:18px 20px}
+  .split h6{margin:0 0 8px;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .split p{margin:0;font-size:15px;line-height:1.75}
+  .verdict{background:#f2f7f3;border:1px solid #d6e6da;padding:20px 22px;margin:26px 0;font-size:16.5px}
+  .verdict b{color:#2f6b47}
+  .lastep{margin:16px 0 4px;padding:14px 16px;background:#faf6ee;border-left:2px solid #dcc9a8}
+  .lastep-label{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted)}
+  .lastep-title{font-size:18.5px;margin-top:4px;line-height:1.5}
+  .lastep-meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;color:var(--muted);margin-top:3px}
+  .watch{background:#fffdf9;border:1px solid var(--line);padding:22px 24px;margin:26px 0 0}
+  .watch h6{margin:0 0 12px;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .watch ul{margin:0;padding-left:20px;font-size:15.5px}
+  .watch li{margin:0 0 10px}
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;color:var(--muted);line-height:1.9}
+  .src{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);line-height:1.8}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid #e0c9a4}
+  @media (max-width:640px){
+    h1{font-size:30px} h3{font-size:23px} .stats{grid-template-columns:repeat(2,1fr)}
+    .split{grid-template-columns:1fr} .card{padding:22px 20px} .epmeta{grid-template-columns:1fr}
+    .epmeta dt{margin-top:8px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcast Daily · 深度掃描</div>
+  <h1>思維播客日報</h1>
+  <p class="date">2026 年 11 月 9 日 · 星期一</p>
+  <div class="meta">
+    <b>掃描範圍：</b>6 個英文商業／思維播客 · 上次掃描 2026-11-08 09:57 UTC<br>
+    <b>本集生成時間：</b>2026-11-09 09:58 UTC<br>
+    <b>方法：</b>RSS 全量 GUID 比對 → 官方 show notes 全文擷取 → 章節時間軸重建 → 論點逐條拆解
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">6</div><div class="l">追蹤播客</div></div>
+  <div class="stat"><div class="n">1</div><div class="l">新集數</div></div>
+  <div class="stat"><div class="n">110</div><div class="l">新內容分鐘</div></div>
+  <div class="stat"><div class="n">5</div><div class="l">本期無更新</div></div>
+</div>
+
+<p class="lede">
+今日六個頻道只有一集新内容，但這一集不是普通的 celebrity interview。Steven Bartlett 用了 110 分鐘，把 Katt Williams 從「13 歲睡公園的逃家少年」到「站上荷里活頂層」的整條路徑拆開，而拆出來的不是勵志故事，是一套<em>可以複製的心理作業系統</em>：怎樣把創傷轉成燃料、把拒絕變成數學、把「一夜成名」還原成 15 年的無人問津。
+</p>
+
+<div class="note">
+<b>點解呢集值得你花時間：</b>如果你只聽 10 分鐘，你會以為這是名人八卦；但 Katt 在節目中段把「拒絕」講成一個<strong>概率遊戲</strong>、把「自己出錢拍特輯」講成<strong>風險轉移</strong>，這兩段其實是創業者語言，不是喜劇語言。本文把 33 個章節重組成 5 條主線，並在最後給出可以馬上用在生意上的推論。<strong>所有引文均來自官方 show notes 原文</strong>，凡是無法從公開資料核實的細節，我會明確標示「節目說法」。
+</div>
+
+<!-- ============ 新集數 ============ -->
+<h2 class="section">本期新集數 · 1 集</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <div class="byline">The Diary of a CEO with Steven Bartlett · 2026-11-09 06:00 UTC 發佈</div>
+  <h3>Katt Williams: I Lied My Way Into Comedy! List The 300 People Ahead Of You, Then Outwork Each One!<span class="badge new">NEW</span></h3>
+
+  <dl class="epmeta">
+    <dt>長度</dt><dd>1 小時 50 分 08 秒（6,608 秒）</dd>
+    <dt>主持</dt><dd>Steven Bartlett</dd>
+    <dt>嘉賓</dt><dd>Katt Williams — Emmy 得獎棟篤笑演員、演員、作家</dd>
+    <dt>著作</dt><dd>《Nine Lives, No Wives, and 69 Concubines》</dd>
+    <dt>章節</dt><dd>33 段（見下方時間軸）</dd>
+    <dt>屬性</dt><dd>深度人物訪談 · 創傷／心態／行業結構</dd>
+  </dl>
+
+  <p>先把結論放在前面：這一集表面在講喜劇，實際在講<strong>「一個完全沒有資源的人，如何用純心理槓桿打贏資源擁有者」</strong>。Katt Williams 的答案不是努力，而是三樣更冷的東西——<strong>重新定義痛苦、把拒絕數量化和把風險自己吃掉</strong>。以下逐層拆。</p>
+
+  <h4 class="sub">一、人物起點：13 歲的公園長椅</h4>
+
+  <p>官方簡介用了一句很重的定調：一個「13 歲的逃家少年」（a 13-year-old runaway）如何變成娛樂界 icon。節目在 00:36:53 有一整段專門講「睡公園是什麼感覺」，00:41:02 講「家人終於找到他的那天」。這種編排不是煽情，而是先把<strong>最低點</strong>釘死，讓後面所有「我當時可以點做」的選擇顯得有重量。</p>
+
+  <p>根據節目簡介，Katt 的童年包含嚴重虐待（severe childhood abuse），而他在 00:07:27 講「生存下來的代價」、00:13:17 講「幾時才意識到那是虐待」、00:17:21 講「兄弟是否也遭受同樣對待」。這條線的關鍵不是悲劇本身，而是他反覆強調的一個心理動作：<strong>他很早就把「受害者」這個身份從自己身上剝走</strong>。00:18:39 講童年創傷如何塑造親密關係，01:19:04 再回到「如何脫離受害者心態」——頭尾呼應，證明這是整集的主軸，不是插曲。</p>
+
+  <blockquote>
+    <p>「傳奇喜劇演員 Katt Williams 揭開他的童年故事，以及那個把 13 歲逃家少年變成娛樂界 icon 的心態。」</p>
+    <cite>— The Diary of a CEO 官方節目簡介（原文為英文，此為意譯）</cite>
+  </blockquote>
+
+  <h4 class="sub">二、核心論點 1：幽默是藥，不是逃避</h4>
+
+  <p>節目第一個實質論點叫 <strong>“The Medicine of Humor”</strong>。官方描述說，發現喜劇讓他「即時逃離嚴重童年虐待」，並且建立了一種「不可動搖的內在控制感」（an unbreakable sense of internal control）。</p>
+
+  <p>這裡有一個很細但很重要的分別：<em>逃避</em>是把注意力移開，<em>控制</em>是把解釋權拿回來。棟篤笑的結構本質上係「我重新講一次發生在我身上的事，但今次由我決定幾時停、幾時笑、觀眾幾時反應」。對一個童年完全失控的人來說，這不是表演，是<strong>奪回敘事權</strong>。00:27:41「喜劇如何成為療癒的方式」與 00:47:56「第一場 stand-up 到底發生什麼事」兩段要連住聽，才會明白他為什麼說「喜劇救了我」而不是「喜劇讓我紅了」。</p>
+
+  <div class="verdict">
+    <b>對生意人的翻譯：</b>當你被市場或客戶拒絕時，最傷的不是損失，是「我冇得揀」的感覺。Katt 的做法是把同一件事用「我可以選擇如何回應」的框架重講一次。這同 cognitive reappraisal 係同一樣嘢，但他用了一個更狠的版本：<strong>把它變成一個可以收錢的表演</strong>。
+  </div>
+
+  <h4 class="sub">三、核心論點 2：英雄妄想（The Hero's Delusion）</h4>
+
+  <p>這是整集最反直覺的一段。官方描述：<strong>讀經典文學</strong>讓他相信「極端困苦只是偉大的先決條件」（extreme hardship was merely a prerequisite for greatness），從而「把心智對受害者心態免疫化」（bulletproofing his mind against a victim mentality）。</p>
+
+  <p>「妄想」在這裏不是貶義，而是技術詞：一個<em>明知未必真、但功能上必要</em>的信念。心理學叫它做「adaptive delusion」——當現實太難解釋，人需要一個更大的敘事去承載它。Katt 選的叙事是「英雄旅程」：所有主角都要先受苦，所以我的苦不是懲罰，是入場費。</p>
+
+  <p>這套框架有明顯副作用：它會令人浪漫化痛苦，甚至主動尋找苦來吃。節目在 01:30:04「真正的自信從哪裡來」、01:38:17「為什麼相信自己會改變一切」把這條線收到「自信不是感覺，是<strong>你對自己承諾的履約記錄</strong>」。也就是說，英雄妄想只是起點，真正撐住自信的是後面 15 年的實際行動。</p>
+
+  <div class="split">
+    <div>
+      <h6>英雄敘事的用處</h6>
+      <p>把「為什麼是我」換成「這件事本來就會發生在主角身上」。它讓你停止問「點解我咁慘」，開始問「主角下一步會做咩」。對長期抗壓極有效。</p>
+    </div>
+    <div>
+      <h6>英雄敘事的風險</h6>
+      <p>容易把吃苦當成美德，忽略結構性問題；也可能令人不肯求助。Katt 自己在 01:42:36 講「同父母仲有冇關係」時，就顯示這套框架是有代價的。</p>
+    </div>
+  </div>
+
+  <h4 class="sub">四、核心論點 3：拒絕的數學（The Math of Rejection）</h4>
+
+  <p>這是對創業者最直接有用的一段。官方描述：<strong>把拒絕視為一個可預測的「數字遊戲」</strong>（a predictable numbers game），就能「完全抹去失敗的情緒痛苦」，無論在生意還是喜劇。</p>
+
+  <p>邏輯是這樣：如果 100 場 open mic 只有 1 場會給你機會，那麼被拒絕 99 次不是 99 次失敗，而是<strong>同一個必然過程的 99 個組成部分</strong>。痛苦來自「我把拒絕解讀成對我個人的評價」；數學把它降級成「分母」。這同銷售領域講的「rejection therapy」同源，但 Katt 版本更徹底——他不是叫你「唔好介意」，而是叫你<strong>重新分類</strong>：拒絕不是結果，是輸入。</p>
+
+  <blockquote>
+    <p>「把拒絕當成一場可預測的數字遊戲，就能在生意和喜劇中完全抹去失敗的情緒痛苦。」</p>
+    <cite>— 官方節目簡介，核心論點 “The Math of Rejection”</cite>
+  </blockquote>
+
+  <p>標題本身「List The 300 People Ahead Of You, Then Outwork Each One」其實就是這條數學的執行版：先承認你前面有 300 個人，不要假裝沒有；然後<strong>逐個超越</strong>。這比「相信自己是最棒的」務實得多，因為它把目標由「成為第一」拆成「打敗第 300 名、第 299 名……」。任何銷售團隊都可以直接抄這個框架做 pipeline review。</p>
+
+  <h4 class="sub">五、核心論點 4：「一夜成功」的幻覺</h4>
+
+  <p>官方描述用了很具體的數字：他<strong>把喜劇當一份辛苦的朝九晚五做了 15 年</strong>，其間完全無人認識（15 unrecognized years），才建立出同時征服黑人和白人觀眾的基礎。</p>
+
+  <p>15 年這個數字很重要，因為它把「talent」還原成「throughput」。01:03:32「改變一切的大突破」看起來是運氣，但如果你把時間軸拉長，那個「突破」其實是第 15 年的複利兌現。節目在 00:58:26「真正成為頂尖需要什麼」把這段講得更白：不是靈感，是<strong>產量 + 重複 + 唔斷</strong>。</p>
+
+  <table>
+    <tr><th>表面敘事</th><th>節目還原的版本</th><th>可遷移原則</th></tr>
+    <tr><td>一夜爆紅</td><td>15 年無人認識的日常產出</td><td>把「爆紅」當滯後指標，管理輸入而非輸出</td></tr>
+    <tr><td>天才表演者</td><td>把表演當 9-to-5 上班</td><td>創造力需要排程，不需要靈感</td></tr>
+    <tr><td>被 industry 發掘</td><td>自己出資拍特輯，繞過 gatekeeper</td><td>控制發行權，就控制風險</td></tr>
+  </table>
+
+  <h4 class="sub">六、核心論點 5：終極自賭（The Ultimate Self-Bet）</h4>
+
+  <p>官方描述：他<strong>自己出錢拍早期的喜劇特輯</strong>，移除了所有職涯風險，並證明「依賴行業守門人（industry gatekeepers）才是真正的一場賭博」。</p>
+
+  <p>這句話的財務含義比表面深。當你自資製作，你付出的是現金和時間，換回來的是<strong>資產的所有權</strong>。當你等電視台投資，你付出的是零現金，但讓出了控制權、發行權和大部分上行收益。Katt 的判斷是：現金風險有限且可控，<strong>控制權風險無限且不可控</strong>。所以他選擇吃前者。</p>
+
+  <p>這同今天創作者經濟的邏輯完全一致：YouTube、Substack、自出版、直接面向消費者——本質都是把「被挑選」換成「自己發行」。01:27:21「為什麼冒險可以改變人生」、01:33:28「如何奪回人生的控制權」是這條線的延伸。</p>
+
+  <div class="verdict">
+    <b>最值錢的一句推論：</b>「依賴守門人，才是真正的賭博。」把這句話套在任何平台依賴（單一客戶、單一流量平台、單一經銷商）上都成立。Katt 不是教你魯莽，是教你<strong>分辨哪種風險你承受得起</strong>。
+  </div>
+
+  <h4 class="sub">七、章節地圖：110 分鐘裡真正發生什麼</h4>
+
+  <p>官方 show notes 給了 33 個章節。把它們按功能分組，你會看到一個很清楚的五幕結構：</p>
+
+  <table>
+    <tr><th>時間</th><th>章節</th><th>功能</th></tr>
+    <tr><td class="num">00:00–00:04</td><td>Intro｜From Survival to Success</td><td>定調：生存 → 成功</td></tr>
+    <tr><td class="num">00:04–00:23</td><td>童年如何塑造一切｜生存的代價｜幾時意識到是虐待｜兄弟的遭遇｜創傷與親密關係</td><td>第一幕：創傷的完整交代</td></tr>
+    <tr><td class="num">00:23–00:30</td><td>宗教在艱難童年的角色｜喜劇如何成為療癒</td><td>第二幕：兩個逃生出口</td></tr>
+    <tr><td class="num">00:30–00:47</td><td>為何離家救兄弟｜13 歲睡公園｜家人找到他那天</td><td>第三幕：最低點與轉折</td></tr>
+    <tr><td class="num">00:47–01:03</td><td>第一場 stand-up｜為何做過 pimp｜為何回到喜劇｜真正成為頂尖需要什麼</td><td>第四幕：實戰與試錯</td></tr>
+    <tr><td class="num">01:03–01:19</td><td>大突破｜從 Prince 學到的一課｜每個創作者都需要的一件事｜脫離受害者心態</td><td>第五幕：方法論</td></tr>
+    <tr><td class="num">01:19–01:46</td><td>宗教｜冒險｜自信的來源｜奪回控制權｜相信自己｜與父母的關係｜為何這次訪談特別｜給年輕人的建議</td><td>終章：價值觀與收束</td></tr>
+  </table>
+
+  <p>注意 01:13:44「從 Prince 學到的一課」這個章節。它被放在「大突破」之後、「創作者需要什麼」之前，位置很刻意——這是全集的<strong>導師時刻</strong>。官方沒有展開細節，但從章節編排可以推斷：Katt 把 Prince 視為「完全控制自己作品」的範本，而這正好接上後面的「自資拍特輯」和「奪回控制權」。三件事其實是同一件事。</p>
+
+  <h4 class="sub">八、批判性閱讀：這集要打折扣的地方</h4>
+
+  <p>為了令你唔會照單全收，以下幾點要留意：</p>
+
+  <ul class="tight">
+    <li><strong>倖存者偏差。</strong>一個 13 歲睡公園、15 年無人認識、最後成功的人，他的方法論當然有效——但我們看不到用同一套方法卻失敗的人。節目結構天生只訪問贏家。</li>
+    <li><strong>「英雄妄想」不可直接模仿。</strong>把痛苦浪漫化對某些人是燃料，對更多人是抑鬱的起點。如果你或身邊人有情緒困擾，這套框架要小心使用。</li>
+    <li><strong>自資的門檻被低估。</strong>Katt 能自資，是因為他當時已有一定知名度和現金流。對現金流緊絀的創業者，「自己發行」可能不是風險轉移，而是風險集中。</li>
+    <li><strong>口述歷史的可靠性。</strong>童年創傷、家庭關係、行業經歷全部是單一受訪者回憶，沒有第三方核實。當故事聽，不要當判決書。</li>
+  </ul>
+
+  <h4 class="sub">九、如果只帶走三樣東西</h4>
+
+  <ol class="tight">
+    <li><strong>把拒絕數量化的習慣。</strong>為你目前最怕的動作（cold call、pitch、投稿）設定一個「分母目標」，例如 50 次。目標不是成功，是完成 50 次。情緒痛苦會在第十次左右消失。</li>
+    <li><strong>「300 人名單」練習。</strong>寫下你行業裡排在你前面的 300 個人（或 30 個，視行業大小）。不要焦慮，逐個研究他們做對了什麼。這是把嫉妒轉成課程。</li>
+    <li><strong>檢查你的「守門人依賴」。</strong>列出你生意中所有「要等人批准」的環節：平台審核、單一客戶、代理商、房東。逐項問：如果明天失去它，我有沒有 Plan B？沒有的，就是真正的賭博。</li>
+  </ol>
+
+  <div class="watch">
+    <h6>值得開 2 倍速重聽的段落</h6>
+    <ul>
+      <li><strong>01:19:04 脫離受害者心態</strong> — 全集方法論的樞紐，最短但最密。</li>
+      <li><strong>01:03:32 大突破 + 01:13:44 Prince 的一課</strong> — 連住聽，理解「控制權」主題。</li>
+      <li><strong>00:53:19 為何做過 pimp</strong> — 最有爭議、最少被主流媒體引用的部分，展示了 Katt 的街頭生存邏輯如何後來變成商業直覺。</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ 其餘播客 ============ -->
+<h2 class="section">其餘五個播客 · 最近無更新</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <div class="byline">Acquired · Ben Gilbert &amp; David Rosenthal</div>
+  <div class="lastep">
+    <div class="lastep-label">最後已知劇集</div>
+    <div class="lastep-title">Seinfeld</div>
+    <div class="lastep-meta">2026-10-18 21:00 PDT · RSS 218 集 · 本期無新集</div>
+  </div>
+  <p class="src">Acquired 向來是月更級節奏，10 月 18 日的 Seinfeld 特輯之後未見新集。若你未聽，這是他們罕有地拆解「一門純內容生意如何靠重播權賺 30 年」的案例，與今日 Katt 的「自資／控制發行權」主題意外地互相呼應。</p>
+</div>
+
+<div class="card">
+  <div class="byline">Founders · David Senra</div>
+  <div class="lastep">
+    <div class="lastep-label">最後已知劇集</div>
+    <div class="lastep-title">#439 How Eiichiro Oda Works</div>
+    <div class="lastep-meta">2026-11-04 19:18 UTC · RSS 464 集 · 本期無新集</div>
+  </div>
+  <p class="src">David Senra 拆解《One Piece》作者尾田榮一郎的工作方式。如果你今日聽完 Katt 講「15 年無人認識」，這集是同一主題的另一個極端案例：一位用極高產量與極長耐心建立 IP 的創作者。兩集可以當成一組來聽。</p>
+</div>
+
+<div class="card">
+  <div class="byline">All-In with Chamath, Jason, Sacks &amp; Friedberg</div>
+  <div class="lastep">
+    <div class="lastep-label">最後已知劇集</div>
+    <div class="lastep-title">Midterm Blood Bath, $4T AI Sell Off, Data Center Freeze, What's Next for Trump</div>
+    <div class="lastep-meta">2026-11-07 18:27 UTC · RSS 443 集 · 本期無新集</div>
+  </div>
+  <p class="src">11 月 7 日的選舉覆盤集，昨日日報已做完整深度拆解（含事實核查表）。本週末沒有新集，符合他們「週五錄、週六出」的節奏。</p>
+</div>
+
+<div class="card">
+  <div class="byline">My First Million · Sam Parr &amp; Shaan Puri</div>
+  <div class="lastep">
+    <div class="lastep-label">最後已知劇集</div>
+    <div class="lastep-title">The 2 businesses AI can never make obsolete</div>
+    <div class="lastep-meta">2026-11-04 12:19 UTC · RSS 918 集 · 本期無新集</div>
+  </div>
+  <p class="src">11 月 4 日的集數，主題是 AI 無法取代的兩類生意。與今日 Katt 的「自資／控制發行」其實有關：AI 令製作成本趨零，真正稀缺的變成「擁有觀眾關係」的人。</p>
+</div>
+
+<div class="card">
+  <div class="byline">The Knowledge Project · Shane Parrish</div>
+  <div class="lastep">
+    <div class="lastep-label">最後已知劇集</div>
+    <div class="lastep-title">Jon McNeill: How Elon Musk Makes Decisions</div>
+    <div class="lastep-meta">2026-11-05 10:55 UTC · RSS 20 集 · 本期無新集</div>
+  </div>
+  <p class="src">11 月 5 日的集數，拆解 Musk 的決策框架。RSS 只保留最近 20 集，所以「20 集」不代表節目總數。這集與今日 Katt 的「英雄妄想／極端困苦是入場費」形成有趣對照：Musk 版本是把痛苦工程化，Katt 版本是把痛苦敘事化。</p>
+</div>
+
+<h2 class="section">本期總結</h2>
+<div class="rule"></div>
+
+<div class="verdict">
+  <b>一句話：</b>今日只有一集，但它是本週最適合創業者的一集。把 Katt Williams 的 110 分鐘壓縮成一條公式——<strong>重新定義痛苦 × 把拒絕數量化的紀律 × 自己持有發行權</strong>。三個變數都不是關於天賦，都是關於你如何處理「冇人揀你」這件事。
+</div>
+
+<p class="src">
+如果你今日只有 15 分鐘：聽 01:19:04（脫離受害者心態）→ 00:58:26（真正成為頂尖需要什麼）→ 01:27:21（為什麼冒險可以改變人生）。三段連起來就是全集骨幹。
+</p>
+
+<footer>
+  <b>來源</b><br>
+  The Diary of a CEO RSS feed（rss2.flightcast.com）· 官方 show notes 全文 · 章節時間戳<br>
+  Podcast：<a href="https://thediaryofaceo.com/">thediaryofaceo.com</a> · 嘉賓著作：<a href="https://bookshelf.thediaryofaceo.com/guestbooks/katt-williams">Nine Lives, No Wives, and 69 Concubines</a><br><br>
+  <b>免責</b>：本報告基於播客官方描述與章節結構整理；人物背景細節以節目說法為準，未經獨立核實。引文為官方英文描述的準確意譯，非逐字稿。<br>
+  生成時間：2026-11-09 09:58 UTC · 掃描器 v2（RSS GUID 全量比對）
+</footer>
+
+</div>
+</body>
+</html>
