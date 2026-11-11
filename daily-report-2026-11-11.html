@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-11-11</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a; --warn:#a4442f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;line-height:1.85;font-size:17px}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.95;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  .note b{color:#8a5c14}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:28px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  h4.sub{font-size:20px;font-weight:normal;margin:40px 0 10px;color:#3a2f21;
+    border-bottom:1px dotted var(--line);padding-bottom:6px}
+  h5.mini{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin:30px 0 6px;font-weight:600}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:16px}
+  .card{background:var(--card);border:1px solid var(--line);padding:30px 32px;margin:0 0 22px}
+  .epmeta{display:grid;grid-template-columns:88px 1fr;gap:2px 14px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;
+    background:#faf6ee;border:1px solid #eee3d2;padding:16px 18px;margin:0 0 26px;line-height:1.7}
+  .epmeta dt{color:var(--muted);letter-spacing:.04em}
+  .epmeta dd{margin:0;color:var(--ink)}
+  .badge{display:inline-block;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10.5px;
+    letter-spacing:.1em;padding:3px 9px;border-radius:2px;vertical-align:middle;margin-left:8px}
+  .badge.new{background:#e7f1e9;color:#2f6b47}
+  .badge.none{background:#efe7db;color:#8a755c}
+  blockquote{margin:22px 0;padding:2px 0 2px 20px;border-left:3px solid var(--accent);
+    font-size:17.5px;line-height:1.8;color:#3a2f21}
+  blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:13.5px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;color:var(--muted)}
+  blockquote p{margin:0 0 10px}
+  blockquote p:last-child{margin:0}
+  ul.tight{margin:12px 0 18px;padding-left:22px}
+  ul.tight li{margin:0 0 9px}
+  ol.tight{margin:12px 0 18px;padding-left:22px}
+  ol.tight li{margin:0 0 10px}
+  table{width:100%;border-collapse:collapse;margin:22px 0 26px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13.5px;line-height:1.65}
+  th{text-align:left;padding:9px 10px;border-bottom:2px solid var(--ink);font-weight:600;font-size:12px;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  td.num{white-space:nowrap;color:var(--accent);font-variant-numeric:tabular-nums;font-weight:600}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:24px 0}
+  .split>div{background:var(--card);padding:18px 20px}
+  .split h6{margin:0 0 8px;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .split p{margin:0;font-size:15px;line-height:1.75}
+  .verdict{background:#f2f7f3;border:1px solid #d6e6da;padding:20px 22px;margin:26px 0;font-size:16.5px}
+  .verdict b{color:#2f6b47}
+  .lastep{margin:16px 0 4px;padding:14px 16px;background:#faf6ee;border-left:2px solid #dcc9a8}
+  .lastep-label{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted)}
+  .lastep-title{font-size:18.5px;margin-top:4px;line-height:1.5}
+  .lastep-meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;color:var(--muted);margin-top:3px}
+  .watch{background:#fffdf9;border:1px solid var(--line);padding:22px 24px;margin:26px 0 0}
+  .watch h6{margin:0 0 12px;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .watch ul{margin:0;padding-left:20px;font-size:15.5px}
+  .watch li{margin:0 0 10px}
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;color:var(--muted);line-height:1.9}
+  .src{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);line-height:1.8}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid #e0c9a4}
+  @media (max-width:640px){
+    h1{font-size:30px} h3{font-size:23px} .stats{grid-template-columns:repeat(2,1fr)}
+    .split{grid-template-columns:1fr} .card{padding:22px 20px} .epmeta{grid-template-columns:1fr}
+    .epmeta dt{margin-top:8px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcasts · Daily Deep Scan</div>
+  <h1>他賣了三十年電擊槍，然後開始賣「真相」</h1>
+  <p class="date">2026 年 11 月 11 日 · 星期三</p>
+  <div class="meta">
+    <b>掃描時間</b> 2026-11-11 09:53 UTC / 17:53 HKT<br>
+    <b>覆蓋</b> 6 個播客 · 6 條 RSS 全部 HTTP 200 · 共 2,973 集索引<br>
+    <b>本期</b> 新集數 1 集（All-In 特備訪談，55:36）· 其餘 5 個播客最近無更新<br>
+    <b>萃取方式</b> RSS + Apple Podcasts 官方 shownotes + 完整英文逐字稿（11,348 字）逐段讀完，非摘要轉述
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">6</div><div class="l">播客來源</div></div>
+  <div class="stat"><div class="n">1</div><div class="l">新集數</div></div>
+  <div class="stat"><div class="n">55<span style="font-size:15px">min</span></div><div class="l">訪談長度</div></div>
+  <div class="stat"><div class="n">11.3<span style="font-size:15px">k</span></div><div class="l">逐字稿字數</div></div>
+</div>
+
+<p class="lede">今日只有一集新內容，但這是一集「商業史 + 政治哲學」的雙層訪談。Rick Smith 用 55 分鐘講完 Axon 的三次轉型：電擊槍 → 隨身攝影機 → 雲端與無人機。表面上是警察科技，實際上是一條更鋒利的線——<em>誰有權生產「現場發生過什麼」的證據，以及誰有權查詢那份證據。</em>整集最值錢的一句不是關於武器，而是關於查詢紀錄：當警方可以在系統裡搜「前女友」時，問題不在鏡頭，在誰看得到你搜過什麼。</p>
+
+<div class="note">
+  <b>點聽：</b>All-In 正刊之外的特備訪談，今次只有 David Friedberg 一個人在問，其餘三位 besties 只在開場與收尾出現。<a href="https://allinchamathjason.libsyn.com/freedom-vs-safety-axon-ceo-rick-smith-on-the-future-of-policing">原集連結</a>（55:36）。<br>
+  <b>點讀：</b>下面按時間軸拆成十二節，由 1993 年車庫講到 2036 年的機械人警察。想直接看爭議點，跳到第 8 節（Flock 與查詢層）與第 9 節（倫理委員會集體辭職）。<br>
+  <b>誠實提示：</b>本集所有財務與規模數字，都是 Rick Smith 本人口述的管理層口徑，我沒有獨立核實，文中一律標明「他說的」。Jev 前置評分：worth 0.51、primary_source 0.66——屬於「有數字但為受訪者自述」那一格，仍然值得寫，但每個數字都要當成<strong>當事人陳述</strong>而不是審計事實。
+</div>
+
+<h2 class="section">本期新集數 · 1 集</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <h3>Freedom vs. Safety: Axon CEO Rick Smith on the Future of Policing<span class="badge new">NEW</span></h3>
+  <div class="byline">All-In with Chamath, Jason, Sacks &amp; Friedberg · The All-In Interview · Rick Smith × David Friedberg</div>
+
+  <dl class="epmeta">
+    <dt>發布</dt><dd>2026-11-10 23:03 UTC（美東 11/10 傍晚）</dd>
+    <dt>長度</dt><dd>55:36</dd>
+    <dt>形式</dt><dd>Friedberg 一對一長訪，非四人 roundtable</dd>
+    <dt>主題</dt><dd>非致命武器史 → 隨身攝影機 → 公共安全操作系統 → 無人機與機械人</dd>
+    <dt>RSS</dt><dd>8de68398-23b0-492c-b5d4-f18ff7bd227f</dd>
+    <dt>來源</dt><dd>官方 shownotes（六段章節）＋ PodScripts 完整逐字稿</dd>
+  </dl>
+
+  <div class="verdict">
+    <b>一句話：</b>Axon 賣的不是武器，是<strong>「可被採信的現場」</strong>。電擊槍讓「唔開槍」變成一個選項；攝影機讓「你講咩都冇用，睇片」變成制度；雲端讓 18,000 個警局把證據交到同一個系統。三次轉型其實係同一門生意：把執法現場變成可記錄、可搜尋、可定價的數據。
+  </div>
+
+  <h4 class="sub">1. 開場三十秒：他被自己的產品電過</h4>
+  <p>Friedberg 的第一個問題很朴素——「被電擊是什麼感覺？」Rick 的回答意外地好，因為他把身體經驗講成了哲學：</p>
+  <blockquote>
+    <p>“It's terrifying while it's happening because you lose control of your body. And there's like these waves of energy, five seconds while you're being hit with a taser seems like a very long time. And I had long enough to have this philosophical realization about what it must be like for people who can't control their body. And then the current was off. But it's not fun. But when it's off, it's off. You're right back to normal the second it's off.”</p>
+    <cite>Rick Smith，約 0:10</cite>
+  </blockquote>
+  <p>「電流一停就完全恢復」——這句看似閒話，其實是整間公司的產品定義：<strong>可逆的武力</strong>。槍是不可逆的，電擊槍是可逆的。後面所有關於「非致命」的論證，都建立在這個物理特性上。</p>
+  <p>然後 Friedberg 開了個玩笑，說這些隨身攝影機的片段本身是不是一門內容生意（他提到 Live PD、《Cops》）。Rick 的反應很值得記：</p>
+  <blockquote>
+    <p>“We actually ourselves had done Axon Studios for a period of time to try to do exactly what you're talking about, like a live content business out of the body cameras. But it's just, you know, you got to know your corporate DNA. We are too pro-police and we're a big corporation that wasn't going to do the edgy things you would need to do to make that a great content business.”</p>
+    <cite>約 0:50</cite>
+  </blockquote>
+  <p><strong>我嘅判讀：</strong>這是一個很誠實的自我認知——他知道自己手上有一門媒體生意，但他知道自己做不了，因為媒體需要「敢得罪自己客戶」的 DNA，而他的客戶就是警察。這個限制，後面在第 8、9 節會反過來咬他一口。</p>
+
+  <h4 class="sub">2. 1993：為什麼子彈在 2026 年仍然是一個問題</h4>
+  <p>公司起點不是商業計劃，是一個留學生的尷尬。他在歐洲讀研究院，歐洲同學說不敢去美國，因為電視上全是槍擊；他本能地想反駁「不是每個人都那樣」，然後有人問他：你認識被槍殺的人嗎？</p>
+  <blockquote>
+    <p>“And one of them asked me if I knew anyone who'd been shot and killed. And it just struck me, I was like, wow, actually I do. There were these two guys that played on my high school football team that were shot and killed in a road rage incident. … By the time I added it up, it was like maybe five or six people.”</p>
+    <cite>約 3:00</cite>
+  </blockquote>
+  <p>於是他問了那個定義了整間公司的問題：</p>
+  <blockquote>
+    <p>“Why is it that like bullets are still a thing in 1993, much less 2026? … Bullets have been around for many centuries. And the simple insight was if we had Captain Kirk's phaser, like people would choose not to kill other people because they'd have a more civilized way to stop somebody who's threatening them.”</p>
+    <cite>約 3:30</cite>
+  </blockquote>
+  <p>然後是那個像漫畫情节的轉折：他透過<strong>專利文件</strong>找到 1970 年代發明 Taser 的 NASA 科學家（住在 Tucson，逐字稿沒有點名；公開資料是 Jack Cover），打電話過去，73 歲的老人請這個 23 歲的年輕人回家，兩個人在車庫用 Ace Hardware 買來的零件造新一代電擊槍。</p>
+  <ul class="tight">
+    <li>第一個原型：<strong>30 天</strong>由零做出來。</li>
+    <li>第一件事不是賣，是拿<strong>聯邦監管批准</strong>——證明新設計不算非法武器。</li>
+    <li>他的感想：「你唔會意識到初創公司相對整個世界跑得幾快」——當年 30 天，今天公司有 <strong>6,000 人</strong>。</li>
+  </ul>
+
+  <h4 class="sub">3. 七年錯誤市場，與父親的最後五十萬</h4>
+  <p>第一個市場不是警察，是<strong>消費者</strong>。邏輯很乾淨：舊款 Taser 本質上是火器（外型像手電筒，法律上歸入 category 2，等同削短霰彈槍），所以平民幾乎買不到；如果用壓縮氣體代替火藥，它就不再是火器，「我阿媽都可以買一支自衛」。結果是七年掙扎、兩次產品失敗。</p>
+  <p>失敗的原因，顧客一句話就講完：</p>
+  <blockquote>
+    <p>“Hey, if this thing really works, why aren't the police using it?”</p>
+    <cite>約 6:55，顧客回饋</cite>
+  </blockquote>
+  <p>於是他 1999 年底轉向警隊市場。他用了麥克阿瑟的名言來描述這個決定：「I will return to the consumer market once we have proven with police that the taser is as effective or even more effective than a gun.」——注意，這個「五年後回到消費市場」的承諾，二十七年後仍然未兌現。</p>
+  <p>1998 年是他想收攤的一年。矽谷朋友在 Yahoo 之類公司賺錢，他剛剛第二次產品失敗，於是他去找父親（也是天使投資人）說：不如關門。父親的回答是全集最好笑也最殘酷的一段：</p>
+  <blockquote>
+    <p>“Well, it would have been nice to figure that out a couple of years ago, because we owe Silicon Valley Bank about $2 million. I have $500,000 and I'm on the hook. So if we shut down, the bank has taken everything. So we have no choice. I'm putting my last $500,000 in.”</p>
+    <cite>約 8:25</cite>
+  </blockquote>
+  <p>另一位投資人 Bruce Culver 對等再投五十萬。總共最後一百萬，要完成設計、開模、量產、上市，然後靠現金流撐到 IPO——兩年後真的做到了。</p>
+
+  <table>
+    <thead><tr><th>早期關鍵數字（他口述）</th><th>數值</th><th>意義</th></tr></thead>
+    <tbody>
+      <tr><td>創立</td><td class="num">1993</td><td>Tucson 車庫，與 Taser 發明人合作</td></tr>
+      <tr><td>首個原型</td><td class="num">30 天</td><td>由零到可運作樣機</td></tr>
+      <tr><td>消費者市場掙扎</td><td class="num">7 年</td><td>兩次產品失敗，1999 年底轉向警隊</td></tr>
+      <tr><td>倒閉前債務</td><td class="num">$2M</td><td>欠 Silicon Valley Bank</td></tr>
+      <tr><td>最後一輪資金</td><td class="num">$1M</td><td>父親 $500k ＋ Bruce Culver $500k</td></tr>
+      <tr><td>IPO 估值</td><td class="num">~$12M</td><td>2001 年，極細市值上市</td></tr>
+    </tbody>
+  </table>
+
+  <h4 class="sub">4. 上市、全球第一、然後 SEC 上門</h4>
+  <p>2000 年網路泡沫爆破，投行反而找上門：因為「你們不是 internet，你們有實體產品、有真實收入」。他講得很白——</p>
+  <blockquote>
+    <p>“We went public specifically, I think, because banks needed deals and we were not internet.”</p>
+    <cite>約 9:35</cite>
+  </blockquote>
+  <p>上市後四年是瘋的：每年三倍增長，2004 年成為<strong>全球表現最好的股票</strong>（一年與三年回報都是第一），那一年 Google 也上市。他把《華爾街日報》那篇報導裱起來掛在牆上。</p>
+  <p>然後 2004 年底，SEC 調查：指控他們為推高股價而隱瞞產品安全問題。同時是空頭攻擊——最刺的一刀是，<strong>他的私人助理是空頭的內鬼</strong>，把內部文件賣給空頭，空頭再給《紐約時報》。</p>
+  <p>結果：2005 年股價由 <strong>$33 跌到 $7</strong>，市值由高峰約 <strong>$20 億跌到約 $1 億</strong>。客戶是警局，一被聯邦調查就停止採購——「我不能拿這個去見市議會」。他繞過律師的建議，搬幾箱文件親自走進舊金山 SEC 辦公室，說：幫你們快點查完，否則我會倒閉。最後的結果是「no findings」——</p>
+  <blockquote>
+    <p>“They don't give you a gold star when they're done and tell you good job. They just say no findings and they move on, which is as good as it gets.”</p>
+    <cite>約 15:05</cite>
+  </blockquote>
+
+  <h4 class="sub">5. 他吿自己的保險公司——一場關於「唔可以和解」的賭博</h4>
+  <p>這一段是整集最不像「公關版本」的部分，也是我最想 James 留意的地方：一家市值一億的公司，面對數百宗訴訟（股東、被電擊者、死者家屬），按理應該倒。</p>
+  <p>第一宗案，保險公司想以約 <strong>200 萬美元</strong>和解。Rick 拒絕，還威脅要告自己的保險公司：</p>
+  <blockquote>
+    <p>“If you settle this case, we will get swamped in litigation. You're putting our business at risk. If you settle the case, we'll sue you. But we're going to give you an out. If you will pay the plaintiff $2 million, we'll take a little bit less. You can pay us and we'll sign away our liability and we'll take it across the goal line.”</p>
+    <cite>約 16:10</cite>
+  </blockquote>
+  <p>翻譯成商業語言：他寧願收少一點錢，也要<strong>買下自己打官司的權利</strong>，因為一旦和解，就等於向所有原告發出「呢間公司會付錢」的訊號。他們這樣做了兩次，兩次都贏，還賺了錢。他的總結很傳神：</p>
+  <blockquote>
+    <p>“If you sue us, you better bring your A game. … But you sue us on something where we think we're in the right, we dig in like religious fanatics to defend our belief system. And that's important. And that's what protected our business.”</p>
+    <cite>約 16:50</cite>
+  </blockquote>
+  <p>今天，他說公司「數十年來第一次」<strong>零訴訟</strong>。這句話的可信度我打問號（任何 6,000 人的硬件公司完全零訴訟都很難），但作為<em>談判姿態</em>的說明，它非常有效：訴訟不是成本，是定價權的延伸。</p>
+
+  <h4 class="sub">6. Hadi Partovi：那個把武器公司變成軟件公司的人</h4>
+  <p>2007–2010 年，Axon 開始做隨身攝影機，Rick 承認「我手上是一場災難」——他從未建過軟件公司，請錯人，技術問題一堆，還要自己建數據中心給客戶用。於是他找大學朋友 Hadi Partovi（後來 Code.org 創辦人）入董事會，實際上是<strong>做他五年的兼職 CTO</strong>。</p>
+  <p>最關鍵的一次干预是數據中心：</p>
+  <blockquote>
+    <p>“We had a near catastrophic outage where we nearly lost all our customer data. And Hadi was like, hey man, there's plenty of hard things to do in this world, like trying to figure out how to run your own data center is not one that's worth the squeeze. So we moved over to the cloud with AWS and then with Azure.”</p>
+    <cite>約 18:45</cite>
+  </blockquote>
+  <p>同一個 Hadi 還推動了改名：由 TASER 改成 Axon，理由是 Taser 是一個「sledgehammer brand」——在人們心中等於電擊武器，而公司做的事遠不止於此。Rick 當時抗拒，因為「不想感覺像撤退」，後來承認 Hadi 是對的。</p>
+  <p>而股東當年的反應是：「Rick，你竟然想把一間武器公司變成軟件公司？」——他的自嘲是整集最好的一句商業洞察：</p>
+  <blockquote>
+    <p>“And I guess I was like many entrepreneurs — you don't realize what a crazy idea that was.”</p>
+    <cite>約 19:25</cite>
+  </blockquote>
+
+  <h4 class="sub">7. 隨身攝影機的起點不是科技，是陪審團</h4>
+  <p>大多數人以為 body cam 是科技產品，Rick 的版本是<strong>訴訟防禦工具</strong>。他在北加州協辦一宗警局內死亡案：40 歲男子、二十年冰毒史，死狀慘烈。陪審團看到的是家屬拿出來的高中畢業照；警員看到的是另一個人。</p>
+  <blockquote>
+    <p>“The officers looked at me and they said, that's not the human being I saw the night I went to that house. I saw somebody who was literally like out of the Exorcist movie.”</p>
+    <cite>約 21:20</cite>
+  </blockquote>
+  <p>然後是整集的轉折點。他發現警員在庭上只能用「Mr. Heston did this」這種專業語言，而對方家屬用情緒化、色彩豐富的語言：</p>
+  <blockquote>
+    <p>“I was like, guys, you're getting your asses kicked, frankly. You need to tell your story with more passion. And they said, Rick, we don't get to do that. Like, we work for the government. If we get caught in one half-truth, that can be the end of our career. And that's when we realized — we need to record this so that you can show people what it is that you saw, what it is you did, rather than having to try to explain it.”</p>
+    <cite>約 22:00</cite>
+  </blockquote>
+  <p><strong>我嘅判讀：</strong>這段是整集的道德核心。Axon 的攝影機不是為了監察警察而發明，是為了<strong>讓警察的說法變得可採信</strong>。同一件產品，後來被用來起訴警察——發明者的意圖與社會效果完全相反。這種「工具叛變」是科技史裡最常見、也最難公關的現象。</p>
+  <p>中途還有戲劇性一幕：負責造攝影機的員工半夜辭職，一週後推出競品，而資金來自他自己的股票期權——等於用公司的錢造武器打公司。最後 Axon 把公司買回來。</p>
+  <p>然後是七年的市場抗拒：警察不想戴，覺得是「big brother」、怕被主管挑剔。真正的轉折是 2014 年 Ferguson 的 Michael Brown 案——家屬要攝影機，警察工會也要攝影機（「至少想讓世界看到發生什麼事」）。Rick 補了一個關鍵細節：</p>
+  <blockquote>
+    <p>“A police union leader told me, famously said, no cop wants to wear a body camera until they've worn one for 90 days, and then they will not go on patrol without it.”</p>
+    <cite>約 24:40</cite>
+  </blockquote>
+  <p>為什麼？他用一個鳳凰城跟車的故事說明：一個被捕的女子在警車後座威脅「我要說你強姦我，除非你現在放我落車」；警員只回了一句「這是隨身攝影機，全程錄影，你想說什麼都可以」——她的態度立刻改變。</p>
+  <p>規模方面，他給的數字是：<strong>超過一百萬名警員</strong>、每人每日上傳約<strong>兩小時</strong>影片、每日管理的影片量「比 YouTube 更多」（注意：是<em>上傳量</em>，不是觀眾量）。這是一門典型的「數據重力」生意：一旦證據都在你的雲上，轉換成本就等於「所有歷史案件」。這也是為什麼 Axon 的估值可以脫離硬件週期。</p>
+
+  <h4 class="sub">8. Flock、Ring 與真正的戰場：查詢層</h4>
+  <p>Friedberg 把最難的問題直接丟出來：Flock 的車牌攝影機開始被市議會否決，Ring 的超級碗廣告被罵「creepy」，人們擔心的是監控國家。Rick 沒有否認，先承認：</p>
+  <blockquote>
+    <p>“I don't think any of us want to live in China, meaning a surveillance state where every citizen is tracked everywhere they go. However, I think there's got to be some nuance here. We can't go back to United States as it existed in the 1950s when there weren't cameras everywhere. The fact is there are cameras everywhere. There's more cameras than people.”</p>
+    <cite>約 29:40</cite>
+  </blockquote>
+  <p>他的結論不是「所以接受它」，而是把手術刀放在正確的位置：</p>
+  <blockquote>
+    <p>“So really what this comes down to is how we think about data governance. Like how should society, under what circumstances, should we share those camera feeds to the government? How should they use that?”</p>
+    <cite>約 30:10</cite>
+  </blockquote>
+  <p>他給的紅線很具體：警察搜「前女友」是「morally offensive」；追蹤失車、在暴力犯罪現場周邊查車牌是「reasonable use case」。然後他提到參議員 Hawley 的法案，並列出他認為有效的三道閘：</p>
+  <ol class="tight">
+    <li><strong>個人刑責</strong>：警員若為私事濫用，有刑事與民事責任。</li>
+    <li><strong>案件代碼</strong>（viable case codes）：搜尋前必須綁定系統內真實案件。</li>
+    <li><strong>雙人授權</strong>：搜尋前要有另一名警員協作，即「你要查前女友，就要找一個願意陪你把職業生涯押上去的同事」。</li>
+  </ol>
+  <p>他還提到與 Ring 的合作設計： homeowner 可以自願分享片段給警方，但警方不能「randomly canvas」整個社區的影片。</p>
+  <div class="verdict">
+    <b>我嘅判讀（本集最重要的一句分析）：</b>鏡頭不是權力，<strong>查詢紀錄才是</strong>。一個城市有十萬支鏡頭不可怕，可怕的是有沒有一份可以被任何人（包括未來敵對的政府）調閱的「誰在什麼時候查過誰」的日誌。Rick 講的三道閘，本質上就是把「查詢」變成一個有證人、有案號、有刑責的行為。這一點比任何「我們很重視私隱」的公關話都實在——也正因為如此，它應該被寫進合約，而不是留在訪談裡。
+  </div>
+
+  <h4 class="sub">9. 2022 年 6 月：倫理委員會集體辭職</h4>
+  <p>Friedberg 拿出筆記，問那件 Axon 不太想提的事：2022 年 6 月，公司宣布研發<strong>可發射電擊槍的無人機</strong>，目標是校園槍擊；AI 倫理委員會投票反對，多名成員辭職抗議。Rick 沒有回避，先講他的技術論證：</p>
+  <blockquote>
+    <p>“Today, if you have a person with a gun show up in a building anywhere in America — do you know how we stop them? We gotta wait for the police with the gun. Yeah, we send in more people with guns and they have a gunfight. Like, yeah, this is the wild west, guys. Like is that really the best we can do as a society?”</p>
+    <cite>約 42:50</cite>
+  </blockquote>
+  <p>然後是那句我認為整集最強的產品洞察：</p>
+  <blockquote>
+    <p>“You'll never get a cop that will take a non-lethal weapon up against somebody with a gun. But if we can send in a small drone or robot, then everything shifts. They're like, oh, wait a minute. Now I can use nonlethal force.”</p>
+    <cite>約 43:10</cite>
+  </blockquote>
+  <p>他對辭職事件的解釋，坦白得有點殘酷：董事會成員多數<strong>私下同意</strong>他的技術判斷，但「post-George Floyd」的政治風險太高，很多人在大學工作、已經被指責親警，所以選擇離開。他用了一句很重的話：「it was too politically risky and it blew up」。然後是他自豪的部分：</p>
+  <ul class="tight">
+    <li>很多公司直接取消了倫理委員會，他選擇重組。</li>
+    <li>改名為「Equity and Ethics Advisory Council」，加入更多黑人和棕色族裔的聲音——因為「over-policing 的憂慮主要來自弱勢社區」。</li>
+    <li>他的反省：早期聽批評，還可以改設計；後期才聽，只能吵架。</li>
+  </ul>
+  <blockquote>
+    <p>“It's much better for us to do that and hear the critical voices early in the design process rather than after we've launched it, because then all we can do is sort of argue about things. We've lost the ability to make significant design changes.”</p>
+    <cite>約 45:05</cite>
+  </blockquote>
+
+  <h4 class="sub">10. 未來十年：Skydio、多鑰匙授權、人形機械人</h4>
+  <p>Friedberg 提到未來 12–18 個月有五六間公司會在美國開賣 <strong>$10,000–$30,000</strong> 的人形機械人，問警察工作會變成什麼樣。Rick 先畫紅線：</p>
+  <blockquote>
+    <p>“Policing is still fundamentally a human job. Any decisions about using force on another person will be made by humans. And that's a bright line for us.”</p>
+    <cite>約 45:55</cite>
+  </blockquote>
+  <p>然後是他口中「歷史上最不可濫用」的設計——<strong>multi-key authorization</strong>：任何從無人機或機械人使用（即使是非致命）武力，都可以設定為需要管理者<strong>實時批准</strong>。他的對照很鋒利：</p>
+  <blockquote>
+    <p>“Today, you give a cop a gun, they walk out the door, you have no control over what they do with it. You can prosecute them later. These robotic systems will give us the ability to have institutional decision-making with multiple parties in real time, which I think will lead to far less mistakes, less concerns about abuse.”</p>
+    <cite>約 46:40</cite>
+  </blockquote>
+  <p>Skydio 的部分是硬事實（他口述）：Axon 已成為美國領先無人機公司的<strong>最大投資者</strong>，「買了接近一半」，但刻意讓它保持獨立，以初創速度移動；同時取得<strong>獨家渠道權</strong>。產品場景：無人機停在外勤消防局的自動機庫，接到報案幾秒內到場，「有時 911 接線生還未打完字，無人機已經在現場」。</p>
+  <p>他也回應了「錯門突擊」的質疑，這段值得完整看，因為它是他整個哲學的縮影：</p>
+  <blockquote>
+    <p>“Imagine a future where if they do have to do this mission … they're going to be sending in a drone or a robot. So the operator is going to be a team of people, not just one. It's not going to be a person who's in the fight or flight response, afraid for their own safety, shaking with their finger on the trigger. And if they make a mistake, you're going to get hit with a taser or a pepper spray or some non-lethal weapon. And oh, by the way, the whole thing will be recorded.”</p>
+    <cite>約 49:35</cite>
+  </blockquote>
+  <p>最後那句才是重點：「Many police shootings today are not recorded.」——他把「記錄」當成產品的第一功能，而不是附加功能。</p>
+
+  <h4 class="sub">11. 政治：defund、1968 年滿地可、和三藩市</h4>
+  <p>Friedberg 問 defund the police 的政治浪潮。Rick 的答案很直接：會是災難，但民主有自我修正機制。他舉了 1968 年滿地可警察罷工——不是因為 George Floyd，只是薪酬談判——結果被稱為「the night of terror」，城市失控，並引用 Steven Pinker 的《The Better Angels of Our Nature》。</p>
+  <p>他也把三藩市的經驗講成一個經濟因果鏈：輕罪除罪化 → 商店倒閉 → 市中心被放棄 → 工作機會外流 → 「deserts where there's no economic activity」。然後補一句：三藩市已經開始回擺。</p>
+  <p>整段最值得抄下來的一句，是他對公共安全的定位：</p>
+  <blockquote>
+    <p>“Public safety is critical to the underwriting of all of our other social contracts. Without good public safety, none of the other social contracts work and the systems don't work.”</p>
+    <cite>約 53:20</cite>
+  </blockquote>
+
+  <h4 class="sub">12. 結尾：不確定年代的樂觀</h4>
+  <p>收尾他主動談宏觀：幾個月前《經濟學人》封面是「AI 工作末日」，幾個月後又說 AI 創造幾百萬職位——「人們不知道該怎麼想」。他的結論是：</p>
+  <blockquote>
+    <p>“Policing might be the glue that needs to hold society together. Hopefully we don't see the sorts of things we're seeing in France right now in this sort of social upheaval, but God forbid, if we do, we need the men and women of law enforcement to be ready.”</p>
+    <cite>約 54:00</cite>
+  </blockquote>
+  <p>然後是他最大膽的一句預測：十年、二十年後會是「a near utopian society」，疾病被治好，Elon 的 universal high income 會實現，但過渡期會痛。Axon 的角色，是「arm the police for that transition」——用一種「回頭看會驕傲」的方式。</p>
+
+  <h2 class="section">批判性評估</h2>
+  <div class="rule"></div>
+
+  <h5 class="mini">① 數字全部係管理層口徑</h5>
+  <p>市值他先說「35、40 billion」，兩分鐘後又說「30 billion」；「影片量比 YouTube 多」是<em>上傳分鐘數</em>，不是觀看量；「零訴訟」在 6,000 人的硬件公司身上幾乎不可能。這些不是謊言，是<strong>創辦人敘事</strong>——選擇最能支撐故事的那個數字。聽的時候要自動打八折。</p>
+
+  <h5 class="mini">② 「最窮的社區最想要這些技術」</h5>
+  <p>這句話在美國的民調裡有真實基礎（暴力犯罪率高的社區，居民對警務資源的需求確實更高）。但它同時是<strong>供應商最方便的論證</strong>：用最受害者的聲音，替最容易濫用的技術背書。真正需要回答的問題不是「他們想不想要」，而是「如果日後政權改變，同一套系統會用來做什麼」。他沒有回答這一題，只說「法律與監督會演化」。</p>
+
+  <h5 class="mini">③ 護欄由製造商定義，審計權在誰手上？</h5>
+  <p>案件代碼、雙人授權、實時批准——這些都是好設計。但整集沒有一句提到「獨立第三方審計」或「公開濫用統計」。當護欄的規格由賣方設定、由買方執行、由雙方共同持有數據，問責的閉環其實缺一環。這一環才是 Flock 被市議會否決的真正原因。</p>
+
+  <h5 class="mini">④ 「最不可濫用」是一個可驗證的承諾</h5>
+  <p>他的原話是 “the least abusable technology in the history of policing”。這句話可以查：合約裡有沒有寫 multi-key？審計日誌是否可由民選監督機構調閱？有沒有獨立投訴渠道？如果這三樣都沒有，那它只是一句營銷。</p>
+
+  <h5 class="mini">⑤ 訪談缺席的一方</h5>
+  <p>55 分鐘裡，沒有任何隱私倡議者、沒有被監控社區的代表、沒有受害者家屬在場。批評者「Ben Jordan」只被轉述為「他不是要取消技術，只是要護欄」——一個被馴化的反對聲音。這不是 Rick 的錯（這是他的訪談），但作為聽眾要清楚：<strong>這是一場沒有對手的對話</strong>。</p>
+
+  <div class="watch">
+    <h6>五個帶得走的判斷</h6>
+    <ul>
+      <li><strong>生意的三級火箭：</strong>硬件（電擊槍）→ 數據（攝影機＋雲）→ 網絡（無人機、機械人、跨局協作）。每一級都把轉換成本推高一個數量級。這是 Axon 估值脫離硬件週期的真正原因。</li>
+      <li><strong>監管不是風險，是護城河。</strong>Hawley 法案把「案件代碼 + 雙人授權」變成行業標準，對已建好合規系統的 Axon 是利好，對小對手是入場費。他公開支持監管，動機與利益完全一致。</li>
+      <li><strong>改變「升級的成本結構」，比發明新武器更有價值。</strong>電擊槍的價值不是「更強」，是「唔使開槍」；無人機的價值不是「更快」，是「唔使人冒生命危險做決定」。所有國防科技的真正賣點都是這個。</li>
+      <li><strong>倫理委員會的真正價值在設計階段。</strong>他親自承認：早期聽，可以改設計；後期聽，只能吵架。這句話適用於所有做 AI 產品的人。</li>
+      <li><strong>對投資者：</strong>Axon 的估值建立在「每個城市最終都會裝」這個假設上。這個假設的最大變數不是技術，是<strong>市議會的政治週期</strong>——Flock 已經示範了一次。</li>
+    </ul>
+  </div>
+</div>
+
+<h2 class="section">其餘五個播客 · 最近無更新</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <h3 style="font-size:22px">本週已掃，暫無新集<span class="badge none">NO UPDATE</span></h3>
+  <p style="font-family:-apple-system,'Helvetica Neue',sans-serif;font-size:14px;color:#7a6a58;margin-top:0">以下為各 feed 最後一集的狀態。前四集在過去幾日的報告已深度拆解，這裡只列索引，不重複內容。</p>
+
+  <div class="lastep">
+    <div class="lastep-label">Acquired</div>
+    <div class="lastep-title">Seinfeld</div>
+    <div class="lastep-meta">2026-10-18 · 約 4 小時 · 最後更新已 24 日</div>
+  </div>
+
+  <div class="lastep">
+    <div class="lastep-label">Founders · #439</div>
+    <div class="lastep-title">How Eiichiro Oda Works</div>
+    <div class="lastep-meta">2026-11-04 · 尾田榮一郎（《One Piece》）的工作方法</div>
+  </div>
+
+  <div class="lastep">
+    <div class="lastep-label">My First Million</div>
+    <div class="lastep-title">What I'd build if I wanted to get rich with AI</div>
+    <div class="lastep-meta">2026-11-09 · 昨日報告已完整拆解八個「atoms」賽道</div>
+  </div>
+
+  <div class="lastep">
+    <div class="lastep-label">The Knowledge Project</div>
+    <div class="lastep-title">Jon McNeill: How Elon Musk Makes Decisions</div>
+    <div class="lastep-meta">2026-11-05 · 前 Tesla 總裁談 Musk 的決策迴路</div>
+  </div>
+
+  <div class="lastep">
+    <div class="lastep-label">The Diary of a CEO</div>
+    <div class="lastep-title">Katt Williams: I Lied My Way Into Comedy!</div>
+    <div class="lastep-meta">2026-11-09 · 「列出你前面 300 個人，然後逐個超越」</div>
+  </div>
+</div>
+
+<h2 class="section">跨播客觀察</h2>
+<div class="rule"></div>
+
+<p>本週六個 feed 有一個不明顯但一致的主題：<strong>AI 正在由「螢幕裡的工具」變成「實體世界的基礎設施」</strong>。MFM 講 atoms 賽道（藥、食物、房屋、國防）；All-In 正刊連續兩週講數據中心資本開支與 AI 拋售；這一集則是把同一條線推到最敏感的終點——當 AI 進入執法，它買的不是效率，是<strong>正當性</strong>。</p>
+
+<p>對 James 的實際啟示只有一條：如果你要判斷一間 AI 公司十年後還在不在，不要只看模型，看它有沒有<em>把某個實體流程的「證據」標準化</em>。Axon 賣的是「現場的標準版本」；Flock 賣的是「車牌的標準版本」；連 Stripe 賣的都是「交易事實的標準版本」。這一層一旦成立，轉換成本以十年計。</p>
+
+<footer>
+  <b>生成時間</b> 2026-11-11 09:53 UTC / 17:53 HKT · 掃描耗時約 6 分鐘<br>
+  <b>來源</b> RSS（6 feeds，全部 HTTP 200）· Apple Podcasts lookup API · All-In 官方 shownotes · PodScripts 完整逐字稿（11,348 字）<br>
+  <b>索引</b> 2,973 集（Acquired 218 / Founders 464 / All-In 444 / MFM 919 / Knowledge Project 20 / Diary of a CEO 908）<br>
+  <b>下次掃描</b> 2026-11-12 09:53 UTC（自動）<br>
+  <span class="src">所有引用均取自公開逐字稿原文；管理層自述數字已標注，未經獨立審計核實。</span>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,5 +1,5 @@
 {
- "lastScan": "2026-11-10T09:56:27Z",
+ "lastScan": "2026-11-11T09:57:05Z",
  "scannedEpisodes": {
   "acquired": [
    "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -1136,7 +1136,8 @@
    "8173444f-00cd-4027-8d2f-c9e911ae2a95",
    "25ed3987-a02b-434e-8a71-ed74bad8e863",
    "6b0acd19-a13a-4474-8e02-402215408f4f",
-   "53093a95-1b90-4228-aaf2-2d8ee77fd504"
+   "53093a95-1b90-4228-aaf2-2d8ee77fd504",
+   "8de68398-23b0-492c-b5d4-f18ff7bd227f"
   ],
   "my-first-million": [
    "008875e2-1b94-11f0-88fe-3312f0cbe7a3",
@@ -3043,5 +3044,6 @@
   "newEpisodes": 0,
   "feedsOk": 6,
   "note": "all feeds 200, no new GUIDs; All-In 8d gap noted"
- }
+ },
+ "lastReport": "daily-report-2026-11-11.html"
 }
