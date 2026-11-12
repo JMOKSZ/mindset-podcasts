@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-11-12</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a; --warn:#a4442f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;line-height:1.85;font-size:17px}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.95;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  .note b{color:#8a5c14}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:28px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  .badge{display:inline-block;vertical-align:middle;margin-left:10px;padding:3px 9px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10px;letter-spacing:.14em;
+    background:#f3e6cc;color:#8a5c14;border:1px solid #e3cfa8;border-radius:2px;font-weight:600}
+  .badge.grey{background:#f1ece4;color:#7a6a58;border-color:#e0d7c8}
+  h4.sub{font-size:20px;font-weight:normal;margin:40px 0 10px;color:#3a2f21;
+    border-bottom:1px dotted var(--line);padding-bottom:6px}
+  h5.mini{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin:30px 0 6px;font-weight:600}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:16px}
+  .card{background:var(--card);border:1px solid var(--line);padding:30px 32px;margin:0 0 22px}
+  .epmeta{display:grid;grid-template-columns:88px 1fr;gap:2px 14px;margin:0 0 24px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;
+    background:#faf6ee;border:1px solid #eee3d2;padding:16px 18px}
+  .epmeta dt{color:var(--muted);letter-spacing:.04em}
+  .epmeta dd{margin:0;color:#3a2f21}
+  p{margin:0 0 18px}
+  blockquote{margin:26px 0;padding:4px 0 4px 22px;border-left:3px solid var(--accent);
+    font-size:17.5px;line-height:1.8;color:#3a2f21}
+  blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:13.5px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;color:var(--muted)}
+  blockquote p{margin:0 0 10px}
+  blockquote p:last-child{margin:0}
+  ul.tight{margin:12px 0 18px;padding-left:22px}
+  ul.tight li{margin:0 0 9px}
+  ol.tight{margin:12px 0 18px;padding-left:22px}
+  ol.tight li{margin:0 0 10px}
+  table{width:100%;border-collapse:collapse;margin:22px 0 26px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13.5px;line-height:1.65}
+  th{text-align:left;padding:9px 10px;border-bottom:2px solid var(--ink);font-weight:600;font-size:12px;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  td.num{white-space:nowrap;color:var(--accent);font-variant-numeric:tabular-nums;font-weight:600}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:24px 0}
+  .split>div{background:var(--card);padding:18px 20px}
+  .split h6{margin:0 0 8px;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .split p{margin:0;font-size:15px;line-height:1.75}
+  .verdict{background:#f2f7f3;border:1px solid #d6e6da;padding:20px 22px;margin:26px 0;font-size:16.5px}
+  .verdict b{color:#2f6b47}
+  .caution{background:#fbf3f0;border:1px solid #ecd6cd;padding:20px 22px;margin:26px 0;font-size:16.5px}
+  .caution b{color:#8d3b27}
+  .lastep{margin:16px 0 4px;padding:14px 16px;background:#faf6ee;border-left:2px solid #dcc9a8}
+  .lastep-label{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted)}
+  .lastep-title{font-size:18.5px;margin-top:4px;line-height:1.5}
+  .lastep-meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;color:var(--muted);margin-top:3px}
+  .watch{background:#fffdf9;border:1px solid var(--line);padding:22px 24px;margin:26px 0 0}
+  .watch h6{margin:0 0 12px;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .watch ul{margin:0;padding-left:20px;font-size:15.5px}
+  .watch li{margin:0 0 10px}
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;color:var(--muted);line-height:1.9}
+  .src{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);line-height:1.8}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid #e0c9a4}
+  @media (max-width:640px){
+    h1{font-size:30px} h3{font-size:23px} .stats{grid-template-columns:repeat(2,1fr)}
+    .split{grid-template-columns:1fr} .card{padding:22px 20px} .epmeta{grid-template-columns:1fr}
+    .epmeta dt{margin-top:8px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcasts · Daily Deep Scan</div>
+  <h1>一個談權力的人，開始談「崇高」<br>一個談腦退化的人，收到一份逐句核對報告</h1>
+  <p class="date">2026 年 11 月 12 日 · 星期四</p>
+  <div class="meta">
+    <b>掃描時間</b> 2026-11-12 09:53 UTC / 17:53 HKT<br>
+    <b>覆蓋</b> 6 個播客 · 6 條 RSS 全部 HTTP 200 · 共 2,975 集索引<br>
+    <b>本期</b> 新集數 2 集（共 3 小時 18 分音頻）· 其餘 4 個播客最近無更新<br>
+    <b>萃取方式</b> RSS 原始 shownotes ＋ 章節時間軸 ＋ DOAC 官方附上的獨立事實核查 PDF（16 章、209 條參考文獻）逐段讀完
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">6</div><div class="l">播客來源</div></div>
+  <div class="stat"><div class="n">2</div><div class="l">新集數</div></div>
+  <div class="stat"><div class="n">3.3<span style="font-size:15px">h</span></div><div class="l">新音頻長度</div></div>
+  <div class="stat"><div class="n">2,975</div><div class="l">累計索引集數</div></div>
+</div>
+
+<p class="lede">今日兩集，剛好是一組對照。Robert Greene 用了三十年研究「人怎樣影響人」，七十幾歲差點死一次之後，轉去研究<em>人怎樣被更大的東西影響</em>——宇宙、死亡、別人的內心。另一邊，神經科醫生 David Perlmutter 講的是一套很硬、很可執行的東西：腦退化不是命運，是代謝選擇。但這一集真正值得留意的地方不在內容，而在它旁邊那份 209 條參考文獻的核查報告——<em>它把「聽起來很有道理」和「研究真的這樣說」之間那條縫，逐句量了出來。</em></p>
+
+<div class="note">
+  <b>點聽：</b>想听故事、找回一點「活著很怪」的感覺 → My First Million 那集（1:22:28）。想要一套可以今晚就改的具體做法 → Diary of a CEO 那集（1:56:02），但請連核查結論一齊讀。<br>
+  <b>點讀：</b>Perlmutter 那集我按「他真的說了什麼 / 研究實際說什麼」並排寫，第 4 節有六條爭議點的對照表。只想拿行動清單，跳到最尾「今日橫向觀察」。<br>
+  <b>誠實提示：</b>Greene 那集官方冇提供逐字稿，我手上只有 12 個章節標題同出版社書介原文，所以該段以「章節脈絡 + 書介原文引用」交代，<strong>沒有虛構他沒說過的話</strong>。Perlmutter 那集相反，引文全部來自官方核查報告的逐字節錄，可信度高，但報告由 PhiloScript Ltd 獨立撰寫、 podcast 本身並未背書，這一點我照樣標明。
+</div>
+
+<h2 class="section">本期新集數 · 2 集</h2>
+<div class="rule"></div>
+
+<!-- ============ MFM ============ -->
+<div class="card">
+  <h3>Robert Greene almost died. Here’s what it taught him about living<span class="badge">NEW</span></h3>
+  <div class="byline">My First Million · Episode 881 · Shaan Puri &amp; Sam Parr × Robert Greene</div>
+
+  <dl class="epmeta">
+    <dt>發布</dt><dd>2026-11-11 13:43 UTC</dd>
+    <dt>長度</dt><dd>1:22:28</dd>
+    <dt>嘉賓</dt><dd>Robert Greene —《The 48 Laws of Power》《Mastery》《The Laws of Human Nature》作者</dd>
+    <dt>新書</dt><dd>《The Law of the Sublime》（2026）</dd>
+    <dt>形式</dt><dd>雙主持對談，非單向演講</dd>
+  </dl>
+
+  <h4 class="sub">一、這一集其實是一次「主題轉向」的公開說明</h4>
+  <p>Greene 過去三十年的品牌是「權力」。1998 年《The 48 Laws of Power》賣到 multimillion-copy（出版社口徑），之後《The Art of Seduction》《The 33 Strategies of War》《Mastery》《The Laws of Human Nature》一路沿著同一條線：<strong>人是可以被讀懂的，而讀懂是為了不被宰割。</strong></p>
+  <p>新書轉向「崇高」（the Sublime）。出版社的定位寫得很清楚，這也是理解整集的鑰匙：</p>
+  <blockquote>
+    <p>“We struggle today to find more meaning in our lives, and to experience the world in ways that go beyond the virtual. The Sublime connects us to the immense forces in the universe, to the inner worlds of other people, and even to other species, lifting us out of ourselves and giving us the dimensions and depths we yearn for in our lives.”</p>
+    <cite>《The Law of the Sublime》出版社書介原文（Penguin Random House）</cite>
+  </blockquote>
+  <p>注意這句 “beyond the virtual”。一個靠分析人心吃飯的人，最後把病因指向「間接經驗太多」——這是整集最大的張力，也是為什麼一檔講生意、講賺錢的節目會請他來。</p>
+
+  <h4 class="sub">二、十二個章節，其實是一條下降再上升的曲線</h4>
+  <p>官方 shownotes 給了完整時間軸。把它們排開看，結構非常清楚：先診斷（我哋個個都唔開心），再給藥（走出去、感受巨大），然後才回到技術層面（少講話、消失、AI、寫作、領導）。</p>
+
+  <table>
+    <thead><tr><th>時間</th><th>章節</th><th>它在整集裡的功能</th></tr></thead>
+    <tbody>
+      <tr><td class="num">0:00</td><td>People Are Suffering</td><td>開場即反常識：不是講成功，是講痛苦</td></tr>
+      <tr><td class="num">2:00</td><td>Everything Is Amazing and No One Is Happy</td><td>引用 Louis CK 的經典段子作診斷框架（shownotes 直接連去該片段）</td></tr>
+      <tr><td class="num">10:45</td><td>Go Outside</td><td>第一個處方：離開室內、離開螢幕</td></tr>
+      <tr><td class="num">14:20</td><td>Feeling Flat</td><td>描述「扁平感」——不是抑鬱，是失去立體感</td></tr>
+      <tr><td class="num">18:00</td><td>The Immense and the Impossible</td><td>全集核心概念：人需要被大過自己的東西壓住</td></tr>
+      <tr><td class="num">29:35</td><td>Say Less Than Necessary</td><td>回到《48 Laws》第 4 條的原始命題</td></tr>
+      <tr><td class="num">30:05</td><td>Disappear</td><td>缺席作為一種存在方式（與社交媒體相反的策略）</td></tr>
+      <tr><td class="num">35:30</td><td>Robert's AI Prediction</td><td>他對 AI 的判斷——本集唯一的前瞻段落</td></tr>
+      <tr><td class="num">40:55</td><td>Handwriting a 400-Page Book</td><td>工藝：400 頁手寫，對抗「生成」</td></tr>
+      <tr><td class="num">41:25</td><td>Surviving Near-Death Experiences</td><td>標題事件；通往死亡、意義、Frankl 的入口</td></tr>
+      <tr><td class="num">49:20</td><td>Mythical Leaders</td><td>領導力的敘事層：人為什麼需要神話</td></tr>
+      <tr><td class="num">59:10</td><td>Brimming With Confidence</td><td>收尾：不是自信的技巧，是自信的來源</td></tr>
+    </tbody>
+  </table>
+
+  <h4 class="sub">三、兩個值得停下來想的點</h4>
+  <p><strong>「Say Less Than Necessary」出現在第 29 分，不是偶然。</strong>這是他 1998 年寫下的第 4 條法則，二十八年後在一個講「意義」的集數裡原封不動回來。這說明他的轉向不是斷裂，而是同一套世界觀換了對象：以前用「少說」保護自己不被看穿，現在用「少說」騰出空間去感受。同一個動作，兩種目的。</p>
+  <p><strong>手寫 400 頁，是對 AI 時代最安靜的一次表態。</strong>章節把它放在「AI 預言」之後五分鐘，位置本身就是論點：你先聽我預測機器能做什麼，再聽我用最沒有效率的方式做一本書。這不是懷舊，是把「摩擦」當成一種認識工具——手寫慢，所以每一句都被迫想清楚。</p>
+
+  <div class="verdict">
+    <b>這一集對做內容／做產品的人意味著什麼：</b>「意義赤字」是一個真實的市場。當所有供給都變成無限、即時、免費，「有摩擦、有深度、需要你付出時間」的東西會反向升值。Greene 賣的不是雞湯，是<strong>一種高價值的注意力結構</strong>——而這正好是訂閱制、社群、線下體驗正在搶的東西。
+  </div>
+
+  <h5 class="mini">本集延伸閱讀（官方 shownotes 列出，非我補充）</h5>
+  <ul class="tight">
+    <li>Viktor E. Frankl《Man's Search for Meaning》— 意義心理學的原點</li>
+    <li>Jonathan Freedland《The Escape Artist》— 逃出奧斯威辛的人如何把消息帶出去</li>
+    <li>Susan Blackmore《Dying to Live: Near-Death Experiences》— 瀕死經驗的理性梳理</li>
+    <li>Louis CK “Everything Is Amazing and Nobody Is Happy” — 本集診斷框架的來源</li>
+  </ul>
+  <p class="src">原集：<a href="https://www.mfmpod.com/robert-greene-almost-died-heres-what-it-taught-him-about-living/">mfmpod.com</a> · <a href="https://podcasts.apple.com/us/podcast/robert-greene-almost-died-heres-what-it-taught-him/id1469759170?i=1000801217920">Apple Podcasts</a></p>
+</div>
+
+<!-- ============ DOAC ============ -->
+<div class="card">
+  <h3>Top Neurologist: If You Drink Even Once A Week, Watch This Now!<span class="badge">NEW</span></h3>
+  <div class="byline">The Diary of a CEO · Steven Bartlett × Dr. David Perlmutter</div>
+
+  <dl class="epmeta">
+    <dt>發布</dt><dd>2026-11-12 06:00 UTC（今晨）</dd>
+    <dt>長度</dt><dd>1:56:02</dd>
+    <dt>嘉賓</dt><dd>Dr. David Perlmutter — 神經科專科醫生；《Grain Brain》《Brain Maker》《Drop Acid》作者</dd>
+    <dt>新書</dt><dd>《Brain Defenders》</dd>
+    <dt>特別附件</dt><dd>一併發布 16 章、209 條參考文獻的獨立事實核查報告（PhiloScript Ltd）</dd>
+  </dl>
+
+  <h4 class="sub">一、整集的中心命題</h4>
+  <p>開場那句就是全集的鑰匙，也是最有争议的一句：</p>
+  <blockquote>
+    <p>“What we really understand now, in fact the greatest development in neuroscience, is that our lifestyle choices are really the architects of our brain’s destiny… And it is significantly preventable. That’s the message that I’ve got to get out.”</p>
+    <cite>Dr David Perlmutter，節錄自 PhiloScript 核查報告逐字引文</cite>
+  </blockquote>
+  <p>把「認知衰退」由<strong>基因宿命</strong>重新定義為<strong>每日的代謝選擇</strong>，這是整集 116 分鐘反覆回到的一條線。他給的五根支柱，官方 shownotes 寫得很完整：</p>
+  <ol class="tight">
+    <li><strong>The Evil Twin Phenomenon</strong>——高血糖與發炎把大腦的保護性微膠細胞（microglia）「劫持」，由支援型（M2）翻轉成破壞型（M1），開始吞噬健康突觸。</li>
+    <li><strong>The Power of Exercise</strong>——建肌肉不是為了外形，是為了分泌保護性物質、再生神經元、阻斷認知衰退。</li>
+    <li><strong>The Oxytocin Shield</strong>——深度社交連結與社群整合，會實質改變大腦的發炎反應。</li>
+    <li><strong>The Glymphatic Street Cleaners</strong>——錯過第四期深睡，等於當晚沒有清走澱粉樣蛋白（amyloid-beta）。</li>
+    <li><strong>The 40Hz Reset</strong>——特定頻率的閃光與聲音，可以把「叛變」的腦細胞調回守衛狀態。</li>
+  </ol>
+
+  <h4 class="sub">二、真正值錢的部分：他說的 vs 研究說的</h4>
+  <p>這一集在香港／台灣的 podcast 圈值得單獨提出來，是因為 DOAC 今次附了一份由第三方 PhiloScript Ltd 撰寫的核查報告，逐句對照 peer-reviewed 研究、systematic review 與 meta-analysis。報告開頭就聲明「not endorsed by the podcast, its host or its guest」——這個姿態本身，比任何一集內容都更值得業界參考。</p>
+
+  <table>
+    <thead><tr><th>爭議點</th><th>Perlmutter 在節目中的說法</th><th>核查報告的結論</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>糖配給與阿茲海默</strong></td>
+        <td>1953 年英國結束糖配給，在胎兒期及頭兩年受限的人，日後阿茲海默風險<strong>降低 40%</strong></td>
+        <td>方向成立，幅度<strong>偏大</strong>。主研究（Neurology）：癡呆 HR 0.77（−23%）、阿茲海默 HR 0.72（−28%），發病平均延後 2.87 年；另一研究報 −27%／−46%</td>
+      </tr>
+      <tr>
+        <td><strong>APOE4 風險倍數</strong></td>
+        <td>帶一個 copy 風險升<strong>約 5 倍</strong>；帶兩個（E4/E4）可高達<strong>12 倍</strong></td>
+        <td><strong>明顯高估</strong>。一個 copy 的 OR 由 1.90（Hispanic）到 4.54（東亞），白人 3.46；兩個 copy 的 meta-analysis 為 5.48–7.08。約 23.9% 人口至少帶一個</td>
+      </tr>
+      <tr>
+        <td><strong>酒精與腦</strong></td>
+        <td>舊數據的 U 形曲線是錯覺，「任何酒精攝取大概都對大腦不好」</td>
+        <td><strong>方向獲支持</strong>。Mendelian randomisation 找不到保護性低谷；UK Biobank ＋ Million Veteran Program：每週 &gt;40 杯者 HR 1.41。Whitehall II：每週 14–21 units 者海馬體萎縮 OR 3.4</td>
+      </tr>
+      <tr>
+        <td><strong>微膠細胞與酒精</strong></td>
+        <td>引用書中研究：binge-level 酒精 24 小時，微膠細胞清 amyloid 能力<strong>下降 15%</strong></td>
+        <td>細胞研究實際為<strong>約 16%</strong>，方向一致；但年老老鼠實驗在雌性身上<strong>結果相反</strong>——動物與人體落差需保留</td>
+      </tr>
+      <tr>
+        <td><strong>40Hz 光聲治療</strong></td>
+        <td>「她的臨床試驗結果<strong>比任何針對 beta-amyloid 的藥都好</strong>」</td>
+        <td><strong>不被支持</strong>。OVERTURE（76 人、六個月、對照假裝置）安全、無 ARIA，但<strong>主要臨床終點未達標</strong>；2025 年 11 項研究／341 人的 meta-analysis：腦結構有變化，認知與日常功能<strong>無顯著改善</strong></td>
+      </tr>
+      <tr>
+        <td><strong>「可預防」的程度</strong></td>
+        <td>阿茲海默「significantly preventable」</td>
+        <td><strong>語氣過強</strong>。風險確實可降，但主要證據來自觀察性研究；<strong>至今沒有大型隨機對照試驗證明阿茲海默本身可被預防</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 class="sub">三、三段值得抄下來的原話</h4>
+
+  <blockquote>
+    <p>“There was a lot of data that showed that there was what we call a U-shaped curve in terms of dementia risk… With consumption, the risk went down a bit: one glass of wine per day for women, two glasses of wine per day for men. But then the U comes back up… And it turns out that reassessing that indicates that really any alcohol consumption is probably not good for the brain.”</p>
+    <cite>Dr David Perlmutter — 關於酒精的 U 形曲線</cite>
+  </blockquote>
+  <p>這段的重要性在於他<strong>主動推翻了自己陣營以往的便利說法</strong>。過去十年「適量紅酒護心護腦」被大量引用，而新的基因工具（Mendelian randomisation）正好是用來拆這種觀察性研究偏誤的。核查報告補了一刀：很多人因為早期症狀而在確診前幾年戒酒，這種「反向因果」會讓輕度飲酒者看起來更健康。</p>
+
+  <blockquote>
+    <p>“Alcohol itself is a neurotoxin… It is directly toxic to neurons. And from my perspective… it helps polarise our microglial cells away from being supportive.”</p>
+    <cite>Dr David Perlmutter — 酒精對神經元與微膠細胞的直接作用</cite>
+  </blockquote>
+  <p>然後 Steven 追問書中第 102 頁那個 15% 的數字，Perlmutter 的回應很坦白：「I can’t afford a 15% reduction. They’re already downregulated, towards M1, because of my age.」——這句話把整集的隱藏邏輯講清楚了：<strong>不是「喝酒會致病」，而是「你的清潔隊本來就已經人手不足，你還再裁員 15%」。</strong>這是從「劑量—反應」轉向「儲備—侵蝕」的框架，比單純的「少飲酒」有力得多。</p>
+
+  <blockquote>
+    <p>“Carrying more of the APOE2s is associated with a pretty dramatic risk reduction. APOE3 is neutral, but carrying the APOE4 allele, like about 25% of people, is associated with an increased risk of Alzheimer’s… if you carry one, by about fivefold.”</p>
+    <cite>Dr David Perlmutter — APOE4 風險說明（倍數部分被核查報告指為高估）</cite>
+  </blockquote>
+  <p>這一段我特意保留原話再加註，因為它示範了一件事：<strong>一位好講者最容易出錯的地方，往往是他最想讓你記住的那個數字。</strong>「5 倍」比「2 到 3.5 倍」好記、好傳播，但它不是文獻的中位數。這不是造假，是修辭壓力下的滑動——而讀者要學的正是分辨這個。</p>
+
+  <h4 class="sub">四、可以今晚就做的，其實很沉悶</h4>
+  <div class="split">
+    <div>
+      <h6>證據較硬（做就對了）</h6>
+      <p>重肌力訓練；每週酒精越少越好；控制血糖與腰圍；保護深睡（第四期）；維持真實社交；減少超加工食品。這六項在核查報告裡全部站得住。</p>
+    </div>
+    <div>
+      <h6>證據較薄（別當療程）</h6>
+      <p>40Hz 光聲裝置、生酮飲食治癒失智、metformin 給健康人抗老、各類補充劑。方向有趣，但人體證據未到位，價錢卻已經是產品價。</p>
+    </div>
+  </div>
+
+  <div class="caution">
+    <b>要留神的兩點：</b>（一）本集嘉賓有新書《Brain Defenders》要賣，整集的敘事重心自然偏向「你可以自己救自己」——這與「等藥物」的公共衛生路線是競爭關係。（二）核查報告由第三方撰寫、podcast 未背書，但它是<strong>受託製作</strong>的，並非學術同儕評審；它把話講得比節目保守，這已經很有價值，但不宜當成最終裁決。
+  </div>
+
+  <h5 class="mini">章節導航（官方時間軸，全 36 節）</h5>
+  <p class="src">02:16 為何要預防阿茲海默 · 07:36 失智其實何時開始 · 11:57 五大生活型態成因 · 13:53 APOE4 是否等於判死刑 · 16:27 運動如何降低風險 · 21:40 孤獨如何升風險 · 23:52 微膠細胞「邪惡雙胞胎」· 35:04 睡眠如何傷腦 · 38:22 發炎如何劫持決策 · 41:34 一杯橙汁有多少糖 · 44:54 CGM 揭示的飲食真相 · 48:13 麩質與嘉磷塞 · 55:58 多酚食物 · 61:24 二型糖尿病／阿茲海默／柏金遜的三角 · 63:08 內臟脂肪 · 65:13 是否任何酒精都不安全 · 68:15 女性風險為何是兩倍 · 70:25 40Hz 光聲 · 75:20 糖配給研究 · 76:43 腸道菌 · 80:42 頭部創傷 · 83:48 糖尿病患者的腦外傷 · 85:07 健康人該吃 metformin 嗎 · 89:11 他 15 歲寫的那封信 · 90:35 成為祖父之後 · 93:37 已確診者現在能做什麼 · 96:38 生酮飲食 · 99:32 他自己吃的補充劑 · 101:39 失智是什麼感覺 · 107:38 兒子 Austin 的信 · 112:13 重新連結</p>
+  <p class="src">原集：<a href="https://podcasts.apple.com/us/podcast/id1291423644">Apple Podcasts</a> · 核查報告：<a href="https://stevenbartlett.com/wp-content/uploads/2026/11/Independent-Research-Perlmutter-DOAC-PhiloScript.pdf">PhiloScript PDF</a></p>
+</div>
+
+<h2 class="section">其餘四個播客 · 最近無更新</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <h3 style="font-size:22px">Acquired<span class="badge grey">無新集</span></h3>
+  <div class="lastep">
+    <div class="lastep-label">Last known episode</div>
+    <div class="lastep-title">Seinfeld</div>
+    <div class="lastep-meta">2026-10-19 04:00 UTC · 已於往期掃描收錄 · 距今日 24 天</div>
+  </div>
+  <p class="src">218 集索引 · 最近三個月更新節奏明顯放緩，屬正常季休。</p>
+</div>
+
+<div class="card">
+  <h3 style="font-size:22px">Founders<span class="badge grey">無新集</span></h3>
+  <div class="lastep">
+    <div class="lastep-label">Last known episode</div>
+    <div class="lastep-title">#439 How Eiichiro Oda Works</div>
+    <div class="lastep-meta">2026-11-04 19:18 UTC · 已收錄 · 距今日 8 天</div>
+  </div>
+  <p class="src">464 集索引。尾田榮一郎那一集講的是「長期連載作為一種耐力工程」，與今日 Greene 那集的「手寫 400 頁」可對讀。</p>
+</div>
+
+<div class="card">
+  <h3 style="font-size:22px">All-In<span class="badge grey">無新集</span></h3>
+  <div class="lastep">
+    <div class="lastep-label">Last known episode</div>
+    <div class="lastep-title">Freedom vs. Safety: Axon CEO Rick Smith on the Future of Policing</div>
+    <div class="lastep-meta">2026-11-10 23:03 UTC · 昨日已深度掃描 · 距今日 1 天</div>
+  </div>
+  <p class="src">444 集索引。昨日報告已完整拆解，今日不重複。</p>
+</div>
+
+<div class="card">
+  <h3 style="font-size:22px">The Knowledge Project<span class="badge grey">無新集</span></h3>
+  <div class="lastep">
+    <div class="lastep-label">Last known episode</div>
+    <div class="lastep-title">Jon McNeill: How Elon Musk Makes Decisions</div>
+    <div class="lastep-meta">2026-11-05 10:55 UTC · 已收錄 · 距今日 7 天</div>
+  </div>
+  <p class="src">20 集索引（RSS 只保留近期）。此集談決策壓縮與「第一原理在組織內如何落地」，與今日 Perlmutter 的「代謝決策」形成有趣的雙關。</p>
+</div>
+
+<h2 class="section">今日橫向觀察</h2>
+<div class="rule"></div>
+
+<div class="watch">
+  <h6>三條線，串起今日兩集</h6>
+  <ul>
+    <li><strong>兩集都在講「儲備」，不是「避免」。</strong>Greene 說人要有被巨大事物壓住的經驗，才有立體感；Perlmutter 說你的微膠細胞本來就在老化，任何額外傷害都是在削減儲備。同一個結構：不是找一個完美狀態，是減慢侵蝕速度。</li>
+    <li><strong>兩集都對「即時、無限、無摩擦」有意見。</strong>一邊是手寫 400 頁與「消失」；一邊是深睡、重肌力、真實社交——全部都是<strong>慢、費力、不能外包</strong>的事。這可能是 2026 年最一致的一條反潮流主張。</li>
+    <li><strong>可信度正在成為新資產。</strong>DOAC 主動附上會打自己臉的核查報告，這在 podcast 界仍然罕見。當 AI 令內容供給無限，「有沒有人幫你核對」會比「講得多好聽」更值錢。</li>
+  </ul>
+</div>
+
+<footer>
+  生成時間：2026-11-12 09:53 UTC（17:53 HKT）· 掃描器 v2（feedparser + RSS 直取）<br>
+  本報告由 RSS 原始 shownotes、Apple Podcasts 官方描述、出版社書介，以及 DOAC 隨集發布的獨立核查 PDF 整理而成。所有引文均標明出處；未能取得逐字稿的集數，一律以章節脈絡交代，不作虛構引述。<br>
+  Repo：<a href="https://github.com/JMOKSZ/mindset-podcasts">JMOKSZ/mindset-podcasts</a> · 存檔：<a href="https://jmoksz.github.io/mindset-podcasts/">jmoksz.github.io/mindset-podcasts</a>
+</footer>
+
+</div>
+</body>
+</html>
