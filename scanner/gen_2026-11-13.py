@@ -1,0 +1,422 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+import io, os
+
+OUT = "/root/.openclaw/workspace/mindset-podcasts/daily-report-2026-11-13.html"
+
+HTML = r"""<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-11-13</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a; --warn:#a4442f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;line-height:1.85;font-size:17px}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.95;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  .note b{color:#8a5c14}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:28px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  .badge{display:inline-block;vertical-align:middle;margin-left:10px;padding:3px 9px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10px;letter-spacing:.14em;
+    background:#f3e6cc;color:#8a5c14;border:1px solid #e3cfa8;border-radius:2px;font-weight:600}
+  .badge.grey{background:#f1ece4;color:#7a6a58;border-color:#e0d7c8}
+  h4.sub{font-size:20px;font-weight:normal;margin:40px 0 10px;color:#3a2f21;
+    border-bottom:1px dotted var(--line);padding-bottom:6px}
+  h5.mini{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin:30px 0 6px;font-weight:600}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:16px}
+  .card{background:var(--card);border:1px solid var(--line);padding:30px 32px;margin:0 0 22px}
+  .epmeta{display:grid;grid-template-columns:88px 1fr;gap:2px 14px;margin:0 0 24px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;
+    background:#faf6ee;border:1px solid #eee3d2;padding:16px 18px}
+  .epmeta dt{color:var(--muted);letter-spacing:.04em}
+  .epmeta dd{margin:0;color:#3a2f21}
+  p{margin:0 0 18px}
+  blockquote{margin:26px 0;padding:4px 0 4px 22px;border-left:3px solid var(--accent);
+    font-size:17.5px;line-height:1.8;color:#3a2f21}
+  blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:13.5px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;color:var(--muted)}
+  blockquote p{margin:0 0 10px}
+  blockquote p:last-child{margin:0}
+  ul.tight{margin:12px 0 18px;padding-left:22px}
+  ul.tight li{margin:0 0 9px}
+  ol.tight{margin:12px 0 18px;padding-left:22px}
+  ol.tight li{margin:0 0 10px}
+  table{width:100%;border-collapse:collapse;margin:22px 0 26px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13.5px;line-height:1.65}
+  th{text-align:left;padding:9px 10px;border-bottom:2px solid var(--ink);font-weight:600;font-size:12px;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  td.num{white-space:nowrap;color:var(--accent);font-variant-numeric:tabular-nums;font-weight:600}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:24px 0}
+  .split>div{background:var(--card);padding:18px 20px}
+  .split h6{margin:0 0 8px;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .split p{margin:0;font-size:15px;line-height:1.75}
+  .verdict{background:#f2f7f3;border:1px solid #d6e6da;padding:20px 22px;margin:26px 0;font-size:16.5px}
+  .verdict b{color:#2f6b47}
+  .caution{background:#fbf3f0;border:1px solid #ecd6cd;padding:20px 22px;margin:26px 0;font-size:16.5px}
+  .caution b{color:#8d3b27}
+  .lastep{margin:16px 0 4px;padding:14px 16px;background:#faf6ee;border-left:2px solid #dcc9a8}
+  .lastep-label{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted)}
+  .lastep-title{font-size:18.5px;margin-top:4px;line-height:1.5}
+  .lastep-meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;color:var(--muted);margin-top:3px}
+  .watch{background:#fffdf9;border:1px solid var(--line);padding:22px 24px;margin:26px 0 0}
+  .watch h6{margin:0 0 12px;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .watch ul{margin:0;padding-left:20px;font-size:15.5px}
+  .watch li{margin:0 0 10px}
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;color:var(--muted);line-height:1.9}
+  .src{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);line-height:1.8}
+  .quiet{color:var(--muted);font-style:italic}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid #e0c9a4}
+  @media (max-width:640px){
+    h1{font-size:30px} h3{font-size:23px} .stats{grid-template-columns:repeat(2,1fr)}
+    .split{grid-template-columns:1fr} .card{padding:22px 20px} .epmeta{grid-template-columns:1fr}
+    .epmeta dt{margin-top:8px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcasts · Daily Deep Scan</div>
+  <h1>最多人重播的那 23 分鐘<br>是你八歲時簽下的三份合約</h1>
+  <p class="date">2026 年 11 月 13 日 · 星期五</p>
+  <div class="meta">
+    <b>掃描時間</b> 2026-11-13 09:53 UTC / 17:53 HKT<br>
+    <b>覆蓋</b> 6 個播客 · 6 條 RSS 全部 HTTP 200 · 共 2,976 集索引<br>
+    <b>本期</b> 新集數 1 集（23:29 音頻）· 其餘 5 個播客最近無更新<br>
+    <b>萃取方式</b> RSS 原始 shownotes ＋ 原集官方 YouTube 字幕全文（22,563 字）逐段核對 ＋ iTunes / RSS 雙源交叉驗證發布時間
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">6</div><div class="l">播客來源</div></div>
+  <div class="stat"><div class="n">1</div><div class="l">新集數</div></div>
+  <div class="stat"><div class="n">0.4<span style="font-size:15px">h</span></div><div class="l">新音頻長度</div></div>
+  <div class="stat"><div class="n">2,976</div><div class="l">累計索引集數</div></div>
+</div>
+
+<p class="lede">今天是今年掃描過最靜的一日：六條 feed 只有一集新內容，而且是「Most Replayed Moment」——Diary of a CEO 把七個月前那集 Chase Hughes 訪談裡<em>最多人拖回去重聽的 23 分鐘</em>單獨剪出來重發。聽起來像灌水，但這一集的標題本身就是答案：它講的正是「為什麼你的注意力不受你控制」。而你之所以會重播這一段，剛好就是它要解釋的那個機制在運作。</p>
+
+<div class="note">
+  <b>點聽：</b>只有一集，直接聽，23 分鐘。原集（1:56:21、4.8M 次觀看）是 Chase Hughes 講「影響力」的完整版，如果你只聽過片段，建議補完原集——片段講「你為什麼這樣」，原集講「你可以怎樣用」。<br>
+  <b>點讀：</b>下面第 2 至 5 節是片段全文的結構化重寫，三份合約、牆紙練習、微服從、注意力四力。第 6 節是原集才有的框架（PCP 模型、三種權威頻道、樂高簡報法），我逐項標明「片段冇講，來自原集」。<br>
+  <b>誠實提示：</b>本集是舊集重剪，<strong>RSS 只提供 130 字簡介，沒有 shownotes</strong>。所以我沒有靠簡介寫，而是下載原集官方英文字幕（自動生成，22,563 字）逐段讀完，引文全部逐字節錄、只清理口語贅字與斷行。<strong>字幕為機器生成，個別專有名詞可能略有偏差，但語意與句子結構是原話。</strong>凡我推論而非他明說的，都會寫明「這是我的解讀」。<br>
+  <b>關於「重播」這件事：</b>DOAC 這系列叫 “Most Replayed Moment”，是官方按 YouTube 熱度圖挑出來的段落，不是新錄音。發布時間 2026-11-13 06:00 UTC 屬實，內容來自 2026 年 4 月左右的原始訪談。
+</div>
+
+<h2 class="section">本期新集數 · 1 集</h2>
+<div class="rule"></div>
+
+<!-- ============ DOAC ============ -->
+<div class="card">
+  <h3>Most Replayed Moment: The Childhood Scripts Still Running Your Life!<span class="badge">NEW</span></h3>
+  <div class="byline">The Diary of a CEO · Steven Bartlett × Chase Hughes</div>
+
+  <dl class="epmeta">
+    <dt>發布</dt><dd>2026-11-13 06:00 UTC（今晨）</dd>
+    <dt>長度</dt><dd>23:29（1,409 秒）</dd>
+    <dt>性質</dt><dd>舊集精華重剪（原集 1:56:21，2026 年 4 月發布，4.8M 觀看）</dd>
+    <dt>嘉賓</dt><dd>Chase Hughes — 前美國海軍 Chief，20 年應用行為分析與審訊訓練；《Six-Minute X-Ray》作者；客戶含情報機構、警方、特種部隊</dd>
+    <dt>RSS 簡介</dt><dd>只有 130 字，官方未附 shownotes／章節／逐字稿</dd>
+  </dl>
+
+  <h4 class="sub">一、先講清楚這一集到底在講什麼</h4>
+  <p>標題很容易被讀成又一集「童年創傷雞湯」。不是。Hughes 的整個職業是<strong>逆向工程人類行為</strong>——他在海軍做的事，是從一個人的外在行為倒推他的內部程式，然後預測他在壓力下會怎樣反應。這一集他把同一套工具掉轉頭，指向你自己：</p>
+  <blockquote>
+    <p>“A lot of those things are just contracts that were written in a child's voice. And when you start hearing these patterns repeating in your head, force yourself to hear the voice of a kid. That's all it is. It's just a kid who made these choices. It's not an adult.”</p>
+    <cite>Chase Hughes，原集官方字幕</cite>
+  </blockquote>
+  <p>「合約」（contract）是這一集的關鍵詞，而且他用得非常精準。合約的意思是：<strong>雙方同意、有條款、有對價、可以違約，但違約有成本。</strong>一個八歲小孩在客廳裡簽下的條款——「我唔出聲就安全」——三十年後仍然在執行，因為從來沒有人告訴他合約已經到期。</p>
+
+  <h4 class="sub">二、三份合約：安全、朋友、獎賞</h4>
+  <p>他把童年拆成三個場景，對應成年後的三個自我。這段是整個片段的骨架，值得完整抄下來：</p>
+  <blockquote>
+    <p>“We're typically three different people, all of us. We have a work self, like a professional kind of self. We have a home self. And we have a self with friends. And what is that as a kid? That's classroom, playground, home.”</p>
+    <cite>Chase Hughes，原集官方字幕</cite>
+  </blockquote>
+  <p>於是「童年發展三角」長這樣：</p>
+
+  <table>
+    <thead><tr><th>場景（童年）</th><th>對應自我（成年）</th><th>當年要解決的問題</th><th>成年後的表現</th></tr></thead>
+    <tbody>
+      <tr><td class="num">Home 家</td><td>Home self 家庭中的你</td><td>如何在權威（父母）情緒不穩時保持安全</td><td>對伴侶語氣極敏感；預先道歉；迴避衝突</td></tr>
+      <tr><td class="num">Playground 操場</td><td>Friends self 朋友中的你</td><td>如何被接納、不被排擠</td><td>討好、講笑、永遠做那個先讓步的人</td></tr>
+      <tr><td class="num">Classroom 課室</td><td>Work self 職場中的你</td><td>如何換取認可與獎賞</td><td>過度交付、以產出換存在感、無法停手</td></tr>
+    </tbody>
+  </table>
+
+  <p>三個問題，就是他叫人拿去問身邊親近的人（包括團隊）的原話。注意每一條都刻意用「你做過什麼」而不是「你覺得為什麼」——問行為，唔問自我敘述，因為人對自己的解釋通常是事後編的：</p>
+  <blockquote>
+    <p>“What did you do to make and keep friends?”<br>
+    “What did you need to do or avoid to feel safe?”<br>
+    “What did you feel like you had to do to earn rewards — and what were rewards to you?”</p>
+    <cite>Chase Hughes，原集官方字幕（Steven 逐條回問確認的原句）</cite>
+  </blockquote>
+  <p>第三條他特別強調要放入「feel」這個字，並且補了一個很銳利的例子：</p>
+  <blockquote>
+    <p>“They never got rewards because their parents ignored them unless they brought home a certificate, their teacher called and said they did a good job, they played the piano recital and did a great job and lots of people were acknowledging them and clapping for them. They only got acknowledged when they were socially significant.”</p>
+    <cite>Chase Hughes，原集官方字幕</cite>
+  </blockquote>
+  <p>這解釋了一種很常見、但很少被說清楚的人：<strong>不是貪錢，是需要被看見。</strong>勞力士、法拉利、發言權、追蹤數，都只是「社會顯著性」的替代貨幣。你骂他虛榮沒有用，因為他買的不是手錶，是當年那張沒拿到的獎狀。</p>
+
+  <div class="split">
+    <div>
+      <h6>Steven 的自我對照（本集最好的一段誠實）</h6>
+      <p>Bartlett 當場拆自己：在 1994/95 年的 Plymouth，他是「那個黑人家庭」的小孩，區裡幾乎沒有第二戶。他想要的球鞋不是為了鞋，是為了<em>看起來屬於這裡</em>。「That got me friends. Or at least I thought it did.」——三份合約在他身上是連起來的：安全感用「合群」買，合群用「物質」買。</p>
+    </div>
+    <div>
+      <h6>Hughes 的觀察（同事 Sarah 的例子）</h6>
+      <p>一位同事每次抬眼都已經在看著他——過度分析、預判二十步。原因是父親情緒隨時突變，她從小訓練成「極端的預判者」。Hughes 的評語很公道：這讓她<em>在工作上極出色</em>，但「one might assume that comes at some kind of cost」。同一個機制，既是天賦也是稅。</p>
+    </div>
+  </div>
+
+  <h4 class="sub">三、為什麼這份合約三十年都撕不掉</h4>
+  <p>這是我認為整集最有價值的一段，因為它放棄了「放下」這種空話，改為解釋<strong>為什麼「知道」不等於「改變」</strong>：</p>
+  <blockquote>
+    <p>“The voice is not going to go away. That's the sad part. That's like me, you, trying to not complete the sentence ‘Mary had a little—' in your head. You can't get rid of it. No matter how hard you try to delete that, it's repeated over years and years.”</p>
+    <cite>Chase Hughes，原集官方字幕</cite>
+  </blockquote>
+  <p>然後是那句真正的轉折：</p>
+  <blockquote>
+    <p>“What truly changes for you is hearing a child. Hearing a misguided child who developed a coping mechanism for the world — not knowing that they just assumed ‘I'm going to have this forever. I'm going to need this as an adult.'”</p>
+    <cite>Chase Hughes，原集官方字幕</cite>
+  </blockquote>
+  <p>用認知科學的語言翻譯：你不可能刪除一條被反覆強化過的神經路徑，你只能改變<strong>它被歸類為誰的聲音</strong>。同一句「我唔夠好」，歸類為「我的判斷」→ 它是事實；歸類為「八歲的我當時的推論」→ 它是一個小孩在資訊不足下做的風險管理。內容不變，作者變了，效力就變了。</p>
+
+  <h4 class="sub">四、牆紙練習：把信念翻譯成它真正在說的那句話</h4>
+  <p>片段裡最具體、也最不舒服的一個操作。他要求個案把限制性信念<strong>寫成一句白話，並推到極致</strong>，做成電腦桌布，每天開機看一次：</p>
+  <blockquote>
+    <p>“I had a client that had this, ‘If I stay small, I'm going to be safe.' And he owned a business, but he wouldn't go get these big clients… And I said, ‘I want you to make a desktop wallpaper that says: My kids don't deserve for me to be successful.' And I want you to look at it every single day when you turn your computer on, because that's exactly what your belief is saying. 'Cause if your kids truly deserved it, it would override the belief.”</p>
+    <cite>Chase Hughes，原集官方字幕</cite>
+  </blockquote>
+  <p>機制是三重疊加，值得拆開：</p>
+  <ol class="tight">
+    <li><strong>極端化（Reductio）</strong>——「保持低調才安全」聽起來是美德；「我的小孩不值得我成功」聽起來是罪行。同一個信念，換一個語域，你才肯承認它。</li>
+    <li><strong>厭惡作為燃料</strong>——他要的不是自我鼓勵，是每天一次的反感（disgust）。負面情緒的推力比正面願景穩定，因為它不需要你相信未來。</li>
+    <li><strong>提升可偵測性</strong>——你無法對抗一個你偵測不到的程式。把它貼在眼前，是為了在它下次自動執行時，你能聽見它。</li>
+  </ol>
+  <p>Bartlett 補了一個很實在的補充，也是這一段的落地點：這樣做會促使你行動，行動會產生<strong>新證據</strong>（那個大客戶其實簽得下來），新證據才會改寫信念。單看牆紙不會改變什麼，牆紙只是把你推到行動那一步。他也誠實承認另一面：很多人抄下筆記，然後復發，然後覺得自己無望。</p>
+
+  <div class="caution">
+    <b>我的保留：</b>這個練習對「已經在自我鞭撻的人」有風險。Hughes 的用法預設了個案有基本心理韌性、且有專業者在旁（他講的是 client，不是讀者）。把「我的小孩不值得我成功」每天看一次，對一個本來就憂鬱的人，可能不是在打破信念，而是在加固它。原集冇提這個邊界，我認為應該提。
+  </div>
+
+  <h4 class="sub">五、微服從：為什麼你会一直滑下去</h4>
+  <p>片段由這一段開場，也是我認為最能用的一節。Hughes 先示範催眠：握手、翻手、眼睛看上、看下、看左、看右、腳分開少少、合埋少少、轉個方向——五十個毫無意義的指令，然後：</p>
+  <blockquote>
+    <p>“None of the things that I just did with them are meaningful. Everything was micro compliance. So, this is how social media starts roping you in. This is how politics starts roping you in. This is how cult leaders will recruit you into a cult. Micro compliance. And you don't realize that you're going through this massive amount of compliance.”</p>
+    <cite>Chase Hughes，原集官方字幕</cite>
+  </blockquote>
+  <p>他的推論基礎是一句很狂但方向正確的話：「our brains have not developed one more wrinkle in the last 200,000 years」。所以你要改變行為，不要發明新方法，<strong>要用已經在運作的方法，只是把方向掉轉</strong>：</p>
+  <blockquote>
+    <p>“If you're trying to change your beliefs, or you're trying to change something in your body, use what works for brainwashing and figure out a way that you can get micro compliance with your own goals on a very regular basis. Small little wins… Everything in influence should be looked at as a wedge.”</p>
+    <cite>Chase Hughes，原集官方字幕</cite>
+  </blockquote>
+  <p>“Everything is a wedge”（楔子）是整集最實用的一個詞。楔子不需要大，它只需要<strong>進入裂縫</strong>。同一條邏輯：短影片先用 3 秒微承諾把你拉進去；你也可以用「今日先寫 100 字」把自己拉進寫作。工具冇善惡，方向有。</p>
+
+  <h4 class="sub">六、注意力四力：Focus → Authority → Tribe → Emotion</h4>
+  <p>這是片段後半的核心模型，也是我認為對做內容的人最直接可用的一節。他的說法：</p>
+  <blockquote>
+    <p>“My focus, authority, tribe, and emotion. Those are the four things that govern a mammal — all mammals, dolphins, doesn't matter.”<br>
+    “Anything novel hijacks our brain.”</p>
+    <cite>Chase Hughes，原集官方字幕</cite>
+  </blockquote>
+  <p>順序不可調換，這點很重要：<strong>沒有注意力，就沒有權威。</strong>他的祖先場景講得很生動：你每日行同一條路搬魚，同一個灌木叢，突然「啪」一聲樹枝折斷——你所有注意力立即轉過去，不在小孩身上，不在健康上，不在任何事情上。那不是選擇，是硬接線。</p>
+  <p>於是他給了一個我建議大家今晚就做的「短影片解剖練習」。這不是抽象理論，是一份可以照著看的清單：</p>
+  <blockquote>
+    <p>“If you're scrolling through short-form content, watch for something that jerks your attention… that video's probably 20, maybe 40-second video, and it captures your focus through novelty. The next video, watch for an authority figure… Next, watch for a tribe signal… And then watch for the emotion. And guess what happens after the emotional video?”</p>
+    <cite>Chase Hughes，原集官方字幕</cite>
+  </blockquote>
+  <p>答案是：廣告。這一段之所以凌厲，係因為它把「演算法」這類抽象詞換成了<strong>可觀察的序列</strong>。你不需要相信陰謀論，你只需要連續看十條，數一數四力出現的位置。</p>
+
+  <table>
+    <thead><tr><th>力</th><th>觸發物</th><th>在 feed 裡的典型形態</th><th>對創作者的反向用法</th></tr></thead>
+    <tbody>
+      <tr><td class="num">Focus</td><td>新奇／異常</td><td>反常識開場、突發畫面、意想不到的動作</td><td>前 3 秒必須破壞預期，不是介紹自己是誰</td></tr>
+      <tr><td class="num">Authority</td><td>地位符號</td><td>白袍、名校、頭銜、名人臉</td><td>借用可信來源，而不是自稱專家</td></tr>
+      <tr><td class="num">Tribe</td><td>群體訊號</td><td>「所有人都喺度做」、排隊、售罄、歡呼</td><td>讓觀眾看見「和你一樣的人已經在做」</td></tr>
+      <tr><td class="num">Emotion</td><td>情緒喚起</td><td>憤怒、恐懼、感動、可愛動物</td><td>情緒之後必須有下一步，否則只是被消費</td></tr>
+    </tbody>
+  </table>
+
+  <p>他也順手重寫了米爾格倫（Milgram）實驗的解釋，這點我覺得比原版教科書更有洞察：那班人以為是「權威」令人服從（實驗者的白袍、耶魯、身高），但權威之前還有一層——<strong>先奪取注意力</strong>。而奪取注意力的方法，就是 novelty。所以正確的因果鏈是 focus → authority → tribe → emotion，而不是由權威開始。這個修正讓「為什麼壞點子也能傳播」變得可解釋：<strong>不是因為它有道理，是因為它先搶到了你的眼睛。</strong></p>
+
+  <div class="verdict">
+    <b>這一集對 James 這種做內容／做產品的人，真正的乾貨是這三句：</b><br>
+    1. 你的受眾不是「不同意你」，是<strong>根本冇看見你</strong>——先解決 novelty，再談說服。<br>
+    2. 你要人改變行為，不要靠決心，要靠<strong>微服從</strong>：把目標切成每日一個小到無法拒絕的動作。<br>
+    3. 你團隊裡那個「好難搞」的人，可能只是一個八歲小孩在執行一份過期合約——<strong>看見這一點，你的管理半徑會變大</strong>。
+  </div>
+
+  <h5 class="mini">片段冇講、但原集有：完整影響力框架</h5>
+  <p>因為這一集是重剪，以下四個框架只在原集出現。我認為它們才是原集的主菜，片段只是前菜：</p>
+  <ul class="tight">
+    <li><strong>PCP 模型（Perception → Context → Permission）</strong>——改變一個人對情境的<em>感知</em>，再改變<em>脈絡</em>使其行為變得「自動」，最後給出<em>許可</em>。他的原話：「if you want someone to do something that they normally wouldn't do, the question you ask yourself is: in what context would the decision I need this person to make be automatic?」他舉的例子很極端但清楚：新聞用「This is going to scare you」開場，是先設定感知；把政治對手描述成「threat to democracy」，是改變脈絡；而「我們對危害民主的人做什麼？」——答案是誅殺，這就是許可。</li>
+    <li><strong>三種權威頻道</strong>——總統（commanding）、教授（calm、非指令式）、藝術家（高注意力、低指令）。重點係：一個本性溫和的 CEO 若硬套「總統」頻道，會持續感到不真實（inauthentic），而且會削弱而非增強他的權威。「The authority's still there. The attention isn't.」</li>
+    <li><strong>預承諾（pre-commitment）</strong>——先取得一個關於「你是誰」的微小同意，再提出大請求。他引用那個經典的門前掛牌研究：先問一句無關痛癢的「你支持安全駕駛嗎」，一週後再要求在花園插一塊醜陋大牌，答應率由約 1% 升至約 85%。他的用法很輕：「I'm not making you sign a contract. I'm using it to make subtle shifts in how you're behaving in our conversation.」</li>
+    <li><strong>十秒簡報／樂高法</strong>——把資訊拆成獨立積木，讓對方自己組裝。結論由他自己拼出來，所以感覺是自己的主意。這是全集最高階的一招，也是我認為最值得偷的一招：<em>說服的極致，是讓對方以為是他說服了自己。</em></li>
+  </ul>
+
+  <h5 class="mini">兩個我認為可以立刻用的引用</h5>
+  <blockquote>
+    <p>“The awareness is what you want. You want massive self-knowledge and self-awareness — with the side agreement of: I am not special. And I'm completely okay if I'm never understood.”</p>
+    <cite>Chase Hughes，原集官方字幕</cite>
+  </blockquote>
+  <p>他補了一句很準的觀察：我們跟伴侶、跟同事吵的大部分架，<strong>不是為了得出解法，是為了被理解</strong>。「I need you to understand me.」所以「接受自己可能永遠不被完全理解」，不是消極，而是把爭論從「取勝」拉回「解決」。這一點我認為是全集最被低估的一句。</p>
+
+  <blockquote>
+    <p>“This is a child's voice. That's a child's voice… You're not hearing the same sentence any more — you're hearing a fictional story.”</p>
+    <cite>Chase Hughes，原集官方字幕（段落整理）</cite>
+  </blockquote>
+
+  <div class="watch">
+    <h6>如果只記三件事</h6>
+    <ul>
+      <li><strong>三條問題，今晚就問。</strong>對團隊、對伴侶、對自己：你做咗咩去交朋友？你要做或避免咩才覺得安全？你覺得要做咩才換到獎賞？答案會告訴你對方在執行哪份合約。</li>
+      <li><strong>把一句信念寫成最難聽的白話。</strong>「保持低調」→「我寧願我嘅人失望，都唔想被看見」。寫出來，你就知道自己在付什麼代價。</li>
+      <li><strong>做一次 feed 解剖。</strong>連續十條，標記 novelty／authority／tribe／emotion 出現的位置，看廣告在第幾條之後。做過一次，你對「滑」這個動作的免疫力會明顯上升。</li>
+    </ul>
+  </div>
+
+  <p class="src">原集（完整版）：<a href="https://www.youtube.com/watch?v=9uSXOr-AdAU">Chase Hughes: The 3 “Dark Psychology” Tricks To Read Anyone's Mind!</a>（1:56:21，4.8M views） · 本集：<a href="https://podcasts.apple.com/us/podcast/the-diary-of-a-ceo-with-steven-bartlett/id1291423644">Apple Podcasts</a> · 官網：<a href="https://www.chasehughes.com/">chasehughes.com</a></p>
+</div>
+
+<h2 class="section">本期掃描 · 全部 6 條 feed 狀態</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <table>
+    <thead><tr><th>播客</th><th>狀態</th><th>最新一集</th><th>距今</th></tr></thead>
+    <tbody>
+      <tr><td>Acquired</td><td>無更新</td><td>Seinfeld（2026-10-18）</td><td class="num">26 日</td></tr>
+      <tr><td>Founders</td><td>無更新</td><td>#439 How Eiichiro Oda Works（2026-11-04）</td><td class="num">9 日</td></tr>
+      <tr><td>All-In</td><td>無更新</td><td>Freedom vs. Safety: Axon CEO Rick Smith（2026-11-10）</td><td class="num">3 日</td></tr>
+      <tr><td>My First Million</td><td>無更新</td><td>Robert Greene almost died（2026-11-11）</td><td class="num">2 日</td></tr>
+      <tr><td>Knowledge Project</td><td>無更新</td><td>Jon McNeill: How Elon Musk Makes Decisions（2026-11-05）</td><td class="num">8 日</td></tr>
+      <tr><td>Diary of a CEO</td><td><b>1 集新</b></td><td>Most Replayed Moment: Chase Hughes（2026-11-13）</td><td class="num">今日</td></tr>
+    </tbody>
+  </table>
+
+  <h4 class="sub">最近無更新的播客 · 最後已知劇集</h4>
+
+  <div class="lastep">
+    <div class="lastep-label">Acquired</div>
+    <div class="lastep-title">Seinfeld</div>
+    <div class="lastep-meta">2026-10-18 · 2 小時 58 分 · Ben Gilbert &amp; David Rosenthal</div>
+    <p style="margin:10px 0 0;font-size:15px">十月中的「單一公司／資產解剖」，講 1989 年一集沒人看好的 sitcom pilot 如何變成史上最賺錢的電視資產之一。Acquired 的節奏本來就係月更，下一集大概會在 11 月中至下旬。這是六條 feed 中最值得補的一集，如果你未聽。</p>
+  </div>
+
+  <div class="lastep">
+    <div class="lastep-label">Founders · #439</div>
+    <div class="lastep-title">How Eiichiro Oda Works</div>
+    <div class="lastep-meta">2026-11-04 · David Senra · 《One Piece》作者</div>
+    <p style="margin:10px 0 0;font-size:15px">Senra 一貫路線：讀傳記、抽操作原則、用創業者視角重講。尾田榮一郎這集的核心一直圍繞「以週為單位交付、連續二十多年」的工匠紀律，與 Senra 反覆講的「work is the only thing that matters」同構。Founders 大約每週至十日一集，下一集應該在 11 月中。</p>
+  </div>
+
+  <div class="lastep">
+    <div class="lastep-label">All-In</div>
+    <div class="lastep-title">Freedom vs. Safety: Axon CEO Rick Smith on the Future of Policing</div>
+    <div class="lastep-meta">2026-11-10 · 約 1 小時 40 分 · 四人 + 嘉賓</div>
+    <p style="margin:10px 0 0;font-size:15px">上週五（11-07）才有一集四人 roundtable（期中選舉、$4T AI 拋售、數據中心凍結），本週二再來一集嘉賓訪談，頻率係六條 feed 中最高。按慣例週末會再有 roundtable。</p>
+  </div>
+
+  <div class="lastep">
+    <div class="lastep-label">My First Million</div>
+    <div class="lastep-title">Robert Greene almost died. Here's what it taught him about living</div>
+    <div class="lastep-meta">2026-11-11 · 1 小時 22 分 · Sam Parr &amp; Shaan Puri × Robert Greene</div>
+    <p style="margin:10px 0 0;font-size:15px">本週新鮮出爐，昨日日報已做完整拆解（《The Law of the Sublime》的轉向、十二個章節結構）。MFM 逢週一、週三出，下一集大概 11-16。</p>
+  </div>
+
+  <div class="lastep">
+    <div class="lastep-label">The Knowledge Project</div>
+    <div class="lastep-title">Jon McNeill: How Elon Musk Makes Decisions</div>
+    <div class="lastep-meta">2026-11-05 · Shane Parrish × Jon McNeill（前 Tesla 總裁、DVx Ventures）</div>
+    <p style="margin:10px 0 0;font-size:15px">注意一個小差異：RSS 標題係「How Elon Musk <em>Makes Decisions</em>」，Apple 上顯示「How Elon Musk <em>Solves Problems</em>」，同一集、不同標題版本，iTunes 的日期（11-10）亦比 RSS（11-05）遲。這種標題／日期漂移在跨平台分發時很常見，不是新集。KP 現時大約每週一集，但有時隔週。</p>
+  </div>
+</div>
+
+<h2 class="section">今日橫向觀察</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <h4 class="sub">一、六條 feed 同時靜，是節奏而不是故障</h4>
+  <p>我把六條 feed 逐條對過 iTunes API，發布時間一致、HTTP 全 200、無 parsing 異常。今日只有一集，是因為：Acquired 月更（上次 10-18）、Founders 週更（11-04）、KP 週更（11-05）、MFM 一週兩集（11-11）、All-In 一週兩集（11-10）。<strong>星期四、星期五本來就是這批節目的空檔。</strong>過去幾日的密集（11-10 至 11-12 連續三日有 2 集以上）反而是例外。</p>
+
+  <h4 class="sub">二、值得注意的一件事：重剪正在成為主流供給</h4>
+  <p>這是我今天最想提出的一點。DOAC 的 “Most Replayed Moment” 系列不是偶發——它已經是一個穩定欄目，用官方熱度圖把長集切成 20 分鐘的「精華重播」。對聽眾有兩個實際影響：</p>
+  <ul class="tight">
+    <li><strong>好處：</strong>它是一個免費的「群體注意力標註」。4.8M 人看過的 1 小時 56 分裡，最多人拖回去的是哪 23 分鐘——這是比任何編輯推薦都誠實的訊號。今日這一集之所以值得我花時間，正是因為它是被 4.8M 人的行為選出來的。</li>
+    <li><strong>代價：</strong>重剪會把論證的<em>限定條件</em>剪掉。例如牆紙練習在片段裡聽起來像萬靈藥，原集才有「這是 client 個案、有我在旁」的語境。這也是我在第 4 節加保留的原因。</li>
+  </ul>
+  <p>對做內容的人，這裡有一條可抄的策略：<strong>你的長內容裡，最有價值的不是最完整的部分，是最多人重看的部分。</strong>如果你有後台數據，去查「重播率最高的 90 秒」，那就是你下一條短片的腳本。</p>
+
+  <h4 class="sub">三、這集與本週另外兩集，剛好構成一條線</h4>
+  <p>把本週三集並排看，會看到一個很有意思的三角：</p>
+  <table>
+    <thead><tr><th>集數</th><th>它處理的問題</th><th>它給的答案</th></tr></thead>
+    <tbody>
+      <tr><td>MFM × Robert Greene（11-11）</td><td>人為什麼覺得活著沒有重量</td><td>走出去，接觸大過自己的東西</td></tr>
+      <tr><td>DOAC × Perlmutter（11-12）</td><td>身體為什麼跟不上一生</td><td>代謝是選擇，不是命運</td></tr>
+      <tr><td>DOAC × Chase Hughes（11-13）</td><td>行為為什麼不受自己控制</td><td>你簽了一份八歲的合約，而且未解約</td></tr>
+    </tbody>
+  </table>
+  <p>三集分別講<strong>意義、身體、行為</strong>——同一個問題的三個層。而三集不約而同都指向同一件事：<em>你以為的「我」，大部份是後來才被寫進去的程式</em>。Greene 說是虛擬經驗寫的，Perlmutter 說是代謝寫的，Hughes 說是八歲的你寫的。這是我今天讀完之後，唯一覺得值得寫下來的一句。</p>
+
+  <div class="note" style="margin:26px 0 0">
+    <b>明日預告（按節奏推測，非事實）：</b>All-In 週末 roundtable（通常週五晚至週六 UTC）；MFM 下週一；Founders 下週三前後；Acquired 十一月下旬。若明日仍是零新集，我會把重心放在「補完未拆解的存貨」而不是硬湊內容——這點我照樣會寫明。
+  </div>
+</div>
+
+<footer>
+  <b>方法與來源</b><br>
+  · RSS：Acquired (transistor) / Founders (megaphone) / All-In (libsyn) / My First Million (megaphone) / Knowledge Project (fs.blog) / Diary of a CEO (flightcast)，六條全部 200，共 2,976 集索引（KP feed 只回傳最近 20 集，屬 feed 端限制）。<br>
+  · 交叉驗證：iTunes Lookup API（entity=podcastEpisode）逐個播客核對最新四集的標題與發布時間，與 RSS 一致。<br>
+  · 逐字稿：Diary of a CEO 官方 YouTube 影片 9uSXOr-AdAU 自動英文字幕，22,563 字，逐段閱讀後節錄。引文清理了口語重複與斷行，未改語意。<br>
+  · 所有 blockquote 均為原話；凡屬我的解讀、保留意見或節奏推測，文中已明確標示。<br>
+  <br>
+  <b>生成時間</b> 2026-11-13 09:53 UTC · 17:53 HKT ｜ 掃描器 v-fast ｜ 報告 <span id="ver">2026-11-13</span><br>
+  <span class="quiet">Mindset Podcasts · 為 James 而做的每日深度掃描。今日只有一集，所以我把這一集讀到底。</span>
+</footer>
+
+</div>
+</body>
+</html>
+"""
+
+with io.open(OUT, "w", encoding="utf-8") as f:
+    f.write(HTML)
+print("written", OUT, len(HTML), "chars")
