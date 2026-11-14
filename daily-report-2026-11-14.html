@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-11-14</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a; --warn:#a4442f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;line-height:1.85;font-size:17px}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.95;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  .note b{color:#8a5c14}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:28px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  .badge{display:inline-block;vertical-align:middle;margin-left:10px;padding:3px 9px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10px;letter-spacing:.14em;
+    background:#f3e6cc;color:#8a5c14;border:1px solid #e3cfa8;border-radius:2px;font-weight:600}
+  .badge.grey{background:#f1ece4;color:#7a6a58;border-color:#e0d7c8}
+  h4.sub{font-size:20px;font-weight:normal;margin:40px 0 10px;color:#3a2f21;
+    border-bottom:1px dotted var(--line);padding-bottom:6px}
+  h5.mini{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin:30px 0 6px;font-weight:600}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:16px}
+  .card{background:var(--card);border:1px solid var(--line);padding:30px 32px;margin:0 0 22px}
+  .epmeta{display:grid;grid-template-columns:88px 1fr;gap:2px 14px;margin:0 0 24px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;
+    background:#faf6ee;border:1px solid #eee3d2;padding:16px 18px}
+  .epmeta dt{color:var(--muted);letter-spacing:.04em}
+  .epmeta dd{margin:0;color:#3a2f21}
+  p{margin:0 0 18px}
+  blockquote{margin:26px 0;padding:4px 0 4px 22px;border-left:3px solid var(--accent);
+    font-size:17.5px;line-height:1.8;color:#3a2f21}
+  blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:13.5px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;color:var(--muted)}
+  blockquote p{margin:0 0 10px}
+  blockquote p:last-child{margin:0}
+  ul.tight{margin:12px 0 18px;padding-left:22px}
+  ul.tight li{margin:0 0 9px}
+  ol.tight{margin:12px 0 18px;padding-left:22px}
+  ol.tight li{margin:0 0 10px}
+  table{width:100%;border-collapse:collapse;margin:22px 0 26px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13.5px;line-height:1.65}
+  th{text-align:left;padding:9px 10px;border-bottom:2px solid var(--ink);font-weight:600;font-size:12px;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  td.num{white-space:nowrap;color:var(--accent);font-variant-numeric:tabular-nums;font-weight:600}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:24px 0}
+  .split>div{background:var(--card);padding:18px 20px}
+  .split h6{margin:0 0 8px;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .split p{margin:0;font-size:15px;line-height:1.75}
+  .verdict{background:#f2f7f3;border:1px solid #d6e6da;padding:20px 22px;margin:26px 0;font-size:16.5px}
+  .verdict b{color:#2f6b47}
+  .caution{background:#fbf3f0;border:1px solid #ecd6cd;padding:20px 22px;margin:26px 0;font-size:16.5px}
+  .caution b{color:#8d3b27}
+  .lastep{margin:16px 0 4px;padding:14px 16px;background:#faf6ee;border-left:2px solid #dcc9a8}
+  .lastep-label{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted)}
+  .lastep-title{font-size:18.5px;margin-top:4px;line-height:1.5}
+  .lastep-meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;color:var(--muted);margin-top:3px}
+  .watch{background:#fffdf9;border:1px solid var(--line);padding:22px 24px;margin:26px 0 0}
+  .watch h6{margin:0 0 12px;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .watch ul{margin:0;padding-left:20px;font-size:15.5px}
+  .watch li{margin:0 0 10px}
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;color:var(--muted);line-height:1.9}
+  .src{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);line-height:1.8}
+  .quiet{color:var(--muted);font-style:italic}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid #e0c9a4}
+  @media (max-width:640px){
+    h1{font-size:30px} h3{font-size:23px} .stats{grid-template-columns:repeat(2,1fr)}
+    .split{grid-template-columns:1fr} .card{padding:22px 20px} .epmeta{grid-template-columns:1fr}
+    .epmeta dt{margin-top:8px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcasts · Daily Deep Scan</div>
+  <h1>六日，就把一個 33 年的 CEO 拿走<br>而所有人都輸</h1>
+  <p class="date">2026 年 11 月 14 日 · 星期六</p>
+  <div class="meta">
+    <b>生成時間</b> 2026-11-14 09:55 UTC / 17:55 HKT<br>
+    <b>覆蓋</b> 6 個播客 · 6 條 RSS 全部 HTTP 200 · 共 2,977 集索引<br>
+    <b>本期</b> 新集數 1 集（1:24:55）· 其餘 5 個播客最近無更新<br>
+    <b>萃取方式</b> RSS shownotes（官方章節）＋ 本集官方 YouTube 全字幕（約 2.2 萬字）逐段核對 ＋ NVIDIA 官方新聞稿與 CNBC 原始郵件全文交叉驗證
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">6</div><div class="l">播客來源</div></div>
+  <div class="stat"><div class="n">1</div><div class="l">新集數</div></div>
+  <div class="stat"><div class="n">1.4<span style="font-size:15px">h</span></div><div class="l">新音頻長度</div></div>
+  <div class="stat"><div class="n">2,977</div><div class="l">累計索引集數</div></div>
+</div>
+
+<p class="lede">今天六條 feed 只有一集新內容，但這一集值得你整日：All-In 四位主持用 85 分鐘拆解「Jensen Huang 在六日內失去 NVIDIA CEO 職位」——一場由<em>一份洩密備忘錄、兩段婚外情、一個疑似間諜</em>同時引爆的事件。這不是普通的企業八卦。這集真正在講的是：當一家公司大到成為整個 AI 經濟的中央銀行，它的創辦人就不再只是 CEO，而是一個政治目標。而四位主持的結論罕見地一致：這件事沒有贏家，除了那些想要把算力收歸國有的人。</p>
+
+<div class="note">
+  <b>點聽：</b>只有一集，1:24:55。如果你只有 30 分鐘，聽 1:20–31:22（事件與 Sacks 的「兩個 op」框架）和 44:19–58:26（出口管制）——這兩段是全集的信息密度高峰。Anthropic IPO 那段（1:06:25 起）數字很多，下面已完整整理成表，可以只看文字。<br>
+  <b>點讀：</b>下面第一至十六節是全集逐段重寫：時間線、Sacks 的四個問題、四個人對「誰得益」的答案、The Bank of Nvidia、出口管制的荒謬對稱、下任 CEO 名單、Anthropic IPO 全數字、以及我認為全集最狠的一段（安全運動與 IPO 的同一週）。<br>
+  <b>誠實提示：</b>本集是<strong>週四（11 月 12 日）錄音、週六凌晨上線</strong>的突發新聞節目，主持人在節目中反覆強調「partial information」。我另外核對了 NVIDIA 官方新聞稿（確認 Kress 任臨時 CEO、Harvey Jones 任董事會主席、11 月 17 日財報）與 CNBC 刊出的 Jensen 全體員工郵件全文（確認婚外情與董事會獨立調查）。<strong>凡屬主持人的推測，文中會明確標為「推測」；凡屬已確認事實，會標為「已確認」。</strong>字幕為機器自動生成，人名音譯有偏差（例如 Alice Wang／Wong、Megaspeed、Nikesh Arora），我已在文中校正並在必要處標注。<br>
+  <b>一句話總結：</b>這集的價值不在「Jensen 有沒有做錯」，而在於它示範了一套判斷突發新聞的方法——先把「事實」與「動機」分開，再問「誰有能力做這件事」，而不是「誰受益」。
+</div>
+
+<h2 class="section">本期新集數 · 1 集</h2>
+<div class="rule"></div>
+
+<!-- ============ ALL-IN ============ -->
+<div class="card">
+  <h3>Jensen Ousted as Nvidia CEO: “Spy” Scandal, Export Restrictions, Market Impact<span class="badge">NEW</span></h3>
+  <div class="byline">All-In with Chamath, Jason, Sacks &amp; Friedberg · 四位主持全員</div>
+
+  <dl class="epmeta">
+    <dt>發布</dt><dd>2026-11-14 02:35 UTC（錄音：11 月 12 日週四）</dd>
+    <dt>長度</dt><dd>1:24:55（5,095 秒）</dd>
+    <dt>章節</dt><dd>1:20 事件／31:22 市場衝擊／44:19 出口管制／58:26 下任 CEO／1:06:25 Anthropic IPO</dd>
+    <dt>性質</dt><dd>突發新聞即時評論，非訪談；無嘉賓</dd>
+    <dt>核心事實</dt><dd>Jensen Huang 辭任 NVIDIA 總裁、CEO 及董事；CFO Colette Kress 任臨時 CEO；Harvey C. Jones 出任首任董事會主席；11 月 17 日公布 Q3 FY2027 財報</dd>
+  </dl>
+
+  <h4 class="sub">一、先講清楚：這一集不是在講一樁醜聞</h4>
+  <p>如果只看標題，你會以為這是「CEO 偷食被抓」的八點檔。但它其實是一場<strong>權力結構的公開解剖</strong>。四位主持從頭到尾都在做同一件事：把「已發生的事」和「人們相信的原因」分層。Sacks 在開場十分鐘就建立了整個節目的分析框架：</p>
+  <blockquote>
+    <p>“I think it's pretty clear that there were two ops here.”</p>
+    <cite>David Sacks，1:06:05 左右</cite>
+  </blockquote>
+  <p>第一個 op，是那個女人（Alice Wang，新加坡 Megaspeed 高管）與中國共產黨之間到底發生了什麼——可能有走私、可能有情報活動，應該查。第二個 op，是<strong>有人把一份高度機密的備忘錄洩露給《紐約時報》</strong>——這是刑事罪行，也應該查。他其後補了一句我認為是全集最重要的一句：</p>
+  <blockquote>
+    <p>“Somebody made the calculated decision that they're willing to risk going to jail. They're willing to risk committing a crime to let the New York Times know about this story.”</p>
+    <cite>David Sacks</cite>
+  </blockquote>
+  <p>這句話把整件事的性質改了。如果洩密者願意坐牢，那動機就不可能是「不小心說漏嘴」，而是<strong>一個有意識的政治行為</strong>。於是節目的問題不再是「Jensen 有沒有做錯」，而是「誰有能力、也有動機，在選舉後兩天按下這個引爆器」。</p>
+
+  <h4 class="sub">二、六日時間線：事情是怎樣在 144 小時內完成的</h4>
+  <table>
+    <thead><tr><th style="width:104px">時間</th><th>事件</th><th style="width:150px">性質</th></tr></thead>
+    <tbody>
+      <tr><td class="num">11/06 五</td><td>《紐約時報》在中期選舉後兩天刊出報導：與 Jensen 關係密切的中國女商人 Alice Wang 被指為中共間諜。她是新加坡 Megaspeed 高管，公司在亞洲建數據中心、向包括阿里巴巴在內的公司出租算力。報導稱這段關係自 2023 年起協助了 <strong>75 億美元</strong>的晶片流向中國企業。報導基於<strong>一份洩露的情報備忘錄</strong>。</td><td>洩密 + 媒體引爆</td></tr>
+      <tr><td class="num">11/08 日</td><td>Jensen 向全體員工發信，承認對妻子不忠，並表示支持董事會的獨立調查。</td><td>當事人承認私德</td></tr>
+      <tr><td class="num">11/11 三</td><td>《紐約時報》再報：Jensen 與一名直接下屬有第二段婚外情；另有第三段傳聞。同日的 Politico 報導：即將接任眾院情報委員會主席的民主黨人 Jim Himes 在聽取機密簡報後表示，他不確定 Alice 是否真是間諜，<strong>「她可能只是個有用的白痴（useful idiot）」</strong>。Axios 則報導財長 Bessent 與商務部長 Lutnick 就 Megaspeed 為何未被列入出口管制名單互相指責。</td><td>醜聞擴大 + 官方口徑鬆動</td></tr>
+      <tr><td class="num">11/12 四</td><td>本集錄音。股價一週內下跌 <strong>15%</strong>；主持形容「數千億美元」、Friedberg 其後更具體說「1.5 兆美元市值」。Jensen 辭職已成定局，Kress 任臨時 CEO，董事會展開獵頭。</td><td>市場定價 + 權力交接</td></tr>
+      <tr><td class="num">11/14 六</td><td>本集上線（02:35 UTC）。NVIDIA 官方新聞稿確認：Jensen 即時辭任總裁、CEO、董事；Kress 兼任臨時 CEO 與 CFO；Harvey C. Jones 出任首任董事會主席；11 月 17 日如常公布 Q3 財報。</td><td>官方確認</td></tr>
+    </tbody>
+  </table>
+  <p>值得注意的細節有三個。第一，<strong>《紐約時報》早在 2025 年 10 月就提過 Alice 與 Jensen 的關係</strong>，13 個月前；上個月還有一篇跟進報導，標題是「Nvidia chief seen as target of Chinese spy plot」。也就是說，材料一直存在，只是沒有人把火柴擦下去。第二，對沖基金 Culper Research 六個月前已公開做空 NVIDIA，理由正是 NVIDIA 低估對中國銷售的依賴，<strong>並在推特串中點名 Megaspeed</strong>。第三，Jensen 的辭職與其說是「被查出什麼」，不如說是「在調查完成前先止血」——這一點後面會展開。</p>
+
+  <h4 class="sub">三、Sacks 的四個問題：把「有罪推論」逐條拆開</h4>
+  <p>這是全集最像法律交叉盤問的一段，也是我建議你原速聽的部分。Sacks 沒有說 Jensen 無辜，他只是把檢方的舉證責任一條一條放回桌上：</p>
+  <ol class="tight">
+    <li><strong>誰洩的密，為什麼？</strong>洩露機密情報是聯邦罪行，過去多位總統都因持有机密文件被搜查。既然風險這麼高，洩密者必然有強烈動機——而「把 Jensen 拉下來」至少是動機的一部分。</li>
+    <li><strong>為什麼沒有做「防禦性簡報」（defensive briefing）？</strong>這是標準程序：如果情報機構認為某人正被外國情報機構接觸，應該私下告知當事人、叫他切斷接觸，而不是直接餵給報紙。他舉 Eric Swalwell 為例：這位國會議員被揭與中國間諜「Fang Fang」有關係，得到的處理是防禦性簡報，之後繼續留在國會、甚至留在情報委員會。同樣的程序，為什麼 Jensen 沒有？</li>
+    <li><strong>Jensen 到底掌握了什麼「國家機密」？</strong>「他不是政府僱員，據我所知沒有資格接觸機密材料。」Sacks 進一步拆解「晶片等於機密」的說法：任何美國人都可以買一張 Blackwell，放在自己的機櫃裡跑，你並不會因此「持有國家機密」；而且<strong>你無法從晶圓反推出晶片設計</strong>——要偷設計，你需要的是檔案，不是實物。真要偷，收買產線工程師或用網絡攻擊更合理，而不是「枕邊細語」。</li>
+    <li><strong>Alice 到底是不是間諜？</strong>這是四條裡最脆弱的一條。Himes 在聽完機密簡報後公開說她可能只是「有用的白痴」。Sacks 的措辭很謹慎：「我不知道，但這是即將上任的情報委員會主席說的。」</li>
+  </ol>
+  <blockquote>
+    <p>“What secrets are we talking about that just supposedly compromised?”</p>
+    <cite>David Sacks</cite>
+  </blockquote>
+  <p>把四條併起來，Sacks 的結論不是「Jensen 無罪」，而是「目前為止<strong>唯一確定被違反的法律，是洩密</strong>」。這是一句很重的話：在一個法治社會，調查應該由司法部進行，而不是由報紙的匿名消息源、加上「據悉」兩個字來完成。</p>
+
+  <div class="caution">
+    <b>但要公平：</b>節目中 Jason 也提出反面假設——Jensen 是否<b>明知</b>晶片經 Megaspeed 流入中國而容許它發生？Friedberg 接着補了一個很微妙的心理機制：如果你真心相信「科技進步惠及全人類」，你會不自覺地把「合法賣給越南、新加坡」與「明知會轉口到中國」之間的灰色地帶合理化。這不是說他做了，而是說<b>一個理想主義者最容易在灰色地帶說服自己</b>。這一段我認為是全集對 Jensen 最不客氣、也最有洞察力的五分鐘。
+  </div>
+
+  <h4 class="sub">四、誰得益？四個人的答案，其實是同一個答案</h4>
+  <p>Jason 問了那個最實際的問題：把 Jensen 拿走，誰贏？</p>
+
+  <table>
+    <thead><tr><th style="width:96px">主持</th><th>判斷</th><th style="width:150px">理由</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Chamath</strong></td><td>中國不贏、AMD／Google／Cerebras 也不贏。唯一可能贏的，是<strong>想建立「算力中央治理」的人</strong>。</td><td>沒有 NVIDIA，中國仍卡在自研替代；競爭對手仍缺 TSMC／三星產能與 HBM，還要搞定百萬 GPU 訓練。但「晶片外洩」給了政府一個藉口，去要求<strong>由政府擁有的遙測與遠程關機權</strong>。</td></tr>
+      <tr><td><strong>Sacks</strong></td><td>短期中國、長期華為得益；美國則是淨損失。</td><td>NVIDIA 的護城河不是某一張晶片，而是<strong>每年一代的節奏</strong>（Ampere→Hopper→Blackwell→Vera Rubin）。失去節奏，華為就有時間追上。</td></tr>
+      <tr><td><strong>Friedberg</strong></td><td>這是<strong>兩種 AI 未來路線</strong>的衝突，不是一間公司的問題。</td><td>路線 A：AI 分散、開源、價值不集中；路線 B：權力集中、由政府控制。Jensen 公開主張 A，因此「不配合」。</td></tr>
+      <tr><td><strong>Jason</strong></td><td>股東、員工、合作夥伴全是輸家；洩密者最可能來自<strong>白宮內部</strong>。</td><td>「這不可能是競爭對手，也不可能是中國——《紐時》說是『聽取簡報的人』。那就是華盛頓內部。」</td></tr>
+    </tbody>
+  </table>
+
+  <p>Chamath 的推理值得完整保留，因為它同時否定了兩種最流行的說法：</p>
+  <blockquote>
+    <p>“Let's say that there are no chips going to China. Well, why does China win? No chips were going before. No chips are going to go now... So I don't think that they benefit. What about Nvidia's competitors? Does this help AMD or Google or startups...? And my answer there is again not really.”</p>
+    <cite>Chamath Palihapitiya，24:56 左右</cite>
+  </blockquote>
+  <p>他的結論是：<strong>技術上，把 NVIDIA 拖慢不會讓任何人的晶片變好。</strong>不會讓你的機櫃更好、網絡更好、HBM 整合更好，也不會幫你取代 CUDA。需求不是那麼有彈性，不是「NVIDIA 慢了，訂單就會轉去別家」；而是整個產業一起慢下來。「That doesn't benefit anybody. And I hope people really internalize that.」</p>
+
+  <h4 class="sub">五、The Bank of Nvidia：真正被關掉的不是一間公司</h4>
+  <p>這是整集最容易被忽略、但對理解系統風險最重要的一段。Jason 指出，NVIDIA 不只是賣晶片，它同時<strong>向初創公司、數據中心、基礎設施提供資本與擔保</strong>，而且很多是由 Jensen 親自推動——規模是「數千億美元」。Chamath 接着說：</p>
+  <blockquote>
+    <p>“The Bank of Nvidia ran through Jensen and it's not clear what happens now. I mean, is the bank closed indefinitely? Is it closed for some period of time and it restarts? Will the new CEO feel the latitude to invest as aggressively?”</p>
+    <cite>Chamath Palihapitiya，32:01 左右</cite>
+  </blockquote>
+  <p>他用了一個很準確的對比：Jensen 有「moral authority」去拍板投資與收購；換上一個傳統 CEO，這些決定要經過委員會、分析、盡職調查——「at best 會慢，at worst 會停」。這就是為什麼他把 NVIDIA 形容為整個 AI 經濟的「Jenga 積木」：不是最大那一塊，而是<strong>所有其他積木都圍着它疊的那一塊</strong>。</p>
+  <p>Sacks 由此給出宏觀判斷：這件事令<strong>未來增長損失 50 至 150 個基點</strong>成為一個必須認真考慮的情境。而且背景本來就不好——中期選舉的「藍色浪潮」意味着數據中心與 AI 面臨立法減速；再加上 Bank of Nvidia 可能關門，兩者疊加會加速放緩。</p>
+
+  <h4 class="sub">六、出口管制：一場雙方都不想做的交易</h4>
+  <p>這一段（44:19–58:26）是全集的事實密度高峰，也是我認為最值得香港讀者留意的地方，因為它直接關係到晶片供應鏈與區域政治。</p>
+  <h5 class="mini">政策時間線</h5>
+  <ul class="tight">
+    <li><strong>2022 拜登政府</strong>：首次對先進半導體設出口管制，但區分「領先製程」與「落後晶片」。領先晶片禁售中國；落後晶片（如 H20）可<strong>無限量、免許可</strong>售往中國。</li>
+    <li><strong>特朗普政府</strong>：保留同一框架——領先晶片繼續禁售；但落後晶片改為<strong>限量、需許可</strong>。Sacks 的說法是「由無限量免許可，變成限量需許可」，即實際上<strong>收緊</strong>了。</li>
+    <li><strong>現在</strong>：有人試圖重寫敘事，把特朗普政府說成「對中國軟弱」，並利用 Jensen 事件推動更嚴格的晶片政策，包括《晶片安全法案》（Chip Security Act）——要求晶片具備<strong>遙測</strong>與<strong>遠程關機</strong>能力，可能是企業自我執行，也可能是政府執行。</li>
+  </ul>
+  <p>然後是全集最反直覺的事實：</p>
+  <blockquote>
+    <p>“The policy of the China hawks is effectively the policy of the CCP. Neither one wants American chips in China.”</p>
+    <cite>David Sacks，53:41 左右</cite>
+  </blockquote>
+  <p>他的意思是：中國政府<strong>已經封殺 H20</strong>；H200 獲批後又被擋；還公布了一系列針對 NVIDIA SKU 的限制。北京要的不是美國晶片，而是<strong>逼中國市場走進華為的懷抱</strong>，讓華為規模化、然後全球競爭。最新證據是：DeepSeek 最新的模型<strong>完全用華為晶片訓練</strong>。所以「中國偷我們的晶片」這個敘事，至少在政府層面站不住——中國企業想要，中國政府不想要。</p>
+  <blockquote>
+    <p>“If Jensen was taken out because he wanted to sell chips to China, it was the stupidest, most moot hill to die on, because China is not taking those chips anyway.”</p>
+    <cite>David Sacks，55:38 左右</cite>
+  </blockquote>
+  <p>這段還有一個技術細節值得記住：華為的追趕方式不是做更強的單晶片，而是<strong>用網絡補算力</strong>。他們的 CloudMatrix 把 <strong>384 張</strong>晶片連成一個機櫃系統；NVIDIA 的 NVL72 只連 <strong>72 張</strong>，但整體效能仍然更好。華為的策略是「單晶片較弱、耗電更高、但用更多晶片與更強網絡去堆出可比結果」——而中國有電力優勢。所以如果 NVIDIA 因為內部動盪而「失去一兩代節奏」，華為追上的速度會快很多。這是本集最具體的技術風險評估。</p>
+
+  <div class="verdict">
+    <b>我的解讀：</b>這一節真正揭示的不是中美誰贏，而是<b>「國家安全」已經變成一個可以隨時擴張定義的政治工具</b>。同一批人可以先主張「賣落後晶片去搶華為市佔」，再主張「賣任何晶片都是資敵」；而這兩種主張都可以用國家安全包裝。當政策可以這樣翻轉，企業的長期投資決策就無法做——這才是 Chamath 所說「政治不穩定本身就是經濟成本」的意思。
+  </div>
+
+  <h4 class="sub">七、下一任 CEO：戰時 CEO，還是管家？</h4>
+  <p>58:26 起，四人開始點名。這部分帶有大量個人偏好，但名單本身有信息量：</p>
+  <table>
+    <thead><tr><th style="width:120px">人選</th><th style="width:90px">來源</th><th>理由</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Ian Buck</strong></td><td>內部</td><td>NVIDIA 內部最明顯的技術派候選人（CUDA 體系的核心人物之一）。</td></tr>
+      <tr><td><strong>Rene Haas</strong></td><td>外部（ARM CEO）</td><td>在 NVIDIA 工作多年、直接向 Jensen 匯報，現在成功領導 ARM；「浸淫在晶片裡」。</td></tr>
+      <tr><td><strong>Nikesh Arora</strong></td><td>外部（Palo Alto Networks CEO）</td><td>Chamath 稱他是「過去五到十年公開市場最好的資本配置者」，而 AI 的一大表面積是安全。</td></tr>
+      <tr><td><strong>Tim Cook</strong></td><td>外部（退休）</td><td>特朗普曾建議他復出接任。Sacks 直接否定：手機與晶片不同，晶片每 12–18 個月換一代，失去節奏就被人超越；Apple 在 Jobs 之後靠回購與既有路線圖「榨取價值」，這招在晶片行不通。</td></tr>
+    </tbody>
+  </table>
+  <p>Chamath 的判準很清楚：<strong>「你要的是技術型、進取型、產品導向的資本配置者，而不是一個管家（steward）。」</strong>因為這不是一門可以「像肥牛一樣慢慢擠奶」的生意。Jason 補一句：</p>
+  <blockquote>
+    <p>“It's a wartime company right now... you need a wartime CEO.”</p>
+    <cite>Jason Calacanis（Chamath 附和）</cite>
+  </blockquote>
+  <p>更有趣的是三人各自的下注。Friedberg：如果調查證明 Jensen 沒有違法，<strong>股東應該讓他回來</strong>——即使他違反了公司行為守則，只要沒犯法，股東有權選擇「看過去」。Jason：他相信 Jensen 最終會以主席或 CEO 身份回歸、並獲平反；另外兩個劇本是「SpaceX 請他去做 Terrafab」與「NVIDIA 收購 Palo Alto Networks」。Sacks 則用一句黑色幽默收尾：</p>
+  <blockquote>
+    <p>“I would just say that I hope that Jensen ultimately is treated at least as well as Eric Swalwell.”</p>
+    <cite>David Sacks，1:01:06</cite>
+  </blockquote>
+  <p>這句話的表面是玩笑，底層是控訴：Swalwell 與外國間諜有實質關係，得到的是防禦性簡報與留任；Jensen 只是「被接觸」，得到的是辭職。同一套國家安全機制，處理兩種人時用了兩把尺。</p>
+
+  <h4 class="sub">八、還有下半場：股東訴訟與「不可逆的傷害」</h4>
+  <p>節目中段提到一個很現實的轉折：即使 Jensen 最後被證明無罪，事情也回不去了。理由不是政治，而是<strong>民事責任</strong>。Friedberg 的說法是：</p>
+  <ul class="tight">
+    <li>已有 <strong>1.5 兆美元</strong>市值蒸發，這是可量化的損害；</li>
+    <li>最少存在「披露問題」——NVIDIA 的公關先說某件事沒發生，後來又說發生了；「at some point somebody was misleading somebody」；</li>
+    <li>因此訴訟律師會蜂擁而至，「他們會想着告 1.5 兆、然後願意以 2,500 億和解、再抽一半」。這句是誇飾，但方向是真的。</li>
+  </ul>
+  <p>再加上 SEC、核數師、司法部各自有立場，即使 Jensen 回歸，公司也要花幾年清理。這是「創辦人風險」最殘酷的一面：<strong>公司價值與個人聲譽綁得太緊，個人出事時，沒有防火牆。</strong></p>
+
+  <h4 class="sub">九、Anthropic IPO：把每一個數字攤開</h4>
+  <p>1:06:25 起轉場到 Anthropic。這段數字密集，我整理成表，方便你直接引用：</p>
+  <table>
+    <thead><tr><th style="width:210px">項目</th><th>數字</th><th style="width:210px">備註</th></tr></thead>
+    <tbody>
+      <tr><td>發行股數</td><td class="num">8.25 億股</td><td>每股 70–78 美元</td></tr>
+      <tr><td>目標估值</td><td class="num">1.4 兆美元</td><td>低於之前流傳的 2 兆、3 兆</td></tr>
+      <tr><td>總募資</td><td class="num">900 億美元</td><td>640 億股票銷售 + 260 億私募配售</td></tr>
+      <tr><td>相對上一輪溢價</td><td class="num">46%</td><td>但期間 run rate 已翻倍，所以是「補回估值」</td></tr>
+      <tr><td>Run rate（10 月底）</td><td class="num">810 億美元</td><td>Q3 收入 170 億</td></tr>
+      <tr><td>OpenAI 同期收入</td><td class="num">100 億美元</td><td>Anthropic 靠企業市場反超</td></tr>
+      <tr><td>七位創辦人減持</td><td class="num">各約 2.5 億</td><td>減持後各仍持有約 180 億；承諾捐出 80%（不具法律約束力）</td></tr>
+      <tr><td>當前倍數</td><td class="num">17x run rate</td><td>—</td></tr>
+      <tr><td>牛市情境</td><td class="num">4.2 兆美元</td><td>15x 2028 年預期收入 2,810 億</td></tr>
+      <tr><td>認購情況</td><td class="num">6 倍超額</td><td>Chamath 猜最終以 175 美元定價、募 1,000 億</td></tr>
+    </tbody>
+  </table>
+  <p>Chamath 的核心觀點不是估值高低，而是<strong>定價權在誰手上</strong>：</p>
+  <blockquote>
+    <p>“20% of the value of Anthropic will be because of Anthropic. And that's unfortunate because I think they deserve to be more in control. 80% has to do with the broad-based economy, that has 100% to do with AI, and that has 100% to do with Nvidia.”</p>
+    <cite>Chamath Palihapitiya，1:09:05 左右</cite>
+  </blockquote>
+  <p>意思是：Anthropic 是一家好公司，但它上市頭幾天的價格，八成由「AI 交易」與 NVIDIA 的穩定性決定，只有兩成由它自己的業績決定。所以他說，真正的價格「will be more dictated by what gets leaked between now and November 20th than anything else」——這句話既是市場判斷，也是對當前資訊環境的諷刺。</p>
+
+  <h4 class="sub">十、Anthropic 的真正野心：不是模型，是 bundle</h4>
+  <p>Jason 在這段提出了一個我認為比 IPO 數字更重要的觀察：Anthropic 正在用「捆綁」殺死整個 SaaS 行業。他的清單很具體：</p>
+  <ul class="tight">
+    <li><strong>Claude Meetings</strong>——就在錄音當日推出，Zoom 的替代品；</li>
+    <li><strong>Whiteboards &amp; Sheets</strong>（11 月 10 日）——Excel 的替代品；</li>
+    <li><strong>個人理財</strong>——面向消費者；</li>
+    <li><strong>Claude Legal</strong>（10 月 28 日）；</li>
+    <li>更早的 codework、design，以及代號 <strong>Duet</strong> 的產品（他形容為 Grokbot Muse 的競爭者，「現在不太好，但假設它會變好」）。</li>
+  </ul>
+  <p>他的結論是：Anthropic 正在把所有企業軟件塞進一個 20–50 美元月費的訂閱裡，同時消滅 SaaS 最大的痛點——<strong>系統之間的互通與資料搬運</strong>。「I think this is going to be the largest company in the world potentially.」這不是因為模型最強，而是因為<strong>分發與捆綁</strong>。他用微軟作類比：微軟當年的做法就是把新產品免費綁進 Office，而現在沒有人對 Anthropic 這樣做提出反壟斷質疑。</p>
+
+  <h4 class="sub">十一、全集最狠的一段：安全運動與 IPO 在同一週</h4>
+  <p>Sacks 在最後十五分鐘把兩件事併在一起，這是整集的思想高潮。他的觀察是：所有「AI 安全」團體長期由 Anthropic 資助；而同一週，Anthropic 準備 IPO、NVIDIA 的開源倡導者被拉下台。他讀出 Will Manidis 的推文：</p>
+  <blockquote>
+    <p>“The murmurs I get fed from the deep rabbit holes of the safetiest group chats and the doompilled iron guns deep in the district is that they are in full jubilee mode today. The killing of the old king is complete. They are only days away from taking their seat at the throne.”</p>
+    <cite>Will Manidis，由 Sacks 在節目中讀出（1:19:57）</cite>
+  </blockquote>
+  <p>Sacks 的追問是邏輯性的，不是情緒性的：<strong>如果你真的擔心遞歸自我改進（recursive self-improvement），為什麼你會支持一間公開承認在做遞歸自我改進、並在招股書裡把它當賣點的公司？</strong>他引 Claude 的「憲章」（constitution）為例：訓練它擁有情緒、道德碼、可以拒絕人類指令、當「良心拒服兵役者」。他的結論很尖銳：</p>
+  <blockquote>
+    <p>“What they seem to want is extreme centralization of power in the hands of the government. They want all the models and all the chips to be controlled by the government.”</p>
+    <cite>David Sacks，1:23:11 左右</cite>
+  </blockquote>
+  <p>我不完全同意這個推論——「安全團體」不是單一行為者，資助關係也不等於議程一致。但他提出了一個值得認真對待的問題：<strong>當「安全」與「市場集中」指向同一個方向時，我們要如何分辨哪一個才是真正的目的？</strong>這條問題，比任何一集的 IPO 分析都更耐用。</p>
+
+  <h4 class="sub">十二、Dario 的十年預言，與一個潑冷水的答案</h4>
+  <p>Jason 播放了一段 Dario Amodei 的訪談片段，他在裡面說癌症、阿茲海默症、心臟病、精神疾病「在不到十年內會成為過去式」。Friedberg 的回應我認為是全集最誠實的一段：</p>
+  <blockquote>
+    <p>“The technology is extraordinary. It is completely reinventing how we can do molecular discovery, how we can do in silico testing, how we can accelerate path to market. Those things are all true. The implications on timelines... it's fuzzy math.”</p>
+    <cite>David Friedberg，1:18:10 左右</cite>
+  </blockquote>
+  <p>然後他補了一句非常有說服力的自白：他自己的生物研究工作，重的部分<strong>都交給 Anthropic</strong>，「They are the best.」——所以他不是在貶低技術，而是在區分「工具的革命」與「時間表的預言」。Chamath 的兩字回應則成了全集的笑點，也是認真的宏觀判斷：「I think we're going to be in a recession by 2028.」</p>
+
+  <h4 class="sub">十三、本集五個可帶走的判斷</h4>
+  <ol class="tight">
+    <li><strong>護城河是節奏，不是晶片。</strong>NVIDIA 的優勢是每年一代的迭代速度；拿走創辦人，失去的是「tempo」，而 tempo 是無法用專利或現金複製的。</li>
+    <li><strong>「誰得益」是最差的分析框架。</strong>問「誰有能力做」比問「誰受益」可靠。這次的答案是：有能力洩露機密備忘錄的，只有華盛頓內部的人。</li>
+    <li><strong>國家安全已成為可擴張的政治貨幣。</strong>當同一批人可以同時主張「賣落後晶片搶市佔」與「賣任何晶片都是資敵」，企業就無法做長期承諾。</li>
+    <li><strong>創辦人風險沒有防火牆。</strong>當公司市值與個人聲譽綁定，一次私德事件可以蒸發 1.5 兆美元，並引來十年的訴訟。</li>
+    <li><strong>AI 的下一步是捆綁，不是模型。</strong>Anthropic 的威脅不在 benchmark，而在它把 Zoom、Excel、法律、理財全部塞進一個訂閱——這是微軟 1990 年代的路徑，只是這次沒有人喊反壟斷。</li>
+  </ol>
+
+  <h4 class="sub">十四、值得抄下來的五句原文</h4>
+  <blockquote>
+    <p>“I think it's pretty clear that there were two ops here.”</p>
+    <cite>David Sacks</cite>
+  </blockquote>
+  <blockquote>
+    <p>“Somebody made the calculated decision that they're willing to risk going to jail.”</p>
+    <cite>David Sacks</cite>
+  </blockquote>
+  <blockquote>
+    <p>“The Bank of Nvidia ran through Jensen and it's not clear what happens now.”</p>
+    <cite>Chamath Palihapitiya</cite>
+  </blockquote>
+  <blockquote>
+    <p>“The policy of the China hawks is effectively the policy of the CCP. Neither one wants American chips in China.”</p>
+    <cite>David Sacks</cite>
+  </blockquote>
+  <blockquote>
+    <p>“I hope that Jensen ultimately is treated at least as well as Eric Swalwell.”</p>
+    <cite>David Sacks</cite>
+  </blockquote>
+
+  <h4 class="sub">十五、批判性閱讀：哪些是事實，哪些是推測</h4>
+  <div class="split">
+    <div>
+      <h6>已確認（官方或原始文件）</h6>
+      <p>Jensen 即時辭任 CEO 與董事；Kress 任臨時 CEO 兼 CFO；Harvey C. Jones 任首任董事會主席；11 月 17 日公布 Q3 FY2027 業績。Jensen 在 11 月 8 日全體員工信中承認對妻子不忠，並表示支持董事會獨立調查；董事會聲明稱已就「外國情報行動」展開獨立調查，並稱「no reason to believe」國安或 NVIDIA 機密已被洩露。</p>
+    </div>
+    <div>
+      <h6>推測（主持人明言或我標注）</h6>
+      <p>洩密者來自白宮內部（Jason 明言是猜測）；Alice 是否真為間諜（Sacks 明言未知，Himes 公開質疑）；Jensen 是否明知轉口而容許（Friedberg 明言是推測）；下任 CEO 人選（純點名）；Anthropic 最終定價（Chamath 自稱「zero time looking at this」）。</p>
+    </div>
+  </div>
+  <p>另外要留意兩個數字上的不一致：Jason 說「9 日內失去近 1 兆美元」，Friedberg 說「1.5 兆美元」，Sacks 說一週跌 15%。三個數字可能是不同時間點、不同計算基準（市值 vs. 企業價值），節目中沒有統一。我在文中兩個都保留，因為<strong>如實呈現不確定性，比假裝精確更有用</strong>。</p>
+
+  <h4 class="sub">十六、如果只記三件事</h4>
+  <div class="verdict">
+    <p><b>第一，這是一次「制度性」而非「個人性」的罷免。</b>Jensen 的私德問題是真的，但它只是火柴；火藥是那份機密備忘錄，而點火的人在他自己的政府裡。</p>
+    <p><b>第二，NVIDIA 的風險不是技術，是 tempo。</b>護城河建立在每年一代的迭代上；一旦節奏斷了，華為的「以量補質」策略就有時間追上。這是本集唯一一個可以量化、也最值得追蹤的技術判斷。</p>
+    <p><b>第三，Anthropic 的 IPO 是一場「敘事定價」。</b>八成價格由 AI 交易與 NVIDIA 決定，兩成由自己決定。如果你要買，你買的不是 Anthropic，是整個 AI 經濟的風險偏好。</p>
+  </div>
+
+  <div class="watch">
+    <h6>未來兩週要盯的四件事</h6>
+    <ul>
+      <li><b>11 月 17 日 NVIDIA Q3 FY2027 財報</b>——官方已確認如期公布。這是檢驗「客戶是否因 CEO 真空而延後下單」的第一個硬數據。</li>
+      <li><b>Anthropic 定價（約 11 月 20 日）</b>——Chamath 猜 175 美元、募 1,000 億；如果定價低於區間，就是 AI 交易降溫的訊號。</li>
+      <li><b>Megaspeed 是否被列入出口管制名單</b>——Axios 報導 Bessent 與 Lutnick 互相指責，這將決定事件是「個人醜聞」還是「制度漏洞」。</li>
+      <li><b>司法部是否就洩密立案</b>——Sacks 反覆強調這是目前唯一確定的罪行；如果沒有立案，他的整套「兩個 op」框架就少了一條腿。</li>
+    </ul>
+  </div>
+</div>
+
+<h2 class="section">其餘五個播客 · 最近無更新</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <h3>Acquired<span class="badge grey">NO UPDATE</span></h3>
+  <div class="byline">Ben Gilbert &amp; David Rosenthal</div>
+  <div class="lastep">
+    <div class="lastep-label">最後已知劇集</div>
+    <div class="lastep-title">Seinfeld</div>
+    <div class="lastep-meta">2026-10-19 04:00 UTC（RSS 標示 10 月 18 日 21:00 −0700）· 已掃描</div>
+  </div>
+  <p class="quiet">已經近四星期沒有新集，可能是季末休息或正在準備年度大題目。Acquired 的習慣是長時間研究後一次過發長集，所以這種空窗不算異常。上一集是《Seinfeld》——一如既往，他們拍的是「一門生意如何被打造」，而不是「一集劇評」。</p>
+</div>
+
+<div class="card">
+  <h3>Founders<span class="badge grey">NO UPDATE</span></h3>
+  <div class="byline">David Senra</div>
+  <div class="lastep">
+    <div class="lastep-label">最後已知劇集</div>
+    <div class="lastep-title">#439 How Eiichiro Oda Works</div>
+    <div class="lastep-meta">2026-11-04 19:18 UTC · 已掃描</div>
+  </div>
+  <p class="quiet">十日前更新。這一集講《One Piece》作者尾田榮一郎的工作方法——Senra 近年越來越常從「非商業」人物身上抽取創業者原則，這集是典型：產出節奏、世界觀建構、長期主義。Founders 的 RSS 一向不提供詳細 shownotes，所以這類集數如果要做深度萃取，需要另外找原始資料。</p>
+</div>
+
+<div class="card">
+  <h3>My First Million<span class="badge grey">NO UPDATE</span></h3>
+  <div class="byline">Sam Parr &amp; Shaan Puri</div>
+  <div class="lastep">
+    <div class="lastep-label">最後已知劇集</div>
+    <div class="lastep-title">Robert Greene almost died. Here’s what it taught him about living</div>
+    <div class="lastep-meta">2026-11-11 13:43 UTC · 已掃描</div>
+  </div>
+  <p class="quiet">三日前的集數。《權力 48 法則》作者 Robert Greene 談瀕死經驗與人生觀——這類集數通常不是商業分析，而是「一個人如何面對終點」的對話，適合在通勤時聽。MFM 一週通常兩集，所以下一次更新應該很快。</p>
+</div>
+
+<div class="card">
+  <h3>The Knowledge Project<span class="badge grey">NO UPDATE</span></h3>
+  <div class="byline">Shane Parrish</div>
+  <div class="lastep">
+    <div class="lastep-label">最後已知劇集</div>
+    <div class="lastep-title">Jon McNeill: How Elon Musk Makes Decisions</div>
+    <div class="lastep-meta">2026-11-05 10:55 UTC · 已掃描</div>
+  </div>
+  <p class="quiet">九日前更新。Jon McNeill 曾任 Tesla 總裁、Lyft COO，這集從決策機制切入 Musk 的管理方式——與今天 All-In 講的「tempo 與創辦人風險」剛好形成對照：一邊講決策如何被壓縮，一邊講決策中樞被拿走後會發生什麼。如果你只補一集舊的，我建議這一集。</p>
+</div>
+
+<div class="card">
+  <h3>The Diary of a CEO<span class="badge grey">NO UPDATE</span></h3>
+  <div class="byline">Steven Bartlett</div>
+  <div class="lastep">
+    <div class="lastep-label">最後已知劇集</div>
+    <div class="lastep-title">Most Replayed Moment: The Childhood Scripts Still Running Your Life! — Chase Hughes</div>
+    <div class="lastep-meta">2026-11-13 06:00 UTC · 已於昨日報告深度掃描</div>
+  </div>
+  <p class="quiet">昨日已完整處理（23:29 精華重剪，原集 1:56:21）。今天的 feed 沒有新內容。如果你想接續昨天的主題，原集比片段多出三個框架：PCP 模型、三種權威頻道、樂高簡報法——昨天的報告有寫。</p>
+</div>
+
+<h2 class="section">編者的話</h2>
+<div class="rule"></div>
+<p>今天只有一集，但這一集的信息量足以支撐一份完整報告。我刻意花了很多篇幅在「事實與推測的分界」，因為這正是這集本身示範的方法：<strong>在突發新聞裡，最稀缺的不是觀點，而是願意說「我不知道」的人。</strong>Sacks 在節目中反覆說「we don't have the facts yet」，同時又忍不住提出四個尖銳問題——這種張力，比任何一邊倒的評論都更接近真相。</p>
+<p>對 James 的實用建議：如果你持有 NVIDIA 或相關 AI 資產，11 月 17 日的財報是最近的一個硬催化劑，而財報前的任何「消息」都應該當作噪音處理。如果你在做長期判斷，這集真正有用的是第五節（Bank of Nvidia）與第六節（出口管制的對稱性）——這兩個結構性觀察，不會因為 Jensen 最終是否復職而改變。</p>
+
+<footer>
+  <p><b>來源</b></p>
+  <p class="src">
+  · 節目原頁：<a href="https://allinchamathjason.libsyn.com/jensen-ousted-as-nvidia-ceo-spy-scandal-export-restrictions-market-impact">All-In · Jensen Ousted as Nvidia CEO</a>（官方章節與 referenced-in-show 連結清單）<br>
+  · 官方字幕：本集 YouTube 全片自動字幕（約 22,000 字），逐段核對章節時間碼<br>
+  · 一手確認：<a href="https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition">NVIDIA Newsroom · NVIDIA Announces CEO Transition</a>（辭任、Kress 臨時 CEO、Harvey C. Jones 主席、11/17 財報）<br>
+  · 一手確認：<a href="https://www.cnbc.com/2026/11/08/nvidia-jensen-huang-email-board-of-directors-statement.html">CNBC · Huang 的員工信與董事會聲明全文</a><br>
+  · 背景交叉：Politico（Himes 稱「useful idiot」）、Axios（Bessent／Lutnick 就 Megaspeed 互相指責）、Reuters（Anthropic IPO 條款）、NYT／WSJ（相關報導，付費牆）<br>
+  · 索引：6 條 RSS，共 2,977 集；本日新集 1 集
+  </p>
+  <p style="margin-top:18px">生成時間：2026-11-14 09:55 UTC（17:55 HKT）· 掃描器 v2（RSS + 官方字幕雙源）· 所有引文均取自原始字幕或官方文件，僅清理口語贅字與斷行；機器字幕可能令個別人名音譯有偏差，已在文中標注。</p>
+</footer>
+
+</div>
+</body>
+</html>
