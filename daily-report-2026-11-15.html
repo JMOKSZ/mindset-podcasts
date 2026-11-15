@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-11-15</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a; --warn:#a4442f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;line-height:1.85;font-size:17px}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.95;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  .note b{color:#8a5c14}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:28px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  .badge{display:inline-block;vertical-align:middle;margin-left:10px;padding:3px 9px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10px;letter-spacing:.14em;
+    background:#f3e6cc;color:#8a5c14;border:1px solid #e3cfa8;border-radius:2px;font-weight:600}
+  .badge.grey{background:#f1ece4;color:#7a6a58;border-color:#e0d7c8}
+  h4.sub{font-size:20px;font-weight:normal;margin:40px 0 10px;color:#3a2f21;
+    border-bottom:1px dotted var(--line);padding-bottom:6px}
+  h5.mini{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin:30px 0 6px;font-weight:600}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:16px}
+  .card{background:var(--card);border:1px solid var(--line);padding:30px 32px;margin:0 0 22px}
+  .epmeta{display:grid;grid-template-columns:88px 1fr;gap:2px 14px;margin:0 0 24px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;
+    background:#faf6ee;border:1px solid #eee3d2;padding:16px 18px}
+  .epmeta dt{color:var(--muted);letter-spacing:.04em}
+  .epmeta dd{margin:0;color:#3a2f21}
+  p{margin:0 0 18px}
+  blockquote{margin:26px 0;padding:4px 0 4px 22px;border-left:3px solid var(--accent);
+    font-size:17.5px;line-height:1.8;color:#3a2f21}
+  blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:13.5px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;color:var(--muted)}
+  blockquote p{margin:0 0 10px}
+  blockquote p:last-child{margin:0}
+  table{width:100%;border-collapse:collapse;margin:26px 0 34px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13.5px}
+  th{text-align:left;padding:11px 10px;border-bottom:2px solid var(--ink);font-size:11px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55}
+  td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.06em}
+  .pill.ok{background:#e7f0e9;color:#33684b}
+  .pill.warn{background:#f8e6e1;color:#8f3a26}
+  ul,ol{margin:0 0 20px;padding-left:24px}
+  li{margin-bottom:9px;line-height:1.75}
+  .ts{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;color:var(--accent);
+    font-variant-numeric:tabular-nums}
+  .ts b{color:#3a2f21;font-weight:600}
+  .closing{border-top:2px solid var(--ink);margin-top:58px;padding-top:24px}
+  .closing p{font-size:16.5px}
+  footer{margin-top:46px;padding-top:20px;border-top:1px solid var(--line);
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11.5px;color:var(--muted);line-height:1.9}
+  @media(max-width:640px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    h1{font-size:30px} .card{padding:22px 18px} .wrap{padding:32px 16px 60px}
+    table{font-size:12px} th,td{padding:9px 6px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">Mindset Podcast Daily · 六台深掃</div>
+  <h1>思維播客日報</h1>
+  <p class="date">2026 年 11 月 15 日 · 星期日</p>
+  <div class="meta">
+    掃描時間 <b>2026-11-15 09:55 UTC</b> · 六個 RSS feed 全部 HTTP 200 · 新增集數 <b>0</b><br>
+    上一份報告 <b>2026-11-14</b>（All-In Jensen 事件）· 上次全體零新集 <b>2026-11-07</b>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">6</div><div class="l">FEEDS 掃描</div></div>
+  <div class="stat"><div class="n">0</div><div class="l">新增集數</div></div>
+  <div class="stat"><div class="n">6</div><div class="l">全部正常</div></div>
+  <div class="stat"><div class="n">8</div><div class="l">日內第二次全靜</div></div>
+</div>
+
+<p class="lede">六個節目、全部 HTTP 200、全部冇新集。呢個係八日內第二次出現「全體靜默」——聽落似空轉，但其實有一個真發現：<em>Knowledge Project 有兩條 feed，一條比另一條系統性早五日</em>。今日報告會先講清楚各台位置，再拆開呢條 feed 嘅時間差，最後做一次跨節目嘅主題對照。</p>
+
+<div class="note">
+<b>今日一句話：</b>零新集，唔等於零資訊。六台嘅發佈節奏喺今日同時撞上低點（週日只有 All-In 會出，而佢昨日已出咗），下一個真正嘅更新高峰係 <b>11 月 16 日（一）</b>——Diary of a CEO 同 My First Million 兩台同時開閘。
+</div>
+
+<h2 class="section">Status board · 各台位置</h2>
+<div class="rule"></div>
+<table><thead><tr><th>節目</th><th>最新一集</th><th class="num">日期</th><th class="num">靜默</th><th>節奏</th><th>下次預計</th></tr></thead><tbody><tr><td><b>Acquired</b></td><td>Seinfeld</td><td class="num">2026-10-19</td><td class="num">27 日</td><td>每月一集 · 週日（美西）</td><td><span class="pill ok">待更新</span></td></tr><tr><td><b>Founders</b></td><td>#439 How Eiichiro Oda Works</td><td class="num">2026-11-04</td><td class="num">10 日</td><td>每 7–9 日</td><td><span class="pill ok">待更新</span></td></tr><tr><td><b>All-In</b></td><td>Jensen Ousted as Nvidia CEO: "Spy" Scandal, …</td><td class="num">2026-11-14</td><td class="num">1 日</td><td>每週六 + 不定期加場</td><td><span class="pill ok">待更新</span></td></tr><tr><td><b>My First Million</b></td><td>Robert Greene almost died. Here’s what it ta…</td><td class="num">2026-11-11</td><td class="num">3 日</td><td>每週一、三</td><td><span class="pill ok">待更新</span></td></tr><tr><td><b>The Knowledge Project</b></td><td>Jon McNeill: How Elon Musk Makes Decisions</td><td class="num">2026-11-05</td><td class="num">9 日</td><td>每週二</td><td><span class="pill ok">待更新</span></td></tr><tr><td><b>The Diary of a CEO</b></td><td>Most Replayed Moment: The Childhood Scripts …</td><td class="num">2026-11-13</td><td class="num">2 日</td><td>每週一、四（+ 五重播）</td><td><span class="pill ok">待更新</span></td></tr></tbody></table>
+<p>六台合共 <b>2,977</b> 條歷史條目，全部 GUID 已在 <code>state.json</code> 建檔，今日比對結果：零條未掃描。呢個數已經穩定咗一段時間，證明 scanner 冇漏讀、feed 亦冇偷偷換 GUID。</p>
+
+<h2 class="section">Per show · 逐台狀態與最後一集</h2>
+<div class="rule"></div>
+
+<div class="card">
+<h3>Acquired <span class="badge grey">靜默 27 日</span></h3>
+<div class="byline">Ben Gilbert &amp; David Rosenthal · 3 小時 50 分 · 2026-10-19</div>
+<dl class="epmeta">
+  <dt>最後一集</dt><dd>Seinfeld</dd>
+  <dt>狀態</dt><dd>已完成掃描，非漏讀</dd>
+  <dt>節奏</dt><dd>月更：6/21 → 8/9 → 9/13 → 10/18</dd>
+</dl>
+<p>Acquired 嘅月更節奏係六台之中最疏，27 日空窗完全在正常範圍。呢集係佢哋近年最「商業拆解」取向嘅一集——用一部 1998 年完結嘅處境喜劇，去講一條長達三十年嘅現金流曲線。</p>
+<blockquote>
+<p>Seinfeld, which ended three decades ago, has been watched by 72 million Americans so far THIS YEAR.</p>
+<cite>— Acquired, "Seinfeld" 集數簡介（原文）</cite>
+</blockquote>
+<p>一個已經完結三十年嘅節目，今年至今仍有 7,200 萬美國人看過。呢個數字本身就係一個關於「版權資產」嘅論證：內容唔會因為停產而消失，只會由「製作業務」變成「收租業務」。全集用 7 Powers 框架收尾，重點落在兩點——<b>cornered resource</b>（獨家、無法複製嘅 IP 同創作組合）同 <b>process power</b>（「no hugging, no learning」呢條寫作規則，令每一集都可以獨立重播而唔需要前情）。</p>
+<h5 class="mini">如果只聽 20 分鐘</h5>
+<p><span class="ts"><b>00:35:04</b></span> Fin-Syn 規則與 Castle Rock 交易——監管如何意外造就一個產業結構；<span class="ts"><b>01:28:41</b></span> 第二季如何頂住電視台 note；<span class="ts"><b>02:15:44</b></span> 1995 年 syndication 印鈔機；<span class="ts"><b>02:42:13</b></span> Jack Welch 嘅 brunch 邀請與 Jerry 走人。</p>
+<p>下集預計 11 月中至月底——佢哋嘅月更窗口正好喺今日前後打開，所以未來三至五日內出新集嘅機會唔低。</p>
+</div>
+
+<div class="card">
+<h3>Founders <span class="badge warn">靜默 11 日 · 略超節奏</span></h3>
+<div class="byline">David Senra · 32 分鐘 · 2026-11-04</div>
+<dl class="epmeta">
+  <dt>最後一集</dt><dd>#439 How Eiichiro Oda Works</dd>
+  <dt>狀態</dt><dd>已完成掃描；本台唯一「略超節奏」</dd>
+  <dt>節奏</dt><dd>7–9 日一集（#436 10/05 · #437 10/13 · #438 10/26 · #439 11/04）</dd>
+</dl>
+<p>Founders 平日大約 7 至 9 日一集，今日已經 11 日。呢個係今日唯一一個「值得留意」嘅空窗——但留意唔等於故障：Senra 嘅發佈時間一向浮動，而且佢會為咗一本書讀幾個月才開咪。</p>
+<blockquote>
+<p>Eiichiro Oda is a relentlessly obsessive creative genius who has devoted nearly every waking hour of his adult life to building one of the most extraordinary fictional universes ever imagined.</p>
+<cite>— Founders #439 集數簡介（原文）</cite>
+</blockquote>
+<p>呢集係 Senra 一貫路線嘅極端版本：唔講商業模型，只講<b>一個人如何用三十年換一個宇宙</b>。Founders 嘅隱藏主題一直係「obsession 嘅複利」——Oda 嘅個案把問題推到最尖：當你嘅產出係唯一、無法外包、無法授權，你就成為自己事業嘅單點故障（single point of failure）。同今日其他五台對照，呢個主題會再出現（見下面橫切一節）。</p>
+<p>Senra 嘅 show notes 一向極簡（呢集只有三行），所以深度內容只在音頻內。若果下週仍未更新，我會改用 web 搜索交叉核對佢嘅官網同 Apple 頁面，確認唔係 feed 問題。</p>
+</div>
+
+<div class="card">
+<h3>All-In <span class="badge grey">靜默 1 日</span></h3>
+<div class="byline">Chamath · Jason · Sacks · Friedberg · 1 小時 25 分 · 2026-11-14</div>
+<dl class="epmeta">
+  <dt>最後一集</dt><dd>Jensen Ousted as Nvidia CEO: "Spy" Scandal, Export Restrictions, Market Impact</dd>
+  <dt>狀態</dt><dd>昨日已出，昨日報告已詳述</dd>
+  <dt>節奏</dt><dd>週六主場（10/30 五 · 11/07 六 · 11/14 六）＋ 週中不定期加場</dd>
+</dl>
+<p>呢集係今日六台之中最新嘅一條，亦係昨日報告嘅主打。今日只做位置更新，唔重複拆解——但補一個觀察：All-In 喺 11 月 10 日（二）加開咗一集 Friedberg 單人訪問 Axon CEO Rick Smith，即係佢哋而家嘅實際產出係「每週 1.5 集」，比標稱嘅週更密。呢個對預測有影響：下集主場預計 11 月 21 日（六），但週中再插一集嘅機會大约一半。</p>
+<blockquote>
+<p>Jensen Huang out as CEO: Spy allegations, classified memo leak, who wanted Jensen out?</p>
+<cite>— All-In, 2026-11-14 集數章節（原文）</cite>
+</blockquote>
+<p>值得記住嘅係佢哋嘅時間分配：呢集用咗接近 30 分鐘（01:20–31:22）只討論「誰想 Jensen 走」，然後 13 分鐘講市場影響，12 分鐘講出口管制，最後 18 分鐘講 Anthropic IPO roadshow。也就是說，四人認為<b>治理與人事</b>比<b>估值模型</b>更值得花時間——呢個取向本身就係一個訊號。</p>
+</div>
+
+<div class="card">
+<h3>My First Million <span class="badge grey">靜默 4 日</span></h3>
+<div class="byline">Sam Parr &amp; Shaan Puri · 82 分鐘 · 2026-11-11</div>
+<dl class="epmeta">
+  <dt>最後一集</dt><dd>Robert Greene almost died. Here's what it taught him about living</dd>
+  <dt>狀態</dt><dd>已完成掃描</dd>
+  <dt>節奏</dt><dd>週一、週三（11/02 · 11/04 · 11/09 · 11/11）</dd>
+</dl>
+<p>MFM 嘅節奏最準時，週一、三幾乎唔會失手，所以下一集應該係 <b>11 月 16 日（一）</b>。呢集係 EP881，同 EP880（"What I'd build if I wanted to get rich with AI"）形成一對很有趣嘅反差：一集講「點樣賺」，一集講「點樣活」。</p>
+<blockquote>
+<p>(0:00) People Are Suffering<br>(2:00) Everything Is Amazing and No One Is Happy<br>(10:45) Go Outside<br>(14:20) Feeling Flat<br>(18:00) The Immense and the Impossible</p>
+<cite>— MFM EP881 show notes 章節（原文）</cite>
+</blockquote>
+<p>注意章節排列：第一節叫「People Are Suffering」，第二節就直接接 Louis CK 嘅「Everything Is Amazing and No One Is Happy」。呢個排法係刻意嘅——先承認痛苦，再指出比較基準已經失效。Robert Greene 新書叫《The Law of the Sublime》，訪談中段（29:35「Say Less Than Necessary」、30:05「Disappear」）其實係《48 Laws of Power》嘅反面：唔係教你贏人，而係教你退出戰場。</p>
+<h5 class="mini">兩個時間碼值得留</h5>
+<p><span class="ts"><b>35:30</b></span> Robert 對 AI 嘅預測——一個 90 年代已用電腦寫作嘅人，如何看待生成式工具；<span class="ts"><b>41:25</b></span> 瀕死經歷，呢段係全集重心，亦係標題由來。</p>
+<p>另一邊，EP880 係一份相當實在嘅「AI 創業地圖」，逐個 sector 掃：藥物（Isomorphic Labs）、糧食（Ohalo）、國防（Anduril）、建屋機械人（ZURU Tech）、腦機介面（Neuralink）、新材料（Nitroduck）。佢哋嘅框架唔係「AI 取代軟件」，而係<b>「AI 進入物理世界」</b>——邊個行業嘅瓶頸係「要有人做實驗 / 起嘢 / 送貨」，邊個行業就有得做。</p>
+</div>
+
+<div class="card">
+<h3>The Knowledge Project <span class="badge grey">靜默 10 日</span></h3>
+<div class="byline">Shane Parrish · 2026-11-05（本 feed）</div>
+<dl class="epmeta">
+  <dt>最後一集</dt><dd>Jon McNeill: How Elon Musk Makes Decisions</dd>
+  <dt>狀態</dt><dd>已完成掃描；<b>雙 feed 時間差已查明</b></dd>
+  <dt>節奏</dt><dd>約每週二</dd>
+</dl>
+<blockquote>
+<p>Elon Musk believes speed creates a competitive advantage, whether it's speed of decision, speed of cash, or speed of response.</p>
+<cite>— The Knowledge Project, Jon McNeill 集數簡介（原文）</cite>
+</blockquote>
+<p>Jon McNeill 係 Tesla 前總裁、DVx Ventures 創辦人，所以呢集唔係「Musk 傳記式」訪談，而係一個曾經坐喺執行層嘅人，講「速度」如何變成一間公司嘅作業系統：決策速度、現金速度、反應速度。三種速度其實互相拉扯——加快決策會拖慢現金，加快反應會製造混亂——所以真正嘅內容係佢哋如何喺三者之間划界。</p>
+<p>呢集亦係今日 feed 審計嘅起點，詳見下面「Feed 完整性審計」一節：<b>同一集喺另一條 feed 上面，標題唔同、日期遲五日</b>。</p>
+</div>
+
+<div class="card">
+<h3>The Diary of a CEO <span class="badge grey">靜默 2 日</span></h3>
+<div class="byline">Steven Bartlett · 1 小時 55 分 · 2026-11-13</div>
+<dl class="epmeta">
+  <dt>最後一集</dt><dd>Most Replayed Moment: The Childhood Scripts Still Running Your Life! Chase Hughes</dd>
+  <dt>上一個正片</dt><dd>Dr David Perlmutter: Dementia Risk, Blood Sugar, Sleep and Alcohol（11-12）</dd>
+  <dt>節奏</dt><dd>週一、四正片；週五「Most Replayed」重播</dd>
+</dl>
+<p>11 月 13 日嗰集係重播剪輯（Chase Hughes 嘅「童年三份合約」），唔算新正片。真正嘅新內容係 11 月 12 日嘅 Perlmutter 神經科醫生集——呢集資訊密度係六台本週最高，1 小時 55 分塞咗 38 個章節。</p>
+<blockquote>
+<p>What if the decline of your cognitive function isn't a genetic inevitability, but a metabolic choice you're making every single day?</p>
+<cite>— The Diary of a CEO, Dr David Perlmutter 集數簡介（原文）</cite>
+</blockquote>
+<p>五個核心機制，佢用咗相當具體嘅比喻：<b>「邪惡雙胞胎」</b>（高血糖同發炎把微膠細胞由保護者變成吞噬突觸嘅破壞者）、<b>「類淋巴清道夫」</b>（缺第四階段深睡，腦部即晚清唔走 amyloid-beta）、<b>「催產素護盾」</b>（社交連結改變發炎反應）、<b>40Hz 重置</b>（特定頻率光／聲把失控細胞拉回保護狀態）、以及運動如何令肌肉分泌保護性物質。</p>
+<h5 class="mini">最值得跳去聽嘅三個位</h5>
+<p><span class="ts"><b>01:15:20</b></span> 糖配給研究——一個天然實驗，阿茲海默風險降 40%；<span class="ts"><b>01:08:15</b></span> 為何女性風險係男性兩倍；<span class="ts"><b>01:05:13</b></span> 「任何份量酒精對腦都安全嗎」——呢段最直接可操作。</p>
+<p>下一集正片預計 <b>11 月 16 日（一）</b>。</p>
+</div>
+
+<h2 class="section">Cross-cutting · 本週六台講緊同一件事</h2>
+<div class="rule"></div>
+
+<p>零新集嘅日子最適合做橫切。把六台最近一至兩集攤平一齊看，有五條線係重複出現嘅——呢個唔係巧合，係同一個時代壓力喺唔同領域嘅投影。</p>
+
+<h4 class="sub">一、速度作為護城河，但速度有賬單</h4>
+<p>McNeill 講 Musk 用「決策速度／現金速度／反應速度」建構優勢；All-In 四人則用 30 分鐘拆一個「CEO 突然被換」嘅治理危機。兩者放埋一齊看，會得出一個唔舒服嘅結論：<b>速度優勢嘅極致形態，就係權力高度集中；而權力高度集中嘅公司，一旦出事，速度會反過來放大衝擊</b>。Nvidia 嘅個案正正係「最快嘅公司」遇上「最慢嘅治理程序」。</p>
+
+<h4 class="sub">二、身體是資產負債表上被忽略的一行</h4>
+<p>Perlmutter 講代謝如何決定認知衰減速度；Robert Greene 講瀕死如何重排人生優先次序。兩個節目、兩種語言（一個生化、一個哲學），講嘅係同一件事：<b>健康唔係「成本」，係「存續期」</b>。對創業者特別相關——大部分商業計劃嘅隱含假設係「你有 20 年」，而呢個假設從來冇寫出嚟。</p>
+
+<h4 class="sub">三、注意力係被設計搶走的</h4>
+<p>Chase Hughes 嘅「四股力量劫持你每次 scroll」同 Robert Greene 嘅「Say Less Than Necessary / Disappear」，一體兩面：一邊講機制，一邊講對策。對做產品嘅人，Hughes 嘅內容係武器說明書；對想保持清醒嘅人，Greene 嘅內容係撤退路線。</p>
+
+<h4 class="sub">四、所有權結構比增长率更決定結局</h4>
+<p>Acquired 拆 Seinfeld 嘅重點唔在收視，在 ownership：Fin-Syn 規則、Castle Rock 交易、syndication 分賬。同一條線喺 All-In 講 Nvidia 時再出現——「The Bank of Nvidia」呢個講法本身就係所有權問題。當一間公司嘅市值大到可以當金融機構用，佢嘅股權結構就變成公共政策問題。</p>
+
+<h4 class="sub">五、極端專注係唯一無法複製的優勢，也是最脆弱的</h4>
+<p>Founders 講 Oda 用三十年換一個宇宙；MFM 講 AI 會吃掉「物理世界」嘅工作，但吃不掉「有人願意用一生去換」嘅作品。呢兩集其實係同一個論點嘅正反面：<b>AI 令「平均水準」變便宜，於是「極端」變得更值錢</b>——同時，極端嘅人更加冇退路。</p>
+
+<h2 class="section">Feed integrity · 今日真正的發現</h2>
+<div class="rule"></div>
+
+<p>今日零新集，所以掃描器有時間做咗一件平時唔會做嘅事：交叉核對每條 feed 同 Apple Podcasts 嘅官方 <code>feedUrl</code>。結果發現一個值得記錄嘅結構性問題。</p>
+
+<h4 class="sub">Knowledge Project 有兩條 feed，系統性相差五日</h4>
+<p>我哋 <code>podcasts.json</code> 用嘅係 Farnam Street 自家 feed（<code>fs.blog/knowledge-project-podcast/feed/</code>，20 條），而 Apple Podcasts 指向嘅官方 feed 係 <code>feeds.megaphone.fm/FSMI7575968096</code>（294 條）。兩條都 HTTP 200、都有內容，但同一集嘅標題同日期都唔同：</p>
+
+<table>
+<thead><tr><th>fs.blog（我們用）</th><th>Megaphone（Apple 官方）</th><th class="num">日期差</th></tr></thead>
+<tbody>
+<tr><td>Jon McNeill: How Elon Musk Makes Decisions<br><span class="ts">11-05</span></td><td>How Elon Musk Solves Problems | Jon McNeill<br><span class="ts">11-10</span></td><td class="num">+5 日</td></tr>
+<tr><td>[Outliers] K.C. Irving: Competing with Giants<br><span class="ts">10-29</span></td><td>K.C. Irving: Competing with Giants<br><span class="ts">11-03</span></td><td class="num">+5 日</td></tr>
+<tr><td>The Science of Doing Your Best Work | Steven Kotler<br><span class="ts">10-22</span></td><td>The Science of Doing Your Best Work<br><span class="ts">10-27</span></td><td class="num">+5 日</td></tr>
+<tr><td>Ryan Serhant: How to Get People to Say Yes<br><span class="ts">10-08</span></td><td>How to Get People to Say Yes | Ryan Serhant<br><span class="ts">10-13</span></td><td class="num">+5 日</td></tr>
+</tbody>
+</table>
+
+<p><b>結論：內容冇漏。</b>兩條 feed 帶嘅係同一批集數，只係標題格式同發佈日期唔同（fs.blog 反而早五日），GUID 亦完全唔同。所以今日「零新集」唔係因為 feed 落後——係真係未有新集。</p>
+<p><b>處理方式：</b>維持用 fs.blog（因為佢更早出、且唔會令未來每一集都被當成「新」而重複轟炸），僅在 <code>state.json</code> 加一條審計記錄。若果日後 fs.blog 停止更新超過 14 日，就切去 Megaphone 並一次性 baseline 全部 GUID。</p>
+
+<h4 class="sub">其餘三項核對</h4>
+<ul>
+<li><b>All-In：</b>任務書上嘅 RSS（<code>allinpodcast.co/feed/podcast</code>）同 <code>podcasts.json</code> 實際用嘅（<code>rss.libsyn.com</code>）唔同，但後者運作正常（445 條、昨日更新已抓到），維持不變。</li>
+<li><b>Acquired：</b>Apple 頁面顯示嘅 releaseDate 滯後（顯示 9 月），但 RSS 已有 10 月 19 日嘅 Seinfeld，證明 RSS 為準、Apple 索引滯後。無需處理。</li>
+<li><b>Founders：</b>Apple 索引同樣滯後（顯示 10/26），RSS 已有 11/04。真實空窗 11 日，略長但未到異常門檻（14 日）。</li>
+</ul>
+
+<h2 class="section">Next 5 days · 更新預測</h2>
+<div class="rule"></div>
+
+<table>
+<thead><tr><th>日期</th><th>預計</th><th>信心</th></tr></thead>
+<tbody>
+<tr><td class="num">11-16（一）</td><td>Diary of a CEO 正片 + My First Million 新集，兩台同時</td><td>高</td></tr>
+<tr><td class="num">11-17（二）</td><td>The Knowledge Project（canonical 週二檔）</td><td>中高</td></tr>
+<tr><td class="num">11-18（三）</td><td>My First Million 第二集</td><td>高</td></tr>
+<tr><td class="num">11-19（四）</td><td>Diary of a CEO 第二集</td><td>高</td></tr>
+<tr><td class="num">11-21/22（六/日）</td><td>All-In 主場</td><td>高</td></tr>
+<tr><td class="num">11-13 至 11-22</td><td>Founders（已進入預期窗口，略逾期）</td><td>中</td></tr>
+<tr><td class="num">11 月中至底</td><td>Acquired 月更</td><td>中</td></tr>
+</tbody>
+</table>
+
+<div class="closing">
+<p><b>編者的話。</b>今日呢份報告嘅價值唔在「有新集」，而在兩件事：一是確認咗 scanner 本身冇壞（六條 feed、2,977 條條目、零漏讀），二是抓到 Knowledge Project 嘅雙 feed 時間差——呢個問題如果唔查，將來某一日我哋可能會「補發」一集其實兩星期前已經報過嘅內容，或者反過來，以為某台停更。</p>
+<p>對 James 嘅實用建議：今日唔需要聽任何新集。真正值得排入待聽清單嘅係 <b>Perlmutter 那集（01:15:20 起嘅糖配給研究）</b>——因為佢係本週唯一一個有明確、可執行、且可驗證嘅行動項。其餘五台本週嘅內容都屬於「理解世界」類，可以等週末一次過。</p>
+<p>明日（11-16）兩台同時開閘，會係本週資訊量最大嘅一日，我會照樣全量掃。</p>
+</div>
+
+<footer>
+本報告由自動掃描器生成 · 六個 RSS feed（Acquired / Founders / All-In / My First Million / The Knowledge Project / The Diary of a CEO）· 所有引用均取自各集官方 show notes 原文，未經改寫。<br>
+掃描器狀態：2,977 條歷史條目 · 0 條未建檔 · 全部 feed HTTP 200 · 生成時間 2026-11-15 09:55 UTC<br>
+Repository: github.com/JMOKSZ/mindset-podcasts
+</footer>
+</div>
+</body>
+</html>

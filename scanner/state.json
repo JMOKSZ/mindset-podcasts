@@ -1,5 +1,5 @@
 {
- "lastScan": "2026-11-14T09:55:00Z",
+ "lastScan": "2026-11-15T09:58:00Z",
  "scannedEpisodes": {
   "acquired": [
    "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -3037,17 +3037,46 @@
   ]
  },
  "lastScanResult": {
-  "date": "2026-11-04",
+  "date": "2026-11-15",
   "newEpisodes": 0,
   "feedsOk": 6,
   "feedsError": 0,
-  "note": "all six feeds HTTP 200; entry counts 218/463/442/917/20/905; no unseen GUIDs"
+  "entryCounts": {
+   "acquired": 218,
+   "founders": 464,
+   "all-in": 445,
+   "my-first-million": 920,
+   "knowledge-project": 20,
+   "diary-of-a-ceo": 910
+  },
+  "note": "all six feeds HTTP 200; 2977 entries, 0 unseen GUIDs; second all-quiet day in 8 days"
  },
  "lastRun": {
-  "date": "2026-11-07",
+  "date": "2026-11-15",
   "newEpisodes": 0,
   "feedsOk": 6,
-  "note": "all feeds 200, no new GUIDs; All-In 8d gap noted"
+  "note": "zero new across all six; KP dual-feed audit performed (fs.blog vs megaphone FSMI7575968096, consistent +5d offset, identical content, no gap)"
  },
- "lastReport": "2026-11-14"
+ "lastReport": "2026-11-15",
+ "feedAudit": {
+  "checkedAt": "2026-11-15T09:58:00Z",
+  "knowledge-project": {
+   "inUse": "https://fs.blog/knowledge-project-podcast/feed/",
+   "appleCanonical": "https://feeds.megaphone.fm/FSMI7575968096",
+   "finding": "dual feed, identical content, megaphone titles/dates shifted +5 days, GUIDs differ",
+   "decision": "keep fs.blog (earlier publish, avoids duplicate-GUID flood); switch to megaphone and re-baseline if fs.blog silent >14 days"
+  },
+  "founders": {
+   "inUse": "https://feeds.megaphone.fm/DSLLC6297708582",
+   "note": "apple releaseDate index lags; RSS ok; 11d gap within tolerance"
+  },
+  "acquired": {
+   "inUse": "https://feeds.transistor.fm/acquired",
+   "note": "apple releaseDate index lags; RSS ok; monthly cadence"
+  },
+  "all-in": {
+   "inUse": "https://rss.libsyn.com/shows/254861/destinations/1928300.xml",
+   "note": "job-sheet feed allinpodcast.co unused; libsyn feed healthy"
+  }
+ }
 }
