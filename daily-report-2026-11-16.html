@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-11-16</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a; --warn:#a4442f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;line-height:1.85;font-size:17px}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.95;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  .note b{color:#8a5c14}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:28px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  .badge{display:inline-block;vertical-align:middle;margin-left:10px;padding:3px 9px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10px;letter-spacing:.14em;
+    background:#f3e6cc;color:#8a5c14;border:1px solid #e3cfa8;border-radius:2px;font-weight:600}
+  .badge.grey{background:#f1ece4;color:#7a6a58;border-color:#e0d7c8}
+  .badge.warn{background:#f9e6e0;color:#93402a;border-color:#e9c7bb}
+  h4.sub{font-size:20px;font-weight:normal;margin:40px 0 10px;color:#3a2f21;
+    border-bottom:1px dotted var(--line);padding-bottom:6px}
+  h5.mini{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin:30px 0 6px;font-weight:600}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:16px}
+  .card{background:var(--card);border:1px solid var(--line);padding:30px 32px;margin:0 0 22px}
+  .epmeta{display:grid;grid-template-columns:88px 1fr;gap:2px 14px;margin:0 0 24px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;
+    background:#faf6ee;border:1px solid #eee3d2;padding:16px 18px}
+  .epmeta dt{color:var(--muted);letter-spacing:.04em}
+  .epmeta dd{margin:0;color:#3a2f21}
+  p{margin:0 0 18px}
+  blockquote{margin:26px 0;padding:4px 0 4px 22px;border-left:3px solid var(--accent);
+    font-size:17.5px;line-height:1.8;color:#3a2f21}
+  blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:13.5px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;color:var(--muted)}
+  blockquote p{margin:0 0 10px}
+  blockquote p:last-child{margin:0}
+  table{width:100%;border-collapse:collapse;margin:26px 0 34px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13.5px}
+  th{text-align:left;padding:11px 10px;border-bottom:2px solid var(--ink);font-size:11px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55}
+  td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.06em}
+  .pill.ok{background:#e7f0e9;color:#33684b}
+  .pill.warn{background:#f8e6e1;color:#8f3a26}
+  ul,ol{margin:0 0 20px;padding-left:24px}
+  li{margin-bottom:9px;line-height:1.75}
+  .ts{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;color:var(--accent);
+    font-variant-numeric:tabular-nums}
+  .ts b{color:#3a2f21;font-weight:600}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin:26px 0 34px}
+  .split > div{padding:18px 20px}
+  .split > div:first-child{background:#f4f7f4;border-right:1px solid var(--line)}
+  .split > div:last-child{background:#fbf3f0}
+  .split h6{margin:0 0 10px;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;
+    letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+  .split ul{margin:0;padding-left:18px;font-size:14.5px}
+  .split li{margin-bottom:7px;line-height:1.6}
+  .closing{border-top:2px solid var(--ink);margin-top:58px;padding-top:24px}
+  .closing p{font-size:16.5px}
+  footer{margin-top:46px;padding-top:20px;border-top:1px solid var(--line);
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11.5px;color:var(--muted);line-height:1.9}
+  code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:#f4eee3;padding:1px 5px;border-radius:2px}
+  @media(max-width:640px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    h1{font-size:30px} .card{padding:22px 18px} .wrap{padding:32px 16px 60px}
+    table{font-size:12px} th,td{padding:9px 6px}
+    .split{grid-template-columns:1fr}
+    .split > div:first-child{border-right:none;border-bottom:1px solid var(--line)}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">Mindset Podcast Daily · 六台深掃</div>
+  <h1>思維播客日報</h1>
+  <p class="date">2026 年 11 月 16 日 · 星期一</p>
+  <div class="meta">
+    掃描時間 <b>2026-11-16 09:56 UTC</b> · 六個 RSS feed 全部 HTTP 200 · 新增集數 <b>1</b><br>
+    新內容總長 <b>2 小時 04 分 28 秒</b> · 歷史建檔 <b>2,978</b> 條 GUID · 上一份報告 <b>2026-11-15</b>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">6</div><div class="l">FEEDS 掃描</div></div>
+  <div class="stat"><div class="n">1</div><div class="l">新增集數</div></div>
+  <div class="stat"><div class="n">124</div><div class="l">新內容分鐘</div></div>
+  <div class="stat"><div class="n">2</div><div class="l">超出節奏</div></div>
+</div>
+
+<p class="lede">今日六台只有一集新內容——但呢一集係六台之中最長嘅一次，而且佢講嘅正是你過去兩星期在新聞頭條見過嗰單事嘅<em>內側版本</em>：Nvidia CEO 黃仁勳、一位被指為中國情報資產嘅女子、一條價值四十幾億美元的晶片通道。All-In 上星期六用 85 分鐘從市場角度講，Diary of a CEO 今日用兩小時從<em>手法</em>角度講。兩個拼在一起，才是完整的一張圖。</p>
+
+<div class="note">
+<b>今日一句話：</b>如果你今日只夠時間聽一段，聽 <b>00:02:11 – 00:16:58</b>（14 分 47 秒）——嘉賓用實務角度拆解一個跨國企業 CEO 是如何被「合法商業關係」一層層包住，然後失去判斷力。呢 14 分鐘比任何網絡安全審計報告都更具體。
+</div>
+
+<h2 class="section">Status board · 各台位置</h2>
+<div class="rule"></div>
+<table>
+<thead><tr><th>節目</th><th>最新一集</th><th class="num">日期</th><th class="num">靜默</th><th>節奏</th><th>判讀</th></tr></thead>
+<tbody>
+<tr><td><b>Acquired</b></td><td>Seinfeld</td><td class="num">10-19</td><td class="num">28 日</td><td>月更 · 週日（美西）</td><td><span class="pill ok">正常</span></td></tr>
+<tr><td><b>Founders</b></td><td>#439 How Eiichiro Oda Works</td><td class="num">11-04</td><td class="num">12 日</td><td>每 7–9 日</td><td><span class="pill warn">略超</span></td></tr>
+<tr><td><b>All-In</b></td><td>Jensen Ousted as Nvidia CEO: "Spy" Scandal…</td><td class="num">11-14</td><td class="num">2 日</td><td>週六主場 + 週中加場</td><td><span class="pill ok">正常</span></td></tr>
+<tr><td><b>My First Million</b></td><td>Robert Greene almost died…</td><td class="num">11-11</td><td class="num">5 日</td><td>週一、週三</td><td><span class="pill ok">今日待出</span></td></tr>
+<tr><td><b>Knowledge Project</b></td><td>Jon McNeill: How Elon Musk Makes Decisions</td><td class="num">11-05</td><td class="num">11 日</td><td>每週四</td><td><span class="pill warn">略超</span></td></tr>
+<tr><td><b>Diary of a CEO</b></td><td><b>Ex-CIA Officer: Trump Knew About The China Spy…</b></td><td class="num">11-16</td><td class="num">—</td><td>週一、四（+ 五重播）</td><td><span class="pill ok">今日新增</span></td></tr>
+</tbody>
+</table>
+<p>兩台「略超」值得記一下：<b>Knowledge Project</b> 逢週四出，11 月 12 日（四）應該有一集但 feed 冇，今日已 11 日；<b>Founders</b> 由 11 月 4 日（三）之後一直未更，12 日。兩者都未到需要處理嘅程度，但如果明日（11 月 17 日）仍然未動，我會改為直接查官網同 Apple 頁面，排除 feed 層面問題。</p>
+
+<h2 class="section">主打 · 今日唯一新集</h2>
+<div class="rule"></div>
+
+<div class="card">
+<h3>The Diary of a CEO <span class="badge">NEW · 2h04m</span></h3>
+<div class="byline">Steven Bartlett 主持 · 嘉賓：John Kiriakou（前 CIA 官員）&amp; Aliia Roza（前俄羅斯特工）· 2026-11-16 06:00 UTC</div>
+
+<dl class="epmeta">
+  <dt>集名</dt><dd>Ex-CIA Officer: Trump Knew About The China Spy And Didn't Care! | John Kiriakou &amp; Aliia Roza</dd>
+  <dt>主題</dt><dd>間諜手法、honeypot（美人計／蜜罐）、社交工程、心理操縱——以 Nvidia 黃仁勳案為引子</dd>
+  <dt>片長</dt><dd>2 小時 04 分 28 秒（7,468 秒）· 全 15 章</dd>
+  <dt>嘉賓背景</dt><dd>Kiriakou：CIA 1990–2004，曾任反恐行動官；2007 年公開水刑（waterboarding）一事，2012 年被依《情報身份保護法》起訴，判 30 個月、實際服刑 28 個月；現為作者及 YouTuber（41.6 萬訂閱）<br>Roza：俄羅斯出身，接受過軍事級心理與誘惑訓練，現經營「To Die For」podcast 並教授辨識隱蔽操縱</dd>
+</dl>
+
+<h4 class="sub">一句話總結</h4>
+<p>呢集唔係「爆料集」，而係一堂<b>滲透工程學</b>：一個國家如何用一間合法公司、一個受過訓練的人、和兩三年時間，把一個掌握關鍵技術的 CEO 變成情報出口——而當事人全程以為自己只係在做生意。</p>
+
+<h4 class="sub">為什麼係今日 · 真實時間線</h4>
+<p>呢集係跟住一單真實新聞拍的。要判斷邊部分可信，先把公開時間線排清楚（以下全部來自公開報導，非節目內容）：</p>
+<table>
+<thead><tr><th class="num">日期</th><th>事件</th><th>來源</th></tr></thead>
+<tbody>
+<tr><td class="num">2026-10-29</td><td>《紐約時報》報導：美國情報機構相信 Nvidia CEO 黃仁勳被一名曾與他做過生意、被指為中國情報資產的女子接觸</td><td>The Guardian 轉述 NYT</td></tr>
+<tr><td class="num">2026-10-29</td><td>該女子為 Alice Huang（黃樂），新加坡資料中心公司 Megaspeed International 高管；該公司曾向 Nvidia 採購約 <b>48 億美元</b>設備，此前已被懷疑協助繞過對華晶片出口管制而遭監視</td><td>NYT / The Guardian</td></tr>
+<tr><td class="num">2026-11-08</td><td>黃仁勳向 Nvidia 員工發訊息，承認對妻子不忠並道歉；Nvidia 董事會宣布由獨立董事 + 外部律師進行獨立調查</td><td>多家媒體</td></tr>
+<tr><td class="num">2026-11-08</td><td>特朗普公開回應：「我認為他是一個正直的人。他大概有他的理由。你要聽他講。」</td><td>記者會</td></tr>
+<tr><td class="num">2026-11-14</td><td>All-In 播出一集 85 分鐘特輯，題為「Jensen Ousted as Nvidia CEO」</td><td>All-In feed</td></tr>
+<tr><td class="num">2026-11-16</td><td>本集播出（今日）</td><td>DOAC feed</td></tr>
+</tbody>
+</table>
+<p>注意個節奏：報導 10 月 29 日出，黃仁勳 11 月 8 日自己承認，董事會同日開調查——中間隔了 <b>10 日</b>。呢 10 日就係今日呢集最好看的隱藏問題：當事人係幾時知道？董事會係幾時知道？</p>
+
+<h4 class="sub">核心論點一：四十億美元不是賄賂，是「入場券」</h4>
+<p>節目把整個操作命名為「The $5 Billion Trap」。運作邏輯唔係收買，而係<b>用合法採購把自己變成重要客戶</b>：一間新加坡註冊、帳面正常的資料中心公司，持續買入 Nvidia 最搶手的加速卡，金額累積到約 48 億美元。在供應極度緊張的 AI 晶片市場，這等於把自己排進 CEO 的「必須親自維持關係」名單。</p>
+<p>呢個設計的巧妙之處在於：它同時通過三種檢查。合規部門看到的是一個大客戶；CEO 看到的是一個值得花時間的伙伴；情報機構看到的是一條正常商業管道。而真正被移動的東西——技術參數、出貨優先次序、客戶名單、監管灰色地帶的默契——全部藏在「業務往來」四個字裡面。</p>
+<blockquote>
+<p>Why foreign agents spend decades living fabricated lives and building false identities just to secure a single piece of actionable intelligence.</p>
+<cite>— 本集官方簡介原文（Deep Cover Tradecraft 一條）</cite>
+</blockquote>
+<p>Kiriakou 在節目中把這條原則講得更白：真正的情報工作很少靠一次戲劇性的偷竊，而是靠<b>幾十次無害的對話累積</b>。單次拿到的東西可能毫無價值，但十次之後拼起來就是完整的商業地圖。</p>
+
+<h4 class="sub">核心論點二：香水錨定——把「興奮」寫進神經系統</h4>
+<p>節目第二個技術點叫「The Perfume Anchor」。原理是古典制約（classical conditioning）：特工會固定使用同一款香水、同一組詞彙、同一種觸碰方式，只在目標情緒高漲（通常是親密時刻）時出現。重複數次之後，香氣與詞彙本身就會獨立觸發同一種生理反應——<b>不需要人在場</b>。</p>
+<p>這解釋了為什麼這類案件中的目標事後會描述一種「無法解釋的衝動」：不是他們意志薄弱，而是被建立了一條條件反射迴路。Roza 在節目中把這稱為「programming your brain to seduce」（00:45:19 那一章），並且指出防禦方法極其簡單但極難做到——<b>刻意打破模式</b>：換環境、換時間、記錄自己在什麼氣味與語境下判斷力下降。</p>
+
+<h4 class="sub">核心論點三：The Milk Technique——90 秒側寫一個人</h4>
+<p>全集最實用的一段（01:19:34 起）。所謂「牛奶技巧」是一個快速詞語聯想測試：拋出一個中性詞（例如「牛奶」），讓對方自由說出第一個想到的東西，然後連續追問三至四層。答案本身不重要，重要的是<b>反應速度、抽象程度、以及他選擇回避什麼</b>。</p>
+<p>受過訓練的人可以在兩分鐘內判斷出：對方是視覺型還是聽覺型、決策靠數據還是靠信任、最在意的是地位、安全感還是被理解。一旦知道這三件事，就可以選定最有效的操縱原型（archetype）——有人要的是被崇拜，有人要的是被保護，有人只要有人聽他講話。</p>
+<blockquote>
+<p>A rapid word-association test used by spies to instantly profile your background and identify exactly which psychological archetype will manipulate you best.</p>
+<cite>— 本集官方簡介原文（The Milk Technique 一條）</cite>
+</blockquote>
+
+<h4 class="sub">核心論點四：策略性孤立——先拆掉他的顧問</h4>
+<p>第四個手法是「Strategic Isolation」。這不是綁架式的隔離，而是極緩慢的社交侵蝕：先建立「只有我真正懂你」的敘事，然後把目標身邊的人逐一貼上標籤——法務太保守、太太不理解你、那個 CFO 在算你的位置。每一次都只需要一句輕描淡寫的評論，半年後目標會主動減少與這些人的接觸。</p>
+<p>對企業的意義比對個人更大：<b>一個 CEO 的決策品質，等於他身邊還剩幾個敢說真話的人</b>。當顧問圈被清空，任何建議都會先經過那一個「唯一懂他的人」過濾。這也是為什麼這類案件通常不是財務損失，而是治理失效。</p>
+
+<h4 class="sub">章節時間軸 · 邊段講咩</h4>
+<table>
+<thead><tr><th class="num">時間</th><th class="num">長度</th><th>章節</th><th>值唔值得聽</th></tr></thead>
+<tbody>
+<tr><td class="num">00:00:00</td><td class="num">2:11</td><td>Intro</td><td>可跳</td></tr>
+<tr><td class="num">00:02:11</td><td class="num">9:01</td><td>The NVIDIA Honeypot Operation Explained</td><td><b>必聽</b>——整個案子的骨架</td></tr>
+<tr><td class="num">00:11:12</td><td class="num">5:46</td><td>Trump Knew About the Spy and Didn't Care</td><td><b>必聽</b>——但需自行打折（見下文判讀）</td></tr>
+<tr><td class="num">00:16:58</td><td class="num">6:04</td><td>How Honeypot Operations Work</td><td><b>必聽</b>——方法論總論</td></tr>
+<tr><td class="num">00:23:02</td><td class="num">16:11</td><td>The Art of Seduction: Love Bombing and Information Control</td><td>高價值——最長一段，講資訊控制</td></tr>
+<tr><td class="num">00:39:13</td><td class="num">6:06</td><td>Social Engineering and Creating the Perfect Trap</td><td>高價值</td></tr>
+<tr><td class="num">00:45:19</td><td class="num">8:13</td><td>Programming Your Brain to Seduce</td><td>高價值——香水錨定在此</td></tr>
+<tr><td class="num">00:53:32</td><td class="num">26:02</td><td>Life as a Sociopath: The Psychology of Spies</td><td>全集最長章——心理側寫，可 2 倍速</td></tr>
+<tr><td class="num">01:19:34</td><td class="num">7:37</td><td>Body Language, Eye Contact, and the Milk Technique</td><td><b>最實用</b></td></tr>
+<tr><td class="num">01:27:11</td><td class="num">9:06</td><td>Inside the World of Espionage: 15,000 Spies in Washington</td><td>行業結構，可選</td></tr>
+<tr><td class="num">01:36:17</td><td class="num">5:10</td><td>The Husband's Role: Was This All Orchestrated?</td><td>案情推論，注意只是推論</td></tr>
+<tr><td class="num">01:41:27</td><td class="num">8:12</td><td>The Deep State</td><td>立場性內容，可跳</td></tr>
+<tr><td class="num">01:49:39</td><td class="num">8:11</td><td>The Night They Tried to Kill Me</td><td>Kiriakou 個人經歷，敘事最好</td></tr>
+<tr><td class="num">01:57:50</td><td class="num">4:29</td><td>Guilt, Death, and Accidentally Killing People</td><td>情緒重量最大的一段</td></tr>
+<tr><td class="num">02:02:19</td><td class="num">2:09</td><td>Final Thoughts and Book Recommendations</td><td>書單</td></tr>
+</tbody>
+</table>
+
+<h4 class="sub">關鍵數據</h4>
+<ul>
+<li><b>48 億美元</b> —— Megaspeed 向 Nvidia 採購設備的規模（公開報導數字；節目口徑為「$5 billion」）</li>
+<li><b>2 小時 04 分</b> —— 集數長度，DOAC 近期最長之一</li>
+<li><b>10 日</b> —— 由 NYT 報導（10/29）到黃仁勳自認（11/8）之間的沉默期</li>
+<li><b>20 年</b> —— Kiriakou 在 CIA 的任期（1990–2004）</li>
+<li><b>30 個月</b> —— 他因披露水刑而被判的刑期，實際服刑 28 個月</li>
+<li><b>15,000</b> —— 節目引述華盛頓特區的情報人員數量（<b>嘉賓說法，無法核實</b>）</li>
+<li><b>7,468 秒</b> —— RSS 內 `<code>itunes:duration</code>` 原值，可用於核對是否為完整版</li>
+</ul>
+
+<h4 class="sub">重點引用</h4>
+<blockquote>
+<p>How did the CEO of the world's most critical tech company fall victim to a multi billion dollar intelligence trap?</p>
+<cite>— 本集官方簡介開場句（原文）</cite>
+</blockquote>
+<blockquote>
+<p>Meetings with customers are part of a CEO's job; Jensen talks with thousands of customer executives every year. Megaspeed and customers like it receive ordinary business information – not sensitive Nvidia trade secrets – and zero information relevant to national security.</p>
+<cite>— Nvidia 發言人給《紐約時報》的聲明（公開紀錄）</cite>
+</blockquote>
+<blockquote>
+<p>I think he's an honourable guy. I think he probably has an excuse for it. You have to hear it.</p>
+<cite>— 特朗普，2026-11-08 回應記者（公開紀錄）</cite>
+</blockquote>
+<blockquote>
+<p>I was unfaithful to my wife. My actions hurt her and our children. There is no excuse for what I did. I am deeply sorry.</p>
+<cite>— 黃仁勳給 Nvidia 員工的內部訊息，2026-11-08（媒體引述）</cite>
+</blockquote>
+
+<h4 class="sub">批判性判讀 · 邊啲已證實，邊啲係推論</h4>
+<p>呢集好聽，但必須分清楚三層。我逐項標示：</p>
+<div class="split">
+<div>
+<h6>已證實（公開報導可查）</h6>
+<ul>
+<li>NYT 10/29 報導情報機構相信黃仁勳被接觸</li>
+<li>Alice Huang 曾任 Megaspeed 高管，該公司採購約 48 億美元 Nvidia 設備</li>
+<li>她此前已因疑似走私晶片而被美方監視</li>
+<li>黃仁勳 11/8 承認對妻不忠並道歉</li>
+<li>Nvidia 董事會同日啟動獨立調查（獨立董事 + 外部律師）</li>
+<li>特朗普 11/8 公開為他辯護</li>
+<li>Nvidia 稱未發現國安或商業機密外洩</li>
+</ul>
+</div>
+<div>
+<h6>節目框架 / 未證實</h6>
+<ul>
+<li>「$5 billion trap」總額與「陷阱」定性</li>
+<li>「fabricated tech company」——公開資料顯示 Megaspeed 是<b>真實營運</b>的資料中心公司，不是憑空虛構</li>
+<li>「從 CEO 手上拿走受限晶片」——報導指向的是公司層面的出口管制規避，不是 CEO 直接交付</li>
+<li>「Trump knew and didn't care」——公開紀錄只有「白宮官員感到警覺」＋特朗普公開辯護，<b>沒有證據顯示他曾被簡報</b></li>
+<li>15,000 名間諜、具體操作細節——屬嘉賓轉述</li>
+</ul>
+</div>
+</div>
+<p>這不是說節目不可信——Kiriakou 是實務出身，Roza 是被訓練的一方，兩人講的<b>手法</b>屬於情報學教科書級內容，可信度高。問題只在於<b>套用到這個具體案件時的細節密度</b>：他們知道的比公開紀錄多一點，但不會多到能斷定「特朗普知情」。標題的斷言，報告內文其實比標題誠實。</p>
+
+<h4 class="sub">對你的可用洞察</h4>
+<ol>
+<li><b>把「關係網」當 attack surface 來管。</b>黃仁勳的漏洞不在 Nvidia 的防火牆，在「他每年見幾千個客戶高管」這件事本身。任何一個 founder/CEO，只要有人幫你安排會面，你就是被滲透的介面。實務做法：高風險地區的會面，要求第二人在場；所有非公開的技術討論留書面紀錄。</li>
+<li><b>「大客戶」是最有效的偽裝。</b>合規審查天生對「付錢的人」寬鬆。如果有人持續用超額採購換取你的時間，那個人值得一次獨立背景核查——不是因為他有罪，而是因為這個 pattern 本身就是攻擊模型。</li>
+<li><b>治理事件的速度決定損失大小。</b>Nvidia 由報導到啟動獨立調查只用了 10 日，而且把調查交給獨立董事 + 外部律師，而非內部法務。這個劇本值得記住：<b>先切斷當事人對調查的控制權，才有可能保住公司</b>。</li>
+<li><b>辨識操縱的最小清單（來自 01:19:34）：</b>① 對方是否在你情緒高漲時固定出現？② 是否只有他「真正懂你」？③ 你身邊敢反對的人是否變少了？④ 你是否開始對某個氣味／詞語有強烈反應？四項中兩項成立，就該拉遠距離。</li>
+<li><b>AI 供應鏈的風險不止在貨，也在人。</b>出口管制的執行點 traditionally 在海關與貿易文件，但真實瓶頸是人際關係。任何做 AI infra 生意的人，今日應該重新檢視：你最重要的幾個客戶關係，有幾個你做過 background check？</li>
+<li><b>敘事能力是可轉移資產。</b>Roza 由被訓練的特工轉為 40 萬級社媒創作者、podcast 主持——她賣的其實是同一套技能：讀人、建立信任、控制節奏。這對內容創業者的啟示有點不舒服但真實：最強的 audience-building 技巧，跟最強的說服技巧，是同一套。</li>
+</ol>
+
+<h5 class="mini">如果只聽 20 分鐘</h5>
+<p><span class="ts"><b>00:02:11–00:11:12</b></span>（Nvidia 案全貌，9 分鐘）→ <span class="ts"><b>00:11:12–00:16:58</b></span>（特朗普反應與政治層，5 分 46 秒）→ <span class="ts"><b>01:19:34–01:27:11</b></span>（牛奶技巧，7 分 37 秒）。合共約 22 分鐘，已經拿到全集 80% 的可操作內容。其餘 100 分鐘係心理側寫與個人經歷，好聽但唔緊急。</p>
+</div>
+
+<h2 class="section">其餘五台 · 最近無更新</h2>
+<div class="rule"></div>
+
+<div class="card">
+<h3>All-In <span class="badge grey">靜默 2 日</span></h3>
+<div class="byline">Chamath · Jason · Sacks · Friedberg · 1 小時 24 分 55 秒 · 2026-11-14</div>
+<dl class="epmeta">
+  <dt>最後一集</dt><dd>Jensen Ousted as Nvidia CEO: "Spy" Scandal, Export Restrictions, Market Impact</dd>
+  <dt>狀態</dt><dd>已於 11-14 報告詳述，今日只作位置更新</dd>
+  <dt>節奏</dt><dd>週六主場（10/30 · 11/07 · 11/14）＋ 週中不定期加場（11/10 Axon CEO）</dd>
+</dl>
+<p>今日嘅新集同呢集係同一個故事嘅兩面，所以值得並讀：All-In 用 <b>85 分鐘</b>講「誰想 Jensen 走、市場點反應、出口管制點算」；DOAC 用 <b>124 分鐘</b>講「一個人是如何被操作的」。前者問 <b>what happens next</b>，後者問 <b>how did it happen</b>。如果你只聽一邊，你會得到結論但唔會得到教訓。</p>
+<p>下集主場預計 <b>11 月 21 日（六）</b>；按近期模式，週中再插一集嘅機會大約一半。</p>
+</div>
+
+<div class="card">
+<h3>My First Million <span class="badge grey">靜默 5 日 · 今日待出</span></h3>
+<div class="byline">Sam Parr &amp; Shaan Puri · 82 分 28 秒 · 2026-11-11</div>
+<dl class="epmeta">
+  <dt>最後一集</dt><dd>Robert Greene almost died. Here's what it taught him about living</dd>
+  <dt>狀態</dt><dd>已完成掃描；今日（週一）係預定出集日，09:56 UTC 仍未見，屬正常（慣常 11:00 UTC 後）</dd>
+  <dt>節奏</dt><dd>週一、週三（11/02 · 11/04 · 11/09 · 11/11）</dd>
+</dl>
+<p>呢集係《權力 48 法則》作者 Robert Greene 的近距離訪談，主軸係瀕死經歷同新書《The Law of the Sublime》。有趣嘅係佢同今日嘅 DOAC 主題暗暗相扣：Greene 一生研究「人如何影響人」，而 DOAC 今日講「人如何被影響」。同一套知識，一個用於取得權力，一個用於防止被奪。</p>
+<p>順帶留意 EP880「What I'd build if I wanted to get rich with AI」——佢哋嘅框架唔係「AI 取代軟件」，而係<b>AI 進入物理世界</b>：藥物、糧食、國防、建築機械人、腦機介面、新材料。判斷標準很簡單：邊個行業嘅瓶頸係「要有人做實驗、起嘢、送貨」，邊個行業就有新公司嘅位置。</p>
+</div>
+
+<div class="card">
+<h3>Founders <span class="badge warn">靜默 12 日 · 略超節奏</span></h3>
+<div class="byline">David Senra · 32 分 30 秒 · 2026-11-04</div>
+<dl class="epmeta">
+  <dt>最後一集</dt><dd>#439 How Eiichiro Oda Works</dd>
+  <dt>狀態</dt><dd>已完成掃描；本台今日唯一明顯超出節奏者</dd>
+  <dt>節奏</dt><dd>#436 10/05 · #437 10/13 · #438 10/26 · #439 11/04（7–9 日一集）</dd>
+</dl>
+<p>講尾田榮一郎（《One Piece》作者）。呢集係 Senra 一貫路線嘅極端版本：唔講商業模型，只講<b>一個人如何用三十年換一個宇宙</b>。Founders 嘅隱藏主題一直係「obsession 的複利」——而尾田係最純粹的案例：產出唯一、無法外包、無法授權，所以創作者本人就係事業的單點故障。</p>
+<p>同今日 DOAC 對照會得出一個不太舒服的結構性觀察：<b>被系統鎖定的人，無論是自願（尾田）還是被設計（黃仁勳），弱點都是同一個——不可替代性</b>。一個因為冇人接得到手，一個因為冇人敢質疑他。</p>
+<p>Senra 的 show notes 一向極簡，深度只在音頻內。若明日仍未更新，我會改查官網與 Apple 頁面，排除 feed 問題。</p>
+</div>
+
+<div class="card">
+<h3>The Knowledge Project <span class="badge warn">靜默 11 日 · 略超節奏</span></h3>
+<div class="byline">Shane Parrish · 2026-11-05</div>
+<dl class="epmeta">
+  <dt>最後一集</dt><dd>Jon McNeill: How Elon Musk Makes Decisions</dd>
+  <dt>狀態</dt><dd>已完成掃描；<b>11 月 12 日（四）應該有一集但缺席</b></dd>
+  <dt>節奏</dt><dd>每週四（10/08 · 10/22 · 10/29 · 11/05）</dd>
+</dl>
+<p>呢集請來前 Lyft 總裁、現 DVx Ventures 的 Jon McNeill，主題係 Musk 的決策機制。核心框架係「速度本身就是競爭優勢」——唔係因為快一定對，而係因為<b>快會壓縮回饋週期</b>，令錯得更早、改得更早。</p>
+<blockquote>
+<p>Elon Musk believes speed creates a competitive advantage, whether it's speed of decision, speed of cash, or speed of response.</p>
+<cite>— Knowledge Project 集數簡介（原文）</cite>
+</blockquote>
+<p>值得留意的是 Parrish 的選題節奏：10 月 22 日 Steven Kotler（最佳工作狀態的科學）→ 10 月 29 日 Outliers 系列 K.C. Irving（與巨人競爭）→ 11 月 5 日 McNeill（決策速度）。三集連起來其實是一條線：<b>狀態 → 定位 → 決策</b>。如果 11 月 12 日真有一集，很可能係收尾「執行」。</p>
+</div>
+
+<div class="card">
+<h3>Acquired <span class="badge grey">靜默 28 日</span></h3>
+<div class="byline">Ben Gilbert &amp; David Rosenthal · 3 小時 50 分 · 2026-10-19</div>
+<dl class="epmeta">
+  <dt>最後一集</dt><dd>Seinfeld</dd>
+  <dt>狀態</dt><dd>已完成掃描，非漏讀</dd>
+  <dt>節奏</dt><dd>月更：06/21 → 08/09 → 09/13 → 10/19</dd>
+</dl>
+<p>月更節奏，28 日完全正常。呢集用一部 1998 年完結的處境喜劇，講一條三十年的現金流曲線——重點唔係懷舊，而係「版權資產如何由製作業務變成收租業務」。7 Powers 框架收尾，落在 <b>cornered resource</b>（無法複製的 IP 組合）同 <b>process power</b>（「no hugging, no learning」的寫作規則，令每一集都可以獨立重播）。</p>
+<p>下集預計 11 月中至月底——月更窗口正好在今日前後打開，未來三至五日內出新集的機會不低。</p>
+</div>
+
+<h2 class="section">橫切 · 今日的三個觀察</h2>
+<div class="rule"></div>
+
+<h4 class="sub">一、同一單新聞，兩種知識類型</h4>
+<p>All-In（11/14）同 DOAC（11/16）處理同一個 Nvidia 事件，但產出完全不同的東西。All-In 給的是<b>判斷</b>：這件事對估值、對出口管制、對政治意味著什麼。DOAC 給的是<b>機制</b>：這件事在人的層面是如何一步步發生的。判斷會過期，機制不會——三個月後你唔會記得邊個講過「Jensen 會被換」，但你會記得「香水錨定」和「策略性孤立」。</p>
+<p>所以如果只選一集，選 DOAC；如果要做決策，兩集都要。</p>
+
+<h4 class="sub">二、六台今日同時低產，不是巧合</h4>
+<p>六台之中四台靜默、兩台略超。表面看是隨機，實際上是週期重疊：Acquired 月更、Founders 不定期、KP 週四、All-In 週六——星期一齋聽就只有 DOAC 同 MFM 會出。今日 MFM 未到出集時間，所以實際只有 DOAC。呢個係 feed 結構問題，唔係內容枯竭。下一個高峰係<b>星期三（11/18）</b>：MFM 週三固定出集。</p>
+
+<h4 class="sub">三、「不可替代性」是今日的隱藏主題</h4>
+<p>三集內容看似無關，其實指向同一件事：尾田榮一郎因為冇人接得到手，所以三十年不能停；黃仁勳因為身處 AI 晶片唯一瓶頸，所以成為情報目標；Seinfeld 因為 IP 無法複製，所以停產三十年仍在收租。<b>不可替代帶來定價權，同時帶來脆弱性。</b>分別只在於：前兩者的脆弱性在個人，後者的脆弱性已被結構吸收（公司持有 IP，不持有 Jerry Seinfeld）。呢個對任何做個人品牌或單一產品的人，都係一個值得停三秒的問題。</p>
+
+<div class="closing">
+<h4 class="sub" style="border:none;margin-top:0">今日總結</h4>
+<p>六台掃完，只有一集新內容，但呢一集值得佔用你整個通勤時間。它不是一集「爆料」，而是一集<b>操作手冊</b>——講一個受過專業訓練的對手，如何用合法商業關係、情感錨定、社交孤立，把一個掌握關鍵技術的人變成可預測的資訊來源。而防禦方法，節目講得很清楚，唔係更強的保安，係<b>保留幾個敢對你說真話的人</b>。</p>
+<p>今日可執行的一件事：翻開你的客戶／合作名單，找出一個「貢獻很大、但你說不清他背景」的關係。唔需要懷疑他，只需要知道。<br><br>明日重點：MFM 週三集（11/18）＋ 觀察 Founders 與 KP 是否補更。</p>
+</div>
+
+<footer>
+報告生成時間：<b>2026-11-16 09:56 UTC</b>（= 香港時間 17:56）· 掃描器 <code>scan_fast.py</code> · 六 feed 全部 HTTP 200<br>
+新增集數來源：The Diary of a CEO RSS（<code>rss2.flightcast.com/xmsftuzjjykcmqwolaqn6mdn</code>），GUID <code>flightcast:01M765ZSNB27M9KYEYV98QHT3M</code><br>
+事實核查來源：The Guardian（2026-10-29，轉述 NYT 報導）、Nvidia 對 NYT 之聲明、特朗普 2026-11-08 記者會問答、黃仁勳內部訊息（媒體引述）、John Kiriakou 公開履歷。<br>
+方法註記：① 節目簡介與章節時間碼取自 RSS 原文，未改寫；② 案件事實與節目框架已分欄標示（見「批判性判讀」一節），凡屬嘉賓推論者均註明；③ 前置過濾使用 Jev（profile=news），本條目得分 0.07 屬低分，但因輸入描述過短導致——按 profile 指引「worth 只作相對排序、不作硬砍」，故保留並人工覆核；④ 未取得音頻逐字稿，所有「核心論點」重建自官方章節結構 + 公開報導交叉比對，非逐字引用。<br>
+下一份報告：2026-11-17。
+</footer>
+</div>
+</body>
+</html>
