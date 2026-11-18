@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-11-18</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a; --warn:#a4442f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;line-height:1.85;font-size:17px}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.95;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  .note b{color:#8a5c14}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:28px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  .badge{display:inline-block;vertical-align:middle;margin-left:10px;padding:3px 9px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10px;letter-spacing:.14em;
+    background:#f3e6cc;color:#8a5c14;border:1px solid #e3cfa8;border-radius:2px;font-weight:600}
+  .badge.grey{background:#f1ece4;color:#7a6a58;border-color:#e0d7c8}
+  .badge.warn{background:#f9e6e0;color:#93402a;border-color:#e9c7bb}
+  h4.sub{font-size:20px;font-weight:normal;margin:40px 0 10px;color:#3a2f21;
+    border-bottom:1px dotted var(--line);padding-bottom:6px}
+  h5.mini{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin:30px 0 6px;font-weight:600}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:16px}
+  .card{background:var(--card);border:1px solid var(--line);padding:30px 32px;margin:0 0 22px}
+  .epmeta{display:grid;grid-template-columns:88px 1fr;gap:2px 14px;margin:0 0 24px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;
+    background:#faf6ee;border:1px solid #eee3d2;padding:16px 18px}
+  .epmeta dt{color:var(--muted);letter-spacing:.04em}
+  .epmeta dd{margin:0;color:#3a2f21}
+  p{margin:0 0 18px}
+  blockquote{margin:26px 0;padding:4px 0 4px 22px;border-left:3px solid var(--accent);
+    font-size:17.5px;line-height:1.8;color:#3a2f21}
+  blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:13.5px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;color:var(--muted)}
+  blockquote p{margin:0 0 10px}
+  ul,ol{margin:0 0 20px;padding-left:24px}
+  li{margin:0 0 10px}
+  .tl{width:100%;border-collapse:collapse;margin:24px 0 30px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13.5px}
+  .tl th{text-align:left;font-weight:600;color:var(--muted);font-size:11px;letter-spacing:.1em;
+    text-transform:uppercase;border-bottom:1px solid var(--line);padding:8px 10px}
+  .tl td{padding:8px 10px;border-bottom:1px solid #f0e8db;vertical-align:top;line-height:1.6}
+  .tl td.t{color:var(--accent);white-space:nowrap;font-variant-numeric:tabular-nums;width:74px}
+  .tl tr:hover td{background:#fbf6ec}
+  .bground{background:#f7f4ec;border:1px dashed #ddd0b8;padding:16px 20px;margin:22px 0;
+    font-size:15px;line-height:1.8;color:#4d4133}
+  .bground b{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;color:#8a5c14;display:block;margin-bottom:8px}
+  .takes{background:#fbf7ef;border:1px solid #e9dcc4;padding:24px 28px;margin:34px 0 0}
+  .takes h4{margin-top:0}
+  .takes ol{padding-left:22px;margin-bottom:0}
+  .takes li{margin-bottom:14px}
+  .takes b{color:#8a5c14}
+  .dormant{opacity:.94}
+  .dormant p{font-size:15.5px}
+  footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;color:var(--muted);line-height:1.9}
+  footer a{color:var(--accent);text-decoration:none}
+  @media (max-width:640px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    h1{font-size:30px}
+    .wrap{padding:30px 18px 60px}
+    .card{padding:22px 18px}
+    blockquote{font-size:16.5px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcast Daily · 深度掃描</div>
+  <h1>先承諾，後建造</h1>
+  <p class="date">2026-11-18 · 星期三</p>
+  <div class="meta">
+    本期焦點：<b>Founders #440</b> — 鄭周永（現代集團創辦人）自傳《Born of This Land》＋<b>All-In</b> — Databricks CEO Ali Ghodsi 談「AGI 已經來了，但企業用不到」<br>
+    掃描範圍：6 個英文商業／思維播客 · 共 <b>2,981</b> 集存檔 · 對比上次掃描（2026-11-17 09:56 UTC）
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">6</div><div class="l">掃描頻道</div></div>
+  <div class="stat"><div class="n">2</div><div class="l">新集數</div></div>
+  <div class="stat"><div class="n">112</div><div class="l">分鐘新內容</div></div>
+  <div class="stat"><div class="n">4</div><div class="l">本期無更新</div></div>
+</div>
+
+<p class="lede">今日兩集，一個講 1960 年代的韓國船廠，一個講 2026 年的企業 AI，表面上毫無關係。但兩集其實共用同一個句式：<em>世界不是由「已經存在的資源」推進的，而是由那些願意先簽下承諾、再倒推建造的人推進的。</em>鄭周永在沒有船廠的時候把船賣掉；Ali Ghodsi 說 AGI 已經到了，只是企業連「讓 AI 坐進會議室」這一步都做不到。兩集合起來，剛好是一份關於「承諾與基礎設施之間那個缺口」的完整說明書。</p>
+
+<div class="note">
+<b>關於本報告的取材誠實度</b><br>
+Founders 官方 show notes 只有一行字（無章節、無逐字稿），因此本報告的節目結構與引文，來自第三方對該集逐字稿所做的<b>帶時間碼整理</b>，並與鄭周永原著中可公開核實的事實交叉檢查；所有 blockquote 均為節目／書中原文，並附上節目時間碼。All-In 有官方章節表（0:00 / 8:50 / 22:04 / 38:25 / 44:02），並有逐字稿校對的引文庫對照。<b>凡屬我補充的歷史或行業背景，一律放入灰色框並標明「背景補充」，不會冒充節目原話。</b>
+</div>
+
+<h2 class="section">本期新集數</h2>
+<div class="rule"></div>
+
+<h3>Founders #440<span class="badge">NEW · 49 MIN</span></h3>
+<p class="byline">The Most Inspiring Autobiography I've Ever Read: Born of This Land · 2026-11-17 發布 · 主持：David Senra</p>
+
+<div class="card">
+<dl class="epmeta">
+  <dt>節目</dt><dd>Founders（David Senra）</dd>
+  <dt>集數</dt><dd>#440</dd>
+  <dt>主角</dt><dd>鄭周永（Chung Ju-yung, 1915–2001）— 現代集團（Hyundai）創辦人</dd>
+  <dt>書目</dt><dd>《Born of This Land: My Life Story》（鄭周永自傳，八十多歲時口述成書）</dd>
+  <dt>長度</dt><dd>49 分 32 秒（2,972 秒）</dd>
+  <dt>發布</dt><dd>2026-11-17 19:10 UTC</dd>
+</dl>
+
+<h4 class="sub">一、為何 Senra 用了最高級</h4>
+
+<p>David Senra 講過幾百本創辦人傳記，用字一向克制。這一集他在標題就直接寫「我讀過最鼓舞人心的自傳」，並且特別用了 <b>rereading</b>（重讀）—— 這本書是他少數會回頭再讀、再拆一次的書。重讀的價值在於：第一次讀，你看到的是「一個窮小子變成韓國首富」的傳奇；第二次讀，你看到的是一套<b>可以拆解、可以複製的決策機制</b>。</p>
+
+<p>而這集最反直覺的地方，是它幾乎沒有「商業策略」。沒有 TAM、沒有護城河分析、沒有資本配置框架。它講的是一個人如何在一個完全沒有工業基礎的國家，用三十年的時間，把鋼鐵、造船、汽車、建設一個一個從零捏出來。換句話說：<b>這集不是關於「如何在既有市場裡贏」，而是關於「如何在沒有的地方，先假裝它有」。</b></p>
+
+<p>韓國人給鄭周永一個綽號：「推土機」（bulldozer）。這個詞原本是貶義 —— 暗示他沒讀過書、先鏟再說、不思考。他在書裡直接反駁了這個讀法：</p>
+
+<blockquote>
+<p>「如果我沒有先坐下來把每一件事規劃清楚，今天的現代集團根本不可能存在。」</p>
+<cite>鄭周永，《Born of This Land》· 節目 00:26</cite>
+</blockquote>
+
+<p>這句話是整集的地基。他的「快」不是魯莽，而是<b>把思考壓縮在動作之前</b>：先花極長時間把細節想到盡，然後執行的時候不再猶豫。這也解釋了為什麼一個只讀到小學六年級的人，可以同時管住一個横跨造船、汽車、建設的工業集團 —— 他靠的不是專業知識，而是<b>把「不可行」拆成一個一個可以被測試的具體障礙</b>。</p>
+
+<h4 class="sub">二、起點：一個連排泄物都要計入生產的家庭</h4>
+
+<p>鄭周永 1915 年生於今日北韓江原道通川的一個貧農家庭。他的正規教育只有兩段：村塾三年讀儒家經典、加上三年小學，大約到六年級就結束（04:42、05:02）。他父親對「家產」的定義，他記了一輩子：</p>
+
+<p>一個健康的身體，加上一個勤勉的品格。沒有土地，沒有存款，沒有其他。</p>
+
+<p>貧窮的細節，書裡寫得毫不修飾：冬天太長，春天要活下來就得吃樹皮（14:45）；家裡連上廁所的習慣都被經濟邏輯支配 —— 人的排泄物是家中主要肥料，所以每個人都要「留起來」（14:20）。Senra 在節目裡停在這一幕，是因為它說明了一件事：<b>這個人後來對「浪費」的敵意，不是美德，是童年創傷。</b>他後來拒絕為自己辦公室鋪新地毯、拒絕為高管裝專用電梯，都可以追溯到這裡。</p>
+
+<h4 class="sub">三、四次離家：19 歲那次，他沒有再回頭</h4>
+
+<p>他不甘心留在農場，前後跑了四次。第三次最狠：父親在首爾一間簿記學校找到他，哭着求他放棄「這個愚蠢的夢想」回家養家（11:41）。他回去了。然後在十九歲那年，第四次離開，這一次沒有回頭（15:55）。</p>
+
+<p>他什麼工都做：搬石頭、當跑腿、在別人的農場幹活只為了不餓死。最後一間米店請他當送貨員 —— 他高興得不得了，主因是<b>這份工每月附送一袋米</b>（17:03）。</p>
+
+<p>接下來這段，是整集最濃縮的一課。他每天最早到，掃門口，把所有事做到超出一個送貨員該做的範圍。他自己這樣寫：</p>
+
+<blockquote>
+<p>「半途而廢、妥協、抄近路、或者『現實一點』—— 這些東西在我的世界裡不存在。」</p>
+<cite>鄭周永，《Born of This Land》· 節目 18:07</cite>
+</blockquote>
+
+<p>三年後，他的年薪漲到二十袋米 —— 多到讓那個曾經說他是「廢物」的父親改口（17:49）。再兩年，米店老闆主動提出把整間店賣給他。二十四歲，那個送貨員成了老闆（18:52）。</p>
+
+<p><b>這裡有一個值得停下來想的結構：</b>他沒有創業。他是先在一間小公司裡，把自己變成「這間公司不能沒有的人」，然後老闆把公司賣給他。<b>這是資本最便宜的一種取得方式 —— 用不可替代性換股權，而不是用錢買股權。</b></p>
+
+<h4 class="sub">四、兩次被政權拿走：他學到的是「不要跟權力對賭」</h4>
+
+<p>米店只活了兩年。日本戰時政府徵用了朝鮮半島所有米店（19:18）。他轉去做汽車修理廠，跟兩個朋友合夥 —— 然後廠房燒了。他去找私人放貸者借錢重開，但執照只發給「製造業」，於是他每天早上要去求當地警察署長不要關他的門（20:36、21:14）。生意活了下來，然後日本政府用「強制合併」把它吞掉 —— 名義上是合併，實質上是沒收（23:57）。</p>
+
+<p>他二十九歲，人生唯一一次失業。</p>
+
+<p>Senra 在這裡沒有把它講成「苦難造就偉大」。他講的是更冷的一件事：<b>鄭周永兩次被同一個外力清零，所以他後來對「與政權的關係」有一種非常務實的姿態 —— 不是對抗，也不是依附，而是把它當成一個必須被計算的天氣。</b>這也是後來他能拿到朴正熙政府的訂單、卻同時在書裡批評領導人奢靡的原因。</p>
+
+<div class="bground">
+<b>背景補充（非節目原話）</b>
+現代集團的正式起點是 1947 年的「現代建設」。戰後韓國的重建需求，加上 1950 年代美軍工程訂單，讓一間原本做汽車修理的小公司快速累積了土木能力。1960 年代朴正熙政府以「出口導向工業化」為國策，現代拿到了高速公路、造船、汽車等國家級項目 —— 這是鄭周永故事的宏觀背景，但節目的重點不在政策，而在他如何接住這些機會。
+</div>
+
+<h4 class="sub">五、轉入建設：不是願景，是算術</h4>
+
+<p>戰後他重建事業，這一次走進建設業 —— 而且理由一點都不浪漫。他去投一個標，親眼看到一間建設公司收到的一筆合約款，比他修理廠一整年賺的還多：他每張合約大約賺 30 萬至 40 萬韓元，那間公司一單可以做到 1,000 萬韓元（26:14）。</p>
+
+<p>「不是因為我有遠見，是因為我算得出來。」這是整集裡最健康的一種創業動機。<b>很多人把轉行講成使命感，鄭周永把它講成單位經濟。</b></p>
+
+<h4 class="sub">六、核心：用一張訂單，造出一個不存在的產業</h4>
+
+<p>這一段是整集的心臟，也是為什麼這集值得單獨寫一份報告。</p>
+
+<p>1960 年代初，鄭周永判斷韓國必須有自己的造船業 —— 而他自己一艘船也沒造過（34:19）。他跑遍世界找融資，日本與美國的銀行一致嘲笑韓國「沒有造船技術」（35:49）。他回去跟總統朴正熙說，他放棄了。朴正熙不接受，把他趕上飛機，要他再去試（36:09）。</p>
+
+<p>於是他換了一個順序。既然沒有船廠就借不到錢，那就<b>先找買家</b>：</p>
+
+<blockquote>
+<p>「如果你們同意買我們的船，我就去拿到貸款、建好船廠，然後把船交給你們。」</p>
+<cite>鄭周永對潛在買家 · 節目 37:45</cite>
+</blockquote>
+
+<p>大部分人覺得他瘋了。最後他找到希臘船東 Livanos（與 Onassis 家族有姻親關係），對方願意以大幅折扣價買兩艘船（38:20）。鄭周永拿著這張已簽的訂單、以及 14 億韓元的訂金，<b>去銀行當抵押品</b>，借到錢，再用這筆錢去建那座後來真正把船造出來的船廠。</p>
+
+<p>Senra 在這裡做了一個很漂亮的類比：幾十年前，美國船運大亨 Daniel Ludwig 用同一招 —— 先讓 Standard Oil 簽一張長期運輸合約，再拿合約去銀行抵押，買下他的第一艘油輪（38:58）。<b>鄭周永沒有造過船。他造的是「一筆由承諾擔保的貸款」，那是另一種工程學。</b></p>
+
+<p>把這個結構抽象出來，它長這樣：</p>
+
+<ul>
+  <li><b>傳統順序：</b>能力 → 資產 → 客戶 → 收入。每一步都要先有前一步。</li>
+  <li><b>鄭周永順序：</b>客戶承諾 → 以承諾換資本 → 以資本建能力 → 交付 → 收入。</li>
+</ul>
+
+<p>這個順序之所以可行，是因為<b>買家的訂單本身就是一種信用</b>。它把「未來的確定性」提前變現，用來支付「現在的建造」。而它之所以罕見，是因為它要求創辦人承受一個非常不舒服的狀態：<b>在有能力之前，先被人當成騙子。</b></p>
+
+<div class="bground">
+<b>背景補充（非節目原話）</b>
+現代重工的蔚山船廠 1972 年動工、1974 年交付第一艘船，之後成為全球最大單一船廠之一。現代汽車則在 1967 年成立，1975 年推出韓國第一輛自主車型 Pony —— 但 Pony 的設計與工程大量依賴外國技術合作。這正好對應鄭周永的模式：<b>先接單，再引進技術，最後才是自主。</b>
+</div>
+
+<h4 class="sub">七、他如何處理權力：沒有專用電梯，也不要新地毯</h4>
+
+<p>這一段是全集最容易被人引用、也最容易被誤讀的地方。有人提出要為高管裝一部專用電梯，他拒絕，理由是那代表：</p>
+
+<blockquote>
+<p>「高管們膨脹的優越感 —— 他們期待自己得到和工人不一樣的待遇。」</p>
+<cite>鄭周永，《Born of This Land》· 節目 43:02</cite>
+</blockquote>
+
+<p>他去工地視察，看到工人正在為他的到來鋪新地毯，他叫停，指著牆上公司自己的標語：勤勉、儉樸、友愛（43:22）。然後補了一句，這句在 2026 年聽起來格外刺耳：</p>
+
+<blockquote>
+<p>「奢侈之後就是腐敗。我從未見過一個領導人享受奢侈、而國家還能繁榮的。」</p>
+<cite>鄭周永，《Born of This Land》· 節目 43:41</cite>
+</blockquote>
+
+<p>要注意的是，這不是「親民形象管理」。他的邏輯是經濟性的：<b>在一間靠節省紙和繩子起家的公司裡，象徵性的浪費會直接侵蝕成本紀律。</b>他年輕時聽過 J.C. Penney 那句話 ——「我們賣貨不賺錢，我們賺的是省下來的紙和繩」—— 這種會計式的節儉，變成了他的管理哲學。</p>
+
+<h4 class="sub">八、時間是唯一平均分配的資本</h4>
+
+<p>書的最後三分之一，幾乎不談生意，全是八十多歲老人的格言。最核心的一條關於時間：</p>
+
+<blockquote>
+<p>「有人說過，時間是一種平等分配給每個人的資本。我完全同意。」</p>
+<cite>鄭周永，《Born of This Land》· 節目 09:26</cite>
+</blockquote>
+
+<p>他的推論很直接：財富、地位、教育程度都因出生而不同，只有一天二十四小時是齊頭的。<b>所以人與人之間的差距，主要不是起點差距，而是「把這筆平等資本花在哪裡」的差距。</b></p>
+
+<p>他也沒有迴避起點不平等這件事。他反覆講：窮人要比富人多付出十倍到二十倍的努力，才可能走到同一個位置，因為富人一開始就擁有窮人沒有的所有優勢（33:33）。但他把這個殘酷事實，用來支撐而不是瓦解「努力有用」這個結論 —— <b>正因為起點不公平，你才沒有資格浪費那個唯一公平的東西。</b></p>
+
+<h4 class="sub">九、他的兩個公式</h4>
+
+<p><b>公式一：90 / 10。</b></p>
+
+<blockquote>
+<p>「成功是九成的決心，加一成的信心。每次開始一個新項目，我都會這樣提醒自己。」</p>
+<cite>鄭周永，《Born of This Land》· 節目 27:09</cite>
+</blockquote>
+
+<p>這個比例很奇怪 —— 一般人講自信心，他把它壓到一成。理由是他認為<b>信心會隨情況波動，決心不會</b>。信心是對結果的預測，決心是對行為的承諾。當你把賭注押在後者，你就不需要先看到希望才行動。</p>
+
+<p><b>公式二：勤勉的複利。</b></p>
+
+<p>他在書末給了一個近乎機械的「好人生理論」（44:52）：</p>
+
+<ul>
+  <li>勤勉一天 → 當晚睡得好。</li>
+  <li>勤勉一個月 → 生活有看得見的改善。</li>
+  <li>勤勉幾年 → 成果明顯到所有人都無法否認。</li>
+</ul>
+
+<p>這個框架沒有任何激勵語的成分，它只是把時間尺度拆成三層，让你在任何一個尺度上都能得到回饋。<b>這是整本書最實用的一段：它解決了「長期主義者在中途沒有回饋」的問題。</b></p>
+
+<h4 class="sub">十、他選擇怎樣的結尾</h4>
+
+<p>一本首富的自傳，最後通常會停在市值、排名、遺產。鄭周永沒有。他停在一个數字上：他估計自己一生有 <b>90% 是充滿喜悅與意義的</b>—— 包括那些近乎餓死的年份、燒掉的廠房、被政府拿走的生意（06:30）。</p>
+
+<p>Senra 說，這本書之所以比大多數創辦人回憶錄更重，是因為這個結尾。他的人生數學是殘酷的，但他的敘述不是。<b>這不是樂觀，是一種經過計算的選擇：既然時間是唯一平等的資本，那麼「如何敘述自己用掉的時間」，就是最後一項你可以完全作主的資產。</b></p>
+
+<div class="takes">
+<h4 class="sub" style="margin-top:0;border:none;padding:0">如果只帶走五件事</h4>
+<ol>
+  <li><b>把「先後順序」當成一個可以設計的變數。</b>你卡住，很多時候不是因為缺資源，而是因為你規定了「必須先有 A 才能有 B」。鄭周永把順序倒過來：先拿客戶承諾，再用承諾換資本，最後才建能力。問自己：我這條鏈上，哪一環的順序其實是可以調換的？</li>
+  <li><b>「不可行」要拆成一個可以被測試的具體障礙。</b>他不會問「造車可行嗎」，他問「卡車出料口和混凝土模具不匹配，是誰規定卡車不能改？」結果產量由日產 200 件升到 350 件。宏觀判斷沒有用，具體障礙才有用。</li>
+  <li><b>用不可替代性換股權，而不是用錢買股權。</b>他二十四歲成為米店老闆，不是因為他存夠了錢，而是因為他把自己變成那間店不能沒有的人。這條路對沒有資本的人永遠有效。</li>
+  <li><b>把節儉當成制度，不是美德。</b>拒絕專用電梯、叫停新地毯，不是為了形象，是因為象徵性浪費會直接傳染到成本紀律。你公司裡有哪些「只為高層存在」的浪費？</li>
+  <li><b>用三層時間尺度給自己回饋。</b>今天做完 → 今晚睡好；這個月做完 → 生活改善；幾年做完 → 無法否認。長期主義失敗，通常是因為只設計了最遠那層的回饋。</li>
+</ol>
+</div>
+
+</div>
+
+<h3 style="margin-top:44px">All-In<span class="badge">NEW · 62 MIN</span></h3>
+<p class="byline">Databricks CEO: AGI Is Already Here, Why Companies Are Behind, and the Superintelligence Debate · 2026-11-17 發布 · 主持：Jason Calacanis · 嘉賓：Ali Ghodsi</p>
+
+<div class="card">
+<dl class="epmeta">
+  <dt>節目</dt><dd>All-In with Chamath, Jason, Sacks &amp; Friedberg（本集為 Jason Calacanis 的單人訪談，非四人圓桌）</dd>
+  <dt>嘉賓</dt><dd>Ali Ghodsi — Databricks 共同創辦人兼 CEO，UC Berkeley AMPLab 出身</dd>
+  <dt>長度</dt><dd>1 小時 02 分 06 秒</dd>
+  <dt>章節</dt><dd>0:00 早期押注 · 8:50 AGI 是否已到 · 22:04 Agentic AI 實機 demo · 38:25 為何不上市 · 44:02 RSI、網絡風險與末日論</dd>
+  <dt>核心命題</dt><dd>智能已經不缺，缺的是「讓智能看得見公司」的那層基礎設施</dd>
+</dl>
+
+<h4 class="sub">一、一句會被人引用一整年的話</h4>
+
+<blockquote>
+<p>「我其實認為我們已經擁有通用人工智能（AGI）。我從去年就開始這樣說了。」</p>
+<cite>Ali Ghodsi · 節目 09:42</cite>
+</blockquote>
+
+<p>這不是隨口說的。Ghodsi 的依據是他 2009 至 2010 年在 Berkeley AMPLab 時，實驗室內部對 AGI 的共識定義 —— 一個能在<b>大多數領域</b>完成人類智力工作的系統。他說，講之前他先回去問了幾位當年的實驗室同僚，確認定義確實已經被滿足。</p>
+
+<p>但真正有價值的不是「AGI 到了」，而是他對<b>「為什麼大家不覺得」</b>的解釋：終點線被移動了。2010 年叫 AGI 的東西，現在讀起來像熱身；研究者悄悄把目標換成了「超智能」（superintelligence）。他把它精確定義回 Nick Bostrom 2014 年那本書：<b>把一千年的人類思考壓縮進一分鐘</b>，大約是人類速度的一千倍（11:01）。</p>
+
+<p>這個區分很重要，因為它把兩種完全不同的東西分開了：</p>
+
+<ul>
+  <li><b>AGI = 廣度。</b>能做的事和人類一樣多，速度也和人差不多。</li>
+  <li><b>超智能 = 速度 × 自我改進。</b>不只是更快，而是快到可以進入一個沒人控制的自我改進迴圈。</li>
+</ul>
+
+<p>Ghodsi 的立場是：第一種已經有了，第二種沒有，而且我們對第二種的恐懼，正在讓我們忽略第一種帶來的、更無聊但更巨大的問題 —— <b>企業根本還沒開始用它。</b></p>
+
+<h4 class="sub">二、現實檢查：企業把 AI 當「高級一點的 Google」</h4>
+
+<p>他每天跟 Fortune 500 的 CEO 開會，他的觀察非常不客氣：</p>
+
+<blockquote>
+<p>「我看到他們只是用非常原始的方式在用 AI。他們只是把它當成一個高級一點的 Google 搜尋。」</p>
+<cite>Ali Ghodsi · 節目 12:32</cite>
+</blockquote>
+
+<p>具體數字：寫程式大約快 20% 到 30%（12:52）。至於「幾千個 agent 自動幫你做事」—— 他每場會議都問，答案是：跑六個、跑十二個已經算前段班，而且人類仍然必須在迴圈裡，因為「它會產出垃圾、會跑偏」（12:33 前後）。</p>
+
+<p>他稱這是「能力與採用之間的落差」，並且給了<b>四道鎖</b>。這個框架是整集最可直接搬用的部分：</p>
+
+<table class="tl">
+<thead><tr><th>鎖</th><th>內容</th><th>他的原話／例子</th></tr></thead>
+<tbody>
+<tr><td class="t">1 · 情境<br><span style="font-size:11px">14:06</span></td><td><b>AI 不在會議室裡。</b>它不知道上週三決定了什麼、誰反對、為什麼最後改成 B 案。</td><td>某大銀行 CEO 直接說：<b>「我們永遠不會錄會議，一百萬年都不會」</b> —— 法律責任。Ghodsi 的反應是：「如果你連這個都不能做，AI 怎麼幫你？它根本不在場。」</td></tr>
+<tr><td class="t">2 · 網絡<br><span style="font-size:11px">14:55</span></td><td><b>攻擊面放大約一千倍。</b>把 agent 接進一間二十萬人公司的所有系統，等於把每個內部接口變成入口。</td><td>「然後你就會遇到這個問題：你會被駭。網絡攻擊是真實的。」他認為解法是限制 agent 的存取範圍，防的是<b>內部人風險</b>。</td></tr>
+<tr><td class="t">3 · 經濟<br><span style="font-size:11px">15:47</span></td><td><b>Token 成本指數上升，收入不是。</b>CEO 推動 AI，CFO 在財報前看到 OpEx 與 COGS 跳升就恐慌。</td><td>「我不知道有哪間公司，開始用 AI 之後收入就跟成本曲線一樣指數加速。」</td></tr>
+<tr><td class="t">4 · 主權<br><span style="font-size:11px">16:29</span></td><td><b>專有資料流經第三方模型，等於把情報餵進別人的產品路線圖。</b></td><td>而那個第三方，正是你依賴其能力的同一批實驗室 —— 依賴與洩漏是同一件事。</td></tr>
+</tbody>
+</table>
+
+<p>他的結論很硬：<b>四道鎖只解三道，你得到的仍然是聊天機器人加上一點點編程加速。</b>這就是為什麼「AGI 已經到了」和「你的公司感覺不到」可以同時為真。</p>
+
+<h4 class="sub">三、Genie 與「本體」：把公司變成一張可查詢的圖</h4>
+
+<p>Databricks 的答案是產品 Genie，核心概念是他說的 <b>ontology（本體）</b>：一張持續更新的關係圖 —— 誰向誰匯報、哪些 Slack 頻道在談什麼、哪場會議做了什麼決定、哪些文件屬於哪個項目（23:13）。</p>
+
+<p>他做了實機 demo，三個畫面值得記下來，因為它們示範了「管理」可以變成什麼樣子：</p>
+
+<p><b>(1) 為什麼「行動力」這個指標很低？</b>他調出內部一萬多名員工的問卷，其中一個叫 action 的幸福感指標分數很低（24:17）。人類的猜測是「工作與生活不平衡」。系統去跑相關性，發現那<b>不是因果</b>，然後按部門拆出真正的分佈：<b>產品團隊說「利害關係人太多」、工程團隊說「工具太爛」、銷售團隊說「看不到職涯成長」</b>（26:23、26:39）。</p>
+
+<p>這一段的威力不在 AI，而在<b>它否證了一個聽起來很有道理的解釋</b>。公司裡大多數「我們都知道問題在哪」的共識，其實從未被檢驗過。</p>
+
+<p><b>(2) 兩千名工程師的 L 型分佈。</b>他拉出一張圖：極少數人提交的程式碼量是其他人的十倍（29:54、30:12）。原因不是他們更聰明，而是<b>他們替自己建了自動化流水線，而其他人沒有採用</b>。換句話說，那條長尾不是能力差距，是<b>工具採用的差距</b> —— 而這種差距是可以用管理手段抹平的。</p>
+
+<p><b>(3) 「Human blockers」指標。</b>Databricks 開始測量並公開一個數字：工作停下來等法務、等財務、等隔壁部門的次數（33:20）。他稱之為現在這個階段最大的 alpha：</p>
+
+<blockquote>
+<p>「在這個時代，這是一種競爭優勢……現在這是很大的 alpha。如果你能把這件事做得比任何組織都好。」</p>
+<cite>Ali Ghodsi · 節目 37:55</cite>
+</blockquote>
+
+<p>Jason 把它命名為「管理的 Moneyball」—— 用一份共享、可查詢的「到底發生了什麼」紀錄，取代辦公室政治與偵探工作。這可能是整集最容易被低估的一句：<b>AI 對企業的第一個真正衝擊，不是取代員工，而是讓組織的摩擦變得可測量。</b></p>
+
+<div class="bground">
+<b>背景補充（非節目原話）</b>
+他提到 Dunbar 數 150（20:09）—— 團隊超過這個規模，協調就從人際問題變成結構問題。他也提到 Jack Dorsey 的 Block 在用類似概念（他們叫 company world model），並認為 Block 在 AI 採用上「大概領先不少」（21:11）。Databricks 本身年增長率他在節目中說是大約 70% 到 80%（37:55 附近；另一處提到 80%）。
+</div>
+
+<h4 class="sub">四、為何還不上市：一年一次的内部 tender</h4>
+
+<p>Databricks 是市場上最受期待的 IPO 候選之一，但 Ghodsi 給了一個很不投行式的理由：<b>上市公司會把股價的每週情緒，變成員工的情緒。</b>被承諾某個數字的人，看著它因為跟業務無關的原因腰斬再翻倍，那是一種持續的士氣消耗（43:04、43:18）。</p>
+
+<p>替代方案是：公司每年撥出一筆預算做內部 tender，讓員工可以賣一部分股份換流動性（39:44）。而最有意思的細節是 —— <b>員工每年都用不完那個額度</b>（40:15、40:29）。這件事本身就是一個訊號：多數人選擇繼續押在自己公司上。</p>
+
+<p>這是整集少見的「溫和」段落，但它跟前面那個「human blockers」是同一種思維：<b>不要用戲劇性的外部訊號（股價、頭條）來管理內部現實，要用可查詢的內部數據。</b></p>
+
+<h4 class="sub">五、RSI 四條件：末日論的飛輪沒有在轉</h4>
+
+<p>整集最尖銳的部分，是他對「遞歸自我改進」（recursive self-improvement, RSI）的拆解。他不說「不可能」，他說「要同時滿足四個條件」，然後逐一檢查（46:51–48:20）：</p>
+
+<ol>
+  <li><b>訓練時間要一次比一次短</b>，而且不是短一點，是要複合式縮短。</li>
+  <li><b>不能靠更多硬件</b> —— 算力與原材料是有限的。</li>
+  <li><b>準確度要在所有任務上普遍提升</b>，不是只在實驗室剛好優化的那個 benchmark 上。</li>
+  <li><b>三者要形成連續迴圈</b>：訓練從三個月縮到一個月、一週，成本從幾億美元降到接近零。</li>
+</ol>
+
+<p>現實是什麼？他說模型訓練時間<b>正在變長，不是變短</b>，而且每一個線性進步仍然需要大約十倍算力（46:51）。</p>
+
+<blockquote>
+<p>「就算 98% 的程式碼是 AI 寫的，我們也沒有 RSI。如果它自動化了最後那 2%，誰在乎？」</p>
+<cite>Ali Ghodsi · 節目 46:30</cite>
+</blockquote>
+
+<p>這句的邏輯值得拆開：<b>把「寫程式」自動化，和「讓 AI 改進 AI 的研發流程」是兩件事。</b>前者是產出，後者是生產函數的改變。而末日敘事需要的是後者。他順帶把 Bay Area 安全社群「AI 有相當機率滅絕人類」的估計，放在接近零的位置（59:50），也把 Dario Amodei 那句「十年內消滅癌症與阿茲海默」評為「美麗但不可證偽」（54:30）。</p>
+
+<h4 class="sub">六、真正的風險：網絡，以及一個沒有被說服的反駁</h4>
+
+<p>他認為近期最真實的 AI 風險是網絡攻擊，理由是<b>攻守不對稱</b>：攻擊者可以放一千個 agent，只需要一個成功；防守者每一次都必須完美（51:22、51:39）。</p>
+
+<p>Jason 提出一個很強的反駁：大型攻擊本身就需要大量算力（例如 Hugging Face 那次），<b>攻擊者沒有那麼多算力，防守者有</b>。如果白帽用一千倍的資源去找漏洞，他們應該會先找到（50:52）。</p>
+
+<p>Ghodsi 承認這是個好論點，但堅持不對稱性更重要 —— 因為防守的成功率必須是 100%，攻擊只需要一次。不過他認為這件事<b>可以被管理</b>，理由有三：大部分漏洞是既有原始碼裡的潛伏 bug，而新程式碼現在都會被掃描；未來一年寫的程式碼會比歷史上任何時候都多，而這些新碼可以是乾淨的；舊碼可以重寫或用 shadow patching 保護。漏洞總量是有限的，所以問題會趨於穩定，而不是無限惡化（55:54）。</p>
+
+<p>Databricks 對應的產品是程式碼漏洞掃描，以及用自動化 agent 偵測入侵的 Lake Watch（50:13）。</p>
+
+<h4 class="sub">七、他對時間的預測，跟整個行業相反</h4>
+
+<p>實驗室說六到二十四個月；他說企業全面獲得價值要 <b>十到十五年</b>，GDP 的變化要以十年計（1:00:05）。</p>
+
+<blockquote>
+<p>「我其實認為 GDP 會移動得非常慢，而且要幾十年我們才能真正走完這一輪。」</p>
+<cite>Ali Ghodsi · 節目 0:14 / 1:00:05</cite>
+</blockquote>
+
+<p>理由還是那一個：情境缺口。AI 不能作用於它看不見的東西，而很多公司連自己的資訊都沒有捕捉下來。他舉的例子很具體 —— 那間不肯錄會議的銀行。<b>一個不記錄自己決策的組織，不可能被任何智能協助。</b></p>
+
+<div class="takes">
+<h4 class="sub" style="margin-top:0;border:none;padding:0">如果只帶走五件事</h4>
+<ol>
+  <li><b>先問「我的 AI 在不在會議室裡」，再問模型夠不夠強。</b>四道鎖裡，情境是唯一完全由你控制、也最常被跳過的一道。你的組織有多少決策，只存在於參與者的記憶裡？</li>
+  <li><b>把「等人」變成一個數字。</b>Human blockers 是這集最可立即執行的管理創新：數一數每週有多少工作停下來等法務、財務、隔壁部門。你不需要 AI 才能開始數，但你需要它才能大規模地數。</li>
+  <li><b>看到 L 型產出分佈，先問工具，不要先問人。</b>十倍產出的那批人，通常是替自己建了自動化流水線的人。與其績效面談，不如把那條流水線複製給其他人。</li>
+  <li><b>用可查詢的內部數據，取代戲劇性的外部訊號。</b>股價、頭條、benchmark 都是每週情緒；內部問卷的相關性、決策紀錄、阻塞點才是可以被管理的現實。</li>
+  <li><b>對「六個月後一切改變」保持懷疑，包括對自己公司的期待。</b>他給的時間表是十到十五年。如果你的 AI 策略建立在「兩年內全面重構」上，你大概會在第十八個月砍掉預算。</li>
+</ol>
+</div>
+
+</div>
+
+<h2 class="section">其餘四個頻道 · 最近無更新</h2>
+<div class="rule"></div>
+
+<div class="card dormant">
+<h3 style="font-size:22px">Acquired<span class="badge grey">最後更新 2026-10-18</span></h3>
+<p class="byline">Ben Gilbert &amp; David Rosenthal · 31 日無新集</p>
+<p><b>最後一集：《Seinfeld》</b> —— 一齣 1998 年完結的情境喜劇，今年仍有約 7,200 萬美國人收看。Acquired 用它講「長壽資產」：完美的市場時機、創作者式的偏執，以及一個讓 incentives 對齊三十年的股權結構。這是典型的 Acquired 式拆解 —— 由一個看似懷舊的主題，拆出一個關於現金流與所有權的模型。</p>
+<p style="color:#7a6a58;font-size:14.5px;margin-bottom:0">註：Acquired 近年改為雙週／月更的長篇格式，31 日無更新屬正常節奏，非抓取失敗（feed 正常回傳 218 集）。</p>
+</div>
+
+<div class="card dormant">
+<h3 style="font-size:22px">My First Million<span class="badge grey">最後更新 2026-11-16</span></h3>
+<p class="byline">Sam Parr &amp; Shaan Puri · 2 日無新集</p>
+<p><b>最後一集：《$1.5B+ Investor: “This is Why Elon Wins”》</b> —— James Currier（NFX 管理合夥人）用 94 分鐘講「速度作為一種可以被工程化的能力」：Direct Hit 500 日做到 5.32 億美元退出、設死線而非設目標、以及「你慢是因為你卡住」的情緒診斷。</p>
+<p style="color:#7a6a58;font-size:14.5px;margin-bottom:0"><b>與今日兩集形成三角對照</b>：Currier 講「快」、鄭周永講「先承諾後建造」、Ghodsi 講「十年計」。三個人都同意速度是優勢，但對「快在哪裡」的看法完全不同 —— Currier 快在迭代，鄭周永快在順序，Ghodsi 則主張企業根本快不了。</p>
+</div>
+
+<div class="card dormant">
+<h3 style="font-size:22px">The Knowledge Project<span class="badge grey">最後更新 2026-11-05</span></h3>
+<p class="byline">Shane Parrish · 13 日無新集</p>
+<p><b>最後一集：《Jon McNeill: How Elon Musk Makes Decisions》</b> —— 前 Tesla 總裁、DVx Ventures 共同創辦人。官方摘要開宗明義：「Elon Musk 相信速度會創造競爭優勢 —— 不論是決策的速度、現金的速度，還是回應的速度。」整集講這件事在日常運作中長什麼樣，以及如何圍繞它建一間公司。</p>
+<p style="color:#7a6a58;font-size:14.5px;margin-bottom:0">近一個月內，三個不同節目都在用「速度」開場。這大概不是巧合，而是 2026 年資本市場的共同語言。</p>
+</div>
+
+<div class="card dormant">
+<h3 style="font-size:22px">The Diary of a CEO<span class="badge grey">最後更新 2026-11-16</span></h3>
+<p class="byline">Steven Bartlett · 2 日無新集（本集昨日已掃描）</p>
+<p><b>最後一集：《Ex-CIA Officer: Trump Knew About The China Spy And Didn’t Care!》</b> —— 前 CIA 官員 John Kiriakou 與前俄羅斯情報人員 Aliia Roza，拆解「Jensen Huang 如何落入一個數十億美元的情報陷阱」。內容圍繞間諜、honeypot 操作，以及用來攻破高權力目標的具體心理 tradecraft。</p>
+<p style="color:#7a6a58;font-size:14.5px;margin-bottom:0">與今日 All-In 的網絡安全段落是同一個母題的兩個切面：一個講系統如何被入侵，一個講人如何被操作。</p>
+</div>
+
+<h2 class="section">觀察 · 兩集其實在講同一個缺口</h2>
+<div class="rule"></div>
+
+<p>把今日兩集並排，會看到一個很整齊的對稱結構：</p>
+
+<ul>
+  <li><b>鄭周永（1960s）：</b>能力不存在 → 先取得客戶承諾 → 用承諾換資本 → 建出能力。</li>
+  <li><b>Ghodsi（2026）：</b>智能已存在 → 但企業沒有捕捉情境 → 沒有情境就沒有採用 → 能力等於不存在。</li>
+</ul>
+
+<p>一個是「能力未到，先用承諾把它拉出來」；另一個是「能力已到，但組織沒有把它接住」。<b>兩者都是同一個缺口的兩面：承諾與執行之間，缺一層可以運作的基礎設施。</b></p>
+
+<p>更值得注意的，是兩人對時間的態度。鄭周永用三十年建一個產業，書裡沒有一句「快」；Ghodsi 說企業要十到十五年，並且直接說實驗室的「六個月」是錯的。反倒是旁觀者 —— 投資人、媒體、Twitter —— 一直在要求六個月。<b>真正在建造的人，對時間的估計總是比市場慢，而他們的成果總比市場預期晚、但比市場想像大。</b></p>
+
+<p>如果今日只能記住一句話，我會選鄭周永這句：<b>「成功是九成的決心，加一成的信心。」</b>它的價值在於它把「信心」降級了。你不需要先相信自己會成功才開始；你只需要決定要開始，然後把剩下的九成交給「不放棄」這個行為本身。這大概也是為什麼一個只讀到小學六年級的人，可以在一個沒有工業的國家，造出船、造出車、造出一條高速公路。</p>
+
+<footer>
+  <b>Mindset Podcast Daily</b> · 2026-11-18 · 生成時間：2026年11月18日 18:07 (UTC+8) / 10:07 UTC<br>
+  掃描頻道：Acquired · Founders · All-In · My First Million · The Knowledge Project · The Diary of a CEO<br>
+  本集來源：<a href="https://www.founderspodcast.com/episodes/440-the-most-inspiring-autobiography-ive-ever-read-born-of-this-land-chung-ju-yung">Founders #440 官方頁</a> ·
+  <a href="https://allinchamathjason.libsyn.com/databricks-ceo-agi-is-already-here-why-companies-are-behind-and-the-superintelligence-debate">All-In 官方頁</a> ·
+  逐字稿摘要對照：thefabulous.co / chorusmcp.com<br>
+  掃描紀錄：2,981 集存檔 · 新增 2 集 · 前置噪音過濾（Jev triage）：Founders 0.54（保留，主題價值高）／All-In 0.87（保留）
+</footer>
+
+</div>
+</body>
+</html>

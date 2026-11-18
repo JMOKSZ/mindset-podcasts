@@ -55,15 +55,33 @@
   "host": "David Senra",
   "rss": "https://feeds.megaphone.fm/DSLLC6297708582",
   "status": "ok",
-  "new": [],
+  "new": [
+   {
+    "guid": "83254b94-e2ba-11f1-8025-df46a05ef2a3",
+    "title": "#440 The Most Inspiring Autobiography I've Ever Read: Born of This Land: Chung Ju-yung",
+    "pubDate": "Tue, 17 Nov 2026 19:10:00 -0000",
+    "link": "",
+    "duration": "2972",
+    "summary": "What I learned from rereading Born of This Land: My Life Story by Chung Ju-yung.\nMade possible by: \nRamp: ⁠https://ramp.com\nAppLovin: ⁠https://applovin.com\nVanta: ⁠https://vanta.com/founders",
+    "content": "What I learned from rereading Born of This Land: My Life Story by Chung Ju-yung.\n Made possible by: \n Ramp: ⁠ https://ramp.com \n AppLovin: ⁠https://applovin.com \n Vanta: ⁠ https://vanta.com/founders"
+   }
+  ],
   "last_known": {
-   "title": "#439 How Eiichiro Oda Works",
-   "pubDate": "Wed, 04 Nov 2026 19:18:00 -0000",
+   "title": "#440 The Most Inspiring Autobiography I've Ever Read: Born of This Land: Chung Ju-yung",
+   "pubDate": "Tue, 17 Nov 2026 19:10:00 -0000",
    "link": "",
-   "guid": "8357e972-d884-11f1-b150-9b25a4fc0eeb"
+   "guid": "83254b94-e2ba-11f1-8025-df46a05ef2a3"
   },
-  "count": 464,
+  "count": 465,
   "latest_n": [
+   {
+    "guid": "83254b94-e2ba-11f1-8025-df46a05ef2a3",
+    "title": "#440 The Most Inspiring Autobiography I've Ever Read: Born of This Land: Chung Ju-yung",
+    "pubDate": "Tue, 17 Nov 2026 19:10:00 -0000",
+    "link": "",
+    "duration": "2972",
+    "summary": "What I learned from rereading Born of This Land: My Life Story by Chung Ju-yung.\nMade possible by: \nRamp: ⁠https://ramp.com\nAppLovin: ⁠https://applovin.com\nVanta: ⁠https://vanta.com/founders"
+   },
    {
     "guid": "8357e972-d884-11f1-b150-9b25a4fc0eeb",
     "title": "#439 How Eiichiro Oda Works",
@@ -87,14 +105,6 @@
     "link": "",
     "duration": "3251",
     "summary": "What I learned from reading The Tycoons: How Andrew Carnegie, John D. Rockefeller, Jay Gould, and J. P. Morgan Invented the American Supereconomy by Charles R. Morris.\nMade possible by:\nRamp: ⁠https://ramp.com⁠\nAppLovin: ⁠https://applovin.com⁠\nVanta: ⁠https://vanta.com/founders⁠"
-   },
-   {
-    "guid": "0a19dd5c-c071-11f1-ac8e-8b757b22b3b7",
-    "title": "#436 Ari Emanuel's Autobiography",
-    "pubDate": "Mon, 05 Oct 2026 10:00:00 -0000",
-    "link": "",
-    "duration": "4185",
-    "summary": "What I learned from reading Ari Emanuel's incredible autobiography Roll The Calls. \nMade possible by: \nRamp: ⁠https://ramp.com⁠\nApplovin: ⁠https://applovin.com⁠\nVanta: h⁠ttps://vanta.com/founders"
    }
   ],
   "http": 200
@@ -105,15 +115,33 @@
   "host": "Chamath Palihapitiya · Jason Calacanis · David Sacks · David Friedberg",
   "rss": "https://rss.libsyn.com/shows/254861/destinations/1928300.xml",
   "status": "ok",
-  "new": [],
+  "new": [
+   {
+    "guid": "22b845c5-e5be-4dd1-b4dd-7f3843120d12",
+    "title": "Databricks CEO: AGI Is Already Here, Why Companies Are Behind, and the Superintelligence Debate",
+    "pubDate": "Tue, 17 Nov 2026 21:43:00 +0000",
+    "link": "https://allinchamathjason.libsyn.com/databricks-ceo-agi-is-already-here-why-companies-are-behind-and-the-superintelligence-debate",
+    "duration": "01:02:06",
+    "summary": "(0:00) Ali Ghodsi joins the show: Databricks' early bets on cloud, AI, and open source\n (8:50) Is AGI Already Here? Why Enterprise AI Is Falling Behind\n (22:04) Live Demo: How Databricks Uses Agentic AI For Efficiency\n (38:25) Databricks IPO: The Case for Staying Private\n (44:02) RSI, Cyber Risk & the Doom Debate\n Thanks to our partner for making this possible:\n Airwallex is a leading global payments and financial platform for modern businesses,\n offering trusted solutions to manage everything from business accounts, payments,\n treasury, and spend management to embedded finance. Learn more at https://airwallex.com/allin \n Follow Ali:\n https://x.com/@alighodsi\n Follow the besties: \n https://x.com/chamath\n https://x.com/Jason\n https://x.com/DavidSacks\n https://x.com/friedberg\n Follow on X:\n https://x.com/theallinpod\n Follow on Instagram:\n https://www.instagram.com/theallinpod\n Follow on TikTok:\n https://www.tiktok.com/@allin\n Follow on LinkedIn: \n https://www.linkedin.com/company/allinpod\n Intro Music Credit:\n https://rb.gy/tppkzl\n https://x.com/yung_spielburg\n Intro Video Credit:\n https://x.com/TheZachEffect\n #allin #tech #news",
+    "content": "(0:00) Ali Ghodsi joins the show: Databricks' early bets on cloud, AI, and open source\n (8:50) Is AGI Already Here? Why Enterprise AI Is Falling Behind\n (22:04) Live Demo: How Databricks Uses Agentic AI For Efficiency\n (38:25) Databricks IPO: The Case for Staying Private\n (44:02) RSI, Cyber Risk & the Doom Debate\n Thanks to our partner for making this possible:\n Airwallex is a leading global payments and financial platform for modern businesses,\n offering trusted solutions to manage everything from business accounts, payments,\n treasury, and spend management to embedded finance. Learn more at https://airwallex.com/allin \n Follow Ali:\n https://x.com/@alighodsi\n Follow the besties: \n https://x.com/chamath\n https://x.com/Jason\n https://x.com/DavidSacks\n https://x.com/friedberg\n Follow on X:\n https://x.com/theallinpod\n Follow on Instagram:\n https://www.instagram.com/theallinpod\n Follow on TikTok:\n https://www.tiktok.com/@allin\n Follow on LinkedIn: \n https://www.linkedin.com/company/allinpod\n Intro Music Credit:\n https://rb.gy/tppkzl\n https://x.com/yung_spielburg\n Intro Video Credit:\n https://x.com/TheZachEffect\n #allin #tech #news"
+   }
+  ],
   "last_known": {
-   "title": "Jensen Ousted as Nvidia CEO: \"Spy\" Scandal, Export Restrictions, Market Impact",
-   "pubDate": "Sat, 14 Nov 2026 02:35:00 +0000",
-   "link": "https://allinchamathjason.libsyn.com/jensen-ousted-as-nvidia-ceo-spy-scandal-export-restrictions-market-impact",
-   "guid": "8acea033-ba08-4e5a-ab7c-b543bc7e486f"
+   "title": "Databricks CEO: AGI Is Already Here, Why Companies Are Behind, and the Superintelligence Debate",
+   "pubDate": "Tue, 17 Nov 2026 21:43:00 +0000",
+   "link": "https://allinchamathjason.libsyn.com/databricks-ceo-agi-is-already-here-why-companies-are-behind-and-the-superintelligence-debate",
+   "guid": "22b845c5-e5be-4dd1-b4dd-7f3843120d12"
   },
-  "count": 445,
+  "count": 446,
   "latest_n": [
+   {
+    "guid": "22b845c5-e5be-4dd1-b4dd-7f3843120d12",
+    "title": "Databricks CEO: AGI Is Already Here, Why Companies Are Behind, and the Superintelligence Debate",
+    "pubDate": "Tue, 17 Nov 2026 21:43:00 +0000",
+    "link": "https://allinchamathjason.libsyn.com/databricks-ceo-agi-is-already-here-why-companies-are-behind-and-the-superintelligence-debate",
+    "duration": "01:02:06",
+    "summary": "(0:00) Ali Ghodsi joins the show: Databricks' early bets on cloud, AI, and open source\n (8:50) Is AGI Already Here? Why Enterprise AI Is Falling Behind\n (22:04) Live Demo: How Databricks Uses Agentic AI For Efficiency\n (38:25) Databricks IPO: The Case for Staying Private\n (44:02) RSI, Cyber Risk & the Doom Debate\n Thanks to our partner for making this possible:\n Airwallex is a leading global payments and financial platform for modern businesses,\n offering trusted solutions to manage everything from business accounts, payments,\n treasury, and spend management to embedded finance. Learn more at https://airwallex.com/allin \n Follow Ali:\n https://x.com/@alighodsi\n Follow the besties: \n https://x.com/chamath\n https://x.com/Jason\n https://x.com/DavidSacks\n https://x.com/friedberg\n Follow on X:\n https://x.com/theallinpod\n Follow on Instagram:\n https://www.instagram.com/theallinpod\n Follow on TikTok:\n https://www.tiktok.com/@allin\n Follow on LinkedIn: \n https://www.linkedin.com/company/allinpod\n Intro Music Credit:\n https://rb.gy/tppkzl\n https://x.com/yung_spielburg\n Intro Video Credit:\n https://x.com/TheZachEffect\n #allin #tech #news"
+   },
    {
     "guid": "8acea033-ba08-4e5a-ab7c-b543bc7e486f",
     "title": "Jensen Ousted as Nvidia CEO: \"Spy\" Scandal, Export Restrictions, Market Impact",
@@ -137,14 +165,6 @@
     "link": "https://allinchamathjason.libsyn.com/midterm-blood-bath-4t-ai-sell-off-data-center-freeze-whats-next-for-trump",
     "duration": "01:33:04",
     "summary": "(0:00) Bestie intros!\n (3:37) Midterms postmortem: What led to a generational GOP collapse?\n (32:26) How can Trump salvage his presidency?\n (53:13) Market reaction: Data center fears, $4T in market cap shed, AI ban potential\n (1:24:21) Science Corner: OpenAI solves Exponential Time Hypothesis\n *This episode was recorded Friday morning\n Chamath on Tetragrammaton with Rick Rubin:\n https://www.youtube.com/watch?v=sUgwBqSRf3E \n Follow the besties:\n https://x.com/chamath \n https://x.com/Jason \n https://x.com/DavidSacks \n https://x.com/friedberg \n Follow on X:\n https://x.com/theallinpod \n Follow on Instagram:\n https://www.instagram.com/theallinpod \n Follow on TikTok:\n https://www.tiktok.com/@allin \n Follow on LinkedIn:\n https://www.linkedin.com/company/allinpod \n Intro Music Credit:\n https://rb.gy/tppkzl \n https://x.com/yung_spielburg \n Intro Video Credit:\n https://x.com/TheZachEffect \n Referenced in the show:\n https://www.nytimes.com/live/2026/11/06/us/midterm-elections-trump \n https://www.texastribune.org/2026/11/04/texas-democrats-blue-wave \n https://www.cnbc.com/2026/11/06/jobs-report-october-2026.html \n https://x.com/atrupar/status/2118056070715162747 \n https://x.com/JDVance/status/2118004988433641835 \n https://polymarket.com/event/ipos-before-2027 \n https://www.wsj.com/finance/major-investors-are-skeptical-anthropic-ipo-can-achieve-1-5-trillion-valuation-ca965d8b \n https://x.com/xdNiBoR/status/2118412345789579392 \n https://www.crusoe.ai/resources/newsroom/crusoe-wyoming-data-center-campus-update"
-   },
-   {
-    "guid": "6b0acd19-a13a-4474-8e02-402215408f4f",
-    "title": "Anthropic S-1 Shocker, Greatest Business Ever? Google's $500B Wipeout, Midterm Predictions",
-    "pubDate": "Fri, 30 Oct 2026 21:44:00 +0000",
-    "link": "https://allinchamathjason.libsyn.com/anthropic-s-1-shocker-greatest-business-ever-googles-500b-wipeout-midterm-predictions",
-    "duration": "01:25:47",
-    "summary": "(0:00) Bestie Intros\n (3:22) Anthropic S-1 Breakdown: Greatest Business Ever?\n (32:47) AI's Biggest Problem and Anthropic's Doomer Showdown\n (1:01:57) Google Sheds $500B Market Cap in Worst Day Ever: What Went Wrong?\n (1:14:17) Final Midterms Predictions and Scenarios\n Follow the besties:\n https://x.com/chamath \n https://x.com/Jason \n https://x.com/DavidSacks \n https://x.com/friedberg \n Follow on X:\n https://x.com/theallinpod \n Follow on Instagram:\n https://www.instagram.com/theallinpod \n Follow on TikTok:\n https://www.tiktok.com/@allin \n Follow on LinkedIn:\n https://www.linkedin.com/company/allinpod \n Intro Music Credit:\n https://rb.gy/tppkzl \n https://x.com/yung_spielburg \n Intro Video Credit:\n https://x.com/TheZachEffect \n Referenced in the show:\n https://www.semafor.com/article/10/28/2026/all-in-podcast-cools-on-super-intelligence \n https://x.com/AndrewBenson/status/2115458726396310008 \n https://www.nbcnews.com/business/markets/anthropic-releases-ipo-filing-ahead-highly-anticipated-stock-debut-rcna605676 \n https://www.reuters.com/business/anthropic-recorded-net-loss-over-80-billion-first-half-this-year-wsj-reports-2026-10-20 \n https://x.com/rdominguezibar/status/2114785991462428811 \n https://x.com/jaminball/status/2115121906630238287 \n https://www.vox.com/future-perfect/507875/anthropic-ipo-stop-ai-race-safety \n https://www.anthropic.com/institute/measuring-pace-of-ai-development \n https://www.nbcnews.com/business/markets/alphabet-google-stock-ai-advertising-rcna606322 \n https://x.com/EconomyApp/status/2115539079999971384 \n https://fortune.com/2026/10/28/alphabet-google-stock-drops-cloud-revenue-doubles-free-cash-flow-negative \n https://x.com/Couch_Investor/status/2115541399898571180 \n https://x.com/Geiger_Capital/status/2112702741995037179 \n https://x.com/PatrickRuffini/status/2089729804941594660 \n https://x.com/maxanderson/status/2080229375773941871 \n https://www.natesilver.net/p/trump-approval-ratings-nate-silver-bulletin"
    }
   ],
   "http": 200
@@ -155,17 +175,7 @@
   "host": "Sam Parr & Shaan Puri",
   "rss": "https://feeds.megaphone.fm/HS2300184645",
   "status": "ok",
-  "new": [
-   {
-    "guid": "d70698c0-e1b7-11f1-9b79-df1f9ed37dfb",
-    "title": "$1.5B+ Investor: “This is Why Elon Wins”",
-    "pubDate": "Mon, 16 Nov 2026 12:18:00 -0000",
-    "link": "",
-    "duration": "5617",
-    "summary": "How to move faster than everyone (interactive guide): https://clickhubspot.com/ghbk\nEpisode 882: Shaan Puri ( https://x.com/ShaanVP ) sits down with his friend James Currier to learn what James teaches his Standord students about startups. \n—\nShow Notes:\n(0:00) The speed advantage: How to beat anyone\n(2:45) Mike Cassidy: $500M in 500 days\n(5:15) How to break your speed bar\n(6:20) A 16-year-old sails solo across the Atlantic\n(7:00) Launching 24 products in 3 years\n(8:45) Set deadlines, not goals\n(11:45) The “Fuck It” moment\n(14:30) Why speed is quality\n(16:45) The job title is the tell\n(20:15) 3 ways to increase your speed\n(23:30) Patrick Collison's list of things built fast\n(25:45) Google invented nothing: Why copying wins\n(33:00) Entrepreneurship is a gladiator sport\n(36:00) Emotional fluidity: The secret to moving faster\n(37:15) Tony Robbins' 90 seconds of suffering\n(40:00) Founder psychology is the greatest point of leverage\n(43:45) Find the leak in your game\n(47:45) How James raised $150M by changing his pitch\n(51:00) Magic words: Sell the idea before building the product\n(57:45) Savage founders vs. wantrepreneurs\n(1:04:45) Where AI is going next\n(1:09:00) AI as a new form of life\n(1:13:15) Psychedelics, MDMA, and oxytocin\n(1:19:00) Why status drives human behavior\n(1:22:45) The 5 invisible lenses that explain the world\n—\nCheck Out Sam's Stuff:\n• Hampton (joinhampton.com): My community for founders. Average member does $25m/year. Many of the guests are members. Get after it...apply: http://joinhampton.com/mfm\n—\nCheck Out Shaan's Stuff:\n• Shaan's weekly email - https://www.shaanpuri.com \n• Visit https://www.somewhere.com/mfm to hire worldwide talent like Shaan and get $500 off for being an MFM listener. Hire developers, assistants, marketing pros, sales teams and more for 80% less than US equivalents.\n• Mercury - Shaan uses Mercury across all of his companies. you can too: http://mercury.com/ \nMercury is a fintech company, not an FDIC-insured bank. Banking services provided by Choice Financial Group, Column, N.A., Members FDIC\n• I run all my newsletters on Beehiiv and you should too + we're giving away $10k to our favorite newsletter, check it out:\nbeehiiv.com/mfm-challenge\nMy First Million is a HubSpot Original Podcast // Brought to you by HubSpot Media // Production by Arie Desormeaux // Editing by Ezra Bakker Trupiano /",
-    "content": "How to move faster than everyone (interactive guide): https://clickhubspot.com/ghbk \nEpisode 882: Shaan Puri ( https://x.com/ShaanVP ) sits down with his friend James Currier to learn what James teaches his Standord students about startups. \n —\n Show Notes:\n (0:00) The speed advantage: How to beat anyone\n (2:45) Mike Cassidy: $500M in 500 days\n (5:15) How to break your speed bar\n (6:20) A 16-year-old sails solo across the Atlantic\n (7:00) Launching 24 products in 3 years\n (8:45) Set deadlines, not goals\n (11:45) The “Fuck It” moment\n (14:30) Why speed is quality\n (16:45) The job title is the tell\n (20:15) 3 ways to increase your speed\n (23:30) Patrick Collison's list of things built fast\n (25:45) Google invented nothing: Why copying wins\n (33:00) Entrepreneurship is a gladiator sport\n (36:00) Emotional fluidity: The secret to moving faster\n (37:15) Tony Robbins' 90 seconds of suffering\n (40:00) Founder psychology is the greatest point of leverage\n (43:45) Find the leak in your game\n (47:45) How James raised $150M by changing his pitch\n (51:00) Magic words: Sell the idea before building the product\n (57:45) Savage founders vs. wantrepreneurs\n (1:04:45) Where AI is going next\n (1:09:00) AI as a new form of life\n (1:13:15) Psychedelics, MDMA, and oxytocin\n (1:19:00) Why status drives human behavior\n (1:22:45) The 5 invisible lenses that explain the world\n —\n Check Out Sam's Stuff:\n • Hampton ( joinhampton.com ): My community for founders. Average member does $25m/year. Many of the guests are members. Get after it...apply: http://joinhampton.com/mfm \n —\n Check Out Shaan's Stuff:\n • Shaan's weekly email - https://www.shaanpuri.com  \n • Visit https://www.somewhere.com/mfm to hire worldwide talent like Shaan and get $500 off for being an MFM listener. Hire developers, assistants, marketing pros, sales teams and more for 80% less than US equivalents.\n • Mercury - Shaan uses Mercury across all of his companies. you can too: http://mercury.com/  \n Mercury is a fintech company, not an FDIC-insured bank. Banking services provided by Choice Financial Group, Column, N.A., Members FDIC \n • I run all my newsletters on Beehiiv and you should too + we're giving away $10k to our favorite newsletter, check it out:\n beehiiv.com/mfm-challenge\n My First Million is a HubSpot Original Podcast // Brought to you by HubSpot Media // Production by Arie Desormeaux // Editing by Ezra Bakker Trupiano /"
-   }
-  ],
+  "new": [],
   "last_known": {
    "title": "$1.5B+ Investor: “This is Why Elon Wins”",
    "pubDate": "Mon, 16 Nov 2026 12:18:00 -0000",
@@ -267,7 +277,7 @@
   "status": "ok",
   "new": [],
   "last_known": {
-   "title": "Ex-CIA Officer: Trump Knew About The China Spy And Didn't Care! | John Kiriakou & Aliia Roza",
+   "title": "Nvidia Spy Scandal: What Trump Was Told and When | John Kiriakou",
    "pubDate": "Mon, 16 Nov 2026 06:00:00 -0000",
    "link": "",
    "guid": "flightcast:01M765ZSNB27M9KYEYV98QHT3M"
@@ -276,7 +286,7 @@
   "latest_n": [
    {
     "guid": "flightcast:01M765ZSNB27M9KYEYV98QHT3M",
-    "title": "Ex-CIA Officer: Trump Knew About The China Spy And Didn't Care! | John Kiriakou & Aliia Roza",
+    "title": "Nvidia Spy Scandal: What Trump Was Told and When | John Kiriakou",
     "pubDate": "Mon, 16 Nov 2026 06:00:00 -0000",
     "link": "",
     "duration": "7468",
@@ -292,7 +302,7 @@
    },
    {
     "guid": "flightcast:01M5WPEV7GSE7H752YSF2T3WA3",
-    "title": "Dr David Perlmutter: Dementia Risk, Blood Sugar, Sleep and Alcohol",
+    "title": "Top Neurologist: If You Drink Even Once A Week, Watch This Now!",
     "pubDate": "Thu, 12 Nov 2026 06:00:00 -0000",
     "link": "",
     "duration": "6962",
