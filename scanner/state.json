@@ -1,5 +1,5 @@
 {
- "lastScan": "2026-11-18T10:08:26Z",
+ "lastScan": "2026-11-19T09:56:49Z",
  "scannedEpisodes": {
   "acquired": [
    "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -2087,7 +2087,8 @@
    "0cbdd090-d84a-11f1-abaf-3380f9b2c3d9",
    "617e3102-dbaa-11f1-b3ad-ffb0a2346a74",
    "5bee8b3e-ddcf-11f1-a99d-87ceb46fa379",
-   "d70698c0-e1b7-11f1-9b79-df1f9ed37dfb"
+   "d70698c0-e1b7-11f1-9b79-df1f9ed37dfb",
+   "54f1d4b4-e34a-11f1-938f-f7e49cd6968e"
   ],
   "knowledge-project": [
    "https://fs.blog/?post_type=podcast&p=81515",
@@ -3037,7 +3038,8 @@
    "flightcast:01M5NXYQ8N5Z6RJ5HCHS2231BM",
    "flightcast:01M5WPEV7GSE7H752YSF2T3WA3",
    "flightcast:01M4BH7NBHMF5N7XTD55NJQGSG",
-   "flightcast:01M765ZSNB27M9KYEYV98QHT3M"
+   "flightcast:01M765ZSNB27M9KYEYV98QHT3M",
+   "flightcast:01M719PD9WR55Y9X87NSQTFMXH"
   ]
  },
  "lastScanResult": {

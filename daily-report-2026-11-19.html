@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-11-19</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a; --warn:#a4442f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;line-height:1.85;font-size:17px}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.95;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  .note b{color:#8a5c14}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:28px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  .badge{display:inline-block;vertical-align:middle;margin-left:10px;padding:3px 9px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10px;letter-spacing:.14em;
+    background:#f3e6cc;color:#8a5c14;border:1px solid #e3cfa8;border-radius:2px;font-weight:600}
+  .badge.grey{background:#f1ece4;color:#7a6a58;border-color:#e0d7c8}
+  .badge.warn{background:#f9e6e0;color:#93402a;border-color:#e9c7bb}
+  h4.sub{font-size:20px;font-weight:normal;margin:40px 0 10px;color:#3a2f21;
+    border-bottom:1px dotted var(--line);padding-bottom:6px}
+  h5.mini{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin:30px 0 6px;font-weight:600}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:16px}
+  .card{background:var(--card);border:1px solid var(--line);padding:30px 32px;margin:0 0 22px}
+  .epmeta{display:grid;grid-template-columns:88px 1fr;gap:2px 14px;margin:0 0 24px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;
+    background:#faf6ee;border:1px solid #eee3d2;padding:16px 18px}
+  .epmeta dt{color:var(--muted);letter-spacing:.04em}
+  .epmeta dd{margin:0;color:#3a2f21}
+  p{margin:0 0 18px}
+  blockquote{margin:26px 0;padding:4px 0 4px 22px;border-left:3px solid var(--accent);
+    font-size:17.5px;line-height:1.8;color:#3a2f21}
+  blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:13.5px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;color:var(--muted)}
+  blockquote p{margin:0 0 10px}
+  ul,ol{margin:0 0 20px;padding-left:24px}
+  li{margin:0 0 10px}
+  .tl{width:100%;border-collapse:collapse;margin:24px 0 30px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13.5px}
+  .tl th{text-align:left;font-weight:600;color:var(--muted);font-size:11px;letter-spacing:.1em;
+    text-transform:uppercase;border-bottom:1px solid var(--line);padding:8px 10px}
+  .tl td{padding:8px 10px;border-bottom:1px solid #f0e8db;vertical-align:top;line-height:1.6}
+  .tl td.t{color:var(--accent);white-space:nowrap;font-variant-numeric:tabular-nums;width:74px}
+  .tl tr:hover td{background:#fbf6ec}
+  .bground{background:#f7f4ec;border:1px dashed #ddd0b8;padding:16px 20px;margin:22px 0;
+    font-size:15px;line-height:1.8;color:#4d4133}
+  .bground b{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;color:#8a5c14;display:block;margin-bottom:8px}
+  .takes{background:#fbf7ef;border:1px solid #e9dcc4;padding:24px 28px;margin:34px 0 0}
+  .takes h4{margin-top:0}
+  .takes ol{padding-left:22px;margin-bottom:0}
+  .takes li{margin-bottom:14px}
+  .takes b{color:#8a5c14}
+  .dormant{opacity:.94}
+  .dormant p{font-size:15.5px}
+  footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;color:var(--muted);line-height:1.9}
+  footer a{color:var(--accent);text-decoration:none}
+  @media (max-width:640px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    h1{font-size:30px}
+    .wrap{padding:30px 18px 60px}
+    .card{padding:22px 18px}
+    blockquote{font-size:16.5px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcast Daily · 深度掃描</div>
+  <h1>有錢媽媽的牌桌，與一個被說服的總統</h1>
+  <p class="date">2026-11-19 · 星期四</p>
+  <div class="meta">
+    本期焦點：<b>My First Million #883</b> — 一副麻將如何變成 4,000 萬美元生意，以及「下一個 pickleball」的判準＋<b>Diary of a CEO</b> — Bernie Sanders 89 分鐘：合法化的寡頭政治、5% 財富稅、為什麼他要禁止超級智能<br>
+    掃描範圍：6 個英文商業／思維播客 · 共 <b>2,986</b> 集存檔 · 對比上次掃描（2026-11-18 10:08 UTC）
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">6</div><div class="l">掃描頻道</div></div>
+  <div class="stat"><div class="n">2</div><div class="l">新集數</div></div>
+  <div class="stat"><div class="n">159</div><div class="l">分鐘新內容</div></div>
+  <div class="stat"><div class="n">4</div><div class="l">本期無更新</div></div>
+</div>
+
+<p class="lede">今日兩集看似南轅北轍：一邊是 Sam 和 Shaan 拆解一副麻將如何賣給有錢媽媽、賣到 4,000 萬美元；一邊是 Bernie Sanders 用 89 分鐘論證美國民主已被「合法化的寡頭政治」買走。但兩集其實在問同一個問題——<em>價值最後沉澱在誰手上？</em>MFM 的答案是：沉澱在「掌握了儀式與入場券」的人手上；Bernie 的答案是：目前沉澱在「能把財富轉化成規則」的人手上。一個教你怎麼定價，一個告訴你定價權是怎麼被奪走的。</p>
+
+<div class="note">
+<b>關於本報告的取材誠實度</b><br>
+MFM 官方 show notes 只有<b>章節時間碼＋連結</b>，沒有逐字稿；因此本集部分，節目結構與各段主題依官方章節重建，涉及的公司資料（Oh My Mahjong、Year Unplugged、JMM）均取自其公開官網並在文中標明，<b>凡我補的行業背景一律放入灰色框，不冒充節目原話</b>；引文只用官方標題與 notes 原文。Diary of a CEO 有官方章節表（28 段）與官方摘要五點，本報告逐段對照；Bernie 的立場一律標明為「他的論點」，本報告不替任何一方背書。
+</div>
+
+<h2 class="section">本期新集數</h2>
+<div class="rule"></div>
+
+<!-- ============ MFM ============ -->
+<div class="card" id="mfm">
+<h3>She’s making $40M selling a game to rich moms<span class="badge">My First Million #883</span></h3>
+<div class="byline">Sam Parr &amp; Shaan Puri · 2026-11-18 12:19 UTC 上線 · 69 分鐘</div>
+
+<dl class="epmeta">
+  <dt>節目</dt><dd>My First Million（Episode 883）</dd>
+  <dt>形式</dt><dd>雙人 brainstorm，無嘉賓；主題是「即將爆發的趨勢」清單</dd>
+  <dt>長度</dt><dd>4,142 秒 ≈ 69 分鐘</dd>
+  <dt>官方定位</dt><dd>“Shaan Puri and Sam Parr talk about trends that are about to be huge.”</dd>
+  <dt>核心案例</dt><dd>Oh My Mahjong — 一副賣給富裕女性的美國麻將，做到約 $40M 規模</dd>
+</dl>
+
+<h4 class="sub">一句話總結</h4>
+<p>這不是一集「賣產品」的節目，而是一集「<b>怎麼看出一個興趣正在從愛好變成身份市場</b>」的節目。麻將只是樣本：它同時具備四個條件——需要學（門檻）、需要伴（社群）、需要器具（硬件）、需要老師（供給側就業），所以它會自然長出一個高毛利、可品牌化、可課程化的生態。Sam 和 Shaan 的判準不是「這遊戲流不流行」，而是「<b>有沒有一群人願意為了『我是玩這個的人』付錢</b>」。</p>
+
+<h5 class="mini">官方章節時間軸（原文）</h5>
+<table class="tl">
+<tr><th>時間</th><th>章節</th><th>它在講什麼</th></tr>
+<tr><td class="t">0:00</td><td>Is this the next pickleball?</td><td>用 pickleball 的爆發曲線做類比，判斷麻將是否具備同樣的擴散結構</td></tr>
+<tr><td class="t">5:15</td><td>A not-so-quick history of mahjong</td><td>麻將的來源與在美國的落地：從猶太社區的週末牌局到今日的「美國麻將」</td></tr>
+<tr><td class="t">8:05</td><td>The severity of initiation</td><td>入門難度＝護城河：愈難學，學會的人愈有身份感</td></tr>
+<tr><td class="t">11:45</td><td>Costly signaling</td><td>貴的牌、貴的牌桌、貴的聚會，都是在買「我屬於這個圈子」的訊號</td></tr>
+<tr><td class="t">14:05</td><td>How to break in?</td><td>如果你現在才想進場，切入點在哪：器具、教學、場地、還是社群</td></tr>
+<tr><td class="t">16:40</td><td>JMM sunglasses</td><td>Jacques Marie Mage：同一個「昂貴訊號」邏輯，搬到太陽眼鏡</td></tr>
+<tr><td class="t">19:35</td><td>Year Unplugged</td><td>David 的「一年零螢幕」人體實驗，100 多項生物標記</td></tr>
+<tr><td class="t">23:10</td><td>Humanities 101</td><td>哈佛人文課的復興：AI 時代什麼能力反而變貴</td></tr>
+<tr><td class="t">27:55</td><td>China’s fat loss prison</td><td>封閉式減重管理的極端激勵設計</td></tr>
+<tr><td class="t">29:25</td><td>Jensen Huang’s great shame</td><td>一段關於 Nvidia 創辦人的羞恥軼事，談領導者與公開失敗</td></tr>
+<tr><td class="t">32:55</td><td>Divorce rates of the top 1%</td><td>用婚姻數據談階層的行為差異</td></tr>
+<tr><td class="t">34:40</td><td>The economics of Huberman x HIMS</td><td>創作者影響力如何被定價、被證券化</td></tr>
+<tr><td class="t">38:15</td><td>How much money podcasters make</td><td>播客收入的真實結構：廣告、訂閱、授權、股權</td></tr>
+<tr><td class="t">41:45</td><td>The pricing of influence</td><td>注意力市場的定價模型</td></tr>
+<tr><td class="t">46:50</td><td>IG goes long-form horizontal</td><td>Instagram 走向橫式長片：平台週期回到電視</td></tr>
+<tr><td class="t">49:30</td><td>A bold prediction about the future of screen time</td><td>對下一個十年的螢幕時間下注</td></tr>
+<tr><td class="t">52:20</td><td>Quitting the internet at 40</td><td>40 歲退出網路：可行嗎、代價是什麼</td></tr>
+<tr><td class="t">55:00</td><td>Lessons for kids</td><td>如果不想孩子被螢幕吃掉，該教什麼</td></tr>
+</table>
+
+<h4 class="sub">主線一：為什麼是麻將，而不是另一款桌遊</h4>
+<p>節目的第一個問題就是標題：「這是下一個 pickleball 嗎？」這個類比很精準。Pickleball 在 2020 年代爆發，不是因為它是「最好的運動」，而是因為它的<b>擴散結構</b>極好：兩人就能打、十分鐘上手、場地可共用、社交屬性強、裝備可升級、俱樂部可收費。麻將的結構幾乎一一對應，只是把「球場」換成「客廳與牌桌」，把「球拍」換成「牌與牌架」。</p>
+<p>但麻將比 pickleball 多了一層：<b>它有一個「學不會就進不去」的門檻</b>。美國麻將有每年更換的牌型卡（NMJL card），規則每年微調，這意味着玩家每年都要重新學一次、每年都要買新卡、每年都有「開季」儀式。這是極罕見的產品特性——<b>規則本身會過期，所以內容與社群每年都會被重新激活一次</b>。</p>
+
+<div class="bground">
+<b>背景補充 · 美國麻將是什麼</b>
+美國麻將（American Mahjong）與中式麻將同源，但規則經猶太裔美國社群改良，使用每年由 National Mahjong League 發行的年度牌型卡，牌型每年更新；四人一桌，強調湊牌型而非單純胡牌。這種「年度卡片」制度，天然形成年度訂閱與賽季感——也是本集把它視為「可品牌化興趣」的關鍵結構原因。
+</div>
+
+<h4 class="sub">主線二：Oh My Mahjong 的生意解剖</h4>
+<p>標題裡的「$40M」指的是 Oh My Mahjong 這門生意。它的路徑很清楚，而且每一步都可以複製：</p>
+<ol>
+<li><b>起源是社群，不是產品。</b>官網自述，創辦人 Megan 的大學時代就接觸麻將，COVID 期間重新燃起熱情，先把它當成「團結社區」的方法，之後才做成產品線。先有牌局，才有品牌。</li>
+<li><b>賣的是「升級版儀式」。</b>產品是「elevated mahjong sets &amp; accessories」——不是最便宜的牌，而是值得擺在客廳、值得拍照、值得送禮的牌。官網滿 $300 免運，這個門檻本身就是客單價的訊號。</li>
+<li><b>用時尚聯名做破圈。</b>與 LoveShackFancy 的粉紅花卉聯名款，把「桌遊」放進 fashion 的語境裡——買的人不是買牌，是買一種美學身份。</li>
+<li><b>用教學供給側做分銷。</b>官網的「Mahji Mentors」計劃，教女性如何開班教麻將、並從中建立自己的生意。這是最高明的一步：<b>它把顧客變成經銷商，把「學會」變成一個可以收費的服務</b>，同時解決了「新手找不到牌腳」這個最大的漏斗瓶頸。</li>
+<li><b>用公益綁定情感。</b>品牌支持阿茲海默症研究（與創辦人個人經歷有關），把消費行為與一個更大的意義綁在一起。</li>
+</ol>
+<p>把這五步串起來，你會看到一個典型的「<b>社群先行、硬件變現、教育分銷、聯名破圈</b>」模型。它的護城河不是設計專利，而是「<b>誰是這個城市裡教麻將的那個人</b>」——一旦教學網絡建立，新品牌很難插進來。</p>
+
+<blockquote>
+<p>“She’s making $40M selling a game to rich moms.”</p>
+<cite>— 官方集數標題，My First Million #883</cite>
+</blockquote>
+
+<h4 class="sub">主線三：「入門的嚴厲程度」與「昂貴訊號」——本集真正的分析框架</h4>
+<p>8:05 的「The severity of initiation」和 11:45 的「Costly signaling」是整集最值錢的兩段。它們合起來是一個定價理論：</p>
+<ul>
+<li><b>入門愈難，社群愈緊。</b>如果一個興趣三分鐘就學會，它不會產生歸屬感；如果它需要上四堂課、買一副三百美元的牌、記住一套每年變的規則，那麼「我會打」就變成一個身份聲明。心理學上這叫「努力辯護效應」——人會更珍惜自己付出代價才得到的東西。</li>
+<li><b>貴的器具是「承諾裝置」。</b>一副好牌不只是工具，它是「我認真對待這件事」的可見證據。這跟高爾夫球桿、攝影鏡頭、咖啡機是同一個邏輯：<b>硬件是把軟性熱情變成硬性承諾的方式</b>。</li>
+<li><b>所以定價不該對標「同類產品」，而該對標「入場券」。</b>如果你在賣麻將牌，你的競品不是另一副麻將，而是「一個週末下午的社交體驗」；你的價格上限，取決於這場體驗對那群人有多重要。</li>
+</ul>
+
+<div class="bground">
+<b>背景補充 · 同一條公式的三個樣本</b>
+本集用 JMM（Jacques Marie Mage）太陽眼鏡做對照：日本手工製作、限量發售、單價多在千美元級別，核心賣點是「稀缺＋工藝＋收藏社群」，而不是光學性能。這與麻將牌、與後段的「影響力定價」其實是同一條公式：<b>稀缺性 × 身份感 × 社群可見度 = 價格</b>。
+</div>
+
+<h4 class="sub">主線四：其餘七個雷達訊號（依章節整理）</h4>
+
+<h5 class="mini">1. Year Unplugged（19:35）— 一年零螢幕的人體實驗</h5>
+<p>David（@davidd_org）正在做一個極端實驗：一整年不用智能手機、筆記本、平板、電視，連 Kindle 都沒有，並用「數百項生物標記」量測前後變化。官網寫得很明確：「No smartphone, no laptop, no tablet, no TV. I don’t even have a Kindle.」他允許 99% 的消除，日常不可避免的螢幕（超市結帳、恆溫器、路邊廣告）不算。這一段的商業意義不是「你也去斷網」，而是：<b>「注意力恢復」正在成為一個可以被產品化、被量測、被內容化的市場</b>——從數位排毒營、專注力教練，到生物標記檢測，全都是供給側。</p>
+
+<h5 class="mini">2. Humanities 101（23:10）— AI 時代，人文反而變貴</h5>
+<p>哈佛的 Humanities 10 被放進「趨勢」清單，背後是一個反直覺判斷：當寫程式、做分析、生成內容的邊際成本被 AI 壓到接近零，<b>稀缺的就不再是技術執行，而是判斷、品味、敘事與歷史感</b>。這與 Bernie 那集其實互相呼應——當機器接管執行，權力會集中在「決定做什麼」的人手上。</p>
+
+<h5 class="mini">3. China’s fat loss prison（27:55）— 極端激勵設計</h5>
+<p>按章節標題，兩人討論的是中國以封閉式管理減重的案例。把它放進商業語境，重點是「<b>激勵結構</b>」：當環境完全控制飲食與活動，行為改變就不再依賴意志力。對產品設計的啟示是——與其賣「自律」，不如賣「把環境改掉」的方案（這正是斷食營、健身旅館、無手機渡假村的賣點）。</p>
+
+<h5 class="mini">4. Jensen Huang’s great shame（29:25）— 領導者與公開失敗</h5>
+<p>一段關於 Nvidia 創辦人的「羞恥」軼事，用來談領導者如何處理公開挫敗。這一類故事的價值不在八卦，而在它顯示：<b>頂尖創辦人的決策品質，往往來自他們如何消化一次公開的難堪</b>——是把失敗變成敘事，還是變成陰影。</p>
+
+<h5 class="mini">5. Divorce rates of the top 1%（32:55）— 婚姻作為經濟制度</h5>
+<p>用頂層 1% 的離婚率數據談階層行為差異。這裡真正值得記住的不是數字，而是視角：<b>婚姻是一種資產配置與風險分担制度</b>，不同階層的婚姻穩定度，往往反映的是「離婚的成本結構」而不是「愛的濃度」。</p>
+
+<h5 class="mini">6. Huberman x HIMS（34:40）＋ 播客收入（38:15）＋ 影響力定價（41:45）</h5>
+<p>這三段是同一個主題的三個切面：<b>影響力如何被金融化</b>。傳統模式是 CPM（按曝光收費），進階模式是 host-read 獨家贊助（按信任收費），最高階是股權／分成／品牌共建（按結果收費）。Huberman 與 Hims &amp; Hers 的合作，正是「個人品牌從廣告位升級為品牌資產」的樣本。節目接著拆「播客到底賺多少」與「影響力怎麼定價」，本質上是在教一件事：<b>當你能證明轉化，你就不再是一個媒體位，而是一個合資方。</b></p>
+
+<div class="bground">
+<b>背景補充 · 創作者變現的四層結構</b>
+第一層：廣告 CPM（最可替代）；第二層：獨家口播／長期贊助（賣信任）；第三層：聯盟分潤（賣轉化）；第四層：股權、合資、品牌共創（賣結果）。每一層升級，核心都是「把不確定性從廣告主手上接過來」——你承擔越多結果，你分到的價值越大。這也是本集把「影響力定價」放在「播客收入」之後講的原因：先有量化，才有定價權。
+</div>
+
+<h5 class="mini">7. IG 橫式長片（46:50）＋ 螢幕時間預測（49:30）＋ 40 歲退出網路（52:20）＋ 給孩子的一課（55:00）</h5>
+<p>最後四段是一條完整的線：平台正在回到「電視」——Instagram 測試橫式長片，意味着短影音的注意力紅利見頂，平台需要更長的停留與更高的廣告載荷；接着兩人對「下一個十年的螢幕時間」下注；再討論「40 歲退出網路」是否可行；最後落到「要教孩子什麼」。這條線的結論其實很樸素：<b>注意力會愈來愈貴，所以「能主動關掉」會變成一種新的階級優勢</b>。</p>
+
+<div class="takes">
+<h4 class="sub" style="margin-top:0;border:none;padding:0">給 James 的三個可操作點</h4>
+<ol>
+<li><b>用「入門嚴厲度」篩選賽道。</b>找那些「需要學、需要買、需要同伴」的興趣——它們天生有社群護城河與高客單價。反過來，三分鐘上手的東西，只能靠流量打，護城河極淺。</li>
+<li><b>複製「教學即分銷」。</b>Oh My Mahjong 的 Mahji Mentors 是最值得抄的一步：把你的早期用戶變成收費教練，你賣硬件，他們賣入門，雙方一起把漏斗撐大。</li>
+<li><b>把影響力從 CPM 推向「結果定價」。</b>如果你或你的品牌在做內容，別停在賣曝光；設計一個能證明轉化的方案（專屬碼、聯名、分成），你才能進入定價權的那一側。</li>
+</ol>
+</div>
+</div>
+
+<!-- ============ DOAC ============ -->
+<div class="card" id="doac">
+<h3>Senator Bernie Sanders: Iran Wasn’t Trump’s Idea. Someone Else Pushed Him Into It!<span class="badge warn">Diary of a CEO</span></h3>
+<div class="byline">Steven Bartlett × Senator Bernie Sanders · 2026-11-19 06:00 UTC 上線 · 89 分鐘</div>
+
+<dl class="epmeta">
+  <dt>節目</dt><dd>The Diary of a CEO with Steven Bartlett</dd>
+  <dt>嘉賓</dt><dd>Bernie Sanders — 美國國會史上任期最長的獨立議員、兩度總統參選人、《It’s OK to Be Angry About Capitalism》作者</dd>
+  <dt>長度</dt><dd>5,389 秒 ≈ 89 分 49 秒</dd>
+  <dt>主題</dt><dd>美國民主能否在投票箱前被救回？金權政治、財富稅、AI 與 2028</dd>
+  <dt>官方框架</dt><dd>「合法化的寡頭政治」——用五個論點貫穿全集</dd>
+</dl>
+
+<h4 class="sub">開場問題：投票箱還有效嗎？</h4>
+<p>官方簡介的第一句就是整集的張力所在：</p>
+<blockquote>
+<p>“Can America’s democracy still be saved at the ballot box, or has big money already bought the outcome?”</p>
+<cite>— 官方集數簡介，The Diary of a CEO</cite>
+</blockquote>
+<p>這不是一場政策訪談，而是一場「診斷 vs 處方」的訪談。Bernie 用大量時間描述病灶（金權、財富集中、媒體所有權、AI 權力集中），再用較少時間給處方（財富稅、全民醫保、公共 AI 監管）。聽的時候值得一直問自己：<b>他描述的病因，和他的藥方，是不是同一個系統裡的問題？</b></p>
+
+<h4 class="sub">官方五個核心論點（原文）</h4>
+<blockquote>
+<p>■ <b>Legalized Oligarchy</b>: Campaign finance rules and corporate lobbying have replaced democratic deliberation with a “pay to play” structure where elite donors quietly draft national policy behind closed doors.</p>
+<p>■ <b>The Incrementalism Trap</b>: Demanding minor, safe policy compromises alienates struggling voters and drives disillusioned working class communities straight into the arms of authoritarian leaders.</p>
+<p>■ <b>Unregulated Automation</b>: Handing unchecked artificial intelligence development over to private tech oligarchs will trigger catastrophic white collar and manual job losses without shared public oversight.</p>
+<p>■ <b>Systemic Wealth Hoarding</b>: Imposing a targeted wealth tax and closing tax free borrowing loopholes on unrealized equity is essential to halt the multi trillion dollar wealth siphon bleeding working class households.</p>
+<p>■ <b>Universal Basic Dignity</b>: Establishing nonnegotiable guarantees like Medicare for All permanently breaks the psychological chokehold corporate employers hold over an anxious, underinsured workforce.</p>
+<cite>— 官方簡介五點，逐字原文</cite>
+</blockquote>
+
+<h4 class="sub">89 分鐘的完整結構（官方章節）</h4>
+<table class="tl">
+<tr><th>時間</th><th>章節</th><th>重點</th></tr>
+<tr><td class="t">00:00</td><td>Intro</td><td>Steven 設定框架：這是一場關於民主存亡的對話</td></tr>
+<tr><td class="t">02:25</td><td>Why Were These Midterms the Most Important in American History?</td><td>把期中選舉定性為「美國歷史上最重要的一次」</td></tr>
+<tr><td class="t">05:02</td><td>Is the Democratic Party Controlled by Big Money?</td><td>民主黨內部的金主結構</td></tr>
+<tr><td class="t">10:03</td><td>Does Bernie Sanders Hate Donald Trump?</td><td>區分「恨個人」與「反政策」</td></tr>
+<tr><td class="t">14:00</td><td>Why Is Blaming Immigrants Working Across the West?</td><td>移民議題作為代罪羔羊的政治經濟學</td></tr>
+<tr><td class="t">17:33</td><td>How Would Medicare for All Actually Happen?</td><td>從口號到立法路徑</td></tr>
+<tr><td class="t">22:30</td><td>Is the American Economy Rigged?</td><td>制度性不公平的證據</td></tr>
+<tr><td class="t">27:39</td><td>Should Billionaires Pay a 5% Wealth Tax?</td><td>年度財富稅的設計與爭議</td></tr>
+<tr><td class="t">33:08</td><td>How Billionaires Avoid Taxes With Loans</td><td>「買、借、死」：用未實現資本利得抵押借貸</td></tr>
+<tr><td class="t">35:01</td><td>Will Robots Replace Minimum Wage Workers?</td><td>自動化對基層就業的衝擊</td></tr>
+<tr><td class="t">38:15</td><td>Who Is Pushing AI, and What Do They Want?</td><td>AI 推動者的利益結構</td></tr>
+<tr><td class="t">41:43</td><td>Why Bernie Sanders Wants to Ban Superintelligence</td><td>為什麼主張暫停／禁止超級智能</td></tr>
+<tr><td class="t">44:27</td><td>Should the Government Own 50% of AI Companies?</td><td>公共持股作為對沖權力集中的工具</td></tr>
+<tr><td class="t">47:14</td><td>Who Should the Democrats Run in 2028?</td><td>候選人與路線之爭</td></tr>
+<tr><td class="t">48:36</td><td>Did the Democratic Establishment Block Bernie in 2016?</td><td>2016 年初選的舊帳</td></tr>
+<tr><td class="t">50:24</td><td>How Billionaire Owners Shape the News</td><td>媒體所有權如何塑造敘事</td></tr>
+<tr><td class="t">54:27</td><td>Why Does Bernie Prefer the Scandinavian Model?</td><td>北歐模式的制度對照</td></tr>
+<tr><td class="t">58:42</td><td>How the Holocaust Shaped Bernie’s Politics</td><td>家族創傷與政治信念的起點</td></tr>
+<tr><td class="t">1:02:40</td><td>Why Do Working-Class Voters Back Trump?</td><td>階級與文化認同的錯位</td></tr>
+<tr><td class="t">1:03:33</td><td>How His Mother’s Early Death Shaped His Fight for Healthcare</td><td>個人經歷如何變成政策主張</td></tr>
+<tr><td class="t">1:07:45</td><td>Bernie’s Advice for Living a Good Life</td><td>從政治回到人生觀</td></tr>
+<tr><td class="t">1:08:51</td><td>Does Bernie Respect Elon Musk?</td><td>對科技巨頭的複雜評價</td></tr>
+<tr><td class="t">1:12:26</td><td>Can Democrats Pass Medicare for All Now?</td><td>現實可行性</td></tr>
+<tr><td class="t">1:15:28</td><td>Is Bernie Sanders Worried About America’s Future?</td><td>他給出的樂觀／悲觀判讀</td></tr>
+<tr><td class="t">1:18:24</td><td>Will Bernie Sanders Run for President Again?</td><td>2028 的個人意向</td></tr>
+<tr><td class="t">1:22:17</td><td>Why Bernie Says the Iran War Was Based on a Lie</td><td>標題所指：戰爭的正當性問題</td></tr>
+<tr><td class="t">1:25:15</td><td>What Does Bernie Sanders Want to Be Remembered For?</td><td>遺產與自我定位</td></tr>
+<tr><td class="t">1:28:16</td><td>Would Stopping AI Data Centers Cause a Recession?</td><td>減速 AI 的經濟代價</td></tr>
+</table>
+
+<h4 class="sub">論點一：不是「腐敗」，而是「合法化的腐敗」</h4>
+<p>Bernie 整集最鋒利的一刀，是把問題從「有人違法」重新定義為「<b>規則本身就是為金主寫的</b>」。在他的描述裡，競選財務規則與企業遊說已經把民主審議替換成「pay to play」：政策不是辯論出來的，是在閉門會議裡由精英捐款人起草的。這個說法的殺傷力在於——它不需要任何一樁醜聞成立；只要制度允許，腐敗就是常態而非例外。</p>
+<p>同一條線延伸到 50:24 的「媒體所有權」：如果億萬富翁同時擁有新聞平台，那麼「什麼算新聞」本身就已經被定價。這與 MFM 那集講的「影響力定價」形成一個暗黑對照——<b>當注意力可以被買，公共判斷也可以被買。</b></p>
+
+<h4 class="sub">論點二：「漸進主義陷阱」——這集最可轉移的洞見</h4>
+<p>這可能是全集對非政治讀者最有用的概念：<b>當你只敢提「安全的小讓步」，你就會失去那些真正在受苦的人。</b>因為小讓步改變不了他們的體感，於是他們得出結論「體制不會幫我」，然後把票投給承諾「一次性砸爛體制」的強人。Bernie 的診斷是：中間派的好意，實際上是極端主義的燃料。</p>
+<p>把它翻譯成商業語言：<b>只做「安全的小改版」的產品，會把最忠誠的用戶推向願意激進重構的競爭者。</b>用戶不會因為你「有在聽」而留下，他們只會因為「問題真的消失了」而留下。這是同一條心理機制：無感的改善，比不改善更傷信任。</p>
+
+<h4 class="sub">論點三：財富稅與「買、借、死」</h4>
+<p>27:39 的 5% 財富稅，配合 33:08 的「富豪如何用貸款避稅」，是整集最具體的技術段落。邏輯是：現行稅制主要對「已實現」的所得課稅，但頂層財富大多以未實現的股權形式存在；富豪可以用股票抵押借錢來生活，完全不觸發課稅事件，持有到死亡時再靠 step-up in basis 把資本利得洗掉。Bernie 的處方是兩件事同時做：<b>對極端財富課年度稅，並堵住「以未實現資產抵押借貸」這個漏洞。</b></p>
+<p>支持者會說這是唯一能阻止財富虹吸的工具；反對者會說這會造成資本外逃、估值混亂、執行成本過高。節目是倡議性質，沒有正反辯論——聽的時候要把「病灶描述」和「處方可行性」分開評估。</p>
+
+<div class="bground">
+<b>背景補充 · 為什麼「借錢」可以免稅</b>
+在美國稅法下，借貸不是應稅事件（你不是賣出資產，只是抵押）。所以一個持有大量升值股票的人，可以年年借錢支付生活開支，資產繼續複利，稅單永遠不出現；死亡時資產按市價重新計價（step-up in basis），繼承人再賣也不必為之前的增值繳稅。這就是「buy, borrow, die」三步曲，也是財富稅倡議者最常引用的漏洞。
+</div>
+
+<h4 class="sub">論點四：AI、超級智能與「誰擁有它」</h4>
+<p>35:01 到 44:27 這 9 分鐘，是 Bernie 把科技問題接上權力問題的地方。他的推論鏈是：</p>
+<ol>
+<li><b>自動化會先吃掉基層工作</b>（35:01），再向上吃掉白領；</li>
+<li><b>推動 AI 的人有明確的利益結構</b>（38:15）——他們既是技術的創造者，也是收益的接收者；</li>
+<li>所以<b>超級智能不能交給私人寡頭</b>（41:43），必須有公共監督，甚至暫停；</li>
+<li>更進一步，他質問<b>政府是否應該持有 AI 公司 50% 股權</b>（44:27），讓社會共享生產力收益；</li>
+<li>最後在 1:28:16 面對反問：<b>如果現在叫停 AI 數據中心，會不會造成衰退？</b>——這是他整個處方最脆弱的一環，也是整集最誠實的一段張力。</li>
+</ol>
+<p>不論你同不同意，這個框架值得記住：<b>他問的不是「AI 會不會取代人」，而是「取代之後，產權歸誰」。</b>這是把技術問題還原成分配問題的典型操作。</p>
+
+<h4 class="sub">論點五：尊嚴作為一種「非賣品」</h4>
+<p>全民醫保（17:33、1:12:26）在他口中不只是福利政策，而是「<b>解除雇主對勞工的心理鎖喉</b>」。當醫療綁定僱主，人就不敢離職、不敢創業、不敢談判；一旦醫療成為公民權，勞工的議價能力會結構性上升。這個論點比「免費醫療」的口號深得多——它講的是<b>退出權（exit option）</b>：一個人有沒有能力說不，決定他是不是真的自由。</p>
+<p>同樣的邏輯出現在 1:03:33：他母親早逝與醫療費用的關係，是他個人版本的「尊嚴」起源。這也是 Steven 這類訪談最擅長的地方——把抽象政策接回一個具體的童年創傷。</p>
+
+<h4 class="sub">標題那句話：伊朗戰爭「不是特朗普的主意」</h4>
+<p>1:22:17 的章節標題是「Why Bernie Says the Iran War Was Based on a Lie」，而集數標題更進一步：「Iran Wasn’t Trump’s Idea. Someone Else Pushed Him Into It!」這是全集最具爭議的主張。要準確理解它，需要分清三層：</p>
+<ul>
+<li><b>第一層（事實主張）</b>：他認為這場戰爭的正當性建立在一個謊言上——這是他一貫的反戰框架（參照 2003 年伊拉克）。</li>
+<li><b>第二層（歸因主張）</b>：他認為特朗普不是原創者，而是被其他人推進去——即決策的真正驅動者在別處（顧問、盟友、利益集團）。</li>
+<li><b>第三層（制度主張）</b>：如果一場戰爭可以在錯誤前提上被推動，那麼問題不在某一個總統，而在「誰有權力設定前提」。</li>
+</ul>
+<p>本報告不裁決這場爭議的事實基礎；但可以指出它的修辭結構：<b>把戰爭從「某個壞人的決定」改寫成「一個系統的產物」</b>，正好服務他整集的主題——制度比個人更重要。</p>
+
+<div class="takes">
+<h4 class="sub" style="margin-top:0;border:none;padding:0">三個值得帶走的判斷</h4>
+<ol>
+<li><b>「漸進主義陷阱」是通用模型。</b>無論你做產品、帶團隊還是談判，只給「安全的小讓步」，會讓對方確信你永遠不會給真東西。要嘛給到痛點，要嘛誠實說不給。</li>
+<li><b>所有權決定分配，分配決定政治。</b>Bernie 把 AI、媒體、醫療都還原成同一個問題：誰持有生產性資產。這比討論「AI 道不道德」更接近權力現實。</li>
+<li><b>區分診斷與處方。</b>他對病灶的描述（金權、稅制漏洞、媒體集中）有大量可驗證的結構性證據；但他的處方（5% 財富稅、禁止超級智能、政府持股 50%）在執行層面爭議極大。聽完要能分開評價，而不是整包接受或整包丟掉。</li>
+</ol>
+</div>
+</div>
+
+<h2 class="section">其餘四個播客 · 最近無更新</h2>
+<div class="rule"></div>
+
+<div class="card dormant">
+<p><b>Acquired</b> — 最後一集仍是 <b>“Seinfeld”</b>（2026-10-18）。這是秋季大集：一齣完結三十年的處境喜劇，今年仍有 7,200 萬美國人收看，節目拆解它的創作者執念、完美市場時機，以及一個把激勵對齊到長期的持股結構。<span class="badge grey">已於 10 月深度覆蓋</span></p>
+<p><b>Founders</b> — 最新為 <b>#440《Born of This Land: Chung Ju-yung》</b>（2026-11-17）。鄭周永在沒有船廠時先賣船、再倒推建廠，是「先承諾、後建造」的極致樣本。<span class="badge grey">昨日已深度覆蓋</span></p>
+<p><b>All-In</b> — 最新為 <b>Databricks CEO: AGI Is Already Here, Why Companies Are Behind, and the Superintelligence Debate</b>（2026-11-17）。Ali Ghodsi 的核心判斷：AGI 已在，但企業連「讓 AI 坐進會議室」都做不到。<span class="badge grey">昨日已深度覆蓋</span></p>
+<p><b>The Knowledge Project</b> — 最新為 <b>Jon McNeill: How Elon Musk Makes Decisions</b>（2026-11-05）。前 Tesla 總裁拆解 Musk 的決策節奏：先問「物理上可不可能」，再問「要多少錢、多久」。<span class="badge grey">已覆蓋</span></p>
+</div>
+
+<h2 class="section">本期橫向觀察</h2>
+<div class="rule"></div>
+<div class="card">
+<p>今天這兩集，剛好構成一個「<b>定價權</b>」的閉環。MFM 說：<b>你可以靠儀式、門檻與社群，憑空創造定價權</b>——一副麻將的成本是幾十美元，售價可以是幾百美元，因為你賣的是入場券。Bernie 說：<b>但定價權的另一面是規則制定權</b>——當財富可以買到規則，市場上的定價權就會被制度上的定價權吞掉。</p>
+<p>把兩個鏡頭疊在一起，對做生意的人有一個不太舒服的結論：<b>你能創造的溢價，取決於你所處的規則環境允許你保留多少。</b>所以選賽道時，不只要問「這個市場會不會長大」，還要問「這個市場的規則會不會把我的利潤收走」——稅制、平台抽成、監管、勞動成本，全都是定價權的隱形股東。</p>
+<p>如果只帶走一句話：<b>短期看，品牌決定你能收多少；長期看，制度決定你能留多少。</b></p>
+</div>
+
+<footer>
+  生成時間：2026-11-19 17:54 HKT（09:54 UTC）· 掃描器：mindset-podcasts/scanner · 對比基準：2026-11-18 10:08 UTC<br>
+  來源：My First Million 官方 RSS／集數頁（mfmpod.com）· The Diary of a CEO 官方 RSS／集數簡介 · Oh My Mahjong 官網（ohmymahjong.com）· Year Unplugged 官網（yearunplugged.com）<br>
+  存檔：<a href="https://jmoksz.github.io/mindset-podcasts/">jmoksz.github.io/mindset-podcasts</a>
+</footer>
+
+</div>
+</body>
+</html>
