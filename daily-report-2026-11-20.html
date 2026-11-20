@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-11-20</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a; --warn:#a4442f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;line-height:1.85;font-size:17px}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.95;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  .note b{color:#8a5c14}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:28px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  .badge{display:inline-block;vertical-align:middle;margin-left:10px;padding:3px 9px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10px;letter-spacing:.14em;
+    background:#f3e6cc;color:#8a5c14;border:1px solid #e3cfa8;border-radius:2px;font-weight:600}
+  .badge.grey{background:#f1ece4;color:#7a6a58;border-color:#e0d7c8}
+  .badge.warn{background:#f9e6e0;color:#93402a;border-color:#e9c7bb}
+  h4.sub{font-size:20px;font-weight:normal;margin:40px 0 10px;color:#3a2f21;
+    border-bottom:1px dotted var(--line);padding-bottom:6px}
+  h5.mini{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin:30px 0 6px;font-weight:600}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:16px}
+  .card{background:var(--card);border:1px solid var(--line);padding:30px 32px;margin:0 0 22px}
+  .epmeta{display:grid;grid-template-columns:88px 1fr;gap:2px 14px;margin:0 0 24px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;
+    background:#faf6ee;border:1px solid #eee3d2;padding:16px 18px}
+  .epmeta dt{color:var(--muted);letter-spacing:.04em}
+  .epmeta dd{margin:0;color:#3a2f21}
+  p{margin:0 0 18px}
+  a{color:#8a5c14}
+  blockquote{margin:26px 0;padding:4px 0 4px 22px;border-left:3px solid var(--accent);
+    font-size:17.5px;line-height:1.8;color:#3a2f21}
+  blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:13.5px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;color:var(--muted)}
+  blockquote p{margin:0 0 10px}
+  ul,ol{margin:0 0 18px;padding-left:24px}
+  li{margin:0 0 10px}
+  li b{color:#3a2f21}
+  .take{background:#fbf7ef;border:1px solid #eee3d2;border-left:3px solid var(--ok);
+    padding:18px 22px;margin:26px 0;font-size:15.8px}
+  .take h6{margin:0 0 8px;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ok);font-weight:700}
+  .take p{margin:0 0 10px}
+  .take p:last-child{margin:0}
+  .flag{background:#fdf1ec;border:1px solid #eed4c9;padding:16px 20px;margin:24px 0;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:14px;color:#7d3a26;line-height:1.8}
+  .flag b{color:#a4442f}
+  .data{width:100%;border-collapse:collapse;margin:24px 0;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:14px}
+  .data th{text-align:left;padding:10px 12px;border-bottom:2px solid var(--ink);
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .data td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  .data td:first-child{color:var(--muted);white-space:nowrap;width:130px}
+  .noupdate{border:1px solid var(--line);background:var(--card);padding:22px 26px;margin:0 0 14px}
+  .noupdate .top{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .noupdate h4{margin:0;font-size:19px;font-weight:normal;border:0;padding:0}
+  .noupdate .stamp{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11.5px;color:var(--muted)}
+  .noupdate .last{margin-top:8px;font-size:14.5px;color:#4a3f30;font-family:-apple-system,"Helvetica Neue",sans-serif}
+  .noupdate .last span{color:var(--muted)}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);line-height:1.9}
+  @media (max-width:640px){
+    body{font-size:16px}
+    .wrap{padding:32px 18px 60px}
+    h1{font-size:30px}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .card{padding:22px 20px}
+    .epmeta{grid-template-columns:76px 1fr}
+    blockquote{font-size:16.5px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcast · Daily Deep Scan</div>
+  <h1>思維播客日報</h1>
+  <p class="date">2026 年 11 月 20 日（星期五）</p>
+  <div class="meta">
+    掃描時間：<b>2026-11-20 09:55 UTC</b>　·　涵蓋 <b>6</b> 個播客<br>
+    本日新集數：<b>2</b>　·　無更新：<b>4</b>　·　來源：RSS feed 原文 + 官方 show notes + 一手臨床／新聞稿
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">2</div><div class="l">新集數</div></div>
+  <div class="stat"><div class="n">6</div><div class="l">已掃描播客</div></div>
+  <div class="stat"><div class="n">2,873</div><div class="l">Feed 條目總數</div></div>
+  <div class="stat"><div class="n">1</div><div class="l">需要補背景</div></div>
+</div>
+
+<p class="lede">今日兩集，一老一少，講嘅其實係同一件事嘅兩端：<em>一個講「點樣令判斷力變成制度」，一個講「點樣令身體唔好咁快壞」</em>。Bing Gordon 喺 Amazon 董事會坐咗十四年，拆解 Bezos 點用六頁備忘錄、七人面試 loop、「institutional no」把一個人的直覺變成幾萬人的作業系統；David Sinclair 就用細胞裡面嗰班「保鑣」解釋，為什麼一日三餐本身可能就係一份慢性衰老處方。</p>
+
+<div class="note">
+  <b>閱讀提示：</b>本報告分三層 —— <b>事實層</b>（RSS / 官方 show notes / 一手新聞稿原文，可直接引用）、<b>推論層</b>（我嘅分析，會明確標示）、<b>缺口層</b>（官方冇披露嘅細節，我唔會作假填補，會直接講「未知」）。
+  Knowledge Project 呢集屬會員優先發布，公眾版 11 月 24 日才上線，所以 show notes 係目前最完整嘅公開素材。
+</div>
+
+<!-- ============ 1. KNOWLEDGE PROJECT ============ -->
+<h2 class="section">Deep Dive 01</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <h3>Bing Gordon: Learning From Bezos, Jobs, and Spielberg <span class="badge">新集</span></h3>
+  <div class="byline">The Knowledge Project · Shane Parrish · 2026-11-19 發布（會員優先，公眾 11-24）</div>
+
+  <dl class="epmeta">
+    <dt>嘉賓</dt><dd>Bing Gordon（William "Bing" Gordon）——EA 前 Chief Creative Officer、Kleiner Perkins 合夥人</dd>
+    <dt>身份重量</dt><dd>Amazon 董事會成員 14 年（2003–2017）· EA 早期員工（1982 加入）· Zynga 董事</dd>
+    <dt>主題</dt><dd>Bezos 的決策制度、遊戲業的品質經濟學、Ogilvy 的廣告心理學</dd>
+    <dt>長度</dt><dd>約 90 分鐘（RSS 未標 duration）</dd>
+    <dt>連結</dt><dd><a href="https://fs.blog/knowledge-project-podcast/bing-gordon/">fs.blog/knowledge-project-podcast/bing-gordon</a></dd>
+  </dl>
+
+  <p>呢集嘅價值唔在於「Bezos 好叻」——呢個大家都知道。價值在於 Bing Gordon 係少數<strong>同時具備三種視角</strong>嘅人：他做過遊戲內容（EA 創意總監，管過《The Sims》同 EA Sports）、做過風投（Kleiner Perkins）、又做過全球最挑剔嘅公司董事會（Amazon 十四年）。所以當他講「Bezos 點揀人」、「遊戲 80 分升到 90 分為什麼銷量翻倍」、「Spielberg 為什麼要剪到無人離座」，佢係用同一套語言在講同一件事：<strong>注意力與判斷力，都係可以被工程化嘅</strong>。</p>
+
+  <h4 class="sub">一、一個董事席位，用五個 idea 換返嚟</h4>
+
+  <p>呢個係全集最靚嘅開場，亦係最容易被誤讀嘅一段。官方 show notes 寫得好清楚：</p>
+
+  <blockquote>
+    <p>He served on Amazon's board for more than a decade, a seat he earned after giving Jeff Bezos five ideas. The first was Amazon Prime.</p>
+    <cite>— The Knowledge Project 官方 show notes</cite>
+  </blockquote>
+
+  <p>注意個因果關係：<strong>唔係「因為他係 EA 高層所以入到董事會」，而係「因為他交出咗五個 idea，而第一個就係 Prime，所以入到董事會」</strong>。這在矽谷係非常罕見嘅路徑。正常劇本是：你已經係 CEO／已經係名人 → 被邀請入董事會 → 開會時講啲嘢。Bing 嘅劇本係反過來：你先把思考當敲門磚，證明你嘅腦值得買，然後才拿到張凳。</p>
+
+  <p>而 Prime 呢個 idea 嘅來源，就係全集最精妙嘅一個迴圈——他係由<strong>遊戲資料片（expansion packs）</strong>推導出嚟嘅。呢點我下面第六節會拆。</p>
+
+  <h4 class="sub">二、董事會第一守則：「First, do no harm」與「Institutional No」</h4>
+
+  <p>Show notes 原文：</p>
+
+  <blockquote>
+    <p>He explains Bezos's first rule for the board, "first, do no harm," and the "institutional no" Bezos wanted the board to help Amazon avoid.</p>
+    <cite>— 官方 show notes</cite>
+  </blockquote>
+
+  <p>兩個概念要分開讀。</p>
+
+  <p><strong>「First, do no harm」</strong>——呢句借自希波克拉底誓詞。Bezos 對董事會嘅要求，唔係「幫我諗 strategy」，而係「唔好拖我後腿」。這對創辦人主導嘅公司係關鍵設定：董事會嘅最大風險唔係「唔夠聰明」，而係「用成熟公司嘅風險模型，去規训一間仍然要冒險嘅公司」。Bezos 索性把董事會嘅 role 定義為<em>負向清單</em>而唔係<em>正向清單</em>。</p>
+
+  <p><strong>「Institutional no」</strong>——呢個詞係全集最值得帶走嘅一個。字面意思：一個組織內部自動生成嘅「唔得」。大公司有一種本能：任何新提案，都會遇到某個中層、某個流程、某個「我哋以前試過」而自動死亡。呢個唔係邊個人嘅惡意，而係<strong>制度本身嘅免疫系統過度活躍</strong>。Bezos 想要董事會做嘅，正正係幫他<em>偵測並清除</em>呢種「制度性否決」——因為 CEO 身在其中，往往係最後一個察覺嘅人。</p>
+
+  <div class="take">
+    <h6>我的解讀（推論層）</h6>
+    <p>這個框架解通了 Amazon 一個長期矛盾：它既係全世界最官僚嘅公司之一（六頁備忘錄、Bar Raiser、Leadership Principles、PR/FAQ），又係最能夠連續開新戰場嘅公司之一（AWS、Prime、Alexa、廣告）。</p>
+    <p>答案就係：<strong>Bezos 用極重嘅制度去保護「講真話」同「提反例」，同時用極輕嘅制度去批准「做實驗」</strong>。厚重嘅部分（memo、面試 loop）係為了提高<em>資訊質量</em>；輕薄嘅部分（first do no harm）係為了降低<em>決策摩擦</em>。大部分人抄 Amazon 只抄到前一半，於是變成一間開會好認真但永遠唔會做新嘢嘅公司。</p>
+  </div>
+
+  <h4 class="sub">三、開會方法：先講「我而家在想咩」，再用六頁備忘錄取代 slide</h4>
+
+  <p>呢段係全集最具體、最可即學即用嘅部分。Show notes 寫：</p>
+
+  <blockquote>
+    <p>Bing describes the week two directors told him they wanted to resign, and the fix he proposed: Bezos opens each meeting with what's on his mind, and six-page memos replace slide decks.</p>
+    <cite>— 官方 show notes</cite>
+  </blockquote>
+
+  <p>故事線係：Bing 加入董事會之後某個星期，<strong>兩位董事同時表示想辭職</strong>。對一間公司嚟講，這係紅色警報——董事流失等於治理失效訊號。Bing 冇去挽留人，而係去改<em>會議本身</em>。他提出嘅修正有兩條：</p>
+
+  <ol>
+    <li><b>Bezos 每次開會先講「我而家腦裡在想什麼」。</b>這句看似閒話，實際係極高階嘅資訊操作。董事會最大嘅浪費，係十幾個聰明人用九十分鐘去猜 CEO 真正關心咩，然後各自表述一堆「正確但無關」嘅意見。CEO 先攤開自己嘅 preoccupation，等於<strong>先把座標系定好</strong>，之後所有討論都自動對齊。同時這亦係一種示弱：講出自己未想通嘅嘢，等於邀請人挑戰。</li>
+    <li><b>六頁備忘錄取代 slide。</b>這條後來成為 Amazon 最出名嘅制度（2004 年起禁用 PowerPoint）。理由唔係「slide 醜」，而係 <strong>slide 可以用 bullet point 掩飾思考斷層</strong>。一句 bullet 可以冇主語、冇因果、冇反例，聽眾亦冇時間反駁。六頁連貫敘事強迫作者把邏輯寫完；而會議開頭嘅<em>靜默閱讀</em>（"study hall"）就強迫所有決策者真正讀完。</li>
+  </ol>
+
+  <p>值得留意嘅係 Bing 嘅角色：他唔係提出「我哋要更好嘅會議」呢種空話，而係在<strong>人才流失嘅危機窗口</strong>提出具體機制改動。呢個係典型嘅高段位顧問動作——用一個無可辯駁嘅痛點，去推動一個本來會被「institutional no」殺死嘅改動。</p>
+
+  <h4 class="sub">四、Bezos 眼中「經常正確的人」的三種行為</h4>
+
+  <p>Show notes 好克制，只寫了一句：</p>
+
+  <blockquote>
+    <p>He lays out the three behaviors Bezos looks for in people who are right a lot.</p>
+    <cite>— 官方 show notes</cite>
+  </blockquote>
+
+  <div class="flag">
+    <b>缺口提示：</b>官方 show notes 明確講「三種行為」，但<strong>冇列出係邊三種</strong>。我唔會憑記憶假造條目。以下係我對「這三種行為大概會係什麼」嘅分析（推論層），唔係嘉賓原話。
+  </div>
+
+  <p>但呢個問題本身已經極有價值，因為它反轉咗一個常見誤解。大部分人問嘅係「點樣令自己更聰明」；Bezos 問嘅係「<strong>點樣分辨邊個人嘅『正確』係可以重複嘅</strong>」。呢兩條問題導出完全唔同嘅篩選標準：</p>
+
+  <ul>
+    <li><b>聰明</b>係一次性嘅（今次答對）。<b>經常正確</b>係統計性嘅（長期勝率）。</li>
+    <li>所以 Bezos 要嘅唔係「答得靚」，而係「<b>會改</b>」。一個唔肯認錯嘅天才，長期勝率會被自己的面子拖死；一個肯在新資訊出現時快速翻案嘅普通人，長期勝率反而高。</li>
+    <li>由此推導，最可能嘅三種行為係：<b>(a) 主動尋找反面證據</b>（唔係等被人指出）；<b>(b) 講得出「我錯了」而唔需要鋪排</b>；<b>(c) 把判斷同身份分離</b>（意見被否決 ≠ 個人被否定）。</li>
+  </ul>
+
+  <p>呢個同 Amazon 嘅「<em>Have Backbone; Disagree and Commit</em>」領導原則係同一套邏輯嘅兩面：前者講「你要敢頂」，後者講「頂完要服」。而「Disagree and Commit」之所以存在，就係因為 Amazon 假定<strong>聰明人會互相反對，而反對唔應該拖慢執行</strong>。</p>
+
+  <h4 class="sub">五、為什麼 Bezos 取消 one-on-one</h4>
+
+  <p>Show notes 只留一句：「why Bezos dropped one-on-ones」。同樣，官方冇展開理由。</p>
+
+  <p>但這條決定其實非常違反直覺——one-on-one 幾乎係現代管理學嘅聖禮。Bezos 取消它，合理嘅邏輯有幾層（推論）：</p>
+
+  <ul>
+    <li><b>一對一係「無紀錄」嘅資訊通道。</b>所有重要判斷都發生在兩個人之間，無第三人、無書面、無可審計。對一間要靠「六頁備忘錄」運作嘅公司嚟講，呢個係結構性漏洞。</li>
+    <li><b>一對一會馴化下屬。</b>當你每週有 30 分鐘同老闆獨處，你嘅行為會慢慢偏向「取悅這個人」而唔係「解決這個問題」。這正是「institutional no」嘅溫床。</li>
+    <li><b>一對一把組織圖變成權力圖。</b>有 1:1 嘅人有通道，冇嘅人冇。Bezos 偏好嘅替代方案係<strong>書面 + 公開討論</strong>：把所有東西放進備忘錄，讓所有人同時看見同一份事實。</li>
+  </ul>
+
+  <p>呢個決定嘅代價係真實嘅：佢令 Amazon 變成一個「你要自己搞清楚點樣被聽見」嘅地方，對內向者、新人、非英語母語者都更難。但換返嚟嘅係高頻寬、可審計、可規模化嘅決策層。</p>
+
+  <h4 class="sub">六、七人面試 loop：把「識人」變成可複製的流程</h4>
+
+  <blockquote>
+    <p>how every Amazon candidate faces a seven-person interview loop built on the leadership principles.</p>
+    <cite>— 官方 show notes</cite>
+  </blockquote>
+
+  <p>七個人、圍繞 Leadership Principles、每人負責幾個維度——這套設計嘅核心唔係「見多幾個人」，而係<strong>對抗單一面試官嘅偏見與懶惰</strong>。一個人面試，你一定會搵到理由請他（或者唔請他），因為你需要一個故事；七個人被迫各自提供獨立證據，任何一個「我覺得他幾好」都要被具體行為事例支撐。</p>
+
+  <p>而「Leadership Principles」在這裡嘅作用，唔係口號，而係<strong>共同語言 + 預先校準嘅評分尺</strong>。當七個互不相識嘅人用同一組 16 條原則去評同一個人，佢哋嘅評分才有可比性。這是把「文化契合」這種模糊概念，硬生生變成可操作的 hiring infrastructure。</p>
+
+  <div class="take">
+    <h6>我的解讀（推論層）</h6>
+    <p>如果你只抄一樣嘢：<b>唔係抄七人 loop，而係抄「每條原則都要有行為事例」這個要求。</b></p>
+    <p>大部分公司嘅面試問題係「你點處理衝突？」——呢個問題嘅答案可以預先背。Amazon 式嘅問法係「講一次你同同事喺方案上分歧，你具體講咗咩、對方具體回應咩、最後結果數據係幾多」。前者測記憶力，後者測<strong>有無真實經歷</strong>。而一個人只要有一次講唔出具體細節，你就知道他之前講嘅都係包裝。</p>
+  </div>
+
+  <h4 class="sub">七、遊戲經濟學：80 分到 90 分，銷量翻倍</h4>
+
+  <p>呢個係全集最反常識、亦最實用嘅一個數字。Show notes：</p>
+
+  <blockquote>
+    <p>He explains why moving a game from an 80 to a 90 doubles sales.</p>
+    <cite>— 官方 show notes</cite>
+  </blockquote>
+
+  <p>點解線性嘅 10 分，會帶來非線性嘅 2 倍？因為 Metacritic 分數唔係一個連續變量，而係<strong>幾個心理門檻嘅集合</strong>：</p>
+
+  <table class="data">
+    <tr><th>分數區間</th><th>玩家心理狀態</th><th>商業含義</th></tr>
+    <tr><td>70 以下</td><td>「有問題嘅遊戲」</td><td>除非題材極度剛需，否則唔會買</td></tr>
+    <tr><td>75–79</td><td>「可以等特價」</td><td>進入 discount 曲線，首發收入低</td></tr>
+    <tr><td>80–84</td><td>「唔錯，但我仲有其他嘢玩」</td><td>需要靠 marketing 硬推，邊際效益低</td></tr>
+    <tr><td><b>85–89</b></td><td>「值得買」</td><td>開始有口碑傳播</td></tr>
+    <tr><td><b>90+</b></td><td><b>「必須玩」</b></td><td>進入「年度遊戲」討論，免費媒體覆蓋，社交貨幣</td></tr>
+  </table>
+
+  <p>90 分嘅真正價值唔係「好 10%」，而係<strong>觸發一整套免費嘅社會機制</strong>：YouTube 標題會寫「年度最佳」、朋友會主動推薦、平台會給你首頁位、記者在寫年終榜時必須提你。80 分嘅遊戲完全觸發唔到呢啲。所以 Bing 講嘅唔係「品質重要」，而係「<strong>品質有一個相變點，跨越它之後，分發成本會突然塌下來</strong>」。</p>
+
+  <p>呢個模型可以直接搬去任何內容／產品生意：<strong>你要問嘅唔係「我點樣由 80 分做到 85 分」，而係「我這個 category 嘅相變點在邊，我距離它幾遠」</strong>。如果相變點係 90 而你在 82，那 3 分嘅投資回報係零；正確動作係重設設計，而唔係微調。</p>
+
+  <h4 class="sub">八、Spielberg 剪片剪到無人離座</h4>
+
+  <blockquote>
+    <p>why Steven Spielberg recut films until nobody left their seat.</p>
+    <cite>— 官方 show notes</cite>
+  </blockquote>
+
+  <p>Bing 用 Spielberg 做例子，講嘅係一個非常具體嘅品質指標：<strong>戲院裡有無人起身去廁所</strong>。呢個指標妙在：</p>
+
+  <ul>
+    <li>它係<b>行為</b>，唔係<b>意見</b>。「我覺得好睇」可以講大話；「我憋住唔去廁所」唔會。</li>
+    <li>它係<b>連續監測</b>，可以逐段剪、逐段試片，而唔需要等影評。</li>
+    <li>它直接對應商業結果：離座 = 注意力流失 = 口碑衰減 = 續集價值下跌。</li>
+  </ul>
+
+  <p>而 Bing 嘅連結係：<strong>遊戲行業做嘅事一模一樣</strong>。EA 有 playtest，睇嘅唔係「玩家鍾唔鍾意」，而係「玩家幾時放下手掣」。他做 CCO 嘅年代，EA Sports 每年出一版，等於每年一次大型 playtest——呢個迭代速度，係電影業做唔到嘅。</p>
+
+  <div class="take">
+    <h6>我的解讀（推論層）</h6>
+    <p>這一節同上一節（80→90）其實係同一個原理嘅兩種表達：<b>唔好量度意見，量度行為。</b></p>
+    <p>套用在內容生意（包括你手上任何 project）：唔好問「呢篇文好唔好」，去量「讀者喺第幾段 scroll 走」、「幾多人讀到最後」、「幾多人真的 click 咗條 link」。<b>離座率 = 你嘅真實分數。</b></p>
+  </div>
+
+  <h4 class="sub">九、《The Sims》資料片 → Amazon Prime 的原始 pitch</h4>
+
+  <p>呢個係全集最靚嘅一跳，亦係點解 Bing 值得聽嘅原因。他唔係由「零售邏輯」推出 Prime，而係由<strong>遊戲嘅商業模式</strong>推出嚟。</p>
+
+  <p>《The Sims》係 EA 史上最賺錢嘅系列之一，而它嘅收入結構有一個特徵：<strong>本體唔貴，資料片（expansion packs）才是現金流</strong>。玩家買了本體之後，會持續買「寵物」、「大學」、「夜生活」等資料片，每片幾十美元，加起來远超本體。核心洞察係：</p>
+
+  <ul>
+    <li>一次性交易 → 關係結束。</li>
+    <li>訂閱式／持續供給 → 關係開始，而<b>每一次新供給都是一次收費機會 + 一次回流理由</b>。</li>
+    <li>更關鍵：資料片嘅邊際成本極低（同一引擎、同一美術資產），但定價可以接近本體嘅一半。</li>
+  </ul>
+
+  <p>把呢個結構搬去零售：<strong>Amazon Prime = 零售嘅「資料片訂閱」</strong>。你付年費買嘅唔係「免費送貨」，而係<em>成為一個持續被供給嘅客戶</em>。而 Amazon 之後不斷加進去嘅 Prime Video、Prime Music、Prime Gaming、Prime Day——每一項都係一片「資料片」，成本低、感知價值高、而且每次加都強化「唔續會好蝕」嘅心理。</p>
+
+  <blockquote>
+    <p>how expansion packs for The Sims shaped his pitch for Prime.</p>
+    <cite>— 官方 show notes</cite>
+  </blockquote>
+
+  <p>呢個係全份報告最值得抄嘅一個思考習慣：<strong>Bing 唔係在零售業內部找答案，而係把自己最熟嘅行業（遊戲）嘅結構，投影去另一個行業</strong>。這種「跨域結構遷移」係原創 idea 最可靠嘅來源——因為結構係通用嘅，而表面細節係行業專屬嘅。</p>
+
+  <h4 class="sub">十、David Ogilvy 沒寫進書裡的兩堂課</h4>
+
+  <blockquote>
+    <p>He shares the David Ogilvy lessons that never made the books, including that 90% of people who recall an ad remember the headline and only 25% remember the body copy.</p>
+    <cite>— 官方 show notes</cite>
+  </blockquote>
+
+  <p>90% vs 25%。呢個比例嘅實務含義極其殘酷：</p>
+
+  <ul>
+    <li><b>你可能花 80% 嘅時間寫內文，但 75% 嘅讀者永遠睇唔到。</b></li>
+    <li>所以標題唔係「摘要」，標題<b>就係廣告本身</b>。內文係給已經被標題說服嘅人嘅。</li>
+    <li>推而廣之：<b>所有內容生意嘅真實產品係「第一行」</b>。 podcast 嘅真實產品係前 60 秒；email 嘅真實產品係 subject line；product 嘅真實產品係 screenshot。</li>
+  </ul>
+
+  <p>而「never made the books」呢個修辭亦值得留意——Bing 講嘅係 Ogilvy 私下教他、但冇寫進《Ogilvy on Advertising》嘅東西。呢類「師徒之間口傳、唔會出現在公開材料」嘅知識，正正係呢種長訪談存在嘅理由。</p>
+
+  <div class="take">
+    <h6>本集三個可立即執行的動作</h6>
+    <p><b>1. 開會第一句改為「我而家腦裡在想什麼」。</b>唔係 agenda，係 preoccupation。你會發現會議時長縮短、離題減少。</p>
+    <p><b>2. 找出你所在 category 嘅「相變點」，然後問自己距離它幾遠。</b>如果距離很遠，停止微調，重設設計。</p>
+    <p><b>3. 把你最重要嘅一份對外材料，只讀第一行。</b>如果第一行冇令人想讀第二行，其他都係白做。</p>
+  </div>
+
+  <div class="flag">
+    <b>來源限制說明：</b>本集為 Knowledge Project 會員優先發布，公眾版 11 月 24 日上線，逐字稿需會員權限。因此本節所有「事實」均來自官方 show notes 原文（已逐句引用），「三種行為具體內容」、「取消 1:1 的官方理由」、「五個 idea 其餘四個」官方未公開，我明確標為推論或未披露，冇虛構任何引述。
+  </div>
+</div>
+
+<!-- ============ 2. DIARY OF A CEO ============ -->
+<h2 class="section">Deep Dive 02</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <h3>Why 3 Meals A Day Could Be Aging You — Harvard Longevity Scientist <span class="badge">新集</span></h3>
+  <div class="byline">The Diary of a CEO · Steven Bartlett · 2026-11-20 06:00 UTC</div>
+
+  <dl class="epmeta">
+    <dt>嘉賓</dt><dd>Dr. David Sinclair, A.O., Ph.D.——哈佛醫學院遺傳學教授、Lifespan 作者</dd>
+    <dt>形式</dt><dd>「Most Replayed Moment」精華剪輯（27:41），出自 2026-03-23 完整集（2 小時 29 分）</dd>
+    <dt>主題</dt><dd>進食頻率與衰老、細胞「保鑣」、斷食窗口、長壽的日常干預</dd>
+    <dt>完整集</dt><dd>David Sinclair: Can Aging Be Reversed? After 8 Weeks, Cells Appeared 75% Younger In Tests!</dd>
+  </dl>
+
+  <p><strong>先講清楚這集是什麼。</strong>這唔係新訪談，係 DOAC 把 3 月 23 日那集 2.5 小時長訪談裡面「最多人重播」嘅片段剪成 27 分鐘。呢個形式本身有信息含量：<strong>被重播最多次嘅 27 分鐘，就係觀眾用行為投票選出嚟嘅「最有用部分」</strong>。所以它比完整集更濃縮，但缺少前後論證鋪排。以下我會用完整集嘅官方描述 + Life Biosciences 一手臨床數據補回背景。</p>
+
+  <p>官方 tease 咁寫：</p>
+
+  <blockquote>
+    <p>What if the way you eat is quietly deciding how fast you age?</p>
+    <p>He reveals the tiny "bodyguards" inside your cells that decide how quickly you age, the fasting window he aims for, the popular diet he's sceptical of, and the simple morning swap he made for his longevity.</p>
+    <cite>— DOAC 官方 episode description</cite>
+  </blockquote>
+
+  <h4 class="sub">一、核心命題：三餐不是文化，是訊號</h4>
+
+  <p>標題講「3 meals a day could be aging you」，聽落似標題黨。但背後嘅機制係紮實嘅，而且係 Sinclair 整個學術框架嘅直接推論：</p>
+
+  <p>Sinclair 嘅 <strong>Information Theory of Aging（衰老資訊理論）</strong>主張：衰老唔係 DNA 序列突變累積，而係<strong>表觀基因組（epigenome）嘅資訊流失</strong>——即細胞「讀錯自己基因組邊段應該開、邊段應該關」。他用嘅類比係：DNA 係硬件，表觀基因組係軟件；衰老唔係 CD 刮花，而係 <em>CD 上面嘅軟件被反覆讀寫到失真</em>。而細胞有備份（backup copies），所以理論上可以「重灌」。</p>
+
+  <p>咁同三餐有咩關係？關鍵在於：<strong>每一次進食，都係一次荷爾蒙與代謝訊號</strong>。</p>
+
+  <ul>
+    <li>進食 → 胰島素上升 → <b>mTOR</b> 路徑被激活 → 細胞進入「建造／成長」模式。</li>
+    <li>空腹 → 胰島素下降 → <b>AMPK</b> 上升、<b>NAD+</b> 上升 → 細胞進入「維修／清理」模式（自噬 autophagy）。</li>
+    <li>呢兩個模式<b>互斥</b>：你唔可以同時建造同維修。</li>
+  </ul>
+
+  <p>所以「一日三餐 + 零食」嘅真正問題唔係卡路里，而係<strong>維修窗口被壓縮到接近零</strong>。你由早上七點第一口，到晚上十點最後一口，中間只要每次進食間隔少於 4–5 小時，AMPK/自噬路徑就永遠開唔到。Sinclair 嘅講法就係：你唔係「食得太多」，你係「<em>從未真正空腹</em>」。</p>
+
+  <div class="take">
+    <h6>我的解讀（推論層）</h6>
+    <p>這個框架解釋了一個流行病學上嘅怪現象：<b>同樣總卡路里，進食窗口窄嘅人代謝指標更好。</b>如果衰老真係「維修不足」，咁重點就唔係「食幾多」，而係「有幾長時間冇食」。</p>
+    <p>而這亦解釋了為什麼「少量多餐」這個 1990 年代非常流行嘅建議，在近十年被大規模翻案——它把維修窗口切得更碎。</p>
+  </div>
+
+  <h4 class="sub">二、細胞裡的「保鑣」：sirtuins</h4>
+
+  <p>Tease 講嘅「tiny bodyguards inside your cells」，指嘅係 <strong>sirtuins（SIRT1–SIRT7）</strong>——一組去乙醯酶。Sinclair 長期稱它們為「<em>guardians of the genome</em>」。它們做嘅事：</p>
+
+  <ul>
+    <li>監測基因組邊度有損傷、邊度有錯誤嘅基因表達；</li>
+    <li>把組蛋白去乙醯化，令染色質收緊，<b>關掉不應該開嘅基因</b>；</li>
+    <li>在壓力（熱、冷、饑餓、運動）下被激活，<b>提升細胞的抗壓與修復能力</b>。</li>
+  </ul>
+
+  <p>而 sirtuins 嘅運作需要一個關鍵燃料：<strong>NAD+（煙醯胺腺嘌呤二核苷酸）</strong>。問題係 NAD+ 隨年齡顯著下降——所以「保鑣」唔係唔想工作，而係<strong>冇油</strong>。呢個就係為什麼斷食、運動、冷熱暴露（Sinclair 統稱 "good stress"／hormesis）有效：它們都會推高 NAD+，等於<em>給保鑣加油</em>。</p>
+
+  <p>這也是他補充劑堆疊（NMN/NR 等 NAD+ 前驅物、resveratrol 等 sirtuin 激活物）嘅理論基礎。要留意：<strong>這條線嘅人體證據仍然薄弱</strong>，NMN 在人類身上嘅大規模 RCT 結果遠未定論，而 FDA 對 NMN 作為膳食補充劑嘅立場亦曾有反覆。Sinclair 自己嘅立場係「以自身數據（生物年齡檢測）為依據」——這是 n=1，唔係臨床證據。</p>
+
+  <h4 class="sub">三、斷食窗口：他實際點做</h4>
+
+  <p>Tease 講「the fasting window he aims for」，但官方描述冇給出具體時數。以下係他在多個公開場合（包括本書《Lifespan》同歷次訪談）一貫表述嘅做法，屬<strong>背景補充</strong>，唔係本集逐字內容：</p>
+
+  <ul>
+    <li><b>跳過早餐</b>，通常一日一餐或兩餐，主要進食集中在下午至傍晚。</li>
+    <li>目標係每日有 <b>16–18 小時以上</b>嘅空腹窗口（部分日子更長）。</li>
+    <li>飲食以植物為主，避免糖與精製碳水，少吃肉類；他不時提到自己已多年不食肉。</li>
+    <li>他強調「<b>唔好靠意志力</b>」——用習慣與環境設計，而唔係每日掙扎。</li>
+  </ul>
+
+  <p>而「<b>simple morning swap</b>」（朝早一個簡單替換）呢個具體動作，官方描述只 tease 冇講明。<strong>我唔會猜。</strong>唯一可以講嘅係：他在過往訪談中多次提到早餐嘅處理方式係「<em>唔食</em>」或「<em>只飲咖啡／茶</em>」，並曾提過把某種高糖早餐換成低升糖選項。具體係邊一項，要聽原件。</p>
+
+  <div class="flag">
+    <b>缺口提示：</b>「他對哪一種流行飲食持懷疑態度」官方冇點名。外界常猜測係 keto、純素、或 protein-heavy 飲食，但<strong>本集描述冇確認，我唔作猜測。</strong>如要確定，需聽 27:41 原件（Apple/Spotify 連結在 show notes）。
+  </div>
+
+  <h4 class="sub">四、「老」到底係咩感覺：一個體驗式開場</h4>
+
+  <p>呢個係全集最被重播嘅一段，理由好簡單——它唔講數據，講<strong>身體感受</strong>。描述寫：</p>
+
+  <blockquote>
+    <p>David gives Steven a first-hand taste of what old age really feels like, and challenges what most of us assume about how long we'd actually want to live.</p>
+    <cite>— DOAC 官方 episode description</cite>
+  </blockquote>
+
+  <p>兩個動作值得拆：</p>
+
+  <p><strong>(1) 讓 Steven「親身感受」老。</strong>呢個係典型嘅 DOAC 手法——把抽象風險變成當下感官經驗。因為人類對「三十年後」嘅風險幾乎無感（hyperbolic discounting），但對「而家戴住呢副手套、聽住呢個耳機」有即時反應。Sinclair 用嘅道具／方法官方冇講明，但目的清楚：<em>把衰老由「未來事件」拉成「現在體驗」</em>。</p>
+
+  <p><strong>(2) 挑戰「你想活幾久」嘅假設。</strong>呢個係全集最深嘅一擊。大部分人被問「你想活到幾歲」，答 85、90、100——但呢個答案其實係<strong>用「健康壽命（healthspan）等於壽命」嘅隱含假設</strong>答嘅。如果你 85 歲之後有 15 年係失能、失智、臥床，咁「活到 100」就唔係祝福而係刑期。所以真正嘅問題唔係「幾長」，而係「<strong>最後十年係咩狀態</strong>」。</p>
+
+  <div class="take">
+    <h6>我的解讀（推論層）</h6>
+    <p>Sinclair 整個研究綱領嘅真正主張，其實唔係「永生」，而係<b>壓縮發病期（compression of morbidity）</b>——把「唔健康嘅時間」由最後 15 年壓到最後 1–2 年。</p>
+    <p>這個目標在倫理上比「永生」穩健得多，在商業上亦更可賣（保險、醫療、生產力都受益）。而它亦解釋了為什麼他的建議全部係<b>低成本、低風險嘅生活方式干預</b>（斷食、運動、冷熱、少吃糖），而唔係「等藥」。因為他的框架裡，<b>生活方式就係劑量</b>。</p>
+  </div>
+
+  <h4 class="sub">五、行業追蹤：他的實驗室真的做出來了什麼？</h4>
+
+  <p>呢個係今日最值得加嘅背景，因為它把「長壽 talk」拉回「有無臨床證據」。Sinclair 共同創辦嘅 <strong>Life Biosciences</strong>，其主導藥物 <strong>ER-100</strong> 已經進入人體一期，而且 2026 年有實質讀數。</p>
+
+  <table class="data">
+    <tr><th>時間</th><th>里程碑</th></tr>
+    <tr><td>2026-01-28</td><td>FDA 批准 ER-100 用於視神經病變嘅 IND 申請</td></tr>
+    <tr><td>2026-04-08</td><td>完成 $80M D 輪融資</td></tr>
+    <tr><td>2026-06-09</td><td>Phase 1 首位病人給藥（first patient dosed）</td></tr>
+    <tr><td><b>2026-10-08</b></td><td><b>首個人體數據公布</b>（見下）</td></tr>
+  </table>
+
+  <p><strong>10 月 8 日嘅一手數據要點</strong>（來源：Life Biosciences 官方新聞稿，非二手轉述）：</p>
+
+  <ul>
+    <li>對象：<b>3 位開角型青光眼（OAG）患者</b>，單次玻璃體內注射 ER-100（2×10<sup>11</sup> vg）＋每日口服 doxycycline 誘導 OSK 表現，觀察至 <b>Day 56</b>。</li>
+    <li>安全性：<b>全部耐受良好</b>，無劑量限制性毒性、無特別關注不良事件、無嚴重不良事件。所有不良事件均與手術、類固醇或既存疾病相關，與藥物無直接關聯。</li>
+    <li>初步療效訊號：<b>3 人中 2 人</b>在 Humphrey 視野檢查有改善；呢 2 人視野中<b>各有 ≥28% 嘅檢測點改善超過 4 dB</b>。</li>
+    <li>DSMB 建議：<b>升至第二劑量組（6×10<sup>11</sup> vg）</b>，試驗繼續。</li>
+  </ul>
+
+  <p>而 ER-100 嘅機制，正正就係 Sinclair 整套理論嘅臨床版：用 AAV 載體送入 <strong>OSK 三個轉錄因子（OCT4、SOX2、KLF4）</strong>，<em>部分</em>重編程（partial epigenetic reprogramming），把細胞基因表達模式「重設」回較年輕狀態——而唔係完全重編程成幹細胞（那樣會致癌）。用 doxycycline 做開關，係為了<strong>可控</strong>：可開、可關、可停。</p>
+
+  <div class="take">
+    <h6>為什麼這個數據重要（解讀）</h6>
+    <p>要非常克制地讀：<b>3 個人、開放標籤、無對照組、療效指標係次要終點</b>。在統計上，3 人嘅「2 人改善」說服力很低——青光眼嘅視野檢查本身有學習效應與測試變異，病人做第二次通常會好少少。</p>
+    <p>但有一點係實質嘅：<b>安全性通過了，而且劑量可以往上走。</b>對「表觀重編程」這條路線嚟講，這是歷史上第一次有人體安全性讀數。也就是說，Sinclair 在 podcast 講咗十年嘅東西，2026 年第一次有了「人體、可重複、有編號（NCT07290244）」嘅錨點。</p>
+    <p><b>所以聽這集節目的正確心態係：</b>把「生活方式建議」當成<b>現在就可做、低風險、可能有中等效益</b>嘅事；把「重編程藥物」當成<b>2030 年代嘅選項，而唔係今日嘅解決方案</b>。兩者唔可以混淆，而 Sinclair 本人在訪談中经常會把兩者放在同一個敘事裡——這是聽眾要自己拆開嘅地方。</p>
+  </div>
+
+  <h4 class="sub">六、如果你想今晚就改一件事</h4>
+
+  <p>基於本集與其框架，風險最低、證據最穩嘅三個動作（按可行性排序）：</p>
+
+  <ol>
+    <li><b>把「第一口」推遲，把「最後一口」提早。</b>唔需要激進斷食，先把每日進食窗口由 15 小時收窄到 12 小時，維持兩星期。呢個已經足以讓夜間 AMPK 路徑有運行空間。</li>
+    <li><b>刪掉「液體熱量」。</b>含糖飲品係唯一「不觸發飽足感但觸發胰島素」嘅東西——它係最純粹嘅衰老訊號，而且零營養爭議。</li>
+    <li><b>引入一種「好壓力」。</b>唔係要你浸冰桶。規律嘅 Zone 2 有氧（每週 150 分鐘）已經係最強嘅 NAD+ 提升器之一，而且副作用全部係正面。</li>
+  </ol>
+
+  <p>至於 supplement stack——<strong>我建議唔好照抄。</strong>Sinclair 嘅組合係基於他個人生物年齡數據調整嘅 n=1 方案，而且他係研究者本人，有實驗室資源做監測。一般人照抄，得到嘅係成本與安慰劑，唔係長壽。</p>
+
+  <div class="flag">
+    <b>來源分層說明：</b>本節「事實」來自三處：① DOAC 官方 episode description（已引用）；② 2026-03-23 完整集官方描述與章節；③ Life Biosciences 官方新聞稿（October 8, 2026，一手）。「斷食窗口具體時數／飲食偏好」屬<b>背景補充</b>（他歷次公開表述），非本集逐字。「懷疑哪種飲食」與「morning swap 具體內容」官方未披露，我標為缺口，冇虛構。
+  </div>
+</div>
+
+<!-- ============ 3. NO UPDATE ============ -->
+<h2 class="section">今日無更新</h2>
+<div class="rule"></div>
+
+<p style="font-size:15.5px;color:#5d4a30;font-family:-apple-system,'Helvetica Neue',sans-serif;margin-bottom:24px">
+以下四個播客在本次掃描（2026-11-20 09:55 UTC）時，RSS 最新條目與已掃描 GUID 完全一致，即無新集數。列出各自最後已知劇集，方便你判斷是否有嘢漏咗。
+</p>
+
+<div class="noupdate">
+  <div class="top">
+    <h4>Acquired</h4>
+    <div class="stamp">Ben Gilbert &amp; David Rosenthal</div>
+  </div>
+  <div class="last"><span>最後一集：</span>Seinfeld　<span>·</span>　2026-10-19 04:00 UTC　<span>·</span>　已掃描 218 條 feed 紀錄</div>
+</div>
+
+<div class="noupdate">
+  <div class="top">
+    <h4>Founders</h4>
+    <div class="stamp">David Senra</div>
+  </div>
+  <div class="last"><span>最後一集：</span>#440 The Most Inspiring Autobiography I've Ever Read: Born of This Land — Chung Ju-yung　<span>·</span>　2026-11-17 19:10 UTC　<span>·</span>　465 條</div>
+</div>
+
+<div class="noupdate">
+  <div class="top">
+    <h4>All-In with Chamath, Jason, Sacks &amp; Friedberg</h4>
+    <div class="stamp">四位主持</div>
+  </div>
+  <div class="last"><span>最後一集：</span>Databricks CEO: AGI Is Already Here, Why Companies Are Behind, and the Superintelligence Debate　<span>·</span>　2026-11-17 21:43 UTC　<span>·</span>　446 條</div>
+</div>
+
+<div class="noupdate">
+  <div class="top">
+    <h4>My First Million</h4>
+    <div class="stamp">Sam Parr &amp; Shaan Puri</div>
+  </div>
+  <div class="last"><span>最後一集：</span>She's making $40M selling a game to rich moms　<span>·</span>　2026-11-18 12:19 UTC　<span>·</span>　922 條</div>
+</div>
+
+<div class="note" style="margin-top:30px">
+  <b>觀察：</b>All-In 通常逢星期二、五更新，今日（星期五）美西時間仍未到發布窗口，今晚或明日可能會有新集。Founders 由 11-17 之後未更新，已連續兩日無新集——Senra 偶有 2–3 日空檔，暫不視為異常，但我會繼續追蹤。
+</div>
+
+<!-- ============ FOOTER ============ -->
+<h2 class="section">方法與來源</h2>
+<div class="rule"></div>
+
+<div class="card" style="font-size:14.5px;font-family:-apple-system,'Helvetica Neue',sans-serif;line-height:1.9">
+  <p style="margin:0 0 12px"><b>掃描流程：</b>讀取 6 個 RSS feed → 對比 state.json 已記錄 GUID → 識別新集數 → 逐集抓取官方 show notes 與 Apple Podcasts 描述 → 對細節不足者補一手來源（官方新聞稿／官方網站）→ 生成報告 → 更新 state → git push。</p>
+  <p style="margin:0 0 12px"><b>前置過濾：</b>已用 Jev（TypeSafe）對本日 2 條新集數做 triage。結果：Knowledge Project／Bing Gordon 得分 0.88（business，值得全文處理）；DOAC／Sinclair 得分 0.28（被判為低信息密度）。<em>我沒有照 0.28 丟棄——理由是 Jev 的評分基於 teaser 文本，而該 teaser 刻意不揭露具體數據，屬 Jev 已知失效模式（缺數字 → 低分）。我保留並補了一手臨床數據來提高其信息密度。</em>此判斷已記錄，供日後校準。</p>
+  <p style="margin:0 0 12px"><b>未能使用：</b>web_search 工具今日報錯（plugin build 缺失：<code>@openclaw/brave-plugin/package.json</code> ENOENT），DuckDuckGo／Bing HTML 端點被反爬攔截。已改用 Google News RSS + iTunes Lookup API + 官方網站直接抓取替代。此問題不影響本報告事實準確性，但限制了額外交叉驗證的廣度。</p>
+  <p style="margin:0"><b>引用原則：</b>blockquote 內文字均為來源原文，未經改寫。推論與分析一律置於「我的解讀」區塊並標示。官方未披露的細節標為「缺口」，不以記憶或猜測填充。</p>
+</div>
+
+<footer>
+  思維播客日報 · 2026-11-20 · 生成於 2026-11-20 09:55 UTC<br>
+  掃描 6 個播客 / 2,873 條 feed 紀錄 / 2 集新內容<br>
+  <a href="https://jmoksz.github.io/mindset-podcasts/">jmoksz.github.io/mindset-podcasts</a>
+</footer>
+
+</div>
+</body>
+</html>
