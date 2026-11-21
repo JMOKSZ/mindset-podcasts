@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-11-21</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a; --warn:#a4442f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;line-height:1.85;font-size:17px}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.95;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  .note b{color:#8a5c14}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:28px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  .badge{display:inline-block;vertical-align:middle;margin-left:10px;padding:3px 9px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10px;letter-spacing:.14em;
+    background:#f3e6cc;color:#8a5c14;border:1px solid #e3cfa8;border-radius:2px;font-weight:600}
+  .badge.grey{background:#f1ece4;color:#7a6a58;border-color:#e0d7c8}
+  .badge.warn{background:#f9e6e0;color:#93402a;border-color:#e9c7bb}
+  h4.sub{font-size:20px;font-weight:normal;margin:40px 0 10px;color:#3a2f21;
+    border-bottom:1px dotted var(--line);padding-bottom:6px}
+  h5.mini{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin:30px 0 6px;font-weight:600}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:16px}
+  .card{background:var(--card);border:1px solid var(--line);padding:30px 32px;margin:0 0 22px}
+  .epmeta{display:grid;grid-template-columns:88px 1fr;gap:2px 14px;margin:0 0 24px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;
+    background:#faf6ee;border:1px solid #eee3d2;padding:16px 18px}
+  .epmeta dt{color:var(--muted);letter-spacing:.04em}
+  .epmeta dd{margin:0;color:#3a2f21}
+  p{margin:0 0 18px}
+  a{color:#8a5c14}
+  blockquote{margin:26px 0;padding:4px 0 4px 22px;border-left:3px solid var(--accent);
+    font-size:17.5px;line-height:1.8;color:#3a2f21}
+  blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:13.5px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;color:var(--muted)}
+  blockquote p{margin:0 0 10px}
+  ul,ol{margin:0 0 18px;padding-left:24px}
+  li{margin:0 0 10px}
+  li b{color:#3a2f21}
+  .take{background:#fbf7ef;border:1px solid #eee3d2;border-left:3px solid var(--ok);
+    padding:18px 22px;margin:26px 0;font-size:15.8px}
+  .take h6{margin:0 0 8px;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ok);font-weight:700}
+  .take p{margin:0 0 10px}
+  .take p:last-child{margin:0}
+  .flag{background:#fdf1ec;border:1px solid #eed4c9;padding:16px 20px;margin:24px 0;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:14px;color:#7d3a26;line-height:1.8}
+  .flag b{color:#a4442f}
+  .data{width:100%;border-collapse:collapse;margin:24px 0;font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:14px}
+  .data th{text-align:left;padding:10px 12px;border-bottom:2px solid var(--ink);
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .data td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  .data td:first-child{color:var(--muted);white-space:nowrap;width:150px}
+  .noupdate{border:1px solid var(--line);background:var(--card);padding:22px 26px;margin:0 0 14px}
+  .noupdate .top{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .noupdate h4{margin:0;font-size:19px;font-weight:normal;border:0;padding:0}
+  .noupdate .stamp{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11.5px;color:var(--muted)}
+  .noupdate .last{margin-top:8px;font-size:14.5px;color:#4a3f30;font-family:-apple-system,"Helvetica Neue",sans-serif}
+  .noupdate .last span{color:var(--muted)}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);line-height:1.9}
+  @media (max-width:640px){
+    body{font-size:16px}
+    .wrap{padding:32px 18px 60px}
+    h1{font-size:30px}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .card{padding:22px 20px}
+    .epmeta{grid-template-columns:76px 1fr}
+    blockquote{font-size:16.5px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcast · Daily Deep Scan</div>
+  <h1>思維播客日報</h1>
+  <p class="date">2026 年 11 月 21 日（星期六）</p>
+  <div class="meta">
+    掃描時間：<b>2026-11-21 09:55 UTC</b>　·　涵蓋 <b>6</b> 個播客<br>
+    本日新集數：<b>2</b>　·　無更新：<b>4</b>　·　新音頻長度：<b>2 小時 16 分</b><br>
+    來源：RSS feed 原文 · 官方 show notes · 逐字稿（All-In）· 一手公開文件（MisAnthropic Statement）
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">2</div><div class="l">新集數</div></div>
+  <div class="stat"><div class="n">3,005</div><div class="l">Feed 條目總數</div></div>
+  <div class="stat"><div class="n">136</div><div class="l">新音頻分鐘</div></div>
+  <div class="stat"><div class="n">1</div><div class="l">逐字稿級深度</div></div>
+</div>
+
+<p class="lede">今日兩集看似風馬牛不相及：一邊講 <em>Anthropic 以 2 兆美元估值上市、Nvidia 30 日蒸發 2 兆市值</em>；一邊講 <em>一個「本來好尷尬」嘅人點樣練出魅力</em>。但兩集其實係同一個問題嘅兩面——當 intelligence 變成便宜嘅公用事業，仲有咩係稀缺？Chamath 嘅答案係「由泥土到應用」嘅垂直整合；Vanessa Van Edwards 嘅答案係「令對方覺得被看見」嘅人味。前者講公司點樣築牆，後者講個人點樣成為牆入面唯一嘅門。</p>
+
+<div class="note">
+<b>點讀呢份報告：</b>All-In 一集有完整逐字稿，所以論點、數字、金句都係原聲，我尽量保留咗說話者嘅前後文；MFM 一集冇公開逐字稿，只有官方 show notes 同 Vanessa 已出版嘅框架，所以我會清楚分開「節目講咗乜」同「框架背後嘅原理」，唔會幫佢作對白。所有未經第三方核實嘅數字，我都會標明係「節目所述」。
+</div>
+
+<h2 class="section">Episode 01 · All-In</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <h3>Anthropic Goes Public, Nvidia in Crisis, Markets Tank, Open Source Crackdown?<span class="badge">新集數</span></h3>
+  <div class="byline">All-In with Chamath, Jason, Sacks &amp; Friedberg · 2026-11-20 · 1 小時 16 分 41 秒</div>
+
+  <dl class="epmeta">
+    <dt>主持</dt><dd>Chamath Palihapitiya、Jason Calacanis、David Friedberg（David Sacks 缺席）</dd>
+    <dt>嘉賓</dt><dd>無——四人桌變成三人桌，火力反而更集中</dd>
+    <dt>場合</dt><dd>Anthropic 上市首日（星期四）之後，星期五錄音</dd>
+    <dt>一句話</dt><dd>市場正在用資金投票，選出未來十年 9–10 間「由泥土到應用」全棧通吃嘅 AI 巨獸；而 Nvidia 嘅麻煩，只係呢場權力轉移嘅第一個傷亡數字。</dd>
+  </dl>
+
+  <p>呢集係 All-In 近期資訊密度最高嘅一集，因為三條主線同時發生：Anthropic 上市、白宮準備對中國開源模型出手、Nvidia 喺 Jensen Huang 被董事會踢走之後首次業績。三件事表面獨立，但主持們把它們串成一個問題：<b>當 AI 嘅價值鏈由晶片、電力、土地、模型一路延伸到應用，究竟邊個仲有資格叫自己「科技公司」？</b></p>
+
+  <h4 class="sub">一、Chamath 嘅「Dirt to Application」理論</h4>
+
+  <p>集開場，Chamath 就拋出一個未來十年嘅結構性預言：<b>只會有 9 到 10 間 AI 巨獸</b>，而每一間都會由應用層一路垂直整合到「泥土」——即係土地、電力、數據中心、晶片。佢嘅觸發點係 Palo Alto Networks 前一日宣布以 45 億美元收購一間做開源模型嘅公司（Chamath 語：「these brilliant guys that made open source models」）。一間網絡安全公司去買模型公司，照傳統分類係不務正業，但市場當日盤中一度俾佢升 8–9%，錄音時仍升 5.86%。</p>
+
+  <blockquote>
+    <p>「I think that there are going to be nine to 10 megacorps that get built over the next decade because of AI. And I think that each megacorp is going to go from the application layer all the way down to the dirt.」</p>
+    <cite>Chamath Palihapitiya，開場 0:00</cite>
+  </blockquote>
+
+  <p>佢嘅推演係一條完整嘅收購路線圖：先買模型（own the model），再向下買土地同數據中心（own the dirt），再向上買應用（own the app）。Anthropic 有錢之後做緊同一件事；OpenAI 一樣；SpaceX 更加係原型——佢擁有 Cursor 呢個「遊戲中最好嘅應用之一」，同時擁有由火箭到頻譜嘅「泥土」。Meta 亦係由數據中心一路鋪到 app stack。</p>
+
+  <p>呢個理論最重要嘅推論唔係「巨獸會贏」，而係<b>「中間層會消失」</b>。如果你係一間現金流強勁、但唔打算進入模型或數據中心遊戲嘅公司，市場唔會話你「估值唔合理」，而係直接沽你，將資金換去願意冒險嘅公司。Chamath 用咗一句好狠嘅話形容呢種公司：唔好做回購，因為回購係一種「tell」——你話俾市場知你唔知買咩、唔知建咩、唔知投咩。</p>
+
+  <blockquote>
+    <p>「I don't know what to buy. I don't know what to build. I don't know what to invest in... when disruption is high, you are going to be rewarded for acquisitions because that tells the existing investor, you are trying to defend the moat that you have and build new moats.」</p>
+    <cite>Chamath，10:44–12:43，講 Nvidia 同 Apple 嘅回購文化</cite>
+  </blockquote>
+
+  <p>佢俾咗一組「回購成癮」嘅歷史數字：過去十年 Apple 流通股減少 34%、Alphabet 減少 12%、Meta 減少 11%。Nvidia 更誇張——九月先授權多 1,500 億美元回購，累計回購規模達 2,350 億美元，CFO 喺 Jensen 被踢走前仲話「而家就係時候」。Chamath 嘅判斷係：呢個遊戲已經結束，因為喺高 disruption 時期，回購等於承認你冇更好嘅用途。</p>
+
+  <div class="take">
+    <h6>行業 Insight</h6>
+    <p>呢個框架其實係一個「資本配置嘅新評分表」。舊評分表問：你係 SaaS 定服務？毛利率幾多？新評分表只問兩件事——<b>自由現金流</b>，同埋<b>你有冇用呢筆現金流去買未來</b>。Chamath 原話：「Does anybody actually care whether you're a software company or a services company? ... The people that care are morons.」</p>
+    <p>對香港／亞洲嘅啟示：如果你睇緊一間本地上市公司，佢嘅「AI 故事」係咪只停留喺買 GPU 同寫 PR？真正被市場獎勵嘅，係能夠控制稀缺資源（電力、土地、算力、數據）或者控制應用入口嘅公司。中間嘅系統集成商、經銷商、純外包，會係第一批被壓縮嘅人。</p>
+  </div>
+
+  <h4 class="sub">二、Anthropic 上市：2 兆美元、1,070 億集資、20–30 倍市銷率</h4>
+
+  <p>Anthropic（主持們叫「Ant」）喺星期四上市，定價後估值 <b>2 兆美元</b>，集資超過 <b>1,070 億美元</b>，green shoe（超額配售權）全數行使，據講「另外一百個 green shoe 都填得滿」。呢個規模超越 SpaceX 嘅 850 億美元 IPO，成為人類歷史上最大 IPO。上市首日股價較 IPO 價高約 18%。</p>
+
+  <p>但三位主持對「2 兆係咪貴」嘅答案完全唔同，呢個分歧本身就係全集最值錢嘅部分。</p>
+
+  <table class="data">
+    <thead>
+      <tr><th>主持</th><th>立場</th><th>核心論據</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Friedberg</td>
+        <td>結構性看好</td>
+        <td>年化收入約 800–1,000 億美元；可支配 AI 預算超過 10 萬美元嘅用戶，滲透率仍低於 1%；企業產品明顯優於 Google 同 OpenAI；「intelligence per dollar」會隨 recursive self-improvement 持續下降，形成成本護城河。</td>
+      </tr>
+      <tr>
+        <td>Chamath</td>
+        <td>好公司，但短期股價與公司無關</td>
+        <td>未來 3–4 個月，Anthropic 嘅估值主要由宏觀決定：10 年期債息向上、通脹黏、波動率高、Kevin Warsh 冇減息空間甚至可能加息、政治周期不明。佢話「the wall of worry now is bonkers」。</td>
+      </tr>
+      <tr>
+        <td>Jason</td>
+        <td>需求被嚴重低估</td>
+        <td>大企業只有 10–20% 員工日用 AI，初創則已日用 5–7 小時；未來會變成每人協調 10 個 virtual workers，token 用量至少 500 倍。員工產出會由每人 50 萬美元升至 300–500 萬，甚至 1,000 萬。</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Friedberg 嘅睇法最接近「一級市場思路」：佢唔係睇今年收入，而係睇「智能成本曲線」。佢認為 Google 兩星期內推出四個模型版本，係 recursive self-improvement（RSI）已經啟動嘅信號；如果 Google 到咗，Anthropic 大概都到咗，只係安全評估嘅人力速度追唔上模型進步，所以「仲有好多嘢被按住未放出來」。一旦單位智能成本持續急降，後來者好難追，因為你唔止落後一個模型，而係落後一條複利曲線。</p>
+
+  <blockquote>
+    <p>「The biggest risk is open source... but I don't think it's going to eat the whole business because at the end of the day if they're going to have the greatest intelligence per unit of dollars spent, for the advanced applications, they're always going to be the choice.」</p>
+    <cite>David Friedberg，18:36–19:23（語氣詞略修）</cite>
+  </blockquote>
+
+  <p>Chamath 就提出一個非常實用嘅「籌碼結構」觀察：上市首日買入嘅約 1,000 億美元中，大概只有一半係真正流通（true float），即約 500 億；但需求可能是 1,000 億嘅幾倍。呢種供需失衡會令股價短期有彈性，但亦意味住一旦熱情退潮，回吐會好急。佢自己嘅結論係：「如果你肯持有五年以上，呢個價位可以係 multi-bagger；但未來三個月，唔好以為你買緊 Anthropic，你其實買緊宏觀。」</p>
+
+  <div class="flag">
+    <b>數字校準：</b>節目內對「市銷率」有兩種講法——Jason 講「20 倍 top line」，Chamath 講「roughly 30 times their run rate」。差異嚟自用 800 億定 1,000 億美元收入做分母。兩個都係「節目所述」，未經審計；我保留兩個講法，唔幫佢哋夾數。
+  </div>
+
+  <h4 class="sub">三、白宮開源披露令：一場關於「無知」嘅政策實驗</h4>
+
+  <p>第二幕係全集最有火藥味嘅一段。路透社（11 月 18 日）報道，白宮正考慮要求美國企業喺網站披露有冇使用中國來源嘅開源 AI 模型。財政部長 Bessent 被指係「中國鷹派」嘅新領袖；白宮 OSTP 嘅 Michael Kratsios 亦參與其中；另一邊廂，Lutnick 同特朗普本人立場較溫和。眾議院中國問題特別委員會今年已向 Airbnb、DoorDash、Cursor 發信，要求交代使用中國開源模型嘅情況；Airbnb 承認客服有用開源模型。</p>
+
+  <p>Chamath 嘅反應好直接：呢個披露要求「乜都唔會發生」，因為喺網站加一行字，只係一個「not retarded logo」。佢認為市場真正想要嘅係 <b>AI sovereignty</b>——你要擁有自己嘅技術、控制成本、唔好將 traces 同 spans 餵俾潛在競爭對手。所以披露與其話係監管，不如話係一個「你有冇基本技術常識」嘅測試。</p>
+
+  <blockquote>
+    <p>「What will it do if you put a disclaimer on your website that you use an open source model? Nothing. It'll mean that you're not retarded.」</p>
+    <cite>Chamath，38:30</cite>
+  </blockquote>
+
+  <p>Friedberg 就從技術定義反駁，呢段係全集最值得香港做技術政策嘅人聽三次：open weights 唔係一個 executable，係<b>一堆數據</b>。你下載之後，要自己起環境、自己編譯、自己部署；冇 runtime 後門，亦冇「一裝就中招」嘅魔法。如果真有後門，全世界一千個 AI 會即刻指向佢。真正嘅風險唔係模型來源，而係你冇做安全測試、冇做 eval、冇做 liability 管理。</p>
+
+  <blockquote>
+    <p>「To limit software, to label software, to make it a point of restriction and control creates a regulated monopoly for the closed source products that are out there.」</p>
+    <cite>David Friedberg，44:44</cite>
+  </blockquote>
+
+  <p>佢用三個歷史類比撐住呢個論點：Apache Foundation 令開放伺服器成為可能，先有開放互聯網；Mozilla／Firefox 阻止 Netscape 同 Microsoft 封閉瀏覽器；Android 開源令全球 70% 手機有不受單一公司控制嘅上網入口。每一次，開放陣營都唔係因為「道德正確」而贏，而係因為<b>封閉陣營無法同時控制創新速度同分發</b>。</p>
+
+  <p>跟住係全集最尖銳嘅一問，由 Chamath 提出：<b>為什麼全世界只有中國嘅開源模型係「好」？</b> 美國有全世界最多現金、最多人才、最多算力，為什麼冇做出一個真正有競爭力嘅美國開源替代品？</p>
+
+  <p>佢自己嘅答案係 incentives：過去幾年，一個頂尖研究員去 closed frontier lab，可以拿到新畢業生一年 1,000 萬美元股票、四年 4,000 萬美元 package；去 open source 公司，冇同樣嘅 upside。VC 亦更願意投「frontier lab」而唔係「open source 公益項目」。結果人才全部流向 closed labs，開放陣營只剩 Meta（但模型被指「nerfed」）同 Nvidia（Jensen 收購 Hugging Face 同 Poolside，合共約 200 億美元，試圖用「開放」去打「封閉」）。</p>
+
+  <p>Jason 喺呢度提出一個「冇咁多巧合」嘅陰謀論：Jensen 正準備成為 open source 嘅旗手，就跟住被董事會踢走；同一星期，白宮放風要「點名」用開源嘅公司；同一日，Anthropic 上市。Chamath 唔 buy 陰謀論，佢嘅版本更冷靜亦更悲觀：<b>呢場係權力、控制同意識形態之爭，唔係技術之爭。</b></p>
+
+  <p>呢段亦提到一個重要背景：網上出現咗一份《MisAnthropic Statement》，喺 Anthropic 上市當日發布，超過一百位簽署人，包括 Steven Pinker、Stuart Russell、Max Tegmark、Judea Pearl、Tristan Harris、George Hotz、Gary Marcus、Lawrence Lessig 等。聲明嘅核心指控係：Anthropic 一邊警告 recursive self-improvement 可能令權力集中、失控，一邊爭住第一個把它造出來；一邊用安全品牌去吸引投資者、員工同公眾，一邊悄悄削弱安全承諾、游說對自己有利嘅監管。</p>
+
+  <blockquote>
+    <p>「Anthropic warns that recursively self-improving AI could concentrate power and escape human control, yet races to build it first. The company uses safety branding to court investors, employees, and the public—even as it has quietly weakened its safety pledges and lobbied for self-serving regulation.」</p>
+    <cite>《The MisAnthropic Statement》，2026-11-20，第一段</cite>
+  </blockquote>
+
+  <p>呢份聲明嘅重要性唔在於它能否阻止 Anthropic，而在於它標誌住 <b>AI 安全陣營正式分裂</b>：一派人認為「留在牌桌、由內部改良」係唯一現實路線；另一派人認為「用安全做 branding 去換估值」係腐敗。對投資者嚟講，呢個分裂係一個新的、唔容易定價嘅風險：監管風險唔再只來自政府，亦來自同行、學者同公民社會嘅正當性攻擊。</p>
+
+  <h4 class="sub">四、Nvidia：一份「好到難以置信」嘅業績，一場「差到難以置信」嘅股價</h4>
+
+  <p>最後 17 分鐘講 Nvidia，氣氛由分析變成悼念。事實清單：</p>
+
+  <ul>
+    <li><b>30 日內市值蒸發約 2 兆美元，股價跌 35%。</b></li>
+    <li><b>Jensen 被踢走後兩星期，再跌 20%。</b></li>
+    <li><b>季度收入 1,160 億美元、淨利 650 億美元，兩者都按年翻倍。</b>Jason 嘅評論：「Most companies trading in the stock market are not worth what Nvidia just made in profits this quarter.」</li>
+    <li><b>代理 CEO／CFO Colette Kress 首次業績會</b>：語氣保守，話公司會對 neocloud financing「more disciplined and selective」；同時宣布停止向中國銷售 H200（商務部今年一月才批准），Rubin 同 Blackwell 就一直被禁。</li>
+    <li><b>董事會立場強硬</b>：Jensen 已辭職，董事會決定唔會恢復佢職務。Jensen 公開表示「謙卑地希望回來」；員工聯署、Travis Kalanick 呼籲 walkout、皮革外套成為支持者制服。</li>
+    <li><b>法律風險</b>：SEC 調查、集體訴訟（指向投資者披露誤導）、DOJ 繼續調查與供應商嘅關係。</li>
+    <li><b>國會聽證</b>：12 月 1–2 日，三個委員會（Select Committee、House Intelligence 等）將閉門作證。Chamath 認為呢個係「唯一嘅真相時刻」。</li>
+  </ul>
+
+  <p>Chamath 對 Jensen 嘅評價，係全集最平衡嘅一段，亦係最好嘅「創辦人與治理」教材：</p>
+
+  <blockquote>
+    <p>「He was an exceptional, legendary founder and CEO. He built the most important company in the most important industry in the world. He is biblically good. He also made a bunch of mistakes. The extent of those are still not known.」</p>
+    <cite>Chamath，1:03:39</cite>
+  </blockquote>
+
+  <p>佢嘅結論係：你唔可以喺一間公眾公司、市值蒸發咗咁多之後，若無其事咁請創辦人返嚟，因為咁等於將 governance 完全掟出窗外。呢個唔係對 Jensen 嘅評價，而係對「創辦人神話」嘅制度性回應。Friedberg 更加強硬：到目前為止，公司、政府、監管機構、Jensen 本人都冇發過任何有事實根據嘅官方聲明；所有嘢都係媒體報道，而「媒體一直對我們說謊」。</p>
+
+  <p>有趣嘅係，Chamath 一邊叫大家「閉嘴等聽證」，一邊自己作出一個具體預測：呢件事最終會證明係「一批灰色地帶嘅 rogue salespeople 同 resellers」將伺服器／雲端 access 轉賣去中國，唔係公司層級嘅蓄意間諜行為。Jason 就話呢個預測應該攞去國會做特別證人。</p>
+
+  <div class="take">
+    <h6>交易員視角</h6>
+    <p>呢集其實提供咗一個「事件驅動」嘅交易日曆：12 月 1–2 日國會聽證 → Nvidia 方向明朗化 → AI trade 嘅第一層不確定性消除。Chamath 明言自己 risk-off，原因唔係唔信 AI，而係「first-order effects 都未出現」。如果你要問「幾時買」，佢嘅答案唔係一個價位，而係一個事件：聽證會之後。</p>
+  </div>
+
+  <h5 class="mini">收市數字（錄音時）</h5>
+  <table class="data">
+    <tbody>
+      <tr><td>S&amp;P 500</td><td>−1.39%</td></tr>
+      <tr><td>VIX</td><td>+10.83%</td></tr>
+      <tr><td>Anthropic</td><td>較 IPO 價 +18%</td></tr>
+      <tr><td>Palo Alto Networks</td><td>+5.86%</td></tr>
+      <tr><td>AMD</td><td>−10% 至 −12%（有沽空報告指其向中國售晶片）</td></tr>
+    </tbody>
+  </table>
+
+  <div class="flag">
+    <b>資料品質：</b>本節數字全部來自 All-In 官方 feed／節目逐字稿（podscripts 自動轉錄）。自動轉錄有人名、公司名、型號嘅誤差（例如某些中國模型名稱、供應商名稱），我已剔除無法確認嘅專有名詞，只保留主持明確講出嘅數字同邏輯。市值、收入、IPO 規模屬「節目所述」，未經我獨立核實。
+  </div>
+</div>
+
+<h2 class="section">Episode 02 · My First Million</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <h3>A recovering awkward person’s guide to undeniable charisma<span class="badge">新集數</span></h3>
+  <div class="byline">My First Million · Episode 884 · 2026-11-20 · 60 分 22 秒</div>
+
+  <dl class="epmeta">
+    <dt>主持</dt><dd>Sam Parr（Shaan Puri 本集缺席）</dd>
+    <dt>嘉賓</dt><dd>Vanessa Van Edwards — Science of People 創辦人，《Cues》《Conversation》作者</dd>
+    <dt>形式</dt><dd>一對一 coaching：Sam 自認「recovering awkward person」，Vanessa 即場拆解他嘅對話習慣</dd>
+    <dt>一句話</dt><dd>魅力唔係天生嘅性格，而係一組可以練嘅訊號：先用 warmth 解除防禦，再用 competence 建立信任，中間用 dopamine 製造記憶點。</dd>
+  </dl>
+
+  <p>呢集係 MFM 少見嘅「純技能課」。冇創業點子、冇估值、冇 exit，只有一個問題：<b>點樣令別人喺同你相處嘅頭幾分鐘，就覺得你值得信任、值得再見？</b> 對 James 呢種要見人、要募資、要 hire、要賣嘢嘅人，呢集嘅實用價值可能比任何一集 AI 分析更高。</p>
+
+  <p>官方 show notes 嘅時間軸本身就係一份課程大綱。我按呢個大綱，將每一節嘅原理、可操作動作、同常見錯誤拆開；凡係節目明確講咗嘅，我標「節目」；凡係 Vanessa 已出版框架嘅延伸，我標「框架」。兩者我唔會混在一起當成佢今集原話。</p>
+
+  <h4 class="sub">模組一：魅力係學返嚟嘅（1:00）</h4>
+
+  <p>節目開宗明義：「The most charismatic people are learned.」呢句係整個 coaching 嘅地基。大部分人把魅力當成性格（外向、風趣、天生受歡迎），所以覺得「我唔係呢種人」。Vanessa 嘅框架剛剛相反：魅力係一組<b>可觀察、可練習、可回饋</b>嘅行為訊號，包括眼神、聲線、停頓、提問、身體角度、詞彙選擇。性格只決定你起步嘅難度，唔決定你嘅上限。</p>
+
+  <p>Sam 嘅角色設定亦好重要：佢唔係「魅力天才」示範，而係一個自認 awkward 嘅人即場被教。呢個設定令聽眾可以對號入座——如果你覺得自己「唔識講嘢」，呢集係設計俾你嘅，唔係俾天生 sales 嘅人。</p>
+
+  <div class="take">
+    <h6>可操作</h6>
+    <p>唔好再問「我係咪一個有魅力嘅人」。改問：「我喺邊三個具體場景（一對一、開會、上台）嘅哪一個訊號最弱？」把身份問題換成技能問題，你先會開始進步。</p>
+  </div>
+
+  <h4 class="sub">模組二：Warmth × Competence——魅力嘅兩條軸（2:45）</h4>
+
+  <p>呢個係全集最重要嘅模型，亦係社會心理學裡面「stereotype content model」嘅核心：人喺極短時間內，會用兩個維度評價陌生人——<b>warmth</b>（你係咪善意、係咪站在我這邊）同 <b>competence</b>（你有冇能力把事情做好）。</p>
+
+  <ul>
+    <li><b>高 competence、低 warmth = suspicion（懷疑）。</b>你越叻但越冷，對方越會假設你有隱藏議程。呢個正係 show notes 嗰句「Competence w/o warmth = suspicion」。</li>
+    <li><b>高 warmth、低 competence = 好人但不可靠。</b>對方喜歡你，但唔會把重要事情交俾你。</li>
+    <li><b>低 warmth、低 competence = 被忽略。</b></li>
+    <li><b>高 warmth、高 competence = charisma。</b>呢個先係「有魅力」嘅完整定義：既令人安心，又令人信服。</li>
+  </ul>
+
+  <p>華人社會（尤其香港）普遍過度訓練 competence：名校、證書、履歷、技術能力；但幾乎冇人正式訓練 warmth。結果係一批「好叻但好難接近」嘅專業人士，喺升職、募資、戀愛、甚至家長圈子都吃虧。呢個唔係性格缺陷，而係<b>訓練組合失衡</b>。</p>
+
+  <blockquote>
+    <p>「Competence w/o warmth = suspicion.」</p>
+    <cite>官方 show notes，2:45</cite>
+  </blockquote>
+
+  <h4 class="sub">模組三：一場對「做自己」嘅戰爭（4:30）</h4>
+
+  <p>「A war against authenticity」呢個標題好挑釁，但它講嘅唔係「你要假」。恰恰相反：Vanessa 嘅立場係，「做自己」呢句安慰說話，往往係叫人停止觀察自己對別人造成咩影響。真正嘅 charisma 係<b>有意識地編輯你嘅表達</b>，令你真正想傳達嘅嘢（善意、能力、興趣）能唔被雜訊蓋過。</p>
+
+  <p>呢個區分好重要：<b>authenticity 係你嘅內容，presentation 係你嘅包裝。</b>你可以 100% 真誠，但用一個對方接收得到嘅方式講。等於一個好嘅產品都需要好的 onboarding，唔代表產品係假。</p>
+
+  <p>延伸概念「be chalant」（23:30）亦係同一條線：nonchalant 係「不在乎」，chalant 係「在乎但從容」。有魅力嘅人唔會用力過猛——佢哋準時、準備充足、真誠有興趣，但唔會抓實對方、唔會搶話、唔會急於證明自己。呢種「鬆」係一種訊號：我對自己有信心，所以唔需要你即刻認同我。</p>
+
+  <h4 class="sub">模組四：兩個神經化學開關——Oxytocin 與 Dopamine（6:15 / 10:00）</h4>
+
+  <p>呢個係全集最實用嘅操作框架。Vanessa 用兩個神經傳導物質去區分兩種「好感」：</p>
+
+  <table class="data">
+    <thead>
+      <tr><th>系統</th><th>心理效果</th><th>對應行為</th><th>常見錯誤</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Oxytocin（催產素）</td>
+        <td>信任、親密、安全感、「我哋係同一隊」</td>
+        <td>穩定眼神接觸、叫對方名字、記住細節、適度自我揭露、小忙、共享食物、身體同步</td>
+        <td>一次過揭露太多（變成壓力）；眼神太侵略；假親密</td>
+      </tr>
+      <tr>
+        <td>Dopamine（多巴胺）</td>
+        <td>期待、新鮮感、獎賞、記憶點、「同你傾偈好有趣」</td>
+        <td>懸念、幽默、意外嘅讚美、故事、pattern interrupt、挑戰性問題</td>
+        <td>只搞笑唔建立信任（變成 entertainer）；過度戲劇化；搶 attention</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>最高段數係<b>交替</b>：先 dopamine 開場（一個有趣嘅觀察、一個反直覺問題），再 oxytocin 深化（認真聽、記住、回應對方嘅情緒），再 dopamine 收尾（一個令對方期待下次嘅 hook）。只有 dopamine，你係一個表演者；只有 oxytocin，你係一個好人但唔難忘。</p>
+
+  <h4 class="sub">模組五：Entertainers vs. Appreciators（15:55）</h4>
+
+  <p>呢個係全集嘅道德核心，亦係最容易被誤解嘅一節。Entertainer 嘅目標係「令全場覺得我有趣」；appreciator 嘅目標係「令對方覺得自己有趣、被看見」。短期嚟講，entertainer 更搶眼；長期嚟講，appreciator 累積嘅係<b>忠誠</b>，唔係注意力。</p>
+
+  <p>Sam 作爲一個 podcast 主持，本身就係專業 entertainer。呢集嘅 coaching 其實係幫佢由「表演訪問」轉向「令嘉賓講出佢自己都唔知自己知嘅嘢」。呢個轉向對所有做 content、做 sales、做領導嘅人一樣有效：<b>你唔需要係房間裡最有趣嘅人，你只需要係令房間裡每個人覺得自己最有趣嘅人。</b></p>
+
+  <p>具體動作：對方講完之後，唔好急住接自己嘅故事；先問一條跟進問題，證明你聽到佢講嘅「重點」而唔係「字面」。例如對方話「最近好忙」，唔好答「我都係」，而係問「忙喺邊種忙？係做唔完，定係唔知做邊樣先？」——呢個叫<b>聽到情緒，唔係聽到資訊</b>。</p>
+
+  <h4 class="sub">模組六：對話中最大嘅錯誤，同「下一句講咩」（13:30 / 18:10）</h4>
+
+  <p>節目把「What do I say next?」獨立成一節，因為呢條問題本身就係問題所在。當你腦裡面諗「下一句講咩」，你已經離開咗對話，進入咗表演。對方感受到嘅唔係你嘅緊張，而係你嘅<b>不在場</b>。</p>
+
+  <p>替代問題係：「佢頭先講嘅嘢，邊一點最令我好奇？」然後問嗰一點。呢個技巧嘅副作用係：你唔需要準備台詞，因為對話嘅材料由對方提供。你只需要準備<b>三條萬用問題</b>：</p>
+
+  <ol>
+    <li>「你最近有咩嘢令你覺得好有癮？」（找熱情點）</li>
+    <li>「如果你唔使考慮錢，你會即刻做咩？」（找價值觀）</li>
+    <li>「你點樣睇 XXX 呢件事？」（找觀點，但要真誠好奇，唔好變審問）</li>
+  </ol>
+
+  <p>另一個常見錯誤係「topping」：對方講旅行，你講一個更好嘅旅行；對方講病，你講一個更嚴重嘅病。呢個習慣會令對話變成比賽，而比賽係唔會有 warmth 嘅。Appreciator 嘅做法係「加一層」而唔係「加一倍」：對方講旅行，你問「嗰次有冇一個 moment 你覺得『就係呢刻』？」</p>
+
+  <h4 class="sub">模組七：Physical Appearance Bias（24:50）</h4>
+
+  <p>呢節講嘅唔係「靚仔有着數」咁簡單，而係 halo effect：人會把外表、打扮、聲線、姿態，自動推論成性格同能力。呢個偏見唔公平，但它存在，所以你要決定：<b>要唔要用它，而唔係要唔要信它。</b></p>
+
+  <p>可控制嘅變數包括：衣著嘅「場合匹配度」（比貴價更重要）、姿態（打開定收縮）、眼神（穩定定閃避）、聲量（能否被最後一排聽到）、以及一個最被低估嘅變數——<b>你入房嘅前 3 秒</b>。大部分人入房係「搵位」、「睇電話」、「搵熟人」；有魅力嘅人入房係「望一望、微笑、慢半拍」。慢半拍係一個極強嘅 status signal：你唔急。</p>
+
+  <h4 class="sub">模組八：Trigger Words 與 Contagious Competence（27:30 / 30:30）</h4>
+
+  <p><b>Trigger words</b> 係一啲會即刻啟動對方情緒同身份認同嘅詞。它們之所以有效，唔係因為華麗，而係因為<b>具體</b>。「我們要提升效率」係死的；「我們要令前線同事每日少做兩小時垃圾 admin」係活的。具體名詞、具體數字、具體場景，會令對方腦海自動播放畫面，而畫面先係記憶嘅單位。</p>
+
+  <p><b>Contagious competence</b> 係一個好靚嘅概念：真正嘅能力唔係令你顯得比人聰明，而係令你身邊嘅人變得更聰明。做法包括：把複雜嘢講到一個中學生都明、喺會議上點名讚具體貢獻、把「我認為」換成「我哋試下」、出問題時先講「我哋學到咩」而唔係「邊個做錯」。呢種 competence 會傳染，因為它降低咗別人承認唔識嘅成本。</p>
+
+  <p>相反，<b>leader 最大嘅錯誤</b>（31:20）通常唔係決策錯誤，而係 warmth 赤字：開會只講事務唔講人、公開糾正下屬、搶功、用「我」多過「我們」、把沉默當同意。呢啲行為單次睇唔嚴重，但會累積成一種「同佢做嘢好累」嘅集體記憶，而集體記憶就係 culture。</p>
+
+  <h4 class="sub">模組九：Small Talk 101（41:55）</h4>
+
+  <p>Small talk 嘅目的唔係交換資訊，而係<b>共同調節情緒</b>：確認雙方都安全、都願意玩、都唔會令對方難堪。所以「你做咩工作」呢類問題唔係問題，問題係你問完之後有冇跟進。</p>
+
+  <p>三個結構：</p>
+  <ul>
+    <li><b>Opening</b>：具體、低風險、同場景有關。「你點樣認識主辦方？」好過「你做邊行？」</li>
+    <li><b>Bridge</b>：由事實轉情緒。「咁你鍾意呢行邊一點？」</li>
+    <li><b>Exit</b>：主動、慷慨、留尾巴。「我要去同主辦講聲多謝，但好想下次再聽你講埋嗰個 project——你喺 LinkedIn 活躍嗎？」</li>
+  </ul>
+
+  <p>Exit 係最被低估嘅技能。大部分人唔知點走，所以拖到對話爛尾。有魅力嘅人會主動結束，並且令對方覺得「係我哋仲有嘢未講完」，而唔係「佢想擺脫我」。</p>
+
+  <h4 class="sub">模組十：點樣 hire 得更好（45:30）</h4>
+
+  <p>呢節把 charisma 由社交場合拉入管理場景。Hiring 嘅最大錯誤係只用 competence 篩人：履歷、case study、技術測試。呢啲嘢只能預測「佢識唔識做」，唔能預測「同佢做嘢會唔會令人想死」。節目的框架提示我哋觀察三樣嘢：</p>
+
+  <ol>
+    <li><b>佢點對待「冇用」嘅人</b>：接待員、實習生、餐廳侍應。呢個係 warmth 最難造假嘅測試。</li>
+    <li><b>佢點講前老闆／前同事</b>：全部係別人錯嘅人，入到嚟通常都會覺得全部係你錯。</li>
+    <li><b>佢有冇「appreciator 反射」</b>：會唔會主動問你問題、會唔會記得你頭先講嘅細節、會唔會令你覺得被理解。</li>
+  </ol>
+
+  <h4 class="sub">模組十一：Who to Study / How to Flirt / Mirroring（49:20 / 51:00 / 52:30）</h4>
+
+  <p><b>Who to study</b>：唔好研究「最有名」嘅人，研究「你最想喺邊個場景成為」嘅人。然後做兩個練習：<b>mute test</b>（睇片熄聲，只睇姿態、眼神、距離）同 <b>sound test</b>（聽聲，唔睇畫面，聽語速、停頓、語調）。大部分魅力係喺呢兩層發生，而唔係喺台詞。</p>
+
+  <p><b>How to flirt</b>：flirting 嘅本質唔係 sexual，而係 <b>playful attention</b>——你令對方覺得「你喺呢一刻，係世界上唯一我想了解嘅人」。元素包括：穩定但唔侵略嘅眼神、真誠好奇、輕度 teasing（要有笑意做安全網）、以及<b>plausible deniability</b>（雙方都可以話「我哋只係傾得好開心」）。失去 plausible deniability，就會由 flirt 變成 pressure。</p>
+
+  <p><b>Mirroring</b> 分三層，由淺入深：</p>
+  <ul>
+    <li><b>Verbal</b>：用對方嘅詞彙。對方講「團隊」，你唔好講「下屬」；對方講「build」，你唔好講「execute」。</li>
+    <li><b>Vocal</b>：語速、音量、音高、停頓。對方慢，你唔好搶；對方細聲，你唔好大聲。</li>
+    <li><b>Physical</b>：姿態、手勢、呼吸節奏、身體角度。先 match，後 lead——例如對方傾前，你跟住傾前；對方放鬆，你才慢慢帶去另一個狀態。</li>
+  </ul>
+
+  <p>Mirroring 嘅倫理界線：它係用嚟<b>降低對方嘅認知負荷</b>，唔係用嚟操控。當你開始計算「我要令佢鍾意我」，對方通常會聞到。真正有效嘅 mirroring 係出於好奇，而唔係出於需要。</p>
+
+  <h4 class="sub">模組十二：Vanessa 嘅生意（54:15）</h4>
+
+  <p>最後幾分鐘講 Vanessa 自己點樣把一套「people skills」變成生意：由 blog／newsletter 開始，出書（《Cues》《Conversation》），再做 People School 線上課程同企業培訓。呢個 model 對香港做內容嘅人有幾個啟示：</p>
+
+  <ul>
+    <li><b>Niche 夠窄，權威夠深</b>：她唔係講「成功學」，她講「可觀察嘅行為訊號」，所以有學術感、有工具感、有可驗證性。</li>
+    <li><b>書係 top of funnel，課程係 monetization</b>：書建立權威同觸及，課程同企業培訓 capture value。</li>
+    <li><b>企業培訓係現金流</b>：個人課程有規模上限，企業培訓可以按項目收費，亦係最好的 case study 來源。</li>
+  </ul>
+
+  <div class="take">
+    <h6>今晚就可以練嘅三件事</h6>
+    <p><b>1. 三秒入場：</b>下次入會議室／餐廳，喺門口停半秒，望一望，微笑，先至行。唔好一邊行一邊睇電話。</p>
+    <p><b>2. 跟進問題：</b>今日同人傾偈，強迫自己問最少兩條「跟進問題」，而唔係接自己嘅故事。目標係令對方講多 30 秒。</p>
+    <p><b>3. 一個具體讚美：</b>唔好講「你好叻」，講「你頭先處理嗰個客嘅方法——先認同佢嘅擔心，再俾兩個選項——我覺得好勁」。具體，係 warmth 嘅貨幣。</p>
+  </div>
+
+  <div class="flag">
+    <b>資料品質：</b>本集冇公開逐字稿（podscripts 未收錄 Ep 884）。以上內容基於：① 官方 RSS／Apple Podcasts show notes 嘅完整時間軸（逐字引用嘅句子除外，其餘屬我嘅整理）；② Vanessa Van Edwards 已出版框架（warmth × competence、oxytocin/dopamine、entertainers vs appreciators、mirroring 三層）。我冇虛構任何節目對白；凡屬框架延伸，均已標明。
+  </div>
+</div>
+
+<h2 class="section">無更新 · 最近已知劇集</h2>
+<div class="rule"></div>
+
+<div class="noupdate">
+  <div class="top">
+    <h4>Acquired</h4>
+    <div class="stamp">Ben Gilbert &amp; David Rosenthal · 最近無更新</div>
+  </div>
+  <div class="last"><span>最後一集：</span>《Seinfeld》— 2026-10-18（218 條 feed 條目，全部已掃描）</div>
+</div>
+
+<div class="noupdate">
+  <div class="top">
+    <h4>Founders</h4>
+    <div class="stamp">David Senra · 最近無更新</div>
+  </div>
+  <div class="last"><span>最後一集：</span>《#440 The Most Inspiring Autobiography I've Ever Read: Born of This Land: Chung Ju-yung》— 2026-11-17（465 條 feed 條目，全部已掃描）</div>
+</div>
+
+<div class="noupdate">
+  <div class="top">
+    <h4>The Knowledge Project</h4>
+    <div class="stamp">Shane Parrish · 最近無更新</div>
+  </div>
+  <div class="last"><span>最後一集：</span>《Bing Gordon: Learning From Bezos, Jobs, and Spielberg》— 2026-11-19（20 條 feed 條目，全部已掃描）</div>
+</div>
+
+<div class="noupdate">
+  <div class="top">
+    <h4>The Diary of a CEO</h4>
+    <div class="stamp">Steven Bartlett · 最近無更新</div>
+  </div>
+  <div class="last"><span>最後一集：</span>《Most Replayed Moment: Why 3 Meals A Day Could Be Aging You! Harvard Longevity Scientist》— 2026-11-20（912 條 feed 條目，全部已掃描）</div>
+</div>
+
+<h2 class="section">跨集觀察</h2>
+<div class="rule"></div>
+
+<p>今日兩集，一個講公司，一個講個人，但答案驚人地一致：<b>當一件事變成便宜嘅公用事業，價值就會轉移到「唔可以被 instant 複製」嘅嗰一層。</b></p>
+
+<p>All-In 版本：軟件可以被 AI 即刻寫出嚟，所以軟件唔再係 moat；moat 係土地、電力、算力、模型、分發——亦即 Chamath 講嘅「dirt」。呢個係一個資本密集、時間密集、監管密集嘅護城河，後來者唔可以靠一個週末 hackathon 追上。</p>
+
+<p>MFM 版本：知識、履歷、甚至「講嘢嘅內容」都可以被 AI 生成，所以內容唔再係 moat；moat 係你令另一個人覺得被看見嘅能力。呢個能力需要時間、注意力、情緒勞動，而 AI 愈便宜，呢種人味愈貴。</p>
+
+<p>把兩集放埋一齊，對 James 嘅實際啟示係：<b>如果你喺度建立任何嘢，你需要同時回答兩個問題——你控制咗邊一樣稀缺資源？你令邊個人覺得被你看見？</b> 第一個問題決定你能唔能活；第二個問題決定有冇人想你活。</p>
+
+<footer>
+  報告生成：<b>2026-11-21 09:55 UTC</b>　·　掃描器：mindset-podcasts/scanner<br>
+  方法：RSS feeds（6 個）→ GUID diff → 新集數深度萃取 → 官方 show notes／逐字稿交叉核對<br>
+  已掃描 GUID 总数：2,000+（state.json 累積）　·　本日新增：2 條<br>
+  免責：節目所述數字（估值、收入、市值、份額）未經獨立審計；自動轉錄可能有誤，引用已盡量保留原意。<br>
+  <a href="https://jmoksz.github.io/mindset-podcasts/">jmoksz.github.io/mindset-podcasts</a>
+</footer>
+
+</div>
+</body>
+</html>
