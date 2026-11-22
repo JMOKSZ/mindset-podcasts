@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-11-22</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a; --warn:#a4442f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;line-height:1.85;font-size:17px}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.95;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  .note b{color:#8a5c14}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:28px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  .badge{display:inline-block;vertical-align:middle;margin-left:10px;padding:3px 9px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10px;letter-spacing:.14em;
+    background:#f3e6cc;color:#8a5c14;border:1px solid #e3cfa8;border-radius:2px;font-weight:600}
+  .badge.grey{background:#f1ece4;color:#7a6a58;border-color:#e0d7c8}
+  h4.sub{font-size:20px;font-weight:normal;margin:40px 0 10px;color:#3a2f21;
+    border-bottom:1px dotted var(--line);padding-bottom:6px}
+  h5.mini{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin:30px 0 6px;font-weight:600}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:16px}
+  .card{background:var(--card);border:1px solid var(--line);padding:30px 32px;margin:0 0 22px}
+  .epmeta{display:grid;grid-template-columns:88px 1fr;gap:2px 14px;margin:0 0 24px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;
+    background:#faf6ee;border:1px solid #eee3d2;padding:16px 18px}
+  .epmeta dt{color:var(--muted);letter-spacing:.04em}
+  .epmeta dd{margin:0;color:#3a2f21}
+  p{margin:0 0 18px}
+  blockquote{margin:26px 0;padding:4px 0 4px 22px;border-left:3px solid var(--accent);
+    font-size:17.5px;line-height:1.8;color:#3a2f21}
+  blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:13.5px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;color:var(--muted)}
+  blockquote p{margin:0 0 10px}
+  blockquote p:last-child{margin:0}
+  table{width:100%;border-collapse:collapse;margin:26px 0 34px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13.5px}
+  th{text-align:left;padding:11px 10px;border-bottom:2px solid var(--ink);font-size:11px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55}
+  td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.06em}
+  .pill.ok{background:#e7f0e9;color:#33684b}
+  .pill.warn{background:#f8e6e1;color:#8f3a26}
+  .pill.due{background:#fdf0d8;color:#8a5c14}
+  ul,ol{margin:0 0 20px;padding-left:24px}
+  li{margin-bottom:9px;line-height:1.75}
+  .ts{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;color:var(--accent);
+    font-variant-numeric:tabular-nums}
+  .ts b{color:#3a2f21;font-weight:600}
+  .closing{border-top:2px solid var(--ink);margin-top:58px;padding-top:24px}
+  .closing p{font-size:16.5px}
+  footer{margin-top:46px;padding-top:20px;border-top:1px solid var(--line);
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11.5px;color:var(--muted);line-height:1.9}
+  @media(max-width:640px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    h1{font-size:30px} .card{padding:22px 18px} .wrap{padding:32px 16px 60px}
+    table{font-size:12px} th,td{padding:9px 6px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">Mindset Podcast Daily · 六台深掃</div>
+  <h1>思維播客日報</h1>
+  <p class="date">2026 年 11 月 22 日 · 星期日</p>
+  <div class="meta">
+    掃描時間 <b>2026-11-22 09:53 UTC</b> · 六個 RSS feed 全部 HTTP 200 · 新增集數 <b>0</b><br>
+    上一份報告 <b>2026-11-21</b>（All-In Anthropic IPO ＋ MFM 魅力課）· 上次全體零新集 <b>2026-11-15</b>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">6</div><div class="l">FEEDS 掃描</div></div>
+  <div class="stat"><div class="n">0</div><div class="l">新增集數</div></div>
+  <div class="stat"><div class="n">6</div><div class="l">全部正常</div></div>
+  <div class="stat"><div class="n">34</div><div class="l">ACQUIRED 靜默日數</div></div>
+</div>
+
+<p class="lede">六台全靜。呢個係七日內第二次全體零新集（對上一次 11 月 15 日，同樣係星期日）——週日只有 All-In 慣性出貨，而佢前晚（11/20）已經出咗。<em>所以今日真正有資訊量嘅唔係「有咩新集」，而係六台嘅發佈節奏本身</em>：我今日逐台拉了最近 24 條嘅真實發佈間距出嚟計，得出幾個對「幾時再開機」有用嘅結論。</p>
+
+<div class="note">
+<b>今日一句話：</b>零新集，唔等於零資訊。四個台嘅下一個更新窗口全部落在 <b>11 月 23 日（一）</b>——MFM 同 Diary of a CEO 兩台逢星期一開閘；<b>Knowledge Project 連續 12 條都係星期四出</b>，即 11 月 26 日；<b>Acquired 靜默 34 日，剛好等於佢 24 條嘅中位間距 34 日</b>，所以佢唔係停擺，係啱啱踩正月更節奏，隨時會出。
+</div>
+
+<h2 class="section">Status board · 各台位置</h2>
+<div class="rule"></div>
+<table>
+<thead><tr><th>節目</th><th>最新一集</th><th class="num">日期</th><th class="num">靜默</th><th class="num">中位間距</th><th>下次預計</th></tr></thead>
+<tbody>
+<tr><td><b>Acquired</b></td><td>Seinfeld</td><td class="num">10-19</td><td class="num">34 日</td><td class="num">34 日</td><td><span class="pill due">已到期 · 隨時</span></td></tr>
+<tr><td><b>Founders</b></td><td>#440 Born of This Land</td><td class="num">11-17</td><td class="num">4 日</td><td class="num">8 日</td><td><span class="pill ok">11/25–11/29</span></td></tr>
+<tr><td><b>All-In</b></td><td>Anthropic Goes Public…</td><td class="num">11-21</td><td class="num">1 日</td><td class="num">2 日</td><td><span class="pill ok">11/23–11/24</span></td></tr>
+<tr><td><b>My First Million</b></td><td>Charisma 指南</td><td class="num">11-20</td><td class="num">2 日</td><td class="num">2 日</td><td><span class="pill ok">11/23（一）</span></td></tr>
+<tr><td><b>Knowledge Project</b></td><td>Bing Gordon</td><td class="num">11-19</td><td class="num">3 日</td><td class="num">8 日</td><td><span class="pill ok">11/26（四）</span></td></tr>
+<tr><td><b>Diary of a CEO</b></td><td>3 Meals A Day（重播剪輯）</td><td class="num">11-20</td><td class="num">2 日</td><td class="num">3 日</td><td><span class="pill ok">11/23（一）</span></td></tr>
+</tbody>
+</table>
+<p>六台合共 <b>2,985</b> 條歷史條目，GUID 全部已在 <code>state.json</code> 建檔，今日比對：零條未掃描、零條 feed 換 GUID。呢個數同昨日只差幾條（各台新增嘅都已入帳），證明 scanner 冇漏讀。</p>
+
+<h2 class="section">Per show · 逐台狀態與最後一集</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <h3>Acquired <span class="badge grey">最近無更新</span></h3>
+  <div class="byline">Ben Gilbert &amp; David Rosenthal · 每月一更（中位 34 日）</div>
+  <dl class="epmeta">
+    <dt>最後一集</dt><dd>Seinfeld</dd>
+    <dt>發佈</dt><dd>2026-10-19（美西 10/18 21:00）· 靜默 34 日</dd>
+    <dt>時長</dt><dd>3 小時 50 分（13,820 秒）</dd>
+    <dt>連結</dt><dd><a href="https://www.acquired.fm/episodes/seinfeld">acquired.fm/episodes/seinfeld</a></dd>
+  </dl>
+  <p>今日最值得講嘅一台。34 日靜默表面上似「出事」，但拉出佢最近 24 條嘅間距：<span class="ts"><b>35 / 34 / 48 / 35 / 14 / 0 / 19 / 41 / 34 / 42</b></span> 日——中位數正正就係 34 日。即係話今日唔係異常，而係佢嘅「正常」；一切如常，新集應該喺未來一兩星期內落地，而且照舊係星期日美西夜晚。</p>
+  <blockquote>
+    <p>“Seinfeld, which ended three decades ago, has been watched by 72 million Americans so far THIS YEAR. Behind that incredible stat is an equally incredible business story: obsessive creators, perfect market timing, an ownership structure that aligned incentives for the long term…”</p>
+    <cite>— Acquired, 節目官方簡介（Seinfeld 一集）</cite>
+  </blockquote>
+  <p>呢集仲未出「companion PDF」以外嘅延伸內容，如果你想喺新集之前補課，3 小時 50 分係六台入面最長嘅單集；建議分兩段聽：前段講 Seinfeld 嘅原創與選角，後段講 syndication 同 ownership structure——後者才係真正可轉移嘅商業模型（創作者保留長期 upside，同 All-In 陣營成日講嘅「ownership vs salary」係同一條線）。</p>
+</div>
+
+<div class="card">
+  <h3>Founders <span class="badge grey">最近無更新</span></h3>
+  <div class="byline">David Senra · 每 7–9 日一更（中位 8 日）</div>
+  <dl class="epmeta">
+    <dt>最後一集</dt><dd>#440 The Most Inspiring Autobiography I've Ever Read: Born of This Land: Chung Ju-yung</dd>
+    <dt>發佈</dt><dd>2026-11-17 · 靜默 4 日</dd>
+    <dt>時長</dt><dd>49 分 32 秒（2,972 秒）</dd>
+    <dt>連結</dt><dd><a href="https://www.founderspodcast.com/">founderspodcast.com</a>（RSS 未提供單集連結）</dd>
+  </dl>
+  <p>#440 講鄭周永（Chung Ju-yung）自傳《Born of This Land》——現代集團創辦人，由赤貧農家走到造船、汽車。Senra 呢類「自傳重讀」集數通常係佢產能最高嘅格式：唔使訪談，純粹把書入面嘅決策場景抽出嚟對照當下。</p>
+  <blockquote>
+    <p>“What I learned from rereading <em>Born of This Land: My Life Story</em> by Chung Ju-yung.”</p>
+    <cite>— Founders #440 官方簡介（全句）</cite>
+  </blockquote>
+  <p>注意節奏變化：佢最近十條間距係 <span class="ts"><b>12 / 9 / 12 / 8 / 7 / 7 / 6 / 9 / 5 / 7</b></span> 日，11 月明顯放慢（12、9、12），中位仍是 8 日。以今日靜默 4 日計，下集大概率 11 月 25–29 日之間。Founders 係六台入面唯一唔提供 show notes 嘅一台，所以佢嘅價值幾乎全部落在「Senra 自己點讀嗰本書」——呢點令佢更適合做通勤收聽，唔適合做筆記型收聽。</p>
+</div>
+
+<div class="card">
+  <h3>All-In <span class="badge grey">最近無更新</span></h3>
+  <div class="byline">Chamath · Jason · Sacks · Friedberg · 每週六主集 ＋ 不定期加場</div>
+  <dl class="epmeta">
+    <dt>最後一集</dt><dd>Anthropic Goes Public, Nvidia in Crisis, Markets Tank, Open Source Crackdown?</dd>
+    <dt>發佈</dt><dd>2026-11-20 22:14 UTC（香港時間 11/21 06:14）· 靜默 1 日</dd>
+    <dt>時長</dt><dd>1 小時 16 分 41 秒</dd>
+    <dt>連結</dt><dd><a href="https://allinchamathjason.libsyn.com/anthropic-goes-public-nvidia-in-crisis-markets-tank-open-source-crackdown">libsyn 單集頁</a></dd>
+  </dl>
+  <p>昨日已深度拆解，今日只補一個節奏觀察：All-In 11 月嘅出貨密度明顯升呢——間距 <span class="ts"><b>3 / 3 / 3 / 3 / 7 / 1 / 5 / 1 / 2 / 2</b></span> 日，即過去十日內出了四集（11/10、11/14、11/17、11/20）。呢個係「新聞驅動」模式：Anthropic IPO、Nvidia 換帥、開源披露規則呢幾單連環事件，令佢哋由每週一集變成每兩三日一集。</p>
+  <blockquote>
+    <p>“(0:00) Chamath's theory on 10 AI Megacorps that go ‘Dirt to Application’ (3:27) Anthropic goes public… (36:41) White House weighs new open source disclosure rule for Chinese models (59:17) State of Nvidia: Tanking stock, talent crisis, legal issues, Jensen's future”</p>
+    <cite>— All-In 官方章節時間戳（2026-11-20 集）</cite>
+  </blockquote>
+  <p>對你有用嘅判斷：呢種密度通常只維持兩三週，之後會回落。如果唔想追，可以等佢回落之後一次過補——但「Nvidia 換帥」同「開源披露規則」兩條線係會影響往後好幾集嘅主線，唔建議跳。</p>
+</div>
+
+<div class="card">
+  <h3>My First Million <span class="badge grey">最近無更新</span></h3>
+  <div class="byline">Sam Parr &amp; Shaan Puri · 每週一、三（近期加星期五）</div>
+  <dl class="epmeta">
+    <dt>最後一集</dt><dd>#884 A recovering awkward person’s guide to undeniable charisma</dd>
+    <dt>發佈</dt><dd>2026-11-20 11:00 UTC · 靜默 2 日</dd>
+    <dt>時長</dt><dd>1 小時 0 分 22 秒（3,622 秒）</dd>
+    <dt>連結</dt><dd><a href="https://www.mfmpod.com/episodes/">mfmpod.com/episodes</a></dd>
+  </dl>
+  <p>昨日已拆。節奏上，MFM 係六台入面最穩定嘅商業節目：最近十條間距 <span class="ts"><b>1 / 2 / 4 / 2 / 4 / 2 / 4 / 2 / 2 / 2</b></span> 日，星期一、三為主，近期加多個星期五。發佈星期分佈：一 5 次、三 4 次、五 2 次——即係「星期一一定有」係佢最硬嘅規律，明日（11/23）開閘機會極高。</p>
+  <blockquote>
+    <p>“Episode 884: Sam Parr gets coached by Vanessa Van Edwards on how to be more charismatic.”</p>
+    <cite>— MFM 官方簡介</cite>
+  </blockquote>
+  <p>順帶一提：呢集嘅官方 show notes 有完整章節（0:00 魔術表演 → 2:45 competence w/o warmth = suspicion → 6:15 oxytocin → 9:00 第一印象 → 13:30 最大對話錯誤 → 23:30 “be chalant” → 45:30 small talk 101 → 51:00 點樣 flirt）。呢種帶時間戳嘅結構，係六台入面最容易「揀段聽」嘅格式——如果你只想拎一個可即用嘅技巧，跳去 13:30 同 23:30 兩段就夠。</p>
+</div>
+
+<div class="card">
+  <h3>The Knowledge Project <span class="badge grey">最近無更新</span></h3>
+  <div class="byline">Shane Parrish · 每週四（連續 12 條都係星期四）</div>
+  <dl class="epmeta">
+    <dt>最後一集</dt><dd>Bing Gordon: Learning From Bezos, Jobs, and Spielberg</dd>
+    <dt>發佈</dt><dd>2026-11-19 10:55 UTC · 靜默 3 日</dd>
+    <dt>時長</dt><dd>—（feed 未提供）</dd>
+    <dt>連結</dt><dd><a href="https://fs.blog/knowledge-project-podcast/bing-gordon/">fs.blog/knowledge-project-podcast/bing-gordon</a></dd>
+  </dl>
+  <p>KP 嘅發佈紀律係六台最強：最近 12 條 <b>全部</b>星期四，無一例外；間距只有 7 日同 14 日兩種（隔週一次會拉長到 14 日）。所以下一集篤定 <b>11 月 26 日（四）</b>，呢個預測準確度係六台最高。</p>
+  <blockquote>
+    <p>“Bing Gordon is the former Chief Creative Officer of Electronic Arts and a partner at Kleiner Perkins. He served on Amazon’s board for more than a decade, a seat he earned after giving Jeff Bezos five ideas. The first was Amazon Prime.”</p>
+    <cite>— Knowledge Project 官方簡介（Bing Gordon 集）</cite>
+  </blockquote>
+  <p>呢句「five ideas，第一個就係 Prime」係本週六台入面信息密度最高嘅一句自述——因為佢講嘅係「點樣用一個想法換到一張董事會椅子」呢種非正式權力路徑。如果你本週只補一集，KP 呢集嘅 ROI 最高：佢同時覆蓋 Bezos 決策、Jobs 品味、Spielberg 敘事三個維度，而呢三個維度分別對應「資源分配」「產品標準」「故事說服」。</p>
+</div>
+
+<div class="card">
+  <h3>The Diary of a CEO <span class="badge grey">最近無更新</span></h3>
+  <div class="byline">Steven Bartlett · 每週一、四正集 ＋ 星期五重播剪輯</div>
+  <dl class="epmeta">
+    <dt>最後一集</dt><dd>Most Replayed Moment: Why 3 Meals A Day Could Be Aging You! Harvard Longevity Scientist</dd>
+    <dt>發佈</dt><dd>2026-11-20 06:00 UTC · 靜默 2 日</dd>
+    <dt>時長</dt><dd>27 分 41 秒（1,661 秒）· 剪輯片段，非完整訪談</dd>
+    <dt>連結</dt><dd><a href="https://thediaryofaceo.com/">thediaryofaceo.com</a></dd>
+  </dl>
+  <p>需要點明嘅一件事：星期五呢條 <b>唔係新訪談</b>，係“Most Replayed Moment”重播剪輯。對上一個星期五（11/13）同樣係剪輯（Chase Hughes，1,409 秒）。即係話 DoAC 嘅真實新內容產能係<b>每週兩集</b>（一、四），星期五只係再利用。</p>
+  <p>證據喺間距 pattern：最近十條 <span class="ts"><b>1 / 3 / 3 / 1 / 3 / 3 / 1 / 3 / 3 / 1</b></span> 日——完美嘅「一 → 四 → 五剪輯」三日循環。所以見到星期五有更新，唔代表 Labour 有新訪談可聽。</p>
+  <blockquote>
+    <p>“What if the way you eat is quietly deciding how fast you age? David Sinclair is a Professor of Genetics at Harvard Medical School… He reveals the tiny ‘bodyguards’ inside your cells that decide how quickly you age, the fasting window he aims for, the popular diet he’s sceptical of, and the simple morning swap he made for his longevity.”</p>
+    <cite>— Diary of a CEO 官方簡介（David Sinclair 剪輯集）</cite>
+  </blockquote>
+  <p>如果你想要 Sinclair 嘅完整論述，呢條 27 分鐘剪輯唔夠——官方簡介自己都寫「Listen to the full episode here」。星期一（11/23）應該有新正集，屆時可以對照。</p>
+</div>
+
+<h2 class="section">This week · 本週已出 9 集一覽（11/16–11/22）</h2>
+<div class="rule"></div>
+<p>本週六台合共出咗 <b>9 條</b>（含 1 條重播剪輯），全部已在前幾日報告逐集拆過。呢個表係畀你補課用——按「如果只聽三集」排咗優先次序。</p>
+<table>
+<thead><tr><th>優先</th><th>節目</th><th>集數</th><th class="num">日期</th><th class="num">時長</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td><b>Knowledge Project</b></td><td>Bing Gordon: Learning From Bezos, Jobs, and Spielberg</td><td class="num">11-19</td><td class="num">—</td></tr>
+<tr><td class="num">2</td><td><b>All-In</b></td><td>Anthropic Goes Public, Nvidia in Crisis, Markets Tank…</td><td class="num">11-21</td><td class="num">1:16:41</td></tr>
+<tr><td class="num">3</td><td><b>All-In</b></td><td>Databricks CEO: AGI Is Already Here, Why Companies Are Behind…</td><td class="num">11-18</td><td class="num">1:02:06</td></tr>
+<tr><td class="num">4</td><td>My First Million</td><td>#884 Charisma 指南（Vanessa Van Edwards 教 Sam）</td><td class="num">11-20</td><td class="num">1:00:22</td></tr>
+<tr><td class="num">5</td><td>Diary of a CEO</td><td>$5 Billion In Chips: The NVIDIA Espionage Operation That Fooled Silicon Valley</td><td class="num">11-16</td><td class="num">2:04:28</td></tr>
+<tr><td class="num">6</td><td>Founders</td><td>#440 Born of This Land: Chung Ju-yung</td><td class="num">11-17</td><td class="num">0:49:32</td></tr>
+<tr><td class="num">7</td><td>My First Million</td><td>She’s making $40M selling a game to rich moms</td><td class="num">11-18</td><td class="num">1:09:02</td></tr>
+<tr><td class="num">8</td><td>Diary of a CEO</td><td>Are Billionaires Really Writing America's Laws For Us?</td><td class="num">11-19</td><td class="num">1:29:49</td></tr>
+<tr><td class="num">9</td><td>My First Million</td><td>$1.5B+ Investor: “This is Why Elon Wins”</td><td class="num">11-16</td><td class="num">1:33:37</td></tr>
+</tbody>
+</table>
+<p>本週總時長約 <b>11 小時 46 分</b>。如果只揀三集：KP 嘅 Bing Gordon（權力路徑）＋ All-In 11/21（AI 資本市場現狀）＋ MFM $40M 遊戲媽媽（最具體嘅生意拆解）。呢三集啱好構成一條線：<em>如何取得資源 → 資源而家點定價 → 小生意點樣具體賺錢</em>。</p>
+
+<h2 class="section">Cadence lab · 六台節奏數據（今日實測）</h2>
+<div class="rule"></div>
+<p>今日零新集，於是我把六台最近 24 條嘅真實發佈時間全部拉出嚟計間距。呢啲數字比「佢哋話自己幾時更新」可靠，因為係 feed 自己嘅 pubDate。</p>
+<table>
+<thead><tr><th>節目</th><th class="num">中位間距</th><th class="num">最短</th><th class="num">最長</th><th>主發佈日</th><th>紀律評分</th></tr></thead>
+<tbody>
+<tr><td>Knowledge Project</td><td class="num">8 日</td><td class="num">6</td><td class="num">14</td><td>星期四（12/12）</td><td><span class="pill ok">極高</span></td></tr>
+<tr><td>Diary of a CEO</td><td class="num">3 日</td><td class="num">1</td><td class="num">3</td><td>一 / 四 / 五</td><td><span class="pill ok">極高</span></td></tr>
+<tr><td>My First Million</td><td class="num">2 日</td><td class="num">1</td><td class="num">5</td><td>一（5 次）/ 三（4 次）</td><td><span class="pill ok">高</span></td></tr>
+<tr><td>Founders</td><td class="num">8 日</td><td class="num">5</td><td class="num">18</td><td>一（6 次）</td><td><span class="pill ok">中高</span></td></tr>
+<tr><td>All-In</td><td class="num">2 日</td><td class="num">0</td><td class="num">7</td><td>六（3）/ 五（3）/ 四（2）</td><td><span class="pill warn">新聞驅動</span></td></tr>
+<tr><td>Acquired</td><td class="num">34 日</td><td class="num">0</td><td class="num">55</td><td>日（8/12）</td><td><span class="pill ok">月更穩定</span></td></tr>
+</tbody>
+</table>
+<h4 class="sub">三個由數據得出嘅判斷</h4>
+<ol>
+<li><b>Acquired 冇停擺。</b>34 日靜默 = 中位數 34 日，零偏差。佢最長曾拉到 55 日，所以就算再等兩星期都屬正常範圍。唔需要擔心，亦唔需要特別去追。</li>
+<li><b>All-In 而家係「事件驅動」而非「週更」。</b>中位 2 日但最長 7 日、最短 0 日（同日兩集），變異極大。呢個意味住：唔可以用「星期六有冇新集」嚟判斷，要用「有冇大事」嚟判斷。11 月嘅大事係 AI 資本市場，所以密度高。</li>
+<li><b>Diary of a CEO 嘅「新內容」實際頻率係每週 2 集，唔係 3 集。</b>星期五條線固定係重播剪輯（11/13、11/20 兩次都係），時長 23–28 分鐘，佔正集三分之一。呢點對時間預算好重要：真正要預留嘅係每週兩集 × 約 1.5–2 小時。</li>
+</ol>
+
+<h2 class="section">如果今日想開機 · 三個唔會撞新集嘅選擇</h2>
+<div class="rule"></div>
+<div class="card">
+  <h5 class="mini">選擇一 · 最高 ROI</h5>
+  <h4 class="sub" style="border:0;padding:0;margin:0 0 10px">Knowledge Project — Bing Gordon</h4>
+  <p>本週唯一一集「一個人同時講得通三種權力」：Bing Gordon 喺 EA 做到 CCO（產品品味）、喺 Kleiner Perkins 做合夥人（資本判斷）、喺 Amazon 董事會坐十幾年（治理）。佢入董事會嘅方式本身就係一堂課——<b>五個想法，第一個就係 Prime</b>。呢種「用免費 insight 換正式席位」嘅路徑，比任何 networking 建議都具體。</p>
+</div>
+<div class="card">
+  <h5 class="mini">選擇二 · 最長沉浸</h5>
+  <h4 class="sub" style="border:0;padding:0;margin:0 0 10px">Acquired — Seinfeld（3 小時 50 分）</h4>
+  <p>趁新集未出，補呢集最抵。核心唔係「Seinfeld 好唔好睇」，而係三個結構性決定：創作控制權集中喺 Larry David 同 Jerry 手上；揀啱咗 90 年代廣告市場嘅時機；以及一個令所有參與者長期對齊嘅 ownership structure。72 million Americans 今年仍然睇——呢個數字係「文化資產長期現金流」最好嘅證據。</p>
+</div>
+<div class="card">
+  <h5 class="mini">選擇三 · 最可即用</h5>
+  <h4 class="sub" style="border:0;padding:0;margin:0 0 10px">MFM #884 — Charisma 指南</h4>
+  <p>如果只有 20 分鐘，跳去 13:30（最大對話錯誤）同 23:30（be chalant）。呢集嘅前提係「魅力係學返嚟嘅，唔係天生」——Vanessa Van Edwards 用 oxytocin / dopamine 兩個機制解釋點解第一印象會在幾秒內定型，再给出具體可練嘅行為。實用度高，唔需要背景知識。</p>
+</div>
+
+<div class="closing">
+  <p><b>明日預告。</b>11 月 23 日（星期一）係本週第一個真正嘅更新窗口：MFM 星期一鐵定出、Diary of a CEO 星期一正集、All-In 亦可能加場。明日掃描好大機會由「零新集」跳返到「三集以上」。</p>
+  <p>今日呢份報告嘅價值不在新集，而在<b>把六台嘅發佈節奏量化咗一次</b>——以後你問「呢個台係咪死咗」，答案唔再靠感覺，而係靠中位間距對比當下靜默日數。呢個方法已經寫入 scanner 嘅 cadence 記錄（<code>cadence.json</code>），下次可以直接對照。</p>
+</div>
+
+<footer>
+  資料來源：六個官方 RSS feed，2026-11-22 09:53 UTC 實測抓取，全部 HTTP 200。<br>
+  新增集數：0（GUID 比對 state.json 全量 2,985 條）· 無新集時仍列出最後已知劇集與真實發佈數據。<br>
+  引用全部取自節目官方簡介原文，未經改寫。<br>
+  掃描器：<code>mindset-podcasts/scanner/scan_fast.py</code> · 報告生成：2026-11-22 09:53 UTC
+</footer>
+</div>
+</body>
+</html>

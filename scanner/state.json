@@ -1,5 +1,5 @@
 {
- "lastScan": "2026-11-21T09:55:00Z",
+ "lastScan": "2026-11-22T09:53:00Z",
  "scannedEpisodes": {
   "acquired": [
    "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -3047,17 +3047,14 @@
   ]
  },
  "lastScanResult": {
-  "date": "2026-11-21",
-  "new": 2,
+  "date": "2026-11-22",
+  "new": 0,
   "podcasts": 6,
-  "noUpdate": 4,
-  "episodes": [
-   "all-in: Anthropic Goes Public, Nvidia in Crisis, Markets Tank, Open Source Crackdown?",
-   "my-first-million: A recovering awkward person’s guide to undeniable charisma"
-  ]
+  "noUpdate": 6,
+  "episodes": []
  },
- "lastRun": "2026-11-21T09:55:00Z",
- "lastReport": "daily-report-2026-11-21.html",
+ "lastRun": "2026-11-22T09:53:00Z",
+ "lastReport": "daily-report-2026-11-22.html",
  "feedAudit": {
   "checkedAt": "2026-11-15T09:58:00Z",
   "knowledge-project": {
