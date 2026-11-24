@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-11-24</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a; --warn:#a4442f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;line-height:1.85;font-size:17px}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.95;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  .note b{color:#8a5c14}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:28px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  .badge{display:inline-block;vertical-align:middle;margin-left:10px;padding:3px 9px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10px;letter-spacing:.14em;
+    background:#f3e6cc;color:#8a5c14;border:1px solid #e3cfa8;border-radius:2px;font-weight:600}
+  .badge.grey{background:#f1ece4;color:#7a6a58;border-color:#e0d7c8}
+  h4.sub{font-size:20px;font-weight:normal;margin:40px 0 10px;color:#3a2f21;
+    border-bottom:1px dotted var(--line);padding-bottom:6px}
+  h5.mini{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin:30px 0 6px;font-weight:600}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:16px}
+  .card{background:var(--card);border:1px solid var(--line);padding:30px 32px;margin:0 0 22px}
+  .epmeta{display:grid;grid-template-columns:88px 1fr;gap:2px 14px;margin:0 0 24px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;
+    background:#faf6ee;border:1px solid #eee3d2;padding:16px 18px}
+  .epmeta dt{color:var(--muted);letter-spacing:.04em}
+  .epmeta dd{margin:0;color:#3a2f21}
+  p{margin:0 0 18px}
+  blockquote{margin:26px 0;padding:4px 0 4px 22px;border-left:3px solid var(--accent);
+    font-size:17.5px;line-height:1.8;color:#3a2f21}
+  blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:13.5px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;color:var(--muted)}
+  blockquote p{margin:0 0 10px}
+  blockquote p:last-child{margin:0}
+  table{width:100%;border-collapse:collapse;margin:26px 0 34px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13.5px}
+  th{text-align:left;padding:11px 10px;border-bottom:2px solid var(--ink);font-size:11px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55}
+  td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.06em}
+  .pill.ok{background:#e7f0e9;color:#33684b}
+  .pill.warn{background:#f8e6e1;color:#8f3a26}
+  .pill.due{background:#fdf0d8;color:#8a5c14}
+  ul,ol{margin:0 0 20px;padding-left:24px}
+  li{margin-bottom:9px;line-height:1.75}
+  .ts{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;color:var(--accent);
+    font-variant-numeric:tabular-nums}
+  .ts b{color:#3a2f21;font-weight:600}
+  .closing{border-top:2px solid var(--ink);margin-top:58px;padding-top:24px}
+  .closing p{font-size:16.5px}
+  footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11.5px;color:var(--muted);line-height:1.9}
+  a{color:#8a5c14}
+  strong{font-weight:600}
+  .kicker2{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 8px;font-weight:600}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:0 26px}
+  @media(max-width:640px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    h1{font-size:31px} .card{padding:22px 20px} .wrap{padding:32px 18px 60px}
+    table{font-size:12.5px} th,td{padding:9px 7px} .split{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+  <div class="kicker">Mindset Podcast Daily · 六台深掃</div>
+  <h1>思維播客日報</h1>
+  <p class="date">2026 年 11 月 24 日 · 星期二</p>
+  <div class="meta">
+    掃描時間 <b>2026-11-24 09:53 UTC</b>（香港時間 17:53）· 六個 RSS feed 全部 HTTP 200 · 新增集數 <b>1</b><br>
+    今日唯一新集：<b>My First Million #885</b>「4 business ideas you could build with ChatGPT」（53:41）<br>
+    萃取方式：<b>全片逐字稿 1,655 段</b>逐段核對（非節目簡介改寫），數字與引文全部出自原話
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">6</div><div class="l">FEEDS 掃描</div></div>
+  <div class="stat"><div class="n">1</div><div class="l">新增集數</div></div>
+  <div class="stat"><div class="n">54</div><div class="l">新集分鐘</div></div>
+  <div class="stat"><div class="n">35</div><div class="l">ACQUIRED 靜默日數</div></div>
+</div>
+
+<p class="lede">今日六台只有一台開閘——但呢一集表面講「GPT 包裝生意」，實際上係一條<em>完整的創業方法論</em>：前半段教你點樣喺 ChatGPT 生態撿錢，後半段用一小時拆解「點解所有嘢都做得咁慢」，再將「速度」還原成一個可以訓練、可以篩選、可以量度嘅能力。Shaan 喺錄完呢集之後即刻返公司改咗自己嘅招聘流程——呢個係全片最有說服力嘅一個細節。</p>
+
+<div class="note">
+<b>今日一句話：</b>Shaan 嘅結論係——<b>「速度唔係一個性格，係一條可以校準嘅尺」</b>。你而家做嘢有幾快，唔反映你嘅能力，只反映你過去二十年被學校同大公司訓練出嚟嘅「速度基準」（speed bar）。學校嘅設計係為咗唔好漏低最慢嘅 10–20%，所以你愈叻，你嘅速度被拖得愈慘；而創業者之所以令人覺得「難相處」，好多時只係因為佢把尺同周圍唔同。<b>解法唔係收慢自己，而係一開始就篩人（filter at the door）。</b>
+</div>
+
+<h2 class="section">Tonight's main feature · 今晚主菜</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <h3>My First Million #885：四個你可以用 ChatGPT 起嘅生意<span class="badge">新集</span></h3>
+  <p class="byline">Sam Parr &amp; Shaan Puri ｜ 2026-11-23 11:51 UTC ｜ 53 分 41 秒 ｜ Episode 885</p>
+
+  <dl class="epmeta">
+    <dt>主題</dt><dd>ChatGPT 生態裡嘅「GPT 包裝」生意（GPT wrapper businesses）＋ 速度作為創業核心能力</dd>
+    <dt>形式</dt><dd>兩人對談，無嘉賓。但中段大量引用 Shaan 同日錄製嘅 <b>James Clear</b> 訪問（另一個節目），等於一集裡面偷聽兩集</dd>
+    <dt>結構</dt><dd>前半（約 0–15 分）＝ 生意點子清單＋平台風險辯論；15–44 分 ＝ 速度／/fast 主題；44 分後 ＝ WIFO 時刻＋紐約學校荒謬劇</dd>
+    <dt>一句總結</dt><dd>「把 GPT 加在一個字後面，客戶即刻明白你賣乜」——而真正嘅護城河唔係 idea，係你迭代嘅速度</dd>
+  </dl>
+
+  <h4 class="sub">一、起點：一個 Instagram 廣告，同一個語言捷徑</h4>
+
+  <p>Shaan 用一個好日常嘅場景開場：他喺 Instagram 見到一個叫 <b>PointsGPT</b> 嘅廣告。產品功能好具體——你話俾佢聽「我想去 LA，大約呢個時間，我有 Chase 同 Amex，有呢多分，幫我搵」；再加一句「任何時候有商務艙飛歐洲嘅抵換（award）靚 deal，通知我」。就係咁，純聊天介面。</p>
+
+  <p>但佢真正興奮嘅唔係產品，係<b>命名法</b>。佢指出，PointsGPT 做嘅事，本質上係把兩個已經證明過嘅商業模式搬過嚟：一個係 <b>The Points Guy</b>（一個教人點樣極大化信用卡積分嘅 blog，Shaan 估計佢「兩年就賣咗，賣咗大約 2,000 萬美元」，而且係十幾年前嘅事）；另一個係 <b>point.me</b>（同一個痛點，但用搜尋引擎形式解決）。</p>
+
+  <blockquote>
+    <p>「我太鍾意呢件事——<b>只要將 GPT 加喺一個字後面，人就即刻明白自己買緊乜。</b>就好似以前將一個 i 加喺前面，你就知係 Apple 產品。」</p>
+    <cite>Shaan Puri ｜ 約 2:00</cite>
+  </blockquote>
+
+  <p>呢個觀察係全片最實用嘅一句。佢唔係講技術，係講<b>認知成本</b>：新產品最大嘅障礙係客戶唔知你係咩，而「X + GPT」呢個句式，喺 2026 年已經變成一種免費嘅心智基礎設施。Shaan 自己都承認，佢唔肯定 ChatGPT plugin 有幾多人真正用，但「唔會驚訝呢條路可以令好多人 bootstrap 到成功」。</p>
+
+  <h5 class="mini">佢列出的四個「已經有人做」＋三個「應該有人做」</h5>
+  <table>
+    <thead><tr><th>名字</th><th>狀態</th><th>本質：把哪個舊生意換成聊天介面</th></tr></thead>
+    <tbody>
+      <tr><td><b>PointsGPT</b></td><td>已上線（廣告中）</td><td>信用卡／航空里數兌換顧問。痛點係整個流程：揀卡 → 儲分 → 搵「transfer partners」小標籤 → transfer → 再搜航班，而航空公司根本無誘因令你容易搵到</td></tr>
+      <tr><td><b>TaxGPT</b></td><td>已上線，<b>年收入數百萬美元、增長快</b></td><td>QuickBooks，但「用聊天取代按鈕」——Shaan 自己吐槽：按鈕其實更快，但聊天勝在<b>容許你輸入得亂、講得含糊</b>，佢自己識拼返你想做乜</td></tr>
+      <tr><td><b>PhotonGPT</b></td><td>剛發佈</td><td>處方藥。原 tweet：「我剛剛透過 ChatGPT 拿到醫生處方，我係第一個咁做嘅人。」大量人本身已經用 ChatGPT 講健康問題，Photon 把最後一哩（開藥）接上</td></tr>
+      <tr><td><b>FightItGPT</b></td><td>概念（＝ DoNotPay）</td><td>上載任何賬單／罰單，佢幫你打，而且「持續打、持續匯報戰況」。Shaan 舉例：Quest 驗血收咗佢 4,000 美元</td></tr>
+      <tr><td>PermitGPT</td><td>預測</td><td>後院 ADU、車房加建、任何要跑市政府 paperwork 嘅事——「AI 最擅長呢種嘢」</td></tr>
+      <tr><td>VisaGPT / ImmigrationGPT</td><td>預測</td><td>好多人為簽證顧問付律師幾千美元，只為被「consult through the process」</td></tr>
+    </tbody>
+  </table>
+
+  <p>注意呢個清單嘅共同結構：<b>全部係「高摩擦、低創造性、有明確既有付費習慣」嘅行政流程。</b>冇一個係新需求。呢個係 Shaan 隱含嘅選股邏輯——唔好發明痛點，去搵一個已經有人年年付錢、但體驗極差嘅流程。</p>
+
+  <h4 class="sub">二、Sam 的反擊：平台風險（呢段係全片最有價值嘅爭論）</h4>
+
+  <p>Sam 冇被說服。他用 MFM 講過幾十次嘅「平台依附」框架反問：WordPress plugin、Chrome extension、Shopify app、Shopify theme——全部都係同一條路，全部都曾經養活一批人。<b>但今次唔同：平台自己正在做同樣嘅嘢，而且做得好好。</b></p>
+
+  <p>他列出嘅清單相當驚人：</p>
+  <ul>
+    <li><b>Claude Commerce</b>——Shopify 嘅競爭對手</li>
+    <li>一個 <b>Zoom 競爭對手</b></li>
+    <li>一個 <b>個人理財工具</b>，直接對打 Mint.com（Sam 自己用 Kubera）</li>
+    <li>一整套 <b>Microsoft Office 替代品</b>：Excel、Docs、⋯⋯</li>
+  </ul>
+
+  <blockquote>
+    <p>「我由一個反 SaaS 末日論（anti-SaaS apocalypse）嘅人，慢慢爬去另一邊。因為 <b>Anthropic 係一部『造機器嘅機器』，而佢正在造其他機器——而且造得好好。</b>」</p>
+    <cite>Sam Parr ｜ 約 5:30</cite>
+  </blockquote>
+
+  <p>Shaan 補上 Anthropic 路演（roadshow）嘅原話框架，呢句值得記住：</p>
+
+  <blockquote>
+    <p>「<b>Our market is everything, our industry is all industries, and our products are all products.</b>（我哋嘅市場係所有嘢，我哋嘅行業係所有行業，我哋嘅產品係所有產品。）」</p>
+    <cite>Shaan 轉述 Anthropic 路演 ｜ 約 6:10</cite>
+  </blockquote>
+
+  <p>仲有傳聞中嘅一句：「我哋會係最後一間公司（we will be the last company）。」Shaan 嘅反應好值得抄低——<b>佢冇當呢句係狂言，而係當成一個邏輯推論</b>：如果你真心相信你正在造一個物種，而呢個物種之於我哋，等於我哋之於猴子，咁「佢造產品叻過人」係必然結果；問題只剩「人類仲有冇能力管理佢」。</p>
+
+  <h5 class="mini">但 Shaan 給出的反駁，也是全片最誠實的一段</h5>
+
+  <blockquote>
+    <p>「<b>專注（focus）係一種咁稀缺嘅資產</b>，稀缺到令我腦筋打結。我無法想像佢哋有足夠嘅人、manpower、marketing、product management、engineering，去同時維持咁多條產品線⋯⋯會有一股自然力量，推佢哋去集中打最大嘅幾個 franchise。但講到所有軟件嘅長尾，一間公司可以全部食晒——呢個講法我覺得有啲離譜。」</p>
+    <cite>Shaan Puri ｜ 約 7:20</cite>
+  </blockquote>
+
+  <p>然後佢自己拆自己台：消費者根本記唔住一間公司有幾多產品。「Everything store 有個問題，就係<b>Cheesecake Factory 嘅菜單</b>——你有中菜、有漢堡、有湯、有小食、有沙律，我望邊度？」但講完佢即刻補一句：「如果呢個就係你嘅理由，咁你已經係抓到稻草（grasping at straws）。」</p>
+
+  <p><b>實務結論（我嘅解讀，唔係節目原話）：</b>呢段爭論嘅真正價值唔在於「邊個對」，而在於佢畫出咗一條風險線——<b>做 GPT 包裝生意，你要假設平台有一日會自己做你嘅功能。</b>所以可行嘅版本必須具備兩個特徵：(1) 擁有平台拿唔到嘅<b>資料或關係</b>（例如 Photon 嘅醫生處方權限、PointsGPT 嘅轉點路徑）；(2) 商業模式係<b>服務收費</b>而唔係工具訂閱——因為服務有營運壁壘，工具只有功能。</p>
+
+  <h5 class="mini">一個被隨口講出、但價值極高嘅細節</h5>
+
+  <blockquote>
+    <p>「我用 Claude 嘅設計工具去賣咗一間公司，九位數字。我用佢砌個 slide deck，<b>比我們請嘅投資銀行做得更好</b>——而佢哋成世人就係做呢件事。而且你喺 Claude 裡面係入唔到呢個工具嘅，你要 Google『Claude design』，係另一個 URL。」</p>
+    <cite>Shaan Puri ｜ 約 8:30</cite>
+  </blockquote>
+
+  <p>呢個係今日最容易被忽略、但對 James 最有用嘅一句：<b>頂級模型嘅能力，目前仍然有一部分藏喺唔起眼嘅入口後面。</b>連 Shaan 都要靠 Google 才搵到。呢種「發布咗但冇人知」嘅窗口期，通常就係套利期。</p>
+
+  <h4 class="sub">三、Idiot of the Week：SpaceX 與「excel 思維」</h4>
+
+  <p>呢一集嘅固定環節「本週白痴」賞咗俾 <b>Matt Stoller</b>（American Economic Liberties Project 董事）。佢喺 Starship 成功之後發 tweet：</p>
+
+  <blockquote>
+    <p>「SpaceX 今日做嘅事，只係將資本同工程應用喺任何一個行業嘅正常後果——你會愈做愈好。<b>Musk 唔係天才，佢只係一個可以從華爾街拿到資本嘅人。</b>或者呢件事而家有啲獨特，但唔係佢 fans 以為嘅那種技能。」</p>
+    <cite>Matt Stoller 原 tweet（節目引述）｜ 約 9:40</cite>
+  </blockquote>
+
+  <p>Sam 嘅反駁唔係情緒，係逐條數字打：</p>
+  <ul>
+    <li>SpaceX 喺 Falcon 9 之前，只係集咗 <b>12 億美元</b>創投資金</li>
+    <li>美國太空軍（Space Force）年度預算 <b>700 億美元</b>——係嗰筆 VC 嘅 <b>70 倍</b></li>
+    <li>ULA 造第一支非回收火箭，用咗<b>超過 200 億美元</b></li>
+    <li>太空梭每次發射成本<b>約 10 億美元</b></li>
+    <li>Bezos 個人投入 Blue Origin <b>200–300 億美元</b>（community note 寫 280 億），Blue Origin 比 SpaceX 更早成立</li>
+    <li>對比：Blue Origin 飛咗 <b>3 次</b> New Glenn；SpaceX 飛咗 <b>700+ 次</b>、<b>660 次</b>成功着陸</li>
+    <li>NASA 自己做同一件事燒咗 <b>250 億美元</b>，最後外判咗俾 SpaceX</li>
+  </ul>
+
+  <p>而最好笑嘅一擊來自 Boom（超音速客機公司）創辦人 <b>Blake Scholl</b>：「Matt，如果咁容易，請話我知你簽咗邊個改變世界嘅 mission？」另一位回覆更狠：</p>
+
+  <blockquote>
+    <p>「呢個講法等於話：<b>金字塔都只係『將石頭疊上去』嘅正常後果。</b>」</p>
+    <cite>John Carter 回覆（節目引述）｜ 約 14:50</cite>
+  </blockquote>
+
+  <p>Shaan 嘅分析框架我用一句總結：<b>呢個係「spreadsheet thinking」。</b>佢話自己做過嘅公司裡，經濟學背景嘅人望住 P&amp;L 就會講「你 marketing 花咁多、拿到咁多客，咁就花多啲啦」——完全唔理 ROAS 會點走。「佢哋嘅模型係：執行 × 資本 × 時間 ＝ 結果。世界唔係咁運作。」</p>
+
+  <p><b>技術細節（值得記錄）：</b>今次 Starship 係史上最大火箭，成功入太空、deploy 衛星；<b>Ship 本體被「筷子」夾住回收成功</b>；但 booster 因為燃料偏低，<b>中止咗回收，改為喺海面上空自毀</b>。所以「完美」唔準確，「里程碑」準確。而真正嘅經濟含義係：<b>入軌成本會繼續跌</b>。</p>
+
+  <h4 class="sub">四、主菜後半：/fast — 為什麼所有事情都這麼慢</h4>
+
+  <p>由 <span class="ts"><b>15:10</b></span> 開始，話題轉向一個看似民生、實則係整套生產力哲學嘅題目。起點係 Sam 屋企樓下地鐵站嘅<b>一部升降機，維修咗 548 日</b>。</p>
+
+  <blockquote>
+    <p>「我問櫃檯後面嗰位小姐：『點解要 18 個月？』佢答：『<b>That's just how long things take.</b>（嘢就係要咁耐。）』——呢句係我嘅觸發句。我話：唔係，呢個唔係『嘢要咁耐』。」</p>
+    <cite>Sam Parr ｜ 約 17:20</cite>
+  </blockquote>
+
+  <p>然後佢拎出 Patrick Collison（Stripe 創辦人）嘅著名網頁 <b>“Fast”</b>——一份「人類快速完成雄心壯志事物」嘅清單，用途係「蒸發你所有『呢件事要太耐』嘅藉口」。清單入面嘅數字：</p>
+
+  <table>
+    <thead><tr><th>項目</th><th class="num">時間</th><th>重點</th></tr></thead>
+    <tbody>
+      <tr><td>帝國大廈</td><td class="num">410 日</td><td>先定開幕日，然後倒推施工</td></tr>
+      <tr><td>五角大樓</td><td class="num">約 500 日</td><td>史上最大辦公建築</td></tr>
+      <tr><td>Visa 最初發卡計劃</td><td class="num">約 90–100 日</td><td>由另一間公司內部長出，拿到約 10 萬客戶</td></tr>
+      <tr><td>Sam 樓下嘅升降機</td><td class="num">548 日</td><td>「全世界最偉大嘅城市」</td></tr>
+    </tbody>
+  </table>
+
+  <p>Sam 提出兩個解釋，兩個都係可操作嘅：</p>
+
+  <ol>
+    <li><b>路徑依賴（path dependence）</b>——「好多時一件事之所以咁做，只係因為一開始就咁做，然後大家一直做落去，冇人問過點解。」佢舉例：季度財報係因為 1910 年 Carnegie Steel 自己按季向股東報告，其他公司跟，最後 SEC 立例；Google Calendar 預設 30 分鐘；他母校嘅上課時間係 7:52 呢種怪時間（因為要塞入所有約束）。</li>
+    <li><b>帕金森定律（Parkinson's law）</b>——「你給一件事幾多時間，它就會用幾多時間，甚至更多。Work fills space，好似氣體膨脹填滿容器。」</li>
+  </ol>
+
+  <p>而解法就係<b>反向使用帕金森定律</b>：大幅縮短死線，然後問「要達成，我哋必須放棄啲乜？」答案通常係：刪功能、刪想法、做最简单嘅版本。Sam 補一個反直覺嘅研究結論：<b>快速迭代、做得少嘅團隊，通常更快樂、burnout 更少</b>——因為有 momentum。</p>
+
+  <h5 class="mini">James Clear 那一集：48 個特質，最後只剩一個</h5>
+
+  <p>Shaan 話佢同日錄咗 James Clear（《Atomic Habits》作者），整集講速度。其中最有殺傷力嘅發現：James Clear 管一個 <b>15 億美元</b>嘅基金，想搞清楚「 backing founder 邊啲特質重要」，列出 <b>48 個特質</b>，然後發現 48 個根本用唔到，於是壓縮。壓縮到最後，<b>所有特質都係「速度」嘅代理變數</b>——果斷、快速學習、快速迭代，全部係同一樣嘢嘅唔同講法。</p>
+
+  <blockquote>
+    <p>「他說：<b>Speed is what kills.</b>（速度才係致命武器。）」</p>
+    <cite>Shaan 轉述 James Clear ｜ 約 25:10</cite>
+  </blockquote>
+
+  <p>然後係全片最具體嘅個案——<b>Mike Cassidy</b>：90 年代互聯網早期，<b>500 日做到 5 億美元退出</b>。點做？</p>
+
+  <ul>
+    <li><b>募資：</b>當時所有人認為最少要 3 個月、正常 3–6 個月。Cassidy 決定「3 日」。做法：email 所有 VC，講明「下星期我只有 3 日嘅時段」；然後 <b>36 小時連續 back-to-back pitch</b>；入房前所有材料準備好，開場就講「36 小時後我哋就會決定，呢個係一場拍賣（auction）」。拿到最好嘅 term sheet 就走。</li>
+    <li><b>招聘：</b>同一個方法。兩日內排滿所有候選人；<b>帶住已填好薪酬、已簽好自己名嘅 offer 入面試室</b>；喜歡你，就把紙推過去，你簽，星期一返工。</li>
+  </ul>
+
+  <p>而呢個方法背後嘅心理學，係全段嘅核心：</p>
+
+  <blockquote>
+    <p>「人們怕快，係因為怕錯。怕錯，係因為怕失敗。怕失敗，係因為覺得『失敗＝我這個人很爛』。到最後，<b>被壓碎嘅係 ego。</b>」</p>
+    <cite>Shaan 轉述 James Clear ｜ 約 27:40</cite>
+  </blockquote>
+
+  <p>而「速度 vs 品質」嘅取捨，係一個假兩難：</p>
+
+  <blockquote>
+    <p>「你講得對——如果你 3 日做 V1，佢一定差過你花 3 個月做嘅 V1。<b>但如果你用同樣嘅 3 個月，3 日就出 V1，你到時已經去到 V6。而 V6 一定好過你嗰個寶貝 V1。</b>」</p>
+    <cite>Shaan 轉述 James Clear ｜ 約 28:50</cite>
+  </blockquote>
+
+  <h5 class="mini">「你 broken 咗未？」</h5>
+
+  <p>James Clear 講咗一間佢投資嘅以色列公司：他覺得 idea 有趣，但團隊太慢。他反映，對方回：「呢個領域唔同，你唔明白。」他答：「<b>我投資嘅火箭公司，推出原型嘅速度都快過你推出 app。</b>」結果對方用 9–12 個月出第一版，冇反應；再花 6 個月 pivot，仍然唔得。最後他打電話問一句：</p>
+
+  <blockquote>
+    <p>「<b>Are you broken yet?</b>（你碎咗未？）因為你未碎，你唔會改。你要 ego 被打碎，你先會真的動，先會願意用成功所需嘅速度去行。」</p>
+    <cite>Shaan 轉述 James Clear ｜ 約 32:00</cite>
+  </blockquote>
+
+  <p>呢個「broken」概念，同後面 Ben Horowitz 嘅 <b>WIFO moment</b>（“We're F***ed, It's Over”）接得上：當你承認「已經玩完」，你反而自由，因為冇嘢可以再輸。Shaan 用一個比喻：<b>母親抬起一架車，因為孩子被困在下面。</b>創業版本就係「戶口只剩 30 日現金」——突然你會極快決策、簡化產品、唔再對 launch 策略同包裝咁「矜貴」，直接出貨。</p>
+
+  <blockquote>
+    <p>「問題係：<b>點解我哋要等兩年，先肯用嗰個模式運作？</b>」</p>
+    <cite>Shaan Puri ｜ 約 45:00</cite>
+  </blockquote>
+
+  <h5 class="mini">目標設定嘅順序，要倒過來</h5>
+
+  <p>James Clear 嘅講法：<b>你不要先定「產品是什麼」，你要先定「時間是多少」，然後問「在呢段時間內，可以造出邊個版本」。</b></p>
+
+  <p>最佳例子係 <b>Hot or Not</b>（James Hong）。佢嘅 LLC 名叫 <b>“8 Days”</b>——因為他立誓「我只造 8 日內造得出嘅嘢；超過 8 日，唔做」。於是所有 idea 都要先過「8 日」呢個篩。結果：呢個約束逼他把概念簡化到極致，而簡化正正係它會 viral 嘅原因——<b>簡單嘅 idea 才散得開</b>。最後以約 2,000 萬美元賣出。</p>
+
+  <p>同一個模式，換咗場景：James Clear 自己開遊戲公司，請晒 EA 等大廠嘅資深 game designer，專家話「最快 12 個月，正常 18 個月」。他不服，開咗一條<b>平行小隊</b>——一個他認為全公司最快、但完全冇遊戲開發經驗嘅人。他問：「你覺得要幾久？」答：「30 日。」問：「你需要乜？」答：</p>
+
+  <blockquote>
+    <p>「<b>給我半個 designer。</b>」——「乜嘢叫半個？」——「我想要 designer，但唔要全職。因為如果有一個 designer 全職坐喺我隔籬，佢會不斷設計愈來愈花巧嘅畫面，令呢件事更難起。」</p>
+    <cite>Shaan 轉述 James Clear ｜ 約 43:00</cite>
+  </blockquote>
+
+  <p>結果：<b>21 日上線</b>，<b>60 日內約 100 萬用戶</b>。仲有一個技術決策值得抄：<b>佢哋做網頁版而唔做手機 app</b>——因為當年 App Store 審批要 1–2 星期，而網頁一日可以出 30 個版本。</p>
+
+  <table>
+    <thead><tr><th>個案</th><th class="num">行業「正常」時間</th><th class="num">實際做到</th><th>關鍵槓桿</th></tr></thead>
+    <tbody>
+      <tr><td>Mike Cassidy 募資</td><td class="num">3–6 個月</td><td class="num">3 日 / 36 小時</td><td>把流程改成一場有截止時間的拍賣</td></tr>
+      <tr><td>Mike Cassidy 招聘</td><td class="num">數月</td><td class="num">2 日</td><td>Offer 預先簽好，當場成交</td></tr>
+      <tr><td>遊戲（專家團）</td><td class="num">12–18 個月</td><td class="num">—</td><td>專家團反而被「業界標準」鎖死</td></tr>
+      <tr><td>遊戲（1 人＋半個 designer）</td><td class="num">12–18 個月</td><td class="num">21 日上線</td><td>限制設計師工時＝限制功能膨脹；網頁優先</td></tr>
+      <tr><td>Hot or Not</td><td class="num">—</td><td class="num">8 日內</td><td>以時間為約束反推產品，逼出極簡</td></tr>
+      <tr><td>Sam 的招聘（聽完即改）</td><td class="num">3 個月</td><td class="num">1 星期</td><td>15 分鐘面試 × 10 人，壓進 24–36 小時</td></tr>
+    </tbody>
+  </table>
+
+  <h4 class="sub">五、為什麼你「不是你的錯」——以及為什麼你會被人覺得難相處</h4>
+
+  <p>James Clear 嘅論點係：<b>你嘅速度基準係被訓練出嚟嘅，而你愈成功，基準愈差。</b></p>
+
+  <ul>
+    <li><b>首 18–20 年：學校。</b>「學校唔係一個以『快』聞名嘅地方。」學年長度固定、上課日長度固定，你幾快做完都冇分別。更關鍵嘅係：<b>一堂課係為咗唔好漏低最慢嘅 10–20% 學生而設計</b>，結果最快嘅 10–20% 被最慢嘅拖住。</li>
+    <li><b>然後：大公司。</b>Google、Intel、McKinsey——兩萬到十萬人嘅組織，「唔係速度嘅燈塔」。</li>
+    <li><b>然後你創業，</b>才發現要親手打碎呢把尺。</li>
+  </ul>
+
+  <p>而辨認「真創業者」嘅方法，Shaan 用咗一個非常準確嘅比喻：<b>器官排斥（organ rejection）</b>。他們輟學，因為太慢；他們辭掉高薪好工，因為太慢；他們移動嘅方式在旁人眼中「魯莽、刺眼、令人不舒服」。所以：</p>
+
+  <blockquote>
+    <p>「你幾有創業性，可以睇你對周圍正常人嚟講有幾刺眼。你會被人覺得係一個混蛋，或者好難共事——<b>純粹因為你嘅速度基準同佢哋唔對齊。</b>」</p>
+    <cite>Shaan Puri ｜ 約 33:30</cite>
+  </blockquote>
+
+  <p>Sam 喺呢度貢獻咗全片最好笑嘅自嘲：「我唔係而家帶團隊，但以前帶嘅時候，我對人好 off-putting。我被人講過好多次，我等於辦公室裡嘅口臭（BO）——只不過我嘅版本係『太叻』。」（原文更狠：他把自己的問題形容為「off-putting 嘅 BO」。）</p>
+
+  <p>Shaan 嘅答案唔係「改善溝通技巧」，而係結構性嘅：</p>
+
+  <blockquote>
+    <p>「<b>Filter at the door, not once they're inside the house.</b>（在門口篩人，唔好等人入咗屋才不斷對齊價值觀。）你要一開始就招募想快嘅人；咁你嘅速度推佢哋嘅時候，佢哋會覺得舒服。」</p>
+    <cite>Shaan Puri ｜ 約 34:30</cite>
+  </blockquote>
+
+  <p>佢再加一個美式足球比喻，我覺得係全片最精煉嘅管理金句：當你喺公司裡不斷「糾正講法、語氣、方式」，你其實係「<b>已經讓咗 90 碼，而家只係想阻止達陣</b>」——對手已經入咗紅區。更好嘅做法係「<b>唔好讓自己入紅區</b>」，即係一開始就揀啱人。</p>
+
+  <h4 class="sub">六、YC 怎樣揀贏家（33:10）—— 兩個信號</h4>
+
+  <p>Shaan 用 YC 做「速度勝過盡職調查」嘅鐵證：</p>
+  <ul>
+    <li>YC 有史上最好嘅初創命中率：<b>每 100 間有 6–8 間成為獨角獸</b>（6–8%），高過一般天使與 VC，而且佢哋<b>投資得更早</b>、資訊更少（往往未有產品、未有 traction）。</li>
+    <li>流程：<b>填一張表 + 一條 5 分鐘影片 + 10–15 分鐘對話</b>（最多），<b>當場決定</b>。冇第二次會議、冇 due diligence。</li>
+  </ul>
+
+  <p>而佢哋真正睇嘅係兩樣：</p>
+
+  <ol>
+    <li><b>代理指標（proxy）：你之前有冇做過任何 remarkable 嘅事？</b>因為「以前做過，現在再做一次嘅機率很高」。即使佢唔明白你嘅 idea、唔鍾意你嘅計劃，只要見到「exceptional ability 嘅證據」，分數就很高。</li>
+    <li><b>一個極具爭議嘅問題：</b></li>
+  </ol>
+
+  <blockquote>
+    <p>「<b>Please tell us about a time you successfully hacked some system, non-computer, to your advantage.</b>（請講一次你成功「黑」進某個非電腦系統、為自己創造優勢嘅經歷。）」</p>
+    <cite>YC 申請表原文（節目引述）｜ 約 36:40</cite>
+  </blockquote>
+
+  <p>Shaan 嘅評語：任何投資委員會都會否決呢條問題，因為它等於「講一次你點樣破規矩」。但它有效，因為<b>它篩出一種特定嘅人——而嗰種人正好就係會喺初創成功嘅人</b>：聰明、獨立思考、識行側門、識 growth hack。他舉例：Sahil Lavingia 在學時發現，拿好成績最快嘅方法係<b>直接入侵學校系統改分數</b>，而唔係做晒所有功課。Sam 補一句更極端嘅（當笑話講）：「我老婆坐監時，我把可卡因塞入自己身體帶入監獄俾佢。」</p>
+
+  <p>Shaan 嘅結論係：<b>同一條問題可以套用在速度上。</b>你可以篩「曾經做過某件事、比預期快得多」嘅人——佢曾經質疑「點解要咁耐」，然後想出辦法把工作疊起來。</p>
+
+  <h4 class="sub">七、Sam 的舊習慣：用訪談倒推時間線</h4>
+
+  <p>呢段係全片最「手工藝」嘅一段，亦係最容易被忽略嘅方法論。Sam 說 2016–17 年（AI 之前），他會做 Google Sheet：讀大量他敬佩嘅創業者訪談，然後<b>三角驗證（triangulate）</b>不同年份、不同媒體嘅數字，砌出一條時間線。他搵返一張 VaynerMedia 嘅舊表做示範：Gary Vaynerchuk 在 2009 年講「第一年 50 萬美元，我加四個朋友」；另一篇講「第 12 年，平均每年增長 X%」。他就在兩者之間補出中間年份。</p>
+
+  <p>他做過「幾十間公司」。目的有兩個：一是滿足對速度嘅執念，二是<b>取得一份「實際發生過」嘅藍圖，讓它「擦」到自己身上</b>。他補一句：<b>「而家用 Claude 做呢件事容易得多。」</b></p>
+
+  <p>呢個就係「breaking your speed bar」嘅具體操作：</p>
+
+  <blockquote>
+    <p>「你需要有人打破你嘅速度基準。要變快，你要搵到一些『消除了你藉口』嘅例子——好似 Roger Bannister 嘅 4 分鐘一英里。一旦你聽到『3 日募資完成』，<b>佢用咩戰術其實唔重要；重要嘅係『呢件事做得到』</b>。而如果我做得比佢慢，就只剩兩個解釋：技能問題，或者我選擇了慢。咁我為咩要選擇慢？」</p>
+    <cite>Shaan Puri ｜ 約 51:00</cite>
+  </blockquote>
+
+  <p>而 Shaan 唔係講完就算——他<b>即刻應用</b>：錄完 James Clear 之後，他走去問合夥人 Ben「點樣才算快？」Ben 答「一個星期」。於是他倒推：為什麼唔帶住 offer 去面試？為什麼唔把每場面試縮到 15 分鐘、同一時段見 10 個人？為什麼唔全部壓進 24–36 小時？他計數：原本要 3 個月才有人上任（大約 Q1 尾），「荒謬」——同樣時間他可以試三個人。<b>而錯嘅成本根本唔高。</b></p>
+
+  <h4 class="sub">八、收尾：紐約幼稚園的銷售現場</h4>
+
+  <p>最後 10 分鐘轉輕鬆。Sam 嘅小朋友快到學齡，他開始睇紐約學校——最貴嘅 preschool 要<b>一年 7.4 萬美元</b>，「俾細路玩積木」。他自爆老婆已經三場導覽唔同他講嘢，因為他每次都問 sales 問題：</p>
+
+  <ul>
+    <li>導覽完他問：「呢個係你哋決定，定係我哋決定？即係我哋要唔要 appeal 你哋？邊個話事下一步？」——三次都答「大致上係我哋」。他嘅回應：「咁你而家需要知道我哋啲乜，才可以令呢個決定變成 no-brainer？」</li>
+    <li>第二條：「如果我兩個小朋友都讀，你哋有冇折扣？有冇 buy one get second 25% off？有冇 volume discount？」</li>
+    <li>第三條（最致命）：「呢度好多白人細路，我見唔到好多黑人細路。你哋想唔想多啲？你哋有冇 quota？」</li>
+  </ul>
+
+  <p>Shaan 嘅實用建議：「你只需要捐一座圖書館。如果你要真正嘅答案——一張夠份量嘅支票唔會有害。」然後兩人講到一個數字：<b>紐約市約 70% 公立學校學生處於貧窮線以下</b>。Sam 嘅結論唔係道德批判，而係稅務算術：「政府收咁多錢，我仲要另外俾一半，而且未必用到我付費買嘅服務。」</p>
+
+  <p>最後一句回到他最愛嘅紐約浪漫：「我讀緊 Beastie Boys 傳記，他們就喺我個社區長大。所以我啲細路有機會成為白人 rapper，喺藝術人周圍長大——呢個會係理想結局。」</p>
+
+  <h4 class="sub">九、這一集的三個技術性 takeaway</h4>
+
+  <ol>
+    <li><b>「X + GPT」係一個仍然有效嘅命名套利。</b>它把「我要解釋我賣乜」嘅成本降到零。但敘事紅利有時效，真正留得住客嘅係背後嘅資料／權限（處方權、轉點路徑、市政 permit 流程）。</li>
+    <li><b>平台風險要用「服務化」對沖。</b>如果 Anthropic 明天就做你嘅功能，工具訂閱會即死；但如果你的價值包含營運、責任承擔、與監管機構／專業人士嘅關係，平台自己做嘅成本會高很多。FightItGPT 同 VisaGPT 之所以吸引，正因為它們賣嘅係「幫你打完場仗」，唔係「一個按鈕」。</li>
+    <li><b>速度可以被制度化，唔需要靠意志。</b>三個可立即執行嘅動作：(a) 把死線縮短 5–10 倍，然後刪功能而不是延期；(b) 把「序列流程」改成「並行拍賣」（募資、招聘都一樣）；(c) 用時間做約束反推產品範圍（8 日、21 日、30 日）。</li>
+  </ol>
+
+  <p class="byline" style="margin-top:26px">建議收聽段落：如果只有 15 分鐘，聽 <b>15:10–33:00</b>（/fast ＋ 速度基準）同 <b>33:10–38:00</b>（YC 的兩個信號）。前半嘅 GPT 點子清單用本文表格代替即可。</p>
+</div>
+
+<h2 class="section">The other five · 其餘五台</h2>
+<div class="rule"></div>
+
+<p>以下五台今日 feed 對比 <code>state.json</code> 後<b>零新集</b>（全部 GUID 命中既有紀錄，無 feed 換 GUID、無重複計數）。列出最後已知集數，方便你知「上一集講咩」，唔會斷線。</p>
+
+<div class="card">
+  <h3 style="font-size:23px">Acquired<span class="badge grey">最近無更新</span></h3>
+  <dl class="epmeta">
+    <dt>最後一集</dt><dd><b>Seinfeld</b>（2026-10-18，約 3 小時 50 分）</dd>
+    <dt>靜默</dt><dd><b>37 日</b>（該台歷史中位間距約 31 日，已超出）</dd>
+    <dt>內容</dt><dd>一間完結三十年的處境劇，今年仍然有 7,200 萬美國人收看。Ben &amp; David 拆解：偏執的創作者、完美的市場時機、一個把 incentives 長期對齊的股權結構——如何靠打破所有規則成為第一。附官方 Companion PDF。</dd>
+    <dt>備註</dt><dd>已連續 37 日無更新，屬該台正常節奏（他們一集做 3–4 小時，季與季之間有長空檔）。無需擔心 feed 壞。</dd>
+  </dl>
+</div>
+
+<div class="card">
+  <h3 style="font-size:23px">Founders<span class="badge grey">最近無更新</span></h3>
+  <dl class="epmeta">
+    <dt>最後一集</dt><dd><b>#440 The Most Inspiring Autobiography I've Ever Read: Born of This Land — Chung Ju-yung</b>（2026-11-17）</dd>
+    <dt>靜默</dt><dd>7 日（中位間距約 8 日，正常範圍）</dd>
+    <dt>內容</dt><dd>David Senra 講現代集團創辦人鄭周永（Chung Ju-yung）自傳《Born of This Land》。鄭周永由北韓農家少年，走到建船廠、建高速公路、把 Hyundai 變成韓國工業骨幹。Senra 稱之為「我讀過最鼓舞人心的自傳」。</dd>
+    <dt>備註</dt><dd>Founders 慣常唔俾完整 show notes，今日無新集所以無需補資料。</dd>
+  </dl>
+</div>
+
+<div class="card">
+  <h3 style="font-size:23px">All-In<span class="badge grey">最近無更新</span></h3>
+  <dl class="epmeta">
+    <dt>最後一集</dt><dd><b>Anthropic Goes Public, Nvidia in Crisis, Markets Tank, Open Source Crackdown?</b>（2026-11-20）</dd>
+    <dt>靜默</dt><dd>4 日（中位間距約 2.1 日，略超但屬週末正常）</dd>
+    <dt>內容</dt><dd>四條主線同時發生：Anthropic 上市、Nvidia 遭遇危機、市場大跌、開源模型監管收緊。呢集同今日 MFM 嘅「Anthropic 路演：我哋嘅市場係所有嘢」可以對讀——一邊講資本市場怎樣定價，一邊講產品線怎樣擴張。</dd>
+    <dt>備註</dt><dd>Today's MFM 引用 Anthropic roadshow 同一敘事，兩集併讀效果最好。</dd>
+  </dl>
+</div>
+
+<div class="card">
+  <h3 style="font-size:23px">The Knowledge Project<span class="badge grey">最近無更新</span></h3>
+  <dl class="epmeta">
+    <dt>最後一集</dt><dd><b>Bing Gordon: Learning From Bezos, Jobs, and Spielberg</b>（2026-11-19，約 1 小時 40 分）</dd>
+    <dt>靜默</dt><dd>5 日（中位間距約 8.8 日，正常）</dd>
+    <dt>內容</dt><dd>Shane Parrish 訪問 Bing Gordon——Kleiner Perkins 合夥人、EA 前 CMO，Amazon、Zynga 董事。他在 Bezos、Jobs、Spielberg 身邊近距離觀察數十年，講「品味如何變成產品」、「創辦人的 judge 能力怎樣訓練」。</dd>
+    <dt>備註</dt><dd>與今日 MFM 的「半個 designer」段落意外呼應：都係講「限制設計師的權力，產品才會出貨」。</dd>
+  </dl>
+</div>
+
+<div class="card">
+  <h3 style="font-size:23px">The Diary of a CEO<span class="badge grey">最近無更新</span></h3>
+  <dl class="epmeta">
+    <dt>最後一集</dt><dd><b>Financial Crash Expert: Biggest Money Mistake You'll Make, Everyone Gets This Wrong! — Steve Eisman</b>（2026-11-23，1 小時 34 分）</dd>
+    <dt>靜默</dt><dd>1 日（中位間距約 3 日，正常）</dd>
+    <dt>內容</dt><dd>2008 年做空次貸、《The Big Short》原型人物 Steve Eisman。昨日報告已做全片逐字稿深度拆解：AI 資本開支佔美國 GDP 增長一半以上、Anthropic／OpenAI「大到不能倒」、crypto 對沖論為何失效、以及「所有 AI 樂觀句式都同 1999 年互聯網句式逐字相同」。</dd>
+    <dt>備註</dt><dd>昨日已完整萃取，今日無新集，不重複。</dd>
+  </dl>
+</div>
+
+<h2 class="section">Cadence audit · 節奏稽核</h2>
+<div class="rule"></div>
+
+<table>
+<thead><tr><th>節目</th><th>最後一集</th><th class="num">日期</th><th class="num">靜默</th><th class="num">中位間距</th><th>下次預計</th></tr></thead>
+<tbody>
+<tr><td><b>Diary of a CEO</b></td><td>Steve Eisman</td><td class="num">11-23</td><td class="num">1 日</td><td class="num">3.0 日</td><td><span class="pill ok">11/26</span></td></tr>
+<tr><td><b>My First Million</b></td><td>#885 ChatGPT 生意</td><td class="num">11-23</td><td class="num">1 日</td><td class="num">2.9 日</td><td><span class="pill ok">11/26</span></td></tr>
+<tr><td><b>All-In</b></td><td>Anthropic Goes Public…</td><td class="num">11-20</td><td class="num">4 日</td><td class="num">2.1 日</td><td><span class="pill due">已到期 · 隨時</span></td></tr>
+<tr><td><b>Knowledge Project</b></td><td>Bing Gordon</td><td class="num">11-19</td><td class="num">5 日</td><td class="num">8.8 日</td><td><span class="pill ok">11/26 前後</span></td></tr>
+<tr><td><b>Founders</b></td><td>#440 鄭周永</td><td class="num">11-17</td><td class="num">7 日</td><td class="num">8.2 日</td><td><span class="pill ok">11/24–11/27</span></td></tr>
+<tr><td><b>Acquired</b></td><td>Seinfeld</td><td class="num">10-18</td><td class="num">37 日</td><td class="num">31.4 日</td><td><span class="pill due">已超出 · 季間空檔</span></td></tr>
+</tbody>
+</table>
+
+<p>六台合共 <b>2,987</b> 條歷史條目，GUID 全部已在 <code>state.json</code> 建檔。今日比對結果：<b>1 條未掃描</b>（MFM #885），其餘 2,986 條全部命中既有紀錄。六個 feed 今日全部 HTTP 200，無解析失敗、無 GUID 變更。</p>
+
+<div class="closing">
+  <h4 class="sub" style="border:0;margin-top:0">今日三個可行動結論</h4>
+
+  <p><b>1. 如果你要起一個「X + GPT」生意，先答一條問題：平台自己做要幾久？</b>如果答案係「下個產品週期就得」，咁你嘅護城河必須係平台拿唔到嘅嘢——處方權、轉點路徑、政府 permit 流程、法律責任。純功能嘅 wrapper，只有 6–12 個月壽命。</p>
+
+  <p><b>2. 揀一件你一直覺得「就係要咁耐」嘅事，做一次 10 倍壓縮實驗。</b>方法照搬：先定時間（唔係先定範圍）→ 問「要達成，我必須放棄啲乜」→ 把序列流程改成並行（面試、審批、簽核全部壓進同一窗口）→ 出貨。Sam 由 3 個月變 1 星期嘅招聘，就係咁嚟。而關鍵嘅心理門檻係：<b>錯嘅成本，通常遠低於慢嘅成本。</b></p>
+
+  <p><b>3. 檢視你身邊有冇「打破你速度基準」的人。</b>Shaan 嘅講法係，你只需要一個 4 分鐘一英里的證據，之後所有「做唔到」都會變成「我選擇唔做」。如果冇，去搵：一個 500 日退出 5 億美元嘅故事、一間 21 日上線拿到 100 萬用戶嘅遊戲公司、一個 8 日內要交貨嘅 LLC——任何一個都可以。反之，如果你身邊全部係「嘢就係要咁耐」嘅人，你嘅尺就會被佢哋校準。</p>
+</div>
+
+<footer>
+  報告生成時間 2026-11-24 09:53 UTC（香港時間 17:53）· 掃描器 <code>scanner/scan_fast.py</code> · 狀態檔 <code>scanner/state.json</code><br>
+  資料來源：My First Million 官方 RSS（Megaphone）＋ 官方影片逐字稿 1,655 段全文核對；其餘五台為 RSS 最新條目比對<br>
+  本報告只做內容整理與標註，不構成投資建議。所有引文均為節目原話；逐字稿為自動轉寫，人名拼寫已按公開資料校正。<br>
+  Repo: github.com/JMOKSZ/mindset-podcasts
+</footer>
+</div>
+
+</body>
+</html>
