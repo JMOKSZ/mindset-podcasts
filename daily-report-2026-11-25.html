@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-11-25</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a; --warn:#a4442f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;line-height:1.85;font-size:17px}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.95;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  .note b{color:#8a5c14}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:28px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  .badge{display:inline-block;vertical-align:middle;margin-left:10px;padding:3px 9px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10px;letter-spacing:.14em;
+    background:#f3e6cc;color:#8a5c14;border:1px solid #e3cfa8;border-radius:2px;font-weight:600}
+  .badge.grey{background:#f1ece4;color:#7a6a58;border-color:#e0d7c8}
+  h4.sub{font-size:20px;font-weight:normal;margin:40px 0 10px;color:#3a2f21;
+    border-bottom:1px dotted var(--line);padding-bottom:6px}
+  h5.mini{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin:30px 0 6px;font-weight:600}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:16px}
+  .card{background:var(--card);border:1px solid var(--line);padding:30px 32px;margin:0 0 22px}
+  .card.slim{padding:24px 26px}
+  .epmeta{display:grid;grid-template-columns:88px 1fr;gap:2px 14px;margin:0 0 24px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;
+    background:#faf6ee;border:1px solid #eee3d2;padding:16px 18px}
+  .epmeta dt{color:var(--muted);letter-spacing:.04em}
+  .epmeta dd{margin:0;color:#3a2f21}
+  p{margin:0 0 18px}
+  blockquote{margin:26px 0;padding:4px 0 4px 22px;border-left:3px solid var(--accent);
+    font-size:17.5px;line-height:1.8;color:#3a2f21}
+  blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:13.5px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;color:var(--muted)}
+  blockquote p{margin:0 0 10px}
+  blockquote p:last-child{margin:0}
+  table{width:100%;border-collapse:collapse;margin:26px 0 34px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13.5px}
+  th{text-align:left;padding:11px 10px;border-bottom:2px solid var(--ink);font-size:11px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55}
+  td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.06em}
+  .pill.ok{background:#e7f0e9;color:#33684b}
+  .pill.warn{background:#f8e6e1;color:#8f3a26}
+  .pill.due{background:#fdf0d8;color:#8a5c14}
+  ul,ol{margin:0 0 20px;padding-left:24px}
+  li{margin-bottom:9px;line-height:1.75}
+  .ts{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;color:var(--accent);
+    font-variant-numeric:tabular-nums}
+  .ts b{color:#3a2f21;font-weight:600}
+  .closing{border-top:2px solid var(--ink);margin-top:58px;padding-top:24px}
+  .closing p{font-size:16.5px}
+  footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11.5px;color:var(--muted);line-height:1.9}
+  a{color:#8a5c14}
+  strong{font-weight:600}
+  .kicker2{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 8px;font-weight:600}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:0 26px}
+  .lastknown{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;
+    color:#4a3c2c;background:#faf7f0;border:1px solid var(--line);padding:14px 16px;margin:14px 0 0;line-height:1.7}
+  .lastknown b{color:#2b2419}
+  @media(max-width:640px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    h1{font-size:31px} .card{padding:22px 20px} .wrap{padding:32px 18px 60px}
+    table{font-size:12.5px} th,td{padding:9px 7px} .split{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcasts · Daily Deep Scan</div>
+  <h1>思維播客日報</h1>
+  <p class="date">2026 年 11 月 25 日 · 星期三</p>
+  <div class="meta">
+    生成時間：<b>2026-11-25 17:56（UTC+8）</b> &nbsp;·&nbsp; 掃描範圍：<b>6 個播客</b> &nbsp;·&nbsp;
+    RSS 最後同步：<b>2026-11-25 17:53（UTC+8）</b><br>
+    本期關鍵詞：<b>AI 攻擊民主化</b> · <b>身份即邊界</b> · <b>補丁悖論</b> · <b>439 億美元併購</b>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">6</div><div class="l">播客掃描</div></div>
+  <div class="stat"><div class="n">1</div><div class="l">新集數</div></div>
+  <div class="stat"><div class="n">5</div><div class="l">暫無更新</div></div>
+  <div class="stat"><div class="n">53′28″</div><div class="l">新增內容</div></div>
+</div>
+
+<p class="lede">今日全場只有一集新內容，但佢啱啱好係本週最值得花一小時聽嘅一集：<em>CrowdStrike 創辦人兼 CEO George Kurtz 上 All-In</em>，講 AI 點樣把「國家級黑客能力」下放到任何一個有電腦嘅人手上；而佢坐低錄音嘅前一日，CrowdStrike 剛宣布用 <em>439 億美元</em>全股票吞併 Zscaler。呢集表面講網絡安全，實際上係一堂關於「現代社會單點故障」同「平台併購經濟學」嘅課。</p>
+
+<div class="note">
+  <b>本期覆蓋說明：</b>Acquired、Founders、My First Million、The Knowledge Project、Diary of a CEO 五個 feed 在過去 24 小時均無新集數，下面列出各自最後已知劇集與更新節奏。All-In 新集內容基於官方節目簡介、官方章節時間碼、All-In 官網簡介，以及 CNBC／NYT 等對 CrowdStrike–Zscaler 交易的公開報導交叉核實；逐段拆解中的分析屬本報解讀，已與事實分開標示。
+</div>
+
+<h2 class="section">新集數 · 深度拆解</h2>
+<div class="rule"></div>
+
+<div class="card">
+  <div class="kicker2">All-In with Chamath, Jason, Sacks &amp; Friedberg</div>
+  <h3>CrowdStrike CEO：AI 攻擊浪潮、超高速入侵，與補丁難題<span class="badge">NEW</span></h3>
+  <p class="byline">主持：Jason Calacanis（本集主要對談）· 嘉賓：George Kurtz（CrowdStrike 共同創辦人、總裁兼 CEO）</p>
+
+  <dl class="epmeta">
+    <dt>發布</dt><dd>2026-11-24 02:30 UTC（香港時間 11 月 24 日 10:30）</dd>
+    <dt>長度</dt><dd>53 分 28 秒</dd>
+    <dt>格式</dt><dd>單一嘉賓深度對談（非四位 besties 週報）</dd>
+    <dt>原連結</dt><dd><a href="https://allinchamathjason.libsyn.com/crowdstrike-ceo-ai-cyberattack-wave-hyperspeed-hacks-the-patching-problem">Libsyn 節目頁</a> · <a href="https://allin.com/episodes">All-In 官網</a></dd>
+  </dl>
+
+  <h4 class="sub">一、本集主題：當「破壞力」變成消費品</h4>
+  <p>過去講國家級黑客，你腦海浮現嘅係有幾百人、有預算、有情報機構背景嘅團隊。Kurtz 今集嘅核心命題係：<strong>AI 已經把呢種能力拆散、打包、降價，變成任何人都買得到嘅工具</strong>。攻擊唔再係「入侵」，而係「登入」；防守亦唔再係「裝防毒」，而係「管身份、管權限、管變更」。</p>
+  <p>呢個框架好重要，因為它同時解釋了三件事：為何 CrowdStrike 要買 Zscaler（網絡層 + 身份層）、為何佢要推 AI Kill Switch（agent 時代嘅緊急煞掣）、以及為何「補丁」呢個看似沉悶嘅 IT 工序，會成為國家級風險管理問題。</p>
+
+  <h4 class="sub">二、核心論點（六條主線）</h4>
+  <ol>
+    <li><strong>AI 令攻擊者「量產化」。</strong>以往要寫釣魚信、做偵察、砌惡意程式、找漏洞利用鏈，樣樣都要人手同經驗；今日 LLM 可以一小時內生成數百個本地化釣魚變體、自動分析目標嘅公開資料、甚至幫手寫 exploit。攻擊成本曲線幾乎垂直下跌，防守方嘅人力優勢被抹平。</li>
+    <li><strong>「停機」同「被攻擊」愈來愈難分。</strong>第一章就問「那些中斷算唔算網絡攻擊？」——呢個問題嘅背景，正係 2024 年 7 月 19 日 CrowdStrike 自己造成嘅全球大當機：一個 Falcon 感測器內容更新缺陷，令大約 850 萬部 Windows 裝置藍屏，航空、醫院、銀行、零售商一次過停擺。Kurtz 嘅潛台詞係：<strong>現代社會嘅單點故障，破壞力已經等於一次攻擊</strong>，所以「韌性」同「安全」要一齊設計。</li>
+    <li><strong>補丁悖論（Patching Paradox）。</strong>唔補，漏洞會被 AI 加速利用；亂補，就會製造下一次全球當機。真正難嘅唔係「寫個補丁」，而係變更管理：灰度發布、分批推送、可回滾、可觀測。CrowdStrike 自己就係用一次慘痛教訓換嚟呢套肌肉記憶。</li>
+    <li><strong>開放權重模型 = 不可逆的攻擊能力擴散。</strong>你可以規管一間公司嘅 API，但你管唔到一個已經下載到本地嘅權重檔案。攻擊者可以離線微調出「無審查版」模型，專門用嚟寫惡意代碼或做社交工程；防守方亦可以用本地模型，在不外洩資料的前提下做偵測。監管嘅著力點，應該由「模型」轉向「部署環境與身份」。</li>
+    <li><strong>身份成為新邊界：黑客唔再「破門」，而係「登入」。</strong>被盜憑證、MFA 疲勞攻擊、會話令牌劫持、過度權限的服務帳號——攻擊者用合法身份做非法事情，傳統端點防毒根本看不到。防守重心要由「檔案」轉向「行為 + 身份 + 最小權限」。</li>
+    <li><strong>Agent 時代的新風險：AI 自己變成內部威脅。</strong>CrowdStrike 在 11 月 3 日推出 Falcon Guardian 嘅「AI Kill Switch」，讓人類管理員可以即時中止行為異常嘅自主 AI agent。呢個產品方向，正正回應咗「當 agent 有權限、又會自己決定點用權限」嘅新攻擊面。</li>
+  </ol>
+
+  <h4 class="sub">三、逐段拆解（官方章節時間碼）</h4>
+
+  <h5 class="mini">01:38 · Are the Outages Cyberattacks?（那些中斷算不算攻擊？）</h5>
+  <p>呢一段係全集嘅概念地基。Kurtz 會區分三種「down」：惡意攻擊造成、系統缺陷造成、以及兩者混合（攻擊者趁你修復時補刀）。2024 年 7 月嘅全球藍屏係第二種嘅教科書案例——唔涉及黑客，但對經濟嘅即時破壞力可能大過大部分勒索軟件事件。對企業嘅啟示：<strong>事故應變（incident response）同網絡防禦（cyber defense）應該共用同一套指揮鏈</strong>，因為對客戶嚟講，兩者都係「你嘅服務冇了」。</p>
+
+  <h5 class="mini">10:36 · How AI Lets Anyone Hack Like a Nation-State Level Threat（AI 如何讓任何人都能像國家級威脅一樣攻擊）</h5>
+  <p>全集最核心嘅一段，亦係官方簡介引用嘅金句出處。討論範圍包括：AI 自動化偵察與目標篩選、超個性化釣魚、以母語水平偽裝嘅社交工程、deepfake 語音／視像冒充高層下指令、以及「漏洞鏈」（vulnerability chains）——單一漏洞未必致命，但 AI 可以快速把幾個中低危漏洞串成一條完整攻擊路徑。所謂「hyperspeed hacks」，指嘅係由偵察到橫向移動嘅時間窗，由幾星期壓縮到幾小時。</p>
+
+  <h5 class="mini">16:33 · Patching, Technical Debt, and Outages（補丁、技術債與中斷）</h5>
+  <p>呢段係給所有 CTO／工程主管嘅。Kurtz 以過來人身份講：安全更新嘅難度唔在於「修」，而在於「唔可以修錯」。企業身上有大量技術債——舊 OS、無人維護嘅內部系統、層層疊加嘅 agent——任何一次「全量推送」都可能係災難。合理做法係：先小範圍 canary、再 ring deployment、全程可觀測、隨時可回滾，並且把「更新」當成產品發布嚟管理，而唔係當成維修。呢個亦係 CrowdStrike 事後重建客戶信任嘅核心敘事。</p>
+
+  <h5 class="mini">33:40 · Open-Weight and Local AI: Risk and Defense（開放權重與本地 AI：風險與防禦）</h5>
+  <p>開放權重模型（open-weight）令攻擊能力可以「離線存在」：唔需要 API、唔需要帳號、唔留雲端日誌。對攻擊者係便利，對防守方亦係機會——企業可以在本地跑模型做敏感資料分析，唔必将客戶資料送去第三方。Kurtz 嘅立場大概率係「唔可以靠禁止解決，要靠管部署」：模型可以開放，但佢接入咩系統、用咩身份、可以觸發咩動作，必須有護欄。</p>
+
+  <h5 class="mini">42:38 · Hackers Don't Break In, They Log In（黑客不是破門而入，而是登入）</h5>
+  <p>收尾一段，亦係全集最實用嘅一句。現代入侵嘅主流路徑係：釣魚偷憑證 → 用合法帳號登入 → 搵過度權限嘅服務帳號 → 橫向移動。整個過程可能完全冇惡意程式落地，端點防毒自然抓唔到。對策係身份安全：phishing-resistant MFA（passkeys／硬體金鑰）、條件式存取、最小權限、服務帳號盤點、以及對「行為異常」而非「檔案特徵」嘅偵測。</p>
+
+  <h4 class="sub">四、關鍵數據</h4>
+  <table>
+    <thead><tr><th>項目</th><th>數字</th><th>說明</th></tr></thead>
+    <tbody>
+      <tr><td>CrowdStrike 收購 Zscaler 作價</td><td class="num">約 439 億美元</td><td>全股票交易，2026-11-23（週一）公布，無現金成分</td></tr>
+      <tr><td>換股比例</td><td class="num">1.135 : 1</td><td>每股 Zscaler 換 1.135 股 CrowdStrike</td></tr>
+      <tr><td>Kurtz 所述可觸及市場擴容</td><td class="num">約 +1,850 億美元</td><td>由端點／雲端延伸至網絡安全層（TAM 口徑為公司說法）</td></tr>
+      <tr><td>CrowdStrike 股價反應</td><td class="num">週一約 −9%</td><td>市場憂慮稀釋；週二輕微回升</td></tr>
+      <tr><td>2024 年 7 月全球當機受影響裝置</td><td class="num">約 850 萬部</td><td>Falcon 感測器內容更新缺陷導致嘅 Windows 藍屏</td></tr>
+      <tr><td>AI Kill Switch 發布</td><td class="num">2026-11-03</td><td>Falcon Guardian 功能，人類管理員可即時中止 rogue agent</td></tr>
+      <tr><td>本集長度 / 章節</td><td class="num">53:28 / 5 段</td><td>單一嘉賓，資訊密度高，幾乎無填充</td></tr>
+    </tbody>
+  </table>
+
+  <h4 class="sub">五、重點引用</h4>
+  <blockquote>
+    <p>“You're minting more adversaries and you're democratizing destruction.”</p>
+    <cite>— George Kurtz，All-In 官方節目簡介（2026-11-24）</cite>
+  </blockquote>
+  <p>呢句係全集嘅壓縮檔：<strong>minting（鑄造）</strong>講嘅係攻擊者數量暴增，<strong>democratizing（民主化）</strong>講嘅係能力門檻消失。以前「國家級」係形容詞，今日變咗「入門級」。</p>
+
+  <blockquote>
+    <p>“How AI Lets Anyone Hack Like a Nation-State Level Threat”<br>
+    “Patching, Technical Debt, and Outages”<br>
+    “Hackers Don't Break In, They Log In”</p>
+    <cite>— 官方章節標題（原文照錄）</cite>
+  </blockquote>
+  <p>三個標題分別對應：攻擊端嘅能力擴散、防守端嘅工程現實、以及兩者交匯嘅身份邊界。呢個就係本集嘅完整邏輯鏈。</p>
+
+  <h4 class="sub">六、行業 Insight</h4>
+  <ul>
+    <li><strong>安全行業正在由「端點為王」轉向「身份 + 網絡 + Agent」三層整合。</strong>Zscaler 補嘅正是網絡連線層嘅空白；CrowdStrike 想要嘅係一個「由 device 到 identity 到 network 到 AI agent」嘅單一控制平面。439 億美元買嘅唔止收入，係「平台敘事」。</li>
+    <li><strong>全股票交易 = 用估值買時間。</strong>唔使動用現金、唔使舉債，但代價係稀釋。市場用 −9% 表達咗對「整合風險 + 稀釋」嘅定價；Kurtz 要用未來幾季嘅 cross-sell 與 ARR 增長說服投資者。</li>
+    <li><strong>Agentic AI 正在創造一個全新嘅安全品類。</strong>「AI Kill Switch」呢類產品一年前唔存在。當企業開始讓 agent 有寫入權限、有付款權限、有對外通訊能力，「誰有權中止一個失控 agent」會變成同「誰有權刪除 production database」同級嘅治理問題。</li>
+    <li><strong>補丁管理係治理問題，唔係工程問題。</strong>大部分企業唔缺補丁，缺嘅係「可以安全地部署補丁」嘅流程與文化。呢個市場（變更管理、可觀測性、灰度發布）嘅戰略價值被長期低估。</li>
+    <li><strong>開放權重令「出口管制」型監管失效。</strong>如果攻擊能力可以下載到本地，管制就只剩「管人、管身份、管網絡出口」。呢個會推動更多企業採用本地／私有雲 AI，反過來創造新嘅安全需求。</li>
+  </ul>
+
+  <h4 class="sub">七、對 James 嘅三個 takeaway</h4>
+  <ol>
+    <li><strong>如果你有 AI agent 接入內部系統：先做三件事，再談生產力。</strong>① 每個 agent 一個獨立身份（唔好共用 service account）；② 最小權限 + 明確白名單動作；③ 一個人類可按嘅 kill switch。缺任何一項，都係將一個「會自己決定點用權限嘅實習生」放入 production。</li>
+    <li><strong>重新審視你嘅「單點故障」清單。</strong>唔止問「邊個系統會死」，要問「邊個供應商嘅一次更新可以令你全公司停擺」。CrowdStrike 2024 年示範咗：安全軟件本身就係最高權限嘅單點。雞蛋唔好放同一個籃，更新要分批。</li>
+    <li><strong>投資角度：睇 ARR 與 cross-sell，唔好睇併購新聞嘅第一日股價。</strong>−9% 係市場對稀釋嘅本能反應，真正要追蹤嘅係：Zscaler 客戶有幾多被 cross-sell 到 Falcon、合併後 net new ARR 有冇加速、以及 AI agent 安全產品線嘅 attach rate。呢三條數，兩三個季度後會講真話。</li>
+  </ol>
+</div>
+
+<h2 class="section">其餘五個播客 · 最近無更新</h2>
+<div class="rule"></div>
+
+<div class="card slim">
+  <h3 style="font-size:23px">Acquired <span class="badge grey">最近無更新</span></h3>
+  <p class="byline">Ben Gilbert &amp; David Rosenthal · 最後更新 2026-10-18</p>
+  <p>最後一集係 <strong>《Seinfeld》</strong>（3 小時 50 分），由處境喜劇嘅創作源起講到 1990 年代電視經濟、syndication 現金牛、以至 Netflix 時代嘅串流版權交易。呢個 feed 節奏約每月一集，下集通常喺 11 月中至尾；今日未見更新，值得留意。</p>
+  <div class="lastknown">
+    <b>最近三集：</b><br>
+    · 2026-10-18 — Seinfeld（3h50m）<br>
+    · 2026-09-13 — The Home Depot（3h35m）<br>
+    · 2026-08-09 — Disney: The Renaissance and the Empire（4h33m）
+  </div>
+</div>
+
+<div class="card slim">
+  <h3 style="font-size:23px">Founders <span class="badge grey">最近無更新</span></h3>
+  <p class="byline">David Senra · 最後更新 2026-11-17</p>
+  <p>最新一集 <strong>#440《Born of This Land: Chung Ju-yung》</strong>——現代集團創辦人鄭周永自傳，Senra 形容為「我讀過最鼓舞人心的自傳」。上兩集分別講《One Piece》作者尾田榮一郎嘅工作方式，同美國總統 James Garfield 嘅崛起。呢個 feed 每週一至兩集，今日未到更新日。</p>
+  <div class="lastknown">
+    <b>最近三集：</b><br>
+    · 2026-11-17 — #440 Born of This Land: Chung Ju-yung（49m）<br>
+    · 2026-11-04 — #439 How Eiichiro Oda Works（32m）<br>
+    · 2026-10-26 — #438 James Garfield's Extraordinary Rise（38m）
+  </div>
+</div>
+
+<div class="card slim">
+  <h3 style="font-size:23px">My First Million <span class="badge grey">最近無更新</span></h3>
+  <p class="byline">Sam Parr &amp; Shaan Puri · 最後更新 2026-11-23</p>
+  <p>最新一集 <strong>《4 business ideas you could build with ChatGPT》</strong>（53 分），延續 MFM 最擅長嘅「即場拆商業 idea」格式；上集講「康復中的尷尬人如何練出無可否認的魅力」，再上集係「佢靠賣遊戲俾有錢媽媽做到 4,000 萬美元營收」。每週兩集（週一／週五），下一集預計 11 月 27 日。</p>
+  <div class="lastknown">
+    <b>最近三集：</b><br>
+    · 2026-11-23 — 4 business ideas you could build with ChatGPT（53m）<br>
+    · 2026-11-20 — A recovering awkward person’s guide to undeniable charisma（60m）<br>
+    · 2026-11-18 — She’s making $40M selling a game to rich moms（69m）
+  </div>
+</div>
+
+<div class="card slim">
+  <h3 style="font-size:23px">The Knowledge Project <span class="badge grey">最近無更新</span></h3>
+  <p class="byline">Shane Parrish · 最後更新 2026-11-19</p>
+  <p>最新一集 <strong>《Bing Gordon: Learning From Bezos, Jobs, and Spielberg》</strong>——KPCB 合夥人、EA 前首席創意總監 Bing Gordon，講佢近距離觀察 Jeff Bezos、Steve Jobs、Steven Spielberg 三位「產品天才」嘅決策方式。呢個 feed 平均每兩週一集，下一集預計 12 月初。</p>
+  <div class="lastknown">
+    <b>最近三集：</b><br>
+    · 2026-11-19 — Bing Gordon: Learning From Bezos, Jobs, and Spielberg<br>
+    · 2026-11-05 — Jon McNeill: How Elon Musk Makes Decisions<br>
+    · 2026-10-29 — [Outliers] K.C. Irving: Competing with Giants
+  </div>
+</div>
+
+<div class="card slim">
+  <h3 style="font-size:23px">The Diary of a CEO <span class="badge grey">最近無更新</span></h3>
+  <p class="byline">Steven Bartlett · 最後更新 2026-11-23</p>
+  <p>最新一集 <strong>《Financial Crash Expert: Biggest Money Mistake You'll Make》</strong>，嘉賓 Steve Eisman（《The Big Short》原型之一）——前一日（11 月 23 日）本報已做過深度拆解。之後兩集分別係哈佛長壽科學家講「一日三餐可能令你加速衰老」，以及 Bernie Sanders 講Netanyahu 如何把 Trump 推入伊朗戰爭。呢個 feed 每週兩至三集，下一集預計 11 月 26 日。</p>
+  <div class="lastknown">
+    <b>最近三集：</b><br>
+    · 2026-11-23 — Financial Crash Expert: Biggest Money Mistake（94m）· 已於 11-23 日報拆解<br>
+    · 2026-11-20 — Why 3 Meals A Day Could Be Aging You（28m）<br>
+    · 2026-11-19 — Bernie Sanders: Why He Says Netanyahu Pushed Trump Into the Iran War（90m）
+  </div>
+</div>
+
+<div class="closing">
+  <h2 class="section" style="margin-top:0">編輯備註</h2>
+  <div class="rule"></div>
+  <p>今日嘅選擇好簡單：如果你今日只有 53 分鐘俾播客，聽呢集 All-In。它唔係普通嘅「CEO 宣傳訪問」——Kurtz 啱啱用 439 億美元押注「網絡層 + 身份層 + Agent 安全」係下一個平台，而呢集就係佢嘅公開答辯。就算你唔投資 CRWD，入面關於「補丁要灰度」、「agent 要 kill switch」、「黑客係登入唔係破門」嘅三段，都直接適用於任何有 IT 系統嘅業務。</p>
+</div>
+
+<footer>
+  資料來源：All-In 官方 RSS feed（Libsyn）、allin.com 節目簡介、Apple Podcasts 節目頁、CNBC 與 The New York Times 對 CrowdStrike–Zscaler 交易之報導、CrowdStrike 官方 AI Kill Switch 公告（2026-11-03）。<br>
+  本報由自動掃描器生成，事實與分析已分開標示；引用均為原文照錄，分析段落屬本報解讀。<br>
+  生成時間：2026-11-25 17:56（UTC+8） · 掃描器：mindset-podcasts/scanner · 累計已掃描集數：3,034
+</footer>
+
+</div>
+</body>
+</html>
