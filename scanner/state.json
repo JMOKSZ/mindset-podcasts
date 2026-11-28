@@ -1,5 +1,5 @@
 {
- "lastScan": "2026-11-27T09:56:59Z",
+ "lastScan": "2026-11-28T09:54:16Z",
  "scannedEpisodes": {
   "acquired": [
    "465fbb3b-6d71-49ed-a233-de82bc41b034",
@@ -3054,14 +3054,14 @@
   ]
  },
  "lastScanResult": {
-  "date": "2026-11-22",
+  "date": "2026-11-28",
   "new": 0,
   "podcasts": 6,
   "noUpdate": 6,
   "episodes": []
  },
- "lastRun": "2026-11-22T09:53:00Z",
- "lastReport": "daily-report-2026-11-22.html",
+ "lastRun": "2026-11-28T09:54:16Z",
+ "lastReport": "daily-report-2026-11-28.html",
  "feedAudit": {
   "checkedAt": "2026-11-15T09:58:00Z",
   "knowledge-project": {

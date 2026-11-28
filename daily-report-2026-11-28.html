@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思維播客日報 · 2026-11-28</title>
+<style>
+  :root{
+    --bg:#fdfaf6; --ink:#2b2419; --muted:#7a6a58; --line:#e8ddcd;
+    --card:#fffdf9; --accent:#b07a2a; --accent-soft:#f6ecd9; --ok:#3f7d5a; --warn:#a4442f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;line-height:1.85;font-size:17px}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px}
+  .kicker{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:40px;line-height:1.2;margin:0 0 12px;font-weight:normal}
+  .date{font-size:19px;color:var(--muted);margin:0}
+  .meta{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);
+    margin-top:18px;line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:34px 0 40px}
+  .stat{background:var(--card);padding:20px 14px;text-align:center}
+  .stat .n{font-size:30px;line-height:1.1;color:var(--accent)}
+  .stat .l{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.08em;color:var(--muted);margin-top:7px}
+  .lede{font-size:20px;line-height:1.95;margin:0 0 26px}
+  .lede em{font-style:normal;background:linear-gradient(transparent 62%, #f4e3c4 62%)}
+  .note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:18px 22px;
+    font-size:15.5px;color:#5d4a30;margin:0 0 46px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;line-height:1.85}
+  .note b{color:#8a5c14}
+  h2.section{font-size:13px;font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;margin:56px 0 4px}
+  .rule{height:1px;background:var(--ink);margin:0 0 30px}
+  h3{font-size:28px;line-height:1.4;font-weight:normal;margin:0 0 6px}
+  .badge{display:inline-block;vertical-align:middle;margin-left:10px;padding:3px 9px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:10px;letter-spacing:.14em;
+    background:#f3e6cc;color:#8a5c14;border:1px solid #e3cfa8;border-radius:2px;font-weight:600}
+  .badge.grey{background:#f1ece4;color:#7a6a58;border-color:#e0d7c8}
+  h4.sub{font-size:20px;font-weight:normal;margin:40px 0 10px;color:#3a2f21;
+    border-bottom:1px dotted var(--line);padding-bottom:6px}
+  h5.mini{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin:30px 0 6px;font-weight:600}
+  .byline{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:16px}
+  .card{background:var(--card);border:1px solid var(--line);padding:30px 32px;margin:0 0 22px}
+  .card.slim{padding:24px 26px}
+  .epmeta{display:grid;grid-template-columns:88px 1fr;gap:2px 14px;margin:0 0 24px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;
+    background:#faf6ee;border:1px solid #eee3d2;padding:16px 18px}
+  .epmeta dt{color:var(--muted);letter-spacing:.04em}
+  .epmeta dd{margin:0;color:#3a2f21}
+  p{margin:0 0 18px}
+  blockquote{margin:26px 0;padding:4px 0 4px 22px;border-left:3px solid var(--accent);
+    font-size:17.5px;line-height:1.8;color:#3a2f21}
+  blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:13.5px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;color:var(--muted)}
+  blockquote p{margin:0 0 10px}
+  blockquote p:last-child{margin:0}
+  table{width:100%;border-collapse:collapse;margin:26px 0 34px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13.5px}
+  th{text-align:left;padding:11px 10px;border-bottom:2px solid var(--ink);font-size:11px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55}
+  td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;
+    font-family:-apple-system,"Helvetica Neue",sans-serif;letter-spacing:.06em}
+  .pill.ok{background:#e7f0e9;color:#33684b}
+  .pill.warn{background:#f8e6e1;color:#8f3a26}
+  .pill.due{background:#fdf0d8;color:#8a5c14}
+  ul,ol{margin:0 0 20px;padding-left:24px}
+  li{margin-bottom:9px;line-height:1.75}
+  .ts{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;color:var(--accent);
+    font-variant-numeric:tabular-nums}
+  .ts b{color:#3a2f21;font-weight:600}
+  .closing{border-top:2px solid var(--ink);margin-top:58px;padding-top:24px}
+  .closing p{font-size:16.5px}
+  footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);
+    font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11.5px;color:var(--muted);line-height:1.9}
+  a{color:#8a5c14}
+  strong{font-weight:600}
+  .kicker2{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 8px;font-weight:600}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:0 26px}
+  .lastknown{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:13px;
+    color:#4a3c2c;background:#faf7f0;border:1px solid var(--line);padding:14px 16px;margin:14px 0 0;line-height:1.7}
+  .lastknown b{color:#2b2419}
+  @media(max-width:640px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    h1{font-size:31px} .card{padding:22px 20px} .wrap{padding:32px 18px 60px}
+    table{font-size:12.5px} th,td{padding:9px 7px} .split{grid-template-columns:1fr}
+  }
+</style>
+
+<style>
+  table.feeds{width:100%;border-collapse:collapse;margin:26px 0 8px;font-size:15.5px}
+  table.feeds th{font-family:-apple-system,"Helvetica Neue",sans-serif;font-size:11px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted);text-align:left;padding:10px 8px;border-bottom:2px solid var(--ink)}
+  table.feeds td{padding:11px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.feeds td.ok{color:var(--ok)}
+  table.feeds td.warn{color:var(--warn);font-weight:600}
+  .badge.muted{background:var(--accent-soft);color:var(--muted);font-weight:400}
+  .mini-card{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent-soft);
+    padding:16px 20px;margin:14px 0;font-size:15.5px}
+  .mini-card .dim{color:var(--muted);font-size:14.5px}
+  @media(max-width:640px){
+    h1{font-size:30px}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    table.feeds{font-size:13.5px}
+    table.feeds th:nth-child(4),table.feeds td:nth-child(4){display:none}
+  }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Mindset Podcast Daily · Deep Scan</div>
+  <h1>六個 feed 全部靜咗，<br>咁我哋講下存貨</h1>
+  <p class="date">2026-11-28 · 星期六</p>
+  <div class="meta">
+    掃描 <b>6</b> 個 feed ｜ 新集數 <b>0</b> ｜ 未聽存貨 <b>3 集 · 約 5 小時</b><br>
+    生成時間：<b>2026-11-28 09:54 UTC</b> ｜ 方法：RSS 全量比對 GUID（218 / 465 / 448 / 925 / 20 / 915 條 entry）
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">6</div><div class="l">FEEDS SCANNED</div></div>
+  <div class="stat"><div class="n">0</div><div class="l">NEW EPISODES</div></div>
+  <div class="stat"><div class="n">3</div><div class="l">IN BACKLOG</div></div>
+  <div class="stat"><div class="n">5h</div><div class="l">AUDIO QUEUED</div></div>
+</div>
+
+<p class="lede">今日六個 feed 一條新 entry 都冇——呢個唔算異常，係美國感恩節假期（11 月 26–29 日）嘅正常空窗：四個美國節目全部停更，剩低兩個英國節目（Knowledge Project 用會員庫存、Diary of a CEO 用「Most Replayed」剪輯）撐住。所以我唔會造假內容充數。今日報告改做另一件更有用嘅事：<em>盤一次存貨</em>，睇邊幾集你其實未聽、邊幾個 feed 開始脫期要留意。</p>
+
+<div class="note">
+  <b>今日三個結論：</b><br>
+  ① <strong>真正要留意嘅只有一個：Acquired 已經 41 日冇更新。</strong>佢本身係月更，Seinfeld 一集 3 小時 50 分，11 月應該仲有一集，下星期再冇動靜就要查 feed。<br>
+  ② <strong>Founders 11 日、其餘 1–4 日，全部正常。</strong>Founders 一向 7–14 日一集，未算脫期。<br>
+  ③ <strong>你手上其實有三集未清，共約 5 小時。</strong>如果只聽得一集，聽 All-In 嗰集 Kurtz（53 分鐘）；如果有 4 個鐘，聽 Acquired Seinfeld——佢係近年最被低估嘅一集。
+</div>
+
+<h2 class="section">Feed 健康度</h2>
+<div class="rule"></div>
+
+<table class="feeds">
+  <thead><tr><th>Podcast</th><th>最後一集</th><th>距今</th><th>節奏</th><th>狀態</th></tr></thead>
+  <tbody>
+    <tr><td>Acquired</td><td>Seinfeld · 10-18</td><td>41 日</td><td>月更</td><td class="warn">偏慢，下週再觀察</td></tr>
+    <tr><td>Founders</td><td>#440 Chung Ju-yung · 11-17</td><td>11 日</td><td>7–14 日</td><td class="ok">正常</td></tr>
+    <tr><td>All-In</td><td>CrowdStrike CEO · 11-24</td><td>4 日</td><td>每週</td><td class="ok">正常</td></tr>
+    <tr><td>My First Million</td><td>#885 Jensen · 11-25</td><td>3 日</td><td>逢一三五</td><td class="ok">正常</td></tr>
+    <tr><td>Knowledge Project</td><td>Ogilvy · 11-26</td><td>2 日</td><td>每週四</td><td class="ok">正常</td></tr>
+    <tr><td>Diary of a CEO</td><td>Aspinall 剪輯 · 11-27</td><td>1 日</td><td>每日／每週</td><td class="ok">正常</td></tr>
+  </tbody>
+</table>
+
+<h2 class="section">Backlog · 三集值得補</h2>
+<div class="rule"></div>
+
+<!-- ============ ACQUIRED ============ -->
+<div class="card">
+  <div class="kicker2">Acquired · 首選</div>
+  <h3>Seinfeld <span class="badge muted">存貨 · 3 小時 50 分</span></h3>
+  <div class="byline">Ben Gilbert &amp; David Rosenthal ｜ 2026-10-18 ｜ 13820 秒</div>
+
+  <dl class="epmeta">
+    <dt>主題</dt><dd>一齣 1998 年已經完結嘅處境喜劇，點解 2026 年仍然有 7,200 萬美國人一年內重看</dd>
+    <dt>核心</dt><dd>創作人嘅偏執 × 完美嘅市場時機 × 一個把 incentives 綁足三十年嘅擁有權結構</dd>
+    <dt>為何值得聽</dt><dd>表面上係電視史，實際係一堂「版權＋重播＋分潤」嘅資產課</dd>
+  </dl>
+
+  <p>官方簡介第一句就已經係成集嘅命題：</p>
+
+  <blockquote>
+    <p>“Seinfeld, which ended three decades ago, has been watched by 72 million Americans so far THIS YEAR.”</p>
+    <cite>Acquired, Seinfeld 集官方簡介</cite>
+  </blockquote>
+
+  <p>七千二百萬人，唔係累計，係<strong>今年至今</strong>。一齣停播接近三十年嘅劇，觀眾規模仍然大過大部分新上架內容——呢個數字本身就係整集要解釋嘅謎。</p>
+
+  <p>Acquired 嘅拆法係三層。第一層係<strong>人</strong>：Larry David 同 Jerry Seinfeld 嘅創作偏執，同一個「唔可以軟」嘅堅持——電視台想要 happy ending，佢哋偏偏要一個所有人坐監嘅結局。第二層係<strong>時機</strong>：1989 年 NBC 處於絕對強勢，願意為一個「about nothing」嘅節目讓路，因為佢手上仲有本錢賭。第三層，亦係 Ben 同 David 最重視嘅一層，係<strong>擁有權</strong>：</p>
+
+  <blockquote>
+    <p>“...obsessive creators, perfect market timing, an ownership structure that aligned incentives for the long term…all of which created a sitcom that became number one by breaking all the rules.”</p>
+    <cite>Acquired, Seinfeld 集官方簡介</cite>
+  </blockquote>
+
+  <p>呢句係成集嘅鑰匙。一個節目可以紅，但如果分潤結構錯，創作者三十年後一毫子都收唔到；Seinfeld 嘅結構令 Jerry 同 Larry 至今仍然食住 syndication 同 streaming 嘅現金流。套用到今日：<strong>你嘅產品紅唔紅係一回事，你同個產品嘅關係綁幾耐，係另一回事。</strong></p>
+
+  <p>3 小時 50 分係長，但呢集嘅密度對得起長度——Acquired 每次講「護城河」都係講結構，而 Seinfeld 係少數可以用一套處境喜劇完整示範「結構贏過才華」嘅案例。</p>
+</div>
+
+<!-- ============ ALL-IN ============ -->
+<div class="card">
+  <div class="kicker2">All-In · 性價比最高</div>
+  <h3>CrowdStrike CEO：AI 攻擊潮、超速入侵、與補丁難題 <span class="badge muted">存貨 · 53 分鐘</span></h3>
+  <div class="byline">George Kurtz 受訪 ｜ 2026-11-24 ｜ 53:28</div>
+
+  <dl class="epmeta">
+    <dt>主題</dt><dd>AI 令「國家級攻擊能力」下放到普通罪犯；而防守方仍然卡在補丁同技術債</dd>
+    <dt>嘉賓</dt><dd>George Kurtz，CrowdStrike 共同創辦人兼 CEO</dd>
+    <dt>章節</dt><dd>1:38 停機係唔係攻擊 ｜ 10:36 AI 令任何人都可以像國家級黑客 ｜ 16:33 補丁與技術債 ｜ 33:40 開源權重與本地 AI 嘅風險 ｜ 42:38 黑客唔係「破門」，係「登入」</dd>
+  </dl>
+
+  <p>呢集最值錢嘅唔係 AI 恐慌，而係最後一個章節嗰句總結，官方 show notes 直接攞嚟做標題：</p>
+
+  <blockquote>
+    <p>“Hackers Don't Break In, They Log In”</p>
+    <cite>All-In, CrowdStrike CEO 集章節標題（42:38）</cite>
+  </blockquote>
+
+  <p>意思係：現代入侵嘅主戰場唔再係防火牆，而係<strong>憑證</strong>。釣魚、偷 session token、買外洩密碼、MFA 疲勞轟炸——攻擊者用「合法登入」嘅方式入嚟，所以你嘅 log 睇落一切正常。呢個講法直接解釋咗點解企業每年買更多工具， breach 數字仍然上升。</p>
+
+  <p>第二個值得抄落筆記嘅位，係 16:33 嘅「補丁與技術債」。Kurtz 嘅立場一向係：大部分災難唔係因為唔知有漏洞，而係因為<strong>知道但唔敢補</strong>——一補就驚搞死 production。呢個係一個組織問題，唔係技術問題：當一個系統冇人敢改，佢就已經係遺產。</p>
+
+  <p>33:40 講開源權重模型，係四個 host 最容易嘈起上嚟嘅位：本地跑一個唔受監管嘅模型，對企業嚟講係「免費」還是「未計算嘅負債」？如果你有興趣 AI 治理，呢 10 分鐘係全集最尖銳嘅部分。</p>
+
+  <p>53 分鐘，四個章節，冇冷場。如果今日只聽一集，聽呢集。</p>
+</div>
+
+<!-- ============ FOUNDERS ============ -->
+<div class="card">
+  <div class="kicker2">Founders · 最似傳記</div>
+  <h3>#440 我讀過最勵志的自傳：Chung Ju-yung《Born of This Land》 <span class="badge muted">存貨 · 50 分鐘</span></h3>
+  <div class="byline">David Senra ｜ 2026-11-17 ｜ 2972 秒</div>
+
+  <dl class="epmeta">
+    <dt>主題</dt><dd>現代集團創辦人鄭周永（Chung Ju-yung）自傳嘅重讀筆記</dd>
+    <dt>人物</dt><dd>鄭周永，1915 年生於江原道農村，小學畢業，由運米、修車廠做到韓國最大財閥</dd>
+    <dt>形式</dt><dd>David Senra 單人重讀式拆解，唔係訪談；重點在「可以抄嘅行為」而唔係生平流水帳</dd>
+  </dl>
+
+  <p>官方簡介只有一句，因為 David 一向唔寫 show notes：</p>
+
+  <blockquote>
+    <p>“What I learned from rereading <em>Born of This Land: My Life Story</em> by Chung Ju-yung.”</p>
+    <cite>Founders #440 官方簡介</cite>
+  </blockquote>
+
+  <p>但呢個人物嘅履歷本身就係一課。鄭周永出身赤貧農家，讀完小學就出城打工，做過鐵路苦力、米店學徒；1940 年代開一間小小嘅汽車修理廠，開業五日就燒咗；之後再開，再借錢，再起。1960 年代佢投得韓國第一條高速公路，1970 年代造出韓國第一艘大型油輪同第一輛國產車——而佢之前從來冇造過船。</p>
+
+  <p>David 揀呢本書嘅原因，通常唔係「佢好成功」，而係「佢失敗嘅密度」。Founders 每一集嘅隱藏主題都一樣：<strong>創辦人係一種處理失敗嘅方式，唔係一種才能。</strong>鄭周永嘅版本係最極端嘅一種——每次都係「唔識就學、學完就投標、投標完先算數」。</p>
+
+  <p>50 分鐘，唔長。適合通勤聽，唔適合邊做嘢邊聽（David 講得快，一走神就斷線）。</p>
+</div>
+
+<h2 class="section">已清 · 對上一集</h2>
+<div class="rule"></div>
+
+<div class="mini-card">
+  <b>My First Million #885 — we need to talk about Jensen</b>（11-25，51 分鐘）<br>
+  <span class="dim">Jensen 嘅 RTO 決定、Shaan 拆自己個 portfolio、Punch Card Investing、同「Going from a 4 to a 7」。已於 11-26 報告深度拆解。</span>
+</div>
+
+<div class="mini-card">
+  <b>The Knowledge Project — [Outliers] How to Persuade Like David Ogilvy</b>（11-26，會員優先）<br>
+  <span class="dim">Ogilvy 七條說服原則，由 38 歲失業推銷員講到勞斯萊斯「電鐘」標題。已於 11-27 報告深度拆解。</span>
+</div>
+
+<div class="mini-card">
+  <b>Diary of a CEO — Most Replayed Moment: Tom Aspinall</b>（11-27，21 分鐘）<br>
+  <span class="dim">世界重量級冠軍講「驚」同「捱」。已於 11-27 報告拆解。</span>
+</div>
+
+<div class="note">
+  <b>下一個掃描：</b>2026-11-29 09:53 UTC。屆時優先確認 Acquired 有冇動靜——如果仍然係 Seinfeld（10-18），就係 42 日，我會去查 Transistor feed 同官網有冇分家。
+</div>
+
+<footer>
+  <p>Mindset Podcast Daily · 自動掃描，人手撰寫<br>
+  資料來源：各節目官方 RSS / show notes ｜ 生成於 2026-11-28 09:54 UTC</p>
+</footer>
+
+</div>
+</body>
+</html>
